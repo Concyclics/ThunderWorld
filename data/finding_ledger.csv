@@ -1,0 +1,9 @@
+id,finding,implementation,decision,evidence_level,caveat
+F1,有向跨模态关系存在 4.09–13.53× 注意力质量不对称,GQA group × directed relation budget/skip，保留 hard anchors,KEEP · primary novelty,structural pilot + 20-step equal-QK screen,结构性置信区间基于 head-layer 单元；仍缺 24 个独立 prompt 的确认实验
+F2,关系/层/head 异质且 archetype 跨 step 稳定,离线 head archetype，在线只调 budget/refresh/fallback；按 GQA bucket 执行,KEEP · core method,"2,464 Generator units; 94.5% pass stability",固定 hand depth relocation 在闭环中失败，layer 只能作为 compiler feature
+F3,action/sound 小关系是高信息密度 dense anchors,action/audio/control/special/physical-time neighbors 强制保留,KEEP · merge into semantic method,134–302× mass per score share,仍需 equal-score anchor removal 的 task-level counterfactual
+F4,token oracle 显著强于 natural block oracle,local geometry + query/head/timestep-conditioned semantic block list,KEEP · reworked primitive,35.4–43.3% token saving vs 11.6–19.4% natural-block saving,naive K-only reorder 失败；semantic reorder 不作为默认运行时
+F5,局部误差不能单独预测完整 diffusion trajectory 风险,joint-projected error Gram + full-rollout/UCB trajectory compiler,KEEP · policy contribution,median GQA cancellation ratio 0.412; depth schedule equal-QK quality regression,当前 Gram/UCB 仍缺多任务 confirmatory rollout
+F6,重要 block/layout 跨 diffusion step 高度稳定，但 output 不可直接复用,stage-wise budget + descriptor/block-list reuse；保留 QK/PV 重算,KEEP · system allocator,safe-set Jaccard 0.930; anchor Jaccard 0.919,previous-output cache SSIM 0.77–0.80，默认禁用
+N1,浅层 DM←AR 热块不能可靠预测深层 DM←DM 热块,self/cross 独立选块，仅在 trajectory compiler 中联合校准,DROP · primary algorithm,position-controlled residual correlation -0.065,保留为负结果与消融
+N2,全 layer/head/step 统一 sparse 在当前 primitive 下不可行,只把安全 layer-stage cells 编译到 all-sparse kernel bucket,DROP · blanket policy,可比 20-step all-head 最佳 SSIM 0.770,all-sparse 16K 1.93× 仅是 kernel 上限，不是质量验证后的端到端结果

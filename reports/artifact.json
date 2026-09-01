@@ -1,0 +1,1394 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "ThunderWorld 当前实验信息与结论（2026-09）",
+    "description": "Audited synthesis of ThunderWorld relation-local sparsity findings, trajectory-global failure modes, quality/compute frontier, and sparse-kernel scaling.",
+    "generatedAt": "2026-09-01T07:21:08.997344+00:00",
+    "cards": [
+      {
+        "id": "direction_card",
+        "description": "四类有向模态关系中最弱的不对称倍数。",
+        "dataset": "overview",
+        "sourceId": "snapshot",
+        "metrics": [
+          {
+            "label": "最低方向不对称",
+            "field": "min_directional_ratio",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "current_card",
+        "description": "当前 0.90 development 档；一条 T2V prompt、三个 seeds。",
+        "dataset": "overview",
+        "sourceId": "quality_frontier",
+        "metrics": [
+          {
+            "label": "当前 joint-QK reduction",
+            "field": "current_qk_reduction",
+            "format": "percent"
+          },
+          {
+            "label": "最差 SSIM",
+            "field": "current_min_ssim",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "aggressive_card",
+        "description": "0.80 aggressive 档；一条 T2V prompt、两个 seeds，仍属 provisional。",
+        "dataset": "overview",
+        "sourceId": "quality_frontier",
+        "metrics": [
+          {
+            "label": "Aggressive joint-QK reduction",
+            "field": "aggressive_qk_reduction",
+            "format": "percent"
+          },
+          {
+            "label": "最差 SSIM",
+            "field": "aggressive_min_ssim",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "kernel_card",
+        "description": "16K DM、AR=61 的 all-sparse attention microbenchmark；不是端到端结果。",
+        "dataset": "overview",
+        "sourceId": "kernel",
+        "metrics": [
+          {
+            "label": "All-sparse attention speedup",
+            "field": "all_sparse_16k_attention_speedup",
+            "format": "number"
+          },
+          {
+            "label": "20-step 最佳 all-head SSIM",
+            "field": "all_sparse_best_20step_ssim",
+            "format": "number"
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": "direction_chart",
+        "title": "有向模态关系注意力质量不对称",
+        "subtitle": "四类关系的 head-layer bootstrap 95% 下界均高于 3.5×。",
+        "type": "bar",
+        "dataset": "directional",
+        "sourceId": "directional",
+        "valueFormat": "number",
+        "encodings": {
+          "x": {
+            "field": "display_relation",
+            "type": "nominal",
+            "label": "有向关系对"
+          },
+          "y": {
+            "field": "asymmetry_ratio",
+            "type": "quantitative",
+            "label": "前向 / 反向 attention mass"
+          },
+          "tooltip": [
+            {
+              "field": "ci95_low",
+              "type": "quantitative",
+              "label": "95% CI lower"
+            },
+            {
+              "field": "ci95_high",
+              "type": "quantitative",
+              "label": "95% CI upper"
+            },
+            {
+              "field": "direction_consistency",
+              "type": "quantitative",
+              "label": "方向一致率",
+              "format": "percent"
+            }
+          ]
+        }
+      },
+      {
+        "id": "taxonomy_chart",
+        "title": "Generator head-relation archetype 构成",
+        "subtitle": "共 2,464 个 layer × head × query-role 单元；只有 16.6% 属于 mixer。",
+        "type": "bar",
+        "dataset": "taxonomy",
+        "sourceId": "snapshot",
+        "valueFormat": "percent",
+        "encodings": {
+          "x": {
+            "field": "archetype",
+            "type": "nominal",
+            "label": "Archetype"
+          },
+          "y": {
+            "field": "share",
+            "type": "quantitative",
+            "label": "单元占比",
+            "format": "percent"
+          },
+          "tooltip": [
+            {
+              "field": "head_layer_query_units",
+              "type": "quantitative",
+              "label": "单元数"
+            }
+          ]
+        }
+      },
+      {
+        "id": "timestep_chart",
+        "title": "严格局部可稀疏 head share 随 denoising step 上升",
+        "subtitle": "p95 output-L2≤0.05 的 share 从 3.82% 增至 12.93%，但不代表可复用 attention output。",
+        "type": "line",
+        "dataset": "timestep",
+        "sourceId": "timestep",
+        "encodings": {
+          "x": {
+            "field": "step",
+            "type": "quantitative",
+            "label": "Diffusion step"
+          },
+          "y": {
+            "field": "safe_share_0p05",
+            "type": "quantitative",
+            "label": "严格可稀疏 share",
+            "format": "percent"
+          }
+        }
+      },
+      {
+        "id": "frontier_chart",
+        "title": "当前 20-step 质量—QK Pareto",
+        "subtitle": "50% sparse groups 通过 0.90 development screen；75% 仅通过 provisional 0.80；100% all-head 未过 0.80。",
+        "type": "scatter",
+        "dataset": "frontier",
+        "sourceId": "quality_frontier",
+        "encodings": {
+          "x": {
+            "field": "joint_qk_reduction",
+            "type": "quantitative",
+            "label": "Generator joint-QK reduction",
+            "format": "percent"
+          },
+          "y": {
+            "field": "ssim_min",
+            "type": "quantitative",
+            "label": "最差 paired SSIM"
+          },
+          "color": {
+            "field": "evidence_status",
+            "type": "nominal",
+            "label": "证据状态"
+          },
+          "tooltip": [
+            {
+              "field": "policy",
+              "type": "nominal",
+              "label": "策略"
+            },
+            {
+              "field": "attention_speedup",
+              "type": "quantitative",
+              "label": "16K attention speedup"
+            },
+            {
+              "field": "estimated_e2e_speedup",
+              "type": "quantitative",
+              "label": "Amdahl E2E estimate"
+            },
+            {
+              "field": "seeds",
+              "type": "quantitative",
+              "label": "Seeds"
+            }
+          ]
+        }
+      },
+      {
+        "id": "kernel_chart",
+        "title": "All-sparse kernel 的收益随 DM 长度增长",
+        "subtitle": "H200 NVL random-tensor attention microbenchmark；4K 几乎不赚，16K 接近 2×。",
+        "type": "line",
+        "dataset": "kernel",
+        "sourceId": "kernel",
+        "encodings": {
+          "x": {
+            "field": "dm_tokens",
+            "type": "quantitative",
+            "label": "DM tokens"
+          },
+          "y": {
+            "field": "attention_speedup",
+            "type": "quantitative",
+            "label": "Attention speedup"
+          },
+          "color": {
+            "field": "ar_context",
+            "type": "nominal",
+            "label": "AR context"
+          },
+          "tooltip": [
+            {
+              "field": "joint_qk_reduction",
+              "type": "quantitative",
+              "label": "Joint-QK reduction",
+              "format": "percent"
+            },
+            {
+              "field": "output_relative_l2_vs_joint_repair",
+              "type": "quantitative",
+              "label": "Kernel check rel-L2"
+            }
+          ]
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "protocol_table",
+        "title": "实验族与证据粒度",
+        "subtitle": "不同实验族不可直接池化；特别是 4-step、20-step 与 random-tensor microbench。",
+        "dataset": "protocols",
+        "sourceId": "snapshot",
+        "columns": [
+          {
+            "field": "name",
+            "label": "实验族",
+            "type": "text"
+          },
+          {
+            "field": "tasks",
+            "label": "任务数",
+            "format": "number"
+          },
+          {
+            "field": "prompts_per_task",
+            "label": "Prompts/task",
+            "format": "number"
+          },
+          {
+            "field": "seeds",
+            "label": "Seeds",
+            "format": "number"
+          },
+          {
+            "field": "steps",
+            "label": "Steps",
+            "type": "text"
+          },
+          {
+            "field": "purpose",
+            "label": "用途",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "anchor_table",
+        "title": "高信息密度 dense anchors",
+        "subtitle": "小关系计算占比低，但 attention mass / score share 高两个数量级。",
+        "dataset": "anchors",
+        "sourceId": "snapshot",
+        "columns": [
+          {
+            "field": "display_relation",
+            "label": "关系",
+            "type": "text"
+          },
+          {
+            "field": "attention_mass",
+            "label": "Attention mass",
+            "format": "percent"
+          },
+          {
+            "field": "score_fraction",
+            "label": "Score share",
+            "format": "percent"
+          },
+          {
+            "field": "mass_per_score_share",
+            "label": "Mass / score share",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "frontier_table",
+        "title": "质量—计算精确值",
+        "subtitle": "E2E 为 Amdahl 估计：Generator share=0.9、attention share=0.387；非实测完整 rollout latency。",
+        "dataset": "frontier",
+        "sourceId": "quality_frontier",
+        "columns": [
+          {
+            "field": "policy",
+            "label": "策略",
+            "type": "text"
+          },
+          {
+            "field": "joint_qk_reduction",
+            "label": "Joint-QK cut",
+            "format": "percent"
+          },
+          {
+            "field": "ssim_min",
+            "label": "Min SSIM",
+            "format": "number"
+          },
+          {
+            "field": "psnr_min_db",
+            "label": "Min PSNR (dB)",
+            "format": "number"
+          },
+          {
+            "field": "attention_speedup",
+            "label": "Attention speedup",
+            "format": "number"
+          },
+          {
+            "field": "estimated_e2e_speedup",
+            "label": "Estimated E2E",
+            "format": "number"
+          },
+          {
+            "field": "seeds",
+            "label": "Seeds",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "allhead_table",
+        "title": "可比 20-step all-head sparse 失败边界",
+        "subtitle": "所有记录均为同一 seed=29 的 20-step T2V；最高 SSIM 仍低于 0.8。",
+        "dataset": "allhead",
+        "sourceId": "allhead",
+        "columns": [
+          {
+            "field": "policy",
+            "label": "策略",
+            "type": "text"
+          },
+          {
+            "field": "keep_ratio",
+            "label": "Keep ratio",
+            "format": "percent"
+          },
+          {
+            "field": "global_ssim",
+            "label": "Global SSIM",
+            "format": "number"
+          },
+          {
+            "field": "psnr_db",
+            "label": "PSNR (dB)",
+            "format": "number"
+          },
+          {
+            "field": "steps",
+            "label": "Steps",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "decision_table",
+        "title": "Finding → implementation → contribution",
+        "subtitle": "KEEP、REWORK 与 DROP 决策均绑定证据等级和失败条件。",
+        "dataset": "decisions",
+        "sourceId": "findings",
+        "columns": [
+          {
+            "field": "id",
+            "label": "ID",
+            "type": "text"
+          },
+          {
+            "field": "finding",
+            "label": "Finding",
+            "type": "text"
+          },
+          {
+            "field": "implementation",
+            "label": "Implementation",
+            "type": "text"
+          },
+          {
+            "field": "decision",
+            "label": "Decision",
+            "type": "text"
+          },
+          {
+            "field": "evidence_level",
+            "label": "Evidence",
+            "type": "text"
+          },
+          {
+            "field": "caveat",
+            "label": "Caveat",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "snapshot",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_json_auto('data/evidence_snapshot.json', format = 'auto')",
+          "description": "Audited aggregate evidence snapshot produced from hashed experiment artifacts.",
+          "tables_used": [
+            "data/evidence_snapshot.json"
+          ],
+          "executed_at": "2026-09-01T07:21:08.997344+00:00"
+        },
+        "label": "Audited aggregate evidence snapshot produced from hashed experiment artifacts.",
+        "path": "data/evidence_snapshot.json"
+      },
+      {
+        "id": "validation",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_json_auto('data/validation_report.json', format = 'auto')",
+          "description": "Independent arithmetic, comparability, denominator, and completeness checks.",
+          "tables_used": [
+            "data/validation_report.json"
+          ],
+          "executed_at": "2026-09-01T07:21:08.997344+00:00"
+        },
+        "label": "Independent arithmetic, comparability, denominator, and completeness checks.",
+        "path": "data/validation_report.json"
+      },
+      {
+        "id": "quality_frontier",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('data/quality_compute_frontier.csv', header = true)",
+          "description": "Comparable 20-step quality/compute frontier and H200 attention microbench link.",
+          "tables_used": [
+            "data/quality_compute_frontier.csv"
+          ],
+          "executed_at": "2026-09-01T07:21:08.997344+00:00"
+        },
+        "label": "Comparable 20-step quality/compute frontier and H200 attention microbench link.",
+        "path": "data/quality_compute_frontier.csv"
+      },
+      {
+        "id": "directional",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('data/directed_relations.csv', header = true)",
+          "description": "Four paired directed modality relations measured at head-layer grain.",
+          "tables_used": [
+            "data/directed_relations.csv"
+          ],
+          "executed_at": "2026-09-01T07:21:08.997344+00:00"
+        },
+        "label": "Four paired directed modality relations measured at head-layer grain.",
+        "path": "data/directed_relations.csv"
+      },
+      {
+        "id": "kernel",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('data/kernel_scaling.csv', header = true)",
+          "description": "H200 NVL random-tensor attention microbenchmark for the all-sparse kernel bucket.",
+          "tables_used": [
+            "data/kernel_scaling.csv"
+          ],
+          "executed_at": "2026-09-01T07:21:08.997344+00:00"
+        },
+        "label": "H200 NVL random-tensor attention microbenchmark for the all-sparse kernel bucket.",
+        "path": "data/kernel_scaling.csv"
+      },
+      {
+        "id": "timestep",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('data/timestep_profile.csv', header = true)",
+          "description": "Twenty-step T2V local sparsifiability profile over 24 prompts and three seeds.",
+          "tables_used": [
+            "data/timestep_profile.csv"
+          ],
+          "executed_at": "2026-09-01T07:21:08.997344+00:00"
+        },
+        "label": "Twenty-step T2V local sparsifiability profile over 24 prompts and three seeds.",
+        "path": "data/timestep_profile.csv"
+      },
+      {
+        "id": "findings",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('data/finding_ledger.csv', header = true)",
+          "description": "Frozen finding-to-implementation-to-contribution decision ledger.",
+          "tables_used": [
+            "data/finding_ledger.csv"
+          ],
+          "executed_at": "2026-09-01T07:21:08.997344+00:00"
+        },
+        "label": "Frozen finding-to-implementation-to-contribution decision ledger.",
+        "path": "data/finding_ledger.csv"
+      },
+      {
+        "id": "allhead",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('data/allhead_quality_20step.csv', header = true)",
+          "description": "Comparable seed-29, 20-step all-head sparse quality checks.",
+          "tables_used": [
+            "data/allhead_quality_20step.csv"
+          ],
+          "executed_at": "2026-09-01T07:21:08.997344+00:00"
+        },
+        "label": "Comparable seed-29, 20-step all-head sparse quality checks.",
+        "path": "data/allhead_quality_20step.csv"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# ThunderWorld 当前实验信息与结论（2026-09）"
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "body": "## Technical summary\n\n**主线可以固定为：世界模型中的稀疏性是 relation-local 的，但近似误差是 trajectory-global 的。** 当前最可信的方法形态是 `GQA group × directed relation × layer/stage` 编译：保留 action/audio/control 等 dense anchors，在 vision residual 上执行 semantic/local block list，并通过同一个 online-softmax 状态保持 AR/DM joint normalization。\n\n最新 0.90 development 点在一条 T2V prompt 的 3 seeds 上实现 36.68% joint-QK reduction，最差 SSIM 0.923；0.80 aggressive 点将 reduction 提高到 55.02%，但只有 2 seeds。全程 all-head sparse 的可比 20-step 最佳 SSIM 仅 0.770，所以 all-sparse kernel 只能作为安全 layer/stage bucket，而不能覆盖完整 trajectory。"
+      },
+      {
+        "id": "metric_strip",
+        "type": "metric-strip",
+        "cardIds": [
+          "direction_card",
+          "current_card",
+          "aggressive_card",
+          "kernel_card"
+        ]
+      },
+      {
+        "id": "evidence_boundary",
+        "type": "markdown",
+        "sourceId": "validation",
+        "body": "## 证据可共享，但仍需保留范围限定\n\n一致性审计通过 15/15 项检查，未发现计算或可比性 blocker。不过 strongest quality point 仍只有一条独立 prompt，kernel 数据来自 random tensors，最终 VBench/control/action/task-success 尚未运行。因此整体评级是 **share with caveats**，不是 publication-ready acceleration claim。"
+      },
+      {
+        "id": "protocols",
+        "type": "table",
+        "tableId": "protocol_table"
+      },
+      {
+        "id": "relation_finding",
+        "type": "markdown",
+        "sourceId": "directional",
+        "body": "## 方向不是 metadata，而是可执行预算维度\n\nsound↔vision、action↔vision 和 clean↔noisy 的正反方向相差 4.09–13.53×。这要求 runtime 保留 `(query role, key role)`，低质量方向可降预算或 skip，高质量反向及 hard anchors 维持 dense。后续 20-step equal-QK counterfactual 也支持方向选择：I2V 删除低质量方向 SSIM 0.975，删除反向高质量方向只有 0.776。"
+      },
+      {
+        "id": "direction_visual",
+        "type": "chart",
+        "chartId": "direction_chart"
+      },
+      {
+        "id": "head_finding",
+        "type": "markdown",
+        "sourceId": "snapshot",
+        "body": "## Head-wise 分类有稳定信号，但执行单位应回到 GQA group\n\nGenerator 单元中 37.7% 是 specialist、45.7% 是 hybrid、16.6% 是 mixer；主导关系跨 denoising passes 稳定率为 94.5%。这支持 MInference-like 离线 archetype，但 production policy 应先逐 Q-head 测量，再编译为 GQA-aligned buckets；只有成本模型证明值得时才在一个 KV group 内拆成两个 Q-head buckets。"
+      },
+      {
+        "id": "taxonomy_visual",
+        "type": "chart",
+        "chartId": "taxonomy_chart"
+      },
+      {
+        "id": "anchor_finding",
+        "type": "markdown",
+        "sourceId": "snapshot",
+        "body": "## 小模态关系应作为 dense anchors，而不是优先稀疏对象\n\naction self 与 sound self 只占 0.12%–0.37% scores，却承载 33.5%–48.9% attention mass，信息密度达到 134–302×。它们计算便宜、任务风险高，应从 vision residual 的稀疏预算中剥离并强制保留。"
+      },
+      {
+        "id": "anchor_detail",
+        "type": "table",
+        "tableId": "anchor_table"
+      },
+      {
+        "id": "trajectory_finding",
+        "type": "markdown",
+        "sourceId": "snapshot",
+        "body": "## Layer/head 局部安全不能替代 trajectory 校准\n\nToken oracle 可删 35.4%–43.3%，natural block oracle 只能删 11.6%–19.4%，证明 semantic blockification 的必要性；但 naive K-only reorder 与手写深度调度都失败。GQA 组合误差的 median cancellation ratio 为 0.412，而 equal-QK depth relocation 将 SSIM 从 0.906 降至 0.861。因而 compiler 必须使用 joint-projected error Gram、完整 rollout 和 UCB，而不能按局部 output drift 或层先验直接加和。"
+      },
+      {
+        "id": "timestep_finding",
+        "type": "markdown",
+        "sourceId": "timestep",
+        "body": "## Diffusion 后期更可稀疏，但应复用 layout 而非 output\n\n严格局部可稀疏 share 从 step 0 的 3.82% 增长到 step 19 的 12.93%，相邻 safe-set Jaccard 均值约 0.93。这支持 stage-wise budget 与 descriptor/block-list reuse。相反，previous-output cache 的 paired SSIM 只有约 0.77–0.80，因此保留 QK/softmax/PV 重算，默认禁用 attention-output reuse。"
+      },
+      {
+        "id": "timestep_visual",
+        "type": "chart",
+        "chartId": "timestep_chart"
+      },
+      {
+        "id": "negative_result",
+        "type": "markdown",
+        "sourceId": "snapshot",
+        "body": "## Cross→self 热块迁移是明确负结果\n\n去除位置偏置后的 DM←AR→DM←DM residual correlation 为 -0.065；held-out transferred anchors 与 query budgets 都使 omitted mass 变差。两分支应独立选块，只在 trajectory compiler 中建模组合误差。"
+      },
+      {
+        "id": "frontier_finding",
+        "type": "markdown",
+        "sourceId": "quality_frontier",
+        "body": "## 当前可工程化 Pareto 是 50%/75% sparse groups，不是 blanket all-sparse\n\n0.90 档的 measured 16K attention speedup 为 1.21×；0.80 aggressive 档为 1.41×。按 Generator share=0.9、attention share=0.387 的 Amdahl 模型，分别只对应约 1.065× 与 1.112× 端到端。全 sparse bucket 在 16K 达到 1.93× attention，但完整 20-step all-head 质量仍失败。"
+      },
+      {
+        "id": "frontier_visual",
+        "type": "chart",
+        "chartId": "frontier_chart"
+      },
+      {
+        "id": "frontier_detail",
+        "type": "table",
+        "tableId": "frontier_table"
+      },
+      {
+        "id": "allhead_failure",
+        "type": "markdown",
+        "sourceId": "allhead",
+        "body": "## 0.827 的 apparent pass 被排除：它只有 4 steps\n\n严格核对 `sample_args.json` 后，该 q16 exact-Taylor 结果只运行 4 个 diffusion steps。在可比的 20-step all-head 记录中，最佳 SSIM 是 0.770，所有策略均未达到 0.8。"
+      },
+      {
+        "id": "allhead_detail",
+        "type": "table",
+        "tableId": "allhead_table"
+      },
+      {
+        "id": "kernel_finding",
+        "type": "markdown",
+        "sourceId": "kernel",
+        "body": "## Sparse kernel 的收益会随输入长度 scaling，但会被 Amdahl 上限截断\n\nAR=61 时，all-sparse attention speedup 从 DM 4K 的 1.03×、8K 的 1.32× 增长到 16K 的 1.93×。因此 production runtime 应依赖实测 lookup table：短序列或高密度策略回退 FA3，长视频和同质 all-sparse buckets 才走 fused sparse path。"
+      },
+      {
+        "id": "kernel_visual",
+        "type": "chart",
+        "chartId": "kernel_chart"
+      },
+      {
+        "id": "decision_heading",
+        "type": "markdown",
+        "body": "## 固化后的 finding → implementation → contribution\n\n最终只保留三项论文贡献：relation/head/modality characterization；interaction-aware trajectory compiler；保持 joint-softmax 语义的 sparse runtime。其余发现要么并入这三项，要么作为负结果。"
+      },
+      {
+        "id": "decision_detail",
+        "type": "table",
+        "tableId": "decision_table"
+      },
+      {
+        "id": "methodology",
+        "type": "markdown",
+        "sourceId": "snapshot",
+        "body": "## 指标、基线与实验解释\n\n`joint-QK reduction` 是相对 DM←DM + DM←AR score count 的削减，不包含 FFN、QKV/O projection、VAE、routing 或通信；`attention speedup` 是 H200 dense three-way latency / sparse amortized attention latency；`estimated E2E` 是显式 Amdahl 估算。paired SSIM/PSNR 比较同 seed dense reference，用于 trajectory fidelity screen，不能代替 VBench、control adherence、action error 或 task success。"
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "sourceId": "validation",
+        "body": "## 限制与稳健性\n\n- 关系 atlas 的 bootstrap 单位是 head-layer，不是独立 prompt。\n- 0.90 点只有一条 prompt × 3 seeds；0.80 点只有一条 prompt × 2 seeds。\n- 16K speedup 来自 random-tensor attention microbench，不是完整 Cosmos3 rollout。\n- 目前没有 final-test VBench、PAI-C judge、AV-sync 或 DROID task-success 结果。\n- Context-parallel 动态稀疏尚未实现，多卡路径必须回退 dense。"
+      },
+      {
+        "id": "next_steps",
+        "type": "markdown",
+        "body": "## 推荐的最小下一步\n\n1. 为 q12 75% GQA policy 补 seed 17，完成 3-seed aggressive screen。\n2. 只测试一个 `前 15 steps=50/75%，最后 5 steps=all-sparse` schedule，验证 selective full-sparse bucket。\n3. 在一个 I2V 与一个 DROID case 上执行相同 20-step policy，检查 directed anchors 与 control/action failure。\n4. 把 semantic block list 与 directed relation skip 融合进同一 joint-online-softmax kernel；分别报告 routing、packing、kernel、merge。\n5. 若多任务 0.90 档无法同时达到 ≥30% QK cut 与任务非劣，停止扩大 kernel，转为 characterization/negative-result 论文。"
+      },
+      {
+        "id": "questions",
+        "type": "markdown",
+        "body": "## 仍需回答的问题\n\n- 方向性不对称能否在每任务 24 个独立 prompts/episodes 上维持？\n- 25%/37.5%/50% equal-active-tile 下，query-conditioned semantic block list 能否缩小 oracle gap？\n- normalized sigma 的 stage policy 能否从 20 steps 迁移到 40 steps、从 Nano 迁移到 Edge？\n- 在真实 14,720/74,000 DM token 配置中，attention share 与端到端 speedup 是否符合 Amdahl 假设？"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "status": "ready",
+    "generatedAt": "2026-09-01T07:21:08.997344+00:00",
+    "datasets": {
+      "overview": [
+        {
+          "min_directional_ratio": 4.094989217986449,
+          "current_qk_reduction": 0.366798418972332,
+          "current_min_ssim": 0.9225369526026354,
+          "aggressive_qk_reduction": 0.5501976284584981,
+          "aggressive_min_ssim": 0.8555947600586151,
+          "all_sparse_16k_attention_speedup": 1.9297502652100247,
+          "all_sparse_best_20step_ssim": 0.7697499990072579
+        }
+      ],
+      "directional": [
+        {
+          "task": "t2vs",
+          "relation_pair": "sound↤vision / vision↤sound",
+          "head_layers": 224,
+          "forward_mass": 0.2625517336372471,
+          "reverse_mass": 0.032236596421189444,
+          "asymmetry_ratio": 8.144524012611615,
+          "ci95_low": 7.139158848577913,
+          "ci95_high": 9.296220159365195,
+          "direction_consistency": 0.9419642857142857,
+          "display_relation": "sound←vision / vision←sound"
+        },
+        {
+          "task": "robot_forward",
+          "relation_pair": "action↤vision / vision↤action",
+          "head_layers": 224,
+          "forward_mass": 0.28745978823129686,
+          "reverse_mass": 0.02260516575463271,
+          "asymmetry_ratio": 12.71655299286557,
+          "ci95_low": 10.098744222024806,
+          "ci95_high": 16.125940901495234,
+          "direction_consistency": 0.9553571428571429,
+          "display_relation": "action←vision / vision←action"
+        },
+        {
+          "task": "droid_forward",
+          "relation_pair": "action↤vision / vision↤action",
+          "head_layers": 224,
+          "forward_mass": 0.2928512426344315,
+          "reverse_mass": 0.021640421273863952,
+          "asymmetry_ratio": 13.532603590675949,
+          "ci95_low": 10.341017950375393,
+          "ci95_high": 18.0547980300112,
+          "direction_consistency": 0.9464285714285714,
+          "display_relation": "action←vision / vision←action"
+        },
+        {
+          "task": "i2v",
+          "relation_pair": "clean↤noisy / noisy↤clean",
+          "head_layers": 224,
+          "forward_mass": 0.5628263868922844,
+          "reverse_mass": 0.13744270300399772,
+          "asymmetry_ratio": 4.094989217986449,
+          "ci95_low": 3.5924670833152006,
+          "ci95_high": 4.722991595302816,
+          "direction_consistency": 0.9330357142857143,
+          "display_relation": "clean←noisy / noisy←clean"
+        }
+      ],
+      "taxonomy": [
+        {
+          "archetype": "specialist",
+          "share": 0.3770292207792208,
+          "head_layer_query_units": 929
+        },
+        {
+          "archetype": "hybrid",
+          "share": 0.45738636363636365,
+          "head_layer_query_units": 1127
+        },
+        {
+          "archetype": "mixer",
+          "share": 0.16558441558441558,
+          "head_layer_query_units": 408
+        }
+      ],
+      "anchors": [
+        {
+          "task": "droid_forward",
+          "relation": "generator:action.clean<-DM.action.clean",
+          "attention_mass": 0.3353832033034793,
+          "score_fraction": 0.0018840153076243745,
+          "mass_per_score_share": 178.01511587842487,
+          "display_relation": "DROID action←action"
+        },
+        {
+          "task": "robot_forward",
+          "relation": "generator:action.clean<-DM.action.clean",
+          "attention_mass": 0.352260809364403,
+          "score_fraction": 0.0011677127426653043,
+          "mass_per_score_share": 301.66735061944064,
+          "display_relation": "Bridge action←action"
+        },
+        {
+          "task": "t2vs",
+          "relation": "generator:sound.noisy<-DM.sound.noisy",
+          "attention_mass": 0.48889640590406047,
+          "score_fraction": 0.0036596523330283625,
+          "mass_per_score_share": 133.59094291328452,
+          "display_relation": "T2VS sound←sound"
+        }
+      ],
+      "timestep": [
+        {
+          "step": 0,
+          "stage": 0,
+          "safe_share_0p05": 0.03819444444444445,
+          "mean_robust_output_l2": 0.2412218221773704,
+          "p95_robust_output_l2": 0.5164233398437501
+        },
+        {
+          "step": 1,
+          "stage": 0,
+          "safe_share_0p05": 0.043402777777777776,
+          "mean_robust_output_l2": 0.2566705337415139,
+          "p95_robust_output_l2": 0.5247167968750001
+        },
+        {
+          "step": 2,
+          "stage": 0,
+          "safe_share_0p05": 0.046875,
+          "mean_robust_output_l2": 0.2730545045600997,
+          "p95_robust_output_l2": 0.5469750976562501
+        },
+        {
+          "step": 3,
+          "stage": 0,
+          "safe_share_0p05": 0.04513888888888889,
+          "mean_robust_output_l2": 0.28316262683106797,
+          "p95_robust_output_l2": 0.547822265625
+        },
+        {
+          "step": 4,
+          "stage": 0,
+          "safe_share_0p05": 0.04861111111111111,
+          "mean_robust_output_l2": 0.2890476646936602,
+          "p95_robust_output_l2": 0.5505810546875001
+        },
+        {
+          "step": 5,
+          "stage": 1,
+          "safe_share_0p05": 0.05555555555555555,
+          "mean_robust_output_l2": 0.2919774370061027,
+          "p95_robust_output_l2": 0.5606298828125
+        },
+        {
+          "step": 6,
+          "stage": 1,
+          "safe_share_0p05": 0.057291666666666664,
+          "mean_robust_output_l2": 0.29256052780482505,
+          "p95_robust_output_l2": 0.56236328125
+        },
+        {
+          "step": 7,
+          "stage": 1,
+          "safe_share_0p05": 0.0625,
+          "mean_robust_output_l2": 0.2941349383443594,
+          "p95_robust_output_l2": 0.5639794921875002
+        },
+        {
+          "step": 8,
+          "stage": 1,
+          "safe_share_0p05": 0.06336805555555555,
+          "mean_robust_output_l2": 0.295658409761058,
+          "p95_robust_output_l2": 0.563406982421875
+        },
+        {
+          "step": 9,
+          "stage": 1,
+          "safe_share_0p05": 0.06510416666666667,
+          "mean_robust_output_l2": 0.29704836731155715,
+          "p95_robust_output_l2": 0.57806884765625
+        },
+        {
+          "step": 10,
+          "stage": 2,
+          "safe_share_0p05": 0.06770833333333333,
+          "mean_robust_output_l2": 0.2996112679855691,
+          "p95_robust_output_l2": 0.5802807617187501
+        },
+        {
+          "step": 11,
+          "stage": 2,
+          "safe_share_0p05": 0.07118055555555555,
+          "mean_robust_output_l2": 0.3010285178406371,
+          "p95_robust_output_l2": 0.5838696289062502
+        },
+        {
+          "step": 12,
+          "stage": 2,
+          "safe_share_0p05": 0.07118055555555555,
+          "mean_robust_output_l2": 0.3028891912351052,
+          "p95_robust_output_l2": 0.5988024902343752
+        },
+        {
+          "step": 13,
+          "stage": 2,
+          "safe_share_0p05": 0.078125,
+          "mean_robust_output_l2": 0.3021638213346402,
+          "p95_robust_output_l2": 0.597900390625
+        },
+        {
+          "step": 14,
+          "stage": 2,
+          "safe_share_0p05": 0.0859375,
+          "mean_robust_output_l2": 0.3023931050466167,
+          "p95_robust_output_l2": 0.5983569335937502
+        },
+        {
+          "step": 15,
+          "stage": 3,
+          "safe_share_0p05": 0.0920138888888889,
+          "mean_robust_output_l2": 0.3013006114711364,
+          "p95_robust_output_l2": 0.6064233398437502
+        },
+        {
+          "step": 16,
+          "stage": 3,
+          "safe_share_0p05": 0.1015625,
+          "mean_robust_output_l2": 0.3005588252511289,
+          "p95_robust_output_l2": 0.6249694824218751
+        },
+        {
+          "step": 17,
+          "stage": 3,
+          "safe_share_0p05": 0.10677083333333333,
+          "mean_robust_output_l2": 0.29681695265074576,
+          "p95_robust_output_l2": 0.617996826171875
+        },
+        {
+          "step": 18,
+          "stage": 3,
+          "safe_share_0p05": 0.11197916666666667,
+          "mean_robust_output_l2": 0.2899182455407249,
+          "p95_robust_output_l2": 0.6429321289062505
+        },
+        {
+          "step": 19,
+          "stage": 3,
+          "safe_share_0p05": 0.1293402777777778,
+          "mean_robust_output_l2": 0.283352111114396,
+          "p95_robust_output_l2": 0.7349291992187501
+        }
+      ],
+      "frontier": [
+        {
+          "policy": "q12 · 50% GQA sparse",
+          "sparse_group_fraction": 0.5,
+          "joint_qk_reduction": 0.366798418972332,
+          "attention_speedup": 1.211364587796523,
+          "estimated_e2e_speedup": 1.0647053616511206,
+          "ssim_min": 0.9225369526026354,
+          "ssim_mean": 0.9542218240761081,
+          "psnr_min_db": 25.300178894596975,
+          "prompts": 1,
+          "seeds": 3,
+          "steps": 20,
+          "evidence_status": "validated development screen",
+          "quality_gate": "0.90 development"
+        },
+        {
+          "policy": "q12 · 75% GQA sparse",
+          "sparse_group_fraction": 0.75,
+          "joint_qk_reduction": 0.5501976284584981,
+          "attention_speedup": 1.4070114322437937,
+          "estimated_e2e_speedup": 1.1120428015287653,
+          "ssim_min": 0.8555947600586151,
+          "ssim_mean": 0.8786158308333867,
+          "psnr_min_db": 21.28744594065868,
+          "prompts": 1,
+          "seeds": 2,
+          "steps": 20,
+          "evidence_status": "provisional aggressive screen",
+          "quality_gate": "0.80 aggressive"
+        },
+        {
+          "policy": "100% all-head sparse · best comparable",
+          "sparse_group_fraction": 1.0,
+          "joint_qk_reduction": 0.733596837944664,
+          "attention_speedup": 1.9297502652100247,
+          "estimated_e2e_speedup": 1.2016491299035574,
+          "ssim_min": 0.7697499990072579,
+          "ssim_mean": 0.7697499990072579,
+          "psnr_min_db": 18.438245009933844,
+          "prompts": 1,
+          "seeds": 1,
+          "steps": 20,
+          "evidence_status": "fails 0.80 quality screen",
+          "quality_gate": "none"
+        }
+      ],
+      "allhead": [
+        {
+          "policy": "q8_keep37.5",
+          "steps": 20,
+          "seed": 29,
+          "keep_ratio": 0.375,
+          "global_ssim": 0.6201096550752645,
+          "psnr_db": 16.201825480142627,
+          "comparable": true
+        },
+        {
+          "policy": "q12_keep18.75",
+          "steps": 20,
+          "seed": 29,
+          "keep_ratio": 0.1875,
+          "global_ssim": 0.3986894304631397,
+          "psnr_db": 14.978563801675335,
+          "comparable": true
+        },
+        {
+          "policy": "q16_keep31.25",
+          "steps": 20,
+          "seed": 29,
+          "keep_ratio": 0.3125,
+          "global_ssim": 0.6976351755992557,
+          "psnr_db": 17.280850786158457,
+          "comparable": true
+        },
+        {
+          "policy": "q24_keep25",
+          "steps": 20,
+          "seed": 29,
+          "keep_ratio": 0.25,
+          "global_ssim": 0.5379637403139497,
+          "psnr_db": 15.28799358372876,
+          "comparable": true
+        },
+        {
+          "policy": "q32_keep18.75",
+          "steps": 20,
+          "seed": 29,
+          "keep_ratio": 0.1875,
+          "global_ssim": 0.6462974072159787,
+          "psnr_db": 16.647351004417143,
+          "comparable": true
+        },
+        {
+          "policy": "q40_keep12.5",
+          "steps": 20,
+          "seed": 29,
+          "keep_ratio": 0.125,
+          "global_ssim": 0.41309361157041563,
+          "psnr_db": 14.922158172100445,
+          "comparable": true
+        },
+        {
+          "policy": "q48_keep0",
+          "steps": 20,
+          "seed": 29,
+          "keep_ratio": 0.0,
+          "global_ssim": 0.20597407668232037,
+          "psnr_db": 14.311131389751878,
+          "comparable": true
+        },
+        {
+          "policy": "cache2_gqa100",
+          "steps": 20,
+          "seed": 29,
+          "keep_ratio": null,
+          "global_ssim": 0.7697499990072579,
+          "psnr_db": 18.438245009933844,
+          "comparable": true
+        }
+      ],
+      "kernel": [
+        {
+          "execution": "all sparse",
+          "dm_tokens": 4096,
+          "ar_tokens": 61,
+          "attention_speedup": 1.030988155449294,
+          "joint_qk_reduction": 0.7255232138561463,
+          "output_relative_l2_vs_joint_repair": 0.004377702251076698,
+          "device": "NVIDIA H200 NVL",
+          "ar_context": "AR 61"
+        },
+        {
+          "execution": "all sparse",
+          "dm_tokens": 4096,
+          "ar_tokens": 2048,
+          "attention_speedup": 1.02070759073506,
+          "joint_qk_reduction": 0.49088541666666663,
+          "output_relative_l2_vs_joint_repair": 0.007976245135068893,
+          "device": "NVIDIA H200 NVL",
+          "ar_context": "AR 2048"
+        },
+        {
+          "execution": "all sparse",
+          "dm_tokens": 8192,
+          "ar_tokens": 61,
+          "attention_speedup": 1.3199488787265623,
+          "joint_qk_reduction": 0.7308857385193264,
+          "output_relative_l2_vs_joint_repair": 0.0037642652168869972,
+          "device": "NVIDIA H200 NVL",
+          "ar_context": "AR 61"
+        },
+        {
+          "execution": "all sparse",
+          "dm_tokens": 8192,
+          "ar_tokens": 2048,
+          "attention_speedup": 1.3171012098491153,
+          "joint_qk_reduction": 0.5890625,
+          "output_relative_l2_vs_joint_repair": 0.005870315711945295,
+          "device": "NVIDIA H200 NVL",
+          "ar_context": "AR 2048"
+        },
+        {
+          "execution": "all sparse",
+          "dm_tokens": 16384,
+          "ar_tokens": 61,
+          "attention_speedup": 1.9297502652100247,
+          "joint_qk_reduction": 0.733596837944664,
+          "output_relative_l2_vs_joint_repair": 0.0035654737148433924,
+          "device": "NVIDIA H200 NVL",
+          "ar_context": "AR 61"
+        },
+        {
+          "execution": "all sparse",
+          "dm_tokens": 16384,
+          "ar_tokens": 2048,
+          "attention_speedup": 1.795419764887594,
+          "joint_qk_reduction": 0.6545138888888888,
+          "output_relative_l2_vs_joint_repair": 0.0045843529514968395,
+          "device": "NVIDIA H200 NVL",
+          "ar_context": "AR 2048"
+        }
+      ],
+      "decisions": [
+        {
+          "id": "F1",
+          "finding": "有向跨模态关系存在 4.09–13.53× 注意力质量不对称",
+          "implementation": "GQA group × directed relation budget/skip，保留 hard anchors",
+          "decision": "KEEP · primary novelty",
+          "evidence_level": "structural pilot + 20-step equal-QK screen",
+          "caveat": "结构性置信区间基于 head-layer 单元；仍缺 24 个独立 prompt 的确认实验"
+        },
+        {
+          "id": "F2",
+          "finding": "关系/层/head 异质且 archetype 跨 step 稳定",
+          "implementation": "离线 head archetype，在线只调 budget/refresh/fallback；按 GQA bucket 执行",
+          "decision": "KEEP · core method",
+          "evidence_level": "2,464 Generator units; 94.5% pass stability",
+          "caveat": "固定 hand depth relocation 在闭环中失败，layer 只能作为 compiler feature"
+        },
+        {
+          "id": "F3",
+          "finding": "action/sound 小关系是高信息密度 dense anchors",
+          "implementation": "action/audio/control/special/physical-time neighbors 强制保留",
+          "decision": "KEEP · merge into semantic method",
+          "evidence_level": "134–302× mass per score share",
+          "caveat": "仍需 equal-score anchor removal 的 task-level counterfactual"
+        },
+        {
+          "id": "F4",
+          "finding": "token oracle 显著强于 natural block oracle",
+          "implementation": "local geometry + query/head/timestep-conditioned semantic block list",
+          "decision": "KEEP · reworked primitive",
+          "evidence_level": "35.4–43.3% token saving vs 11.6–19.4% natural-block saving",
+          "caveat": "naive K-only reorder 失败；semantic reorder 不作为默认运行时"
+        },
+        {
+          "id": "F5",
+          "finding": "局部误差不能单独预测完整 diffusion trajectory 风险",
+          "implementation": "joint-projected error Gram + full-rollout/UCB trajectory compiler",
+          "decision": "KEEP · policy contribution",
+          "evidence_level": "median GQA cancellation ratio 0.412; depth schedule equal-QK quality regression",
+          "caveat": "当前 Gram/UCB 仍缺多任务 confirmatory rollout"
+        },
+        {
+          "id": "F6",
+          "finding": "重要 block/layout 跨 diffusion step 高度稳定，但 output 不可直接复用",
+          "implementation": "stage-wise budget + descriptor/block-list reuse；保留 QK/PV 重算",
+          "decision": "KEEP · system allocator",
+          "evidence_level": "safe-set Jaccard 0.930; anchor Jaccard 0.919",
+          "caveat": "previous-output cache SSIM 0.77–0.80，默认禁用"
+        },
+        {
+          "id": "N1",
+          "finding": "浅层 DM←AR 热块不能可靠预测深层 DM←DM 热块",
+          "implementation": "self/cross 独立选块，仅在 trajectory compiler 中联合校准",
+          "decision": "DROP · primary algorithm",
+          "evidence_level": "position-controlled residual correlation -0.065",
+          "caveat": "保留为负结果与消融"
+        },
+        {
+          "id": "N2",
+          "finding": "全 layer/head/step 统一 sparse 在当前 primitive 下不可行",
+          "implementation": "只把安全 layer-stage cells 编译到 all-sparse kernel bucket",
+          "decision": "DROP · blanket policy",
+          "evidence_level": "可比 20-step all-head 最佳 SSIM 0.770",
+          "caveat": "all-sparse 16K 1.93× 仅是 kernel 上限，不是质量验证后的端到端结果"
+        }
+      ],
+      "protocols": [
+        {
+          "name": "full equal-budget candidate campaign",
+          "tasks": 8,
+          "prompts_per_task": 24,
+          "seeds": 3,
+          "steps": "20 and 40",
+          "layers": 36,
+          "heads": 32,
+          "purpose": "geometry / semantic / reorder / hybrid counterfactual characterization"
+        },
+        {
+          "name": "relation atlas",
+          "tasks": 6,
+          "prompts_per_task": 1,
+          "seeds": 1,
+          "steps": 4,
+          "layers": 7,
+          "heads": 32,
+          "purpose": "directed modality and anchor discovery"
+        },
+        {
+          "name": "timestep trace",
+          "tasks": 1,
+          "prompts_per_task": 24,
+          "seeds": 3,
+          "steps": 20,
+          "layers": 36,
+          "heads": 32,
+          "purpose": "local sparsifiability and step/layout stability"
+        },
+        {
+          "name": "q12 50% GQA quality screen",
+          "tasks": 1,
+          "prompts_per_task": 1,
+          "seeds": 3,
+          "steps": 20,
+          "layers": 36,
+          "heads": 32,
+          "purpose": "latest 0.90 development fidelity point"
+        },
+        {
+          "name": "q12 75% GQA aggressive screen",
+          "tasks": 1,
+          "prompts_per_task": 1,
+          "seeds": 2,
+          "steps": 20,
+          "layers": 36,
+          "heads": 32,
+          "purpose": "provisional 0.80 aggressive mode"
+        },
+        {
+          "name": "H200 kernel microbench",
+          "tasks": 0,
+          "prompts_per_task": 0,
+          "seeds": 0,
+          "steps": "random-tensor benchmark",
+          "layers": "single attention layer",
+          "heads": 32,
+          "purpose": "kernel scaling upper bound; not full Cosmos rollout"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "snapshot",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_json_auto('data/evidence_snapshot.json', format = 'auto')",
+        "description": "Audited aggregate evidence snapshot produced from hashed experiment artifacts.",
+        "tables_used": [
+          "data/evidence_snapshot.json"
+        ],
+        "executed_at": "2026-09-01T07:21:08.997344+00:00"
+      }
+    },
+    {
+      "id": "validation",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_json_auto('data/validation_report.json', format = 'auto')",
+        "description": "Independent arithmetic, comparability, denominator, and completeness checks.",
+        "tables_used": [
+          "data/validation_report.json"
+        ],
+        "executed_at": "2026-09-01T07:21:08.997344+00:00"
+      }
+    },
+    {
+      "id": "quality_frontier",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('data/quality_compute_frontier.csv', header = true)",
+        "description": "Comparable 20-step quality/compute frontier and H200 attention microbench link.",
+        "tables_used": [
+          "data/quality_compute_frontier.csv"
+        ],
+        "executed_at": "2026-09-01T07:21:08.997344+00:00"
+      }
+    },
+    {
+      "id": "directional",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('data/directed_relations.csv', header = true)",
+        "description": "Four paired directed modality relations measured at head-layer grain.",
+        "tables_used": [
+          "data/directed_relations.csv"
+        ],
+        "executed_at": "2026-09-01T07:21:08.997344+00:00"
+      }
+    },
+    {
+      "id": "kernel",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('data/kernel_scaling.csv', header = true)",
+        "description": "H200 NVL random-tensor attention microbenchmark for the all-sparse kernel bucket.",
+        "tables_used": [
+          "data/kernel_scaling.csv"
+        ],
+        "executed_at": "2026-09-01T07:21:08.997344+00:00"
+      }
+    },
+    {
+      "id": "timestep",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('data/timestep_profile.csv', header = true)",
+        "description": "Twenty-step T2V local sparsifiability profile over 24 prompts and three seeds.",
+        "tables_used": [
+          "data/timestep_profile.csv"
+        ],
+        "executed_at": "2026-09-01T07:21:08.997344+00:00"
+      }
+    },
+    {
+      "id": "findings",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('data/finding_ledger.csv', header = true)",
+        "description": "Frozen finding-to-implementation-to-contribution decision ledger.",
+        "tables_used": [
+          "data/finding_ledger.csv"
+        ],
+        "executed_at": "2026-09-01T07:21:08.997344+00:00"
+      }
+    },
+    {
+      "id": "allhead",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('data/allhead_quality_20step.csv', header = true)",
+        "description": "Comparable seed-29, 20-step all-head sparse quality checks.",
+        "tables_used": [
+          "data/allhead_quality_20step.csv"
+        ],
+        "executed_at": "2026-09-01T07:21:08.997344+00:00"
+      }
+    }
+  ]
+}

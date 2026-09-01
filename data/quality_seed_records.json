@@ -1,0 +1,36 @@
+{
+  "q12_gqa50": [
+    {
+      "seed": 17,
+      "global_ssim": 0.97711415138691,
+      "psnr_db": 26.7964343398898,
+      "temporal_delta_psnr_db": 31.208145660723797
+    },
+    {
+      "seed": 29,
+      "global_ssim": 0.9225369526026354,
+      "psnr_db": 25.626483829207093,
+      "temporal_delta_psnr_db": 30.17517378858853
+    },
+    {
+      "seed": 53,
+      "global_ssim": 0.963014368238779,
+      "psnr_db": 25.300178894596975,
+      "temporal_delta_psnr_db": 30.187874779599507
+    }
+  ],
+  "q12_gqa75": [
+    {
+      "seed": 29,
+      "global_ssim": 0.8555947600586151,
+      "psnr_db": 22.785767888680574,
+      "temporal_delta_psnr_db": 29.57116334481571
+    },
+    {
+      "seed": 53,
+      "global_ssim": 0.9016369016081583,
+      "psnr_db": 21.28744594065868,
+      "temporal_delta_psnr_db": 28.651818409007728
+    }
+  ]
+}

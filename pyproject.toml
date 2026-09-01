@@ -1,0 +1,8 @@
+[project]
+name = "thunderworld-evidence"
+version = "0.1.0"
+description = "Audited evidence snapshot for ThunderWorld sparse attention research"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 100

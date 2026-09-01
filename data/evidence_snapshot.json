@@ -1,0 +1,1228 @@
+{
+  "schema_version": 1,
+  "compiled_at": "2026-09-01T07:21:08.997344+00:00",
+  "evidence_as_of": "2026-08-29T07:10:21.616136+00:00",
+  "assessment": "share_with_caveats",
+  "headline": {
+    "paper_thesis": "World-model sparsity is relation-local, while approximation error is trajectory-global.",
+    "current_0p9_policy": {
+      "policy": "q12 · 50% GQA sparse",
+      "sparse_group_fraction": 0.5,
+      "joint_qk_reduction": 0.366798418972332,
+      "attention_speedup": 1.211364587796523,
+      "estimated_e2e_speedup": 1.0647053616511206,
+      "ssim_min": 0.9225369526026354,
+      "ssim_mean": 0.9542218240761081,
+      "psnr_min_db": 25.300178894596975,
+      "prompts": 1,
+      "seeds": 3,
+      "steps": 20,
+      "evidence_status": "validated development screen",
+      "quality_gate": "0.90 development"
+    },
+    "aggressive_0p8_policy": {
+      "policy": "q12 · 75% GQA sparse",
+      "sparse_group_fraction": 0.75,
+      "joint_qk_reduction": 0.5501976284584981,
+      "attention_speedup": 1.4070114322437937,
+      "estimated_e2e_speedup": 1.1120428015287653,
+      "ssim_min": 0.8555947600586151,
+      "ssim_mean": 0.8786158308333867,
+      "psnr_min_db": 21.28744594065868,
+      "prompts": 1,
+      "seeds": 2,
+      "steps": 20,
+      "evidence_status": "provisional aggressive screen",
+      "quality_gate": "0.80 aggressive"
+    },
+    "all_sparse_upper_bound": {
+      "policy": "100% all-head sparse · best comparable",
+      "sparse_group_fraction": 1.0,
+      "joint_qk_reduction": 0.733596837944664,
+      "attention_speedup": 1.9297502652100247,
+      "estimated_e2e_speedup": 1.2016491299035574,
+      "ssim_min": 0.7697499990072579,
+      "ssim_mean": 0.7697499990072579,
+      "psnr_min_db": 18.438245009933844,
+      "prompts": 1,
+      "seeds": 1,
+      "steps": 20,
+      "evidence_status": "fails 0.80 quality screen",
+      "quality_gate": "none"
+    },
+    "full_sparse_policy_supported": false,
+    "recommended_runtime": "GQA-group head routing with directed relation budgets, dense anchors, semantic/local block lists, timestep reuse, and one joint online-softmax state"
+  },
+  "protocols": [
+    {
+      "name": "full equal-budget candidate campaign",
+      "tasks": 8,
+      "prompts_per_task": 24,
+      "seeds": 3,
+      "steps": "20 and 40",
+      "layers": 36,
+      "heads": 32,
+      "purpose": "geometry / semantic / reorder / hybrid counterfactual characterization"
+    },
+    {
+      "name": "relation atlas",
+      "tasks": 6,
+      "prompts_per_task": 1,
+      "seeds": 1,
+      "steps": 4,
+      "layers": 7,
+      "heads": 32,
+      "purpose": "directed modality and anchor discovery"
+    },
+    {
+      "name": "timestep trace",
+      "tasks": 1,
+      "prompts_per_task": 24,
+      "seeds": 3,
+      "steps": 20,
+      "layers": 36,
+      "heads": 32,
+      "purpose": "local sparsifiability and step/layout stability"
+    },
+    {
+      "name": "q12 50% GQA quality screen",
+      "tasks": 1,
+      "prompts_per_task": 1,
+      "seeds": 3,
+      "steps": 20,
+      "layers": 36,
+      "heads": 32,
+      "purpose": "latest 0.90 development fidelity point"
+    },
+    {
+      "name": "q12 75% GQA aggressive screen",
+      "tasks": 1,
+      "prompts_per_task": 1,
+      "seeds": 2,
+      "steps": 20,
+      "layers": 36,
+      "heads": 32,
+      "purpose": "provisional 0.80 aggressive mode"
+    },
+    {
+      "name": "H200 kernel microbench",
+      "tasks": 0,
+      "prompts_per_task": 0,
+      "seeds": 0,
+      "steps": "random-tensor benchmark",
+      "layers": "single attention layer",
+      "heads": 32,
+      "purpose": "kernel scaling upper bound; not full Cosmos rollout"
+    }
+  ],
+  "characterization": {
+    "directional_relations": [
+      {
+        "task": "t2vs",
+        "relation_pair": "sound↤vision / vision↤sound",
+        "head_layers": 224,
+        "forward_mass": 0.2625517336372471,
+        "reverse_mass": 0.032236596421189444,
+        "asymmetry_ratio": 8.144524012611615,
+        "ci95_low": 7.139158848577913,
+        "ci95_high": 9.296220159365195,
+        "direction_consistency": 0.9419642857142857
+      },
+      {
+        "task": "robot_forward",
+        "relation_pair": "action↤vision / vision↤action",
+        "head_layers": 224,
+        "forward_mass": 0.28745978823129686,
+        "reverse_mass": 0.02260516575463271,
+        "asymmetry_ratio": 12.71655299286557,
+        "ci95_low": 10.098744222024806,
+        "ci95_high": 16.125940901495234,
+        "direction_consistency": 0.9553571428571429
+      },
+      {
+        "task": "droid_forward",
+        "relation_pair": "action↤vision / vision↤action",
+        "head_layers": 224,
+        "forward_mass": 0.2928512426344315,
+        "reverse_mass": 0.021640421273863952,
+        "asymmetry_ratio": 13.532603590675949,
+        "ci95_low": 10.341017950375393,
+        "ci95_high": 18.0547980300112,
+        "direction_consistency": 0.9464285714285714
+      },
+      {
+        "task": "i2v",
+        "relation_pair": "clean↤noisy / noisy↤clean",
+        "head_layers": 224,
+        "forward_mass": 0.5628263868922844,
+        "reverse_mass": 0.13744270300399772,
+        "asymmetry_ratio": 4.094989217986449,
+        "ci95_low": 3.5924670833152006,
+        "ci95_high": 4.722991595302816,
+        "direction_consistency": 0.9330357142857143
+      }
+    ],
+    "taxonomy": {
+      "specialist": {
+        "count": 929,
+        "share": 0.3770292207792208
+      },
+      "hybrid": {
+        "count": 1127,
+        "share": 0.45738636363636365
+      },
+      "mixer": {
+        "count": 408,
+        "share": 0.16558441558441558
+      }
+    },
+    "taxonomy_total_generator_units": 2464,
+    "dominant_relation_pass_stability": 0.9447037337662337,
+    "cross_task_agreement": [
+      {
+        "dominant_relation_agreement": 0.9910714285714286,
+        "head_layers": 224,
+        "query_modality": "vision.noisy",
+        "task_a": "t2v",
+        "task_b": "t2vs"
+      },
+      {
+        "dominant_relation_agreement": 0.9375,
+        "head_layers": 224,
+        "query_modality": "vision.noisy",
+        "task_a": "t2v",
+        "task_b": "i2v"
+      },
+      {
+        "dominant_relation_agreement": 0.9017857142857143,
+        "head_layers": 224,
+        "query_modality": "vision.noisy",
+        "task_a": "robot_forward",
+        "task_b": "droid_forward"
+      },
+      {
+        "dominant_relation_agreement": 0.8214285714285714,
+        "head_layers": 224,
+        "query_modality": "vision.clean",
+        "task_a": "robot_forward",
+        "task_b": "droid_forward"
+      },
+      {
+        "dominant_relation_agreement": 0.7589285714285714,
+        "head_layers": 224,
+        "query_modality": "action.clean",
+        "task_a": "robot_forward",
+        "task_b": "droid_forward"
+      }
+    ],
+    "anchors": [
+      {
+        "task": "droid_forward",
+        "relation": "generator:action.clean<-DM.action.clean",
+        "attention_mass": 0.3353832033034793,
+        "score_fraction": 0.0018840153076243745,
+        "mass_per_score_share": 178.01511587842487
+      },
+      {
+        "task": "robot_forward",
+        "relation": "generator:action.clean<-DM.action.clean",
+        "attention_mass": 0.352260809364403,
+        "score_fraction": 0.0011677127426653043,
+        "mass_per_score_share": 301.66735061944064
+      },
+      {
+        "task": "t2vs",
+        "relation": "generator:sound.noisy<-DM.sound.noisy",
+        "attention_mass": 0.48889640590406047,
+        "score_fraction": 0.0036596523330283625,
+        "mass_per_score_share": 133.59094291328452
+      }
+    ],
+    "layer_schedule": {
+      "series": 11,
+      "layer0_is_max": 11,
+      "layer35_is_min": 11,
+      "layer30_above_layer24": 10,
+      "median_layer0_mass": 0.5592183702368061,
+      "median_layer35_mass": 0.005874577078919211,
+      "median_layer30_to_24_ratio": 2.9169439140172124
+    },
+    "score_saving_potential": [
+      {
+        "heads": 32,
+        "oracle_block_p99_score_saving": 0.11639727068389914,
+        "oracle_token_p99_score_saving": 0.37075140667944456,
+        "sampled_layers": 7,
+        "strict_skip_score_saving": 0.05894723285251693,
+        "task": "droid_forward"
+      },
+      {
+        "heads": 32,
+        "oracle_block_p99_score_saving": 0.19370328161148873,
+        "oracle_token_p99_score_saving": 0.43293194842444177,
+        "sampled_layers": 7,
+        "strict_skip_score_saving": 0.030991690499441966,
+        "task": "i2v"
+      },
+      {
+        "heads": 32,
+        "oracle_block_p99_score_saving": 0.1330204271059054,
+        "oracle_token_p99_score_saving": 0.38623458849951764,
+        "sampled_layers": 7,
+        "strict_skip_score_saving": 0.048677721709031,
+        "task": "robot_forward"
+      },
+      {
+        "heads": 32,
+        "oracle_block_p99_score_saving": 0.1348598197783284,
+        "oracle_token_p99_score_saving": 0.3886496056468734,
+        "sampled_layers": 7,
+        "strict_skip_score_saving": 0.030519798516860226,
+        "task": "t2v"
+      },
+      {
+        "heads": 32,
+        "oracle_block_p99_score_saving": 0.12193215714927248,
+        "oracle_token_p99_score_saving": 0.3543640344018007,
+        "sampled_layers": 7,
+        "strict_skip_score_saving": 0.032223626813488435,
+        "task": "t2vs"
+      }
+    ]
+  },
+  "trajectory": {
+    "gqa_cancellation_ratio_median": 0.41248437762260437,
+    "local_oracle_coverage": 0.0598488136574074,
+    "coverage_for_1p2x_attention": 0.22387452631772045,
+    "cross_to_self_negative": {
+      "schema_version": 1,
+      "decision": "drop_cross_to_self_transfer_as_primary_algorithm",
+      "retain": [
+        "depth-asymmetric branch scheduling",
+        "direct DM<-AR layer/head/query-tile gating",
+        "independent DM<-DM geometry/semantic archetypes",
+        "LSE-consistent branch merge"
+      ],
+      "drop": [
+        "mandatory deep DM-self anchors selected from shallow DM<-AR mass",
+        "equal-total-tile deep query budgets selected from shallow DM<-AR mass",
+        "head-wise/GQA specialization of the same weak transfer signal"
+      ],
+      "headline_metrics": {
+        "trajectories": 45,
+        "probe_side_effect_ssim": 1.0,
+        "heldout_cross_anchor_omitted_reduction": -0.014390140157141407,
+        "heldout_cross_query_budget_omitted_reduction": -0.020257630390244433,
+        "exact_budget_oracle_min": 0.005871623973103447,
+        "exact_budget_oracle_max": 0.010804894318183263,
+        "position_controlled_raw_mean_correlation": 0.32906473700591404,
+        "position_controlled_residual_mean_correlation": -0.0650082866479926
+      }
+    },
+    "timestep_headline": {
+      "safe_share_step0": 0.03819444444444445,
+      "safe_share_step19": 0.1293402777777778,
+      "safe_share_growth_x": 3.3863636363636362,
+      "safe_set_jaccard_mean": 0.9301660361900596,
+      "anchor_jaccard_mean": 0.9187000487329436,
+      "previous_output_middle_median": 0.245849609375,
+      "previous_output_final_median": 0.3902587890625,
+      "static10_mean_error": 0.04232590399617735,
+      "stage10_mean_error": 0.037328817549600005,
+      "stage10_mean_improvement": 0.11806213157381473,
+      "stage10_p95_improvement": 0.2426530587176211
+    }
+  },
+  "runtime": {
+    "device": "NVIDIA H200 NVL",
+    "definitions": {
+      "attention_speedup": "dense three-way attention latency / sparse amortized attention latency",
+      "e2e_estimate": "Amdahl estimate using Generator share 0.9 and attention FLOP share 0.387",
+      "effective_q12_dm_qk_fraction": "keep + samples/query_block * (1-keep)",
+      "policy_speedup": "36-layer arithmetic mean latency, linearly interpolated at unmeasured 1/8 group fractions"
+    },
+    "engineering_validation": {
+      "as_of": "2026-08-29T07:10:21.616136+00:00",
+      "assessment": "share_with_caveats",
+      "blockers_to_production_claim": [
+        "The q12 quality screen contains one T2V prompt with three seeds, not the multi-task final set.",
+        "Microbenchmarks use random tensors and measure attention only, not a full Cosmos3 rollout.",
+        "The current 36-layer-policy latency is interpolated from 0/25/50/75/100% GQA points.",
+        "All-head sparse quality is not yet validated; its 1.93× result is a kernel upper bound."
+      ],
+      "checks": {
+        "all_benchmark_rows_finite": true,
+        "dense_timing_cv_across_sweeps_by_ar": {
+          "2048": 0.0013543105968477469,
+          "61": 0.005074434748200148
+        },
+        "effective_q12_dm_qk_fraction": 0.263671875,
+        "max_dense_timing_cv_within_ar": 0.005074434748200148,
+        "max_relation_vs_joint_output_relative_l2": 0.007976245135068893,
+        "policy_groups_are_gqa_aligned": true,
+        "policy_layers": 36,
+        "policy_sparse_fraction": 0.5,
+        "quality_min_psnr_db": 25.300178894596975,
+        "quality_min_ssim": 0.9225369526026354,
+        "quality_prompt_count": 1,
+        "quality_seed_count": 3
+      }
+    },
+    "quality_frontier": [
+      {
+        "policy": "q12 · 50% GQA sparse",
+        "sparse_group_fraction": 0.5,
+        "joint_qk_reduction": 0.366798418972332,
+        "attention_speedup": 1.211364587796523,
+        "estimated_e2e_speedup": 1.0647053616511206,
+        "ssim_min": 0.9225369526026354,
+        "ssim_mean": 0.9542218240761081,
+        "psnr_min_db": 25.300178894596975,
+        "prompts": 1,
+        "seeds": 3,
+        "steps": 20,
+        "evidence_status": "validated development screen",
+        "quality_gate": "0.90 development"
+      },
+      {
+        "policy": "q12 · 75% GQA sparse",
+        "sparse_group_fraction": 0.75,
+        "joint_qk_reduction": 0.5501976284584981,
+        "attention_speedup": 1.4070114322437937,
+        "estimated_e2e_speedup": 1.1120428015287653,
+        "ssim_min": 0.8555947600586151,
+        "ssim_mean": 0.8786158308333867,
+        "psnr_min_db": 21.28744594065868,
+        "prompts": 1,
+        "seeds": 2,
+        "steps": 20,
+        "evidence_status": "provisional aggressive screen",
+        "quality_gate": "0.80 aggressive"
+      },
+      {
+        "policy": "100% all-head sparse · best comparable",
+        "sparse_group_fraction": 1.0,
+        "joint_qk_reduction": 0.733596837944664,
+        "attention_speedup": 1.9297502652100247,
+        "estimated_e2e_speedup": 1.2016491299035574,
+        "ssim_min": 0.7697499990072579,
+        "ssim_mean": 0.7697499990072579,
+        "psnr_min_db": 18.438245009933844,
+        "prompts": 1,
+        "seeds": 1,
+        "steps": 20,
+        "evidence_status": "fails 0.80 quality screen",
+        "quality_gate": "none"
+      }
+    ],
+    "allhead_quality_20step": [
+      {
+        "policy": "q8_keep37.5",
+        "steps": 20,
+        "seed": 29,
+        "keep_ratio": 0.375,
+        "global_ssim": 0.6201096550752645,
+        "psnr_db": 16.201825480142627,
+        "comparable": true
+      },
+      {
+        "policy": "q12_keep18.75",
+        "steps": 20,
+        "seed": 29,
+        "keep_ratio": 0.1875,
+        "global_ssim": 0.3986894304631397,
+        "psnr_db": 14.978563801675335,
+        "comparable": true
+      },
+      {
+        "policy": "q16_keep31.25",
+        "steps": 20,
+        "seed": 29,
+        "keep_ratio": 0.3125,
+        "global_ssim": 0.6976351755992557,
+        "psnr_db": 17.280850786158457,
+        "comparable": true
+      },
+      {
+        "policy": "q24_keep25",
+        "steps": 20,
+        "seed": 29,
+        "keep_ratio": 0.25,
+        "global_ssim": 0.5379637403139497,
+        "psnr_db": 15.28799358372876,
+        "comparable": true
+      },
+      {
+        "policy": "q32_keep18.75",
+        "steps": 20,
+        "seed": 29,
+        "keep_ratio": 0.1875,
+        "global_ssim": 0.6462974072159787,
+        "psnr_db": 16.647351004417143,
+        "comparable": true
+      },
+      {
+        "policy": "q40_keep12.5",
+        "steps": 20,
+        "seed": 29,
+        "keep_ratio": 0.125,
+        "global_ssim": 0.41309361157041563,
+        "psnr_db": 14.922158172100445,
+        "comparable": true
+      },
+      {
+        "policy": "q48_keep0",
+        "steps": 20,
+        "seed": 29,
+        "keep_ratio": 0.0,
+        "global_ssim": 0.20597407668232037,
+        "psnr_db": 14.311131389751878,
+        "comparable": true
+      },
+      {
+        "policy": "cache2_gqa100",
+        "steps": 20,
+        "seed": 29,
+        "keep_ratio": null,
+        "global_ssim": 0.7697499990072579,
+        "psnr_db": 18.438245009933844,
+        "comparable": true
+      }
+    ],
+    "excluded_noncomparable_result": {
+      "policy": "q16_allhead_exact_taylor",
+      "global_ssim": 0.826725872607822,
+      "psnr_db": 18.96147941879411,
+      "steps": 4,
+      "seed": 17,
+      "comparable": false,
+      "reason": "4-step rollout; excluded from 20-step quality frontier"
+    },
+    "kernel_scaling": [
+      {
+        "execution": "all sparse",
+        "dm_tokens": 4096,
+        "ar_tokens": 61,
+        "attention_speedup": 1.030988155449294,
+        "joint_qk_reduction": 0.7255232138561463,
+        "output_relative_l2_vs_joint_repair": 0.004377702251076698,
+        "device": "NVIDIA H200 NVL"
+      },
+      {
+        "execution": "all sparse",
+        "dm_tokens": 4096,
+        "ar_tokens": 2048,
+        "attention_speedup": 1.02070759073506,
+        "joint_qk_reduction": 0.49088541666666663,
+        "output_relative_l2_vs_joint_repair": 0.007976245135068893,
+        "device": "NVIDIA H200 NVL"
+      },
+      {
+        "execution": "all sparse",
+        "dm_tokens": 8192,
+        "ar_tokens": 61,
+        "attention_speedup": 1.3199488787265623,
+        "joint_qk_reduction": 0.7308857385193264,
+        "output_relative_l2_vs_joint_repair": 0.0037642652168869972,
+        "device": "NVIDIA H200 NVL"
+      },
+      {
+        "execution": "all sparse",
+        "dm_tokens": 8192,
+        "ar_tokens": 2048,
+        "attention_speedup": 1.3171012098491153,
+        "joint_qk_reduction": 0.5890625,
+        "output_relative_l2_vs_joint_repair": 0.005870315711945295,
+        "device": "NVIDIA H200 NVL"
+      },
+      {
+        "execution": "all sparse",
+        "dm_tokens": 16384,
+        "ar_tokens": 61,
+        "attention_speedup": 1.9297502652100247,
+        "joint_qk_reduction": 0.733596837944664,
+        "output_relative_l2_vs_joint_repair": 0.0035654737148433924,
+        "device": "NVIDIA H200 NVL"
+      },
+      {
+        "execution": "all sparse",
+        "dm_tokens": 16384,
+        "ar_tokens": 2048,
+        "attention_speedup": 1.795419764887594,
+        "joint_qk_reduction": 0.6545138888888888,
+        "output_relative_l2_vs_joint_repair": 0.0045843529514968395,
+        "device": "NVIDIA H200 NVL"
+      }
+    ],
+    "drsa_screen": {
+      "schema_version": 1,
+      "generated_at": "2026-08-29T08:01:14+00:00",
+      "status": "validated_screening_evidence",
+      "scope": {
+        "model": "Cosmos3-Nano",
+        "tasks": [
+          "T2V",
+          "I2V",
+          "DROID forward dynamics"
+        ],
+        "prompts_per_task": 1,
+        "seeds_per_prompt": 1,
+        "seed": 29,
+        "diffusion_steps": 20,
+        "layers": 36,
+        "quality_metric": "global SSIM to the dense same-seed reference",
+        "quality_gate": 0.9,
+        "evidence_level": "screening; not confirmatory or statistically powered"
+      },
+      "validation": {
+        "quality_rows": 9,
+        "all_metrics_finite": true,
+        "all_candidate_videos_present": true,
+        "head_runtime_calls_per_policy": 720,
+        "head_equal_qk_max_spread": 0.0,
+        "directed_equal_qk": {
+          "i2v": {
+            "joint_qk_reduction": 0.008097852912142128,
+            "max_policy_spread": 4.163336342344337e-17
+          },
+          "droid_forward": {
+            "joint_qk_reduction": 0.014718869590815416,
+            "max_policy_spread": 1.214306433183765e-17
+          }
+        },
+        "all_return_codes_zero": true,
+        "bad_completions": [],
+        "no_fatal_log_signatures": true,
+        "bad_logs": []
+      },
+      "head_policy_results": [
+        {
+          "policy": "generic_head",
+          "display_policy": "Generic head policy",
+          "selected_gqa_groups": 144,
+          "total_gqa_groups": 288,
+          "selected_group_fraction": 0.5,
+          "realized_sparse_block_density": 0.25,
+          "measured_dm_self_qk_reduction": 0.375,
+          "measured_joint_generator_qk_reduction": 0.35328753680078506,
+          "global_ssim": 0.9060871464487393,
+          "psnr_db": 22.047870519102798,
+          "quality_gate_0_90": true,
+          "local_risk_sum": 25.951156616210938,
+          "adjusted_risk_sum": 72.41039019022725,
+          "predicted_attention_time_from_lookup": 0.8131790226759225,
+          "predicted_attention_speedup_from_lookup": 1.229741510927455,
+          "mixed_layers": 30,
+          "all_sparse_layers": 3,
+          "runtime_calls": 720,
+          "ar_tokens": 59,
+          "dm_tokens": 960
+        },
+        {
+          "policy": "depth_branch",
+          "display_policy": "Hand depth schedule",
+          "selected_gqa_groups": 144,
+          "total_gqa_groups": 288,
+          "selected_group_fraction": 0.5,
+          "realized_sparse_block_density": 0.25,
+          "measured_dm_self_qk_reduction": 0.375,
+          "measured_joint_generator_qk_reduction": 0.35328753680078506,
+          "global_ssim": 0.8614013954700067,
+          "psnr_db": 20.26870689697415,
+          "quality_gate_0_90": false,
+          "local_risk_sum": 28.95902442932129,
+          "adjusted_risk_sum": 65.85010864097146,
+          "predicted_attention_time_from_lookup": 0.8043816494708899,
+          "predicted_attention_speedup_from_lookup": 1.2431909662009133,
+          "mixed_layers": 27,
+          "all_sparse_layers": 7,
+          "runtime_calls": 720,
+          "ar_tokens": 59,
+          "dm_tokens": 960
+        },
+        {
+          "policy": "drsa_full",
+          "display_policy": "Depth + cost relocation",
+          "selected_gqa_groups": 144,
+          "total_gqa_groups": 288,
+          "selected_group_fraction": 0.5,
+          "realized_sparse_block_density": 0.25,
+          "measured_dm_self_qk_reduction": 0.375,
+          "measured_joint_generator_qk_reduction": 0.35328753680078506,
+          "global_ssim": 0.8582825940636768,
+          "psnr_db": 20.147016796168934,
+          "quality_gate_0_90": false,
+          "local_risk_sum": 31.14698028564453,
+          "adjusted_risk_sum": 68.92634987130788,
+          "predicted_attention_time_from_lookup": 0.785910973879097,
+          "predicted_attention_speedup_from_lookup": 1.2724087501466013,
+          "mixed_layers": 17,
+          "all_sparse_layers": 11,
+          "runtime_calls": 720,
+          "ar_tokens": 59,
+          "dm_tokens": 960
+        }
+      ],
+      "directed_relation_results": [
+        {
+          "task": "droid_forward",
+          "display_task": "DROID action/vision",
+          "policy": "directed_low",
+          "display_policy": "Skip low-mass direction",
+          "comparison": "DROID · Skip low-mass direction",
+          "global_ssim": 0.9969439612425375,
+          "psnr_db": 33.200614225286394,
+          "quality_gate_0_90": true,
+          "measured_dm_self_qk_reduction": 0.020028841531805716,
+          "measured_joint_generator_qk_reduction": 0.014718869590815416,
+          "selected_call_mean_relation_mask": 0.03845537574106714,
+          "selected_runtime_calls": 720,
+          "selected_layers": 36,
+          "ar_tokens": 114,
+          "dm_tokens": 316
+        },
+        {
+          "task": "droid_forward",
+          "display_task": "DROID action/vision",
+          "policy": "reverse_high",
+          "display_policy": "Skip high-mass reverse",
+          "comparison": "DROID · Skip high-mass reverse",
+          "global_ssim": 0.9917987484183147,
+          "psnr_db": 28.927174879892096,
+          "quality_gate_0_90": true,
+          "measured_dm_self_qk_reduction": 0.020028841531805716,
+          "measured_joint_generator_qk_reduction": 0.014718869590815416,
+          "selected_call_mean_relation_mask": 0.03845537574106714,
+          "selected_runtime_calls": 720,
+          "selected_layers": 36,
+          "ar_tokens": 114,
+          "dm_tokens": 316
+        },
+        {
+          "task": "droid_forward",
+          "display_task": "DROID action/vision",
+          "policy": "symmetric_equal_qk",
+          "display_policy": "Symmetric equal-QK",
+          "comparison": "DROID · Symmetric equal-QK",
+          "global_ssim": 0.9830699214009598,
+          "psnr_db": 25.79482357704024,
+          "quality_gate_0_90": true,
+          "measured_dm_self_qk_reduction": 0.020028841531805727,
+          "measured_joint_generator_qk_reduction": 0.014718869590815404,
+          "selected_call_mean_relation_mask": 0.07691075148213428,
+          "selected_runtime_calls": 520,
+          "selected_layers": 26,
+          "ar_tokens": 114,
+          "dm_tokens": 316
+        },
+        {
+          "task": "i2v",
+          "display_task": "I2V clean/noisy",
+          "policy": "directed_low",
+          "display_policy": "Skip low-mass direction",
+          "comparison": "I2V · Skip low-mass direction",
+          "global_ssim": 0.974673844243824,
+          "psnr_db": 24.33634749696495,
+          "quality_gate_0_90": true,
+          "measured_dm_self_qk_reduction": 0.008544921875,
+          "measured_joint_generator_qk_reduction": 0.008097852912142128,
+          "selected_call_mean_relation_mask": 0.05859375,
+          "selected_runtime_calls": 320,
+          "selected_layers": 16,
+          "ar_tokens": 53,
+          "dm_tokens": 960
+        },
+        {
+          "task": "i2v",
+          "display_task": "I2V clean/noisy",
+          "policy": "reverse_high",
+          "display_policy": "Skip high-mass reverse",
+          "comparison": "I2V · Skip high-mass reverse",
+          "global_ssim": 0.7761670164916651,
+          "psnr_db": 15.247712538499831,
+          "quality_gate_0_90": false,
+          "measured_dm_self_qk_reduction": 0.008544921875,
+          "measured_joint_generator_qk_reduction": 0.008097852912142128,
+          "selected_call_mean_relation_mask": 0.05859375,
+          "selected_runtime_calls": 320,
+          "selected_layers": 16,
+          "ar_tokens": 53,
+          "dm_tokens": 960
+        },
+        {
+          "task": "i2v",
+          "display_task": "I2V clean/noisy",
+          "policy": "symmetric_equal_qk",
+          "display_policy": "Symmetric equal-QK",
+          "comparison": "I2V · Symmetric equal-QK",
+          "global_ssim": 0.8805919097579599,
+          "psnr_db": 17.893390458887882,
+          "quality_gate_0_90": false,
+          "measured_dm_self_qk_reduction": 0.008544921875,
+          "measured_joint_generator_qk_reduction": 0.00809785291214217,
+          "selected_call_mean_relation_mask": 0.1171875,
+          "selected_runtime_calls": 180,
+          "selected_layers": 9,
+          "ar_tokens": 53,
+          "dm_tokens": 960
+        }
+      ],
+      "directed_quality_gaps": [
+        {
+          "task": "i2v",
+          "display_task": "I2V clean/noisy",
+          "low_minus_high_ssim": 0.1985068277521589,
+          "low_minus_high_psnr_db": 9.08863495846512,
+          "low_minus_symmetric_ssim": 0.0940819344858641,
+          "low_minus_symmetric_psnr_db": 6.442957038077068,
+          "joint_qk_reduction": 0.008097852912142128
+        },
+        {
+          "task": "droid_forward",
+          "display_task": "DROID action/vision",
+          "low_minus_high_ssim": 0.005145212824222756,
+          "low_minus_high_psnr_db": 4.273439345394298,
+          "low_minus_symmetric_ssim": 0.013874039841577646,
+          "low_minus_symmetric_psnr_db": 7.405790648246153,
+          "joint_qk_reduction": 0.014718869590815416
+        }
+      ],
+      "structural_prior": {
+        "directional_pairs": [
+          {
+            "task": "t2vs",
+            "pair": "sound↤vision / vision↤sound",
+            "head_layers": 224,
+            "left_mass": 0.2625517336372471,
+            "right_mass": 0.032236596421189444,
+            "asymmetry_ratio": 8.144524012611615,
+            "ratio_ci95_low": 7.139158848577913,
+            "ratio_ci95_high": 9.296220159365195,
+            "paired_direction_consistency": 0.9419642857142857
+          },
+          {
+            "task": "robot_forward",
+            "pair": "action↤vision / vision↤action",
+            "head_layers": 224,
+            "left_mass": 0.28745978823129686,
+            "right_mass": 0.02260516575463271,
+            "asymmetry_ratio": 12.71655299286557,
+            "ratio_ci95_low": 10.098744222024806,
+            "ratio_ci95_high": 16.125940901495234,
+            "paired_direction_consistency": 0.9553571428571429
+          },
+          {
+            "task": "droid_forward",
+            "pair": "action↤vision / vision↤action",
+            "head_layers": 224,
+            "left_mass": 0.2928512426344315,
+            "right_mass": 0.021640421273863952,
+            "asymmetry_ratio": 13.532603590675949,
+            "ratio_ci95_low": 10.341017950375393,
+            "ratio_ci95_high": 18.0547980300112,
+            "paired_direction_consistency": 0.9464285714285714
+          },
+          {
+            "task": "i2v",
+            "pair": "clean↤noisy / noisy↤clean",
+            "head_layers": 224,
+            "left_mass": 0.5628263868922844,
+            "right_mass": 0.13744270300399772,
+            "asymmetry_ratio": 4.094989217986449,
+            "ratio_ci95_low": 3.5924670833152006,
+            "ratio_ci95_high": 4.722991595302816,
+            "paired_direction_consistency": 0.9330357142857143
+          }
+        ],
+        "layer_schedule_checks": {
+          "series": 11,
+          "layer0_is_max": 11,
+          "layer35_is_min": 11,
+          "layer30_above_layer24": 10,
+          "median_layer0_mass": 0.5592183702368061,
+          "median_layer35_mass": 0.005874577078919211,
+          "median_layer30_to_24_ratio": 2.9169439140172124
+        },
+        "generator_specialist_share": 0.3770292207792208,
+        "generator_pass_stability": 0.9447037337662337
+      },
+      "decisions": [
+        {
+          "finding": "Directed cross-modal asymmetry",
+          "decision": "KEEP",
+          "implementation": "GQA-group × directed relation skip descriptor with hard anchors",
+          "evidence": "Equal-QK low-direction deletion beats reverse deletion on I2V and DROID.",
+          "paper_role": "Primary novel allocator and characterization result"
+        },
+        {
+          "finding": "Generic head-wise semantic sparsity",
+          "decision": "KEEP AS BASE",
+          "implementation": "q12 sampled-mass block list, full-moment tail, joint-LSE merge",
+          "evidence": "35.3% joint QK reduction with SSIM 0.9061.",
+          "paper_role": "Engineering base; not novelty by itself"
+        },
+        {
+          "finding": "Hand-coded depth risk schedule",
+          "decision": "DROP AS POLICY",
+          "implementation": "Retain only as analysis feature for the trajectory compiler",
+          "evidence": "Equal-QK SSIM falls from 0.9061 to 0.8614.",
+          "paper_role": "Negative result supporting trajectory-global calibration"
+        },
+        {
+          "finding": "Cost-driven sparse-group relocation",
+          "decision": "REWORK",
+          "implementation": "Fit Gram/UCB weights from full rollouts; do not use hand priors alone",
+          "evidence": "Predicted lookup speed rises to 1.27×, but SSIM is only 0.8583.",
+          "paper_role": "Compiler ablation, not current contribution claim"
+        },
+        {
+          "finding": "Symmetric equal-QK relation deletion",
+          "decision": "DIAGNOSTIC ONLY",
+          "implementation": "Use as a control; primary comparison remains low vs reverse direction",
+          "evidence": "It changes layer concentration as well as direction, so it is not the cleanest causal contrast.",
+          "paper_role": "Ablation"
+        },
+        {
+          "finding": "Fused semantic + directed relation sparsity",
+          "decision": "NEXT IMPLEMENTATION",
+          "implementation": "Compose semantic and relation block lists in one joint-online-softmax kernel",
+          "evidence": "Current reference dispatch applies either relation or semantic policy in an overlapping layer, not both.",
+          "paper_role": "Required runtime contribution; combined gain not yet measured"
+        }
+      ],
+      "claim_boundaries": [
+        "Global SSIM is a same-seed pixel-trajectory screening metric, not task success or semantic quality.",
+        "The H200 speed values are lookup-table predictions, not measured production-kernel speedups for these policies.",
+        "Directed relation cuts are modest alone and should be fused with the semantic block-list path.",
+        "The current dispatch cannot apply semantic and directed relation sparsity simultaneously in the same layer."
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "finding": "有向跨模态关系存在 4.09–13.53× 注意力质量不对称",
+      "implementation": "GQA group × directed relation budget/skip，保留 hard anchors",
+      "decision": "KEEP · primary novelty",
+      "evidence_level": "structural pilot + 20-step equal-QK screen",
+      "caveat": "结构性置信区间基于 head-layer 单元；仍缺 24 个独立 prompt 的确认实验"
+    },
+    {
+      "id": "F2",
+      "finding": "关系/层/head 异质且 archetype 跨 step 稳定",
+      "implementation": "离线 head archetype，在线只调 budget/refresh/fallback；按 GQA bucket 执行",
+      "decision": "KEEP · core method",
+      "evidence_level": "2,464 Generator units; 94.5% pass stability",
+      "caveat": "固定 hand depth relocation 在闭环中失败，layer 只能作为 compiler feature"
+    },
+    {
+      "id": "F3",
+      "finding": "action/sound 小关系是高信息密度 dense anchors",
+      "implementation": "action/audio/control/special/physical-time neighbors 强制保留",
+      "decision": "KEEP · merge into semantic method",
+      "evidence_level": "134–302× mass per score share",
+      "caveat": "仍需 equal-score anchor removal 的 task-level counterfactual"
+    },
+    {
+      "id": "F4",
+      "finding": "token oracle 显著强于 natural block oracle",
+      "implementation": "local geometry + query/head/timestep-conditioned semantic block list",
+      "decision": "KEEP · reworked primitive",
+      "evidence_level": "35.4–43.3% token saving vs 11.6–19.4% natural-block saving",
+      "caveat": "naive K-only reorder 失败；semantic reorder 不作为默认运行时"
+    },
+    {
+      "id": "F5",
+      "finding": "局部误差不能单独预测完整 diffusion trajectory 风险",
+      "implementation": "joint-projected error Gram + full-rollout/UCB trajectory compiler",
+      "decision": "KEEP · policy contribution",
+      "evidence_level": "median GQA cancellation ratio 0.412; depth schedule equal-QK quality regression",
+      "caveat": "当前 Gram/UCB 仍缺多任务 confirmatory rollout"
+    },
+    {
+      "id": "F6",
+      "finding": "重要 block/layout 跨 diffusion step 高度稳定，但 output 不可直接复用",
+      "implementation": "stage-wise budget + descriptor/block-list reuse；保留 QK/PV 重算",
+      "decision": "KEEP · system allocator",
+      "evidence_level": "safe-set Jaccard 0.930; anchor Jaccard 0.919",
+      "caveat": "previous-output cache SSIM 0.77–0.80，默认禁用"
+    },
+    {
+      "id": "N1",
+      "finding": "浅层 DM←AR 热块不能可靠预测深层 DM←DM 热块",
+      "implementation": "self/cross 独立选块，仅在 trajectory compiler 中联合校准",
+      "decision": "DROP · primary algorithm",
+      "evidence_level": "position-controlled residual correlation -0.065",
+      "caveat": "保留为负结果与消融"
+    },
+    {
+      "id": "N2",
+      "finding": "全 layer/head/step 统一 sparse 在当前 primitive 下不可行",
+      "implementation": "只把安全 layer-stage cells 编译到 all-sparse kernel bucket",
+      "decision": "DROP · blanket policy",
+      "evidence_level": "可比 20-step all-head 最佳 SSIM 0.770",
+      "caveat": "all-sparse 16K 1.93× 仅是 kernel 上限，不是质量验证后的端到端结果"
+    }
+  ],
+  "data_quality": {
+    "candidate_campaign": {
+      "completion": {
+        "dense": {
+          "elapsed_seconds": 4478.060592412949,
+          "returncode": 0,
+          "specs": 1152
+        },
+        "geometry": {
+          "elapsed_seconds": 13452.061042547226,
+          "returncode": 0,
+          "specs": 1152
+        },
+        "hybrid": {
+          "elapsed_seconds": 13476.289571523666,
+          "returncode": 0,
+          "specs": 1152
+        },
+        "semantic": {
+          "elapsed_seconds": 12626.984377145767,
+          "returncode": 0,
+          "specs": 1152
+        },
+        "semantic_reorder": {
+          "elapsed_seconds": 15595.876997709274,
+          "returncode": 0,
+          "specs": 1152
+        }
+      },
+      "equal_budget_max_density_delta": 0.0,
+      "expected_head_metric_rows": 5308416,
+      "expected_quality_rows": 4608,
+      "expected_runtime_rows": 4976640,
+      "expected_wallclock_rows": 5760,
+      "finite_action_quality": true,
+      "finite_attention_metrics": true,
+      "finite_head_metrics": true,
+      "finite_video_quality": true,
+      "head_metric_rows": 5308416,
+      "heads": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "main_cases_per_task": {
+        "droid_forward": 24,
+        "droid_inverse": 24,
+        "pai_c_blur": 24,
+        "pai_c_depth": 24,
+        "pai_c_edge": 24,
+        "pai_c_seg": 24,
+        "pai_g_i2v": 24,
+        "pai_g_t2v": 24
+      },
+      "missing_outputs": [],
+      "observed_steps_by_phase": {
+        "main20": 20,
+        "stress40": 40
+      },
+      "passed": true,
+      "quality_rows": 4608,
+      "runtime_rows": 4976640,
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "stress_cases_per_task": {
+        "droid_forward": 24,
+        "droid_inverse": 24,
+        "pai_c_blur": 24,
+        "pai_c_depth": 24,
+        "pai_c_edge": 24,
+        "pai_c_seg": 24,
+        "pai_g_i2v": 24,
+        "pai_g_t2v": 24
+      },
+      "tasks": [
+        "droid_forward",
+        "droid_inverse",
+        "pai_c_blur",
+        "pai_c_depth",
+        "pai_c_edge",
+        "pai_c_seg",
+        "pai_g_i2v",
+        "pai_g_t2v"
+      ],
+      "wallclock_rows": 5760
+    },
+    "timestep": {
+      "head_trace": {
+        "rows": 3317760,
+        "expected_rows": 3317760,
+        "grid": {
+          "samples": 24,
+          "seeds": 3,
+          "steps": 20,
+          "layers": 36,
+          "heads": 32,
+          "methods": 2
+        },
+        "duplicate_rows": 0,
+        "required_nulls": 0,
+        "checks": {
+          "row_count_exact": true,
+          "grid_exact": true,
+          "no_duplicate_head_steps": true,
+          "no_required_nulls": true,
+          "numeric_values_finite": true,
+          "probability_and_error_ranges_valid": true
+        },
+        "passed": true
+      },
+      "anchor_trace": {
+        "rows": 85500,
+        "tasks": [
+          "forward_dynamics",
+          "i2v",
+          "inverse_dynamics",
+          "t2v",
+          "t2vs"
+        ],
+        "independent_task_samples": 15,
+        "checks": {
+          "no_duplicate_rows": true,
+          "five_tasks": true,
+          "three_seeds": true,
+          "nineteen_transitions": true,
+          "jaccard_bounded": true
+        },
+        "passed": true
+      },
+      "cache_trace": {
+        "shape": [
+          20,
+          36,
+          8,
+          32
+        ],
+        "metrics": [
+          "anchor_self_drift",
+          "anchor_merged_drift",
+          "previous_self_drift",
+          "previous_merged_drift",
+          "linear_self_drift",
+          "linear_merged_drift",
+          "anchor_lse_drift",
+          "self_mass"
+        ],
+        "complete_20_by_36": true,
+        "finite": true,
+        "step_zero_is_identity_and_excluded_from_reuse_claims": true,
+        "passed": true
+      },
+      "passed": true
+    },
+    "trajectory_integrity": {
+      "samples": 24,
+      "seeds": 3,
+      "steps": 20,
+      "layers": 36,
+      "heads": 32,
+      "methods": 2,
+      "counterfactual_label_rows": 3317760,
+      "gqa_group_rows": 414720,
+      "fingerprint_shape": [
+        72,
+        20,
+        36,
+        32,
+        88
+      ],
+      "gram_shape": [
+        72,
+        20,
+        36,
+        8,
+        8
+      ],
+      "exact_video_matches": {
+        "semantic": 72,
+        "hybrid": 72
+      },
+      "exact_video_match_total": 144
+    },
+    "source_files": 30
+  },
+  "claim_boundaries": [
+    "Paired SSIM/PSNR measure same-seed dense-reference fidelity, not semantic quality or task success.",
+    "H200 microbenchmarks use random tensors and measure attention kernels, not complete Cosmos3 rollouts.",
+    "The 0.90 point covers one T2V prompt across three seeds; the 0.80 point covers two seeds.",
+    "The 4-step all-head SSIM 0.827 result is excluded from the comparable 20-step frontier.",
+    "Final VBench, control, action, and task-success non-inferiority remains unmeasured."
+  ]
+}

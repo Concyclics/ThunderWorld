@@ -1,0 +1,26 @@
+name: Validate evidence snapshot
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile reproducibility scripts
+        run: python -m py_compile scripts/*.py
+      - name: Audit checked-in evidence
+        run: |
+          python scripts/validate_evidence.py \
+            --data-dir data \
+            --output /tmp/thunderworld-validation.json
+      - name: Verify validation receipt is current
+        run: diff -u data/validation_report.json /tmp/thunderworld-validation.json
