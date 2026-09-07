@@ -1,0 +1,52 @@
+{
+  "source": "results/f4/memory_quality_20260907/summary.json",
+  "source_sha256": "859aa69464bc9dbf6f5d8eb0f39e2d4814ff1ae80553c925630677406c79c1af",
+  "scope": "Historical backends; not new portable FFN. Diagnostic scenes.",
+  "scene_ids": [
+    "block_contact",
+    "water_pour",
+    "robot_grasp"
+  ],
+  "generation": {
+    "num_frames": 17,
+    "height": 256,
+    "width": 448,
+    "steps": 35,
+    "guidance_scale": 6.0,
+    "flow_shift": 10.0
+  },
+  "rows": {
+    "bf16": {
+      "ssim": 1.0,
+      "relative_l2": 0.0
+    },
+    "fp8": {
+      "ssim": 0.8639517029126486,
+      "relative_l2": 0.2123534232378006
+    },
+    "fp4": {
+      "ssim": 0.7373632192611694,
+      "relative_l2": 0.31211502353350323
+    },
+    "awq": {
+      "ssim": 0.8857122262318929,
+      "relative_l2": 0.18349005778630575
+    },
+    "awq_cached": {
+      "ssim": 0.8857122262318929,
+      "relative_l2": 0.18349005778630575
+    },
+    "awq_w4a4": {
+      "ssim": 0.8684800664583842,
+      "relative_l2": 0.1939332832892736
+    },
+    "ours_bf16_core": {
+      "ssim": 0.8897378047307333,
+      "relative_l2": 0.18087848524252573
+    },
+    "ours_stream75": {
+      "ssim": 0.866780678431193,
+      "relative_l2": 0.2121285398801168
+    }
+  }
+}

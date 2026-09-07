@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thunderworld-fp4"
+version = "0.1.0"
+description = "Configurable native FP4 streaming attention with block residual repair"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+cuda = ["torch>=2.11,<2.12", "triton>=3.6,<3.7; platform_system == 'Linux'"]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+thunderworld_fp4 = ["presets/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["cuda: requires an explicitly selected SM120 GPU"]

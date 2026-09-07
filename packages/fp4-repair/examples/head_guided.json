@@ -1,0 +1,26 @@
+{
+  "ffn": {
+    "coverage": 1.0
+  },
+  "attention": {
+    "coverage": 0.5,
+    "terms": 3,
+    "head_budgets": [
+      [
+        0,
+        1.0
+      ],
+      [
+        1,
+        0.75
+      ],
+      [
+        2,
+        0.25
+      ]
+    ]
+  },
+  "attention_projection": {
+    "coverage": 1.0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "description": "Dense FP4 baseline without residual repair.",
+  "config": {
+    "coverage": 0,
+    "terms": 3
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "device": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "torch": "2.11.0+cu130",
+  "triton": "3.6.0",
+  "attention_shape": {
+    "M": 128,
+    "N": 1024,
+    "Hq": 8,
+    "Hkv": 2,
+    "D": 128
+  },
+  "linear_shape": {
+    "M": 128,
+    "N": 1024,
+    "K": 1024
+  },
+  "units": "ms",
+  "attention": {
+    "bf16_flash": 0.023383116702353945,
+    "fp4_base": 0.044388166396666005,
+    "balanced": 0.060242071436412296,
+    "quality": 0.06686827650131502,
+    "full_act2": 0.04563626670719398
+  },
+  "linear": {
+    "bf16": 0.01571194247842192,
+    "0": 0.02180590194151933,
+    "0.5": 0.04046968736699248,
+    "1": 0.028867189050099207
+  },
+  "scope": "graph operator timings, activation packing included; shared GPU",
+  "native_fp4_ptx": {
+    "linear": true,
+    "attention": true
+  }
+}

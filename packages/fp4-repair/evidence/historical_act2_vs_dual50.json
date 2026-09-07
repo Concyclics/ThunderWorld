@@ -1,0 +1,39 @@
+{
+  "source": "results/f4/act2_vs_dual50_20260907/summary.json",
+  "source_sha256": "928dd75d8fa40577b1e206fabad5c396ba28f89ea05fef80ebe7c03544a11001",
+  "scope": "Historical legacy CUTLASS projections plus predecessor attention kernel, NOT new portable FFN; observed diagnostic scenes, not held-out.",
+  "summary": {
+    "complete": true,
+    "local_mean_l2": {
+      "full_act2": 0.1475119056801001,
+      "dual50": 0.05824241465112815,
+      "dual50_exact": 0.0648105872484545,
+      "bf16": 0.0017426610817589487
+    },
+    "local_dual50_wins": 24,
+    "local_exact50_wins": 24,
+    "generation": {
+      "full_act2": {
+        "ssim": 0.6413598656654358,
+        "relative_l2": 0.4410361548264821,
+        "seconds": 9.433496333166355,
+        "peak_gib": 22.12169361114502
+      },
+      "dual50": {
+        "ssim": 0.8322700460751852,
+        "relative_l2": 0.2583480527003606,
+        "seconds": 9.583203985169044,
+        "peak_gib": 22.122143745422363
+      }
+    },
+    "generation_scope": "Shared GPU observations, not exclusive performance. Three previously observed diagnostic scenes, not held-out quality.",
+    "full_generation_count": 18,
+    "extra_repair_weight_bytes": 0,
+    "target_resident_bytes": 3914956800,
+    "evidence_sha256": {
+      "local.json": "4ed5228484ba607093deb0d61e4b1cb21256af24938d5d8cf4b79033ac1bfa09",
+      "generation.json": "28b95d17ba5fb82dcbd5545254eb897fae6ebe0aa7686690f3e6e9bc80d656cc",
+      "protocol.json": "668b6c31550d33ced411d584d137bd22a62acf4c7bcc62cad7badbecaac0f22e"
+    }
+  }
+}

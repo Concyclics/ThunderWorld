@@ -1,0 +1,1630 @@
+{
+  "complete": true,
+  "scope": "Shared GPU; tuning observed two local FFN shapes; no end-to-end speedup. Static AV-selected support reused for current robot activations.",
+  "rows": [
+    {
+      "module": "layers.0.mlp_moe_gen.gate_proj",
+      "M": 128,
+      "checks": {
+        "k128_m32_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692389035597444,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m32_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692385543137789,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m64_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692389035597444,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m64_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692385543137789,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m128_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692389035597444,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m128_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692385543137789,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m32_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m32_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0_w0": {
+          "pass": true,
+          "relative_l2": 0.0016696323873475194,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a1_w0": {
+          "pass": true,
+          "relative_l2": 0.0016708032926544547,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 1.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.75_w0": {
+          "pass": true,
+          "relative_l2": 0.0016618589870631695,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.5_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016709626652300358,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.75_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016715744277462363,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.9375_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016753602540120482,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.9375,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.6875_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016692361095920205,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.6875,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0_w0": {
+          "pass": true,
+          "relative_l2": 0.0016696323873475194,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a1_w0": {
+          "pass": true,
+          "relative_l2": 0.0016708032926544547,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 1.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.75_w0": {
+          "pass": true,
+          "relative_l2": 0.0016618589870631695,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.5_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016709626652300358,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.75_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016715744277462363,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.9375_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016753602540120482,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.9375,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.6875_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016692361095920205,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.6875,
+          "actual_w_fraction": 0.0625
+        }
+      },
+      "ms": {
+        "k128_m32_indices_a0.5_w0": {
+          "median": 0.10498390528508005,
+          "runs": [
+            0.09950611213442229,
+            0.10498390528508005,
+            0.10981091611525591
+          ]
+        },
+        "k128_m32_fused_a0.5_w0": {
+          "median": 0.048635626633961995,
+          "runs": [
+            0.048635626633961995,
+            0.04863452949831563,
+            0.08587332494331129
+          ]
+        },
+        "k128_m64_indices_a0.5_w0": {
+          "median": 0.09709912179743202,
+          "runs": [
+            0.09709912179743202,
+            0.10062222990271164,
+            0.08465822370428788
+          ]
+        },
+        "k128_m64_fused_a0.5_w0": {
+          "median": 0.07930714091160648,
+          "runs": [
+            0.12515702543424317,
+            0.07930714091160648,
+            0.048471253315607706
+          ]
+        },
+        "k128_m128_indices_a0.5_w0": {
+          "median": 0.13897158134741128,
+          "runs": [
+            0.14895596567789715,
+            0.12032382833546605,
+            0.13897158134741128
+          ]
+        },
+        "k128_m128_fused_a0.5_w0": {
+          "median": 0.1081366850894952,
+          "runs": [
+            0.09814966569344202,
+            0.1081366850894952,
+            0.11119969840470056
+          ]
+        },
+        "k256_m32_indices_a0.5_w0": {
+          "median": 0.08843727512309557,
+          "runs": [
+            0.08843727512309557,
+            0.08235036280248072,
+            0.09423239373541498
+          ]
+        },
+        "k256_m32_fused_a0.5_w0": {
+          "median": 0.07448821216159396,
+          "runs": [
+            0.07893152861615976,
+            0.07448821216159396,
+            0.07406503117373973
+          ]
+        },
+        "k256_m64_indices_a0.5_w0": {
+          "median": 0.08156570707048688,
+          "runs": [
+            0.08702293305169968,
+            0.08156570707048688,
+            0.06260108509282956
+          ]
+        },
+        "k256_m64_fused_a0.5_w0": {
+          "median": 0.08504105877114214,
+          "runs": [
+            0.0829516451364129,
+            0.08504105877114214,
+            0.08539012379827648
+          ]
+        },
+        "k256_m128_indices_a0.5_w0": {
+          "median": 0.14146979806994303,
+          "runs": [
+            0.14039533177360158,
+            0.14146979806994303,
+            0.18617791551532167
+          ]
+        },
+        "k256_m128_fused_a0.5_w0": {
+          "median": 0.2664148600313676,
+          "runs": [
+            0.268557946054559,
+            0.20474201621809554,
+            0.2664148600313676
+          ]
+        },
+        "k256_m64_fused_a0_w0": {
+          "median": 0.055365734977657184,
+          "runs": [
+            0.046065690653110905,
+            0.055365734977657184,
+            0.05634910892086062
+          ]
+        },
+        "k256_m64_fused_a1_w0": {
+          "median": 0.09398197191102164,
+          "runs": [
+            0.08963027688173147,
+            0.10081551869710287,
+            0.09398197191102164
+          ]
+        },
+        "k256_m64_fused_a0.75_w0": {
+          "median": 0.0791616457358174,
+          "runs": [
+            0.11308172115912804,
+            0.0791616457358174,
+            0.07200174524326518
+          ]
+        },
+        "k256_m64_fused_a0.5_w0.0625": {
+          "median": 0.09064344722319415,
+          "runs": [
+            0.12588498280310506,
+            0.09064344722319415,
+            0.08429946000663398
+          ]
+        },
+        "k256_m64_fused_a0.75_w0.0625": {
+          "median": 0.09380535751423508,
+          "runs": [
+            0.09118361338245225,
+            0.09380535751423508,
+            0.13231746114361348
+          ]
+        },
+        "k256_m64_fused_a0.9375_w0.0625": {
+          "median": 0.09558621800464133,
+          "runs": [
+            0.09558621800464133,
+            0.09343563793151359,
+            0.09733463614075272
+          ]
+        },
+        "k256_m64_fused_a0.6875_w0.0625": {
+          "median": 0.09220746308950183,
+          "runs": [
+            0.09288785276074095,
+            0.059851081371307374,
+            0.09220746308950183
+          ]
+        },
+        "k256_m128_fused_a0_w0": {
+          "median": 0.08767948722839355,
+          "runs": [
+            0.04965995769751699,
+            0.0978041860792372,
+            0.08767948722839355
+          ]
+        },
+        "k256_m128_fused_a1_w0": {
+          "median": 2.34390674829483,
+          "runs": [
+            2.34390674829483,
+            2.525917339324951,
+            2.3222973390059036
+          ]
+        },
+        "k256_m128_fused_a0.75_w0": {
+          "median": 0.20047914802683572,
+          "runs": [
+            0.20047914802683572,
+            0.2104609869808131,
+            0.19410669280261528
+          ]
+        },
+        "k256_m128_fused_a0.5_w0.0625": {
+          "median": 0.232805983413606,
+          "runs": [
+            0.28172084036327544,
+            0.232805983413606,
+            0.21342963718232655
+          ]
+        },
+        "k256_m128_fused_a0.75_w0.0625": {
+          "median": 0.3152113456230659,
+          "runs": [
+            0.3152113456230659,
+            0.22762088399184377,
+            0.33266434513665494
+          ]
+        },
+        "k256_m128_fused_a0.9375_w0.0625": {
+          "median": 0.2553598162154077,
+          "runs": [
+            0.2553598162154077,
+            0.24696758243587466,
+            0.33284799510035024
+          ]
+        },
+        "k256_m128_fused_a0.6875_w0.0625": {
+          "median": 0.2234600577384803,
+          "runs": [
+            0.23396324133261656,
+            0.2234600577384803,
+            0.22308188899870843
+          ]
+        },
+        "bf16": {
+          "median": 0.09270673344532648,
+          "runs": [
+            0.09031664234723231,
+            0.09270673344532648,
+            0.0927928830186526
+          ]
+        }
+      }
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.gate_proj",
+      "M": 512,
+      "checks": {
+        "k128_m32_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692389035597444,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m32_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692385543137789,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m64_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692389035597444,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m64_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692385543137789,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m128_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692389035597444,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m128_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016692385543137789,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m32_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m32_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016709378687664866,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0_w0": {
+          "pass": true,
+          "relative_l2": 0.0016696323873475194,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a1_w0": {
+          "pass": true,
+          "relative_l2": 0.0016708032926544547,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 1.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.75_w0": {
+          "pass": true,
+          "relative_l2": 0.0016618589870631695,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.5_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.001670962548814714,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.75_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016715744277462363,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.9375_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016753602540120482,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.9375,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.6875_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016692361095920205,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.6875,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0_w0": {
+          "pass": true,
+          "relative_l2": 0.0016696323873475194,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a1_w0": {
+          "pass": true,
+          "relative_l2": 0.0016708032926544547,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 1.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.75_w0": {
+          "pass": true,
+          "relative_l2": 0.0016618589870631695,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.5_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.001670962548814714,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.75_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016715744277462363,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.9375_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016753602540120482,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.9375,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.6875_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016692361095920205,
+          "weight_residual_bytes": 1770244,
+          "actual_a_fraction": 0.6875,
+          "actual_w_fraction": 0.0625
+        }
+      },
+      "ms": {
+        "k128_m32_indices_a0.5_w0": {
+          "median": 0.3715379464505899,
+          "runs": [
+            0.3715379464505899,
+            0.3547082161416813,
+            0.37317934903231537
+          ]
+        },
+        "k128_m32_fused_a0.5_w0": {
+          "median": 0.274906800432903,
+          "runs": [
+            0.274906800432903,
+            0.271852460721644,
+            0.32847572631835936
+          ]
+        },
+        "k128_m64_indices_a0.5_w0": {
+          "median": 0.29330854207059764,
+          "runs": [
+            0.29330854207059764,
+            0.26260613974402935,
+            0.32219479737458406
+          ]
+        },
+        "k128_m64_fused_a0.5_w0": {
+          "median": 0.212814645206227,
+          "runs": [
+            0.20723922059342667,
+            0.212814645206227,
+            0.30342515692653427
+          ]
+        },
+        "k128_m128_indices_a0.5_w0": {
+          "median": 0.2708424124919193,
+          "runs": [
+            0.2455423076657483,
+            0.3630146767595689,
+            0.2708424124919193
+          ]
+        },
+        "k128_m128_fused_a0.5_w0": {
+          "median": 0.24286545983676253,
+          "runs": [
+            0.24286545983676253,
+            0.23427670407457418,
+            0.24536145235362805
+          ]
+        },
+        "k256_m32_indices_a0.5_w0": {
+          "median": 0.2768986056401179,
+          "runs": [
+            0.2768986056401179,
+            0.26979443749716114,
+            0.2863579823420598
+          ]
+        },
+        "k256_m32_fused_a0.5_w0": {
+          "median": 0.2170556252047142,
+          "runs": [
+            0.20034955421589917,
+            0.2170556252047142,
+            0.22507148647900693
+          ]
+        },
+        "k256_m64_indices_a0.5_w0": {
+          "median": 0.26140094419725896,
+          "runs": [
+            0.2565852740039564,
+            0.29700871043735083,
+            0.26140094419725896
+          ]
+        },
+        "k256_m64_fused_a0.5_w0": {
+          "median": 0.23123366761350345,
+          "runs": [
+            0.23123366761350345,
+            0.3054372452244614,
+            0.2182168821009194
+          ]
+        },
+        "k256_m128_indices_a0.5_w0": {
+          "median": 0.34554144541422527,
+          "runs": [
+            0.34554144541422527,
+            0.3494103281121505,
+            0.3258537411689758
+          ]
+        },
+        "k256_m128_fused_a0.5_w0": {
+          "median": 0.45708378741615696,
+          "runs": [
+            0.45708378741615696,
+            0.44605734975714434,
+            0.4572182755721243
+          ]
+        },
+        "k256_m64_fused_a0_w0": {
+          "median": 0.17487828203022773,
+          "runs": [
+            0.17487828203022773,
+            0.18509385477412832,
+            0.16892610747238684
+          ]
+        },
+        "k256_m64_fused_a1_w0": {
+          "median": 0.24341728868155643,
+          "runs": [
+            0.2731029883964912,
+            0.23578183050869272,
+            0.24341728868155643
+          ]
+        },
+        "k256_m64_fused_a0.75_w0": {
+          "median": 0.24205361175537107,
+          "runs": [
+            0.218698366800944,
+            0.24205361175537107,
+            0.33728141021728514
+          ]
+        },
+        "k256_m64_fused_a0.5_w0.0625": {
+          "median": 0.22139962396503968,
+          "runs": [
+            0.2190969129151936,
+            0.3214348006248474,
+            0.22139962396503968
+          ]
+        },
+        "k256_m64_fused_a0.75_w0.0625": {
+          "median": 0.261724862723515,
+          "runs": [
+            0.261724862723515,
+            0.33746404905576965,
+            0.2475012139098285
+          ]
+        },
+        "k256_m64_fused_a0.9375_w0.0625": {
+          "median": 0.28143267285996587,
+          "runs": [
+            0.28143267285996587,
+            0.26457682357114903,
+            0.36331744228836393
+          ]
+        },
+        "k256_m64_fused_a0.6875_w0.0625": {
+          "median": 0.24448586406323733,
+          "runs": [
+            0.22498765654911268,
+            0.24448586406323733,
+            0.34617505425574796
+          ]
+        },
+        "k256_m128_fused_a0_w0": {
+          "median": 0.23699336749751393,
+          "runs": [
+            0.25200488697398793,
+            0.23699336749751393,
+            0.22563278035419743
+          ]
+        },
+        "k256_m128_fused_a1_w0": {
+          "median": 10.419689702987672,
+          "runs": [
+            10.419689702987672,
+            9.305747079849244,
+            12.545561695098877
+          ]
+        },
+        "k256_m128_fused_a0.75_w0": {
+          "median": 0.5326760803443799,
+          "runs": [
+            0.5590005321779113,
+            0.5114653214164402,
+            0.5326760803443799
+          ]
+        },
+        "k256_m128_fused_a0.5_w0.0625": {
+          "median": 0.5091338144589777,
+          "runs": [
+            0.5091338144589777,
+            0.5116437049761211,
+            0.4918069552068841
+          ]
+        },
+        "k256_m128_fused_a0.75_w0.0625": {
+          "median": 0.5547221848458954,
+          "runs": [
+            0.4990104241804643,
+            0.5729933507514723,
+            0.5547221848458954
+          ]
+        },
+        "k256_m128_fused_a0.9375_w0.0625": {
+          "median": 0.5878270579922584,
+          "runs": [
+            0.5999149445564517,
+            0.5632519691221176,
+            0.5878270579922584
+          ]
+        },
+        "k256_m128_fused_a0.6875_w0.0625": {
+          "median": 0.5575943676393423,
+          "runs": [
+            0.5575943676393423,
+            0.7121998674729291,
+            0.5439090216337745
+          ]
+        },
+        "bf16": {
+          "median": 0.39305359906163706,
+          "runs": [
+            0.3386841971298744,
+            0.39305359906163706,
+            0.44259762270697234
+          ]
+        }
+      }
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.down_proj",
+      "M": 128,
+      "checks": {
+        "k128_m32_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.001630583661608398,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m32_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016305772587656975,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m64_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.001630583661608398,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m64_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016305772587656975,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m128_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.001630583661608398,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m128_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016305772587656975,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m32_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.00164048932492733,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m32_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016404816415160894,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.00164048932492733,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016404816415160894,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.00164048932492733,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016404816415160894,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0_w0": {
+          "pass": true,
+          "relative_l2": 0.0016456027515232563,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a1_w0": {
+          "pass": true,
+          "relative_l2": 0.001636356464587152,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 1.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.75_w0": {
+          "pass": true,
+          "relative_l2": 0.001633856096304953,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.5_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016445661894977093,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.75_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016414650017395616,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.9375_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.001642004237510264,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.9375,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.6875_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016419588355347514,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.6875,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0_w0": {
+          "pass": true,
+          "relative_l2": 0.0016456027515232563,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a1_w0": {
+          "pass": true,
+          "relative_l2": 0.001636356464587152,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 1.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.75_w0": {
+          "pass": true,
+          "relative_l2": 0.001633856096304953,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.5_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016445661894977093,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.75_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016414650017395616,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.9375_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.001642004237510264,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.9375,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.6875_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016419588355347514,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.6875,
+          "actual_w_fraction": 0.0625
+        }
+      },
+      "ms": {
+        "k128_m32_indices_a0.5_w0": {
+          "median": 0.25169919844596617,
+          "runs": [
+            0.27525214533652026,
+            0.25169919844596617,
+            0.20282807427483637
+          ]
+        },
+        "k128_m32_fused_a0.5_w0": {
+          "median": 0.17435339717238163,
+          "runs": [
+            0.15561661039079938,
+            0.20603735211869362,
+            0.17435339717238163
+          ]
+        },
+        "k128_m64_indices_a0.5_w0": {
+          "median": 0.23626189977944304,
+          "runs": [
+            0.2825934047083701,
+            0.2341439979307113,
+            0.23626189977944304
+          ]
+        },
+        "k128_m64_fused_a0.5_w0": {
+          "median": 0.22656889729116156,
+          "runs": [
+            0.22656889729116156,
+            0.27108331516810824,
+            0.21638153185163225
+          ]
+        },
+        "k128_m128_indices_a0.5_w0": {
+          "median": 0.3334768259966815,
+          "runs": [
+            0.3334768259966815,
+            0.3765345622753275,
+            0.31491691977889447
+          ]
+        },
+        "k128_m128_fused_a0.5_w0": {
+          "median": 0.30932002794944635,
+          "runs": [
+            0.303849761768923,
+            0.30932002794944635,
+            0.3215697385497012
+          ]
+        },
+        "k256_m32_indices_a0.5_w0": {
+          "median": 0.14819632019171736,
+          "runs": [
+            0.14819632019171736,
+            0.1405332653834347,
+            0.1528237404361848
+          ]
+        },
+        "k256_m32_fused_a0.5_w0": {
+          "median": 0.1237393986712147,
+          "runs": [
+            0.1305260229110718,
+            0.1237393986712147,
+            0.11950789845508078
+          ]
+        },
+        "k256_m64_indices_a0.5_w0": {
+          "median": 0.19288014090634922,
+          "runs": [
+            0.18877761683513208,
+            0.19328774269380716,
+            0.19288014090634922
+          ]
+        },
+        "k256_m64_fused_a0.5_w0": {
+          "median": 0.17842005608786998,
+          "runs": [
+            0.17842005608786998,
+            0.17059913350042896,
+            0.18303065433680454
+          ]
+        },
+        "k256_m128_indices_a0.5_w0": {
+          "median": 0.35380726410792424,
+          "runs": [
+            0.4940716633429894,
+            0.35380726410792424,
+            0.33623697941119857
+          ]
+        },
+        "k256_m128_fused_a0.5_w0": {
+          "median": 0.5201933215646183,
+          "runs": [
+            0.5201933215646183,
+            0.5245553802041446,
+            0.5074423902175006
+          ]
+        },
+        "k256_m64_fused_a0_w0": {
+          "median": 0.1289535650516146,
+          "runs": [
+            0.1212074845923973,
+            0.13782604406242235,
+            0.1289535650516146
+          ]
+        },
+        "k256_m64_fused_a1_w0": {
+          "median": 0.17125823143685218,
+          "runs": [
+            0.16738955217249252,
+            0.1975394854991894,
+            0.17125823143685218
+          ]
+        },
+        "k256_m64_fused_a0.75_w0": {
+          "median": 0.19228805204232532,
+          "runs": [
+            0.18087629874547323,
+            0.1988475998242696,
+            0.19228805204232532
+          ]
+        },
+        "k256_m64_fused_a0.5_w0.0625": {
+          "median": 0.18767400986109023,
+          "runs": [
+            0.18767400986109023,
+            0.18734829007964773,
+            0.19969695671317503
+          ]
+        },
+        "k256_m64_fused_a0.75_w0.0625": {
+          "median": 0.2115514722737399,
+          "runs": [
+            0.25334833546688684,
+            0.2115514722737399,
+            0.20231506572050206
+          ]
+        },
+        "k256_m64_fused_a0.9375_w0.0625": {
+          "median": 0.23493424733479817,
+          "runs": [
+            0.289566255049272,
+            0.20575916521476978,
+            0.23493424733479817
+          ]
+        },
+        "k256_m64_fused_a0.6875_w0.0625": {
+          "median": 0.2282697024266364,
+          "runs": [
+            0.20989280721759268,
+            0.28518727128676946,
+            0.2282697024266364
+          ]
+        },
+        "k256_m128_fused_a0_w0": {
+          "median": 0.25968970608066866,
+          "runs": [
+            0.2658732556008004,
+            0.2581034717943844,
+            0.25968970608066866
+          ]
+        },
+        "k256_m128_fused_a1_w0": {
+          "median": 7.555408048629761,
+          "runs": [
+            6.799038887023926,
+            7.555408048629761,
+            8.021955204010009
+          ]
+        },
+        "k256_m128_fused_a0.75_w0": {
+          "median": 0.6234755719294314,
+          "runs": [
+            0.6234755719294314,
+            0.8071749827900871,
+            0.5965018757054064
+          ]
+        },
+        "k256_m128_fused_a0.5_w0.0625": {
+          "median": 0.6028224504910983,
+          "runs": [
+            0.5670182858980619,
+            0.6317890930175781,
+            0.6028224504910983
+          ]
+        },
+        "k256_m128_fused_a0.75_w0.0625": {
+          "median": 0.5932641687064335,
+          "runs": [
+            0.625122920537399,
+            0.5847864216771619,
+            0.5932641687064335
+          ]
+        },
+        "k256_m128_fused_a0.9375_w0.0625": {
+          "median": 0.839037275314331,
+          "runs": [
+            0.862138090133667,
+            0.839037275314331,
+            0.690887106789483
+          ]
+        },
+        "k256_m128_fused_a0.6875_w0.0625": {
+          "median": 0.5879935550689698,
+          "runs": [
+            0.5711958376566569,
+            0.6199576059977213,
+            0.5879935550689698
+          ]
+        },
+        "bf16": {
+          "median": 0.09065338459211526,
+          "runs": [
+            0.13046774921647036,
+            0.09065338459211526,
+            0.09045930994136255
+          ]
+        }
+      }
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.down_proj",
+      "M": 512,
+      "checks": {
+        "k128_m32_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016305869212374091,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m32_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016305804019793868,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m64_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016305869212374091,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m64_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016305804019793868,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m128_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016305869212374091,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k128_m128_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016305804019793868,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m32_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.001640495378524065,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m32_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016404875786975026,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.001640495378524065,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016404875786975026,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_indices_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.001640495378524065,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.5_w0": {
+          "pass": true,
+          "relative_l2": 0.0016404875786975026,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0_w0": {
+          "pass": true,
+          "relative_l2": 0.0016456028679385781,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a1_w0": {
+          "pass": true,
+          "relative_l2": 0.0016363624017685652,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 1.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.75_w0": {
+          "pass": true,
+          "relative_l2": 0.0016338612185791135,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m64_fused_a0.5_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016445678193122149,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.75_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.001641464070416987,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.9375_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016420067986473441,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.9375,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m64_fused_a0.6875_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016419595340266824,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.6875,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0_w0": {
+          "pass": true,
+          "relative_l2": 0.0016456028679385781,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a1_w0": {
+          "pass": true,
+          "relative_l2": 0.0016363624017685652,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 1.0,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.75_w0": {
+          "pass": true,
+          "relative_l2": 0.0016338612185791135,
+          "weight_residual_bytes": 0,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0
+        },
+        "k256_m128_fused_a0.5_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016445678193122149,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.5,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.75_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.001641464070416987,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.75,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.9375_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016420067986473441,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.9375,
+          "actual_w_fraction": 0.0625
+        },
+        "k256_m128_fused_a0.6875_w0.0625": {
+          "pass": true,
+          "relative_l2": 0.0016419595340266824,
+          "weight_residual_bytes": 1769988,
+          "actual_a_fraction": 0.6875,
+          "actual_w_fraction": 0.0625
+        }
+      },
+      "ms": {
+        "k128_m32_indices_a0.5_w0": {
+          "median": 0.36328092752043734,
+          "runs": [
+            0.34327551065032014,
+            0.36328092752043734,
+            0.3735801047885541
+          ]
+        },
+        "k128_m32_fused_a0.5_w0": {
+          "median": 0.29779288074163,
+          "runs": [
+            0.2825397401344119,
+            0.29779288074163,
+            0.3043343070923813
+          ]
+        },
+        "k128_m64_indices_a0.5_w0": {
+          "median": 0.304093490159216,
+          "runs": [
+            0.2756777503273704,
+            0.39317362467447914,
+            0.304093490159216
+          ]
+        },
+        "k128_m64_fused_a0.5_w0": {
+          "median": 0.2742465636309456,
+          "runs": [
+            0.2742465636309456,
+            0.2411083207513294,
+            0.279698639757493
+          ]
+        },
+        "k128_m128_indices_a0.5_w0": {
+          "median": 0.32932648842151346,
+          "runs": [
+            0.32932648842151346,
+            0.3559996311481182,
+            0.32760972609886757
+          ]
+        },
+        "k128_m128_fused_a0.5_w0": {
+          "median": 0.3057381880910773,
+          "runs": [
+            0.3063660671836451,
+            0.3057381880910773,
+            0.29316707577621726
+          ]
+        },
+        "k256_m32_indices_a0.5_w0": {
+          "median": 0.31395381989517834,
+          "runs": [
+            0.38372719307255937,
+            0.31395381989517834,
+            0.2875373652723969
+          ]
+        },
+        "k256_m32_fused_a0.5_w0": {
+          "median": 0.23512629191080728,
+          "runs": [
+            0.23512629191080728,
+            0.32658978381188086,
+            0.2327007979349373
+          ]
+        },
+        "k256_m64_indices_a0.5_w0": {
+          "median": 0.2784796953201294,
+          "runs": [
+            0.37740922254674575,
+            0.27690395467421586,
+            0.2784796953201294
+          ]
+        },
+        "k256_m64_fused_a0.5_w0": {
+          "median": 0.2428346061706543,
+          "runs": [
+            0.24920537167747547,
+            0.2428346061706543,
+            0.23744624261142444
+          ]
+        },
+        "k256_m128_indices_a0.5_w0": {
+          "median": 0.3466443302655461,
+          "runs": [
+            0.37045323535649466,
+            0.3466443302655461,
+            0.32730666073885833
+          ]
+        },
+        "k256_m128_fused_a0.5_w0": {
+          "median": 0.5513665918203501,
+          "runs": [
+            0.5556000998525908,
+            0.5513665918203501,
+            0.5422396087646484
+          ]
+        },
+        "k256_m64_fused_a0_w0": {
+          "median": 0.17536622352406459,
+          "runs": [
+            0.21622671030335508,
+            0.17536622352406459,
+            0.13496110274873932
+          ]
+        },
+        "k256_m64_fused_a1_w0": {
+          "median": 0.2693822150682881,
+          "runs": [
+            0.2693822150682881,
+            0.36869611601898633,
+            0.24184188281788546
+          ]
+        },
+        "k256_m64_fused_a0.75_w0": {
+          "median": 0.2791937421349918,
+          "runs": [
+            0.27394842400270353,
+            0.33435136570649987,
+            0.2791937421349918
+          ]
+        },
+        "k256_m64_fused_a0.5_w0.0625": {
+          "median": 0.2559483362280804,
+          "runs": [
+            0.2559483362280804,
+            0.28032435273095,
+            0.2456442794284305
+          ]
+        },
+        "k256_m64_fused_a0.75_w0.0625": {
+          "median": 0.276265998900406,
+          "runs": [
+            0.25859943149596687,
+            0.277435766805814,
+            0.276265998900406
+          ]
+        },
+        "k256_m64_fused_a0.9375_w0.0625": {
+          "median": 0.29472776254018146,
+          "runs": [
+            0.2787711715698242,
+            0.42499039649963377,
+            0.29472776254018146
+          ]
+        },
+        "k256_m64_fused_a0.6875_w0.0625": {
+          "median": 0.2681922251783957,
+          "runs": [
+            0.2681922251783957,
+            0.21011471478444224,
+            0.2747572373974231
+          ]
+        },
+        "k256_m128_fused_a0_w0": {
+          "median": 0.2731046894618443,
+          "runs": [
+            0.2731046894618443,
+            0.3163924873297942,
+            0.26012593668403355
+          ]
+        },
+        "k256_m128_fused_a1_w0": {
+          "median": 8.302035236358643,
+          "runs": [
+            12.04446725845337,
+            8.302035236358643,
+            7.693721628189087
+          ]
+        },
+        "k256_m128_fused_a0.75_w0": {
+          "median": 0.5900220159756935,
+          "runs": [
+            0.6261036533420369,
+            0.5900220159756935,
+            0.5674354941157971
+          ]
+        },
+        "k256_m128_fused_a0.5_w0.0625": {
+          "median": 0.5678811380940099,
+          "runs": [
+            0.5678811380940099,
+            0.5321055535347231,
+            0.5710017450394169
+          ]
+        },
+        "k256_m128_fused_a0.75_w0.0625": {
+          "median": 0.5656507110595703,
+          "runs": [
+            0.557318115234375,
+            0.5656507110595703,
+            0.6226370477676392
+          ]
+        },
+        "k256_m128_fused_a0.9375_w0.0625": {
+          "median": 0.6461689790089925,
+          "runs": [
+            0.6185762066994944,
+            0.6461689790089925,
+            0.6471009837256537
+          ]
+        },
+        "k256_m128_fused_a0.6875_w0.0625": {
+          "median": 0.6269282735627273,
+          "runs": [
+            0.8706893789357153,
+            0.6269282735627273,
+            0.6130003863367541
+          ]
+        },
+        "bf16": {
+          "median": 0.2697120517492294,
+          "runs": [
+            0.2697120517492294,
+            0.25828027725219727,
+            0.2717244029045105
+          ]
+        }
+      }
+    }
+  ]
+}

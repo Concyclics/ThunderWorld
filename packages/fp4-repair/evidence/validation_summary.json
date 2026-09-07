@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-07",
+  "gpu_physical_index": 0,
+  "tests": {
+    "cpu_config": 16,
+    "cuda": 13,
+    "total": 29
+  },
+  "sanitizers": {
+    "memcheck_errors": 0,
+    "racecheck_errors": 0,
+    "racecheck_warnings": 0
+  },
+  "scope": "bounded local operator correctness; no full-model validation of portable FFN",
+  "environment": {
+    "torch": "2.11.0+cu130",
+    "triton": "3.6.0",
+    "gpu": "RTX PRO 6000 Blackwell Server Edition",
+    "sm": 120
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "complete": true,
+  "gpu": 3,
+  "linear_panel_count": 18,
+  "ffn_chain_panel_count": 6,
+  "native_initial_checks": 32,
+  "native_tuning_checks": 104,
+  "tail_graph_cross_checks": 3,
+  "memcheck_errors": 0,
+  "racecheck_errors": 0,
+  "racecheck_warnings": 0,
+  "linear_l2": {
+    "base": 0.06792385681295984,
+    "full_a": 0.04797122713031294,
+    "k128_static_a0.5": 0.05753455377716619,
+    "k128_residual_a0.5": 0.057495793070259454,
+    "equal1_a0.9375_w0.0625": 0.04684385891154868
+  },
+  "ffn_chain_l2": {
+    "base": 0.13858458905111,
+    "full_a": 0.09603971196093916,
+    "k128_a50": 0.11688384275326094,
+    "k128_a75": 0.10662699657318672,
+    "k128_a75_w6": 0.1030701529355497,
+    "k128_a93_w6": 0.0947940163797067,
+    "k256_a50": 0.11726335949136442,
+    "k256_a75": 0.1068379593684837,
+    "k256_a75_w6": 0.10370413903739102,
+    "k256_a93_w6": 0.09542399302112375
+  },
+  "source_sha256": {
+    "results/f4/ffn_block_repair_20260907/quality_equal.json": "6295a6bd02e2e48afec2900901aca82d51d19591dc54a8c21783df208ef182eb",
+    "results/f4/ffn_block_repair_20260907/benchmark.json": "699991ec48a196a0ec6d7c38288560e6e8cc8fcf4855894417a27429bf4126e6",
+    "results/f4/ffn_block_repair_20260907/tuning.json": "3ccd4f4de977cc26363b964a84e2ea7834e73f99a9701541de280681660eefbd",
+    "results/f4/ffn_block_repair_20260907/ffn_chain.json": "ed5d1cafe0fd09c87f050d9201f3df9440e9ab53eedc3f091e637612d8c3827b",
+    "results/f4/ffn_block_repair_20260907/memcheck.log": "ed34f53515b282dec9d76da2f4f90d615da78f2ff461369fa22254e9173b0d76",
+    "results/f4/ffn_block_repair_20260907/racecheck.log": "7b4dc9d07f7443044d03251d583f7c3373a2aebd4ea78dd97114124841959acc",
+    "experiments/ffn_block_repair_20260907/ffn_chain.py": "427206558c3bc13f9eed1361f48ceaf0c9b238c5746ccffe3d2adfd82b0a78cf",
+    "experiments/ffn_block_repair_20260907/smoke.py": "465205326a2c4b36ebe73608cc541406c06a0a8e7f7c161c223e88bd90093716",
+    "experiments/ffn_block_repair_20260907/benchmark.py": "ec607c80f9b33135310e93f48e40325d2c0091b68061ceeb1f91a052145db3cb",
+    "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+    "experiments/ffn_block_repair_20260907/study.py": "9145caad17d3f530974fae18497bb5debf01eca4930cc23db3b5b7a81dfcb1fa",
+    "experiments/ffn_block_repair_20260907/tune.py": "d669186551ebabd54c3e1cc206bc0bd2f7b216ca37bd3e4e9fa6dfb1e67ebfb0",
+    "experiments/ffn_block_repair_20260907/native_v1.py": "3329472384bea41330eac70b06e81e15ad995882fc03ceed14d8c307e2fcd895"
+  },
+  "limitations": [
+    "previously observed development captures",
+    "local FFN quality only; no full diffusion rollout",
+    "RTN W4 with AWQ prescale, not packed AWQ weights",
+    "shared GPU latency; no stable end-to-end speedup claim"
+  ]
+}
