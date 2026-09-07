@@ -111,3 +111,5 @@ error, trajectory error, and task success remain open.
 ## Configurable FP4 repair runtime
 
 The [standalone FP4 package](packages/fp4-repair/README.md) provides independent FFN, attention core, and projection repair settings, per-head block budgets/masks, a head-atlas adapter, and native SM120 Tensor Core kernels. See [validation and current performance limits](packages/fp4-repair/VALIDATION.md) before use; the new portable FFN has operator validation but no full-model quality claim.
+
+The [FFN block-repair study](docs/FFN_BLOCK_REPAIR_20260907.md) adds K128/K256 activation-channel repair and an offline sparse weight-residual bank, with equal-budget comparisons, full local FFN replay, and native fused kernels. These experimental candidates leave production defaults unchanged.

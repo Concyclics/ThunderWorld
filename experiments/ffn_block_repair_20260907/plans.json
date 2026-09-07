@@ -1,0 +1,14 @@
+{
+  "status": "experimental; requires full diffusion rollout validation",
+  "weight_basis": "local BF16 / AWQ prescale, then RTN W4; not external packed AWQ",
+  "selector": "offline activation-quantization-residual energy times W0 channel energy",
+  "weight_selector": "offline activation second moment times W quantization-residual energy",
+  "activation_support_shared_across_N": true,
+  "weight_tile_N": 128,
+  "profiles": {
+    "quality_equal_full_act2_macs": {"block_K": 128, "activation_coverage": 0.9375, "weight_coverage": 0.0625, "cross_term": false, "interleave": true, "execution_M": 32},
+    "balanced_budget": {"block_K": 128, "activation_coverage": 0.75, "weight_coverage": 0.0625, "cross_term": false, "interleave": true, "execution_M": 32},
+    "coarse_performance_candidate": {"block_K": 256, "activation_coverage": 0.75, "weight_coverage": 0.0625, "cross_term": false, "interleave": true, "execution_M": 64},
+    "no_extra_weight_memory": {"block_K": 128, "activation_coverage": 0.75, "weight_coverage": 0.0, "cross_term": false, "interleave": true, "execution_M": 32}
+  }
+}
