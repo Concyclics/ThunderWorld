@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "description": "Recommended attention tradeoff; FFN configured separately.",
+  "config": {
+    "coverage": 0.5,
+    "terms": 3
+  }
+}

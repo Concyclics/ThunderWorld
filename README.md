@@ -107,3 +107,7 @@ aggregate identities and hashes remain in `data/source_manifest.json`.
 pass the included audit, but the latest quality frontier is still dominated by
 one T2V prompt. Final VBench, control adherence, AV synchronization, action
 error, trajectory error, and task success remain open.
+
+## Configurable FP4 repair runtime
+
+The [standalone FP4 package](packages/fp4-repair/README.md) provides independent FFN, attention core, and projection repair settings, per-head block budgets/masks, a head-atlas adapter, and native SM120 Tensor Core kernels. See [validation and current performance limits](packages/fp4-repair/VALIDATION.md) before use; the new portable FFN has operator validation but no full-model quality claim.

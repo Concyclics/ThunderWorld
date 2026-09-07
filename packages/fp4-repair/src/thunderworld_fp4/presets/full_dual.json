@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "description": "Full first-order dual repair; evaluate full-model quality.",
+  "config": {
+    "coverage": 1,
+    "terms": 3
+  }
+}

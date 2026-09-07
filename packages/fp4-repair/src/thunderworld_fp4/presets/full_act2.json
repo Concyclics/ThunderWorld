@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "description": "Single-sided attention comparison; not the quality default.",
+  "config": {
+    "coverage": 1,
+    "terms": 2
+  }
+}
