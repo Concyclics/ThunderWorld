@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "data_only": true,
+  "model_repo": "nvidia/Cosmos3-Nano",
+  "model_files": [
+    "transformer/diffusion_pytorch_model.safetensors.index.json",
+    "transformer/diffusion_pytorch_model-00001-of-00007.safetensors"
+  ],
+  "base_git_commit": "9711abb09619a6e5e40be9ba0fb71b1fd63a145b",
+  "torch": "2.11.0+cu130",
+  "cuda": "13.0",
+  "export_gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "files": {
+    "ffn_l0_gate.pt": {
+      "bytes": 3225541,
+      "sha256": "2a79104b104d74be1cc07bc5f92dc8eb59b122a4ec8ad66bb74c4c5248ee7e66"
+    },
+    "ffn_l0_up.pt": {
+      "bytes": 3225513,
+      "sha256": "d6cd368eb374472d87e2d3640c8cc94b1cc007b93479fb577c30755728f23118"
+    },
+    "ffn_l0_down.pt": {
+      "bytes": 9582533,
+      "sha256": "d195279c00de51f601ad39a0470f135561f04966ff535420329a1eedab931925"
+    },
+    "attention_av_step0.pt": {
+      "bytes": 9943300,
+      "sha256": "5139303960acc2f8b8d2132b34062a39529b101718d68ea06d5d55fab884613f"
+    },
+    "attention_av_step17.pt": {
+      "bytes": 9943309,
+      "sha256": "374f94f5513b8ca3a5a0d2d7691de237c51fcd8736e9b1f36bce1c640673bcd4"
+    },
+    "attention_av_step34.pt": {
+      "bytes": 9943309,
+      "sha256": "e61a6e1862485dfda5d194776256a495862da9cacafc455fc75320a76722aba0"
+    },
+    "attention_robot_step0.pt": {
+      "bytes": 4512031,
+      "sha256": "58082f91005f8d9537205aa9026a75d2b1e496b83a77b6017d35b49c52a9719c"
+    },
+    "attention_robot_step17.pt": {
+      "bytes": 4512104,
+      "sha256": "25dce409dbd471719018d1327b134d5630a2a0716bc0e0c542b9060c7ffb787a"
+    },
+    "attention_robot_step34.pt": {
+      "bytes": 4512104,
+      "sha256": "00ab94a96e8e0c522c63acc50bd1520311059cb20ed37a78a2be266d0a1053ec"
+    },
+    "head_atlas.json": {
+      "bytes": 8691378,
+      "sha256": "7ca1af1ae40f1e80d7128859795c9bb40cbb481d8bb71784d6c7b5dd7eafd40e"
+    }
+  },
+  "ffn": [
+    {
+      "file": "ffn_l0_gate.pt",
+      "module": "layers.0.mlp_moe_gen.gate_proj",
+      "N": 12288,
+      "K": 4096,
+      "real_rows": 128
+    },
+    {
+      "file": "ffn_l0_up.pt",
+      "module": "layers.0.mlp_moe_gen.up_proj",
+      "N": 12288,
+      "K": 4096,
+      "real_rows": 128
+    },
+    {
+      "file": "ffn_l0_down.pt",
+      "module": "layers.0.mlp_moe_gen.down_proj",
+      "N": 4096,
+      "K": 12288,
+      "real_rows": 128
+    }
+  ],
+  "attention": [
+    {
+      "file": "attention_av_step0.pt",
+      "q_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "kv_shape": [
+        1,
+        2171,
+        8,
+        128
+      ],
+      "source": "results/f4/cosmos3_nano_dev_attention_core_all_layers_true_steps_cond_gpu0.pt"
+    },
+    {
+      "file": "attention_av_step17.pt",
+      "q_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "kv_shape": [
+        1,
+        2171,
+        8,
+        128
+      ],
+      "source": "results/f4/cosmos3_nano_dev_attention_core_all_layers_true_steps_cond_gpu0.pt"
+    },
+    {
+      "file": "attention_av_step34.pt",
+      "q_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "kv_shape": [
+        1,
+        2171,
+        8,
+        128
+      ],
+      "source": "results/f4/cosmos3_nano_dev_attention_core_all_layers_true_steps_cond_gpu0.pt"
+    },
+    {
+      "file": "attention_robot_step0.pt",
+      "q_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "kv_shape": [
+        1,
+        845,
+        8,
+        128
+      ],
+      "source": "results/f4/cosmos3_nano_pai_robot026_dev_attention_core_all_layers_true_steps_cond_gpu0.pt"
+    },
+    {
+      "file": "attention_robot_step17.pt",
+      "q_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "kv_shape": [
+        1,
+        845,
+        8,
+        128
+      ],
+      "source": "results/f4/cosmos3_nano_pai_robot026_dev_attention_core_all_layers_true_steps_cond_gpu0.pt"
+    },
+    {
+      "file": "attention_robot_step34.pt",
+      "q_shape": [
+        1,
+        128,
+        32,
+        128
+      ],
+      "kv_shape": [
+        1,
+        845,
+        8,
+        128
+      ],
+      "source": "results/f4/cosmos3_nano_pai_robot026_dev_attention_core_all_layers_true_steps_cond_gpu0.pt"
+    }
+  ],
+  "weight_basis": "RTN W4 of BF16-rounded local BF16 W / community AWQ prescale, not external packed AWQ weights",
+  "bf16_revision": "411f42a8fdfb8c5b2583cb8786e0938f49796eaa",
+  "awq_prescale_revision": "95b7d2328f8ff8667f2f9c55b03d1af122005c16",
+  "activation_sources": {
+    "calibration": "cosmos3_nano_dev_activations_true_steps_cond_gpu0.pt",
+    "evaluation": "cosmos3_nano_pai_robot026_dev_activations_true_steps_cond_gpu0.pt"
+  },
+  "scope": "Layer-0 FFN and layer-12 attention development panels by default. Repeating rows for timing creates no new quality evidence.",
+  "total_bytes": 68091122
+}

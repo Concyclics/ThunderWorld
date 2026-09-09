@@ -6,3 +6,10 @@ __pycache__/
 dist/
 build/
 *.log
+
+# RTX 5090 receiver-local environments, model data and measurements
+/.venv5090/
+/.cache5090/
+/data_local/
+/models/
+/runs5090/

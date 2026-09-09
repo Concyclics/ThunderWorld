@@ -1,0 +1,269 @@
+{
+  "date": "2026-09-09",
+  "tested_gpu": "RTX PRO 6000 Blackwell Server Edition / SM120, physical GPU0",
+  "rtx5090_tested": false,
+  "torch": "2.11.0+cu130",
+  "triton": "3.6.0",
+  "quick_cases": 7,
+  "additional_tail_cases": 2,
+  "offline_weight_modules_verified": 3,
+  "cpu_config_tests": 16,
+  "main_matrix_commands": 60,
+  "data_bytes": 68091122,
+  "archive_bytes": 49380641,
+  "archive_sha256": "380ef8b0e67c31b94a95fc97e922cb302eae45b4e9c8cb57cb1eaed067f02549",
+  "cases": [
+    {
+      "name": "000_ffn_ffn_l0_gate_a75_w6_m128",
+      "kind": "ffn",
+      "preset": "a75_w6",
+      "shape": {
+        "M": 128,
+        "N": 12288,
+        "K": 4096
+      },
+      "verification": {
+        "decoded_reference_relative_l2": 0.001674792729318142,
+        "bf16_relative_l2": 0.023086003959178925
+      },
+      "source_sha256": {
+        "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+        "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+      }
+    },
+    {
+      "name": "001_ffn_ffn_l0_up_a75_w6_m128",
+      "kind": "ffn",
+      "preset": "a75_w6",
+      "shape": {
+        "M": 128,
+        "N": 12288,
+        "K": 4096
+      },
+      "verification": {
+        "decoded_reference_relative_l2": 0.0016845475183799863,
+        "bf16_relative_l2": 0.02820608951151371
+      },
+      "source_sha256": {
+        "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+        "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+      }
+    },
+    {
+      "name": "002_ffn_ffn_l0_down_a75_w6_m128",
+      "kind": "ffn",
+      "preset": "a75_w6",
+      "shape": {
+        "M": 128,
+        "N": 4096,
+        "K": 12288
+      },
+      "verification": {
+        "decoded_reference_relative_l2": 0.0016565577825531363,
+        "bf16_relative_l2": 0.018130004405975342
+      },
+      "source_sha256": {
+        "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+        "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+      }
+    },
+    {
+      "name": "003_attention_attention_av_step17_balanced_m128",
+      "kind": "attention",
+      "preset": "balanced",
+      "shape": {
+        "M": 128,
+        "N": 2171,
+        "Hq": 32,
+        "Hkv": 8,
+        "D": 128
+      },
+      "verification": {
+        "decoded_reference_relative_l2": 0.0016601738752797246,
+        "bf16_relative_l2": 0.04226149991154671
+      },
+      "source_sha256": {
+        "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+        "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+      }
+    },
+    {
+      "name": "004_attention_attention_av_step17_head_guided_m128",
+      "kind": "attention",
+      "preset": "head_guided",
+      "shape": {
+        "M": 128,
+        "N": 2171,
+        "Hq": 32,
+        "Hkv": 8,
+        "D": 128
+      },
+      "verification": {
+        "decoded_reference_relative_l2": 0.0016603380208835006,
+        "bf16_relative_l2": 0.04085052013397217
+      },
+      "source_sha256": {
+        "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+        "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+      }
+    },
+    {
+      "name": "005_attention_attention_robot_step17_balanced_m128",
+      "kind": "attention",
+      "preset": "balanced",
+      "shape": {
+        "M": 128,
+        "N": 845,
+        "Hq": 32,
+        "Hkv": 8,
+        "D": 128
+      },
+      "verification": {
+        "decoded_reference_relative_l2": 0.0016568488208577037,
+        "bf16_relative_l2": 0.06744098663330078
+      },
+      "source_sha256": {
+        "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+        "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+      }
+    },
+    {
+      "name": "006_attention_attention_robot_step17_head_guided_m128",
+      "kind": "attention",
+      "preset": "head_guided",
+      "shape": {
+        "M": 128,
+        "N": 845,
+        "Hq": 32,
+        "Hkv": 8,
+        "D": 128
+      },
+      "verification": {
+        "decoded_reference_relative_l2": 0.001655993633903563,
+        "bf16_relative_l2": 0.056946009397506714
+      },
+      "source_sha256": {
+        "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+        "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+      }
+    },
+    {
+      "name": "5090-handoff-inner-tail",
+      "kind": "ffn",
+      "preset": "a75_w6",
+      "shape": {
+        "M": 129,
+        "N": 4096,
+        "K": 12288
+      },
+      "verification": {
+        "decoded_reference_relative_l2": 0.0016415268182754517,
+        "bf16_relative_l2": 0.01999824307858944
+      },
+      "source_sha256": {
+        "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+        "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+      }
+    },
+    {
+      "name": "5090-handoff-profile-tail",
+      "kind": "attention",
+      "preset": "full_act2",
+      "shape": {
+        "M": 129,
+        "N": 2171,
+        "Hq": 32,
+        "Hkv": 8,
+        "D": 128
+      },
+      "verification": {
+        "decoded_reference_relative_l2": 0.0016543029341846704,
+        "bf16_relative_l2": 0.12129446864128113
+      },
+      "source_sha256": {
+        "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+        "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+      }
+    }
+  ],
+  "tool_source_sha256": {
+    "verify_data.py": "0998744938d10ff65b1a842b335ad9c1eece9961eaa8bed0ed6480647e602c40",
+    "run_matrix.py": "3893a6ea76165b07bd44e0450ca65bb9b98828c4f4e5f90c8f7bc48599958787",
+    "check_env.py": "c92acc3992b7a4491fdbcac5cd3e6ee99ba6d8563034bddeda9fc705c282fe71",
+    "bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+    "prepare_weights.py": "30472b563abe51de3a467f59ae2a106ab9889c7466f2a9ef7c5bb78624d355ed",
+    "export_data.py": "1e16b02dae6e59eb89e76f4644ca9c3d768cd9388e4b20cf766e28dc30644da6"
+  }
+}
