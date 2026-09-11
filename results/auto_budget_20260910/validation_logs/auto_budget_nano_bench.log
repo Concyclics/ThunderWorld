@@ -1,0 +1,38 @@
+The config attributes {'dtype': 'bfloat16', 'freeze_und': False, 'initializer_range': 0.02, 'joint_attn_implementation': 'two_way', 'max_action_dim': 64, 'max_position_embeddings': 262144, 'model_type': 'qwen3_vl_text', 'position_embedding_type': 'unified_3d_mrope', 'qk_norm': False, 'qk_norm_for_diffusion': True, 'temporal_compression_factor_sound': 1, 'use_cache': True, 'use_moe': True, 'video_temporal_causal': False} were passed to Cosmos3OmniTransformer, but are not expected and will be ignored. Please verify your config.json configuration file.
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 7/7 [00:00<00:00, 212.78it/s]
+nano 960:12288:4096 base ms 0.1358 vs original 1.076
+nano 960:12288:4096 a50 ms 0.191 vs original 1.015
+nano 960:12288:4096 act2 ms 0.2279 vs original 1.025
+nano 960:12288:4096 wgt2 ms 0.2362 vs original 1.101
+nano 960:12288:4096 a50w ms 0.2966 vs original 1.002
+nano 960:12288:4096 dual ms 0.3401 vs original 1.093
+nano 960:4096:12288 base ms 0.1537 vs original 1.007
+nano 960:4096:12288 a50 ms 0.2018 vs original 1.049
+nano 960:4096:12288 act2 ms 0.2743 vs original 0.969
+nano 960:4096:12288 wgt2 ms 0.2756 vs original 1.008
+nano 960:4096:12288 a50w ms 0.3249 vs original 1.048
+nano 960:4096:12288 dual ms 0.4039 vs original 1.004
+nano 316:12288:4096 base ms 0.0555 vs original 1.013
+nano 316:12288:4096 a50 ms 0.0706 vs original 0.994
+nano 316:12288:4096 act2 ms 0.0884 vs original 1.026
+nano 316:12288:4096 wgt2 ms 0.0939 vs original 0.982
+nano 316:12288:4096 a50w ms 0.1125 vs original 0.946
+nano 316:12288:4096 dual ms 0.1342 vs original 1.04
+nano 316:4096:12288 base ms 0.063 vs original 1.444
+nano 316:4096:12288 a50 ms 0.0856 vs original 1.262
+nano 316:4096:12288 act2 ms 0.0919 vs original 1.614
+nano 316:4096:12288 wgt2 ms 0.1099 vs original 1.407
+nano 316:4096:12288 a50w ms 0.1349 vs original 1.429
+nano 316:4096:12288 dual ms 0.1409 vs original 1.669
+nano 1024:12288:4096 base ms 0.1405 vs original 1.082
+nano 1024:12288:4096 a50 ms 0.1976 vs original 0.985
+nano 1024:12288:4096 act2 ms 0.2301 vs original 1.058
+nano 1024:12288:4096 wgt2 ms 0.2502 vs original 1.077
+nano 1024:12288:4096 a50w ms 0.3096 vs original 0.997
+nano 1024:12288:4096 dual ms 0.3507 vs original 1.12
+nano 1024:4096:12288 base ms 0.1575 vs original 1.011
+nano 1024:4096:12288 a50 ms 0.2068 vs original 1.028
+nano 1024:4096:12288 act2 ms 0.2807 vs original 0.957
+nano 1024:4096:12288 wgt2 ms 0.2763 vs original 1.049
+nano 1024:4096:12288 a50w ms 0.3349 vs original 1.063
+nano 1024:4096:12288 dual ms 0.4496 vs original 0.946

@@ -1,0 +1,378 @@
+{
+  "complete": false,
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "scope": "Real model weights, repeated captured 64-row probes at actual M; local quality only. Online packing included. Each winner retimed in randomized order for five rounds.",
+  "rows": [
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.013069665990769863,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.08791833321253459
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.08911522107246594
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.07078625309851862
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1051648958405452
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.09040313582671317
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.06019889121831849
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.15109617916154272
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.12381886432045384
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10119586582601506
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.06870060404952692
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.07213295511452548
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.054561105588587316
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.08161129359326331
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.0749673897458106
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.05082221984863281
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.1768801509632784
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.10396212080250616
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.10469314189667397
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.0662498202978396,
+          0.06629122037153978,
+          0.06637508074442545,
+          0.06628830905121882,
+          0.06592854931579893
+        ],
+        "plane": [
+          0.06011368987265597,
+          0.06021592093155523,
+          0.060235989255603084,
+          0.06013016508083151,
+          0.06036144058089451
+        ],
+        "pair": [
+          0.0479419598348965,
+          0.04803886699319332,
+          0.04801319982066299,
+          0.04802542105733349,
+          0.04807083194265889
+        ]
+      },
+      "median_ms": {
+        "original": 0.06628830905121882,
+        "plane": 0.06021592093155523,
+        "pair": 0.04802542105733349
+      },
+      "speedups": {
+        "plane": 1.1008435647204633,
+        "pair": 1.3802754372956525
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "a50w",
+      "original_bf16_l2": 0.008837235160171986,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10742272966690646
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.09998874321258325
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.09096021024804367
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1278037337569503
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11019013361497358
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.09007038030868922
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1860463179074801
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.15002098485043175
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14455510353555484
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.08834479547316028
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.08340136131144459
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.083753749936126
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.10567054604039047
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.09099553426106771
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.08223645256226321
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.2642650188099254
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.19614630952666076
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.16632503230919998
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.08688009030351015,
+          0.08685843534530348,
+          0.08693919906133338,
+          0.08697551794811688,
+          0.08702781094107657
+        ],
+        "plane": [
+          0.08965713112217605,
+          0.08756061350024721,
+          0.08744715307928194,
+          0.08755350841838083,
+          0.08748043813523214
+        ],
+        "pair": [
+          0.08218339703040209,
+          0.0821932416973692,
+          0.08238361185247248,
+          0.08217242985236936,
+          0.08232132232117796
+        ]
+      },
+      "median_ms": {
+        "original": 0.08693919906133338,
+        "plane": 0.08755350841838083,
+        "pair": 0.0821932416973692
+      },
+      "speedups": {
+        "plane": 0.9929836123286809,
+        "pair": 1.0577414549658293
+      }
+    }
+  ],
+  "sources": {
+    "runs5090/auto_budget_edge_bench/316_2048_9216.pt": "240e46727c2ebbd704cecf68eeee348daaae1e70dbf15da42fcf40ac52403c19"
+  }
+}

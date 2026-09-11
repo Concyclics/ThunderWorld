@@ -1,0 +1,8 @@
+Collecting lpips==0.1.4
+  Downloading lpips-0.1.4-py3-none-any.whl.metadata (10 kB)
+Downloading lpips-0.1.4-py3-none-any.whl (53 kB)
+Installing collected packages: lpips
+Successfully installed lpips-0.1.4
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: /home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/bin/python -m pip install --upgrade pip

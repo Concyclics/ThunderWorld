@@ -1,0 +1,28 @@
+{
+  "model": "edge",
+  "cases": [
+    "policy_observe",
+    "robot_observe",
+    "waterfall"
+  ],
+  "seeds": [
+    6101,
+    6102
+  ],
+  "shape": [
+    4,
+    28,
+    16,
+    6,
+    6
+  ],
+  "source_sha256": {
+    "runs5090/findings_edge_sampling/bf16_robot_observe_seed6101_r0_heads.npz": "afae00bab40796e05eee4043c5bfa709f3b83522a2cecb010630c9d9c258fced",
+    "runs5090/findings_edge_sampling/bf16_robot_observe_seed6102_r0_heads.npz": "d3051d6b89a23f3ed4b353e3e87df0ff39d7ef232a96c6e5a1450875bfe3e9f8",
+    "runs5090/findings_edge_sampling/bf16_waterfall_seed6101_r0_heads.npz": "f5b537fca871662c5a8ed8d486dd7dbe1fea7d14d01d67964c7a586f84b5c726",
+    "runs5090/findings_edge_sampling/bf16_waterfall_seed6102_r0_heads.npz": "150e83c1b64094c98f6286768da7a9687c9e0cf6f53818e826a03bd97b500f76",
+    "runs5090/findings_edge_sampling/bf16_policy_observe_seed6101_r0_heads.npz": "c852931ed4575359308aeadc64036aec7cdaf4ba228b5fe4b12c468fdaf045fc",
+    "runs5090/findings_edge_sampling/bf16_policy_observe_seed6102_r0_heads.npz": "061fa817b3e2dabfffc4b1ced56bea2f3f442233cdd15be3432b2659b8f6dd15"
+  },
+  "scope": "Descriptive per-token density, averaged over available development trajectories and CFG branches; not measured repair benefit. Query-role and key-role are directional. No validation inputs used to fit."
+}

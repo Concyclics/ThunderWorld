@@ -1,17 +1,56 @@
 # ThunderWorld
 
-ThunderWorld studies sparse attention for mixed autoregressive–diffusion (AR–DM)
-world models, using Cosmos3-Nano as the current reference architecture.
+**Start here for another-device research:** [optimization status, measured speedups,
+repair-budget knobs, and runnable handoff](docs/OPTIMIZATION_HANDOFF.md) (2026-09-11).
+Includes versioned Edge/Nano runtime policies and the latest 86-configuration
+A/W fusion audit. Graph/fusion is the execution baseline; experimental pairing
+and quality-calibration paths have explicit evidence boundaries.
 
-> **Working thesis:** world-model sparsity is relation-local, while approximation
-> error is trajectory-global.
+ThunderWorld studies FP4 inference for mixed autoregressive–diffusion (AR–DM)
+world models. The current research direction retains complete low-precision base
+products and uses additional FP4 products to repair selected errors. Layer,
+denoising phase, head, and directed modality structure guide the repair budget.
+Cosmos3-Edge and Cosmos3-Nano are the current integration targets.
 
-This repository is an audited evidence snapshot as of **2026-08-29**. It records
-what the experiments currently support, what failed, which speed numbers are
-measured kernel results versus estimates, and what must still be validated before
-making a publication-scale acceleration claim.
+**Integrated paper report (2026-09-11):** [motivation, contributions, methodology, implementation evidence, and AI-generated architecture figure](reports/thunderworld_paper_20260911/REPORT.md), with [HTML](reports/thunderworld_paper_20260911/REPORT.html) and [PDF](reports/thunderworld_paper_20260911/REPORT.pdf) editions.
 
-## Current bottom line
+**Current design (2026-09-10):** [iterFP4 method, implementation audit, and evidence boundaries](docs/THUNDERWORLD_ITERFP4_DESIGN.md)
+and [implementation priorities, evaluation matrix, and demo plan](docs/ITERFP4_IMPLEMENTATION_PLAN.md).
+The distribution-aware quantizer and complete structure-driven repair policy are
+planned work. The existing end-to-end pilot uses RTN W4 + full activation repair;
+it does not yet validate the complete proposed method.
+
+RTX 5090 local kernel optimization (2026-09-09): [results and reproduction](docs/RTX5090_RESULTS.md),
+[60-case latency table](results/rtx5090_20260909/TABLE.md), and
+[tuned launch settings](results/rtx5090_20260909/recommended.json).
+These are operator and local FFN measurements, not full-model generation speedups.
+
+Cosmos3-Edge / Nano end-to-end Generator comparison (2026-09-10):
+[measured speed, memory, and video consistency](docs/COSMOS3_E2E_5090.md), with
+[reproducible full-pipeline adapters](tools/cosmos_e2e/README.md).
+
+Fresh full-step findings and quality ablations (2026-09-10):
+[layer/modality findings, head trajectories, and temporal reuse](docs/FINDINGS_RESAMPLING_20260910.md),
+with [sampling and ablation tools](tools/finding_resample/README.md).
+
+Automatic FFN repair budgets and hardware profiling (2026-09-10):
+[phase/layer allocation, quality gates, and Tensor Core measurements](docs/AUTO_BUDGET_5090_20260910.md),
+with [calibration and execution tools](tools/auto_budget/README.md).
+
+Parameter and overlap audit (2026-09-11):
+[available knobs, remaining bottlenecks, and measured SIMT/GEMM concurrency](docs/PARAMETERS_AND_OVERLAP_5090_20260911.md).
+
+CUDA Graph, FFN fusion, and shape-dependent double buffering (2026-09-11):
+[implementation, equal-output comparisons, and measured limits](docs/GRAPH_FUSION_5090_20260911.md).
+
+> **Working thesis:** retain dense FP4 base computation, allocate precision repair
+> using world-model structure, and validate error over complete trajectories.
+
+The repository also preserves the audited sparse-attention evidence snapshot
+as of **2026-08-29**. Those experiments remove attention work; their quality and
+speed results must not be attributed to the newer FP4 precision-repair method.
+
+## Historical sparse-attention results (2026-08-29)
 
 | Operating point | Evidence | Joint-QK reduction | 16K attention speedup | Quality screen | Status |
 | --- | --- | ---: | ---: | ---: | --- |
@@ -30,10 +69,11 @@ every layer, head, and diffusion step sparse.
 
 ![ThunderWorld finding evidence overview](figures/finding-evidence-overview.png)
 
-## Retained publication contributions
+## Historical sparse-attention research components
 
-1. **Relation/head/modality characterization.** Directed modality relations are
-   4.09–13.53× asymmetric; 37.7% of Generator head-relation units are
+1. **Relation/head/modality characterization.** Historical directed row-mass
+   ratios are 4.09–13.53×; their token-count normalization is qualified in the
+   [fresh resampling](docs/FINDINGS_RESAMPLING_20260910.md). 37.7% of Generator head-relation units are
    specialists, 45.7% hybrid, and only 16.6% mixers; action/audio self-relations
    are high-information dense anchors.
 2. **Interaction-aware trajectory compiler.** Head-wise measurements are
@@ -44,7 +84,7 @@ every layer, head, and diffusion step sparse.
    directed relation skips, and cross-step reuse share one online-softmax state,
    so DM←DM and DM←AR preserve their original joint normalization.
 
-## Important negative results
+## Historical sparse-attention negative results
 
 - Shallow DM←AR hot blocks do not predict deep DM←DM hot blocks after position
   control: residual correlation is -0.065. The two branches must select blocks
@@ -60,10 +100,16 @@ every layer, head, and diffusion step sparse.
 
 ## Repository map
 
+- [`docs/THUNDERWORLD_ITERFP4_DESIGN.md`](docs/THUNDERWORLD_ITERFP4_DESIGN.md) —
+  current project thesis, code audit, related work, and hardware claim boundaries.
+- [`docs/ITERFP4_IMPLEMENTATION_PLAN.md`](docs/ITERFP4_IMPLEMENTATION_PLAN.md) —
+  planned implementation, calibration artifacts, experiments, and three demos.
+- [`docs/COSMOS3_E2E_5090.md`](docs/COSMOS3_E2E_5090.md) — measured Edge/Nano
+  Generator pilot, including quality limitations and negative results.
 - [`docs/EXPERIMENTAL_FINDINGS.md`](docs/EXPERIMENTAL_FINDINGS.md) — complete
-  evidence narrative, definitions, and claim boundaries.
+  historical sparse-attention evidence, definitions, and claim boundaries.
 - [`docs/METHOD_AND_IMPLEMENTATION.md`](docs/METHOD_AND_IMPLEMENTATION.md) —
-  retained algorithm/runtime design and engineering decisions.
+  historical sparse-attention algorithm/runtime design and engineering decisions.
 - [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) — source inventory,
   regeneration commands, and validation rules.
 - [`reports/thunderworld-current-evidence.html`](reports/thunderworld-current-evidence.html)
@@ -101,7 +147,7 @@ The public bundle intentionally excludes model weights, datasets, generated
 videos, raw attention traces, and multi-gigabyte Parquet files. Their reviewed
 aggregate identities and hashes remain in `data/source_manifest.json`.
 
-## Confidence
+## Confidence of the historical snapshot
 
 **Share with caveats.** The calculations and experiment-family comparability
 pass the included audit, but the latest quality frontier is still dominated by

@@ -1,0 +1,60 @@
+{
+  "scope": "Local kernel/operator validation, not generation quality",
+  "input_files_verified": 10,
+  "cuda_suite": {
+    "passed": 107,
+    "log": "validation_logs/tests_complete.log"
+  },
+  "memcheck": {
+    "passed": 79,
+    "deselected": 12,
+    "errors": 0,
+    "log": "validation_logs/memcheck_complete.log"
+  },
+  "racecheck": {
+    "passed": 79,
+    "deselected": 12,
+    "hazards": 0,
+    "errors": 0,
+    "warnings": 0,
+    "log": "validation_logs/racecheck_complete.log"
+  },
+  "final_v1": {
+    "cases": 60,
+    "decoded_and_bf16_guard": "passed",
+    "current_measured_source_hashes": "matched",
+    "decoded_error_max": 0.0016955678584054112,
+    "bf16_error_increase_max": 8.568167686462402e-08
+  },
+  "regressions": {
+    "cases": 90,
+    "decoded_and_bf16_guard": "passed",
+    "current_measured_source_hashes": "matched",
+    "decoded_error_max": 0.0016769375652074814,
+    "bf16_error_increase_max": 8.791685104370117e-07
+  },
+  "diagnostics": {
+    "cases": 12,
+    "decoded_and_bf16_guard": "passed",
+    "current_measured_source_hashes": "matched",
+    "decoded_error_max": 0.0016845471691340208,
+    "bf16_error_increase_max": 2.775341272354126e-07
+  },
+  "local_ffn_chain": {
+    "cases": 12,
+    "step_checks": 36,
+    "bf16_error_increase_max": 6.351619958877563e-07
+  },
+  "historical_evidence_audit": {
+    "passed": 15,
+    "total": 15,
+    "file": "evidence_validation.json",
+    "note": "Historical snapshot timestamp is retained by the reproducible audit."
+  },
+  "nsight_full_profiles": {
+    "completed": 6,
+    "clock_control": "none",
+    "counter_summary": "hardware_summary.json",
+    "raw_metrics_and_logs": "raw/profiles_final/"
+  }
+}

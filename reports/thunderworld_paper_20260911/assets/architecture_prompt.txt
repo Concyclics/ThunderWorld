@@ -1,0 +1,33 @@
+Use case: infographic-diagram.
+Create one polished academic architecture overview figure for a machine learning systems paper, wide landscape 16:9, high resolution, white background, restrained navy/teal/amber palette, crisp flat vector-like shapes, generous whitespace, precise readable English labels only. No photography, 3D, gradients, decorative circuits, logos, benchmark charts, or performance numbers. All arrows must have clear directions and must not cross labels.
+
+Title: "ThunderWorld"
+Subtitle: "Dense FP4 base + budgeted precision repair"
+
+Layout: two main horizontal lanes, and a distinctly separate narrow bottom roadmap lane. Strong left-to-right hierarchy. Visually separate OFFLINE preparation from ONLINE execution with a horizontal divider.
+A small top-right legend: solid teal = "Implemented"; amber dashed = "Research roadmap".
+
+OFFLINE lane:
+Left card "Calibration traces" with small lines "model / task / layer / phase / CFG" and "local error + shape latency".
+An arrow to central card "Budget compiler" with small lines "A / W repair tiers" and "quality gate + uniform fallback".
+Arrow to right card "Frozen repair schedule".
+A separate compact card "Weight preparation" with "RTN FP4: W0 + W1", with its own downward arrow to the online FP4 computation. The Frozen repair schedule also points downward to online tile selection. Do not connect roadmap features as if they are already implemented.
+
+ONLINE lane occupies the central, largest area, clearly titled "Cosmos3 Generator: current FFN path".
+Left card "Current activations A".
+Arrow into "Quantize + select" with small lines "A0 + A1", "current-input tile masks", "global scale".
+Arrow into a large grouped area titled "Native FP4 Tensor Core products". Inside, three parallel cards:
+1. large teal card "A0 W0" with "dense base — always";
+2. smaller card "A1 W0" with "selected A repair";
+3. smaller card "A0 W1" with "selected W repair".
+The last two cards display a small rectangular tile grid with some tiles highlighted, showing precision-repair selection. The dense base card has a fully filled grid. These are selected repair products, not deleted base attention connections. All three product cards point to one summation node.
+Then arrow into "FP32 accumulation" followed by "BF16 output".
+A thin surrounding execution band says "Phase / shape / CFG CUDA Graphs · Pointwise + amax fusion".
+A side annotation in the same solid implemented styling says "BF16 attention and nonlinear operations retained".
+At the far right, an arrow to a compact card "Denoising + decoding" with small lines "video / action" and "audio: Nano only".
+No old-output cache loop. Explicit small text below current activations: "Fresh values at every step".
+
+BOTTOM separated roadmap lane, amber dashed rounded rectangle, title "Research roadmap — not yet validated end to end".
+Three short items, each with a small concept icon: "Repair-aware first-pass quantization"; "Head / modality guided attention repair"; "Energy + cross-device validation".
+At very bottom a subtle single-line caption: "Current evidence: RTX 5090 · Cosmos3-Edge / Nano · FFN repair with BF16 attention".
+Make a beautiful paper-ready systems figure with clean typography, balanced spacing, easily traceable arrows. Do not add unsupported quality, energy, speed, device-portability, or novelty claims. Preserve all formulas and status distinctions exactly.

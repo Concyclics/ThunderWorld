@@ -1,0 +1,15 @@
+{
+  "tools/auto_budget/probe_overlap.py": "77c1b2cfe432b9903ddfccc57dfadd3713b57f4701ba4f520db78e8fa5b3ff47",
+  "tools/auto_budget/analyze_overlap.py": "edef678215c99df63c47f19ea724e99ea555fd99de76c6db99b59c6c7b925a41",
+  "tools/auto_budget/dynamic.py": "be6c642e566fe1d3bac6d219e6d2b6df3b6d6fc83af89c19f416b6d271cb9899",
+  "experiments/ffn_block_repair_20260907/native.py": "491c933fce1a29559fdb1a8a3792fa765d4cf266fb84ed831d98ad3c9a93af02",
+  "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+  "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+  "packages/fp4-repair/src/thunderworld_fp4/config.py": "cafe2306ee6ba30f0fb7fa9bc694e4e9297cc1744a0715263e35789bdc9f983e",
+  "tools/cosmos_e2e/graph.py": "97316373a994caefb8a17ed7dcbba4d9a6206e6abf8800ae3728f0d84994b28d",
+  "runs5090/auto_budget_edge_bench/benchmark.json": "14c841e6309e9412d13ef4ca9fa57dd9610f0ddcb0fa5bf1b0c543d5d18a7e82",
+  "runs5090/auto_budget_nano_bench/benchmark.json": "66ad2314f27f42b06937615d707ea6a46a42328ddb3e87c45561b9407c83cb31",
+  "runs5090/auto_budget_profiles/hardware.json": "43b8e8c52c517c714da50109087bc0ae9f3b511353dbd7c0b54ddba67054a5b6",
+  "results/auto_budget_20260910/kernels.csv": "75ed121eaea2cdd7b24c0d20378619109d71166a6e21d27c9768e8bd7acc1cb0",
+  "docs/PARAMETERS_AND_OVERLAP_5090_20260911.md": "4a0a3216154b5edbe36caa7269488d62c3d3742c71b9853712315cf4941798df"
+}

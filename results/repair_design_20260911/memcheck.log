@@ -1,0 +1,93 @@
+========= COMPUTE-SANITIZER
+{
+  "passed": true,
+  "ffn_cases": [
+    {
+      "m": 1,
+      "tier": "wgt2",
+      "pair": false,
+      "decoded_ref_l2": 0.0018542290199548006,
+      "graph_current_input": true
+    },
+    {
+      "m": 1,
+      "tier": "wgt2",
+      "pair": true,
+      "decoded_ref_l2": 0.00166093441657722,
+      "graph_current_input": true
+    },
+    {
+      "m": 1,
+      "tier": "a50w",
+      "pair": false,
+      "decoded_ref_l2": 0.0016349049983546138,
+      "graph_current_input": true
+    },
+    {
+      "m": 1,
+      "tier": "a50w",
+      "pair": true,
+      "decoded_ref_l2": 0.001726393005810678,
+      "graph_current_input": true
+    },
+    {
+      "m": 1,
+      "tier": "dual",
+      "pair": false,
+      "decoded_ref_l2": 0.0016603750409558415,
+      "graph_current_input": true
+    },
+    {
+      "m": 1,
+      "tier": "dual",
+      "pair": true,
+      "decoded_ref_l2": 0.0018527160864323378,
+      "graph_current_input": true
+    },
+    {
+      "m": 257,
+      "tier": "wgt2",
+      "pair": false,
+      "decoded_ref_l2": 0.0016618375666439533,
+      "graph_current_input": true
+    },
+    {
+      "m": 257,
+      "tier": "wgt2",
+      "pair": true,
+      "decoded_ref_l2": 0.0016693699872121215,
+      "graph_current_input": true
+    },
+    {
+      "m": 257,
+      "tier": "a50w",
+      "pair": false,
+      "decoded_ref_l2": 0.0016607745783403516,
+      "graph_current_input": true
+    },
+    {
+      "m": 257,
+      "tier": "a50w",
+      "pair": true,
+      "decoded_ref_l2": 0.0016572412569075823,
+      "graph_current_input": true
+    },
+    {
+      "m": 257,
+      "tier": "dual",
+      "pair": false,
+      "decoded_ref_l2": 0.001662575756199658,
+      "graph_current_input": true
+    },
+    {
+      "m": 257,
+      "tier": "dual",
+      "pair": true,
+      "decoded_ref_l2": 0.001654505031183362,
+      "graph_current_input": true
+    }
+  ],
+  "attention_mask_full_empty_equivalence": true,
+  "mixed_role_tail_quota": true
+}
+========= ERROR SUMMARY: 0 errors

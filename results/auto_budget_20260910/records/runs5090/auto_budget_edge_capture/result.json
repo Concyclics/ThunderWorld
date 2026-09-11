@@ -1,0 +1,192 @@
+{
+  "complete": true,
+  "model": "edge",
+  "model_config": {
+    "_class_name": "Cosmos3OmniTransformer",
+    "_diffusers_version": "0.40.0.dev0",
+    "action_dim": 64,
+    "action_gen": true,
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "backbone_type": "cosmos3_edge_nemotron_dense",
+    "base_fps": 24,
+    "enable_fps_modulation": true,
+    "head_dim": 128,
+    "hidden_act": "relu2",
+    "hidden_size": 2048,
+    "intermediate_size": 9216,
+    "latent_channel": 48,
+    "latent_patch_size": 2,
+    "num_attention_heads": 16,
+    "num_embodiment_domains": 32,
+    "num_hidden_layers": 28,
+    "num_key_value_heads": 8,
+    "patch_latent_dim": 192,
+    "qk_norm_for_text": false,
+    "rms_norm_eps": 1e-05,
+    "rope_axes_dim": [
+      24,
+      20,
+      20
+    ],
+    "rope_scaling": {
+      "mrope_section": [
+        24,
+        20,
+        20
+      ]
+    },
+    "rope_theta": 100000000,
+    "sound_dim": null,
+    "sound_gen": false,
+    "sound_latent_fps": 25,
+    "temporal_compression_factor": 4,
+    "timestep_scale": 0.001,
+    "unified_3d_mrope_reset_spatial_ids": true,
+    "unified_3d_mrope_temporal_modality_margin": 15000,
+    "use_und_k_norm_for_gen": true,
+    "vocab_size": 131072
+  },
+  "args": {
+    "model": "edge",
+    "output": "runs5090/auto_budget_edge_capture",
+    "cases": [
+      "robot_observe",
+      "policy_observe"
+    ],
+    "seeds": [
+      7101
+    ],
+    "steps": 35,
+    "sample": false,
+    "samples_per_role": 32,
+    "modes": [
+      "bf16"
+    ],
+    "rounds": 1,
+    "policy": null,
+    "budget_policy": null,
+    "capture_budget": "data_local/auto_budget_edge_capture"
+  },
+  "cases": [
+    {
+      "id": "robot_observe",
+      "task": "i2v",
+      "split": "development",
+      "image": "data_local/e2e_inputs/robot_153.jpg",
+      "prompt": "A stationary camera observes a robot arm moving smoothly toward an object on the table. The lighting and background remain unchanged.",
+      "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+    },
+    {
+      "id": "policy_observe",
+      "task": "policy",
+      "split": "development",
+      "image": "data_local/e2e_inputs/robot_153.jpg",
+      "prompt": "Move the robot gripper toward the object on the table.",
+      "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+    }
+  ],
+  "source_sha256": {
+    "tools/finding_resample/test_runtime.py": "73e78bca4db70efbf4180f15994df61543ddf739938811512fa8f8d0d4f3b44c",
+    "tools/finding_resample/validate.py": "f1fb47ec11813376fc42d1278cdb610445aaf829ac9ca6e6ace6f89bed02d12d",
+    "tools/finding_resample/ffn.py": "ebf8124400f2a63cbe57acea64f6bcb779ae86f129f932a66d1268110f5685ff",
+    "tools/finding_resample/analyze.py": "f4d5b882a0b9017c5a5db7e310392fad6df9e4dc10658eb655f65cb9e17e6b87",
+    "tools/finding_resample/archive.py": "fdbe8d27f7816346a281d4b7045b9e8b88eaead13117705e1cf97880e595e691",
+    "tools/finding_resample/validate_postprocessing.py": "bdc6ac0bc7b69f5a21d90479f4ca46ec44b5262bcc58b36801312c3bd6926b2e",
+    "tools/finding_resample/decode_audio.py": "e3c203bb0d68d5dd302c3fd4e1640217fdb77ae0bd8cd6e0e4c92cf8490cbc1d",
+    "tools/finding_resample/merge_sampling.py": "934f0c43690cfd8a105d0257f392628b2c1ce4ecd4fb9f58ce97dc53b408229c",
+    "tools/finding_resample/summarize_ablation.py": "587e1b04da99d382b7d46b4f98b6627a11f736cfadb0076adfe4accbaccc7bc9",
+    "tools/finding_resample/perceptual.py": "cd72fb5373edbe819090ca45bcc2f8236c73b58f8ba0654cb3c95f8356f61003",
+    "tools/finding_resample/trajectory_error.py": "7c36e853d62b471067caeca418bd3c137833fe8113485e8ff25014f1c32ebb58",
+    "tools/finding_resample/run.py": "f252d04677739665b1c120548d02d3deb9ff5271fc19e6abe43469c8b5bc4277",
+    "tools/finding_resample/runtime.py": "a638a099ec56a62c671c0daf712db38d6bdcdd817eb09ae3d394579f0028b2f2",
+    "tools/auto_budget/allocate.py": "0f7adcb7f704161312ae7b844150d2114e1a6118475a6285695a4c4215896018",
+    "tools/auto_budget/capture.py": "94661543f92a7a2695b1797121f9a65c3cb71a50011d8914349964a67a235779",
+    "tools/auto_budget/test_budget.py": "dc33403a3ce0c9ab0de5abad293ce8aff2a85506be96ce7bb31177cc2e8b57bb",
+    "tools/auto_budget/dynamic.py": "e7d5ea2137d53df078ebb475f099fefa2a2a47032fd34342a2c80a16852abdfb",
+    "tools/auto_budget/calibrate.py": "92f950c2e0ae9a24aa33c25a32876a4f90a88ffb30f17a3b5883a4bf10d6836b",
+    "experiments/ffn_block_repair_20260907/native.py": "491c933fce1a29559fdb1a8a3792fa765d4cf266fb84ed831d98ad3c9a93af02",
+    "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+    "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "1c3fc2d2d6652e06862e2fa139d753fdcca8576fb9a7f7b64f7b7b2cfcd07de9",
+    "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+    "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+    "packages/fp4-repair/src/thunderworld_fp4/config.py": "cafe2306ee6ba30f0fb7fa9bc694e4e9297cc1744a0715263e35789bdc9f983e",
+    "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+    "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+    "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "9f041d516b5ba258e5df48455e255994c558ddff85d5e9964696da69bd9ac3b9"
+  },
+  "model_revision": "a9d944e2c6a1bf9f48b92ad16348e70c5f1836ba",
+  "diffusers_commit": "04e724ce518e087301052b65ff81ec35d54f4040",
+  "torch": "2.11.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "scope": "Full Generator encode/denoise/decode; eager for all modes; sampling wall time is not a performance result",
+  "policy_input_limit": "Robot observation images; bridge_orig_lerobot interface/domain selected, without matched action ground truth. Not a task success benchmark.",
+  "ffn": "BF16 for baseline/sampling. All attention ablations share model-local RTN W4 + full ACT2 FFNs. FFN term ablations keep BF16 attention.",
+  "rows": [
+    {
+      "mode": "bf16",
+      "case": "robot_observe",
+      "seed": 7101,
+      "repeat": 0,
+      "wall_seconds": 6.35877609000454,
+      "transformer_seconds": 4.973415790557861,
+      "peak_allocated_bytes": 8803815424,
+      "counts": {
+        "full": 1960,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "ffn_calls": 0,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "60be19987399898fc54988bc15727b9079733c5b922caaef4756b30c53861b34",
+        "trajectory": "fde14684ccfcdcd41a0389ce61b760ff50ec5aaee048ec277de3ca77b6ed8f85"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_observe",
+      "seed": 7101,
+      "repeat": 0,
+      "wall_seconds": 2.9123936199976015,
+      "transformer_seconds": 2.3583687057495117,
+      "peak_allocated_bytes": 8731898880,
+      "counts": {
+        "full": 980,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "ffn_calls": 0,
+      "video_shape": [
+        17,
+        176,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "9c38810c75fa694106975ddf1369724cf3bc3b84c82e353cdf753b87fae2c205",
+        "trajectory": "5fcb5e85ff3f510ee075b14f497bff5cedbbb59ef441e2b5e2c033289fd2e633",
+        "action": "31730b46a0e4cc53092e5c48f28f7ac727a6182978cab2c213b44a67554ef50d"
+      }
+    }
+  ],
+  "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  }
+}

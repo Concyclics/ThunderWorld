@@ -1,0 +1,11 @@
+{
+  "tool": "built-in image_gen",
+  "generated_source": "/home/chenhan/.codex/generated_images/01a085db-9c54-79f1-a278-65d429ada29f/exec-2e7a54ab-48eb-4840-bbf6-ccd1d6c0182a.png",
+  "workspace_asset": "thunderworld_architecture.png",
+  "sha256": "84f59baffef2a74d4ded19a4ffb3209101e2b4fbed499d6a71769998becdecdc",
+  "prompts": [
+    "architecture_prompt.txt",
+    "architecture_edit_prompt.txt"
+  ],
+  "manual_review": "Labels, formulas, implemented/roadmap distinction and summation arrows inspected. AI schematic, not an experimental measurement."
+}

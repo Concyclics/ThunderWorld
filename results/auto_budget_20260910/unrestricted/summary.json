@@ -1,0 +1,60 @@
+{
+  "passed_budget_checks": true,
+  "paired": [
+    {
+      "model": "edge",
+      "mode": "ffn_auto25",
+      "n": 4,
+      "ssim_gain_mean": -0.09285290539264679,
+      "ssim_gain_min": -0.252491295337677,
+      "lpips_gain_mean": -0.08867155615841049,
+      "speedup_geomean": 1.0202248538460048
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_auto50",
+      "n": 4,
+      "ssim_gain_mean": -0.06419669091701508,
+      "ssim_gain_min": -0.2458096146583557,
+      "lpips_gain_mean": -0.05760167935247551,
+      "speedup_geomean": 1.0966842309513767
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_auto75",
+      "n": 4,
+      "ssim_gain_mean": -0.0652414858341217,
+      "ssim_gain_min": -0.13946932554244995,
+      "lpips_gain_mean": -0.0627795469427402,
+      "speedup_geomean": 1.007356510967852
+    },
+    {
+      "model": "nano",
+      "mode": "ffn_auto25",
+      "n": 6,
+      "ssim_gain_mean": 0.007858286301294962,
+      "ssim_gain_min": -0.04944956302642822,
+      "lpips_gain_mean": 0.019910374339648238,
+      "speedup_geomean": 0.9861824472335462
+    },
+    {
+      "model": "nano",
+      "mode": "ffn_auto50",
+      "n": 6,
+      "ssim_gain_mean": 0.023076355457305908,
+      "ssim_gain_min": -0.00921851396560669,
+      "lpips_gain_mean": 0.026990358614515004,
+      "speedup_geomean": 1.0142243622207219
+    },
+    {
+      "model": "nano",
+      "mode": "ffn_auto75",
+      "n": 6,
+      "ssim_gain_mean": -0.009684473276138306,
+      "ssim_gain_min": -0.14315032958984375,
+      "lpips_gain_mean": 0.002414250402483892,
+      "speedup_geomean": 0.9693423551288997
+    }
+  ],
+  "trajectories": 80
+}

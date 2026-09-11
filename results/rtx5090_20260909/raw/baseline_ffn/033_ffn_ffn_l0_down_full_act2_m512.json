@@ -1,0 +1,81 @@
+{
+  "config": {
+    "data": "data_local/rtx5090-kernel-inputs-20260909",
+    "asset": "ffn_l0_down.pt",
+    "weights": "data_local/rtx5090-prepared-weights",
+    "kind": "ffn",
+    "preset": "full_act2",
+    "m": 512,
+    "step_index": 0,
+    "block_k": 128,
+    "tile_m": 32,
+    "splits": 2,
+    "key_tokens": null,
+    "rounds": 5,
+    "rep_ms": 40,
+    "inner_only": false,
+    "profile": false,
+    "skip_verify": false,
+    "output": "runs5090/baseline_ffn/033_ffn_ffn_l0_down_full_act2_m512.json"
+  },
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "torch": "2.11.0+cu130",
+  "triton": "3.6.0",
+  "source_sha256": {
+    "tools/kernel_handoff/bench.py": "b4bcaac059272c8f096291144c8dce93e3a2246a2e58e65f2b8e6a8c1f7d6d79",
+    "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+    "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+    "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+    "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+    "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+    "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec",
+    "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+    "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+    "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0"
+  },
+  "scope": "shared captured values repeated for larger shapes; one operator, not full model",
+  "verification": {
+    "decoded_reference_relative_l2": 0.0016363600734621286,
+    "bf16_relative_l2": 0.02178744412958622
+  },
+  "shape": {
+    "M": 512,
+    "N": 4096,
+    "K": 12288
+  },
+  "actual_activation_coverage": 1.0,
+  "actual_weight_coverage": 0.0,
+  "residual_weight_bytes": 0,
+  "latency_ms": {
+    "fp4": {
+      "median": 0.22781832957128334,
+      "min": 0.22188192690656483,
+      "max": 0.22818180329618398,
+      "samples": [
+        0.22188192690656483,
+        0.22781832957128334,
+        0.22780030311187568,
+        0.22818180329618398,
+        0.2281312909429473
+      ]
+    },
+    "bf16": {
+      "median": 0.30052704597587016,
+      "min": 0.29932892927482946,
+      "max": 0.30095114743799195,
+      "samples": [
+        0.29932892927482946,
+        0.3001523601475047,
+        0.30052704597587016,
+        0.3006915846867348,
+        0.30095114743799195
+      ]
+    }
+  },
+  "useful_base_tflops": 226.23117134160833,
+  "nominal_repaired_math_tflops": 452.46234268321666,
+  "flop_scope": "logical dense/repair matmuls only; excludes tail padding, quantization/softmax; not vendor sparse AI TOPS",
+  "bf16_over_fp4_latency_ratio": 1.3191521794642804,
+  "process_peak_allocated_bytes": 205444096,
+  "memory_scope": "entire harness, including BF16 reference weights/GQA expansion; not deployable model footprint"
+}

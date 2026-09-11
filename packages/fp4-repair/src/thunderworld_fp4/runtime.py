@@ -53,7 +53,7 @@ def _forward(q, k, v, config, repair_mask=None, counts_tensor=None, return_mask=
     # Ceil-chunk splitting can create empty trailing chunks; do not launch them.
     chunk = math.ceil(nt / splits)
     splits = math.ceil(nt / chunk)
-    packed_result = pack_inputs(q, k, v, repair, selection, config.terms)
+    packed_result = pack_inputs(q, k, v, repair, selection, config.terms, config.transpose_v)
     packed, mp, np = packed_result[:3]
     keepalive = [packed_result]
     if selection:
@@ -75,7 +75,7 @@ def _forward(q, k, v, config, repair_mask=None, counts_tensor=None, return_mask=
     stats = out if splits == 1 else torch.empty((splits, h, m, 2), device=q.device, dtype=torch.float32)
     streaming_attention[(triton.cdiv(m, bm), h, splits)](*packed, flags, parts, stats,
         m, n, h, hk, mp, np, bm, 128, repair, full, config.terms, splits,
-        config.lazy_p, config.fast_p, num_warps=config.num_warps, num_stages=1)
+        config.lazy_p, config.fast_p, config.transpose_v, num_warps=config.num_warps, num_stages=1)
     if splits > 1:
         combine[(triton.cdiv(m, 4), h)](parts, stats, out, m, h, splits,
             triton.next_power_of_2(splits), num_warps=4, enable_fp_fusion=False)

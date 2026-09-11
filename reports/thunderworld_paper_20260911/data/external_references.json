@@ -1,0 +1,13 @@
+{
+  "verified_on": "2026-09-11",
+  "method": "Opened official documentation and author/paper sources using web tool",
+  "urls": [
+    "https://arxiv.org/abs/2502.01776",
+    "https://arxiv.org/abs/2601.07475",
+    "https://docs.nvidia.com/deeplearning/transformer-engine/user-guide/examples/fp8_primer.html",
+    "https://nhigham.com/2017/07/",
+    "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-thor/",
+    "https://www.nvidia.com/en-us/data-center/hgx/",
+    "https://www.nvidia.com/en-us/products/workstations/dgx-spark/"
+  ]
+}

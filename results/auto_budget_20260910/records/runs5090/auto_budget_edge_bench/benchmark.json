@@ -1,0 +1,1593 @@
+{
+  "complete": true,
+  "model": "edge",
+  "rows": [
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "base",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.055548272555387475,
+      "optimized_ms": 0.05562200974195432,
+      "bf16_ms": 0.17831499619917435,
+      "packed_gemm_ms": 0.05500086866106306,
+      "fixed_mask_ms": 0.057768209391626815,
+      "pack_ms": 0.005119549609996654,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 651.5188273153311,
+      "achieved_tflops_gemm": 658.8766221733265,
+      "bf16_relative_l2": 0.04061400145292282,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.05562200974195432,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.10947307983002105,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.10823131493159703,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.07141813357671102,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.06945298004150391,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.05716950726357235,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.05562200974195432,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "a50",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.0720396884076007,
+      "optimized_ms": 0.07221549352010091,
+      "bf16_ms": 0.17831499619917435,
+      "packed_gemm_ms": 0.06971043473357087,
+      "fixed_mask_ms": 0.07441821049169167,
+      "pack_ms": 0.0056696990785144626,
+      "select_ms": 0.0013570537957651862,
+      "achieved_tflops_operator": 752.721849430685,
+      "achieved_tflops_gemm": 779.7710636542969,
+      "bf16_relative_l2": 0.03527776151895523,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.07221549352010091,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.12887587201768075,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.1267514307204991,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.08932723327421806,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.08719798440802587,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.07433112064997355,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.07221549352010091,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "act2",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.09226437596713795,
+      "optimized_ms": 0.09215163712454315,
+      "bf16_ms": 0.17831499619917435,
+      "packed_gemm_ms": 0.08995012230829362,
+      "fixed_mask_ms": 0.09518754198437646,
+      "pack_ms": 0.005908014870578458,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 786.5033696801978,
+      "achieved_tflops_gemm": 805.75291350457,
+      "bf16_relative_l2": 0.029085632413625717,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.09215163712454315,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.13758065840777228,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.1333322525024414,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.10528884395476311,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.10392107695675967,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.09631559021618902,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.09215163712454315,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "wgt2",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.09346380524519013,
+      "optimized_ms": 0.09474236594306099,
+      "bf16_ms": 0.17831499619917435,
+      "packed_gemm_ms": 0.0966180287874662,
+      "fixed_mask_ms": 0.09812827939572541,
+      "pack_ms": 0.005084527394162165,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 764.9964448170751,
+      "achieved_tflops_gemm": 750.1454338240668,
+      "bf16_relative_l2": 0.028042715042829514,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.09474236594306099,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.17589295705159505,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.17108095862648703,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.11613812446594238,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.11467532031940963,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.09500720024108887,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.09474236594306099,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "a50w",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.10942892441382775,
+      "optimized_ms": 0.11172842908261427,
+      "bf16_ms": 0.17831499619917435,
+      "packed_gemm_ms": 0.11176762420139956,
+      "fixed_mask_ms": 0.11611065237145675,
+      "pack_ms": 0.0061553090810775755,
+      "select_ms": 0.001402736622127679,
+      "achieved_tflops_operator": 810.8676291600839,
+      "achieved_tflops_gemm": 810.5832708472794,
+      "bf16_relative_l2": 0.019822727888822556,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.11172842908261427,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.19387539454868863,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.19126093438331118,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.13596651995623554,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.1359922286442348,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.11296107855187841,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.11172842908261427,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "dual",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.14356693237546891,
+      "optimized_ms": 0.14026335531206274,
+      "bf16_ms": 0.17831499619917435,
+      "packed_gemm_ms": 0.140183029712086,
+      "fixed_mask_ms": 0.14478157505844577,
+      "pack_ms": 0.005776193317950972,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 775.0874021095824,
+      "achieved_tflops_gemm": 775.5315311937999,
+      "bf16_relative_l2": 0.004732922650873661,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.14026335531206274,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.20316547840199572,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.20005460822063945,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.1438194700387808,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.14270918730533486,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.15099304332289584,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.14026335531206274,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "base",
+      "task": "i2v",
+      "source": "00001.pt",
+      "original_ms": 0.07650213321050008,
+      "optimized_ms": 0.06459812219592108,
+      "bf16_ms": 0.17555912921303196,
+      "packed_gemm_ms": 0.0551393449306488,
+      "fixed_mask_ms": 0.06625534012204125,
+      "pack_ms": 0.011492494318088882,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 560.9882350773382,
+      "achieved_tflops_gemm": 657.2219275651375,
+      "bf16_relative_l2": 0.019720084965229034,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.06459812219592108,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.1273095145154355,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.12452920965246252,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.07435600697493353,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.07538111951616075,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.07707074389738194,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.06459812219592108,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "a50",
+      "task": "i2v",
+      "source": "00001.pt",
+      "original_ms": 0.09694533248742422,
+      "optimized_ms": 0.09521876385337429,
+      "bf16_ms": 0.17555912921303196,
+      "packed_gemm_ms": 0.08080247165710945,
+      "fixed_mask_ms": 0.09524634843020095,
+      "pack_ms": 0.014084613562587753,
+      "select_ms": 0.00325671537564351,
+      "achieved_tflops_operator": 570.8767646228343,
+      "achieved_tflops_gemm": 672.7291718336596,
+      "bf16_relative_l2": 0.01711536943912506,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.09521876385337429,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.15026135280214506,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.15025888719866354,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.10074560087021082,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.10135661738259452,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.09710940186695385,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.09521876385337429,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "act2",
+      "task": "i2v",
+      "source": "00001.pt",
+      "original_ms": 0.12113784193992615,
+      "optimized_ms": 0.1111625783583697,
+      "bf16_ms": 0.17555912921303196,
+      "packed_gemm_ms": 0.09680548186349397,
+      "fixed_mask_ms": 0.11197104626391308,
+      "pack_ms": 0.015103771398355673,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 651.9961500564006,
+      "achieved_tflops_gemm": 748.6928604126065,
+      "bf16_relative_l2": 0.014697372913360596,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.1111625783583697,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.15948927879333497,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.15985465175227115,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.12435127385457356,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.1229025196146082,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.12409898732837878,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.1111625783583697,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "wgt2",
+      "task": "i2v",
+      "source": "00001.pt",
+      "original_ms": 0.12561023966471355,
+      "optimized_ms": 0.11308789998292923,
+      "bf16_ms": 0.17555912921303196,
+      "packed_gemm_ms": 0.10539547230334992,
+      "fixed_mask_ms": 0.1170385758082072,
+      "pack_ms": 0.011494553089141846,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 640.8959148674667,
+      "achieved_tflops_gemm": 687.6725492665813,
+      "bf16_relative_l2": 0.012394560500979424,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.11308789998292923,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.1948272665341695,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.1935748000939687,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.12365691757202148,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.1268729068137504,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.12556654866536457,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.11308789998292923,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "a50w",
+      "task": "i2v",
+      "source": "00001.pt",
+      "original_ms": 0.1533042997121811,
+      "optimized_ms": 0.14482309967279433,
+      "bf16_ms": 0.17555912921303196,
+      "packed_gemm_ms": 0.13199935217161438,
+      "fixed_mask_ms": 0.14614311364980845,
+      "pack_ms": 0.014104808686853765,
+      "select_ms": 0.0033359350988993773,
+      "achieved_tflops_operator": 625.5698614702351,
+      "achieved_tflops_gemm": 686.3440229783363,
+      "bf16_relative_l2": 0.008507002145051956,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.14482309967279433,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.222312481458797,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.2224957732267158,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.14860298091715032,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.15382475291981418,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.15238390670103186,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.14482309967279433,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "dual",
+      "task": "i2v",
+      "source": "00001.pt",
+      "original_ms": 0.18626923841588638,
+      "optimized_ms": 0.1569597384968742,
+      "bf16_ms": 0.17555912921303196,
+      "packed_gemm_ms": 0.1481680003079501,
+      "fixed_mask_ms": 0.16258571065705396,
+      "pack_ms": 0.015172628108287017,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 692.6385117681949,
+      "achieved_tflops_gemm": 733.737105542665,
+      "bf16_relative_l2": 0.0028268960304558277,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.1569597384968742,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.23050049373081752,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.2305257138751802,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.1644326001405716,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.17008943217141287,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.18946956634521483,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.1569597384968742,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/960_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "base",
+      "task": "policy",
+      "source": "00448.pt",
+      "original_ms": 0.026059636202725497,
+      "optimized_ms": 0.025692819015324463,
+      "bf16_ms": 0.07540890278707024,
+      "packed_gemm_ms": 0.02240327151853647,
+      "fixed_mask_ms": 0.026177511115868884,
+      "pack_ms": 0.004148670185256649,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 464.2776088091071,
+      "achieved_tflops_gemm": 532.4490472800044,
+      "bf16_relative_l2": 0.041412852704524994,
+      "winner": {
+        "bm": 128,
+        "num_stages": 2,
+        "ms": 0.025692819015324463,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.04287465280102146,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.040894137488471136,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.03029570486939069,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.02920486630772698,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.025692819015324463,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.028383945603655952,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "a50",
+      "task": "policy",
+      "source": "00448.pt",
+      "original_ms": 0.03530516167209573,
+      "optimized_ms": 0.03535970892787965,
+      "bf16_ms": 0.07540890278707024,
+      "packed_gemm_ms": 0.0301457440411603,
+      "fixed_mask_ms": 0.03432774917188897,
+      "pack_ms": 0.004223919936588832,
+      "select_ms": 0.0013449975277906583,
+      "achieved_tflops_operator": 506.0251174718295,
+      "achieved_tflops_gemm": 593.546499949361,
+      "bf16_relative_l2": 0.03546920418739319,
+      "winner": {
+        "bm": 128,
+        "num_stages": 2,
+        "ms": 0.03535970892787965,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.05182749087160284,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.048571865959505064,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.036135147307729966,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.03699267387390137,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.03535970892787965,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.03590238867134884,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "act2",
+      "task": "policy",
+      "source": "00448.pt",
+      "original_ms": 0.044742845885361295,
+      "optimized_ms": 0.042771898066331894,
+      "bf16_ms": 0.07540890278707024,
+      "packed_gemm_ms": 0.04035258740794902,
+      "fixed_mask_ms": 0.04389997642197295,
+      "pack_ms": 0.0042852306977296485,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 557.7774714370067,
+      "achieved_tflops_gemm": 591.2186227567751,
+      "bf16_relative_l2": 0.029913252219557762,
+      "winner": {
+        "bm": 64,
+        "num_stages": 2,
+        "ms": 0.042771898066331894,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.053407945471294856,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.0494815266493595,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.042771898066331894,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.0461057030580898,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.044797366360823314,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.04438187214716567,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "wgt2",
+      "task": "policy",
+      "source": "00448.pt",
+      "original_ms": 0.04168828612879703,
+      "optimized_ms": 0.0416403611501058,
+      "bf16_ms": 0.07540890278707024,
+      "packed_gemm_ms": 0.038875111322554334,
+      "fixed_mask_ms": 0.04235061248602895,
+      "pack_ms": 0.003968776161990949,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 572.9345397845904,
+      "achieved_tflops_gemm": 613.6883044283057,
+      "bf16_relative_l2": 0.02824505604803562,
+      "winner": {
+        "bm": 128,
+        "num_stages": 2,
+        "ms": 0.0416403611501058,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.07086406263332923,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.06734974363930205,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.04586063376788435,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.04643823035219882,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.0416403611501058,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.04677171016084975,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "a50w",
+      "task": "policy",
+      "source": "00448.pt",
+      "original_ms": 0.0511353100047392,
+      "optimized_ms": 0.050808228278646665,
+      "bf16_ms": 0.07540890278707024,
+      "packed_gemm_ms": 0.048627030849456784,
+      "fixed_mask_ms": 0.05108497771951887,
+      "pack_ms": 0.004220895535910308,
+      "select_ms": 0.0013143453327236496,
+      "achieved_tflops_operator": 586.9423605257492,
+      "achieved_tflops_gemm": 613.2700458788784,
+      "bf16_relative_l2": 0.019259238615632057,
+      "winner": {
+        "bm": 64,
+        "num_stages": 2,
+        "ms": 0.050808228278646665,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.0786910760749891,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.0767684668302536,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.050808228278646665,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.05155577247525439,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.05134956525719684,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.053459061836374215,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "dual",
+      "task": "policy",
+      "source": "00448.pt",
+      "original_ms": 0.068165478515625,
+      "optimized_ms": 0.060691548691314906,
+      "bf16_ms": 0.07540890278707024,
+      "packed_gemm_ms": 0.05833921892097198,
+      "fixed_mask_ms": 0.06208322298276674,
+      "pack_ms": 0.004300611729131026,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 589.6340182388694,
+      "achieved_tflops_gemm": 613.4089963816022,
+      "bf16_relative_l2": 0.004800624679774046,
+      "winner": {
+        "bm": 64,
+        "num_stages": 3,
+        "ms": 0.060691548691314906,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.08048453094935654,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.07572750469733928,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.062029516446840516,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.060691548691314906,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.06927114763567524,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.06755611448359669,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_9216_2048.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "base",
+      "task": "policy",
+      "source": "00449.pt",
+      "original_ms": 0.0688439212002597,
+      "optimized_ms": 0.033508983112516856,
+      "bf16_ms": 0.05952934182208518,
+      "packed_gemm_ms": 0.026638719586358554,
+      "fixed_mask_ms": 0.03370274502596409,
+      "pack_ms": 0.0069922000169754025,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 355.98217158503456,
+      "achieved_tflops_gemm": 447.7918143674041,
+      "bf16_relative_l2": 0.02060576342046261,
+      "winner": {
+        "bm": 64,
+        "num_stages": 3,
+        "ms": 0.033508983112516856,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.04683352243609545,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.03834006841792617,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.04756837865357758,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.033508983112516856,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.06879675099343964,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.057959856986999514,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "a50",
+      "task": "policy",
+      "source": "00449.pt",
+      "original_ms": 0.08683038529895601,
+      "optimized_ms": 0.05458379296695485,
+      "bf16_ms": 0.05952934182208518,
+      "packed_gemm_ms": 0.04374350151925717,
+      "fixed_mask_ms": 0.05204728047053019,
+      "pack_ms": 0.007877358529694687,
+      "select_ms": 0.003195678810713645,
+      "achieved_tflops_operator": 327.80611041142566,
+      "achieved_tflops_gemm": 409.04134883036335,
+      "bf16_relative_l2": 0.017806796357035637,
+      "winner": {
+        "bm": 32,
+        "num_stages": 2,
+        "ms": 0.05458379296695485,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.05458379296695485,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.05473592075300805,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.05816426718676532,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.05854904096420497,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.08731787846638606,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.08553593800618098,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "act2",
+      "task": "policy",
+      "source": "00449.pt",
+      "original_ms": 0.11108205083390357,
+      "optimized_ms": 0.054200917832991656,
+      "bf16_ms": 0.05952934182208518,
+      "packed_gemm_ms": 0.0462641471825936,
+      "fixed_mask_ms": 0.05522738865443638,
+      "pack_ms": 0.008077848946899793,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 440.162309160719,
+      "achieved_tflops_gemm": 515.6736394132868,
+      "bf16_relative_l2": 0.015278412960469723,
+      "winner": {
+        "bm": 32,
+        "num_stages": 3,
+        "ms": 0.054200917832991656,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.06238954311280739,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.054200917832991656,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.07224119270549101,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.05856726295069644,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.11079601131073416,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.0967444658279419,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "wgt2",
+      "task": "policy",
+      "source": "00449.pt",
+      "original_ms": 0.11471178384474766,
+      "optimized_ms": 0.06691475818897116,
+      "bf16_ms": 0.05952934182208518,
+      "packed_gemm_ms": 0.05947336573509654,
+      "fixed_mask_ms": 0.0669976877283167,
+      "pack_ms": 0.006930893128865386,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 356.5312316399004,
+      "achieved_tflops_gemm": 401.1409285000553,
+      "bf16_relative_l2": 0.013069665990769863,
+      "winner": {
+        "bm": 64,
+        "num_stages": 3,
+        "ms": 0.06691475818897116,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.0829175158909389,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.07266175370467337,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.08546639018588596,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.06691475818897116,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.11472655892372131,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.10497653832596339,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "a50w",
+      "task": "policy",
+      "source": "00449.pt",
+      "original_ms": 0.14027792090800273,
+      "optimized_ms": 0.09033596387473486,
+      "bf16_ms": 0.05952934182208518,
+      "packed_gemm_ms": 0.07943661721026311,
+      "fixed_mask_ms": 0.08836218485465416,
+      "pack_ms": 0.0077478473106127104,
+      "select_ms": 0.003210220084111913,
+      "achieved_tflops_operator": 330.1177090593979,
+      "achieved_tflops_gemm": 375.4125299805327,
+      "bf16_relative_l2": 0.008837235160171986,
+      "winner": {
+        "bm": 32,
+        "num_stages": 3,
+        "ms": 0.09033596387473486,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.09290090029752707,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.09033596387473486,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.09461968672902961,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.09563243966353567,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.13985559940338135,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.13399124145507812,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_2048_9216.pt"
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "dual",
+      "task": "policy",
+      "source": "00449.pt",
+      "original_ms": 0.17262067974738354,
+      "optimized_ms": 0.08886028857941324,
+      "bf16_ms": 0.05952934182208518,
+      "packed_gemm_ms": 0.08091398428294284,
+      "fixed_mask_ms": 0.09068530715338075,
+      "pack_ms": 0.0080058784838076,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 402.7198459525451,
+      "achieved_tflops_gemm": 442.2696774251403,
+      "bf16_relative_l2": 0.0033860737457871437,
+      "winner": {
+        "bm": 32,
+        "num_stages": 3,
+        "ms": 0.08886028857941324,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.09826501871084238,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.08886028857941324,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.10247946646478441,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.0928056800365448,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.17269894409179687,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.14496511883205837,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_edge_bench/316_2048_9216.pt"
+    }
+  ],
+  "launches": {
+    "960:9216:2048|base": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:9216:2048|a50": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:9216:2048|act2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:9216:2048|wgt2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:9216:2048|a50w": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:9216:2048|dual": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:2048:9216|base": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:2048:9216|a50": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:2048:9216|act2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:2048:9216|wgt2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:2048:9216|a50w": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:2048:9216|dual": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "316:9216:2048|base": {
+      "bm": 128,
+      "num_stages": 2
+    },
+    "316:9216:2048|a50": {
+      "bm": 128,
+      "num_stages": 2
+    },
+    "316:9216:2048|act2": {
+      "bm": 64,
+      "num_stages": 2
+    },
+    "316:9216:2048|wgt2": {
+      "bm": 128,
+      "num_stages": 2
+    },
+    "316:9216:2048|a50w": {
+      "bm": 64,
+      "num_stages": 2
+    },
+    "316:9216:2048|dual": {
+      "bm": 64,
+      "num_stages": 3
+    },
+    "316:2048:9216|base": {
+      "bm": 64,
+      "num_stages": 3
+    },
+    "316:2048:9216|a50": {
+      "bm": 32,
+      "num_stages": 2
+    },
+    "316:2048:9216|act2": {
+      "bm": 32,
+      "num_stages": 3
+    },
+    "316:2048:9216|wgt2": {
+      "bm": 64,
+      "num_stages": 3
+    },
+    "316:2048:9216|a50w": {
+      "bm": 32,
+      "num_stages": 3
+    },
+    "316:2048:9216|dual": {
+      "bm": 32,
+      "num_stages": 3
+    }
+  },
+  "scope": "CUDA Graph operator timing; 3x10 ms per candidate; all packing and GPU selection included in optimized_ms; captured rows repeated to actual M for latency only"
+}

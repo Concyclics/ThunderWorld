@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "input": "runs5090/findings_edge_ablation_v2",
+      "trajectories": 68,
+      "source_snapshots": 18,
+      "complete_coverage": true,
+      "finite_and_hashes": true,
+      "cache_age_at_most_one": true
+    }
+  ]
+}

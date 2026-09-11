@@ -1,5 +1,17 @@
 # RTX 5090 kernel 调试交接
 
+**Current Edge/Nano runtime:** [optimization status, repair budgets and receiver
+commands](../../docs/OPTIMIZATION_HANDOFF.md). The original input-package workflow
+below is a historical operator probe, not the current full-model handoff.
+
+2026-09-09 本机优化已完成：[实测结果与复现](../../docs/RTX5090_RESULTS.md)、
+[60 配置延迟表](../../results/rtx5090_20260909/TABLE.md)、
+[推荐执行参数](../../results/rtx5090_20260909/recommended.json)。
+下文保留原始交接和数据准备流程；优化后的执行参数通过 `--tuning` 显式加载。
+
+2026-09-10 补充：[Cosmos3-Edge / Nano 完整 Generator 对照](../../docs/COSMOS3_E2E_5090.md)。
+端到端默认保留 K 累加顺序，不直接迁移单算子 Split-K 参数或 Nano layer-0 校准统计。
+
 这套入口只需要 ThunderWorld 仓库和 **64.94 MiB 的输入/校准数据**。模型由接收端从 Hugging Face 下载；传输包没有 BF16/FP4 权重、残差权重、模型 checkpoint 或编译二进制。
 
 ## 同步清单

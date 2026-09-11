@@ -1,0 +1,471 @@
+{
+  "complete": true,
+  "model": "edge",
+  "model_config": {
+    "_class_name": "Cosmos3OmniTransformer",
+    "_diffusers_version": "0.40.0.dev0",
+    "action_dim": 64,
+    "action_gen": true,
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "backbone_type": "cosmos3_edge_nemotron_dense",
+    "base_fps": 24,
+    "enable_fps_modulation": true,
+    "head_dim": 128,
+    "hidden_act": "relu2",
+    "hidden_size": 2048,
+    "intermediate_size": 9216,
+    "latent_channel": 48,
+    "latent_patch_size": 2,
+    "num_attention_heads": 16,
+    "num_embodiment_domains": 32,
+    "num_hidden_layers": 28,
+    "num_key_value_heads": 8,
+    "patch_latent_dim": 192,
+    "qk_norm_for_text": false,
+    "rms_norm_eps": 1e-05,
+    "rope_axes_dim": [
+      24,
+      20,
+      20
+    ],
+    "rope_scaling": {
+      "mrope_section": [
+        24,
+        20,
+        20
+      ]
+    },
+    "rope_theta": 100000000,
+    "sound_dim": null,
+    "sound_gen": false,
+    "sound_latent_fps": 25,
+    "temporal_compression_factor": 4,
+    "timestep_scale": 0.001,
+    "unified_3d_mrope_reset_spatial_ids": true,
+    "unified_3d_mrope_temporal_modality_margin": 15000,
+    "use_und_k_norm_for_gen": true,
+    "vocab_size": 131072
+  },
+  "args": {
+    "model": "edge",
+    "output": "runs5090/findings_edge_sampling",
+    "cases": null,
+    "seeds": [
+      6101,
+      6102
+    ],
+    "steps": 35,
+    "sample": true,
+    "samples_per_role": 32,
+    "modes": [
+      "bf16"
+    ],
+    "rounds": 1
+  },
+  "cases": [
+    {
+      "id": "robot_observe",
+      "task": "i2v",
+      "split": "development",
+      "image": "data_local/e2e_inputs/robot_153.jpg",
+      "prompt": "A stationary camera observes a robot arm moving smoothly toward an object on the table. The lighting and background remain unchanged.",
+      "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+    },
+    {
+      "id": "robot_table",
+      "task": "i2v",
+      "split": "evaluation",
+      "image": "data_local/finding_inputs/robot_table.png",
+      "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement.",
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc"
+    },
+    {
+      "id": "waterfall",
+      "task": "t2v",
+      "split": "development",
+      "prompt": "A waterfall flows steadily over rocks into a clear pool in a forest. Water splashes naturally. A stationary camera captures the scene."
+    },
+    {
+      "id": "pottery",
+      "task": "t2v",
+      "split": "evaluation",
+      "prompt": "A close view of a potter shaping a clay bowl on a spinning pottery wheel. Hands move carefully as the bowl becomes wider. The camera remains steady."
+    },
+    {
+      "id": "policy_observe",
+      "task": "policy",
+      "split": "development",
+      "image": "data_local/e2e_inputs/robot_153.jpg",
+      "prompt": "Move the robot gripper toward the object on the table.",
+      "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+    },
+    {
+      "id": "policy_table",
+      "task": "policy",
+      "split": "evaluation",
+      "image": "data_local/finding_inputs/robot_table.png",
+      "prompt": "Pick up the object and place it next to the other objects.",
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc"
+    }
+  ],
+  "source_sha256": {
+    "tools/finding_resample/test_runtime.py": "9f88796e3800b224df47f926667467016517f32068eb7b9c0687998ddfb2c90b",
+    "tools/finding_resample/ffn.py": "a91f51bacc0c14c5885c88ed3d738c205d22898b8c432dadf5bc591eba1543ae",
+    "tools/finding_resample/run.py": "4857ccba6e565e0678376eff7db5e984d3270d769bacd8593f256829cf71c13b",
+    "tools/finding_resample/runtime.py": "45e24a8f3871a9ebe385ca0a0dd58c3e24b9c81c51cf944be60531f7c1c73c80"
+  },
+  "torch": "2.11.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "scope": "Full Generator encode/denoise/decode; eager for all modes; sampling wall time is not a performance result",
+  "policy_input_limit": "Robot observation images; bridge_orig_lerobot interface/domain selected, without matched action ground truth. Not a task success benchmark.",
+  "ffn": "BF16 for baseline/sampling. All attention ablations share model-local RTN W4 + full ACT2 FFNs. FFN term ablations keep BF16 attention.",
+  "rows": [
+    {
+      "mode": "bf16",
+      "case": "robot_observe",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 29.60960463799711,
+      "transformer_seconds": 18.62762156677246,
+      "peak_allocated_bytes": 8803833856,
+      "counts": {
+        "full": 1960,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "022129cbb1b8b980abe824dd1cc70cf21c8e91e732973af109351871bc810283",
+        "trajectory": "c409227f2fc3511ac1a1b05a7510496ac21e39b8849d01605163356d04a331b0"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "robot_observe",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 17.97226122799475,
+      "transformer_seconds": 16.62682444000244,
+      "peak_allocated_bytes": 8803833856,
+      "counts": {
+        "full": 1960,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "bd15c3470faa82778d2c520a4768978a1bfd703a0f85d9c045ba01ea69a95589",
+        "trajectory": "dd2332fe5102168dda233141f2a195f5e3f4c0eb856fead383a7fa68d430a75a"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "robot_table",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 16.752317507001862,
+      "transformer_seconds": 15.477878540039063,
+      "peak_allocated_bytes": 8803834368,
+      "counts": {
+        "full": 1960,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "c36402355814a7ac6848b2898005ddf01fe5c383d38c34ecaf019f7ca2833ab2",
+        "trajectory": "ff147d78588f398d03b69a436460c12987e7f38a164ab848bb0e09cf3ea1bfc4"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "robot_table",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 16.007450707002135,
+      "transformer_seconds": 14.692924041748046,
+      "peak_allocated_bytes": 8803834368,
+      "counts": {
+        "full": 1960,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "db894acad7bb29079f1c570c698c05fbdcab911853748b58a59e7d6a6c2a918e",
+        "trajectory": "8157872d96db14dca03b1401a096c9563f38b5ac6168cabdf92d59893c0132d0"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "waterfall",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 11.330240916999173,
+      "transformer_seconds": 10.006117584228516,
+      "peak_allocated_bytes": 8803833344,
+      "counts": {
+        "full": 1960,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "95606b6acf15ae349abe36e9a12fa338eb923b937deab80e302f15ece812366a",
+        "trajectory": "3fb121e8f9b8cdb434430434be949edd6b5141ac6d6e9d5684063299807c8f6a"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "waterfall",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 11.24152662200504,
+      "transformer_seconds": 10.05129150390625,
+      "peak_allocated_bytes": 8803833344,
+      "counts": {
+        "full": 1960,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "aadc0f89dc465907172f5dfbf3daec6afd8da9573e64993a46d5c900d9cc0034",
+        "trajectory": "1de41f3bed0fde270f32db76e62035d438c849644c06a87c5967336d19f19a49"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "pottery",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 11.319518419004453,
+      "transformer_seconds": 10.126781364440918,
+      "peak_allocated_bytes": 8803833344,
+      "counts": {
+        "full": 1960,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "5e3d9410ba2013d9a1fbaa49000e9cad5666ddbe3f889712eab4133714fbce10",
+        "trajectory": "543de33b7b5ecf4833c0cf1bd142790f6639055d47f6877a572a2a97fc5fde7e"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "pottery",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 10.85728301400377,
+      "transformer_seconds": 9.58753611755371,
+      "peak_allocated_bytes": 8803833344,
+      "counts": {
+        "full": 1960,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "be50ac6b5af903f837910ac0990fff928b59f8fdf3070d9b9dda6a8b51f60f89",
+        "trajectory": "4f59fe870dcdc6149317ec3f56acb3bd699d41626d9e0c869b5caf1c83db292e"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_observe",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 10.733148229999642,
+      "transformer_seconds": 10.121291961669922,
+      "peak_allocated_bytes": 8731904000,
+      "counts": {
+        "full": 980,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "video_shape": [
+        17,
+        176,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "eb7f1c5e8f89e97aeedbc150eca597b5d4cf0b18fdbd4cee0302cad1d6aee967",
+        "trajectory": "07b2a9ebaaa1ad130d2aef91bdb99df43502fd5ae0ace7f900368bf8c617ffda",
+        "action": "6c46d7d9753cb4ee722d282d78b3f3f148230443c00c74294211852889b9bcd5"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_observe",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 11.539550554000016,
+      "transformer_seconds": 10.715216201782226,
+      "peak_allocated_bytes": 8731904000,
+      "counts": {
+        "full": 980,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "video_shape": [
+        17,
+        176,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "3b361f41ae813699bc58f84573e738c1d98635f6ea137240eab7baa00914321a",
+        "trajectory": "3a9c14fbd4d192b4e11fe3f31be861635b51fdfaf2d974730380d5d749583562",
+        "action": "ca473f03a5abce326bc386fcef032354154d44020b285f75a353a79f27567462"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_table",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 10.068816525999864,
+      "transformer_seconds": 9.277063522338867,
+      "peak_allocated_bytes": 8926887936,
+      "counts": {
+        "full": 980,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "video_shape": [
+        17,
+        240,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "d8bf7e7ef54bab5e129272e121d2f8b3e6e6f415add390c6734c8a61c0911601",
+        "trajectory": "abdd6947cad7a905c5845d0317d64aa35c8f449d23f3d54b0fbed3103de68c8a",
+        "action": "3b1f3cdccac864fb059b1dcbee96338cee94297aef31f5f03fc14833191e936c"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_table",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 11.904825265999534,
+      "transformer_seconds": 11.153944328308105,
+      "peak_allocated_bytes": 8926887936,
+      "counts": {
+        "full": 980,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "video_shape": [
+        17,
+        240,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "5d82de6e9ce43ed5db394f0c346d9c0a46e26d90e4c781c4574af6cb1af9d581",
+        "trajectory": "ad72f560de1fa43777f16c7daa0527a098a66bacc4dacae8fcbc2e72d51702c3",
+        "action": "d03e28e9a8f67f73bfdac197d5eed704672601f64338701a2ce6e7e290ed4b28"
+      }
+    }
+  ],
+  "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  }
+}

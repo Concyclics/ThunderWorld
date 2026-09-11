@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "local_links_checked": [
+    "results/findings_20260910/edge/depth_step_mass.png",
+    "results/findings_20260910/nano/depth_step_mass.png",
+    "results/findings_20260910/nano/direction_step_trends.png",
+    "results/findings_20260910/edge/head_step_trends.png",
+    "results/findings_20260910/nano/step_trends.png",
+    "results/findings_20260910/ablation/ABLATION.md",
+    "results/findings_20260910/ablation/edge_robot_table_frames.png",
+    "results/findings_20260910/ablation/edge_policy_table_frames.png",
+    "results/findings_20260910/ablation/nano_robot_table_frames.png",
+    "results/findings_20260910/ablation/nano_policy_table_frames.png",
+    "results/findings_20260910/ablation/nano_av_pottery_frames.png",
+    "tools/finding_resample/README.md",
+    "docs/FINDINGS_RESAMPLING_20260910.md",
+    "tools/finding_resample/README.md"
+  ],
+  "visual_inspection": [
+    "nano/step_trends.png",
+    "nano/direction_step_trends.png",
+    "edge/head_step_trends.png",
+    "ablation/edge_robot_table_frames.png",
+    "ablation/nano_ablation.png"
+  ],
+  "notes": [
+    "Scientific static figures with explicit model/case/step/head units.",
+    "Seed ranges are observed ranges, not confidence intervals.",
+    "Raw row mass and count-adjusted density are reported separately.",
+    "Fixed-frame selection is deterministic; full-frame LPIPS uses all frames.",
+    "Sampling and ablation timings are kept separate; AV waveform decode is separate."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "scope": "Separate two-step execution audit, warmup included in call counts; not a quality or performance sample.",
+  "rows": [
+    {
+      "model": "edge",
+      "source": "runs5090/repair_design_edge_dispatch_20260911/result.json",
+      "sha256": "237afee7d71e038abc62c3c0dcdd34317b47179f30c994a8caa970d21923f48f",
+      "steps": 2,
+      "seed": 8502,
+      "execution": [
+        {
+          "part": "down_proj",
+          "shape": "960:2048:9216",
+          "launch": "None",
+          "calls": 224
+        },
+        {
+          "part": "down_proj",
+          "shape": "416:2048:9216",
+          "launch": "None",
+          "calls": 112
+        }
+      ],
+      "mask_layouts": 3,
+      "mask_quota_checks": 336
+    },
+    {
+      "model": "nano",
+      "source": "runs5090/repair_design_nano_dispatch_20260911/result.json",
+      "sha256": "67058d6c84d1512127b9b60463d2afd0f397a2846bb2e8c68fba8325044f793b",
+      "steps": 2,
+      "seed": 8502,
+      "execution": [
+        {
+          "part": "down_proj",
+          "shape": "960:4096:12288",
+          "launch": "('pair', 64, 3)",
+          "calls": 288
+        },
+        {
+          "part": "down_proj",
+          "shape": "416:4096:12288",
+          "launch": "None",
+          "calls": 144
+        },
+        {
+          "part": "down_proj",
+          "shape": "1024:4096:12288",
+          "launch": "None",
+          "calls": 288
+        }
+      ],
+      "mask_layouts": 5,
+      "mask_quota_checks": 720
+    }
+  ]
+}

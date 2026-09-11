@@ -1,0 +1,5 @@
+/home/chenhan/miniconda3/envs/vllm/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+bf16_av_pottery_seed7103_r0 0.034 None
+ffn_act2_av_pottery_seed7103_r0 0.025 {'relative_l2': 0.22200462222099304, 'rmse': 0.043269116431474686, 'log_spectral_l1': 0.5617417097091675}
+ffn_auto50_av_pottery_seed7103_r0 0.025 {'relative_l2': 0.29877468943595886, 'rmse': 0.058231793344020844, 'log_spectral_l1': 0.5763050317764282}

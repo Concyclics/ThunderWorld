@@ -1,0 +1,139 @@
+{
+  "passed": true,
+  "trajectories": 9,
+  "scope": "Exact stored-array hashes at matched seed. Eager latency across separate processes and one seed is exploratory; use alternating-order microbenchmarks for packing speed.",
+  "rows": [
+    {
+      "mode": "bf16",
+      "case": "robot_table",
+      "seed": 7103,
+      "bitwise_equal": true,
+      "arrays": [
+        "video",
+        "trajectory"
+      ],
+      "pack_hits": 0,
+      "plain_seconds": 9.570008989998314,
+      "shared_seconds": 9.273943621003127,
+      "speedup": 1.0319244305437305
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_table",
+      "seed": 7103,
+      "bitwise_equal": true,
+      "arrays": [
+        "video",
+        "trajectory",
+        "action"
+      ],
+      "pack_hits": 0,
+      "plain_seconds": 5.787466661000508,
+      "shared_seconds": 5.811667260997638,
+      "speedup": 0.9958358593308428
+    },
+    {
+      "mode": "bf16",
+      "case": "av_pottery",
+      "seed": 7103,
+      "bitwise_equal": true,
+      "arrays": [
+        "video",
+        "trajectory",
+        "sound_latent"
+      ],
+      "pack_hits": 0,
+      "plain_seconds": 10.017223488001036,
+      "shared_seconds": 10.139333999002702,
+      "speedup": 0.9879567522863261
+    },
+    {
+      "mode": "ffn_act2",
+      "case": "robot_table",
+      "seed": 7103,
+      "bitwise_equal": true,
+      "arrays": [
+        "video",
+        "trajectory"
+      ],
+      "pack_hits": 2520,
+      "plain_seconds": 8.155362755998794,
+      "shared_seconds": 7.985020840998914,
+      "speedup": 1.0213326825805218
+    },
+    {
+      "mode": "ffn_act2",
+      "case": "policy_table",
+      "seed": 7103,
+      "bitwise_equal": true,
+      "arrays": [
+        "video",
+        "trajectory",
+        "action"
+      ],
+      "pack_hits": 1260,
+      "plain_seconds": 3.3287463820015546,
+      "shared_seconds": 3.321588871003769,
+      "speedup": 1.0021548455500524
+    },
+    {
+      "mode": "ffn_act2",
+      "case": "av_pottery",
+      "seed": 7103,
+      "bitwise_equal": true,
+      "arrays": [
+        "video",
+        "trajectory",
+        "sound_latent"
+      ],
+      "pack_hits": 2520,
+      "plain_seconds": 8.150816937995842,
+      "shared_seconds": 8.582897827000124,
+      "speedup": 0.9496579246644368
+    },
+    {
+      "mode": "ffn_auto50",
+      "case": "robot_table",
+      "seed": 7103,
+      "bitwise_equal": true,
+      "arrays": [
+        "video",
+        "trajectory"
+      ],
+      "pack_hits": 2520,
+      "plain_seconds": 8.093575842998689,
+      "shared_seconds": 7.648495554996771,
+      "speedup": 1.0581918737876688
+    },
+    {
+      "mode": "ffn_auto50",
+      "case": "policy_table",
+      "seed": 7103,
+      "bitwise_equal": true,
+      "arrays": [
+        "video",
+        "trajectory",
+        "action"
+      ],
+      "pack_hits": 1260,
+      "plain_seconds": 3.2578681359955226,
+      "shared_seconds": 3.709136027006025,
+      "speedup": 0.8783361171645244
+    },
+    {
+      "mode": "ffn_auto50",
+      "case": "av_pottery",
+      "seed": 7103,
+      "bitwise_equal": true,
+      "arrays": [
+        "video",
+        "trajectory",
+        "sound_latent"
+      ],
+      "pack_hits": 2520,
+      "plain_seconds": 8.288899088001926,
+      "shared_seconds": 8.343321632994048,
+      "speedup": 0.9934771129070579
+    }
+  ]
+}

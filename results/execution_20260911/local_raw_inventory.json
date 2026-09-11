@@ -1,0 +1,1302 @@
+[
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/bf16_policy_table_seed7403_r0.mp4",
+    "bytes": 45792,
+    "sha256": "b3924bce36b7fadbba030e5cc3f25c2e5c15db4711ed162e97df11b66c4d5e2b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/bf16_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4191825,
+    "sha256": "9efe5425a81dd8a2dd2e48b03848c1bdb59e41e85fd1c055ee2cf1ea72920d48"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/bf16_policy_table_seed7404_r0.mp4",
+    "bytes": 43418,
+    "sha256": "96be9521e15e67a3bb8ed3728044fbcf90b5d09fb4db059b5d01ae48cc831d5c"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/bf16_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4295048,
+    "sha256": "dd09204016400094a30f7c733d71c33b0c3fa1220847a7ec3d891c3d230475e4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/bf16_robot_table_seed7403_r0.mp4",
+    "bytes": 80359,
+    "sha256": "3923435b3941dac38cadb8032fc84c4b8672d034356ef38656c68ae493686157"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/bf16_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12628504,
+    "sha256": "d7342302d00ecebdd30aa594c2588405328df292fc1df238d916a815a5927dc5"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/bf16_robot_table_seed7404_r0.mp4",
+    "bytes": 60419,
+    "sha256": "e68f1878a0d5d5ed0729e0b698c81b5b687340afbc226791306c67dbfb4be8f2"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/bf16_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11584992,
+    "sha256": "7fbd3d876b225522b08d9c9ef835a0bc89c8a871e3d08d583d1e1bf4e1fc2d26"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_act2_policy_table_seed7403_r0.mp4",
+    "bytes": 45852,
+    "sha256": "4d9e133ccf197a7b30e5af55412dcf5debbaa12fb8078d330521eedfb46c34d4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_act2_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4184616,
+    "sha256": "482639567b54c0b85b189ab7ad00de2b8182a201d90c95ac1d72b1238d98ba62"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_act2_policy_table_seed7404_r0.mp4",
+    "bytes": 38774,
+    "sha256": "03459b2638527d6abf3320d7cdf9ab338a9e244ab7e2747baefbf84ecdbb5ac7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_act2_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4186468,
+    "sha256": "7693095cd19eb25ed84efddfeac3fb55ec1838863f5a11da89ded6a4525690db"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_act2_robot_table_seed7403_r0.mp4",
+    "bytes": 69053,
+    "sha256": "1084cf53714c75cc54480c0482a9028660696f233394a38293e1ee1851ae0b98"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_act2_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12055095,
+    "sha256": "8e69122508f315d4d5625c062804891c5f4896dc0c932e84fcd5a1181ad2b0d7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_act2_robot_table_seed7404_r0.mp4",
+    "bytes": 63121,
+    "sha256": "9f8ef22d2d851cc2fd83f693601c1b1a1e0b6bc87d16a649c0d2c222675d5fc9"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_act2_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11750035,
+    "sha256": "e3730d02c1cbfd3beabb2d554a795692621f5d3cb4c9d3677aae4a41071d0894"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto50_policy_table_seed7403_r0.mp4",
+    "bytes": 45852,
+    "sha256": "4d9e133ccf197a7b30e5af55412dcf5debbaa12fb8078d330521eedfb46c34d4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto50_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4184616,
+    "sha256": "482639567b54c0b85b189ab7ad00de2b8182a201d90c95ac1d72b1238d98ba62"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto50_policy_table_seed7404_r0.mp4",
+    "bytes": 38774,
+    "sha256": "03459b2638527d6abf3320d7cdf9ab338a9e244ab7e2747baefbf84ecdbb5ac7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto50_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4186468,
+    "sha256": "7693095cd19eb25ed84efddfeac3fb55ec1838863f5a11da89ded6a4525690db"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto50_robot_table_seed7403_r0.mp4",
+    "bytes": 78964,
+    "sha256": "0eb7721f0b693c6efd984c374e8b37fecd436334879ea6852714717fc2cbd2e8"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto50_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12003794,
+    "sha256": "75f17781a2fc92d9c7d44aca8f17bcb8adb5daa10c4e86324b280709a1715ab8"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto50_robot_table_seed7404_r0.mp4",
+    "bytes": 64659,
+    "sha256": "b14395c05fa3fec88f018725024c99b928c65d3cb0490c0d2d7a25acf10ad39f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto50_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11998371,
+    "sha256": "19a88335eb3c682ec449987fcb6515bd93758dd113f473b51d2f841549a00f72"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto75_policy_table_seed7403_r0.mp4",
+    "bytes": 45741,
+    "sha256": "9dfb264f7cc64abe2d2867809c93188192544625c5a275b82f844ebe283789de"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto75_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4172219,
+    "sha256": "c49d822b9b65074e55f1a74ba68391376b2abc270c6cb422892d9f4597bd6878"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto75_policy_table_seed7404_r0.mp4",
+    "bytes": 43444,
+    "sha256": "e44d3b1af0da78583641221b1920ffc8a75a9e8a1eeceff2ae11332742c062e1"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto75_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4302746,
+    "sha256": "3e5eb6e94a86cce3e0b485aca4c90ddea8252fd0b7d4710c75dcca4e340e4e39"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto75_robot_table_seed7403_r0.mp4",
+    "bytes": 76638,
+    "sha256": "88fe9b77ceefb7ca25f512e371631014545c2beabb0505aad1b157eccac9062a"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto75_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12669078,
+    "sha256": "0ff3432740e1328c3db207c2d649866db2373f5b0d0706bf34c1a3fea510a754"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto75_robot_table_seed7404_r0.mp4",
+    "bytes": 72104,
+    "sha256": "fb3afb339ecc805cf4fd1a6718afdbc5e5be28cc207507d941662a3d37f72659"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/ffn_auto75_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 12008274,
+    "sha256": "9d1f557bf43bbf6bb77881c85bcd9e1ce35197bb8aa490da9f6b1ea25917c8d4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_eager/result.json",
+    "bytes": 971947,
+    "sha256": "57cc608cce4cd01b5cde79981f8ae5a36815e69a2fd2318c99afe53a4c874f1f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/bf16_policy_table_seed7403_r0.mp4",
+    "bytes": 45792,
+    "sha256": "b3924bce36b7fadbba030e5cc3f25c2e5c15db4711ed162e97df11b66c4d5e2b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/bf16_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4191825,
+    "sha256": "9efe5425a81dd8a2dd2e48b03848c1bdb59e41e85fd1c055ee2cf1ea72920d48"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/bf16_policy_table_seed7404_r0.mp4",
+    "bytes": 43418,
+    "sha256": "96be9521e15e67a3bb8ed3728044fbcf90b5d09fb4db059b5d01ae48cc831d5c"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/bf16_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4295048,
+    "sha256": "dd09204016400094a30f7c733d71c33b0c3fa1220847a7ec3d891c3d230475e4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/bf16_robot_table_seed7403_r0.mp4",
+    "bytes": 80359,
+    "sha256": "3923435b3941dac38cadb8032fc84c4b8672d034356ef38656c68ae493686157"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/bf16_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12628504,
+    "sha256": "d7342302d00ecebdd30aa594c2588405328df292fc1df238d916a815a5927dc5"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/bf16_robot_table_seed7404_r0.mp4",
+    "bytes": 60419,
+    "sha256": "e68f1878a0d5d5ed0729e0b698c81b5b687340afbc226791306c67dbfb4be8f2"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/bf16_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11584992,
+    "sha256": "7fbd3d876b225522b08d9c9ef835a0bc89c8a871e3d08d583d1e1bf4e1fc2d26"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_act2_policy_table_seed7403_r0.mp4",
+    "bytes": 45852,
+    "sha256": "4d9e133ccf197a7b30e5af55412dcf5debbaa12fb8078d330521eedfb46c34d4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_act2_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4184616,
+    "sha256": "482639567b54c0b85b189ab7ad00de2b8182a201d90c95ac1d72b1238d98ba62"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_act2_policy_table_seed7404_r0.mp4",
+    "bytes": 38774,
+    "sha256": "03459b2638527d6abf3320d7cdf9ab338a9e244ab7e2747baefbf84ecdbb5ac7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_act2_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4186468,
+    "sha256": "7693095cd19eb25ed84efddfeac3fb55ec1838863f5a11da89ded6a4525690db"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_act2_robot_table_seed7403_r0.mp4",
+    "bytes": 69053,
+    "sha256": "1084cf53714c75cc54480c0482a9028660696f233394a38293e1ee1851ae0b98"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_act2_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12055095,
+    "sha256": "8e69122508f315d4d5625c062804891c5f4896dc0c932e84fcd5a1181ad2b0d7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_act2_robot_table_seed7404_r0.mp4",
+    "bytes": 63121,
+    "sha256": "9f8ef22d2d851cc2fd83f693601c1b1a1e0b6bc87d16a649c0d2c222675d5fc9"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_act2_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11750035,
+    "sha256": "e3730d02c1cbfd3beabb2d554a795692621f5d3cb4c9d3677aae4a41071d0894"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto50_policy_table_seed7403_r0.mp4",
+    "bytes": 45852,
+    "sha256": "4d9e133ccf197a7b30e5af55412dcf5debbaa12fb8078d330521eedfb46c34d4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto50_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4184616,
+    "sha256": "482639567b54c0b85b189ab7ad00de2b8182a201d90c95ac1d72b1238d98ba62"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto50_policy_table_seed7404_r0.mp4",
+    "bytes": 38774,
+    "sha256": "03459b2638527d6abf3320d7cdf9ab338a9e244ab7e2747baefbf84ecdbb5ac7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto50_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4186468,
+    "sha256": "7693095cd19eb25ed84efddfeac3fb55ec1838863f5a11da89ded6a4525690db"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto50_robot_table_seed7403_r0.mp4",
+    "bytes": 78964,
+    "sha256": "0eb7721f0b693c6efd984c374e8b37fecd436334879ea6852714717fc2cbd2e8"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto50_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12003794,
+    "sha256": "75f17781a2fc92d9c7d44aca8f17bcb8adb5daa10c4e86324b280709a1715ab8"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto50_robot_table_seed7404_r0.mp4",
+    "bytes": 64659,
+    "sha256": "b14395c05fa3fec88f018725024c99b928c65d3cb0490c0d2d7a25acf10ad39f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto50_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11998371,
+    "sha256": "19a88335eb3c682ec449987fcb6515bd93758dd113f473b51d2f841549a00f72"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto75_policy_table_seed7403_r0.mp4",
+    "bytes": 45741,
+    "sha256": "9dfb264f7cc64abe2d2867809c93188192544625c5a275b82f844ebe283789de"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto75_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4172219,
+    "sha256": "c49d822b9b65074e55f1a74ba68391376b2abc270c6cb422892d9f4597bd6878"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto75_policy_table_seed7404_r0.mp4",
+    "bytes": 43444,
+    "sha256": "e44d3b1af0da78583641221b1920ffc8a75a9e8a1eeceff2ae11332742c062e1"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto75_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4302746,
+    "sha256": "3e5eb6e94a86cce3e0b485aca4c90ddea8252fd0b7d4710c75dcca4e340e4e39"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto75_robot_table_seed7403_r0.mp4",
+    "bytes": 76638,
+    "sha256": "88fe9b77ceefb7ca25f512e371631014545c2beabb0505aad1b157eccac9062a"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto75_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12669078,
+    "sha256": "0ff3432740e1328c3db207c2d649866db2373f5b0d0706bf34c1a3fea510a754"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto75_robot_table_seed7404_r0.mp4",
+    "bytes": 72104,
+    "sha256": "fb3afb339ecc805cf4fd1a6718afdbc5e5be28cc207507d941662a3d37f72659"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/ffn_auto75_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 12008274,
+    "sha256": "9d1f557bf43bbf6bb77881c85bcd9e1ce35197bb8aa490da9f6b1ea25917c8d4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_graph/result.json",
+    "bytes": 975009,
+    "sha256": "66f55bd145bd9ae4c98d7f73ae5baa0edf85cbe7d2503c94f339c82871b8c41d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/bf16_policy_table_seed7403_r0.mp4",
+    "bytes": 45792,
+    "sha256": "b3924bce36b7fadbba030e5cc3f25c2e5c15db4711ed162e97df11b66c4d5e2b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/bf16_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4191825,
+    "sha256": "9efe5425a81dd8a2dd2e48b03848c1bdb59e41e85fd1c055ee2cf1ea72920d48"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/bf16_policy_table_seed7404_r0.mp4",
+    "bytes": 43418,
+    "sha256": "96be9521e15e67a3bb8ed3728044fbcf90b5d09fb4db059b5d01ae48cc831d5c"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/bf16_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4295048,
+    "sha256": "dd09204016400094a30f7c733d71c33b0c3fa1220847a7ec3d891c3d230475e4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/bf16_robot_table_seed7403_r0.mp4",
+    "bytes": 80359,
+    "sha256": "3923435b3941dac38cadb8032fc84c4b8672d034356ef38656c68ae493686157"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/bf16_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12628504,
+    "sha256": "d7342302d00ecebdd30aa594c2588405328df292fc1df238d916a815a5927dc5"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/bf16_robot_table_seed7404_r0.mp4",
+    "bytes": 60419,
+    "sha256": "e68f1878a0d5d5ed0729e0b698c81b5b687340afbc226791306c67dbfb4be8f2"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/bf16_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11584992,
+    "sha256": "7fbd3d876b225522b08d9c9ef835a0bc89c8a871e3d08d583d1e1bf4e1fc2d26"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_act2_policy_table_seed7403_r0.mp4",
+    "bytes": 45852,
+    "sha256": "4d9e133ccf197a7b30e5af55412dcf5debbaa12fb8078d330521eedfb46c34d4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_act2_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4184616,
+    "sha256": "482639567b54c0b85b189ab7ad00de2b8182a201d90c95ac1d72b1238d98ba62"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_act2_policy_table_seed7404_r0.mp4",
+    "bytes": 38774,
+    "sha256": "03459b2638527d6abf3320d7cdf9ab338a9e244ab7e2747baefbf84ecdbb5ac7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_act2_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4186468,
+    "sha256": "7693095cd19eb25ed84efddfeac3fb55ec1838863f5a11da89ded6a4525690db"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_act2_robot_table_seed7403_r0.mp4",
+    "bytes": 69053,
+    "sha256": "1084cf53714c75cc54480c0482a9028660696f233394a38293e1ee1851ae0b98"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_act2_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12055095,
+    "sha256": "8e69122508f315d4d5625c062804891c5f4896dc0c932e84fcd5a1181ad2b0d7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_act2_robot_table_seed7404_r0.mp4",
+    "bytes": 63121,
+    "sha256": "9f8ef22d2d851cc2fd83f693601c1b1a1e0b6bc87d16a649c0d2c222675d5fc9"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_act2_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11750035,
+    "sha256": "e3730d02c1cbfd3beabb2d554a795692621f5d3cb4c9d3677aae4a41071d0894"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto50_policy_table_seed7403_r0.mp4",
+    "bytes": 45852,
+    "sha256": "4d9e133ccf197a7b30e5af55412dcf5debbaa12fb8078d330521eedfb46c34d4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto50_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4184616,
+    "sha256": "482639567b54c0b85b189ab7ad00de2b8182a201d90c95ac1d72b1238d98ba62"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto50_policy_table_seed7404_r0.mp4",
+    "bytes": 38774,
+    "sha256": "03459b2638527d6abf3320d7cdf9ab338a9e244ab7e2747baefbf84ecdbb5ac7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto50_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4186468,
+    "sha256": "7693095cd19eb25ed84efddfeac3fb55ec1838863f5a11da89ded6a4525690db"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto50_robot_table_seed7403_r0.mp4",
+    "bytes": 78964,
+    "sha256": "0eb7721f0b693c6efd984c374e8b37fecd436334879ea6852714717fc2cbd2e8"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto50_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12003794,
+    "sha256": "75f17781a2fc92d9c7d44aca8f17bcb8adb5daa10c4e86324b280709a1715ab8"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto50_robot_table_seed7404_r0.mp4",
+    "bytes": 64659,
+    "sha256": "b14395c05fa3fec88f018725024c99b928c65d3cb0490c0d2d7a25acf10ad39f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto50_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11998371,
+    "sha256": "19a88335eb3c682ec449987fcb6515bd93758dd113f473b51d2f841549a00f72"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto75_policy_table_seed7403_r0.mp4",
+    "bytes": 45741,
+    "sha256": "9dfb264f7cc64abe2d2867809c93188192544625c5a275b82f844ebe283789de"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto75_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4172219,
+    "sha256": "c49d822b9b65074e55f1a74ba68391376b2abc270c6cb422892d9f4597bd6878"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto75_policy_table_seed7404_r0.mp4",
+    "bytes": 43444,
+    "sha256": "e44d3b1af0da78583641221b1920ffc8a75a9e8a1eeceff2ae11332742c062e1"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto75_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4302746,
+    "sha256": "3e5eb6e94a86cce3e0b485aca4c90ddea8252fd0b7d4710c75dcca4e340e4e39"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto75_robot_table_seed7403_r0.mp4",
+    "bytes": 76638,
+    "sha256": "88fe9b77ceefb7ca25f512e371631014545c2beabb0505aad1b157eccac9062a"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto75_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12669078,
+    "sha256": "0ff3432740e1328c3db207c2d649866db2373f5b0d0706bf34c1a3fea510a754"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto75_robot_table_seed7404_r0.mp4",
+    "bytes": 72104,
+    "sha256": "fb3afb339ecc805cf4fd1a6718afdbc5e5be28cc207507d941662a3d37f72659"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/ffn_auto75_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 12008274,
+    "sha256": "9d1f557bf43bbf6bb77881c85bcd9e1ce35197bb8aa490da9f6b1ea25917c8d4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_edge_fused/result.json",
+    "bytes": 975149,
+    "sha256": "34a059742e4f9e2991f4071f08123d65e5d1a3ad887ef7a836aef5236f35d6b9"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_av_pottery_seed7403_r0.mp4",
+    "bytes": 33225,
+    "sha256": "86b00f530ea7072319580fc6ccc8175aa2bbf87959ea1664ab3f6ede4432fb3f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 9910108,
+    "sha256": "b32a113e872e6a53c783bc0762c5131866b50acd702e6186758a47ea3ed06bbd"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_av_pottery_seed7404_r0.mp4",
+    "bytes": 23445,
+    "sha256": "f0d0e156a7f88102b5c40075b419bd81159052f35e81c5b561d26b2f760b8028"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 12742149,
+    "sha256": "974891deafeb0db0b89625b398935b8e9812d4eed2128251ca965954581a8e62"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_policy_table_seed7403_r0.mp4",
+    "bytes": 46489,
+    "sha256": "e2c32dba95996f06f23fe9e6f950e464ab406b156138d088d69eb7f5c2ae73b6"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4021763,
+    "sha256": "0a7946dc3cf4e0fd8e1756cc7f02040aa69c933c02a9723b3581a99a024d12a8"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_policy_table_seed7404_r0.mp4",
+    "bytes": 40644,
+    "sha256": "83271142b02791d85dfe09947a6bf94a8ee05b548f6c91fcdc4e0f144cf5262f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4080166,
+    "sha256": "ca33dda4e96db4358f099e70771ceb21823e567a2bc0e86b190da6880b5cc28a"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_robot_table_seed7403_r0.mp4",
+    "bytes": 21737,
+    "sha256": "aa213d6da370b11e11b3f0941d94c87f6ad989a297b6ff10addc18903de0bbb3"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 11951840,
+    "sha256": "e05854cc91e24cede10c691345fbd04c333c523e40173bafcf7293d6c54a949c"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_robot_table_seed7404_r0.mp4",
+    "bytes": 22903,
+    "sha256": "dfb35016ffd988bacde26c1d0e0c240754ac77015249bbd510c04255c2eb3fc1"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/bf16_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11934165,
+    "sha256": "8641a78dc66495849bdd1ae895de5facfad6a19c83d51aec86fc0b59ec0e2f97"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_av_pottery_seed7403_r0.mp4",
+    "bytes": 48357,
+    "sha256": "b93e73e0ed5fda4801bdd2cdff16c60bcefd146fed1b1d681fbabdadc49d2019"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 9920338,
+    "sha256": "34ea7905a6635da1f28c00913c9c3bba92f6aed3295c5610f565693b21be6d83"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_av_pottery_seed7404_r0.mp4",
+    "bytes": 20900,
+    "sha256": "c87c3d1cb3ccf4e801150f3e726b116f49a300e9db5882d71432c28510d59c53"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 12324687,
+    "sha256": "18ffee6a7aad7a9ff0a6440b160cb881635b18cbac648e395b28dfd56ab9853d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_policy_table_seed7403_r0.mp4",
+    "bytes": 46411,
+    "sha256": "74cabc47d48549ce085ebee60b9fe120f84f05e216c41feb95bbb551d5070a31"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4033839,
+    "sha256": "1da896d60445a92e9b1c8e19eb375f9153a4276578ac0a81519f0f7ffca9bd34"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_policy_table_seed7404_r0.mp4",
+    "bytes": 41301,
+    "sha256": "86c0efb66d27b4df6da36d2e0b1bce4cf65f2c907af65b4024087c91d1b4d6f4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4094692,
+    "sha256": "76a37725f9e0229aa29667c7c961313597ccf2f83ac8b99f6dc6520291e2ea77"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_robot_table_seed7403_r0.mp4",
+    "bytes": 23135,
+    "sha256": "b7406d77e96e61251737e593c831940d1095e168535fc7e4afc435bd6d4ffee6"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12051262,
+    "sha256": "62f026de8692ed7f5595c87e94a0e1890a3813a4749308dd4a7d4695dae6143b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_robot_table_seed7404_r0.mp4",
+    "bytes": 24655,
+    "sha256": "8906694fe1b7c34913f3255c686ed3d0529a4b998a37236faf7a4b2aae3d0f50"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_act2_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11959484,
+    "sha256": "e45e76da5ebc168433136436c68eaf8ca11d8972fcd50fbbb87b54bdcf4d389f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_av_pottery_seed7403_r0.mp4",
+    "bytes": 48357,
+    "sha256": "b93e73e0ed5fda4801bdd2cdff16c60bcefd146fed1b1d681fbabdadc49d2019"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 9920338,
+    "sha256": "34ea7905a6635da1f28c00913c9c3bba92f6aed3295c5610f565693b21be6d83"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_av_pottery_seed7404_r0.mp4",
+    "bytes": 20900,
+    "sha256": "c87c3d1cb3ccf4e801150f3e726b116f49a300e9db5882d71432c28510d59c53"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 12324687,
+    "sha256": "18ffee6a7aad7a9ff0a6440b160cb881635b18cbac648e395b28dfd56ab9853d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_policy_table_seed7403_r0.mp4",
+    "bytes": 46411,
+    "sha256": "74cabc47d48549ce085ebee60b9fe120f84f05e216c41feb95bbb551d5070a31"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4033839,
+    "sha256": "1da896d60445a92e9b1c8e19eb375f9153a4276578ac0a81519f0f7ffca9bd34"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_policy_table_seed7404_r0.mp4",
+    "bytes": 41301,
+    "sha256": "86c0efb66d27b4df6da36d2e0b1bce4cf65f2c907af65b4024087c91d1b4d6f4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4094692,
+    "sha256": "76a37725f9e0229aa29667c7c961313597ccf2f83ac8b99f6dc6520291e2ea77"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_robot_table_seed7403_r0.mp4",
+    "bytes": 31946,
+    "sha256": "b6592fee67ee8272b2f429e0842b37b2362abe264d51ed545ba7d0ab352d13bc"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12242299,
+    "sha256": "6346930824cc28c215fab0c078ce8830c1caadd6dcd3754db255f59388c4f856"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_robot_table_seed7404_r0.mp4",
+    "bytes": 32227,
+    "sha256": "38f0fdc88cef4a590599b68410c5539749e6c12bf6a7c1b3e45e9e41703e9985"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto50_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 12211199,
+    "sha256": "67809a021323f4ab4ef483690cb5ab99121b84671445d058d586684d11cf188d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_av_pottery_seed7403_r0.mp4",
+    "bytes": 46159,
+    "sha256": "d5314f7bb8bc3f6be8452e6129ef531611570317407ee5b7ad59a0bcb757a6cd"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 10740440,
+    "sha256": "60d234234ec5a0c9c66f820dea197029ca82c59f68ab97468728456b4d194d70"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_av_pottery_seed7404_r0.mp4",
+    "bytes": 35468,
+    "sha256": "58acb9bd0ec91c19b612634940d930ce5f6ac0af64c3d5ee5981c2c6ab833bc6"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 13389653,
+    "sha256": "be3ea0b16b063f6b155a56eea5256a14cb386e545827d8f7518932812939373f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_policy_table_seed7403_r0.mp4",
+    "bytes": 46407,
+    "sha256": "51a584e641ae7ee8438e42f2c9148c71f2919eb9bcce62ee6ce894920e542f7b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4036323,
+    "sha256": "812428e1fab15fc5def65b11a9042e878fa4b60ce5dbdc43303280ea05836b96"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_policy_table_seed7404_r0.mp4",
+    "bytes": 39857,
+    "sha256": "0427888ceaed1ceca2ed3804a307efb3714e58e62c23884616d137c97f2faad5"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4088799,
+    "sha256": "ab1db5e3dae7d1728090b8194f64c2d91c87dc47a6fd3ce276daecb49f36cd14"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_robot_table_seed7403_r0.mp4",
+    "bytes": 25538,
+    "sha256": "540eb80aa3863b4bd753787a47bf6ed8ce0b4a379baddc8e6d5f32b8fa42813b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12085848,
+    "sha256": "b307720a4a87815a415fafe82af9195864965587669339c8d18e0e57734827cd"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_robot_table_seed7404_r0.mp4",
+    "bytes": 27184,
+    "sha256": "3b26112b84ce2b2767ab7ea3c39f8d483f0f57cbd3296fc0b75ff264074e3b37"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/ffn_auto75_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 12057800,
+    "sha256": "866afc3723bf37597a5c762e6906bb9bdefb969907e77a4d4b15236767eaf088"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_eager/result.json",
+    "bytes": 3024953,
+    "sha256": "d25160caade920bdf16b5f13654ea0e87a3ea9ab61e6a26583ff35cb06d6ccf0"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_av_pottery_seed7403_r0.mp4",
+    "bytes": 33225,
+    "sha256": "86b00f530ea7072319580fc6ccc8175aa2bbf87959ea1664ab3f6ede4432fb3f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 9910108,
+    "sha256": "b32a113e872e6a53c783bc0762c5131866b50acd702e6186758a47ea3ed06bbd"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_av_pottery_seed7404_r0.mp4",
+    "bytes": 23445,
+    "sha256": "f0d0e156a7f88102b5c40075b419bd81159052f35e81c5b561d26b2f760b8028"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 12742149,
+    "sha256": "974891deafeb0db0b89625b398935b8e9812d4eed2128251ca965954581a8e62"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_policy_table_seed7403_r0.mp4",
+    "bytes": 46489,
+    "sha256": "e2c32dba95996f06f23fe9e6f950e464ab406b156138d088d69eb7f5c2ae73b6"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4021763,
+    "sha256": "0a7946dc3cf4e0fd8e1756cc7f02040aa69c933c02a9723b3581a99a024d12a8"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_policy_table_seed7404_r0.mp4",
+    "bytes": 40644,
+    "sha256": "83271142b02791d85dfe09947a6bf94a8ee05b548f6c91fcdc4e0f144cf5262f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4080166,
+    "sha256": "ca33dda4e96db4358f099e70771ceb21823e567a2bc0e86b190da6880b5cc28a"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_robot_table_seed7403_r0.mp4",
+    "bytes": 21737,
+    "sha256": "aa213d6da370b11e11b3f0941d94c87f6ad989a297b6ff10addc18903de0bbb3"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 11951840,
+    "sha256": "e05854cc91e24cede10c691345fbd04c333c523e40173bafcf7293d6c54a949c"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_robot_table_seed7404_r0.mp4",
+    "bytes": 22903,
+    "sha256": "dfb35016ffd988bacde26c1d0e0c240754ac77015249bbd510c04255c2eb3fc1"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/bf16_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11934165,
+    "sha256": "8641a78dc66495849bdd1ae895de5facfad6a19c83d51aec86fc0b59ec0e2f97"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_av_pottery_seed7403_r0.mp4",
+    "bytes": 48357,
+    "sha256": "b93e73e0ed5fda4801bdd2cdff16c60bcefd146fed1b1d681fbabdadc49d2019"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 9920338,
+    "sha256": "34ea7905a6635da1f28c00913c9c3bba92f6aed3295c5610f565693b21be6d83"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_av_pottery_seed7404_r0.mp4",
+    "bytes": 20900,
+    "sha256": "c87c3d1cb3ccf4e801150f3e726b116f49a300e9db5882d71432c28510d59c53"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 12324687,
+    "sha256": "18ffee6a7aad7a9ff0a6440b160cb881635b18cbac648e395b28dfd56ab9853d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_policy_table_seed7403_r0.mp4",
+    "bytes": 46411,
+    "sha256": "74cabc47d48549ce085ebee60b9fe120f84f05e216c41feb95bbb551d5070a31"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4033839,
+    "sha256": "1da896d60445a92e9b1c8e19eb375f9153a4276578ac0a81519f0f7ffca9bd34"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_policy_table_seed7404_r0.mp4",
+    "bytes": 41301,
+    "sha256": "86c0efb66d27b4df6da36d2e0b1bce4cf65f2c907af65b4024087c91d1b4d6f4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4094692,
+    "sha256": "76a37725f9e0229aa29667c7c961313597ccf2f83ac8b99f6dc6520291e2ea77"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_robot_table_seed7403_r0.mp4",
+    "bytes": 23135,
+    "sha256": "b7406d77e96e61251737e593c831940d1095e168535fc7e4afc435bd6d4ffee6"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12051262,
+    "sha256": "62f026de8692ed7f5595c87e94a0e1890a3813a4749308dd4a7d4695dae6143b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_robot_table_seed7404_r0.mp4",
+    "bytes": 24655,
+    "sha256": "8906694fe1b7c34913f3255c686ed3d0529a4b998a37236faf7a4b2aae3d0f50"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_act2_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11959484,
+    "sha256": "e45e76da5ebc168433136436c68eaf8ca11d8972fcd50fbbb87b54bdcf4d389f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_av_pottery_seed7403_r0.mp4",
+    "bytes": 48357,
+    "sha256": "b93e73e0ed5fda4801bdd2cdff16c60bcefd146fed1b1d681fbabdadc49d2019"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 9920338,
+    "sha256": "34ea7905a6635da1f28c00913c9c3bba92f6aed3295c5610f565693b21be6d83"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_av_pottery_seed7404_r0.mp4",
+    "bytes": 20900,
+    "sha256": "c87c3d1cb3ccf4e801150f3e726b116f49a300e9db5882d71432c28510d59c53"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 12324687,
+    "sha256": "18ffee6a7aad7a9ff0a6440b160cb881635b18cbac648e395b28dfd56ab9853d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_policy_table_seed7403_r0.mp4",
+    "bytes": 46411,
+    "sha256": "74cabc47d48549ce085ebee60b9fe120f84f05e216c41feb95bbb551d5070a31"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4033839,
+    "sha256": "1da896d60445a92e9b1c8e19eb375f9153a4276578ac0a81519f0f7ffca9bd34"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_policy_table_seed7404_r0.mp4",
+    "bytes": 41301,
+    "sha256": "86c0efb66d27b4df6da36d2e0b1bce4cf65f2c907af65b4024087c91d1b4d6f4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4094692,
+    "sha256": "76a37725f9e0229aa29667c7c961313597ccf2f83ac8b99f6dc6520291e2ea77"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_robot_table_seed7403_r0.mp4",
+    "bytes": 31946,
+    "sha256": "b6592fee67ee8272b2f429e0842b37b2362abe264d51ed545ba7d0ab352d13bc"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12242299,
+    "sha256": "6346930824cc28c215fab0c078ce8830c1caadd6dcd3754db255f59388c4f856"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_robot_table_seed7404_r0.mp4",
+    "bytes": 32227,
+    "sha256": "38f0fdc88cef4a590599b68410c5539749e6c12bf6a7c1b3e45e9e41703e9985"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto50_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 12211199,
+    "sha256": "67809a021323f4ab4ef483690cb5ab99121b84671445d058d586684d11cf188d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_av_pottery_seed7403_r0.mp4",
+    "bytes": 46159,
+    "sha256": "d5314f7bb8bc3f6be8452e6129ef531611570317407ee5b7ad59a0bcb757a6cd"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 10740440,
+    "sha256": "60d234234ec5a0c9c66f820dea197029ca82c59f68ab97468728456b4d194d70"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_av_pottery_seed7404_r0.mp4",
+    "bytes": 35468,
+    "sha256": "58acb9bd0ec91c19b612634940d930ce5f6ac0af64c3d5ee5981c2c6ab833bc6"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 13389653,
+    "sha256": "be3ea0b16b063f6b155a56eea5256a14cb386e545827d8f7518932812939373f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_policy_table_seed7403_r0.mp4",
+    "bytes": 46407,
+    "sha256": "51a584e641ae7ee8438e42f2c9148c71f2919eb9bcce62ee6ce894920e542f7b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4036323,
+    "sha256": "812428e1fab15fc5def65b11a9042e878fa4b60ce5dbdc43303280ea05836b96"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_policy_table_seed7404_r0.mp4",
+    "bytes": 39857,
+    "sha256": "0427888ceaed1ceca2ed3804a307efb3714e58e62c23884616d137c97f2faad5"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4088799,
+    "sha256": "ab1db5e3dae7d1728090b8194f64c2d91c87dc47a6fd3ce276daecb49f36cd14"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_robot_table_seed7403_r0.mp4",
+    "bytes": 25538,
+    "sha256": "540eb80aa3863b4bd753787a47bf6ed8ce0b4a379baddc8e6d5f32b8fa42813b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12085848,
+    "sha256": "b307720a4a87815a415fafe82af9195864965587669339c8d18e0e57734827cd"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_robot_table_seed7404_r0.mp4",
+    "bytes": 27184,
+    "sha256": "3b26112b84ce2b2767ab7ea3c39f8d483f0f57cbd3296fc0b75ff264074e3b37"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/ffn_auto75_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 12057800,
+    "sha256": "866afc3723bf37597a5c762e6906bb9bdefb969907e77a4d4b15236767eaf088"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_graph/result.json",
+    "bytes": 3029826,
+    "sha256": "627bec2a2a6a686a8683e540f0f7bbbdf0a7b9765b2881900b44a8aa719766f7"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_av_pottery_seed7403_r0.mp4",
+    "bytes": 33225,
+    "sha256": "86b00f530ea7072319580fc6ccc8175aa2bbf87959ea1664ab3f6ede4432fb3f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 9910108,
+    "sha256": "b32a113e872e6a53c783bc0762c5131866b50acd702e6186758a47ea3ed06bbd"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_av_pottery_seed7404_r0.mp4",
+    "bytes": 23445,
+    "sha256": "f0d0e156a7f88102b5c40075b419bd81159052f35e81c5b561d26b2f760b8028"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 12742149,
+    "sha256": "974891deafeb0db0b89625b398935b8e9812d4eed2128251ca965954581a8e62"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_policy_table_seed7403_r0.mp4",
+    "bytes": 46489,
+    "sha256": "e2c32dba95996f06f23fe9e6f950e464ab406b156138d088d69eb7f5c2ae73b6"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4021763,
+    "sha256": "0a7946dc3cf4e0fd8e1756cc7f02040aa69c933c02a9723b3581a99a024d12a8"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_policy_table_seed7404_r0.mp4",
+    "bytes": 40644,
+    "sha256": "83271142b02791d85dfe09947a6bf94a8ee05b548f6c91fcdc4e0f144cf5262f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4080166,
+    "sha256": "ca33dda4e96db4358f099e70771ceb21823e567a2bc0e86b190da6880b5cc28a"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_robot_table_seed7403_r0.mp4",
+    "bytes": 21737,
+    "sha256": "aa213d6da370b11e11b3f0941d94c87f6ad989a297b6ff10addc18903de0bbb3"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 11951840,
+    "sha256": "e05854cc91e24cede10c691345fbd04c333c523e40173bafcf7293d6c54a949c"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_robot_table_seed7404_r0.mp4",
+    "bytes": 22903,
+    "sha256": "dfb35016ffd988bacde26c1d0e0c240754ac77015249bbd510c04255c2eb3fc1"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/bf16_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11934165,
+    "sha256": "8641a78dc66495849bdd1ae895de5facfad6a19c83d51aec86fc0b59ec0e2f97"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_av_pottery_seed7403_r0.mp4",
+    "bytes": 48357,
+    "sha256": "b93e73e0ed5fda4801bdd2cdff16c60bcefd146fed1b1d681fbabdadc49d2019"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 9920338,
+    "sha256": "34ea7905a6635da1f28c00913c9c3bba92f6aed3295c5610f565693b21be6d83"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_av_pottery_seed7404_r0.mp4",
+    "bytes": 20900,
+    "sha256": "c87c3d1cb3ccf4e801150f3e726b116f49a300e9db5882d71432c28510d59c53"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 12324687,
+    "sha256": "18ffee6a7aad7a9ff0a6440b160cb881635b18cbac648e395b28dfd56ab9853d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_policy_table_seed7403_r0.mp4",
+    "bytes": 46411,
+    "sha256": "74cabc47d48549ce085ebee60b9fe120f84f05e216c41feb95bbb551d5070a31"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4033839,
+    "sha256": "1da896d60445a92e9b1c8e19eb375f9153a4276578ac0a81519f0f7ffca9bd34"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_policy_table_seed7404_r0.mp4",
+    "bytes": 41301,
+    "sha256": "86c0efb66d27b4df6da36d2e0b1bce4cf65f2c907af65b4024087c91d1b4d6f4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4094692,
+    "sha256": "76a37725f9e0229aa29667c7c961313597ccf2f83ac8b99f6dc6520291e2ea77"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_robot_table_seed7403_r0.mp4",
+    "bytes": 23135,
+    "sha256": "b7406d77e96e61251737e593c831940d1095e168535fc7e4afc435bd6d4ffee6"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12051262,
+    "sha256": "62f026de8692ed7f5595c87e94a0e1890a3813a4749308dd4a7d4695dae6143b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_robot_table_seed7404_r0.mp4",
+    "bytes": 24655,
+    "sha256": "8906694fe1b7c34913f3255c686ed3d0529a4b998a37236faf7a4b2aae3d0f50"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_act2_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 11959484,
+    "sha256": "e45e76da5ebc168433136436c68eaf8ca11d8972fcd50fbbb87b54bdcf4d389f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_av_pottery_seed7403_r0.mp4",
+    "bytes": 48357,
+    "sha256": "b93e73e0ed5fda4801bdd2cdff16c60bcefd146fed1b1d681fbabdadc49d2019"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 9920338,
+    "sha256": "34ea7905a6635da1f28c00913c9c3bba92f6aed3295c5610f565693b21be6d83"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_av_pottery_seed7404_r0.mp4",
+    "bytes": 20900,
+    "sha256": "c87c3d1cb3ccf4e801150f3e726b116f49a300e9db5882d71432c28510d59c53"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 12324687,
+    "sha256": "18ffee6a7aad7a9ff0a6440b160cb881635b18cbac648e395b28dfd56ab9853d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_policy_table_seed7403_r0.mp4",
+    "bytes": 46411,
+    "sha256": "74cabc47d48549ce085ebee60b9fe120f84f05e216c41feb95bbb551d5070a31"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4033839,
+    "sha256": "1da896d60445a92e9b1c8e19eb375f9153a4276578ac0a81519f0f7ffca9bd34"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_policy_table_seed7404_r0.mp4",
+    "bytes": 41301,
+    "sha256": "86c0efb66d27b4df6da36d2e0b1bce4cf65f2c907af65b4024087c91d1b4d6f4"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4094692,
+    "sha256": "76a37725f9e0229aa29667c7c961313597ccf2f83ac8b99f6dc6520291e2ea77"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_robot_table_seed7403_r0.mp4",
+    "bytes": 31946,
+    "sha256": "b6592fee67ee8272b2f429e0842b37b2362abe264d51ed545ba7d0ab352d13bc"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12242299,
+    "sha256": "6346930824cc28c215fab0c078ce8830c1caadd6dcd3754db255f59388c4f856"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_robot_table_seed7404_r0.mp4",
+    "bytes": 32227,
+    "sha256": "38f0fdc88cef4a590599b68410c5539749e6c12bf6a7c1b3e45e9e41703e9985"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto50_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 12211199,
+    "sha256": "67809a021323f4ab4ef483690cb5ab99121b84671445d058d586684d11cf188d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_av_pottery_seed7403_r0.mp4",
+    "bytes": 46159,
+    "sha256": "d5314f7bb8bc3f6be8452e6129ef531611570317407ee5b7ad59a0bcb757a6cd"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_av_pottery_seed7403_r0_outputs.npz",
+    "bytes": 10740440,
+    "sha256": "60d234234ec5a0c9c66f820dea197029ca82c59f68ab97468728456b4d194d70"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_av_pottery_seed7404_r0.mp4",
+    "bytes": 35468,
+    "sha256": "58acb9bd0ec91c19b612634940d930ce5f6ac0af64c3d5ee5981c2c6ab833bc6"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_av_pottery_seed7404_r0_outputs.npz",
+    "bytes": 13389653,
+    "sha256": "be3ea0b16b063f6b155a56eea5256a14cb386e545827d8f7518932812939373f"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_policy_table_seed7403_r0.mp4",
+    "bytes": 46407,
+    "sha256": "51a584e641ae7ee8438e42f2c9148c71f2919eb9bcce62ee6ce894920e542f7b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_policy_table_seed7403_r0_outputs.npz",
+    "bytes": 4036323,
+    "sha256": "812428e1fab15fc5def65b11a9042e878fa4b60ce5dbdc43303280ea05836b96"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_policy_table_seed7404_r0.mp4",
+    "bytes": 39857,
+    "sha256": "0427888ceaed1ceca2ed3804a307efb3714e58e62c23884616d137c97f2faad5"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_policy_table_seed7404_r0_outputs.npz",
+    "bytes": 4088799,
+    "sha256": "ab1db5e3dae7d1728090b8194f64c2d91c87dc47a6fd3ce276daecb49f36cd14"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_robot_table_seed7403_r0.mp4",
+    "bytes": 25538,
+    "sha256": "540eb80aa3863b4bd753787a47bf6ed8ce0b4a379baddc8e6d5f32b8fa42813b"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_robot_table_seed7403_r0_outputs.npz",
+    "bytes": 12085848,
+    "sha256": "b307720a4a87815a415fafe82af9195864965587669339c8d18e0e57734827cd"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_robot_table_seed7404_r0.mp4",
+    "bytes": 27184,
+    "sha256": "3b26112b84ce2b2767ab7ea3c39f8d483f0f57cbd3296fc0b75ff264074e3b37"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/ffn_auto75_robot_table_seed7404_r0_outputs.npz",
+    "bytes": 12057800,
+    "sha256": "866afc3723bf37597a5c762e6906bb9bdefb969907e77a4d4b15236767eaf088"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/execution_nano_fused/result.json",
+    "bytes": 3029967,
+    "sha256": "aad6fc9a6aa5cb7cf5a89418a1ea32ff7189883a613db6614e2f451b3394c629"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/graph_fusion_edge_bench/result.json",
+    "bytes": 21710,
+    "sha256": "437f3e2819b02d86ad54c4ce9103f571866d4659bcec656cf87d591e6df46b61"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/graph_fusion_nano_bench/result.json",
+    "bytes": 32136,
+    "sha256": "37710ed083156a1dc058b23cb270674db1686aef0a0fbea686b68ac22f921aef"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/graph_fusion_edge_chunk_tuning/result.json",
+    "bytes": 27557,
+    "sha256": "c65bf3fe4c13f7e5b9fe0d02c2a537ae397175199fbca358fc7e78493ace8583"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/graph_fusion_nano_chunk_tuning/result.json",
+    "bytes": 41035,
+    "sha256": "2674f350a5bc51a771a1e6ea2074ae30586fae180645995afac3f439c46a0477"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_edge_bench/316_2048_9216.pt",
+    "bytes": 43575381,
+    "sha256": "240e46727c2ebbd704cecf68eeee348daaae1e70dbf15da42fcf40ac52403c19"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_edge_bench/316_9216_2048.pt",
+    "bytes": 39045205,
+    "sha256": "d592428bf9f1cf89372b271c4c360292b5a7918a5da5d0d108dd0ddff823e561"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_edge_bench/960_2048_9216.pt",
+    "bytes": 55445589,
+    "sha256": "f2ab5ee2bc50e1dee40cfcb33843658d4a455aa1c57e4161e4d4f1c06453fd76"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_edge_bench/960_9216_2048.pt",
+    "bytes": 41683029,
+    "sha256": "0d5d4979d36e834103c1700c2a41bf744676970df5b83a1a22400ab37111c1eb"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_nano_bench/1024_12288_4096.pt",
+    "bytes": 109054053,
+    "sha256": "02346ab283f1b146abe3401dcc30ad9af7bc6c55d913a85fc7846f7a1a157762"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_nano_bench/1024_4096_12288.pt",
+    "bytes": 125831269,
+    "sha256": "51124c9a348f2f99c978eb5593898550ae73aaf257ab0fec8a285ef4df676461"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_nano_bench/316_12288_4096.pt",
+    "bytes": 103254109,
+    "sha256": "e527bc6b5ade23e69c411bc075e33d7c0a41c747b672ee88c2c8d00f2a5ea61d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_nano_bench/316_4096_12288.pt",
+    "bytes": 108431453,
+    "sha256": "2b49bf8bac9aa2024ea4342aa0ef1184b9f0da836e0f2f43c22137d8697ffc75"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_nano_bench/960_12288_4096.pt",
+    "bytes": 108529757,
+    "sha256": "9fc6175044373973bfc0a01011077482bda90392d89baacb463603a5b587566c"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_nano_bench/960_4096_12288.pt",
+    "bytes": 124258397,
+    "sha256": "07590cf104d275939df5755ec51d21a85688517b876ce6b3293de25151be5144"
+  }
+]

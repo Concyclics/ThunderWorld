@@ -1,0 +1,747 @@
+{
+  "passed": true,
+  "scope": "Kernel-time overlap of independent tasks, not per-SM co-residency or production speed. CUDA Graph fork/join, five traced replays per case.",
+  "rows": [
+    {
+      "tier": "a50",
+      "mode": "serial",
+      "graphs": 5,
+      "overlap_us_total": 0,
+      "producer_us_total": 56.367000000000004,
+      "median_gemm_us": 45.058,
+      "details": [
+        {
+          "gpu_span_us": 56.23046875,
+          "gemm_us": 44.525,
+          "producer_us": 11.273,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 44.525,
+              "stream": 7
+            },
+            {
+              "name": "select_tiles",
+              "start_us": 44.6572265625,
+              "duration_us": 3.235,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 47.9921875,
+              "duration_us": 3.402,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 51.494140625,
+              "duration_us": 0.834,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 52.4287109375,
+              "duration_us": 3.802,
+              "stream": 7
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 57.1318359375,
+          "gemm_us": 45.425,
+          "producer_us": 11.34,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 45.425,
+              "stream": 7
+            },
+            {
+              "name": "select_tiles",
+              "start_us": 45.5244140625,
+              "duration_us": 3.269,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 48.8935546875,
+              "duration_us": 3.435,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 52.3955078125,
+              "duration_us": 0.867,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 53.36328125,
+              "duration_us": 3.769,
+              "stream": 7
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 56.599609375,
+          "gemm_us": 44.992,
+          "producer_us": 11.207,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 44.992,
+              "stream": 7
+            },
+            {
+              "name": "select_tiles",
+              "start_us": 45.0927734375,
+              "duration_us": 3.269,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 48.4609375,
+              "duration_us": 3.368,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 51.9296875,
+              "duration_us": 0.834,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 52.86328125,
+              "duration_us": 3.736,
+              "stream": 7
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 56.7646484375,
+          "gemm_us": 45.058,
+          "producer_us": 11.274000000000001,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 45.058,
+              "stream": 7
+            },
+            {
+              "name": "select_tiles",
+              "start_us": 45.158203125,
+              "duration_us": 3.269,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 48.5263671875,
+              "duration_us": 3.402,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 52.029296875,
+              "duration_us": 0.834,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 52.99609375,
+              "duration_us": 3.769,
+              "stream": 7
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 56.931640625,
+          "gemm_us": 45.225,
+          "producer_us": 11.273,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 45.225,
+              "stream": 7
+            },
+            {
+              "name": "select_tiles",
+              "start_us": 45.359375,
+              "duration_us": 3.235,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 48.6943359375,
+              "duration_us": 3.435,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 52.2294921875,
+              "duration_us": 0.834,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 53.1630859375,
+              "duration_us": 3.769,
+              "stream": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tier": "a50",
+      "mode": "parallel",
+      "graphs": 5,
+      "overlap_us_total": 41.4580078125,
+      "producer_us_total": 62.471000000000004,
+      "median_gemm_us": 49.728,
+      "details": [
+        {
+          "gpu_span_us": 66.00390625,
+          "gemm_us": 55.131,
+          "producer_us": 11.24,
+          "overlap_us": 0.7666015625,
+          "kernels": [
+            {
+              "name": "select_tiles",
+              "start_us": 0.0,
+              "duration_us": 3.102,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 3.3017578125,
+              "duration_us": 3.369,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 6.7705078125,
+              "duration_us": 0.833,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 7.7041015625,
+              "duration_us": 3.936,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 10.873046875,
+              "duration_us": 55.131,
+              "stream": 143
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 49.794921875,
+          "gemm_us": 49.795,
+          "producer_us": 13.241,
+          "overlap_us": 13.2412109375,
+          "kernels": [
+            {
+              "name": "select_tiles",
+              "start_us": 31.150390625,
+              "duration_us": 3.169,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 34.552734375,
+              "duration_us": 4.636,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 39.2890625,
+              "duration_us": 0.9,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 40.2900390625,
+              "duration_us": 4.536,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 49.795,
+              "stream": 143
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 51.0283203125,
+          "gemm_us": 49.061,
+          "producer_us": 13.308,
+          "overlap_us": 11.3408203125,
+          "kernels": [
+            {
+              "name": "select_tiles",
+              "start_us": 0.0,
+              "duration_us": 3.202,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 3.4345703125,
+              "duration_us": 4.57,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 8.0380859375,
+              "duration_us": 0.9,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 9.0380859375,
+              "duration_us": 4.636,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 1.9677734375,
+              "duration_us": 49.061,
+              "stream": 143
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 49.7275390625,
+          "gemm_us": 49.728,
+          "producer_us": 13.308,
+          "overlap_us": 13.3076171875,
+          "kernels": [
+            {
+              "name": "select_tiles",
+              "start_us": 25.28125,
+              "duration_us": 3.102,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 28.6162109375,
+              "duration_us": 4.503,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 33.2197265625,
+              "duration_us": 0.9,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 34.2197265625,
+              "duration_us": 4.803,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 49.728,
+              "stream": 143
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 49.52734375,
+          "gemm_us": 40.556,
+          "producer_us": 11.374,
+          "overlap_us": 2.8017578125,
+          "kernels": [
+            {
+              "name": "select_tiles",
+              "start_us": 0.0,
+              "duration_us": 3.169,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 3.369140625,
+              "duration_us": 3.435,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 6.904296875,
+              "duration_us": 0.834,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 7.837890625,
+              "duration_us": 3.936,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 8.9716796875,
+              "duration_us": 40.556,
+              "stream": 143
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tier": "act2",
+      "mode": "serial",
+      "graphs": 5,
+      "overlap_us_total": 0,
+      "producer_us_total": 41.366,
+      "median_gemm_us": 47.341,
+      "details": [
+        {
+          "gpu_span_us": 54.7861328125,
+          "gemm_us": 46.34,
+          "producer_us": 8.146,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 46.34,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 46.439453125,
+              "duration_us": 3.372,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 49.912109375,
+              "duration_us": 0.868,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 50.8798828125,
+              "duration_us": 3.906,
+              "stream": 7
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 55.853515625,
+          "gemm_us": 47.207,
+          "producer_us": 8.313,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 47.207,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 47.3408203125,
+              "duration_us": 3.439,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 50.8798828125,
+              "duration_us": 0.868,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 51.84765625,
+              "duration_us": 4.006,
+              "stream": 7
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 55.9208984375,
+          "gemm_us": 47.341,
+          "producer_us": 8.28,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 47.341,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 47.44140625,
+              "duration_us": 3.439,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 50.9794921875,
+              "duration_us": 0.868,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 51.9482421875,
+              "duration_us": 3.973,
+              "stream": 7
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 56.1875,
+          "gemm_us": 47.474,
+          "producer_us": 8.347,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 47.474,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 47.607421875,
+              "duration_us": 3.472,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 51.1796875,
+              "duration_us": 0.835,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 52.1474609375,
+              "duration_us": 4.04,
+              "stream": 7
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 56.0869140625,
+          "gemm_us": 47.507,
+          "producer_us": 8.280000000000001,
+          "overlap_us": 0,
+          "kernels": [
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 47.507,
+              "stream": 7
+            },
+            {
+              "name": "scaled_amax",
+              "start_us": 47.607421875,
+              "duration_us": 3.439,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 51.146484375,
+              "duration_us": 0.835,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 52.0810546875,
+              "duration_us": 4.006,
+              "stream": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tier": "act2",
+      "mode": "parallel",
+      "graphs": 5,
+      "overlap_us_total": 28.177734375,
+      "producer_us_total": 45.269,
+      "median_gemm_us": 72.046,
+      "details": [
+        {
+          "gpu_span_us": 80.4599609375,
+          "gemm_us": 73.315,
+          "producer_us": 8.146,
+          "overlap_us": 1.3359375,
+          "kernels": [
+            {
+              "name": "scaled_amax",
+              "start_us": 0.0,
+              "duration_us": 3.238,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 3.4716796875,
+              "duration_us": 0.835,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 4.4072265625,
+              "duration_us": 4.073,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 7.14453125,
+              "duration_us": 73.315,
+              "stream": 146
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 51.748046875,
+          "gemm_us": 51.748,
+          "producer_us": 10.349,
+          "overlap_us": 10.3486328125,
+          "kernels": [
+            {
+              "name": "scaled_amax",
+              "start_us": 25.740234375,
+              "duration_us": 4.474,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 30.4150390625,
+              "duration_us": 0.968,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 31.482421875,
+              "duration_us": 4.907,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 51.748,
+              "stream": 146
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 86.3017578125,
+          "gemm_us": 83.897,
+          "producer_us": 9.548,
+          "overlap_us": 7.14453125,
+          "kernels": [
+            {
+              "name": "scaled_amax",
+              "start_us": 0.0,
+              "duration_us": 3.572,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 3.7724609375,
+              "duration_us": 1.036,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 4.908203125,
+              "duration_us": 4.94,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 2.404296875,
+              "duration_us": 83.897,
+              "stream": 146
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 51.380859375,
+          "gemm_us": 50.279,
+          "producer_us": 9.115,
+          "overlap_us": 8.013671875,
+          "kernels": [
+            {
+              "name": "scaled_amax",
+              "start_us": 41.931640625,
+              "duration_us": 4.374,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 46.5390625,
+              "duration_us": 0.802,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 47.44140625,
+              "duration_us": 3.939,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 0.0,
+              "duration_us": 50.279,
+              "stream": 146
+            }
+          ]
+        },
+        {
+          "gpu_span_us": 79.1572265625,
+          "gemm_us": 72.046,
+          "producer_us": 8.110999999999999,
+          "overlap_us": 1.3349609375,
+          "kernels": [
+            {
+              "name": "scaled_amax",
+              "start_us": 0.0,
+              "duration_us": 3.238,
+              "stream": 7
+            },
+            {
+              "name": "finish_amax",
+              "start_us": 3.47265625,
+              "duration_us": 0.834,
+              "stream": 7
+            },
+            {
+              "name": "pack_activation",
+              "start_us": 4.4072265625,
+              "duration_us": 4.039,
+              "stream": 7
+            },
+            {
+              "name": "gemm",
+              "start_us": 7.111328125,
+              "duration_us": 72.046,
+              "stream": 146
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_sha256": "edef678215c99df63c47f19ea724e99ea555fd99de76c6db99b59c6c7b925a41"
+}

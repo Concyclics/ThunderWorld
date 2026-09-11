@@ -1,0 +1,8 @@
+{
+  "sources": {
+    "results/findings_20260910/ablation/ablation.csv": "56a492b3f009a4b39c47b25a75e6782833e3d676354e592a84685422d2c08475",
+    "runs5090/auto_budget_edge_calibration/local_errors.json": "a5ff4925cd803835d026fb1d18af25229abd4643d5039d391a8ed39877cd6e1b",
+    "runs5090/auto_budget_nano_calibration/local_errors.json": "3cc6dfcf338075deaf6b9899a0be2212890b06b157269f5423a313b6c880c160"
+  },
+  "scope": "Full-trajectory seeds 6103/6104; local 64-row calibration proxies from seed 7101. Neither proxy rows nor attention heads are independent quality samples."
+}

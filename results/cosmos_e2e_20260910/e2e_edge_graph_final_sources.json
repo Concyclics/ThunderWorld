@@ -1,0 +1,14 @@
+{
+  "tools/cosmos_e2e/benchmark.py": "source_snapshots/fc7b25a49de625ed826b77beee7fd2c9f11e71cf6e539b6a86c8ac94c7b81e56.py",
+  "tools/cosmos_e2e/adapter.py": "source_snapshots/31d7aef522b5d4fef173cd73badaad5955127b64928fe78ce1dcd818a64a3a02.py",
+  "tools/cosmos_e2e/graph.py": "source_snapshots/97316373a994caefb8a17ed7dcbba4d9a6206e6abf8800ae3728f0d84994b28d.py",
+  "experiments/ffn_block_repair_20260907/native.py": "source_snapshots/491c933fce1a29559fdb1a8a3792fa765d4cf266fb84ed831d98ad3c9a93af02.py",
+  "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "source_snapshots/f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972.py",
+  "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "source_snapshots/1c3fc2d2d6652e06862e2fa139d753fdcca8576fb9a7f7b64f7b7b2cfcd07de9.py",
+  "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "source_snapshots/4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6.py",
+  "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "source_snapshots/dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a.py",
+  "packages/fp4-repair/src/thunderworld_fp4/config.py": "source_snapshots/cafe2306ee6ba30f0fb7fa9bc694e4e9297cc1744a0715263e35789bdc9f983e.py",
+  "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "source_snapshots/40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b.py",
+  "packages/fp4-repair/src/thunderworld_fp4/linear.py": "source_snapshots/68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919.py",
+  "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "source_snapshots/9f041d516b5ba258e5df48455e255994c558ddff85d5e9964696da69bd9ac3b9.py"
+}

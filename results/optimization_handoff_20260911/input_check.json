@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "receipts": [
+    {
+      "path": "data_local/e2e_inputs/robot_153.jpg",
+      "url": "https://github.com/nvidia-cosmos/cosmos-dependencies/releases/download/assets/robot_153.jpg",
+      "sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+    },
+    {
+      "path": "data_local/finding_inputs/robot_example.zip",
+      "url": "https://github.com/nvidia-cosmos/cosmos-dependencies/releases/download/assets/robot_example.zip",
+      "sha256": "61279fcfb58827bc84957a4b4f2dd810a66331b6253ba259cff516754f36ede6"
+    },
+    {
+      "path": "data_local/finding_inputs/robot_table.png",
+      "sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "source": "First decoded frame of robot_example/robot_input.mp4"
+    }
+  ]
+}

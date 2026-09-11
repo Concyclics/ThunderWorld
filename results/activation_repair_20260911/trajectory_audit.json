@@ -1,0 +1,382 @@
+[
+  {
+    "pair_outputs_bitwise": true,
+    "path": "runs5090/activation_edge_20260911/result.json",
+    "sha256": "9a418f45888abf6ddb0f517e2fe3a562272d672684010a9844015d76336d40d3",
+    "rows": 10,
+    "receipts": [
+      {
+        "mode": "ffn_act2",
+        "part": "up_proj",
+        "shape": "960:9216:2048",
+        "layout": "native",
+        "calls": 2072
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "down_proj",
+        "shape": "960:2048:9216",
+        "layout": "native",
+        "calls": 2072
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "up_proj",
+        "shape": "416:9216:2048",
+        "layout": "native",
+        "calls": 1036
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "down_proj",
+        "shape": "416:2048:9216",
+        "layout": "native",
+        "calls": 1036
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "up_proj",
+        "shape": "960:9216:2048",
+        "layout": "native",
+        "calls": 2072
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "down_proj",
+        "shape": "960:2048:9216",
+        "layout": "native",
+        "calls": 2072
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "up_proj",
+        "shape": "416:9216:2048",
+        "layout": "native",
+        "calls": 1036
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "down_proj",
+        "shape": "416:2048:9216",
+        "layout": "native",
+        "calls": 1036
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "up_proj",
+        "shape": "960:9216:2048",
+        "layout": "native",
+        "calls": 2072
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "down_proj",
+        "shape": "960:2048:9216",
+        "layout": "native",
+        "calls": 2072
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "up_proj",
+        "shape": "416:9216:2048",
+        "layout": "direct",
+        "calls": 1036
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "down_proj",
+        "shape": "416:2048:9216",
+        "layout": "native",
+        "calls": 1036
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "up_proj",
+        "shape": "960:9216:2048",
+        "layout": "direct",
+        "calls": 2072
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "down_proj",
+        "shape": "960:2048:9216",
+        "layout": "native",
+        "calls": 2072
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "up_proj",
+        "shape": "416:9216:2048",
+        "layout": "native",
+        "calls": 1036
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "down_proj",
+        "shape": "416:2048:9216",
+        "layout": "native",
+        "calls": 1036
+      }
+    ]
+  },
+  {
+    "pair_outputs_bitwise": true,
+    "path": "runs5090/activation_nano_20260911/result.json",
+    "sha256": "94294293db7ca7cb848ba1da8435e37b07caeb0e180a1b864578402c743e55da",
+    "rows": 15,
+    "receipts": [
+      {
+        "mode": "ffn_act2",
+        "part": "gate_proj",
+        "shape": "960:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "up_proj",
+        "shape": "960:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "down_proj",
+        "shape": "960:4096:12288",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "gate_proj",
+        "shape": "416:12288:4096",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "up_proj",
+        "shape": "416:12288:4096",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "down_proj",
+        "shape": "416:4096:12288",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "gate_proj",
+        "shape": "1024:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "up_proj",
+        "shape": "1024:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act2",
+        "part": "down_proj",
+        "shape": "1024:4096:12288",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "gate_proj",
+        "shape": "960:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "up_proj",
+        "shape": "960:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "down_proj",
+        "shape": "960:4096:12288",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "gate_proj",
+        "shape": "416:12288:4096",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "up_proj",
+        "shape": "416:12288:4096",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "down_proj",
+        "shape": "416:4096:12288",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "gate_proj",
+        "shape": "1024:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "up_proj",
+        "shape": "1024:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual",
+        "part": "down_proj",
+        "shape": "1024:4096:12288",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "gate_proj",
+        "shape": "960:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "up_proj",
+        "shape": "960:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "down_proj",
+        "shape": "960:4096:12288",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "gate_proj",
+        "shape": "416:12288:4096",
+        "layout": "direct",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "up_proj",
+        "shape": "416:12288:4096",
+        "layout": "direct",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "down_proj",
+        "shape": "416:4096:12288",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "gate_proj",
+        "shape": "1024:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "up_proj",
+        "shape": "1024:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_act_pair",
+        "part": "down_proj",
+        "shape": "1024:4096:12288",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "gate_proj",
+        "shape": "960:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "up_proj",
+        "shape": "960:12288:4096",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "down_proj",
+        "shape": "960:4096:12288",
+        "layout": "native",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "gate_proj",
+        "shape": "416:12288:4096",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "up_proj",
+        "shape": "416:12288:4096",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "down_proj",
+        "shape": "416:4096:12288",
+        "layout": "native",
+        "calls": 1332
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "gate_proj",
+        "shape": "1024:12288:4096",
+        "layout": "direct",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "up_proj",
+        "shape": "1024:12288:4096",
+        "layout": "direct",
+        "calls": 2664
+      },
+      {
+        "mode": "ffn_dual_pair",
+        "part": "down_proj",
+        "shape": "1024:4096:12288",
+        "layout": "native",
+        "calls": 2664
+      }
+    ]
+  }
+]

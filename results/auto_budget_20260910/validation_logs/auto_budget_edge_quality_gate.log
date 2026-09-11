@@ -1,0 +1,73 @@
+[
+  {
+    "mode": "auto50",
+    "task": "i2v",
+    "validation_pairs": 2,
+    "accepted": true,
+    "fallback": null,
+    "failures": []
+  },
+  {
+    "mode": "auto50",
+    "task": "policy",
+    "validation_pairs": 2,
+    "accepted": false,
+    "fallback": "ffn_act2",
+    "failures": [
+      {
+        "case": "policy_table",
+        "seed": 7204,
+        "repeat": 0,
+        "metrics": [
+          "video_lpips",
+          "action"
+        ]
+      }
+    ]
+  },
+  {
+    "mode": "auto75",
+    "task": "i2v",
+    "validation_pairs": 2,
+    "accepted": false,
+    "fallback": "ffn_uniform75",
+    "failures": [
+      {
+        "case": "robot_table",
+        "seed": 7204,
+        "repeat": 0,
+        "metrics": [
+          "video_ssim",
+          "video_lpips"
+        ]
+      }
+    ]
+  },
+  {
+    "mode": "auto75",
+    "task": "policy",
+    "validation_pairs": 2,
+    "accepted": false,
+    "fallback": "ffn_uniform75",
+    "failures": [
+      {
+        "case": "policy_table",
+        "seed": 7203,
+        "repeat": 0,
+        "metrics": [
+          "action"
+        ]
+      },
+      {
+        "case": "policy_table",
+        "seed": 7204,
+        "repeat": 0,
+        "metrics": [
+          "video_ssim",
+          "video_lpips",
+          "action"
+        ]
+      }
+    ]
+  }
+]

@@ -19,10 +19,22 @@ def test_attention_oracle(terms,coverage,n,splits):
     assert torch.isfinite(y).all()
     assert (y.float()-ref).norm()/ref.norm()<.012
 
+@pytest.mark.parametrize('terms,coverage',[(3,0),(2,1),(3,.5),(3,1),(4,1)])
 @torch.inference_mode()
-def test_heads_graph_and_masks():
+def test_transposed_v_layout(terms,coverage):
+    from dataclasses import replace
+    q,k,v=inputs(m=129,n=257)
+    cfg=RepairConfig(terms=terms,coverage=coverage,head_budgets=((0,0),(1,1)) if coverage==.5 else ())
+    baseline,mask=fp4_attention(q,k,v,cfg,return_mask=True)
+    changed,other=fp4_attention(q,k,v,replace(cfg,transpose_v=True),return_mask=True)
+    assert torch.equal(mask,other)
+    torch.testing.assert_close(changed,baseline,rtol=0,atol=0)
+
+@pytest.mark.parametrize('transpose_v',[False,True])
+@torch.inference_mode()
+def test_heads_graph_and_masks(transpose_v):
     q,k,v=inputs(m=145,n=385)
-    cfg=RepairConfig(coverage=.5,head_budgets=((0,0),(1,1),(2,.25)))
+    cfg=RepairConfig(coverage=.5,head_budgets=((0,0),(1,1),(2,.25)),transpose_v=transpose_v)
     engine=FP4Attention(cfg)
     a,mask=engine(q,k,v,return_mask=True)
     assert mask.sum(-1).cpu().tolist()==[[0,0],[4,4],[1,1],[2,2]]

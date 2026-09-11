@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "model": "edge",
+      "task": "i2v",
+      "mode": "auto50",
+      "retained": true,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    },
+    {
+      "model": "edge",
+      "task": "policy",
+      "mode": "auto50",
+      "retained": false,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    },
+    {
+      "model": "edge",
+      "task": "i2v",
+      "mode": "auto75",
+      "retained": false,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    },
+    {
+      "model": "edge",
+      "task": "policy",
+      "mode": "auto75",
+      "retained": false,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    },
+    {
+      "model": "nano",
+      "task": "i2v",
+      "mode": "auto50",
+      "retained": true,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    },
+    {
+      "model": "nano",
+      "task": "policy",
+      "mode": "auto50",
+      "retained": false,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    },
+    {
+      "model": "nano",
+      "task": "av",
+      "mode": "auto50",
+      "retained": false,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    },
+    {
+      "model": "nano",
+      "task": "i2v",
+      "mode": "auto75",
+      "retained": true,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    },
+    {
+      "model": "nano",
+      "task": "policy",
+      "mode": "auto75",
+      "retained": false,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    },
+    {
+      "model": "nano",
+      "task": "av",
+      "mode": "auto75",
+      "retained": false,
+      "schedule_matches_measured_candidate_or_reference": true,
+      "budget_verified": true
+    }
+  ]
+}

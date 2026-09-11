@@ -1,0 +1,26 @@
+The config attributes {'backbone_type': 'cosmos3_edge_nemotron_dense', 'temporal_compression_factor': 4} were passed to Cosmos3OmniTransformer, but are not expected and will be ignored. Please verify your config.json configuration file.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 115.04it/s]
+edge 960:9216:2048 base ms 0.0556 vs original 0.999
+edge 960:9216:2048 a50 ms 0.0722 vs original 0.998
+edge 960:9216:2048 act2 ms 0.0922 vs original 1.001
+edge 960:9216:2048 wgt2 ms 0.0947 vs original 0.987
+edge 960:9216:2048 a50w ms 0.1117 vs original 0.979
+edge 960:9216:2048 dual ms 0.1403 vs original 1.024
+edge 960:2048:9216 base ms 0.0646 vs original 1.184
+edge 960:2048:9216 a50 ms 0.0952 vs original 1.018
+edge 960:2048:9216 act2 ms 0.1112 vs original 1.09
+edge 960:2048:9216 wgt2 ms 0.1131 vs original 1.111
+edge 960:2048:9216 a50w ms 0.1448 vs original 1.059
+edge 960:2048:9216 dual ms 0.157 vs original 1.187
+edge 316:9216:2048 base ms 0.0257 vs original 1.014
+edge 316:9216:2048 a50 ms 0.0354 vs original 0.998
+edge 316:9216:2048 act2 ms 0.0428 vs original 1.046
+edge 316:9216:2048 wgt2 ms 0.0416 vs original 1.001
+edge 316:9216:2048 a50w ms 0.0508 vs original 1.006
+edge 316:9216:2048 dual ms 0.0607 vs original 1.123
+edge 316:2048:9216 base ms 0.0335 vs original 2.054
+edge 316:2048:9216 a50 ms 0.0546 vs original 1.591
+edge 316:2048:9216 act2 ms 0.0542 vs original 2.049
+edge 316:2048:9216 wgt2 ms 0.0669 vs original 1.714
+edge 316:2048:9216 a50w ms 0.0903 vs original 1.553
+edge 316:2048:9216 dual ms 0.0889 vs original 1.943

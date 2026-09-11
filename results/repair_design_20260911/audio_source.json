@@ -1,0 +1,5 @@
+{
+  "path": "runs5090/repair_design_nano_20260911/audio_decode.json",
+  "sha256": "5bf140d9c9a9540a256e748a1ce85b925d8277fdc146391a9865cba5b5057faa",
+  "scope": "GPU audio decode in separate process. Decode time excludes loading and warmup. Can be listed alongside Generator time but is not a measured integrated-request latency."
+}

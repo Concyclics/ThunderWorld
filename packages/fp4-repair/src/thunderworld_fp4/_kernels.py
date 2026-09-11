@@ -27,7 +27,7 @@ def pack_qk(X, CODES, SCALES, FACTORS, M: tl.constexpr, H: tl.constexpr,
 
 @triton.jit
 def pack_v(X, CODES, SCALES, FACTORS, ENERGY, N:tl.constexpr,H:tl.constexpr,
-           SX:tl.constexpr,SH:tl.constexpr,NT:tl.constexpr,REPAIR:tl.constexpr,NEED_ENERGY:tl.constexpr):
+           SX:tl.constexpr,SH:tl.constexpr,NT:tl.constexpr,REPAIR:tl.constexpr,NEED_ENERGY:tl.constexpr,TRANSPOSE:tl.constexpr=False):
     di=tl.program_id(0)*16+tl.arange(0,16)
     nt=tl.program_id(1);h=tl.program_id(2)
     ni=nt*128+tl.arange(0,128)
@@ -37,6 +37,9 @@ def pack_v(X, CODES, SCALES, FACTORS, ENERGY, N:tl.constexpr,H:tl.constexpr,
     row=(h*NT+nt)*128+di
     idx=row[:,None]*64+tl.arange(0,64)[None,:]
     si=row[:,None]*8+tl.arange(0,8)[None,:]
+    if TRANSPOSE:
+        idx=(h*NT+nt)*128*64+tl.arange(0,64)[None,:]*128+di[:,None]
+        si=(h*NT+nt)*128*8+tl.arange(0,8)[None,:]*128+di[:,None]
     tl.store(CODES+idx,p);tl.store(SCALES+si,s)
     if REPAIR:
         tl.store(CODES+H*NT*128*64+idx,rp)
@@ -48,7 +51,7 @@ def pack_v(X, CODES, SCALES, FACTORS, ENERGY, N:tl.constexpr,H:tl.constexpr,
 def streaming_attention(QC,QS,QF,KC,KS,KF,VC,VS,VF,FLAGS,O,STATS,
                      M:tl.constexpr,N:tl.constexpr,HQ:tl.constexpr,HK:tl.constexpr,
                      MP:tl.constexpr,NP:tl.constexpr,
-                     BM:tl.constexpr,BN:tl.constexpr,REPAIR:tl.constexpr,FULL:tl.constexpr,TERMS:tl.constexpr,SPLITS:tl.constexpr,LAZY_P:tl.constexpr,FAST_P:tl.constexpr=False):
+                     BM:tl.constexpr,BN:tl.constexpr,REPAIR:tl.constexpr,FULL:tl.constexpr,TERMS:tl.constexpr,SPLITS:tl.constexpr,LAZY_P:tl.constexpr,FAST_P:tl.constexpr=False,TRANSPOSE_V:tl.constexpr=False):
     mi=tl.program_id(0)*BM+tl.arange(0,BM);h=tl.program_id(1);kh=h//(HQ//HK)
     dd=tl.arange(0,128);dk=tl.arange(0,64);ds=tl.arange(0,8)
     qi=(h*MP+mi[:,None])*64+dk[None,:]
@@ -89,6 +92,9 @@ def streaming_attention(QC,QS,QF,KC,KS,KF,VC,VS,VF,FLAGS,O,STATS,
             p0,ps,p1,pr,pf=quantize_p(p,BM,BN,REPAIR,FAST_P)
         vi=((kh*tl.cdiv(N,128)+start*BN//128)*128+dd[:,None])*64+(start*BN%128)//2+tl.arange(0,BN//2)[None,:]
         vsi=((kh*tl.cdiv(N,128)+start*BN//128)*128+dd[:,None])*8+(start*BN%128)//16+tl.arange(0,BN//16)[None,:]
+        if TRANSPOSE_V:
+            vi=(kh*tl.cdiv(N,128)+start*BN//128)*128*64+((start*BN%128)//2+tl.arange(0,BN//2)[None,:])*128+dd[:,None]
+            vsi=(kh*tl.cdiv(N,128)+start*BN//128)*128*8+((start*BN%128)//16+tl.arange(0,BN//16)[None,:])*128+dd[:,None]
         v0=tl.load(VC+vi);vs=tl.load(VS+vsi)
         vf=tl.load(VF+(kh*tl.cdiv(N,128)+start*BN//128)*128+dd)
         tile=tl.dot_scaled(p0,ps,'e2m1',v0.T,vs,'e2m1')
@@ -131,7 +137,7 @@ def combine(PARTS,STATS,OUT,M:tl.constexpr,H:tl.constexpr,SPLITS:tl.constexpr,BS
     tl.store(OUT+(r[:,None]*H+h)*128+di[None,:],accum/total[:,None],r[:,None]<M)
 
 
-def pack_inputs(q,k,v,repair=True,need_energy=False,terms=3):
+def pack_inputs(q,k,v,repair=True,need_energy=False,terms=3,transpose_v=False):
     import torch
     m,n,h,hk=q.shape[1],k.shape[1],q.shape[2],k.shape[2]
     mp=triton.cdiv(m,16)*16;np=triton.cdiv(n,128)*128;planes=2 if repair else 1
@@ -143,7 +149,7 @@ def pack_inputs(q,k,v,repair=True,need_energy=False,terms=3):
         scales=torch.empty((planes,hh*padded,8),device=q.device,dtype=torch.float8_e4m3fn)
         factors=torch.empty((hh*padded,),device=q.device,dtype=torch.float32)
         if kind=='v':
-            pack_v[(8,np//128,hh)](x,codes,scales,factors,energy,nn,hh,x.stride(1),x.stride(2),np//128,local_repair,need_energy,num_warps=4)
+            pack_v[(8,np//128,hh)](x,codes,scales,factors,energy,nn,hh,x.stride(1),x.stride(2),np//128,local_repair,need_energy,transpose_v,num_warps=4)
         else:
             pack_qk[(triton.cdiv(padded,16),hh)](x,codes,scales,factors,nn,hh,x.stride(1),x.stride(2),padded,local_repair,num_warps=4)
         outputs.extend([codes,scales,factors])

@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-01T07:21:08.997344+00:00",
+  "assessment": "share_with_caveats",
+  "checks_passed": 15,
+  "checks_total": 15,
+  "blockers": [],
+  "caveat_failures": [],
+  "checks": [
+    {
+      "name": "source manifest is complete and unique",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "30 reviewed source artifacts with SHA-256 hashes"
+    },
+    {
+      "name": "Generator taxonomy has a valid denominator",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "shares sum to 1.000000000000; counts sum to 2464"
+    },
+    {
+      "name": "directed relation headline matches the source rows",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "four relation pairs; asymmetry range 4.09–13.53×"
+    },
+    {
+      "name": "all directional structural intervals stay above 3.5×",
+      "passed": true,
+      "severity": "caveat",
+      "evidence": "minimum head-layer bootstrap lower bound 3.59×"
+    },
+    {
+      "name": "0.90 development point has three seeds",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "min SSIM 0.9225, min PSNR 25.30 dB, QK reduction 36.7%"
+    },
+    {
+      "name": "0.80 aggressive point is correctly marked provisional",
+      "passed": true,
+      "severity": "caveat",
+      "evidence": "two seeds; min SSIM 0.8556; QK reduction 55.0%"
+    },
+    {
+      "name": "blanket all-head policy fails the 0.80 gate",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "best comparable 20-step SSIM 0.7697"
+    },
+    {
+      "name": "the apparent all-head 0.827 result is excluded for step mismatch",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "SSIM 0.8267 came from 4 steps"
+    },
+    {
+      "name": "Amdahl estimate recomputes for q12 · 50% GQA sparse",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "attention 1.211× -> estimated E2E 1.065×"
+    },
+    {
+      "name": "Amdahl estimate recomputes for q12 · 75% GQA sparse",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "attention 1.407× -> estimated E2E 1.112×"
+    },
+    {
+      "name": "Amdahl estimate recomputes for 100% all-head sparse · best comparable",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "attention 1.930× -> estimated E2E 1.202×"
+    },
+    {
+      "name": "all-sparse kernel speedup scales with tested DM length",
+      "passed": true,
+      "severity": "caveat",
+      "evidence": "AR=61 speedups: 4096: 1.03×, 8192: 1.32×, 16384: 1.93×"
+    },
+    {
+      "name": "late-step local sparsifiability growth recomputes",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "safe share grows 3.386× from step 0 to step 19"
+    },
+    {
+      "name": "cross-to-self transfer remains a negative result",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "residual correlation -0.065; both held-out omitted-mass changes are negative"
+    },
+    {
+      "name": "full equal-budget candidate campaign passed completeness checks",
+      "passed": true,
+      "severity": "blocker",
+      "evidence": "5,308,416 head rows and 4,608 quality rows"
+    }
+  ],
+  "required_caveats": [
+    "Paired SSIM/PSNR measure same-seed dense-reference fidelity, not semantic quality or task success.",
+    "H200 microbenchmarks use random tensors and measure attention kernels, not complete Cosmos3 rollouts.",
+    "The 0.90 point covers one T2V prompt across three seeds; the 0.80 point covers two seeds.",
+    "The 4-step all-head SSIM 0.827 result is excluded from the comparable 20-step frontier.",
+    "Final VBench, control, action, and task-success non-inferiority remains unmeasured."
+  ]
+}

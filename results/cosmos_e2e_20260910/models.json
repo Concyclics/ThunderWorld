@@ -1,0 +1,156 @@
+{
+  "Cosmos3-Edge": {
+    "repository": "nvidia/Cosmos3-Edge",
+    "revision": "a9d944e2c6a1bf9f48b92ad16348e70c5f1836ba",
+    "hidden_size": 2048,
+    "intermediate_size": 9216,
+    "hidden_act": "relu2",
+    "num_hidden_layers": 28,
+    "num_attention_heads": 16,
+    "num_key_value_heads": 8,
+    "head_dim": 128,
+    "download_files": [
+      {
+        "name": "model_index.json",
+        "bytes": 555
+      },
+      {
+        "name": "scheduler/scheduler_config.json",
+        "bytes": 889
+      },
+      {
+        "name": "text_tokenizer/chat_template.jinja",
+        "bytes": 12158
+      },
+      {
+        "name": "text_tokenizer/special_tokens_map.json",
+        "bytes": 563
+      },
+      {
+        "name": "text_tokenizer/tokenizer.json",
+        "bytes": 17077500
+      },
+      {
+        "name": "text_tokenizer/tokenizer_config.json",
+        "bytes": 393
+      },
+      {
+        "name": "transformer/config.json",
+        "bytes": 1075
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+        "bytes": 5000040072
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+        "bytes": 1739335512
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model.safetensors.index.json",
+        "bytes": 53623
+      },
+      {
+        "name": "vae/config.json",
+        "bytes": 1755
+      },
+      {
+        "name": "vae/diffusion_pytorch_model.safetensors",
+        "bytes": 1409400600
+      }
+    ]
+  },
+  "Cosmos3-Nano": {
+    "repository": "nvidia/Cosmos3-Nano",
+    "revision": "411f42a8fdfb8c5b2583cb8786e0938f49796eaa",
+    "hidden_size": 4096,
+    "intermediate_size": 12288,
+    "hidden_act": "silu",
+    "num_hidden_layers": 36,
+    "num_attention_heads": 32,
+    "num_key_value_heads": 8,
+    "head_dim": 128,
+    "download_files": [
+      {
+        "name": "model_index.json",
+        "bytes": 502
+      },
+      {
+        "name": "scheduler/scheduler_config.json",
+        "bytes": 884
+      },
+      {
+        "name": "text_tokenizer/added_tokens.json",
+        "bytes": 707
+      },
+      {
+        "name": "text_tokenizer/chat_template.jinja",
+        "bytes": 5292
+      },
+      {
+        "name": "text_tokenizer/merges.txt",
+        "bytes": 1671853
+      },
+      {
+        "name": "text_tokenizer/special_tokens_map.json",
+        "bytes": 613
+      },
+      {
+        "name": "text_tokenizer/tokenizer.json",
+        "bytes": 11422654
+      },
+      {
+        "name": "text_tokenizer/tokenizer_config.json",
+        "bytes": 5404
+      },
+      {
+        "name": "text_tokenizer/vocab.json",
+        "bytes": 2776833
+      },
+      {
+        "name": "transformer/config.json",
+        "bytes": 1383
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model-00001-of-00007.safetensors",
+        "bytes": 4902257280
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model-00002-of-00007.safetensors",
+        "bytes": 4999863656
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model-00003-of-00007.safetensors",
+        "bytes": 4932719448
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model-00004-of-00007.safetensors",
+        "bytes": 4983084656
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model-00005-of-00007.safetensors",
+        "bytes": 4949498576
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model-00006-of-00007.safetensors",
+        "bytes": 4261644464
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model-00007-of-00007.safetensors",
+        "bytes": 1318361208
+      },
+      {
+        "name": "transformer/diffusion_pytorch_model.safetensors.index.json",
+        "bytes": 78854
+      },
+      {
+        "name": "vae/config.json",
+        "bytes": 1750
+      },
+      {
+        "name": "vae/diffusion_pytorch_model.safetensors",
+        "bytes": 1409400600
+      }
+    ]
+  }
+}

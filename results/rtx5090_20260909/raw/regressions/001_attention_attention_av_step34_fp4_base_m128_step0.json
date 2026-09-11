@@ -1,0 +1,91 @@
+{
+  "config": {
+    "data": "data_local/rtx5090-kernel-inputs-20260909",
+    "asset": "attention_av_step34.pt",
+    "weights": "data_local/rtx5090-prepared-weights",
+    "kind": "attention",
+    "preset": "fp4_base",
+    "m": 128,
+    "step_index": 0,
+    "block_k": 128,
+    "tile_m": 32,
+    "splits": 2,
+    "key_tokens": null,
+    "rounds": 5,
+    "rep_ms": 40,
+    "inner_only": false,
+    "profile": true,
+    "skip_verify": false,
+    "output": "runs5090/regressions/001_attention_attention_av_step34_fp4_base_m128_step0.json",
+    "num_warps": 4,
+    "num_stages": 1,
+    "indexed_repair": false,
+    "tuning": null,
+    "compare_baseline": true,
+    "transpose_v": true,
+    "split_k": 1
+  },
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "torch": "2.11.0+cu130",
+  "triton": "3.6.0",
+  "source_sha256": {
+    "tools/kernel_handoff/bench.py": "8d4591c86dc524a23bf0ad541a8adede479a21460a58f0ad5b0d26f3d2a3d5c9",
+    "tools/kernel_handoff/frozen_baseline.py": "adce7ac0c68fe76d3e3968ec51ef9dbc54ccccba201337f42cf3f8635c2eb274",
+    "experiments/ffn_block_repair_20260907/native.py": "491c933fce1a29559fdb1a8a3792fa765d4cf266fb84ed831d98ad3c9a93af02",
+    "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+    "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "1c3fc2d2d6652e06862e2fa139d753fdcca8576fb9a7f7b64f7b7b2cfcd07de9",
+    "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+    "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+    "packages/fp4-repair/src/thunderworld_fp4/config.py": "cafe2306ee6ba30f0fb7fa9bc694e4e9297cc1744a0715263e35789bdc9f983e",
+    "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+    "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+    "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "9f041d516b5ba258e5df48455e255994c558ddff85d5e9964696da69bd9ac3b9"
+  },
+  "scope": "shared captured values repeated for larger shapes; one operator, not full model",
+  "verification": {
+    "decoded_reference_relative_l2": 0.0016583174001425505,
+    "bf16_relative_l2": 0.17130360007286072,
+    "original_bf16_relative_l2": 0.17130360007286072,
+    "original_output_relative_l2": 0.0
+  },
+  "tuning": null,
+  "baseline_source_sha256": {
+    "experiments/ffn_block_repair_20260907/native.py": "0dc527acc852e044d52af517f2e6943600c80811c7be0e1e64843bae2f306b21",
+    "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "acbef3c14f546a2f42ac3a5bb5fb8c9ace53ee3d399e514d7f10285e87bd2e19",
+    "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+    "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+    "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+    "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+    "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+    "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "2c06efdf6d3425503dd9f66101867614cc3e1d81a1caecb6aa54a500cb0884d0",
+    "packages/fp4-repair/src/thunderworld_fp4/config.py": "03b598865783f1f9f45ef192f72877a4914e6b897faa07f267119583a00410ec"
+  },
+  "shape": {
+    "M": 128,
+    "N": 2171,
+    "Hq": 32,
+    "Hkv": 8,
+    "D": 128
+  },
+  "repair_config": {
+    "coverage": 0,
+    "terms": 3,
+    "head_budgets": [],
+    "block_size": 128,
+    "query_tile": 32,
+    "num_warps": 4,
+    "splits": 2,
+    "lazy_p": true,
+    "fast_p": true,
+    "transpose_v": true
+  },
+  "cost": {
+    "selected_tile_fraction": 0.0,
+    "matrix_product_multiplier": 1.0,
+    "scope": "equal-cost padded tiles; external repair_mask replaces these quotas"
+  },
+  "comparison_scope": "same-process archived handoff kernels at original launch settings; shared immutable FFN weights",
+  "profile": "one current-input call inside NVTX steady",
+  "process_peak_allocated_bytes": 63148544,
+  "memory_scope": "entire harness, including BF16 reference weights/GQA expansion; not deployable model footprint"
+}

@@ -1,0 +1,9 @@
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 267440 (/home/chenhan/miniconda3/envs/vllm/bin/python3.12)
+==PROF== Profiling "select_tiles" - 0: 0%....50%....100% - 9 passes
+==PROF== Profiling "scaled_amax" - 1: 0%....50%....100% - 9 passes
+==PROF== Profiling "finish_amax" - 2: 0%....50%....100% - 9 passes
+==PROF== Profiling "pack_activation" - 3: 0%....50%....100% - 9 passes
+==PROF== Profiling "gemm" - 4: 0%....50%....100% - 9 passes
+==PROF== Disconnected from process 267440
+==PROF== Report: /home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/auto_budget_profiles/nano_316_4096_12288_a50.ncu-rep

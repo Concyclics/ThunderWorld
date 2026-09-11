@@ -1,0 +1,10 @@
+{
+  "edge": {
+    "path": "tools/optimization_handoff/profiles/edge.json",
+    "sha256": "30b57d7dbee4afbf4f5b736219f5270b033b87008abb39446c4ebf5aa8099acc"
+  },
+  "nano": {
+    "path": "tools/optimization_handoff/profiles/nano.json",
+    "sha256": "250d6dd5883842b12dc4d0538b771f78ef3ce637ca27b7e230610d4128ddc612"
+  }
+}

@@ -1,0 +1,18 @@
+The config attributes {'backbone_type': 'cosmos3_edge_nemotron_dense', 'temporal_compression_factor': 4} were passed to Cosmos3OmniTransformer, but are not expected and will be ignored. Please verify your config.json configuration file.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  9.24it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 13.16it/s]
+edge 960:9216:2048 a50 chunk 512 launch 128 3 speedup 0.6843
+edge 960:9216:2048 act2 chunk 512 launch 128 3 speedup 0.9011
+edge 960:9216:2048 a50w chunk 512 launch 128 3 speedup 0.7879
+edge 960:9216:2048 dual chunk 512 launch 128 3 speedup 0.9254
+edge 960:2048:9216 a50 chunk 512 launch 64 2 speedup 0.6798
+edge 960:2048:9216 act2 chunk 512 launch 64 3 speedup 0.7852
+edge 960:2048:9216 a50w chunk 512 launch 64 3 speedup 0.692
+edge 960:2048:9216 dual chunk 512 launch 64 3 speedup 0.8019
+edge 316:9216:2048 a50 chunk 512 launch 64 3 speedup 0.7601
+edge 316:9216:2048 act2 chunk 512 launch 64 2 speedup 0.9098
+edge 316:9216:2048 a50w chunk 512 launch 64 2 speedup 0.9059
+edge 316:9216:2048 dual chunk 512 launch 64 3 speedup 0.8499
+edge 316:2048:9216 a50 chunk 512 launch 64 2 speedup 0.7732
+edge 316:2048:9216 act2 chunk 512 launch 32 3 speedup 0.8767
+edge 316:2048:9216 a50w chunk 512 launch 64 3 speedup 0.8849
+edge 316:2048:9216 dual chunk 512 launch 64 3 speedup 0.8814

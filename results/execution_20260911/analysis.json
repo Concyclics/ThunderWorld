@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "paired_trajectories": 40,
+  "total_trajectories": 120,
+  "local_ffn_cases": 20,
+  "double_buffer_cases": 120,
+  "retuned_double_buffer_cases": 40,
+  "retuned_launch_candidates": 240,
+  "retuned_speedup_range": [
+    0.6798435926501892,
+    1.0190362733662517
+  ],
+  "retuned_multichunk_speedup_range": [
+    0.6798435926501892,
+    0.9419683996188312
+  ],
+  "retuned_multichunk_winners": 0,
+  "same_outputs_and_budgets": true,
+  "phase_boundaries_verified": true,
+  "graph_speedup_range": [
+    0.9232266871679748,
+    2.1900445084087243
+  ],
+  "fp4_graph_speedup_range": [
+    1.163115058004596,
+    2.0292664399704305
+  ],
+  "fp4_fusion_speedup_range": [
+    0.9866851782384839,
+    1.1094720307930883
+  ],
+  "fusion_speedup_range": [
+    0.9670622331623888,
+    1.1904587133968327
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "input": "runs5090/findings_edge_sampling",
+      "trajectories": 12,
+      "source_snapshots": 4,
+      "complete_coverage": true,
+      "finite_and_hashes": true,
+      "cache_age_at_most_one": true
+    },
+    {
+      "input": "runs5090/findings_nano_sampling_complete",
+      "trajectories": 16,
+      "source_snapshots": 19,
+      "complete_coverage": true,
+      "finite_and_hashes": true,
+      "cache_age_at_most_one": true
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "mode": "bf16",
+      "case": "av_pottery",
+      "seed": 7103,
+      "repeat": 0,
+      "decode_seconds": 0.034111334003682714,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "847d52f0584b72870a37a39fc9f253a1f911607f28fbf8d0cfcefd059a7ce74e"
+    },
+    {
+      "mode": "ffn_act2",
+      "case": "av_pottery",
+      "seed": 7103,
+      "repeat": 0,
+      "decode_seconds": 0.025236991998099256,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "a636bf9ba695ed699214ae5ce1eff91be49a20c7ec48096b04892ea31e1ceb98",
+      "vs_bf16": {
+        "relative_l2": 0.22200462222099304,
+        "rmse": 0.043269116431474686,
+        "log_spectral_l1": 0.5617417097091675
+      }
+    },
+    {
+      "mode": "ffn_auto50",
+      "case": "av_pottery",
+      "seed": 7103,
+      "repeat": 0,
+      "decode_seconds": 0.024829437999869697,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "5090281823f2d4e6e429f5a68b35ff249948edb97138e827399757101baedc6c",
+      "vs_bf16": {
+        "relative_l2": 0.29877468943595886,
+        "rmse": 0.058231793344020844,
+        "log_spectral_l1": 0.5763050317764282
+      },
+      "vs_ffn_act2": {
+        "relative_l2": 0.17889893054962158,
+        "rmse": 0.040742699056863785,
+        "log_spectral_l1": 0.5931994318962097
+      }
+    }
+  ],
+  "scope": "GPU audio decode in separate process. Decode time excludes loading and warmup. Can be listed alongside Generator time but is not a measured integrated-request latency.",
+  "source_sha256": "e3c203bb0d68d5dd302c3fd4e1640217fdb77ae0bd8cd6e0e4c92cf8490cbc1d"
+}

@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "figures": 14,
+  "sections": 14,
+  "pdf_pages": 14,
+  "all_landscape": true,
+  "page_errors": [],
+  "mobile_page_overflow": false,
+  "print_section_geometry": [
+    {
+      "height": 452.078125,
+      "title": "Executive Summary"
+    },
+    {
+      "height": 596.484375,
+      "title": "1. Overall Architecture"
+    },
+    {
+      "height": 596.484375,
+      "title": "2. How Precision Repair Works"
+    },
+    {
+      "height": 577.828125,
+      "title": "3. From Calibration to an Executable Budget"
+    },
+    {
+      "height": 577.828125,
+      "title": "4. Graphs and Fusion Reduce Execution Overhead"
+    },
+    {
+      "height": 577.828125,
+      "title": "5. Finding A: Deeper DM Layers Attend Less to AR Context"
+    },
+    {
+      "height": 596.484375,
+      "title": "6. Finding B: Token Counts Explain Much of the Directionality"
+    },
+    {
+      "height": 596.484375,
+      "title": "7. Stable Head Relationships Still Have Changing Outputs"
+    },
+    {
+      "height": 615.140625,
+      "title": "8. Cross-Step Reuse Has Not Delivered a Reliable Win"
+    },
+    {
+      "height": 596.484375,
+      "title": "9. Repair Helps, but Its Best Form Depends on the Task"
+    },
+    {
+      "height": 615.140625,
+      "title": "10. End-to-End Speed and Video Consistency"
+    },
+    {
+      "height": 596.484375,
+      "title": "11. Separate Execution Gains from Memory Savings"
+    },
+    {
+      "height": 596.484375,
+      "title": "12. Why More FP4 Work or Overlap Is Not Automatically Faster"
+    },
+    {
+      "height": 615.140625,
+      "title": "13. What to Complete Next\u2014and What the Demo Should Show"
+    }
+  ],
+  "image_sha256": "84f59baffef2a74d4ded19a4ffb3209101e2b4fbed499d6a71769998becdecdc"
+}

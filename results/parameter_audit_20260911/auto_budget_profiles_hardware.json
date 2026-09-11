@@ -1,0 +1,1150 @@
+{
+  "complete": true,
+  "profiles": [
+    {
+      "tag": "edge_960_2048_9216_a50",
+      "benchmark": {
+        "model": "edge",
+        "shape": "960:2048:9216",
+        "tier": "a50",
+        "task": "i2v",
+        "source": "00001.pt",
+        "original_ms": 0.09694533248742422,
+        "optimized_ms": 0.09521876385337429,
+        "bf16_ms": 0.17555912921303196,
+        "packed_gemm_ms": 0.08080247165710945,
+        "fixed_mask_ms": 0.09524634843020095,
+        "pack_ms": 0.014084613562587753,
+        "select_ms": 0.00325671537564351,
+        "achieved_tflops_operator": 570.8767646228343,
+        "achieved_tflops_gemm": 672.7291718336596,
+        "bf16_relative_l2": 0.01711536943912506,
+        "winner": {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.09521876385337429,
+          "relative_l2": 0.0
+        },
+        "candidates": [
+          {
+            "bm": 32,
+            "num_stages": 2,
+            "ms": 0.15026135280214506,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 32,
+            "num_stages": 3,
+            "ms": 0.15025888719866354,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 2,
+            "ms": 0.10074560087021082,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 3,
+            "ms": 0.10135661738259452,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 2,
+            "ms": 0.09710940186695385,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 3,
+            "ms": 0.09521876385337429,
+            "relative_l2": 0.0
+          }
+        ],
+        "payload": "runs5090/auto_budget_edge_bench/960_2048_9216.pt"
+      },
+      "command": [
+        "/usr/local/cuda-12.9/bin/ncu",
+        "--clock-control",
+        "none",
+        "--nvtx",
+        "--nvtx-include",
+        "steady/",
+        "--metrics",
+        "gpu__time_duration.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,sm__throughput.avg.pct_of_peak_sustained_elapsed,launch__registers_per_thread,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum",
+        "-o",
+        "runs5090/auto_budget_profiles/edge_960_2048_9216_a50",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/bin/python",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/tools/auto_budget/bench.py",
+        "--payload",
+        "runs5090/auto_budget_edge_bench/960_2048_9216.pt",
+        "--tier",
+        "a50",
+        "--bm",
+        "128",
+        "--stages",
+        "3"
+      ],
+      "kernels": [
+        {
+          "kernel": "select_tiles",
+          "gpu__time_duration.sum": 4.288,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.291861,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 15.641874,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.476146,
+          "launch__registers_per_thread": 80.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 4288.0
+        },
+        {
+          "kernel": "scaled_amax",
+          "gpu__time_duration.sum": 12.64,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 95.862867,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 78.743207,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 9.467492,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 12640.0
+        },
+        {
+          "kernel": "finish_amax",
+          "gpu__time_duration.sum": 1.792,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 7.793478,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 0.534326,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.01553,
+          "launch__registers_per_thread": 27.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 1792.0
+        },
+        {
+          "kernel": "pack_activation",
+          "gpu__time_duration.sum": 15.904,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 87.420069,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 62.703648,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 30.267138,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 15904.0
+        },
+        {
+          "kernel": "gemm",
+          "gpu__time_duration.sum": 89.568,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 32.038092,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.339932,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 11.690152,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 32.038092,
+          "launch__registers_per_thread": 254.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 89568.0
+        }
+      ]
+    },
+    {
+      "tag": "edge_960_2048_9216_dual",
+      "benchmark": {
+        "model": "edge",
+        "shape": "960:2048:9216",
+        "tier": "dual",
+        "task": "i2v",
+        "source": "00001.pt",
+        "original_ms": 0.18626923841588638,
+        "optimized_ms": 0.1569597384968742,
+        "bf16_ms": 0.17555912921303196,
+        "packed_gemm_ms": 0.1481680003079501,
+        "fixed_mask_ms": 0.16258571065705396,
+        "pack_ms": 0.015172628108287017,
+        "select_ms": 0.0,
+        "achieved_tflops_operator": 692.6385117681949,
+        "achieved_tflops_gemm": 733.737105542665,
+        "bf16_relative_l2": 0.0028268960304558277,
+        "winner": {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.1569597384968742,
+          "relative_l2": 0.0
+        },
+        "candidates": [
+          {
+            "bm": 32,
+            "num_stages": 2,
+            "ms": 0.23050049373081752,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 32,
+            "num_stages": 3,
+            "ms": 0.2305257138751802,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 2,
+            "ms": 0.1644326001405716,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 3,
+            "ms": 0.17008943217141287,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 2,
+            "ms": 0.18946956634521483,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 3,
+            "ms": 0.1569597384968742,
+            "relative_l2": 0.0
+          }
+        ],
+        "payload": "runs5090/auto_budget_edge_bench/960_2048_9216.pt"
+      },
+      "command": [
+        "/usr/local/cuda-12.9/bin/ncu",
+        "--clock-control",
+        "none",
+        "--nvtx",
+        "--nvtx-include",
+        "steady/",
+        "--metrics",
+        "gpu__time_duration.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,sm__throughput.avg.pct_of_peak_sustained_elapsed,launch__registers_per_thread,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum",
+        "-o",
+        "runs5090/auto_budget_profiles/edge_960_2048_9216_dual",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/bin/python",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/tools/auto_budget/bench.py",
+        "--payload",
+        "runs5090/auto_budget_edge_bench/960_2048_9216.pt",
+        "--tier",
+        "dual",
+        "--bm",
+        "128",
+        "--stages",
+        "3"
+      ],
+      "kernels": [
+        {
+          "kernel": "scaled_amax",
+          "gpu__time_duration.sum": 12.384,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 81.698257,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 80.256049,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 9.657607,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 12384.0
+        },
+        {
+          "kernel": "finish_amax",
+          "gpu__time_duration.sum": 1.856,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 7.909045,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 0.72601,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.015061,
+          "launch__registers_per_thread": 27.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 1856.0
+        },
+        {
+          "kernel": "pack_activation",
+          "gpu__time_duration.sum": 16.352,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 101.224197,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 60.974306,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 36.305706,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 16352.0
+        },
+        {
+          "kernel": "gemm",
+          "gpu__time_duration.sum": 155.232,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 37.719133,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.345813,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 11.493499,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 37.719133,
+          "launch__registers_per_thread": 254.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 155232.0
+        }
+      ]
+    },
+    {
+      "tag": "edge_316_2048_9216_a50",
+      "benchmark": {
+        "model": "edge",
+        "shape": "316:2048:9216",
+        "tier": "a50",
+        "task": "policy",
+        "source": "00449.pt",
+        "original_ms": 0.08683038529895601,
+        "optimized_ms": 0.05458379296695485,
+        "bf16_ms": 0.05952934182208518,
+        "packed_gemm_ms": 0.04374350151925717,
+        "fixed_mask_ms": 0.05204728047053019,
+        "pack_ms": 0.007877358529694687,
+        "select_ms": 0.003195678810713645,
+        "achieved_tflops_operator": 327.80611041142566,
+        "achieved_tflops_gemm": 409.04134883036335,
+        "bf16_relative_l2": 0.017806796357035637,
+        "winner": {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.05458379296695485,
+          "relative_l2": 0.0
+        },
+        "candidates": [
+          {
+            "bm": 32,
+            "num_stages": 2,
+            "ms": 0.05458379296695485,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 32,
+            "num_stages": 3,
+            "ms": 0.05473592075300805,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 2,
+            "ms": 0.05816426718676532,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 3,
+            "ms": 0.05854904096420497,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 2,
+            "ms": 0.08731787846638606,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 3,
+            "ms": 0.08553593800618098,
+            "relative_l2": 0.0
+          }
+        ],
+        "payload": "runs5090/auto_budget_edge_bench/316_2048_9216.pt"
+      },
+      "command": [
+        "/usr/local/cuda-12.9/bin/ncu",
+        "--clock-control",
+        "none",
+        "--nvtx",
+        "--nvtx-include",
+        "steady/",
+        "--metrics",
+        "gpu__time_duration.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,sm__throughput.avg.pct_of_peak_sustained_elapsed,launch__registers_per_thread,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum",
+        "-o",
+        "runs5090/auto_budget_profiles/edge_316_2048_9216_a50",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/bin/python",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/tools/auto_budget/bench.py",
+        "--payload",
+        "runs5090/auto_budget_edge_bench/316_2048_9216.pt",
+        "--tier",
+        "a50",
+        "--bm",
+        "32",
+        "--stages",
+        "2"
+      ],
+      "kernels": [
+        {
+          "kernel": "select_tiles",
+          "gpu__time_duration.sum": 4.032,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.284184,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 6.275057,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.188164,
+          "launch__registers_per_thread": 80.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 4032.0
+        },
+        {
+          "kernel": "scaled_amax",
+          "gpu__time_duration.sum": 5.28,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 32.014192,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 62.946429,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 7.525001,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 5280.0
+        },
+        {
+          "kernel": "finish_amax",
+          "gpu__time_duration.sum": 1.728,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.444274,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 0.564353,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.018853,
+          "launch__registers_per_thread": 16.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 1728.0
+        },
+        {
+          "kernel": "pack_activation",
+          "gpu__time_duration.sum": 6.592,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 60.913312,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 50.408083,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 24.545045,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 6592.0
+        },
+        {
+          "kernel": "gemm",
+          "gpu__time_duration.sum": 62.464,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 14.206859,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.480139,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 12.028743,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 14.206859,
+          "launch__registers_per_thread": 114.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 62464.0
+        }
+      ]
+    },
+    {
+      "tag": "edge_316_2048_9216_dual",
+      "benchmark": {
+        "model": "edge",
+        "shape": "316:2048:9216",
+        "tier": "dual",
+        "task": "policy",
+        "source": "00449.pt",
+        "original_ms": 0.17262067974738354,
+        "optimized_ms": 0.08886028857941324,
+        "bf16_ms": 0.05952934182208518,
+        "packed_gemm_ms": 0.08091398428294284,
+        "fixed_mask_ms": 0.09068530715338075,
+        "pack_ms": 0.0080058784838076,
+        "select_ms": 0.0,
+        "achieved_tflops_operator": 402.7198459525451,
+        "achieved_tflops_gemm": 442.2696774251403,
+        "bf16_relative_l2": 0.0033860737457871437,
+        "winner": {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.08886028857941324,
+          "relative_l2": 0.0
+        },
+        "candidates": [
+          {
+            "bm": 32,
+            "num_stages": 2,
+            "ms": 0.09826501871084238,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 32,
+            "num_stages": 3,
+            "ms": 0.08886028857941324,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 2,
+            "ms": 0.10247946646478441,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 3,
+            "ms": 0.0928056800365448,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 2,
+            "ms": 0.17269894409179687,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 3,
+            "ms": 0.14496511883205837,
+            "relative_l2": 0.0
+          }
+        ],
+        "payload": "runs5090/auto_budget_edge_bench/316_2048_9216.pt"
+      },
+      "command": [
+        "/usr/local/cuda-12.9/bin/ncu",
+        "--clock-control",
+        "none",
+        "--nvtx",
+        "--nvtx-include",
+        "steady/",
+        "--metrics",
+        "gpu__time_duration.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,sm__throughput.avg.pct_of_peak_sustained_elapsed,launch__registers_per_thread,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum",
+        "-o",
+        "runs5090/auto_budget_profiles/edge_316_2048_9216_dual",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/bin/python",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/tools/auto_budget/bench.py",
+        "--payload",
+        "runs5090/auto_budget_edge_bench/316_2048_9216.pt",
+        "--tier",
+        "dual",
+        "--bm",
+        "32",
+        "--stages",
+        "3"
+      ],
+      "kernels": [
+        {
+          "kernel": "scaled_amax",
+          "gpu__time_duration.sum": 5.536,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 38.196871,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 59.946265,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 7.168749,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 5536.0
+        },
+        {
+          "kernel": "finish_amax",
+          "gpu__time_duration.sum": 1.824,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 7.607065,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 0.542092,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.017934,
+          "launch__registers_per_thread": 16.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 1824.0
+        },
+        {
+          "kernel": "pack_activation",
+          "gpu__time_duration.sum": 7.008,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 66.905741,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 47.510698,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 28.482195,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 7008.0
+        },
+        {
+          "kernel": "gemm",
+          "gpu__time_duration.sum": 122.592,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 14.556968,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.283287,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 11.434569,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 14.556968,
+          "launch__registers_per_thread": 122.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 122592.0
+        }
+      ]
+    },
+    {
+      "tag": "nano_960_4096_12288_a50",
+      "benchmark": {
+        "model": "nano",
+        "shape": "960:4096:12288",
+        "tier": "a50",
+        "task": "i2v",
+        "source": "00002.pt",
+        "original_ms": 0.2116504160563151,
+        "optimized_ms": 0.20177388901406146,
+        "bf16_ms": 0.46472654776139694,
+        "packed_gemm_ms": 0.1909908936573909,
+        "fixed_mask_ms": 0.20972208769425102,
+        "pack_ms": 0.018525714193071637,
+        "select_ms": 0.00400381459305618,
+        "achieved_tflops_operator": 718.403887382565,
+        "achieved_tflops_gemm": 758.9636524766875,
+        "bf16_relative_l2": 0.04565584659576416,
+        "winner": {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.20177388901406146,
+          "relative_l2": 0.0
+        },
+        "candidates": [
+          {
+            "bm": 32,
+            "num_stages": 2,
+            "ms": 0.3659315696129432,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 32,
+            "num_stages": 3,
+            "ms": 0.3736403722029466,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 2,
+            "ms": 0.24654793617052911,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 3,
+            "ms": 0.24357809409117087,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 2,
+            "ms": 0.21173532274034287,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 3,
+            "ms": 0.20177388901406146,
+            "relative_l2": 0.0
+          }
+        ],
+        "payload": "runs5090/auto_budget_nano_bench/960_4096_12288.pt"
+      },
+      "command": [
+        "/usr/local/cuda-12.9/bin/ncu",
+        "--clock-control",
+        "none",
+        "--nvtx",
+        "--nvtx-include",
+        "steady/",
+        "--metrics",
+        "gpu__time_duration.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,sm__throughput.avg.pct_of_peak_sustained_elapsed,launch__registers_per_thread,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum",
+        "-o",
+        "runs5090/auto_budget_profiles/nano_960_4096_12288_a50",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/bin/python",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/tools/auto_budget/bench.py",
+        "--payload",
+        "runs5090/auto_budget_nano_bench/960_4096_12288.pt",
+        "--tier",
+        "a50",
+        "--bm",
+        "128",
+        "--stages",
+        "3"
+      ],
+      "kernels": [
+        {
+          "kernel": "select_tiles",
+          "gpu__time_duration.sum": 4.8,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.418238,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 18.389194,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.420194,
+          "launch__registers_per_thread": 80.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 4800.0
+        },
+        {
+          "kernel": "scaled_amax",
+          "gpu__time_duration.sum": 15.808,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 85.543179,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 83.881484,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 10.067608,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 15808.0
+        },
+        {
+          "kernel": "finish_amax",
+          "gpu__time_duration.sum": 1.856,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.065182,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 2.412975,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.015913,
+          "launch__registers_per_thread": 31.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 1856.0
+        },
+        {
+          "kernel": "pack_activation",
+          "gpu__time_duration.sum": 18.272,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 88.809723,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 72.938161,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 35.206687,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 18272.0
+        },
+        {
+          "kernel": "gemm",
+          "gpu__time_duration.sum": 184.32,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 44.553896,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 12.82261,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 13.165491,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 44.553896,
+          "launch__registers_per_thread": 254.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 184320.0
+        }
+      ]
+    },
+    {
+      "tag": "nano_960_4096_12288_dual",
+      "benchmark": {
+        "model": "nano",
+        "shape": "960:4096:12288",
+        "tier": "dual",
+        "task": "i2v",
+        "source": "00002.pt",
+        "original_ms": 0.4057421366373698,
+        "optimized_ms": 0.40394773085912067,
+        "bf16_ms": 0.46472654776139694,
+        "packed_gemm_ms": 0.40196893612543744,
+        "fixed_mask_ms": 0.42640858563509854,
+        "pack_ms": 0.020161866780483362,
+        "select_ms": 0.0,
+        "achieved_tflops_operator": 717.6925882549592,
+        "achieved_tflops_gemm": 721.2256132885137,
+        "bf16_relative_l2": 0.005373040214180946,
+        "winner": {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.40394773085912067,
+          "relative_l2": 0.0
+        },
+        "candidates": [
+          {
+            "bm": 32,
+            "num_stages": 2,
+            "ms": 0.6375530687967936,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 32,
+            "num_stages": 3,
+            "ms": 0.5882145881652832,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 2,
+            "ms": 0.40394773085912067,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 3,
+            "ms": 0.41099798368371054,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 2,
+            "ms": 0.4316925214684528,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 3,
+            "ms": 0.4217417799908182,
+            "relative_l2": 0.0
+          }
+        ],
+        "payload": "runs5090/auto_budget_nano_bench/960_4096_12288.pt"
+      },
+      "command": [
+        "/usr/local/cuda-12.9/bin/ncu",
+        "--clock-control",
+        "none",
+        "--nvtx",
+        "--nvtx-include",
+        "steady/",
+        "--metrics",
+        "gpu__time_duration.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,sm__throughput.avg.pct_of_peak_sustained_elapsed,launch__registers_per_thread,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum",
+        "-o",
+        "runs5090/auto_budget_profiles/nano_960_4096_12288_dual",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/bin/python",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/tools/auto_budget/bench.py",
+        "--payload",
+        "runs5090/auto_budget_nano_bench/960_4096_12288.pt",
+        "--tier",
+        "dual",
+        "--bm",
+        "64",
+        "--stages",
+        "2"
+      ],
+      "kernels": [
+        {
+          "kernel": "scaled_amax",
+          "gpu__time_duration.sum": 16.128,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 95.910047,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 82.499644,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 9.870467,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 16128.0
+        },
+        {
+          "kernel": "finish_amax",
+          "gpu__time_duration.sum": 1.856,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.065902,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 0.473485,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.016003,
+          "launch__registers_per_thread": 31.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 1856.0
+        },
+        {
+          "kernel": "pack_activation",
+          "gpu__time_duration.sum": 19.296,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 99.05783,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 68.894139,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 41.031896,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 19296.0
+        },
+        {
+          "kernel": "gemm",
+          "gpu__time_duration.sum": 380.96,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 42.236246,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 22.414493,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 10.482364,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 42.236246,
+          "launch__registers_per_thread": 162.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 380960.0
+        }
+      ]
+    },
+    {
+      "tag": "nano_316_4096_12288_a50",
+      "benchmark": {
+        "model": "nano",
+        "shape": "316:4096:12288",
+        "tier": "a50",
+        "task": "policy",
+        "source": "00866.pt",
+        "original_ms": 0.10797721328157367,
+        "optimized_ms": 0.08559202967949633,
+        "bf16_ms": 0.1674615062651087,
+        "packed_gemm_ms": 0.07717582702636719,
+        "fixed_mask_ms": 0.08515348604747228,
+        "pack_ms": 0.009822481653116045,
+        "select_ms": 0.0040066478957592605,
+        "achieved_tflops_operator": 557.4631479434356,
+        "achieved_tflops_gemm": 618.2557951429317,
+        "bf16_relative_l2": 0.04551044851541519,
+        "winner": {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.08559202967949633,
+          "relative_l2": 0.0
+        },
+        "candidates": [
+          {
+            "bm": 32,
+            "num_stages": 2,
+            "ms": 0.12098312109289035,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 32,
+            "num_stages": 3,
+            "ms": 0.12175085097551346,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 2,
+            "ms": 0.08559202967949633,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 3,
+            "ms": 0.08644872179218367,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 2,
+            "ms": 0.10872952219951584,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 3,
+            "ms": 0.11468740628089434,
+            "relative_l2": 0.0
+          }
+        ],
+        "payload": "runs5090/auto_budget_nano_bench/316_4096_12288.pt"
+      },
+      "command": [
+        "/usr/local/cuda-12.9/bin/ncu",
+        "--clock-control",
+        "none",
+        "--nvtx",
+        "--nvtx-include",
+        "steady/",
+        "--metrics",
+        "gpu__time_duration.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,sm__throughput.avg.pct_of_peak_sustained_elapsed,launch__registers_per_thread,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum",
+        "-o",
+        "runs5090/auto_budget_profiles/nano_316_4096_12288_a50",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/bin/python",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/tools/auto_budget/bench.py",
+        "--payload",
+        "runs5090/auto_budget_nano_bench/316_4096_12288.pt",
+        "--tier",
+        "a50",
+        "--bm",
+        "64",
+        "--stages",
+        "2"
+      ],
+      "kernels": [
+        {
+          "kernel": "select_tiles",
+          "gpu__time_duration.sum": 4.736,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.284897,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 7.086182,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.160527,
+          "launch__registers_per_thread": 80.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 4736.0
+        },
+        {
+          "kernel": "scaled_amax",
+          "gpu__time_duration.sum": 6.88,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 44.585792,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 63.698716,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 7.632237,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 6880.0
+        },
+        {
+          "kernel": "finish_amax",
+          "gpu__time_duration.sum": 2.176,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 7.600973,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 0.529661,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.010504,
+          "launch__registers_per_thread": 16.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 2176.0
+        },
+        {
+          "kernel": "pack_activation",
+          "gpu__time_duration.sum": 8.832,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 97.402258,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 50.1155,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 24.323489,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 8832.0
+        },
+        {
+          "kernel": "gemm",
+          "gpu__time_duration.sum": 88.32,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 27.06981,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.242795,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 20.438323,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 27.06981,
+          "launch__registers_per_thread": 164.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 88320.0
+        }
+      ]
+    },
+    {
+      "tag": "nano_316_4096_12288_dual",
+      "benchmark": {
+        "model": "nano",
+        "shape": "316:4096:12288",
+        "tier": "dual",
+        "task": "policy",
+        "source": "00866.pt",
+        "original_ms": 0.235243941516411,
+        "optimized_ms": 0.140935858558206,
+        "bf16_ms": 0.1674615062651087,
+        "packed_gemm_ms": 0.14013764824665767,
+        "fixed_mask_ms": 0.14677187890717477,
+        "pack_ms": 0.00974458662668864,
+        "select_ms": 0.0,
+        "achieved_tflops_operator": 677.1080517353804,
+        "achieved_tflops_gemm": 680.9647928444954,
+        "bf16_relative_l2": 0.0052699139341712,
+        "winner": {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.140935858558206,
+          "relative_l2": 0.0
+        },
+        "candidates": [
+          {
+            "bm": 32,
+            "num_stages": 2,
+            "ms": 0.19951139887173971,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 32,
+            "num_stages": 3,
+            "ms": 0.19472528963672872,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 2,
+            "ms": 0.1541692884956918,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 64,
+            "num_stages": 3,
+            "ms": 0.140935858558206,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 2,
+            "ms": 0.23569639921188354,
+            "relative_l2": 0.0
+          },
+          {
+            "bm": 128,
+            "num_stages": 3,
+            "ms": 0.19877520004908245,
+            "relative_l2": 0.0
+          }
+        ],
+        "payload": "runs5090/auto_budget_nano_bench/316_4096_12288.pt"
+      },
+      "command": [
+        "/usr/local/cuda-12.9/bin/ncu",
+        "--clock-control",
+        "none",
+        "--nvtx",
+        "--nvtx-include",
+        "steady/",
+        "--metrics",
+        "gpu__time_duration.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,sm__throughput.avg.pct_of_peak_sustained_elapsed,launch__registers_per_thread,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum",
+        "-o",
+        "runs5090/auto_budget_profiles/nano_316_4096_12288_dual",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/bin/python",
+        "/home/chenhan/ThunderWorldDev/ThunderWorld/tools/auto_budget/bench.py",
+        "--payload",
+        "runs5090/auto_budget_nano_bench/316_4096_12288.pt",
+        "--tier",
+        "dual",
+        "--bm",
+        "64",
+        "--stages",
+        "3"
+      ],
+      "kernels": [
+        {
+          "kernel": "scaled_amax",
+          "gpu__time_duration.sum": 6.784,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 44.090627,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 65.227466,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 7.757278,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 6784.0
+        },
+        {
+          "kernel": "finish_amax",
+          "gpu__time_duration.sum": 1.792,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 9.411939,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 0.511509,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 0.012652,
+          "launch__registers_per_thread": 16.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 1792.0
+        },
+        {
+          "kernel": "pack_activation",
+          "gpu__time_duration.sum": 8.416,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 0.0,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 85.815594,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 52.471964,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 31.554314,
+          "launch__registers_per_thread": 40.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 8416.0
+        },
+        {
+          "kernel": "gemm",
+          "gpu__time_duration.sum": 159.104,
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 30.905606,
+          "sm__warps_active.avg.pct_of_peak_sustained_active": 8.337482,
+          "dram__throughput.avg.pct_of_peak_sustained_elapsed": 21.445329,
+          "sm__throughput.avg.pct_of_peak_sustained_elapsed": 30.905606,
+          "launch__registers_per_thread": 156.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum": 0.0,
+          "l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum": 0.0,
+          "duration_ns": 159104.0
+        }
+      ]
+    }
+  ],
+  "scope": "Nsight kernel replay, default cache control, clocks unchanged. Tensor elapsed activity is not a measured percentage of FP4 FLOP peak. Use separate steady-state timing for speed."
+}

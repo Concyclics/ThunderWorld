@@ -1,0 +1,14 @@
+The config attributes {'dtype': 'bfloat16', 'freeze_und': False, 'initializer_range': 0.02, 'joint_attn_implementation': 'two_way', 'max_action_dim': 64, 'max_position_embeddings': 262144, 'model_type': 'qwen3_vl_text', 'position_embedding_type': 'unified_3d_mrope', 'qk_norm': False, 'qk_norm_for_diffusion': True, 'temporal_compression_factor_sound': 1, 'use_cache': True, 'use_moe': True, 'video_temporal_causal': False} were passed to Cosmos3OmniTransformer, but are not expected and will be ignored. Please verify your config.json configuration file.
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 7/7 [00:00<00:00, 182.20it/s]
+960:12288:4096 a50 a50 speedup 1.015
+960:12288:4096 act2 act2 speedup 1.011
+960:12288:4096 a50 dual speedup 1.009
+960:12288:4096 base dual speedup 1.005
+316:12288:4096 a50 a50 speedup 1.032
+316:12288:4096 act2 act2 speedup 1.017
+316:12288:4096 a50 dual speedup 1.019
+316:12288:4096 base dual speedup 1.036
+1024:12288:4096 a50 a50 speedup 1.018
+1024:12288:4096 act2 act2 speedup 1.006
+1024:12288:4096 a50 dual speedup 1.009
+1024:12288:4096 base dual speedup 1.007

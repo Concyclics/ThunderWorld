@@ -2,6 +2,12 @@
 
 Evidence cutoff: **2026-08-29**. Compilation date: **2026-09-01**.
 
+> These are historical structure and sparse-attention findings. The current
+> [iterFP4 design](THUNDERWORLD_ITERFP4_DESIGN.md) reuses them as candidate priors;
+> their ability to predict FP4 repair benefit requires separate validation.
+> The [2026-09-10 full-step resampling](FINDINGS_RESAMPLING_20260910.md) adds
+> Edge/Nano measurements and qualifies the directional normalization below.
+
 ## Technical summary
 
 The experiments support a narrower and stronger thesis than “apply sparse
@@ -67,8 +73,14 @@ asymmetry:
 | DROID action←vision / vision←action | 13.53× | [10.34, 18.05] | 94.6% |
 | I2V clean←noisy / noisy←clean | 4.09× | [3.59, 4.72] | 93.3% |
 
-Because the two directions in a pair have the same score count, token count
-cannot explain the quality difference. A 20-step equal-QK I2V counterfactual
+The two directions in a pair have the same score-entry count, but that alone
+does **not** remove token-count effects from mean per-query row mass. The frozen
+aggregate does not retain the counts/normalization needed to reconstruct this
+distinction. Its reported ratios above must not be read as verified per-edge
+density ratios. The 2026-09-10 resampling reports both definitions and finds
+substantial attenuation after normalization, especially on Nano. Different
+checkpoints/tasks prevent treating that resampling as an exact replication.
+A separate 20-step equal-QK I2V counterfactual
 reinforces the mechanism: deleting the low-mass direction gives SSIM 0.975,
 while deleting the high-mass reverse gives 0.776.
 

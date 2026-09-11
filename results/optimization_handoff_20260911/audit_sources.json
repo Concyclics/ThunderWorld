@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "fresh_cases": 86,
+  "fresh_A_bitwise": true,
+  "fresh_W_plane_bitwise": true,
+  "sources": {
+    "results/optimization_handoff_20260911/retime.json": "dfdbb08a2b90b0dad777842b67ab9c22469f098b2a24f24a1bc4bc6906285378",
+    "results/execution_20260911/fusion_ffn.csv": "fe86d9c45bfdc9311aa4e950eb04ce6964a4f8ac563cf9287ede0b5c080eb0a5",
+    "results/execution_20260911/summary.csv": "e12d3812f4a661bb106caf594cabca5dc56755ae68cd6d154b25f2052580a2de",
+    "results/auto_budget_20260910/kernels.csv": "75ed121eaea2cdd7b24c0d20378619109d71166a6e21d27c9768e8bd7acc1cb0"
+  }
+}

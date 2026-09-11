@@ -1,0 +1,31 @@
+{
+  "model": "nano",
+  "cases": [
+    "av_waterfall",
+    "policy_observe",
+    "robot_observe",
+    "waterfall"
+  ],
+  "seeds": [
+    6101,
+    6102
+  ],
+  "shape": [
+    4,
+    36,
+    32,
+    6,
+    6
+  ],
+  "source_sha256": {
+    "runs5090/findings_nano_sampling_complete/bf16_robot_observe_seed6101_r0_heads.npz": "f7e517fdec8e56bfee595ee1af50fd21329b28f3f5da3413182aa5d6f7806b49",
+    "runs5090/findings_nano_sampling_complete/bf16_robot_observe_seed6102_r0_heads.npz": "8bff1e8b6146ae859d1f00ec76cc00028502a84acace332edb4fdf7bcbef381e",
+    "runs5090/findings_nano_sampling_complete/bf16_waterfall_seed6101_r0_heads.npz": "71723c2b0bae30e71ef273a4d28bbe172e0d369050f88a09fb920e5d8d62d225",
+    "runs5090/findings_nano_sampling_complete/bf16_waterfall_seed6102_r0_heads.npz": "0de1cb8ebbb44a0ce7fbc5ad92ee9d8181d3a129e4287541d8738bf5787c78e6",
+    "runs5090/findings_nano_sampling_complete/bf16_policy_observe_seed6101_r0_heads.npz": "b674953353a80c176282de712721f2cfb26d3e7784e94099273505632dc7237c",
+    "runs5090/findings_nano_sampling_complete/bf16_policy_observe_seed6102_r0_heads.npz": "5b0bc6b3b769f0b53699d713e9194db4be77474a491ccc5b629ff78de6c968d5",
+    "runs5090/findings_nano_sampling_complete/bf16_av_waterfall_seed6101_r0_heads.npz": "fa391b1e9f16e202f952694c11a3079b2dd508cbf43bbfe8a74fdc9e9ac3d571",
+    "runs5090/findings_nano_sampling_complete/bf16_av_waterfall_seed6102_r0_heads.npz": "4f3962ae4a8997f3d257d95040b18be468094b5e751fc0a7cc3d3a7fa5324e65"
+  },
+  "scope": "Descriptive per-token density, averaged over available development trajectories and CFG branches; not measured repair benefit. Query-role and key-role are directional. No validation inputs used to fit."
+}

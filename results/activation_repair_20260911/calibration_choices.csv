@@ -1,0 +1,11 @@
+model,mode,part,side,base,res,fit_gain,held_gain
+edge,act2,down_proj,A,1.0,1.0,0.0,0.0
+edge,act2,up_proj,A,1.0,1.0,0.0,0.0
+edge,dual,down_proj,A,1.0,1.0,0.0,0.0
+edge,dual,up_proj,A,1.0,1.0,0.0,0.0
+nano,act2,down_proj,A,1.0,1.0,0.0,0.0
+nano,act2,gate_proj,A,1.0,1.0,0.0,0.0
+nano,act2,up_proj,A,1.0,1.0,0.0,0.0
+nano,dual,down_proj,A,1.0,1.0,0.0,0.0
+nano,dual,gate_proj,A,1.0,1.0,0.0,0.0
+nano,dual,up_proj,A,1.0,1.0,0.0,0.0

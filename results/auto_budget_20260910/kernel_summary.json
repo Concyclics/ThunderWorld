@@ -1,0 +1,63 @@
+{
+  "verified_launch_candidates": 360,
+  "kernel_configurations": 60,
+  "profiles": [
+    {
+      "tag": "edge_960_2048_9216_a50",
+      "tensor_activity": 32.038092,
+      "occupancy": 8.339932,
+      "non_gemm_fraction": 0.2787941252254573
+    },
+    {
+      "tag": "edge_960_2048_9216_dual",
+      "tensor_activity": 37.719133,
+      "occupancy": 8.345813,
+      "non_gemm_fraction": 0.16462889615980714
+    },
+    {
+      "tag": "edge_316_2048_9216_a50",
+      "tensor_activity": 14.206859,
+      "occupancy": 8.480139,
+      "non_gemm_fraction": 0.22013583699560524
+    },
+    {
+      "tag": "edge_316_2048_9216_dual",
+      "tensor_activity": 14.556968,
+      "occupancy": 8.283287,
+      "non_gemm_fraction": 0.10490654205607475
+    },
+    {
+      "tag": "nano_960_4096_12288_a50",
+      "tensor_activity": 44.553896,
+      "occupancy": 12.82261,
+      "non_gemm_fraction": 0.18100383904450446
+    },
+    {
+      "tag": "nano_960_4096_12288_dual",
+      "tensor_activity": 42.236246,
+      "occupancy": 22.414493,
+      "non_gemm_fraction": 0.08913542463657231
+    },
+    {
+      "tag": "nano_316_4096_12288_a50",
+      "tensor_activity": 27.06981,
+      "occupancy": 8.242795,
+      "non_gemm_fraction": 0.20392269974040955
+    },
+    {
+      "tag": "nano_316_4096_12288_dual",
+      "tensor_activity": 30.905606,
+      "occupancy": 8.337482,
+      "non_gemm_fraction": 0.09649282209703802
+    }
+  ],
+  "shared_pack_speedup_range": [
+    1.0049640177143406,
+    1.0356979776207882
+  ],
+  "max_tuning_speedup": 2.0544915066236054,
+  "operator_tflops_range": [
+    327.80611041142566,
+    895.991649540666
+  ]
+}

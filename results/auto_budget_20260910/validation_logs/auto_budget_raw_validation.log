@@ -1,0 +1,42 @@
+[
+  {
+    "input": "runs5090/auto_budget_edge_e2e",
+    "trajectories": 32,
+    "source_snapshots": 30,
+    "complete_coverage": true,
+    "finite_and_hashes": true,
+    "cache_age_at_most_one": true
+  },
+  {
+    "input": "runs5090/auto_budget_nano_e2e",
+    "trajectories": 48,
+    "source_snapshots": 31,
+    "complete_coverage": true,
+    "finite_and_hashes": true,
+    "cache_age_at_most_one": true
+  },
+  {
+    "input": "runs5090/auto_budget_edge_guarded",
+    "trajectories": 20,
+    "source_snapshots": 34,
+    "complete_coverage": true,
+    "finite_and_hashes": true,
+    "cache_age_at_most_one": true
+  },
+  {
+    "input": "runs5090/auto_budget_nano_guarded",
+    "trajectories": 30,
+    "source_snapshots": 36,
+    "complete_coverage": true,
+    "finite_and_hashes": true,
+    "cache_age_at_most_one": true
+  },
+  {
+    "input": "runs5090/auto_budget_nano_shared",
+    "trajectories": 9,
+    "source_snapshots": 33,
+    "complete_coverage": true,
+    "finite_and_hashes": true,
+    "cache_age_at_most_one": true
+  }
+]

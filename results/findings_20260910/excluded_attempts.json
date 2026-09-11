@@ -1,0 +1,42 @@
+[
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/findings_edge_smoke/result.json",
+    "complete": true,
+    "completed_rows": 2,
+    "reason": "Two-step smoke only",
+    "error": null,
+    "sha256": "0bf56bcc6e215557d06a6a6db97ff3a88d5abb507877936a8f6b2b099064d024"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/findings_edge_ablation_smoke/result.json",
+    "complete": true,
+    "completed_rows": 14,
+    "reason": "Two-step smoke; before contiguous-mask fix",
+    "error": null,
+    "sha256": "843d452dedeaf6eb2b1487aa261be0164937c6efd6b5f64cfc09fa2ec705c62d"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/findings_edge_ablation/result.json",
+    "complete": false,
+    "completed_rows": 20,
+    "reason": "Incomplete: illegal access in four-term FFN before contiguous-mask fix",
+    "error": "RuntimeError('Triton Error [CUDA]: an illegal memory access was encountered')",
+    "sha256": "bac18d4e1a49708e77d31204c92e6421cd2b1587c2ab8f1cf0e8914edf23fc30"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/findings_nano_sampling/result.json",
+    "complete": false,
+    "completed_rows": 0,
+    "reason": "Interrupted: GPU-resident audio decoder memory spill",
+    "error": null,
+    "sha256": "dd6edfb006b1fa09ee7757dc08555ed1ae2f468efc64ee9784af3899251d9630"
+  },
+  {
+    "path": "/home/chenhan/ThunderWorldDev/ThunderWorld/runs5090/findings_nano_sampling_v3/result.json",
+    "complete": false,
+    "completed_rows": 13,
+    "reason": "Partial source; completed records retained only through provenance-checked canonical merge",
+    "error": null,
+    "sha256": "950ec0d0294628854a74bd60f37f0f5f7c9bfd170cee7db5056133e7a82c96cc"
+  }
+]

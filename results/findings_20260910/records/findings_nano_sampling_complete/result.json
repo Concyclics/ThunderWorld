@@ -1,0 +1,674 @@
+{
+  "complete": true,
+  "model": "nano",
+  "model_config": {
+    "_class_name": "Cosmos3OmniTransformer",
+    "_diffusers_version": "0.37.1",
+    "action_dim": 64,
+    "action_gen": true,
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "base_fps": 24,
+    "dtype": "bfloat16",
+    "enable_fps_modulation": true,
+    "freeze_und": false,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "hidden_size": 4096,
+    "initializer_range": 0.02,
+    "intermediate_size": 12288,
+    "joint_attn_implementation": "two_way",
+    "latent_channel": 48,
+    "latent_patch_size": 2,
+    "max_action_dim": 64,
+    "max_position_embeddings": 262144,
+    "model_type": "qwen3_vl_text",
+    "num_attention_heads": 32,
+    "num_embodiment_domains": 32,
+    "num_hidden_layers": 36,
+    "num_key_value_heads": 8,
+    "patch_latent_dim": 192,
+    "position_embedding_type": "unified_3d_mrope",
+    "qk_norm": false,
+    "qk_norm_for_diffusion": true,
+    "qk_norm_for_text": true,
+    "rms_norm_eps": 1e-06,
+    "rope_scaling": {
+      "mrope_interleaved": true,
+      "mrope_section": [
+        24,
+        20,
+        20
+      ],
+      "rope_type": "default"
+    },
+    "rope_theta": 5000000,
+    "sound_dim": 64,
+    "sound_gen": true,
+    "sound_latent_fps": 25,
+    "temporal_compression_factor_sound": 1,
+    "timestep_scale": 0.001,
+    "unified_3d_mrope_reset_spatial_ids": true,
+    "unified_3d_mrope_temporal_modality_margin": 15000,
+    "use_cache": true,
+    "use_moe": true,
+    "video_temporal_causal": false,
+    "vocab_size": 151936
+  },
+  "args": {
+    "model": "nano",
+    "output": "runs5090/findings_nano_sampling_v3",
+    "cases": null,
+    "seeds": [
+      6101,
+      6102
+    ],
+    "steps": 35,
+    "sample": true,
+    "samples_per_role": 32,
+    "modes": [
+      "bf16"
+    ],
+    "rounds": 1,
+    "policy": null
+  },
+  "cases": [
+    {
+      "id": "robot_observe",
+      "task": "i2v",
+      "split": "development",
+      "image": "data_local/e2e_inputs/robot_153.jpg",
+      "prompt": "A stationary camera observes a robot arm moving smoothly toward an object on the table. The lighting and background remain unchanged.",
+      "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+    },
+    {
+      "id": "robot_table",
+      "task": "i2v",
+      "split": "evaluation",
+      "image": "data_local/finding_inputs/robot_table.png",
+      "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement.",
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc"
+    },
+    {
+      "id": "waterfall",
+      "task": "t2v",
+      "split": "development",
+      "prompt": "A waterfall flows steadily over rocks into a clear pool in a forest. Water splashes naturally. A stationary camera captures the scene."
+    },
+    {
+      "id": "pottery",
+      "task": "t2v",
+      "split": "evaluation",
+      "prompt": "A close view of a potter shaping a clay bowl on a spinning pottery wheel. Hands move carefully as the bowl becomes wider. The camera remains steady."
+    },
+    {
+      "id": "policy_observe",
+      "task": "policy",
+      "split": "development",
+      "image": "data_local/e2e_inputs/robot_153.jpg",
+      "prompt": "Move the robot gripper toward the object on the table.",
+      "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+    },
+    {
+      "id": "policy_table",
+      "task": "policy",
+      "split": "evaluation",
+      "image": "data_local/finding_inputs/robot_table.png",
+      "prompt": "Pick up the object and place it next to the other objects.",
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc"
+    },
+    {
+      "id": "av_waterfall",
+      "task": "av",
+      "split": "development",
+      "prompt": "A waterfall flows over rocks in a forest, with synchronized rushing water and splashing sounds. The camera remains steady."
+    },
+    {
+      "id": "av_pottery",
+      "task": "av",
+      "split": "evaluation",
+      "prompt": "A potter shapes a clay bowl on a spinning wheel. The quiet room has the soft sound of the wheel rotating and hands touching wet clay."
+    }
+  ],
+  "source_sha256": {},
+  "model_revision": "411f42a8fdfb8c5b2583cb8786e0938f49796eaa",
+  "diffusers_commit": "04e724ce518e087301052b65ff81ec35d54f4040",
+  "torch": "2.11.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "scope": "Full Generator encode/denoise/decode; eager for all modes; sampling wall time is not a performance result",
+  "policy_input_limit": "Robot observation images; bridge_orig_lerobot interface/domain selected, without matched action ground truth. Not a task success benchmark.",
+  "ffn": "BF16 for baseline/sampling. All attention ablations share model-local RTN W4 + full ACT2 FFNs. FFN term ablations keep BF16 attention.",
+  "rows": [
+    {
+      "mode": "bf16",
+      "case": "robot_observe",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 29.578632518998347,
+      "transformer_seconds": 25.929182983398437,
+      "peak_allocated_bytes": 32448656384,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "272a9be4b7c5f670ed2eed36601cbaaf0d04e6303ad17ecf45ec2ab14d6afe4a",
+        "trajectory": "81b7211e89e157aceb164e2c8b6e4270a14943a69ddffe147def7a3a90577e9b"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "robot_observe",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 25.916443902999163,
+      "transformer_seconds": 24.388144958496095,
+      "peak_allocated_bytes": 32448656384,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "3566e423a428598596a26f8c2018bce30ddb006caa787f85b63f0ca2687bc297",
+        "trajectory": "40a8ce52fa9c0f6f12c3228ca71e4f796d6099d3d0989a6b5f4a7d0c0b941f6f"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "robot_table",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 25.813459276003414,
+      "transformer_seconds": 24.291057693481445,
+      "peak_allocated_bytes": 32448656384,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "29a8faf98f2e07905a07d3f77c77b028f3096c3c6c271fa1d9d5101b8a8bc70a",
+        "trajectory": "c92920c1ec8bf1579a7bbc40ba59cbd314a847ade8de9014600385fe1a29ddb0"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "robot_table",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 24.541912982000213,
+      "transformer_seconds": 23.02709452819824,
+      "peak_allocated_bytes": 32448656384,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "70f03e03eefc23e2abff767c872c1f899ff008cc9eb1998702b541ab02f16068",
+        "trajectory": "3ecab0cb25d469e6e28f241c56f45884176835f9a6b0856ae195f098bc6ac521"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "waterfall",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 17.26047511700017,
+      "transformer_seconds": 15.750939514160157,
+      "peak_allocated_bytes": 32448655360,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "a3a5bd2812096896147d798945a43960680626e339f68c9e7e536c3f0b348e20",
+        "trajectory": "27b109564c07d8d1bfdd142adacfe9b8889538cb12d88fffac47fa42ce06e64a"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "waterfall",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 16.59649724799965,
+      "transformer_seconds": 15.226524551391602,
+      "peak_allocated_bytes": 32448655360,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "d755fd30572b3bed21d3cd20c9f8e1548bfd22a869f8fff1aa66afe3809c8e02",
+        "trajectory": "22d7a9cd9d0261236b04508968790fe4cc48bb82f37db1512e6519c79ab192cb"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "pottery",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 17.176855486999557,
+      "transformer_seconds": 15.802174438476563,
+      "peak_allocated_bytes": 32448655360,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "6632bf54697ba4a9553535339199dc4870948eed063e1dd3ed47fba155b523f5",
+        "trajectory": "2a620dc674a2176fa45b7e984e1163d0b4308f08e64b109681491c69031564f0"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "pottery",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 17.48021993000293,
+      "transformer_seconds": 16.023818603515625,
+      "peak_allocated_bytes": 32448655360,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "185b5a103b149ad495ea55cd64421644bf9299dd0a626f6d67cde05e79a42440",
+        "trajectory": "1f230a4ff5f770c8c9519c55d2b7cca92e2b117eb8cf92693ae73d31145a5e80"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_observe",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 19.078435837000143,
+      "transformer_seconds": 18.147814453125,
+      "peak_allocated_bytes": 32372319232,
+      "counts": {
+        "full": 1260,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "video_shape": [
+        17,
+        176,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "57e62858c42d19ef587aa9d978371aabbd02209168cac1b3cf66a017dfdd5bf8",
+        "trajectory": "9b6c2ffd40aedb7256f638fd18fff9fd4d79321fbb005f7af31a491399410711",
+        "action": "5813bca9cf8c91afcfbc819b191aaba619eef1b543b51da98a5f0ba674fbad31"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_observe",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 16.092613850996713,
+      "transformer_seconds": 15.233323745727539,
+      "peak_allocated_bytes": 32372319232,
+      "counts": {
+        "full": 1260,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "video_shape": [
+        17,
+        176,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "5d8d7039e571a61374a21b567ecae310dbf8790d4726b08c51ed228d624b86c2",
+        "trajectory": "df8715f19459bd0666a1b60de5dc89ff6f9c06fffc730ec7574257946f6511e9",
+        "action": "db8b5374840b0148a99126f35d372dff0b49dca4e75d3e82ec51b7cae5b6264b"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_table",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 18.176531717996113,
+      "transformer_seconds": 14.95558137512207,
+      "peak_allocated_bytes": 32568072704,
+      "counts": {
+        "full": 1260,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "video_shape": [
+        17,
+        240,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "b8258f2035ae27825dc554f7e8db7d5d678bc2f8f80fef550bebd2010ae3be28",
+        "trajectory": "517d7966d9baa858f6da20c3c12d945055f78dc74b917b4c43d8b62bf8133a6b",
+        "action": "06c2a14d8544cda22167bef46cd16f2dfac27648b24f510d0eb53f37ded8b8c5"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_table",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 18.08629688799556,
+      "transformer_seconds": 15.152880859375,
+      "peak_allocated_bytes": 32568072704,
+      "counts": {
+        "full": 1260,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "video_shape": [
+        17,
+        240,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "ff9b28d59fd242eb494cfc3271383e180a200cb22c49288f16e05549b8aa472e",
+        "trajectory": "4120555514a9c65ad98927c718e7a8f0711ce0891b4c337b7f04c5735e749c40",
+        "action": "43fa166a27ec1dffa541c20e4e3f62b94be8a77f65ae387bbc9e52feba148318"
+      },
+      "source_run": "runs5090/findings_nano_sampling_v3"
+    },
+    {
+      "mode": "bf16",
+      "case": "av_waterfall",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 30.976577590001398,
+      "transformer_seconds": 26.627987060546875,
+      "peak_allocated_bytes": 32448739328,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "ffn_calls": 0,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "9d7c6350a6b9957023f915a75089cc40e4f028cc0538449b4c0c6c15b8f86be6",
+        "trajectory": "b2483ef577bd5da5f72a40959a0ffc989e6c2955af28467a6f67186e2ab40815",
+        "sound_latent": "4b519bdf63a125f1cc737322f55dad52dd15b7e08fa06de9fee883c2a2381de8"
+      },
+      "source_run": "runs5090/findings_nano_sampling_av"
+    },
+    {
+      "mode": "bf16",
+      "case": "av_waterfall",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 26.87074993400165,
+      "transformer_seconds": 25.19316134643555,
+      "peak_allocated_bytes": 32448747520,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "ffn_calls": 0,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "6b806701c6252f346e2d33f9810c74f65de20a1919fd4a570f54af377e4edc35",
+        "trajectory": "f7c22c67f24f5f257a30cc0b7e707ffbf8ad7c88103d8a6e39243d148221dde3",
+        "sound_latent": "5671b923f534be818dd7723d4aacf78c7dfcf1e2a431d66244365f0db5d98621"
+      },
+      "source_run": "runs5090/findings_nano_sampling_av"
+    },
+    {
+      "mode": "bf16",
+      "case": "av_pottery",
+      "seed": 6101,
+      "repeat": 0,
+      "wall_seconds": 27.493047854004544,
+      "transformer_seconds": 25.683901412963866,
+      "peak_allocated_bytes": 32448747520,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "ffn_calls": 0,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "45617056cf02b96de8e2b17e61c1b27214b11d6a0f328226db5f75c8d3df1df2",
+        "trajectory": "f690abd6e8cc02192d6eda2eb62259d74e9013c5aeb4aa37d229f88e371e8e1e",
+        "sound_latent": "b4ad53eda98527e8d37e32be872983c256a7a19f15ab1260d643cec613e6d90b"
+      },
+      "source_run": "runs5090/findings_nano_sampling_av"
+    },
+    {
+      "mode": "bf16",
+      "case": "av_pottery",
+      "seed": 6102,
+      "repeat": 0,
+      "wall_seconds": 24.89506296900072,
+      "transformer_seconds": 23.30401794433594,
+      "peak_allocated_bytes": 32448747520,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "ffn_calls": 0,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "e9aa85025c656d18929893f6aa6903ddcf7b1de63432f10f0f8584f1430f6672",
+        "trajectory": "72158b0434b178fe7163e012e00d6e7cfed06fa18c8e24fac110ee23e5a4ea15",
+        "sound_latent": "dfa1729ff2d53f2b85e419edf3ce2ff50e249c6ddba7c75df2fee84fa10dbaf3"
+      },
+      "source_run": "runs5090/findings_nano_sampling_av"
+    }
+  ],
+  "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "audio_placement": "CPU during denoising; move VAE to CPU and audio decoder to GPU for sound decode, then restore. Transfers included in AV wall time.",
+  "source_runs": [
+    {
+      "path": "runs5090/findings_nano_sampling_v3",
+      "complete": false,
+      "sha256": "950ec0d0294628854a74bd60f37f0f5f7c9bfd170cee7db5056133e7a82c96cc",
+      "source_sha256": {
+        "tools/finding_resample/test_runtime.py": "9f88796e3800b224df47f926667467016517f32068eb7b9c0687998ddfb2c90b",
+        "tools/finding_resample/ffn.py": "a91f51bacc0c14c5885c88ed3d738c205d22898b8c432dadf5bc591eba1543ae",
+        "tools/finding_resample/analyze.py": "4f6f8f5092688a5ee3f61ccb4b8067943ab21b18aeaa3ee16d02434b41a919c6",
+        "tools/finding_resample/run.py": "70f4ad5c458abd590f6626654d330a1fd33745e46286c96331d1c1385c1b677b",
+        "tools/finding_resample/runtime.py": "a638a099ec56a62c671c0daf712db38d6bdcdd817eb09ae3d394579f0028b2f2",
+        "experiments/ffn_block_repair_20260907/native.py": "491c933fce1a29559fdb1a8a3792fa765d4cf266fb84ed831d98ad3c9a93af02",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "1c3fc2d2d6652e06862e2fa139d753fdcca8576fb9a7f7b64f7b7b2cfcd07de9",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "cafe2306ee6ba30f0fb7fa9bc694e4e9297cc1744a0715263e35789bdc9f983e",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "9f041d516b5ba258e5df48455e255994c558ddff85d5e9964696da69bd9ac3b9"
+      },
+      "audio_placement": "CPU during denoising; move VAE to CPU and audio decoder to GPU for sound decode, then restore. Transfers included in AV wall time."
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_av",
+      "complete": true,
+      "sha256": "f0d0b83e5c434cc044be3575d5a807f5104774eba39238febe79f5b40f4ceed8",
+      "source_sha256": {
+        "tools/finding_resample/test_runtime.py": "65548362c98a1a4c599ef1f58e0a95ef7c0e240fd17636c1edf30a1068701261",
+        "tools/finding_resample/ffn.py": "ef3a165ced4ce9323a4a68a2857763713df4ad917ea13cfe57aebbcdfef1dd48",
+        "tools/finding_resample/analyze.py": "525704fea1179bdfcf087afbc338dd8e3a8c85545385f63a7bbcda787487f742",
+        "tools/finding_resample/summarize_ablation.py": "59aa1d614e5276db32d56d217090e282ff7dd1e0f4b7f2616d0e92d6f1d8bd20",
+        "tools/finding_resample/run.py": "ae29a1ca194e3c60078d5c92f9b2b2f41c7f1dbdac96cf23e8750cab358ae008",
+        "tools/finding_resample/runtime.py": "a638a099ec56a62c671c0daf712db38d6bdcdd817eb09ae3d394579f0028b2f2",
+        "experiments/ffn_block_repair_20260907/native.py": "491c933fce1a29559fdb1a8a3792fa765d4cf266fb84ed831d98ad3c9a93af02",
+        "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "1c3fc2d2d6652e06862e2fa139d753fdcca8576fb9a7f7b64f7b7b2cfcd07de9",
+        "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "packages/fp4-repair/src/thunderworld_fp4/config.py": "cafe2306ee6ba30f0fb7fa9bc694e4e9297cc1744a0715263e35789bdc9f983e",
+        "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+        "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+        "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "9f041d516b5ba258e5df48455e255994c558ddff85d5e9964696da69bd9ac3b9"
+      },
+      "audio_placement": "Audio decoder stays on CPU. Save generated sound latents; waveform decoding runs separately after the Transformer is released. AV wall time excludes waveform decode."
+    }
+  ],
+  "assembly_note": "Every expected model/case/seed trajectory is complete. Interrupted source runs are preserved and are not themselves marked complete. Sampling durations are not performance measurements."
+}

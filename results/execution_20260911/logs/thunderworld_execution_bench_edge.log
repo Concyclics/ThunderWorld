@@ -1,0 +1,26 @@
+The config attributes {'backbone_type': 'cosmos3_edge_nemotron_dense', 'temporal_compression_factor': 4} were passed to Cosmos3OmniTransformer, but are not expected and will be ignored. Please verify your config.json configuration file.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 135.05it/s]
+FFN edge 960:9216:2048 a50 1.072
+FFN edge 960:9216:2048 act2 1.04
+FFN edge 960:9216:2048 a50w 1.067
+FFN edge 960:9216:2048 dual 1.057
+Pipeline edge 960:9216:2048 a50 original 1.0
+Pipeline edge 960:9216:2048 act2 original 1.0
+Pipeline edge 960:9216:2048 a50w original 1.0
+Pipeline edge 960:9216:2048 dual original 1.0
+Pipeline edge 960:2048:9216 a50 original 1.0
+Pipeline edge 960:2048:9216 act2 original 1.0
+Pipeline edge 960:2048:9216 a50w original 1.0
+Pipeline edge 960:2048:9216 dual original 1.0
+FFN edge 316:9216:2048 a50 1.067
+FFN edge 316:9216:2048 act2 1.061
+FFN edge 316:9216:2048 a50w 1.041
+FFN edge 316:9216:2048 dual 1.034
+Pipeline edge 316:9216:2048 a50 original 1.0
+Pipeline edge 316:9216:2048 act2 original 1.0
+Pipeline edge 316:9216:2048 a50w original 1.0
+Pipeline edge 316:9216:2048 dual original 1.0
+Pipeline edge 316:2048:9216 a50 original 1.0
+Pipeline edge 316:2048:9216 act2 original 1.0
+Pipeline edge 316:2048:9216 a50w original 1.0
+Pipeline edge 316:2048:9216 dual original 1.0

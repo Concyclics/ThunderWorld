@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "a50",
+      "outputs_bitwise_equal": true,
+      "trace_only": true
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "act2",
+      "outputs_bitwise_equal": true,
+      "trace_only": true
+    }
+  ],
+  "source_sha256": "5272d1a74d1c2eaa60f2a1bc225a81731fca6edc06f605fddb502a630eeed103",
+  "benchmark_sha256": {
+    "runs5090/auto_budget_edge_bench/benchmark.json": "14c841e6309e9412d13ef4ca9fa57dd9610f0ddcb0fa5bf1b0c543d5d18a7e82"
+  },
+  "scope": "Five alternating-order CUDA Graph measurements per configuration. Concurrency probe, not proof of concurrent residency, achieved TC activity, production E2E speedup or a general upper bound."
+}

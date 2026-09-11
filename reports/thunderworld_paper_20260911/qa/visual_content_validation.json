@@ -1,0 +1,11 @@
+{
+  "quality_reconciles_to_prior_report": true,
+  "all_figures_have_svg_pdf_png": true,
+  "prior_word_count": 5205,
+  "visual_word_count": 1370,
+  "word_reduction_fraction": 0.7367915465898175,
+  "new_figures": 13,
+  "retained_ai_overview": 1,
+  "pdf_pages_rendered_with_mutool": 14,
+  "figure_zip_crc_passed": true
+}

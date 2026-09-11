@@ -1,0 +1,207 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "mode": "bf16",
+      "case": "av_pottery",
+      "seed": 7203,
+      "repeat": 0,
+      "decode_seconds": 0.03381842200178653,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "8ab708ddba1bd1e86db8a560812afb39c1eb793957c20eb328f67737ee1c1475"
+    },
+    {
+      "mode": "bf16",
+      "case": "av_pottery",
+      "seed": 7204,
+      "repeat": 0,
+      "decode_seconds": 0.024111750004522037,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "23c97a55fe907737fe39f0cd4d498fca7cfe2fc200b77f995b1daaef83c16baf"
+    },
+    {
+      "mode": "ffn_act2",
+      "case": "av_pottery",
+      "seed": 7203,
+      "repeat": 0,
+      "decode_seconds": 0.024235494995082263,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "9f8e2a98c38b5cb04b7226bfc9bfca08bcf43baa992ce6bffc807e2d2f720154",
+      "vs_bf16": {
+        "relative_l2": 0.09754601866006851,
+        "rmse": 0.0267694890499115,
+        "log_spectral_l1": 0.518216073513031
+      }
+    },
+    {
+      "mode": "ffn_act2",
+      "case": "av_pottery",
+      "seed": 7204,
+      "repeat": 0,
+      "decode_seconds": 0.024063238000962883,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "e158f30864d0f94e5174fecd4adec18a0bfd811fb7b7b10690a097d4fe8da45b",
+      "vs_bf16": {
+        "relative_l2": 0.13693943619728088,
+        "rmse": 0.03733314946293831,
+        "log_spectral_l1": 0.37917670607566833
+      }
+    },
+    {
+      "mode": "ffn_uniform75",
+      "case": "av_pottery",
+      "seed": 7203,
+      "repeat": 0,
+      "decode_seconds": 0.024334533998626284,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "01b51ad27434bd8196d12f7c745891c71a555957119b13701d31e66a20d908a8",
+      "vs_bf16": {
+        "relative_l2": 0.10074995458126068,
+        "rmse": 0.027648745104670525,
+        "log_spectral_l1": 0.4610690176486969
+      },
+      "vs_ffn_act2": {
+        "relative_l2": 0.1185852587223053,
+        "rmse": 0.03351740539073944,
+        "log_spectral_l1": 0.4942604601383209
+      }
+    },
+    {
+      "mode": "ffn_uniform75",
+      "case": "av_pottery",
+      "seed": 7204,
+      "repeat": 0,
+      "decode_seconds": 0.02423958900180878,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "2b2f0e677824fcb26d60eefb817f523a89a5114c32a523912be8ad20a8164a16",
+      "vs_bf16": {
+        "relative_l2": 0.08643876016139984,
+        "rmse": 0.02356538735330105,
+        "log_spectral_l1": 0.4356245696544647
+      },
+      "vs_ffn_act2": {
+        "relative_l2": 0.15387007594108582,
+        "rmse": 0.04474436491727829,
+        "log_spectral_l1": 0.4698042571544647
+      }
+    },
+    {
+      "mode": "ffn_auto50",
+      "case": "av_pottery",
+      "seed": 7203,
+      "repeat": 0,
+      "decode_seconds": 0.024334410998562817,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "e6d797b197b2786c3fc1e218a7485b6c227ba9b158b24a78cc424784092e03ce",
+      "vs_bf16": {
+        "relative_l2": 0.08803462982177734,
+        "rmse": 0.024159284308552742,
+        "log_spectral_l1": 0.4855860471725464
+      },
+      "vs_ffn_act2": {
+        "relative_l2": 0.08089372515678406,
+        "rmse": 0.022864120081067085,
+        "log_spectral_l1": 0.42866605520248413
+      }
+    },
+    {
+      "mode": "ffn_auto50",
+      "case": "av_pottery",
+      "seed": 7204,
+      "repeat": 0,
+      "decode_seconds": 0.024403055002039764,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "d9f4aca0e5c317c972bbb6123d73a7f6d4d9606f959934b0ec116b3ef0a1cd2b",
+      "vs_bf16": {
+        "relative_l2": 0.08477989584207535,
+        "rmse": 0.023113133385777473,
+        "log_spectral_l1": 0.3972180485725403
+      },
+      "vs_ffn_act2": {
+        "relative_l2": 0.1536283791065216,
+        "rmse": 0.04467407986521721,
+        "log_spectral_l1": 0.4043901264667511
+      }
+    },
+    {
+      "mode": "ffn_auto75",
+      "case": "av_pottery",
+      "seed": 7203,
+      "repeat": 0,
+      "decode_seconds": 0.024280819998239167,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "6564c3fdd2a3f9baa840dfaf7d2ffe71b5b3d0266ef7f91b265846ed743657d0",
+      "vs_bf16": {
+        "relative_l2": 0.05558284744620323,
+        "rmse": 0.015253562480211258,
+        "log_spectral_l1": 0.4182054400444031
+      },
+      "vs_ffn_act2": {
+        "relative_l2": 0.08789126574993134,
+        "rmse": 0.024841932579874992,
+        "log_spectral_l1": 0.45848774909973145
+      }
+    },
+    {
+      "mode": "ffn_auto75",
+      "case": "av_pottery",
+      "seed": 7204,
+      "repeat": 0,
+      "decode_seconds": 0.028298243996687233,
+      "shape": [
+        2,
+        122880
+      ],
+      "sampling_rate": 48000,
+      "sha256": "0a869c1cab705c900b1b358fa3dcc462448aefa5b94fbb5fe34a75a31fae40e0",
+      "vs_bf16": {
+        "relative_l2": 0.059568483382463455,
+        "rmse": 0.016239872202277184,
+        "log_spectral_l1": 0.3772522211074829
+      },
+      "vs_ffn_act2": {
+        "relative_l2": 0.15729685127735138,
+        "rmse": 0.045740850269794464,
+        "log_spectral_l1": 0.42380619049072266
+      }
+    }
+  ],
+  "scope": "GPU audio decode in separate process. Decode time excludes loading and warmup. Can be listed alongside Generator time but is not a measured integrated-request latency.",
+  "source_sha256": "e3c203bb0d68d5dd302c3fd4e1640217fdb77ae0bd8cd6e0e4c92cf8490cbc1d"
+}

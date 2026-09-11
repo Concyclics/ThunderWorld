@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "input": "runs5090/execution_edge_eager",
+      "trajectories": 16,
+      "source_snapshots": 44,
+      "complete_coverage": true,
+      "finite_and_hashes": true,
+      "cache_age_at_most_one": true
+    },
+    {
+      "input": "runs5090/execution_edge_graph",
+      "trajectories": 16,
+      "source_snapshots": 44,
+      "complete_coverage": true,
+      "finite_and_hashes": true,
+      "cache_age_at_most_one": true
+    },
+    {
+      "input": "runs5090/execution_edge_fused",
+      "trajectories": 16,
+      "source_snapshots": 45,
+      "complete_coverage": true,
+      "finite_and_hashes": true,
+      "cache_age_at_most_one": true
+    },
+    {
+      "input": "runs5090/execution_nano_eager",
+      "trajectories": 24,
+      "source_snapshots": 45,
+      "complete_coverage": true,
+      "finite_and_hashes": true,
+      "cache_age_at_most_one": true
+    },
+    {
+      "input": "runs5090/execution_nano_graph",
+      "trajectories": 24,
+      "source_snapshots": 46,
+      "complete_coverage": true,
+      "finite_and_hashes": true,
+      "cache_age_at_most_one": true
+    },
+    {
+      "input": "runs5090/execution_nano_fused",
+      "trajectories": 24,
+      "source_snapshots": 47,
+      "complete_coverage": true,
+      "finite_and_hashes": true,
+      "cache_age_at_most_one": true
+    }
+  ]
+}

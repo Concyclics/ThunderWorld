@@ -2,7 +2,7 @@
 import argparse,json,os,subprocess,sys
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
-p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True);p.add_argument('--weights',type=Path);p.add_argument('--output',type=Path,required=True);p.add_argument('--suite',choices=['quick','main','stress'],default='quick');p.add_argument('--kind',choices=['both','ffn','attention'],default='both');p.add_argument('--dry-run',action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True);p.add_argument('--weights',type=Path);p.add_argument('--output',type=Path,required=True);p.add_argument('--suite',choices=['quick','main','stress'],default='quick');p.add_argument('--kind',choices=['both','ffn','attention'],default='both');p.add_argument('--dry-run',action='store_true');p.add_argument('--tuning',type=Path);p.add_argument('--compare-baseline',action='store_true');a=p.parse_args()
 m=json.loads((a.data/'manifest.json').read_text());jobs=[]
 rows={'quick':[128],'main':[128,512],'stress':[2048]}[a.suite]
 if a.kind in ('both','ffn'):
@@ -22,6 +22,8 @@ commands=[]
 for i,job in enumerate(jobs):
     target=a.output/f'{i:03d}_{job[1]}_{Path(job[3]).stem}_{job[5]}_m{job[7]}.json'
     cmd=[sys.executable,str(HERE/'bench.py'),'--data',str(a.data),'--output',str(target),'--rounds','1' if a.suite=='quick' else '5','--rep-ms','10' if a.suite=='quick' else '40',*job]
+    if a.tuning is not None:cmd += ['--tuning',str(a.tuning)]
+    if a.compare_baseline:cmd += ['--compare-baseline']
     commands.append(cmd)
 if a.dry_run:print(json.dumps(commands,indent=2));raise SystemExit
 if a.output.exists():raise FileExistsError('Use a fresh matrix output directory')

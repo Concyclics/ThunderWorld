@@ -1,0 +1,302 @@
+{
+  "as_of": "2026-09-11",
+  "sources": [
+    {
+      "path": "docs/AUTO_BUDGET_5090_20260910.md",
+      "sha256": "ba03a1f84e138acec620d97dad244f6962fa7c0680e3b95b250fec3c119cf402"
+    },
+    {
+      "path": "docs/GRAPH_FUSION_5090_20260911.md",
+      "sha256": "9d577e3975ec39236af914a5d0b5be5ff5a1e8f2022ce593d787c169f656b380"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/result.json",
+      "sha256": "0d2686d4bb5c2f5d32da497c5f5568b11b2931ca07455b5a2d3bd6f9614d9028"
+    },
+    {
+      "path": "results/findings_20260910/edge/sampling_summary.json",
+      "sha256": "611019187f1410b3442e4d7fc7dfc43f1c1795b6342e7b3a8be1d13c169bb8b0"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_robot_observe_seed6101_r0_heads.npz",
+      "sha256": "afae00bab40796e05eee4043c5bfa709f3b83522a2cecb010630c9d9c258fced"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_robot_observe_seed6102_r0_heads.npz",
+      "sha256": "d3051d6b89a23f3ed4b353e3e87df0ff39d7ef232a96c6e5a1450875bfe3e9f8"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_robot_table_seed6101_r0_heads.npz",
+      "sha256": "fffe2be79237b9401fdf06a46765e268809d4320187e7d861d20dff68b99913c"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_robot_table_seed6102_r0_heads.npz",
+      "sha256": "973067a61a656e81800b6d1de983cf851008d11a0dde4e984a702881beb9ceec"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_waterfall_seed6101_r0_heads.npz",
+      "sha256": "f5b537fca871662c5a8ed8d486dd7dbe1fea7d14d01d67964c7a586f84b5c726"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_waterfall_seed6102_r0_heads.npz",
+      "sha256": "150e83c1b64094c98f6286768da7a9687c9e0cf6f53818e826a03bd97b500f76"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_pottery_seed6101_r0_heads.npz",
+      "sha256": "a35812abfe847548a5dc57ee1da1b7f8ab39711491c74f830200ec5a56d7b7a6"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_pottery_seed6102_r0_heads.npz",
+      "sha256": "588196a7cfba14687f18cfa586d77dee1406134367ee756ae4ad650365e4e56c"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_policy_observe_seed6101_r0_heads.npz",
+      "sha256": "c852931ed4575359308aeadc64036aec7cdaf4ba228b5fe4b12c468fdaf045fc"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_policy_observe_seed6102_r0_heads.npz",
+      "sha256": "061fa817b3e2dabfffc4b1ced56bea2f3f442233cdd15be3432b2659b8f6dd15"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_policy_table_seed6101_r0_heads.npz",
+      "sha256": "626f7fb6f7c6bbf3d420f2b60da51266350a5c5a2ed07e825cde8cf8793f74d7"
+    },
+    {
+      "path": "runs5090/findings_edge_sampling/bf16_policy_table_seed6102_r0_heads.npz",
+      "sha256": "4d6a0a3e66055ae5b9f4fa25d4c128fb6b836e2fac1a116d39784c2b0f841c3b"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/result.json",
+      "sha256": "c4a3b9f72ddb3691a1e78d6eacffb893d1fc35d49dc79ea0ec43df6e91b7d1ff"
+    },
+    {
+      "path": "results/findings_20260910/nano/sampling_summary.json",
+      "sha256": "e5b0a48229031601083601499f16c38980dadf475246e13636058ff41f3c1854"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_robot_observe_seed6101_r0_heads.npz",
+      "sha256": "f7e517fdec8e56bfee595ee1af50fd21329b28f3f5da3413182aa5d6f7806b49"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_robot_observe_seed6102_r0_heads.npz",
+      "sha256": "8bff1e8b6146ae859d1f00ec76cc00028502a84acace332edb4fdf7bcbef381e"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_robot_table_seed6101_r0_heads.npz",
+      "sha256": "1224b404313db320cd7cc092d630e66ba078abe5b90fbad6441f24b0b89db319"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_robot_table_seed6102_r0_heads.npz",
+      "sha256": "7f67727c5cbe960041397172e443bab25c24942ba25be898dee0e61f00b11c61"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_waterfall_seed6101_r0_heads.npz",
+      "sha256": "71723c2b0bae30e71ef273a4d28bbe172e0d369050f88a09fb920e5d8d62d225"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_waterfall_seed6102_r0_heads.npz",
+      "sha256": "0de1cb8ebbb44a0ce7fbc5ad92ee9d8181d3a129e4287541d8738bf5787c78e6"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_pottery_seed6101_r0_heads.npz",
+      "sha256": "72cd2eed6ca0e7a4ac73e822b5e59dd0c5d7e4a6dba16e7e085ee08146c4be09"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_pottery_seed6102_r0_heads.npz",
+      "sha256": "693908287b3d91f256e12c9e9452cda1f0d6b48f6cdb01641d388663e34128a8"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_policy_observe_seed6101_r0_heads.npz",
+      "sha256": "b674953353a80c176282de712721f2cfb26d3e7784e94099273505632dc7237c"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_policy_observe_seed6102_r0_heads.npz",
+      "sha256": "5b0bc6b3b769f0b53699d713e9194db4be77474a491ccc5b629ff78de6c968d5"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_policy_table_seed6101_r0_heads.npz",
+      "sha256": "6a4511ff524b357b1a1bbc1224e9c45068e1581869f9a76618b6b9072f85df5c"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_policy_table_seed6102_r0_heads.npz",
+      "sha256": "34395c9676ea64bd71513acd0cc00d1b4751c6ba2ebea59912eda3d57d01f145"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_av_waterfall_seed6101_r0_heads.npz",
+      "sha256": "fa391b1e9f16e202f952694c11a3079b2dd508cbf43bbfe8a74fdc9e9ac3d571"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_av_waterfall_seed6102_r0_heads.npz",
+      "sha256": "4f3962ae4a8997f3d257d95040b18be468094b5e751fc0a7cc3d3a7fa5324e65"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_av_pottery_seed6101_r0_heads.npz",
+      "sha256": "77e3c7978f4e43ce894e8e5294e0c3d90a69c75532831f050596abbd52a4a41d"
+    },
+    {
+      "path": "runs5090/findings_nano_sampling_complete/bf16_av_pottery_seed6102_r0_heads.npz",
+      "sha256": "2fb5e30f545010493a709c565a31a36449bcf3c3c877a59daed29c26dff8f080"
+    },
+    {
+      "path": "results/findings_20260910/edge/trajectory_summary.csv",
+      "sha256": "c7317a6943b58553939a30e6897757cbc064147776e9aaf048b57c829d366485"
+    },
+    {
+      "path": "results/findings_20260910/nano/trajectory_summary.csv",
+      "sha256": "7faf63da6a0b827850d517701d6ac6a137afa459183b6d50956d06903c8fe367"
+    },
+    {
+      "path": "results/execution_20260911/summary.csv",
+      "sha256": "e12d3812f4a661bb106caf594cabca5dc56755ae68cd6d154b25f2052580a2de"
+    },
+    {
+      "path": "results/findings_20260910/ablation/ablation.csv",
+      "sha256": "56a492b3f009a4b39c47b25a75e6782833e3d676354e592a84685422d2c08475"
+    },
+    {
+      "path": "results/execution_20260911/tuned_double_buffer.csv",
+      "sha256": "a6eef12596cde4d1b96a3c9855e92438679b37f0f576bf7d45fb19ceb462c050"
+    }
+  ],
+  "figures": [
+    {
+      "id": "00_research_logic",
+      "kind": "schematic",
+      "description": "Motivation, candidate algorithm contributions, and implemented system status.",
+      "files": [
+        "assets/figures/00_research_logic.svg",
+        "assets/figures/00_research_logic.pdf",
+        "assets/figures/00_research_logic.png"
+      ]
+    },
+    {
+      "id": "02_residual_products",
+      "kind": "schematic",
+      "description": "Logical residual terms and the distinction between executed and omitted terms.",
+      "files": [
+        "assets/figures/02_residual_products.svg",
+        "assets/figures/02_residual_products.pdf",
+        "assets/figures/02_residual_products.png"
+      ]
+    },
+    {
+      "id": "03_budget_flow",
+      "kind": "schematic",
+      "description": "Offline allocation and full-trajectory gates; online phase and current-input selection.",
+      "files": [
+        "assets/figures/03_budget_flow.svg",
+        "assets/figures/03_budget_flow.pdf",
+        "assets/figures/03_budget_flow.png"
+      ]
+    },
+    {
+      "id": "04_execution_flow",
+      "kind": "schematic",
+      "description": "Eager dependencies versus captured execution; geometry is not duration.",
+      "files": [
+        "assets/figures/04_execution_flow.svg",
+        "assets/figures/04_execution_flow.pdf",
+        "assets/figures/04_execution_flow.png"
+      ]
+    },
+    {
+      "id": "05_depth_mass",
+      "kind": "data",
+      "description": "Equal trajectory means, query-count-weighted DM mass; all layers, heads and 35 steps, conditional branch.",
+      "files": [
+        "assets/figures/05_depth_mass.svg",
+        "assets/figures/05_depth_mass.pdf",
+        "assets/figures/05_depth_mass.png"
+      ]
+    },
+    {
+      "id": "06_directionality",
+      "kind": "data",
+      "description": "Dots are whole-trajectory ratios, not confidence intervals; Nano sound curves average layers/heads within a trajectory then two seeds.",
+      "files": [
+        "assets/figures/06_directionality.svg",
+        "assets/figures/06_directionality.pdf",
+        "assets/figures/06_directionality.png"
+      ]
+    },
+    {
+      "id": "07_temporal",
+      "kind": "data",
+      "description": "Top: all observation trajectories. Bottom: robot_observe, two seeds, middle layer, common heatmap scale. First step has no predecessor and is omitted.",
+      "files": [
+        "assets/figures/07_temporal.svg",
+        "assets/figures/07_temporal.pdf",
+        "assets/figures/07_temporal.png"
+      ]
+    },
+    {
+      "id": "09_quality_ablation",
+      "kind": "data",
+      "description": "Seeds 6103/6104, BF16 attention. Video mean over two seeds; action/audio maxima. Reference is same-seed BF16.",
+      "files": [
+        "assets/figures/09_quality_ablation.svg",
+        "assets/figures/09_quality_ablation.pdf",
+        "assets/figures/09_quality_ablation.png"
+      ]
+    },
+    {
+      "id": "08_cache_tradeoff",
+      "kind": "data",
+      "description": "Exploratory eager requests; worst SSIM and paired geometric-mean speedup against own uncached reference. Different model case sets.",
+      "files": [
+        "assets/figures/08_cache_tradeoff.svg",
+        "assets/figures/08_cache_tradeoff.pdf",
+        "assets/figures/08_cache_tradeoff.png"
+      ]
+    },
+    {
+      "id": "10_end_to_end",
+      "kind": "data",
+      "description": "All 15 FP4 configurations from the latest execution cohort. Two seeds, 35 steps, Graph+fusion, common BF16 Graph reference.",
+      "files": [
+        "assets/figures/10_end_to_end.svg",
+        "assets/figures/10_end_to_end.pdf",
+        "assets/figures/10_end_to_end.png"
+      ]
+    },
+    {
+      "id": "11_execution_memory",
+      "kind": "data",
+      "description": "Graph speedups versus own eager tier; I2V peak allocated memory with resident W1, not weight-only compression.",
+      "files": [
+        "assets/figures/11_execution_memory.svg",
+        "assets/figures/11_execution_memory.pdf",
+        "assets/figures/11_execution_memory.png"
+      ]
+    },
+    {
+      "id": "12_compute_limits",
+      "kind": "data_and_model",
+      "description": "Left: idealized r=4 cost model, not measured speedup. Right: measured retuned cases, separating true multichunk execution from one-chunk cases.",
+      "files": [
+        "assets/figures/12_compute_limits.svg",
+        "assets/figures/12_compute_limits.pdf",
+        "assets/figures/12_compute_limits.png"
+      ]
+    },
+    {
+      "id": "13_roadmap_demo",
+      "kind": "schematic",
+      "description": "Implementation priorities and proposed side-by-side demo; not a screenshot of an existing UI.",
+      "files": [
+        "assets/figures/13_roadmap_demo.svg",
+        "assets/figures/13_roadmap_demo.pdf",
+        "assets/figures/13_roadmap_demo.png"
+      ]
+    }
+  ],
+  "notes": "Charts use archived observations; schematic geometry is not measured timing. No inference rerun.",
+  "validation": {
+    "depth_and_drift_reconcile_to_archived_summaries": true,
+    "observation_trajectories": 28,
+    "execution_rows": 20,
+    "quality_rows": 10,
+    "cache_rows": 12,
+    "generated_figures": 13
+  }
+}

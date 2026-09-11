@@ -1,0 +1,16 @@
+edge 960:2048:9216 a50 serial/parallel 1.072
+edge 960:2048:9216 act2 serial/parallel 1.04
+edge 960:2048:9216 a50w serial/parallel 1.042
+edge 960:2048:9216 dual serial/parallel 1.027
+edge 316:2048:9216 a50 serial/parallel 1.098
+edge 316:2048:9216 act2 serial/parallel 0.728
+edge 316:2048:9216 a50w serial/parallel 1.055
+edge 316:2048:9216 dual serial/parallel 0.707
+nano 960:4096:12288 a50 serial/parallel 1.02
+nano 960:4096:12288 act2 serial/parallel 1.028
+nano 960:4096:12288 a50w serial/parallel 1.015
+nano 960:4096:12288 dual serial/parallel 1.025
+nano 316:4096:12288 a50 serial/parallel 1.056
+nano 316:4096:12288 act2 serial/parallel 0.765
+nano 316:4096:12288 a50w serial/parallel 1.032
+nano 316:4096:12288 dual serial/parallel 0.761

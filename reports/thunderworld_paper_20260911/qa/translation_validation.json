@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": {
+    "code_blocks_identical": true,
+    "reference_links_identical": true,
+    "decimal_values_identical": true,
+    "english_source_has_no_han": true,
+    "architecture_unchanged": true,
+    "local_links_resolve": true,
+    "english_html_has_no_han": true
+  },
+  "source": "REPORT.zh.md",
+  "translation": "REPORT_DETAILED.md"
+}

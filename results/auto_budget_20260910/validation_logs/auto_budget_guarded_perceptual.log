@@ -1,0 +1,56 @@
+/home/chenhan/miniconda3/envs/vllm/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/chenhan/miniconda3/envs/vllm/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Setting up [LPIPS] perceptual loss: trunk [alex], v[0.1], spatial [off]
+Loading model from: /home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_venv/lib/python3.12/site-packages/lpips/weights/v0.1/alex.pth
+edge bf16_robot_table_seed7203_r0 0.0
+edge bf16_robot_table_seed7204_r0 0.0
+edge bf16_policy_table_seed7203_r0 0.0
+edge bf16_policy_table_seed7204_r0 0.0
+edge ffn_act2_robot_table_seed7203_r0 0.27724
+edge ffn_act2_robot_table_seed7204_r0 0.47141
+edge ffn_act2_policy_table_seed7203_r0 0.00121
+edge ffn_act2_policy_table_seed7204_r0 0.05065
+edge ffn_uniform75_robot_table_seed7203_r0 0.25771
+edge ffn_uniform75_robot_table_seed7204_r0 0.33731
+edge ffn_uniform75_policy_table_seed7203_r0 0.00086
+edge ffn_uniform75_policy_table_seed7204_r0 0.00312
+edge ffn_auto50_robot_table_seed7203_r0 0.27414
+edge ffn_auto50_robot_table_seed7204_r0 0.4162
+edge ffn_auto50_policy_table_seed7203_r0 0.00138
+edge ffn_auto50_policy_table_seed7204_r0 0.07308
+edge ffn_auto75_robot_table_seed7203_r0 0.26426
+edge ffn_auto75_robot_table_seed7204_r0 0.44286
+edge ffn_auto75_policy_table_seed7203_r0 0.00086
+edge ffn_auto75_policy_table_seed7204_r0 0.02078
+nano bf16_robot_table_seed7203_r0 0.0
+nano bf16_robot_table_seed7204_r0 0.0
+nano bf16_policy_table_seed7203_r0 0.0
+nano bf16_policy_table_seed7204_r0 0.0
+nano bf16_av_pottery_seed7203_r0 0.0
+nano bf16_av_pottery_seed7204_r0 0.0
+nano ffn_act2_robot_table_seed7203_r0 0.02582
+nano ffn_act2_robot_table_seed7204_r0 0.16951
+nano ffn_act2_policy_table_seed7203_r0 0.0418
+nano ffn_act2_policy_table_seed7204_r0 0.00359
+nano ffn_act2_av_pottery_seed7203_r0 0.21944
+nano ffn_act2_av_pottery_seed7204_r0 0.08194
+nano ffn_uniform75_robot_table_seed7203_r0 0.02865
+nano ffn_uniform75_robot_table_seed7204_r0 0.49665
+nano ffn_uniform75_policy_table_seed7203_r0 0.00499
+nano ffn_uniform75_policy_table_seed7204_r0 0.00388
+nano ffn_uniform75_av_pottery_seed7203_r0 0.08511
+nano ffn_uniform75_av_pottery_seed7204_r0 0.07792
+nano ffn_auto50_robot_table_seed7203_r0 0.02726
+nano ffn_auto50_robot_table_seed7204_r0 0.16108
+nano ffn_auto50_policy_table_seed7203_r0 0.02948
+nano ffn_auto50_policy_table_seed7204_r0 0.0041
+nano ffn_auto50_av_pottery_seed7203_r0 0.12298
+nano ffn_auto50_av_pottery_seed7204_r0 0.09552
+nano ffn_auto75_robot_table_seed7203_r0 0.02099
+nano ffn_auto75_robot_table_seed7204_r0 0.01947
+nano ffn_auto75_policy_table_seed7203_r0 0.00787
+nano ffn_auto75_policy_table_seed7204_r0 0.00304
+nano ffn_auto75_av_pottery_seed7203_r0 0.09222
+nano ffn_auto75_av_pottery_seed7204_r0 0.08187

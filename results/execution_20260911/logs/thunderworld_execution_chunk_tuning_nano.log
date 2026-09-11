@@ -1,0 +1,26 @@
+The config attributes {'dtype': 'bfloat16', 'freeze_und': False, 'initializer_range': 0.02, 'joint_attn_implementation': 'two_way', 'max_action_dim': 64, 'max_position_embeddings': 262144, 'model_type': 'qwen3_vl_text', 'position_embedding_type': 'unified_3d_mrope', 'qk_norm': False, 'qk_norm_for_diffusion': True, 'temporal_compression_factor_sound': 1, 'use_cache': True, 'use_moe': True, 'video_temporal_causal': False} were passed to Cosmos3OmniTransformer, but are not expected and will be ignored. Please verify your config.json configuration file.
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 7/7 [00:00<00:00, 245.18it/s]
+nano 960:12288:4096 a50 chunk 512 launch 128 2 speedup 0.8693
+nano 960:12288:4096 act2 chunk 512 launch 128 3 speedup 0.8212
+nano 960:12288:4096 a50w chunk 512 launch 128 2 speedup 0.8738
+nano 960:12288:4096 dual chunk 512 launch 64 3 speedup 0.8976
+nano 960:4096:12288 a50 chunk 512 launch 128 2 speedup 0.8819
+nano 960:4096:12288 act2 chunk 512 launch 128 3 speedup 0.927
+nano 960:4096:12288 a50w chunk 512 launch 64 2 speedup 0.8184
+nano 960:4096:12288 dual chunk 512 launch 64 2 speedup 0.9132
+nano 316:12288:4096 a50 chunk 512 launch 128 3 speedup 0.9244
+nano 316:12288:4096 act2 chunk 512 launch 128 3 speedup 0.9668
+nano 316:12288:4096 a50w chunk 512 launch 128 2 speedup 0.984
+nano 316:12288:4096 dual chunk 512 launch 128 2 speedup 0.9661
+nano 316:4096:12288 a50 chunk 512 launch 64 2 speedup 0.9157
+nano 316:4096:12288 act2 chunk 512 launch 64 3 speedup 1.019
+nano 316:4096:12288 a50w chunk 512 launch 64 2 speedup 0.9856
+nano 316:4096:12288 dual chunk 512 launch 64 3 speedup 1.01
+nano 1024:12288:4096 a50 chunk 512 launch 128 2 speedup 0.8823
+nano 1024:12288:4096 act2 chunk 512 launch 64 2 speedup 0.7744
+nano 1024:12288:4096 a50w chunk 512 launch 128 2 speedup 0.8498
+nano 1024:12288:4096 dual chunk 512 launch 64 2 speedup 0.8619
+nano 1024:4096:12288 a50 chunk 512 launch 128 2 speedup 0.9047
+nano 1024:4096:12288 act2 chunk 512 launch 128 3 speedup 0.942
+nano 1024:4096:12288 a50w chunk 512 launch 64 2 speedup 0.815
+nano 1024:4096:12288 dual chunk 512 launch 128 3 speedup 0.8993

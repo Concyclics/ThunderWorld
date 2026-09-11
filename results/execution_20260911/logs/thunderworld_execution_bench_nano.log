@@ -1,0 +1,38 @@
+The config attributes {'dtype': 'bfloat16', 'freeze_und': False, 'initializer_range': 0.02, 'joint_attn_implementation': 'two_way', 'max_action_dim': 64, 'max_position_embeddings': 262144, 'model_type': 'qwen3_vl_text', 'position_embedding_type': 'unified_3d_mrope', 'qk_norm': False, 'qk_norm_for_diffusion': True, 'temporal_compression_factor_sound': 1, 'use_cache': True, 'use_moe': True, 'video_temporal_causal': False} were passed to Cosmos3OmniTransformer, but are not expected and will be ignored. Please verify your config.json configuration file.
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  43%|████▎     | 3/7 [00:00<00:00, 21.62it/s]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:00<00:00, 22.55it/s]Loading checkpoint shards: 100%|██████████| 7/7 [00:00<00:00, 24.01it/s]
+FFN nano 960:12288:4096 a50 1.006
+FFN nano 960:12288:4096 act2 1.008
+FFN nano 960:12288:4096 a50w 1.008
+FFN nano 960:12288:4096 dual 1.006
+Pipeline nano 960:12288:4096 a50 original 1.0
+Pipeline nano 960:12288:4096 act2 original 1.0
+Pipeline nano 960:12288:4096 a50w original 1.0
+Pipeline nano 960:12288:4096 dual original 1.0
+Pipeline nano 960:4096:12288 a50 original 1.0
+Pipeline nano 960:4096:12288 act2 original 1.0
+Pipeline nano 960:4096:12288 a50w original 1.0
+Pipeline nano 960:4096:12288 dual original 1.0
+FFN nano 316:12288:4096 a50 1.01
+FFN nano 316:12288:4096 act2 1.007
+FFN nano 316:12288:4096 a50w 1.007
+FFN nano 316:12288:4096 dual 1.007
+Pipeline nano 316:12288:4096 a50 original 1.0
+Pipeline nano 316:12288:4096 act2 original 1.0
+Pipeline nano 316:12288:4096 a50w original 1.0
+Pipeline nano 316:12288:4096 dual original 1.0
+Pipeline nano 316:4096:12288 a50 original 1.0
+Pipeline nano 316:4096:12288 act2 original 1.0
+Pipeline nano 316:4096:12288 a50w original 1.0
+Pipeline nano 316:4096:12288 dual original 1.0
+FFN nano 1024:12288:4096 a50 1.009
+FFN nano 1024:12288:4096 act2 1.01
+FFN nano 1024:12288:4096 a50w 1.005
+FFN nano 1024:12288:4096 dual 1.002
+Pipeline nano 1024:12288:4096 a50 original 1.0
+Pipeline nano 1024:12288:4096 act2 original 1.0
+Pipeline nano 1024:12288:4096 a50w original 1.0
+Pipeline nano 1024:12288:4096 dual original 1.0
+Pipeline nano 1024:4096:12288 a50 original 1.0
+Pipeline nano 1024:4096:12288 act2 original 1.0
+Pipeline nano 1024:4096:12288 a50w original 1.0
+Pipeline nano 1024:4096:12288 dual original 1.0

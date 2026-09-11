@@ -1,0 +1,5521 @@
+{
+  "complete": true,
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "scope": "Real model weights, repeated captured 64-row probes at actual M; local quality only. Online packing included. Each winner retimed in randomized order for five rounds.",
+  "rows": [
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.013069665990769863,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.08746135459755952
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.08928266402213804
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.07102626611789067
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10530027346824532
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.09059963350981669
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.060618138313293456
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.15093951877794767
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.12407803619117068
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10128381252288818
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.06882507519844251
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.07238597670150677
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.054996127841853294
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.08187736455131979
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.0692411148186886
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.04794454175709771
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.17252502553603227
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.103801357384884
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 9.573627903591841e-05,
+          "bitwise": false,
+          "ms": 0.10479497415048104
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.06687511006991069,
+          0.07190376450033749,
+          0.06734677098461034,
+          0.0674213965733846,
+          0.0664338261190087
+        ],
+        "plane": [
+          0.0607386414966886,
+          0.0628358403119174,
+          0.06142082911103828,
+          0.06029150197324197,
+          0.060268886669262035
+        ],
+        "pair": [
+          0.05183814671646625,
+          0.052127342815547026,
+          0.04840003848075867,
+          0.04795286859278342,
+          0.04853423143688001
+        ]
+      },
+      "median_ms": {
+        "original": 0.06734677098461034,
+        "plane": 0.0607386414966886,
+        "pair": 0.04853423143688001
+      },
+      "speedups": {
+        "plane": 1.1087961357891418,
+        "pair": 1.3876138344169828
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "a50w",
+      "original_bf16_l2": 0.008837235160171986,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10736659885376923
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10031863157299982
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.09137990379333497
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.12794245806607332
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10230959362453884
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.08771902820732021
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.18442194767487355
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.15036891977837746
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14505331543670302
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.08910036410315562
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.0839179726120848
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.0846705288620469
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.10673829334885326
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.09119936884665976
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.08244957095848586
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.26540881417014384
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.18172890467521471
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.00012633955338969827,
+          "bitwise": false,
+          "ms": 0.16224051618027963
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.08717466426801078,
+          0.08702966665766042,
+          0.09468691304044903,
+          0.08848178235790398,
+          0.08722023963928223
+        ],
+        "plane": [
+          0.08750640953643413,
+          0.09562147702926245,
+          0.09495640099048615,
+          0.08755330739531127,
+          0.0877059816564404
+        ],
+        "pair": [
+          0.08251780664135595,
+          0.08389641196427945,
+          0.08451074354487693,
+          0.08247851636036332,
+          0.08252273697450936
+        ]
+      },
+      "median_ms": {
+        "original": 0.08722023963928223,
+        "plane": 0.0877059816564404,
+        "pair": 0.08252273697450936
+      },
+      "speedups": {
+        "plane": 0.9944617002400029,
+        "pair": 1.0569237380750458
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "dual",
+      "original_bf16_l2": 0.0033860737457871437,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11493397394816081
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10971449453999677
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10182254775231626
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.13939706376455363
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11546413155852772
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10016676744968771
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2024059040445677
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.17297544479370117
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.16809118046480068
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 7.314611139008775e-05,
+          "bitwise": false,
+          "ms": 0.09851703846708257
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 7.314611139008775e-05,
+          "bitwise": false,
+          "ms": 0.10728454371445051
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 7.314611139008775e-05,
+          "bitwise": false,
+          "ms": 0.09796146433404151
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 7.314611139008775e-05,
+          "bitwise": false,
+          "ms": 0.12034294241565768
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 7.314611139008775e-05,
+          "bitwise": false,
+          "ms": 0.11087353125862454
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 7.314611139008775e-05,
+          "bitwise": false,
+          "ms": 0.09116235309176975
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 7.314611139008775e-05,
+          "bitwise": false,
+          "ms": 0.37859528370392626
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 7.314611139008775e-05,
+          "bitwise": false,
+          "ms": 0.2563874813548306
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.08875037890214187,
+          0.089494461279649,
+          0.09623708786108555,
+          0.08926460278498662,
+          0.08877510603736428
+        ],
+        "plane": [
+          0.10035607309052438,
+          0.10253490544051574,
+          0.10891179215136192,
+          0.1020613103673078,
+          0.10028479984828403
+        ],
+        "pair": [
+          0.09124795552846547,
+          0.0914368217055862,
+          0.09934872364837852,
+          0.09171812486964345,
+          0.09123056813290245
+        ]
+      },
+      "median_ms": {
+        "original": 0.08926460278498662,
+        "plane": 0.1020613103673078,
+        "pair": 0.0914368217055862
+      },
+      "speedups": {
+        "plane": 0.8746174477256152,
+        "pair": 0.9762434992809153
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.02824505604803562,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.07077390344649398
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.08008555623585592
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.07789145491339944
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.04397242321946104
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.05202808303833008
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.05198969465541089
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.047685207564012594
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.04558613383979128
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.04887183232414991
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 1.2629387128981762e-05,
+          "bitwise": false,
+          "ms": 0.05764226005190895
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 1.2629387128981762e-05,
+          "bitwise": false,
+          "ms": 0.05816561222076416
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 1.2629387128981762e-05,
+          "bitwise": false,
+          "ms": 0.05317611110453703
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 1.2629387128981762e-05,
+          "bitwise": false,
+          "ms": 0.0485811799550228
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 1.2629387128981762e-05,
+          "bitwise": false,
+          "ms": 0.047714901288350424
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 1.2629387128981762e-05,
+          "bitwise": false,
+          "ms": 0.040026525822483075
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 1.2629387128981762e-05,
+          "bitwise": false,
+          "ms": 0.06404263193362227
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 1.2629387128981762e-05,
+          "bitwise": false,
+          "ms": 0.040979055008798275
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 1.2629387128981762e-05,
+          "bitwise": false,
+          "ms": 0.05213330371446344
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.04159781980834551,
+          0.04192066320208802,
+          0.04189348601027581,
+          0.04212766853538719,
+          0.04206605451960228
+        ],
+        "plane": [
+          0.044097414795233277,
+          0.04539290493932264,
+          0.04554468258007153,
+          0.045358292542582265,
+          0.04557257604598999
+        ],
+        "pair": [
+          0.03928427300086388,
+          0.03934354398272724,
+          0.039402502831246786,
+          0.03940377009779873,
+          0.039505142360538634
+        ]
+      },
+      "median_ms": {
+        "original": 0.04192066320208802,
+        "plane": 0.04539290493932264,
+        "pair": 0.039402502831246786
+      },
+      "speedups": {
+        "plane": 0.9235069502188499,
+        "pair": 1.0639086400583744
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "a50w",
+      "original_bf16_l2": 0.019259238615632057,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.08820615364955021
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.08632794945103348
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.08444650898809018
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.05482387995060253
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.06344775612177286
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.05903004972558273
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.055383275512956145
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.054181864818287316
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.05495545983314514
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 2.2627893486060202e-05,
+          "bitwise": false,
+          "ms": 0.07264268050322661
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 2.2627893486060202e-05,
+          "bitwise": false,
+          "ms": 0.07397769696784742
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 2.2627893486060202e-05,
+          "bitwise": false,
+          "ms": 0.07561486297183567
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 2.2627893486060202e-05,
+          "bitwise": false,
+          "ms": 0.06255453686381496
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 2.2627893486060202e-05,
+          "bitwise": false,
+          "ms": 0.057429200410842894
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 2.2627893486060202e-05,
+          "bitwise": false,
+          "ms": 0.06529009129741405
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 2.2627893486060202e-05,
+          "bitwise": false,
+          "ms": 0.10815600007772445
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 2.2627893486060202e-05,
+          "bitwise": false,
+          "ms": 0.0779588227984549
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 2.2627893486060202e-05,
+          "bitwise": false,
+          "ms": 0.08262716544853461
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.05104854190395964,
+          0.05183283062431756,
+          0.05188856916465307,
+          0.05201938953324269,
+          0.051859226226806644
+        ],
+        "plane": [
+          0.05556058724721273,
+          0.055532376906451054,
+          0.055370773474375405,
+          0.05554489827860257,
+          0.05528010683578427
+        ],
+        "pair": [
+          0.05812422210424482,
+          0.05857427371175666,
+          0.05855412168124699,
+          0.0585503712035062,
+          0.05945595741271972
+        ]
+      },
+      "median_ms": {
+        "original": 0.051859226226806644,
+        "plane": 0.055532376906451054,
+        "pair": 0.05855412168124699
+      },
+      "speedups": {
+        "plane": 0.9338556913234213,
+        "pair": 0.8856631222156218
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "dual",
+      "original_bf16_l2": 0.004800624679774046,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.09213572615071347
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.0916180185171274
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.0895266931820539
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.05454120598142109
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.06616050705077156
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.06505363079217764
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.06539315002892404
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.0706065020662673
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.06767071558276253
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 3.3793345210142434e-05,
+          "bitwise": false,
+          "ms": 0.08519280869283793
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 3.3793345210142434e-05,
+          "bitwise": false,
+          "ms": 0.09418046328486229
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 3.3793345210142434e-05,
+          "bitwise": false,
+          "ms": 0.10172433468603319
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 3.3793345210142434e-05,
+          "bitwise": false,
+          "ms": 0.07262036979839366
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 3.3793345210142434e-05,
+          "bitwise": false,
+          "ms": 0.07632319927215576
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 3.3793345210142434e-05,
+          "bitwise": false,
+          "ms": 0.06730862692290661
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 3.3793345210142434e-05,
+          "bitwise": false,
+          "ms": 0.1566753754248986
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 3.3793345210142434e-05,
+          "bitwise": false,
+          "ms": 0.11680005470911661
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.06083691418170929,
+          0.062046996463428844,
+          0.06331247356202867,
+          0.06663003361553227,
+          0.06237429934223806
+        ],
+        "plane": [
+          0.054290088937302264,
+          0.05649701317151387,
+          0.05623206728595798,
+          0.06136187157540951,
+          0.056110178576353704
+        ],
+        "pair": [
+          0.0684194052747905,
+          0.06943391942977906,
+          0.0736968888176812,
+          0.07462463331694649,
+          0.07012570053339004
+        ]
+      },
+      "median_ms": {
+        "original": 0.06237429934223806,
+        "plane": 0.05623206728595798,
+        "pair": 0.07012570053339004
+      },
+      "speedups": {
+        "plane": 1.1092300595147049,
+        "pair": 0.8894641888466955
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.012394560500979424,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.238185245271713
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2372210071932885
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.23506575553647932
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14002224357382764
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1423379583266175
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14384067901457198
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.15849297701657475
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.13395983526639849
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11218113514684862
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 8.580738358432427e-05,
+          "bitwise": false,
+          "ms": 0.1560238610143247
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 8.580738358432427e-05,
+          "bitwise": false,
+          "ms": 0.15237930277560618
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 8.580738358432427e-05,
+          "bitwise": false,
+          "ms": 0.17598222332236207
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 8.580738358432427e-05,
+          "bitwise": false,
+          "ms": 0.11527411995864496
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 8.580738358432427e-05,
+          "bitwise": false,
+          "ms": 0.11594874968895545
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 8.580738358432427e-05,
+          "bitwise": false,
+          "ms": 0.11640612249789031
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 8.580738358432427e-05,
+          "bitwise": false,
+          "ms": 0.18926336882544345
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 8.580738358432427e-05,
+          "bitwise": false,
+          "ms": 0.1162205893146105
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 8.580738358432427e-05,
+          "bitwise": false,
+          "ms": 0.12448996493690892
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.11698299585762671,
+          0.11740028237094398,
+          0.11744380981203109,
+          0.1172292565097328,
+          0.11745979084688074
+        ],
+        "plane": [
+          0.11458806678897045,
+          0.11700234731038411,
+          0.11713176837637404,
+          0.1173017549915474,
+          0.11703564379395558
+        ],
+        "pair": [
+          0.12015622155419711,
+          0.12055263437073807,
+          0.12011826482869811,
+          0.1203917551848848,
+          0.12048711287669647
+        ]
+      },
+      "median_ms": {
+        "original": 0.11740028237094398,
+        "plane": 0.11703564379395558,
+        "pair": 0.1203917551848848
+      },
+      "speedups": {
+        "plane": 1.0031156198673146,
+        "pair": 0.9751521787405887
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "a50w",
+      "original_bf16_l2": 0.008507002145051956,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.251595533305201
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.24893716391870532
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.24896542101490254
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1798598710880723
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.16064575937059192
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.16237044280834412
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.19355982703131597
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.16149928918045559
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.15586420867754067
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00017058670346159488,
+          "bitwise": false,
+          "ms": 0.20342697832319473
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00017058670346159488,
+          "bitwise": false,
+          "ms": 0.24279247919718425
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00017058670346159488,
+          "bitwise": false,
+          "ms": 0.23720508794315526
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00017058670346159488,
+          "bitwise": false,
+          "ms": 0.15297913348421138
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00017058670346159488,
+          "bitwise": false,
+          "ms": 0.15467443466186523
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00017058670346159488,
+          "bitwise": false,
+          "ms": 0.19510277823397987
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00017058670346159488,
+          "bitwise": false,
+          "ms": 0.3251700245604223
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00017058670346159488,
+          "bitwise": false,
+          "ms": 0.2069798313203405
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.00017058670346159488,
+          "bitwise": false,
+          "ms": 0.18265397397777702
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.14682543715652155,
+          0.14720173279444376,
+          0.14719049687288246,
+          0.14740080887012266,
+          0.1473765661319097
+        ],
+        "plane": [
+          0.15911420504252116,
+          0.16071396307511762,
+          0.16069087140700397,
+          0.16060289211487502,
+          0.16093210848894987
+        ],
+        "pair": [
+          0.15972067515055338,
+          0.15962606922964032,
+          0.15970695071750218,
+          0.1591630559979063,
+          0.1597978966959407
+        ]
+      },
+      "median_ms": {
+        "original": 0.14720173279444376,
+        "plane": 0.16069087140700397,
+        "pair": 0.15970695071750218
+      },
+      "speedups": {
+        "plane": 0.9160553521525538,
+        "pair": 0.9216989751111191
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "dual",
+      "original_bf16_l2": 0.0028268960304558277,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2674221402948553
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.26769826889038084
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.26709445714950564
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.18352312158655237
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2034393360088398
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.18231771408565461
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.21087267087853473
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1866678555806478
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1826202332218991
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00011326812818879262,
+          "bitwise": false,
+          "ms": 0.29390841293334957
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00011326812818879262,
+          "bitwise": false,
+          "ms": 0.30080493092536925
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00011326812818879262,
+          "bitwise": false,
+          "ms": 0.2717109344623707
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00011326812818879262,
+          "bitwise": false,
+          "ms": 0.18235961334614814
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00011326812818879262,
+          "bitwise": false,
+          "ms": 0.19235570430755616
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00011326812818879262,
+          "bitwise": false,
+          "ms": 0.21033901546312414
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00011326812818879262,
+          "bitwise": false,
+          "ms": 0.44179689182954673
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00011326812818879262,
+          "bitwise": false,
+          "ms": 0.23554783300919965
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.16110957284991662,
+          0.1633692697546948,
+          0.1633435961843907,
+          0.1632347929066625,
+          0.16311440851496553
+        ],
+        "plane": [
+          0.17867824295420706,
+          0.1875468050847288,
+          0.1879445187457196,
+          0.18776000047984875,
+          0.18736569293133623
+        ],
+        "pair": [
+          0.18928142694326547,
+          0.19126745732625325,
+          0.19117827164499382,
+          0.1904261957804362,
+          0.1914510065714518
+        ]
+      },
+      "median_ms": {
+        "original": 0.1632347929066625,
+        "plane": 0.1875468050847288,
+        "pair": 0.19117827164499382
+      },
+      "speedups": {
+        "plane": 0.8703682946393956,
+        "pair": 0.8538354882179257
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.028042715042829514,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.20738555521204852
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.21866744214838202
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.21789196356018978
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14427768822872278
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1442339802732562
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14788027169569484
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10966925147835535
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10808132736771195
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10524482811446739
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 4.2392890463816e-05,
+          "bitwise": false,
+          "ms": 0.13137715227969057
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 4.2392890463816e-05,
+          "bitwise": false,
+          "ms": 0.1451281123691135
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 4.2392890463816e-05,
+          "bitwise": false,
+          "ms": 0.14221303769857577
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 4.2392890463816e-05,
+          "bitwise": false,
+          "ms": 0.10555345671517508
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 4.2392890463816e-05,
+          "bitwise": false,
+          "ms": 0.09967939081326337
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 4.2392890463816e-05,
+          "bitwise": false,
+          "ms": 0.0962443619558256
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 4.2392890463816e-05,
+          "bitwise": false,
+          "ms": 0.14658669943761343
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 4.2392890463816e-05,
+          "bitwise": false,
+          "ms": 0.09660688971175628
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 4.2392890463816e-05,
+          "bitwise": false,
+          "ms": 0.11457161288107595
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.09959645748138428,
+          0.1075595499764026,
+          0.10191205564912383,
+          0.1006167557504442,
+          0.1000347796239351
+        ],
+        "plane": [
+          0.10794804332820514,
+          0.11779272481799126,
+          0.11289806732764611,
+          0.11019877642393112,
+          0.1103115909783415
+        ],
+        "pair": [
+          0.10180645743719965,
+          0.10870882155190051,
+          0.1027130781218063,
+          0.1019374982685062,
+          0.10187628799014621
+        ]
+      },
+      "median_ms": {
+        "original": 0.1006167557504442,
+        "plane": 0.1103115909783415,
+        "pair": 0.1019374982685062
+      },
+      "speedups": {
+        "plane": 0.9121140839152543,
+        "pair": 0.9870436047529523
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "a50w",
+      "original_bf16_l2": 0.019822727888822556,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2202972614403927
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2347160120479396
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2324802005101764
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.16393643617630005
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.15886846584278147
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.150586665670077
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.12528523154880689
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.12040096811887596
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1324059070684971
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 3.274495975347236e-05,
+          "bitwise": false,
+          "ms": 0.18648535946765576
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 3.274495975347236e-05,
+          "bitwise": false,
+          "ms": 0.20158523686726887
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 3.274495975347236e-05,
+          "bitwise": false,
+          "ms": 0.19672281162158864
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 3.274495975347236e-05,
+          "bitwise": false,
+          "ms": 0.1340046619233631
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 3.274495975347236e-05,
+          "bitwise": false,
+          "ms": 0.13303309795903223
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 3.274495975347236e-05,
+          "bitwise": false,
+          "ms": 0.15902892207051372
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 3.274495975347236e-05,
+          "bitwise": false,
+          "ms": 0.25751146684613146
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 3.274495975347236e-05,
+          "bitwise": false,
+          "ms": 0.16181539744138718
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 3.274495975347236e-05,
+          "bitwise": false,
+          "ms": 0.16913068883559282
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.1168975585329849,
+          0.11791698424542536,
+          0.1267607363443526,
+          0.12612709363301594,
+          0.11745118700768337
+        ],
+        "plane": [
+          0.12382954564587823,
+          0.12675964558019046,
+          0.1356208690698596,
+          0.12933038577698824,
+          0.12671588574137008
+        ],
+        "pair": [
+          0.14168138320629414,
+          0.1416799035402808,
+          0.15175505888114854,
+          0.14472804659888858,
+          0.1417287278883528
+        ]
+      },
+      "median_ms": {
+        "original": 0.11791698424542536,
+        "plane": 0.12675964558019046,
+        "pair": 0.1417287278883528
+      },
+      "speedups": {
+        "plane": 0.9302407221612886,
+        "pair": 0.8319907050764951
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "dual",
+      "original_bf16_l2": 0.004732922650873661,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.23558948607671829
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.24957577771153944
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2449746422848459
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1786817166863418
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.17255521912172617
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.16405878709943106
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14024804772682561
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14056736320577642
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1360958180337582
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 3.932364415959455e-05,
+          "bitwise": false,
+          "ms": 0.2102088901731703
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 3.932364415959455e-05,
+          "bitwise": false,
+          "ms": 0.2660874684651693
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 3.932364415959455e-05,
+          "bitwise": false,
+          "ms": 0.2706253936073997
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 3.932364415959455e-05,
+          "bitwise": false,
+          "ms": 0.16419728418414511
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 3.932364415959455e-05,
+          "bitwise": false,
+          "ms": 0.1681374112297507
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 3.932364415959455e-05,
+          "bitwise": false,
+          "ms": 0.16269044447480963
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 3.932364415959455e-05,
+          "bitwise": false,
+          "ms": 0.39033583339891936
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 3.932364415959455e-05,
+          "bitwise": false,
+          "ms": 0.20326764186223348
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.14486432316327336,
+          0.14723882569207086,
+          0.14722716759662238,
+          0.15357363985985825,
+          0.155627214294119
+        ],
+        "plane": [
+          0.13620304881401782,
+          0.14324188843751565,
+          0.1441461030174704,
+          0.15510064115618716,
+          0.1463735281819045
+        ],
+        "pair": [
+          0.17161478088015603,
+          0.1731491792769659,
+          0.1730285337993077,
+          0.18485916114988782,
+          0.17562140850793748
+        ]
+      },
+      "median_ms": {
+        "original": 0.14723882569207086,
+        "plane": 0.1441461030174704,
+        "pair": 0.1731491792769659
+      },
+      "speedups": {
+        "plane": 1.0214554719819628,
+        "pair": 0.8503582073383705
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.035639405250549316,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.5425389583294208
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6027500762939453
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6045198599497477
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.354813033778493
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.38075472887824563
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.36742679834365843
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.30211291215857683
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.29519277000427246
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2714668450532136
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 4.4367559894453734e-05,
+          "bitwise": false,
+          "ms": 0.3493603684181391
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 4.4367559894453734e-05,
+          "bitwise": false,
+          "ms": 0.39503014023239547
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 4.4367559894453734e-05,
+          "bitwise": false,
+          "ms": 0.4267859011888504
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 4.4367559894453734e-05,
+          "bitwise": false,
+          "ms": 0.288957745940597
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 4.4367559894453734e-05,
+          "bitwise": false,
+          "ms": 0.26817194393702914
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 4.4367559894453734e-05,
+          "bitwise": false,
+          "ms": 0.2517001398678484
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 4.4367559894453734e-05,
+          "bitwise": false,
+          "ms": 0.41224808957841663
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 4.4367559894453734e-05,
+          "bitwise": false,
+          "ms": 0.27266644351887254
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 4.4367559894453734e-05,
+          "bitwise": false,
+          "ms": 0.2768261441644633
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.26560983137650923,
+          0.2671761194864909,
+          0.2680449745871804,
+          0.2681091555842647,
+          0.267608118057251
+        ],
+        "plane": [
+          0.27987772134634165,
+          0.28578809356689455,
+          0.2858242618794344,
+          0.28609747314453127,
+          0.28606649589538574
+        ],
+        "pair": [
+          0.26768151049344047,
+          0.2677299931364239,
+          0.2676339329413648,
+          0.2675737992772516,
+          0.26786034781977813
+        ]
+      },
+      "median_ms": {
+        "original": 0.267608118057251,
+        "plane": 0.2858242618794344,
+        "pair": 0.26768151049344047
+      },
+      "speedups": {
+        "plane": 0.9362680281148866,
+        "pair": 0.9997258217945117
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "a50w",
+      "original_bf16_l2": 0.021568916738033295,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6574259956677755
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7071843398244757
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6551279275313667
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.40733857949574787
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.42085787636893135
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4045050827232567
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3528122007846832
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.32354830212063257
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3183702261551567
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 4.5100725401425734e-05,
+          "bitwise": false,
+          "ms": 0.4863612913316296
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 4.5100725401425734e-05,
+          "bitwise": false,
+          "ms": 0.5351011412484306
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 4.5100725401425734e-05,
+          "bitwise": false,
+          "ms": 0.5316429717200143
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 4.5100725401425734e-05,
+          "bitwise": false,
+          "ms": 0.3393415299328891
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 4.5100725401425734e-05,
+          "bitwise": false,
+          "ms": 0.38595436641148156
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 4.5100725401425734e-05,
+          "bitwise": false,
+          "ms": 0.449371808150719
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 4.5100725401425734e-05,
+          "bitwise": false,
+          "ms": 0.7204529523849488
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 4.5100725401425734e-05,
+          "bitwise": false,
+          "ms": 0.451783275604248
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 4.5100725401425734e-05,
+          "bitwise": false,
+          "ms": 0.44291403799345996
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.314929702434134,
+          0.3163981230362602,
+          0.31617398262023927,
+          0.31733085383539616,
+          0.31723826035209324
+        ],
+        "plane": [
+          0.33123292287190753,
+          0.33720533280145554,
+          0.3374780255694722,
+          0.3369660976321198,
+          0.3380692836850189
+        ],
+        "pair": [
+          0.37173069652758145,
+          0.3730426913813541,
+          0.3729332271375154,
+          0.3730704809490003,
+          0.37388429390756706
+        ]
+      },
+      "median_ms": {
+        "original": 0.3163981230362602,
+        "plane": 0.33720533280145554,
+        "pair": 0.3730426913813541
+      },
+      "speedups": {
+        "plane": 0.9382951343256292,
+        "pair": 0.8481552657275162
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "dual",
+      "original_bf16_l2": 0.005579741206020117,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6392822265625
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7459507518344455
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7159066677093506
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.44603908134229253
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.45162891190627524
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4358066811281092
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3908319121912906
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.39847238901499155
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.35981244808290064
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 4.933265154249966e-05,
+          "bitwise": false,
+          "ms": 0.5604096045860877
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 4.933265154249966e-05,
+          "bitwise": false,
+          "ms": 0.665916485786438
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 4.933265154249966e-05,
+          "bitwise": false,
+          "ms": 0.7274940919876098
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 4.933265154249966e-05,
+          "bitwise": false,
+          "ms": 0.41274777139936175
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 4.933265154249966e-05,
+          "bitwise": false,
+          "ms": 0.4576207011938095
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 4.933265154249966e-05,
+          "bitwise": false,
+          "ms": 0.4747028623308454
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 4.933265154249966e-05,
+          "bitwise": false,
+          "ms": 1.1123554449815016
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 4.933265154249966e-05,
+          "bitwise": false,
+          "ms": 0.5442602233886719
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.37821135997772215,
+          0.38371553671987435,
+          0.38459554220500747,
+          0.38401936731840436,
+          0.38193931250736635
+        ],
+        "plane": [
+          0.3594066712914444,
+          0.38235744785618136,
+          0.3844802555285002,
+          0.38354534200719886,
+          0.38187104560233454
+        ],
+        "pair": [
+          0.45217090249061587,
+          0.4548425336037913,
+          0.4473967969417572,
+          0.4562377005815506,
+          0.456631800532341
+        ]
+      },
+      "median_ms": {
+        "original": 0.38371553671987435,
+        "plane": 0.38235744785618136,
+        "pair": 0.4548425336037913
+      },
+      "speedups": {
+        "plane": 1.0035518828554473,
+        "pair": 0.8436228109091597
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.029071452096104622,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6899814106169201
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7351253350575765
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7063909572103749
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.49507148496566283
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.44776885668436683
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4058596353273134
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.29666186514354886
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2990988400517678
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3059601366519928
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00014886807184666395,
+          "bitwise": false,
+          "ms": 0.4388983558205997
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00014886807184666395,
+          "bitwise": false,
+          "ms": 0.4467549092841871
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00014886807184666395,
+          "bitwise": false,
+          "ms": 0.43248837414909813
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00014886807184666395,
+          "bitwise": false,
+          "ms": 0.33199345694647897
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00014886807184666395,
+          "bitwise": false,
+          "ms": 0.3074424684047699
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00014886807184666395,
+          "bitwise": false,
+          "ms": 0.29329819772757737
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00014886807184666395,
+          "bitwise": false,
+          "ms": 0.4103597270117866
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00014886807184666395,
+          "bitwise": false,
+          "ms": 0.3006296121849204
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.00014886807184666395,
+          "bitwise": false,
+          "ms": 0.32076724203009355
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.29180610617812797,
+          0.29290437925429574,
+          0.29378592238134266,
+          0.29388218704535035,
+          0.29501897072305483
+        ],
+        "plane": [
+          0.31417580429388553,
+          0.3228943655225966,
+          0.3231886927286784,
+          0.32367744021945527,
+          0.32090944290161133
+        ],
+        "pair": [
+          0.3146219854769499,
+          0.3151701554008152,
+          0.3134505728016729,
+          0.3163593706877335,
+          0.3180898085884426
+        ]
+      },
+      "median_ms": {
+        "original": 0.29378592238134266,
+        "plane": 0.3228943655225966,
+        "pair": 0.3151701554008152
+      },
+      "speedups": {
+        "plane": 0.9098514986653835,
+        "pair": 0.9321501967967832
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "a50w",
+      "original_bf16_l2": 0.020489491522312164,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7332804727554321
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7279006216261121
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7021561895098005
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.5555323212235063
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.5002210140228271
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.519753727546105
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3692913985833889
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.36060698672038755
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.36145841784593535
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00020229471556376666,
+          "bitwise": false,
+          "ms": 0.6235978643099467
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00020229471556376666,
+          "bitwise": false,
+          "ms": 0.6037859996159871
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00020229471556376666,
+          "bitwise": false,
+          "ms": 0.59591743850708
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00020229471556376666,
+          "bitwise": false,
+          "ms": 0.42637478323543776
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00020229471556376666,
+          "bitwise": false,
+          "ms": 0.4188352939060756
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00020229471556376666,
+          "bitwise": false,
+          "ms": 0.5304366073608399
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00020229471556376666,
+          "bitwise": false,
+          "ms": 0.7161552747090657
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00020229471556376666,
+          "bitwise": false,
+          "ms": 0.5057159990072251
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.00020229471556376666,
+          "bitwise": false,
+          "ms": 0.5154330650965373
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.355595201253891,
+          0.3586843204498291,
+          0.34853562186746034,
+          0.3587900018692017,
+          0.3589748811721802
+        ],
+        "plane": [
+          0.3771793923726896,
+          0.39081496419133366,
+          0.39152622480650207,
+          0.3915026200784219,
+          0.3906505481616871
+        ],
+        "pair": [
+          0.45113770067691805,
+          0.4506130009889603,
+          0.45332680344581605,
+          0.45171060264110563,
+          0.45253430008888246
+        ]
+      },
+      "median_ms": {
+        "original": 0.3586843204498291,
+        "plane": 0.39081496419133366,
+        "pair": 0.45171060264110563
+      },
+      "speedups": {
+        "plane": 0.9177855336015892,
+        "pair": 0.7940577846803654
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "dual",
+      "original_bf16_l2": 0.0069285505451262,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7740929703963431
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7759424008821186
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7455393505096436
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6076021766662598
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.5540466979697899
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.5422157764434814
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.42901973088582357
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.41633653110928004
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4139951123131646
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 8.423552935710177e-05,
+          "bitwise": false,
+          "ms": 0.7292643213272094
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 8.423552935710177e-05,
+          "bitwise": false,
+          "ms": 0.7489635181427002
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 8.423552935710177e-05,
+          "bitwise": false,
+          "ms": 0.7728506991737767
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 8.423552935710177e-05,
+          "bitwise": false,
+          "ms": 0.5130832540577855
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 8.423552935710177e-05,
+          "bitwise": false,
+          "ms": 0.5403602953310366
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 8.423552935710177e-05,
+          "bitwise": false,
+          "ms": 0.5310068539210728
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 8.423552935710177e-05,
+          "bitwise": false,
+          "ms": 1.056363194329398
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 8.423552935710177e-05,
+          "bitwise": false,
+          "ms": 0.6866500191066576
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.44873042242867606,
+          0.44931289851665496,
+          0.45019530355930326,
+          0.4501862019300461,
+          0.4519562005996704
+        ],
+        "plane": [
+          0.4194420274098714,
+          0.4487469017505646,
+          0.44732199907302855,
+          0.4482892960309982,
+          0.4487053036689758
+        ],
+        "pair": [
+          0.5492777506510417,
+          0.546459201666025,
+          0.5461603678189791,
+          0.548026704788208,
+          0.5475147100595328
+        ]
+      },
+      "median_ms": {
+        "original": 0.4501862019300461,
+        "plane": 0.4482892960309982,
+        "pair": 0.5475147100595328
+      },
+      "speedups": {
+        "plane": 1.0042314325053987,
+        "pair": 0.8222358114928019
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.029596423730254173,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.21208783192421074
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.198716844639308
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.19460433197021484
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11012797504663467
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.12097420692443847
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11963498331919438
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1121852063296134
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10676644787643895
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.10116781536623728
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 7.389487291220576e-05,
+          "bitwise": false,
+          "ms": 0.12292955730272376
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 7.389487291220576e-05,
+          "bitwise": false,
+          "ms": 0.1275138605822314
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 7.389487291220576e-05,
+          "bitwise": false,
+          "ms": 0.12943435668945313
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 7.389487291220576e-05,
+          "bitwise": false,
+          "ms": 0.1008158614670021
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 7.389487291220576e-05,
+          "bitwise": false,
+          "ms": 0.09804916518075125
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 7.389487291220576e-05,
+          "bitwise": false,
+          "ms": 0.0839163182729698
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 7.389487291220576e-05,
+          "bitwise": false,
+          "ms": 0.13461597010774434
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 7.389487291220576e-05,
+          "bitwise": false,
+          "ms": 0.09291284209803531
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 7.389487291220576e-05,
+          "bitwise": false,
+          "ms": 0.10960964971734571
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.09748652162223026,
+          0.09777854305424102,
+          0.10385162409614114,
+          0.09991725739978609,
+          0.09790551404695252
+        ],
+        "plane": [
+          0.10388602439094992,
+          0.11459036509195963,
+          0.11405028245028327,
+          0.10561111409177062,
+          0.10599752225373921
+        ],
+        "pair": [
+          0.08846214561705376,
+          0.0945836678990778,
+          0.09045896353545012,
+          0.0896363342864604,
+          0.08839364413557381
+        ]
+      },
+      "median_ms": {
+        "original": 0.09790551404695252,
+        "plane": 0.10599752225373921,
+        "pair": 0.0896363342864604
+      },
+      "speedups": {
+        "plane": 0.9236585154564665,
+        "pair": 1.0922525427475138
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "a50w",
+      "original_bf16_l2": 0.019251102581620216,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2003136886490716
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.21149289467755486
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.20162618663949025
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11780406092549418
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.13362089013153652
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.12835763703792466
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11525354230306982
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11600058216693973
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11545168926841334
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 8.147877088049427e-05,
+          "bitwise": false,
+          "ms": 0.17113989677982056
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 8.147877088049427e-05,
+          "bitwise": false,
+          "ms": 0.17417287485940117
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 8.147877088049427e-05,
+          "bitwise": false,
+          "ms": 0.17380243710109167
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 8.147877088049427e-05,
+          "bitwise": false,
+          "ms": 0.12861935813147743
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 8.147877088049427e-05,
+          "bitwise": false,
+          "ms": 0.120682218695889
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 8.147877088049427e-05,
+          "bitwise": false,
+          "ms": 0.13012762156399812
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 8.147877088049427e-05,
+          "bitwise": false,
+          "ms": 0.25592095391792163
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 8.147877088049427e-05,
+          "bitwise": false,
+          "ms": 0.15350885090075042
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 8.147877088049427e-05,
+          "bitwise": false,
+          "ms": 0.16128557290923728
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.1131866710392509,
+          0.11405254256340765,
+          0.12192557396427278,
+          0.12035179443359374,
+          0.11624474756179318
+        ],
+        "plane": [
+          0.11785817032768613,
+          0.12140990454575111,
+          0.12475517124965273,
+          0.12481340180095445,
+          0.12153096728854709
+        ],
+        "pair": [
+          0.12724265796797615,
+          0.1276149243380116,
+          0.1372421799034908,
+          0.12951433553104907,
+          0.12754926508123224
+        ]
+      },
+      "median_ms": {
+        "original": 0.11624474756179318,
+        "plane": 0.12153096728854709,
+        "pair": 0.1276149243380116
+      },
+      "speedups": {
+        "plane": 0.9565031049723893,
+        "pair": 0.9109024525524739
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "dual",
+      "original_bf16_l2": 0.004920283332467079,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2097795649937221
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.22539605051279069
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.21491730106410695
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.12565044018260219
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14809227088063034
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14107301353227975
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.13531437737601143
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.13201543237561378
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.12973611645582245
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 7.865706720622256e-05,
+          "bitwise": false,
+          "ms": 0.18571038065077383
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 7.865706720622256e-05,
+          "bitwise": false,
+          "ms": 0.23686715168739433
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 7.865706720622256e-05,
+          "bitwise": false,
+          "ms": 0.24328529795662301
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 7.865706720622256e-05,
+          "bitwise": false,
+          "ms": 0.15066576706735713
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 7.865706720622256e-05,
+          "bitwise": false,
+          "ms": 0.16719642794409464
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 7.865706720622256e-05,
+          "bitwise": false,
+          "ms": 0.1449246113843257
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 7.865706720622256e-05,
+          "bitwise": false,
+          "ms": 0.3812430331581517
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 7.865706720622256e-05,
+          "bitwise": false,
+          "ms": 0.2352316394928963
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.14274333703397502,
+          0.14611330032348632,
+          0.14546370208263398,
+          0.15672204875946044,
+          0.14939361405604093
+        ],
+        "plane": [
+          0.12590043419285823,
+          0.1343779287605642,
+          0.1344305350401691,
+          0.1438359710905287,
+          0.13590764757953114
+        ],
+        "pair": [
+          0.15236207576508218,
+          0.15317911127562164,
+          0.1523222655057907,
+          0.16572223405043285,
+          0.15382403423911647
+        ]
+      },
+      "median_ms": {
+        "original": 0.14611330032348632,
+        "plane": 0.1344305350401691,
+        "pair": 0.15317911127562164
+      },
+      "speedups": {
+        "plane": 1.0869055923925788,
+        "pair": 0.9538722290964236
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.02067219838500023,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.18649747120706658
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1941011029320794
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.19087325056938276
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.14430917104085286
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.13138149068989885
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.11271303238407258
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.20443280985657597
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.17079985001507927
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.13947339388403562
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00016651289479341358,
+          "bitwise": false,
+          "ms": 0.14120580355326334
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00016651289479341358,
+          "bitwise": false,
+          "ms": 0.13660089806334613
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00016651289479341358,
+          "bitwise": false,
+          "ms": 0.1386701147132945
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00016651289479341358,
+          "bitwise": false,
+          "ms": 0.12856362581253053
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00016651289479341358,
+          "bitwise": false,
+          "ms": 0.12634223302205405
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00016651289479341358,
+          "bitwise": false,
+          "ms": 0.0920446326858119
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00016651289479341358,
+          "bitwise": false,
+          "ms": 0.23480330436460434
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00016651289479341358,
+          "bitwise": false,
+          "ms": 0.1420043201446533
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.00016651289479341358,
+          "bitwise": false,
+          "ms": 0.14505250502605826
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.114634328547532,
+          0.11566823297931302,
+          0.11540353682733351,
+          0.11549060092708928,
+          0.11536637496948242
+        ],
+        "plane": [
+          0.11431677558205344,
+          0.11838657265035515,
+          0.11874706543098063,
+          0.11850891031770625,
+          0.11855360014825804
+        ],
+        "pair": [
+          0.09677797278312787,
+          0.09719221951210336,
+          0.09675750209860606,
+          0.09695126679208543,
+          0.09734426328580674
+        ]
+      },
+      "median_ms": {
+        "original": 0.11540353682733351,
+        "plane": 0.11850891031770625,
+        "pair": 0.09695126679208543
+      },
+      "speedups": {
+        "plane": 0.9737962868610668,
+        "pair": 1.190325208177212
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "a50w",
+      "original_bf16_l2": 0.014013002626597881,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.21371906730863782
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2319280251212742
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.21208758762904575
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.17483508412430926
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.1461695671081543
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.13615594682239351
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2488230063997466
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.204001578478746
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.19888144584551248
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00013185864372644573,
+          "bitwise": false,
+          "ms": 0.18160355925559998
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00013185864372644573,
+          "bitwise": false,
+          "ms": 0.18271660089492797
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00013185864372644573,
+          "bitwise": false,
+          "ms": 0.18196956038475037
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00013185864372644573,
+          "bitwise": false,
+          "ms": 0.14851071269241806
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00013185864372644573,
+          "bitwise": false,
+          "ms": 0.154560590947716
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00013185864372644573,
+          "bitwise": false,
+          "ms": 0.14523070023791626
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00013185864372644573,
+          "bitwise": false,
+          "ms": 0.3618126892462009
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00013185864372644573,
+          "bitwise": false,
+          "ms": 0.25230620811725485
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.00013185864372644573,
+          "bitwise": false,
+          "ms": 0.22623129934072495
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.13732402301529079,
+          0.13805569318624644,
+          0.1380960004875459,
+          0.13751396323150059,
+          0.13787486186394324
+        ],
+        "plane": [
+          0.13939470272619747,
+          0.1442766228107491,
+          0.14420738701868538,
+          0.14381113441622986,
+          0.14439181888226382
+        ],
+        "pair": [
+          0.14775183399518332,
+          0.14710430325688542,
+          0.14701302887557388,
+          0.14619760941923335,
+          0.14810066324599247
+        ]
+      },
+      "median_ms": {
+        "original": 0.13787486186394324,
+        "plane": 0.14420738701868538,
+        "pair": 0.14710430325688542
+      },
+      "speedups": {
+        "plane": 0.9560873732916219,
+        "pair": 0.9372592018819124
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "dual",
+      "original_bf16_l2": 0.0052699139341712,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.21618898640508238
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.24055893782413368
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2257898345360389
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.19326203791300456
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.16990490071913775
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.16447899314794648
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.27293219672309027
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2356572889512585
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.23022445799812438
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0001065679025487043,
+          "bitwise": false,
+          "ms": 0.21655872990103328
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0001065679025487043,
+          "bitwise": false,
+          "ms": 0.2258547991514206
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0001065679025487043,
+          "bitwise": false,
+          "ms": 0.24107589244842528
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0001065679025487043,
+          "bitwise": false,
+          "ms": 0.17007529427023496
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0001065679025487043,
+          "bitwise": false,
+          "ms": 0.2008738831628727
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0001065679025487043,
+          "bitwise": false,
+          "ms": 0.15829669149298417
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0001065679025487043,
+          "bitwise": false,
+          "ms": 0.527706401688712
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0001065679025487043,
+          "bitwise": false,
+          "ms": 0.3473540578569685
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.14632814331810073,
+          0.14791169961293538,
+          0.1481486378883829,
+          0.14860028517873664,
+          0.14844889100064937
+        ],
+        "plane": [
+          0.16440206315782335,
+          0.17099127655937557,
+          0.17229177270616805,
+          0.17249769547406366,
+          0.17246441336239085
+        ],
+        "pair": [
+          0.16263101127710236,
+          0.16362780538098565,
+          0.1635032825255662,
+          0.16364603367718783,
+          0.1634860721501437
+        ]
+      },
+      "median_ms": {
+        "original": 0.1481486378883829,
+        "plane": 0.17229177270616805,
+        "pair": 0.1635032825255662
+      },
+      "speedups": {
+        "plane": 0.8598706459480242,
+        "pair": 0.9060896857848565
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.030103711411356926,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.5713349342346191
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.613212216984142
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.5778691621927114
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3484311769174975
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3620823394961473
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3499737273815066
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.29534053993225096
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.28921016618317247
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.2617649129458836
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 3.5067321732640266e-05,
+          "bitwise": false,
+          "ms": 0.3234118376837836
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 3.5067321732640266e-05,
+          "bitwise": false,
+          "ms": 0.3765435096545097
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 3.5067321732640266e-05,
+          "bitwise": false,
+          "ms": 0.3686634990147182
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 3.5067321732640266e-05,
+          "bitwise": false,
+          "ms": 0.25995206629976314
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 3.5067321732640266e-05,
+          "bitwise": false,
+          "ms": 0.24889610904758258
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 3.5067321732640266e-05,
+          "bitwise": false,
+          "ms": 0.2405657730850519
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 3.5067321732640266e-05,
+          "bitwise": false,
+          "ms": 0.44272452387316474
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 3.5067321732640266e-05,
+          "bitwise": false,
+          "ms": 0.26536371197019304
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 3.5067321732640266e-05,
+          "bitwise": false,
+          "ms": 0.2810028938146738
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.25708513761821544,
+          0.2591192024094718,
+          0.2594002297946385,
+          0.25906606061117987,
+          0.25968668460845945
+        ],
+        "plane": [
+          0.2715428758550573,
+          0.2770142151759221,
+          0.2773943209180645,
+          0.27738252603090724,
+          0.27462661916559394
+        ],
+        "pair": [
+          0.257403200013297,
+          0.25772360052381244,
+          0.25778498064007677,
+          0.2581358279500689,
+          0.25763022388730733
+        ]
+      },
+      "median_ms": {
+        "original": 0.2591192024094718,
+        "plane": 0.2770142151759221,
+        "pair": 0.25772360052381244
+      },
+      "speedups": {
+        "plane": 0.9354003809693093,
+        "pair": 1.0054151109282303
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "a50w",
+      "original_bf16_l2": 0.020154276862740517,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.5614963678213266
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6158399979273478
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6132957155054266
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3899091373790394
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.43862080187410923
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.40228572968513737
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3493897120157878
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.31827505747477214
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.316706018862517
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 9.760017564985901e-05,
+          "bitwise": false,
+          "ms": 0.4638055026531219
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 9.760017564985901e-05,
+          "bitwise": false,
+          "ms": 0.5044462302635456
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 9.760017564985901e-05,
+          "bitwise": false,
+          "ms": 0.5043411768399753
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 9.760017564985901e-05,
+          "bitwise": false,
+          "ms": 0.3247286941694177
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 9.760017564985901e-05,
+          "bitwise": false,
+          "ms": 0.335949817570773
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 9.760017564985901e-05,
+          "bitwise": false,
+          "ms": 0.3980691909790039
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 9.760017564985901e-05,
+          "bitwise": false,
+          "ms": 0.7135328020368303
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 9.760017564985901e-05,
+          "bitwise": false,
+          "ms": 0.4725482323590447
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 9.760017564985901e-05,
+          "bitwise": false,
+          "ms": 0.4174161511082803
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.3012892007827759,
+          0.3034502704938253,
+          0.3036813994248708,
+          0.3043300012747447,
+          0.30395059784253436
+        ],
+        "plane": [
+          0.32614400015936956,
+          0.3349571863810221,
+          0.3346032006399972,
+          0.3351725423058798,
+          0.3362271990094866
+        ],
+        "pair": [
+          0.3601009631156921,
+          0.36110152006149293,
+          0.3613287949562073,
+          0.36026864051818847,
+          0.36075007915496826
+        ]
+      },
+      "median_ms": {
+        "original": 0.3036813994248708,
+        "plane": 0.3349571863810221,
+        "pair": 0.36075007915496826
+      },
+      "speedups": {
+        "plane": 0.9066275087450302,
+        "pair": 0.8418054963043201
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "dual",
+      "original_bf16_l2": 0.005066609475761652,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.5923912963867187
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6500040386034095
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6444677560225777
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.42296177546183267
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4478244753444896
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4550873829768254
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3972268631583766
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3870545416167288
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.37602305534558417
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 5.850310844834894e-05,
+          "bitwise": false,
+          "ms": 0.5222381728036063
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 5.850310844834894e-05,
+          "bitwise": false,
+          "ms": 0.6418952361397121
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 5.850310844834894e-05,
+          "bitwise": false,
+          "ms": 0.6804388349706476
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 5.850310844834894e-05,
+          "bitwise": false,
+          "ms": 0.40682075861338024
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 5.850310844834894e-05,
+          "bitwise": false,
+          "ms": 0.4259423087624943
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 5.850310844834894e-05,
+          "bitwise": false,
+          "ms": 0.4143792019950019
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 5.850310844834894e-05,
+          "bitwise": false,
+          "ms": 1.0949703216552735
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 5.850310844834894e-05,
+          "bitwise": false,
+          "ms": 0.5528532981872558
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.3642785526457287,
+          0.3643605637550354,
+          0.3648832821846008,
+          0.36547183752059936,
+          0.3656893610954285
+        ],
+        "plane": [
+          0.3805929868649214,
+          0.39861569791226775,
+          0.3984254002571106,
+          0.3990439775827769,
+          0.39876897599962025
+        ],
+        "pair": [
+          0.43945619409734554,
+          0.44342059791088106,
+          0.4439685821533203,
+          0.4438581049442291,
+          0.44377720057964326
+        ]
+      },
+      "median_ms": {
+        "original": 0.3648832821846008,
+        "plane": 0.39861569791226775,
+        "pair": 0.44377720057964326
+      },
+      "speedups": {
+        "plane": 0.9153760980705502,
+        "pair": 0.8222217854094476
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "wgt2",
+      "original_bf16_l2": 0.020576370880007744,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6478182958519977
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6511434691292899
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.606822669506073
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.38621210685143104
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.38147027431390224
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3951593613624573
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.29598898520836464
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.29183498270371383
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.29935000672632334
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00019164214609190822,
+          "bitwise": false,
+          "ms": 0.3808443093911195
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00019164214609190822,
+          "bitwise": false,
+          "ms": 0.4023087630400787
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00019164214609190822,
+          "bitwise": false,
+          "ms": 0.4019960197242531
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00019164214609190822,
+          "bitwise": false,
+          "ms": 0.3233558718363444
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00019164214609190822,
+          "bitwise": false,
+          "ms": 0.30194438552856445
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00019164214609190822,
+          "bitwise": false,
+          "ms": 0.2586272557576498
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00019164214609190822,
+          "bitwise": false,
+          "ms": 0.39627424961811786
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00019164214609190822,
+          "bitwise": false,
+          "ms": 0.26651188816343035
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.00019164214609190822,
+          "bitwise": false,
+          "ms": 0.3210265760836394
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.3127805442810059,
+          0.317117374420166,
+          0.29253171157836916,
+          0.2930865249633789,
+          0.2928542079925537
+        ],
+        "plane": [
+          0.300249533750573,
+          0.3087701777194409,
+          0.3152837586402893,
+          0.306687117637472,
+          0.3069928818560661
+        ],
+        "pair": [
+          0.297235443906964,
+          0.2770598015695248,
+          0.2746578720380675,
+          0.2759621422245817,
+          0.2757928470395646
+        ]
+      },
+      "median_ms": {
+        "original": 0.2930865249633789,
+        "plane": 0.3069928818560661,
+        "pair": 0.2759621422245817
+      },
+      "speedups": {
+        "plane": 0.9547013702447759,
+        "pair": 1.0620533765999727
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "a50w",
+      "original_bf16_l2": 0.012943102046847343,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6910634722028459
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7035577322307386
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6623320752924139
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.42637581264271457
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.42327323368617464
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.41124800097557807
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3462334990501404
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.3734419050670805
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.37075565656026205
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00024140445748344064,
+          "bitwise": false,
+          "ms": 0.5604567739698622
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00024140445748344064,
+          "bitwise": false,
+          "ms": 0.5596988430729619
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00024140445748344064,
+          "bitwise": false,
+          "ms": 0.556134283984149
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00024140445748344064,
+          "bitwise": false,
+          "ms": 0.41465759807162816
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00024140445748344064,
+          "bitwise": false,
+          "ms": 0.37749489026191907
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00024140445748344064,
+          "bitwise": false,
+          "ms": 0.41700915230645075
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00024140445748344064,
+          "bitwise": false,
+          "ms": 0.7113532883780344
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00024140445748344064,
+          "bitwise": false,
+          "ms": 0.4544579910509514
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.00024140445748344064,
+          "bitwise": false,
+          "ms": 0.49195285797119137
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.3770028137025379,
+          0.3738987604777018,
+          0.3548462053624595,
+          0.3471433360402177,
+          0.35107714955399677
+        ],
+        "plane": [
+          0.3662767195701599,
+          0.3784633581978934,
+          0.3845879579845228,
+          0.37662598635699296,
+          0.37661145957740577
+        ],
+        "pair": [
+          0.4358237122044419,
+          0.41911896428754253,
+          0.4077525324291653,
+          0.40768755541907414,
+          0.4079111999935574
+        ]
+      },
+      "median_ms": {
+        "original": 0.3548462053624595,
+        "plane": 0.37662598635699296,
+        "pair": 0.4079111999935574
+      },
+      "speedups": {
+        "plane": 0.9421713270366611,
+        "pair": 0.8699104250338406
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "dual",
+      "original_bf16_l2": 0.005373040214180946,
+      "candidates": [
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7350436878204346
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.7314369519551595
+        },
+        {
+          "layout": "plane",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.6982908930097307
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4669476109166299
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4601156366282496
+        },
+        {
+          "layout": "plane",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.44987956538344875
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.37212471460041247
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4207281740088212
+        },
+        {
+          "layout": "plane",
+          "bm": 128,
+          "stages": 3,
+          "error": 0.0,
+          "bitwise": true,
+          "ms": 0.4080777318854081
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 1,
+          "error": 0.00017137730901595205,
+          "bitwise": false,
+          "ms": 0.644787069161733
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 2,
+          "error": 0.00017137730901595205,
+          "bitwise": false,
+          "ms": 0.7009897141229539
+        },
+        {
+          "layout": "pair",
+          "bm": 32,
+          "stages": 3,
+          "error": 0.00017137730901595205,
+          "bitwise": false,
+          "ms": 0.7233289527893066
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 1,
+          "error": 0.00017137730901595205,
+          "bitwise": false,
+          "ms": 0.5037501875559489
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 2,
+          "error": 0.00017137730901595205,
+          "bitwise": false,
+          "ms": 0.5186066252844674
+        },
+        {
+          "layout": "pair",
+          "bm": 64,
+          "stages": 3,
+          "error": 0.00017137730901595205,
+          "bitwise": false,
+          "ms": 0.45684935540863963
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 1,
+          "error": 0.00017137730901595205,
+          "bitwise": false,
+          "ms": 1.0532089165278844
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 2,
+          "error": 0.00017137730901595205,
+          "bitwise": false,
+          "ms": 0.6017185287475586
+        },
+        {
+          "layout": "pair",
+          "bm": 128,
+          "stages": 3,
+          "unsupported": "out of resource: shared memory, Required: 110592, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+        }
+      ],
+      "samples_ms": {
+        "original": [
+          0.433994796872139,
+          0.46509505720699534,
+          0.43560433541574783,
+          0.43200522104899086,
+          0.432926741513339
+        ],
+        "plane": [
+          0.37269061239142165,
+          0.40908205304827006,
+          0.41493327196906593,
+          0.41223246630500343,
+          0.40912263533648324
+        ],
+        "pair": [
+          0.5265854759216309,
+          0.5282276376088461,
+          0.49603530620706493,
+          0.4978317194971545,
+          0.4979215457521636
+        ]
+      },
+      "median_ms": {
+        "original": 0.433994796872139,
+        "plane": 0.40912263533648324,
+        "pair": 0.4979215457521636
+      },
+      "speedups": {
+        "plane": 1.060793902334931,
+        "pair": 0.8716128084325887
+      }
+    }
+  ],
+  "sources": {
+    "runs5090/auto_budget_edge_bench/316_2048_9216.pt": "240e46727c2ebbd704cecf68eeee348daaae1e70dbf15da42fcf40ac52403c19",
+    "runs5090/auto_budget_edge_bench/316_9216_2048.pt": "d592428bf9f1cf89372b271c4c360292b5a7918a5da5d0d108dd0ddff823e561",
+    "runs5090/auto_budget_edge_bench/960_2048_9216.pt": "f2ab5ee2bc50e1dee40cfcb33843658d4a455aa1c57e4161e4d4f1c06453fd76",
+    "runs5090/auto_budget_edge_bench/960_9216_2048.pt": "0d5d4979d36e834103c1700c2a41bf744676970df5b83a1a22400ab37111c1eb",
+    "runs5090/auto_budget_nano_bench/1024_12288_4096.pt": "02346ab283f1b146abe3401dcc30ad9af7bc6c55d913a85fc7846f7a1a157762",
+    "runs5090/auto_budget_nano_bench/1024_4096_12288.pt": "51124c9a348f2f99c978eb5593898550ae73aaf257ab0fec8a285ef4df676461",
+    "runs5090/auto_budget_nano_bench/316_12288_4096.pt": "e527bc6b5ade23e69c411bc075e33d7c0a41c747b672ee88c2c8d00f2a5ea61d",
+    "runs5090/auto_budget_nano_bench/316_4096_12288.pt": "2b49bf8bac9aa2024ea4342aa0ef1184b9f0da836e0f2f43c22137d8697ffc75",
+    "runs5090/auto_budget_nano_bench/960_12288_4096.pt": "9fc6175044373973bfc0a01011077482bda90392d89baacb463603a5b587566c",
+    "runs5090/auto_budget_nano_bench/960_4096_12288.pt": "07590cf104d275939df5755ec51d21a85688517b876ce6b3293de25151be5144",
+    "tools/repair_design/bench_merge.py": "e4c9f8c00ec6825288c66a516b52de192b41f4fad141c12eeac92f9280a1853b",
+    "tools/repair_design/merged_weight.py": "38b8522d40fdd9264d82275524743c3c191c22b6164e7d1ccef89d7802676654"
+  }
+}

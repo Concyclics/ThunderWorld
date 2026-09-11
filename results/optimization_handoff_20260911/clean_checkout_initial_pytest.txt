@@ -1,0 +1,87 @@
+........................................................................ [ 57%]
+...........................................FFF........                   [100%]
+=================================== FAILURES ===================================
+__________________________ test_ffn_roundtrip[relu2] ___________________________
+
+activation = 'relu2'
+
+    @pytest.mark.parametrize('activation', ['relu2', 'silu'])
+    @torch.inference_mode()
+    def test_ffn_roundtrip(activation):
+        torch.manual_seed(5090)
+>       controller = Controller()
+                     ^^^^^^^^^^^^
+
+tools/cosmos_e2e/test_adapter.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/cosmos_e2e/adapter.py:34: in __init__
+    self.original_native, self.original_runtime, self.baseline_hashes = load_frozen()
+                                                                        ^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load():
+        root=ROOT/'data_local/baseline_source'
+        if not root.exists():
+>           raise FileNotFoundError('Create data_local/baseline_source with git archive 9b51f0d first; see RTX5090_RESULTS.md')
+E           FileNotFoundError: Create data_local/baseline_source with git archive 9b51f0d first; see RTX5090_RESULTS.md
+
+tools/kernel_handoff/frozen_baseline.py:14: FileNotFoundError
+___________________________ test_ffn_roundtrip[silu] ___________________________
+
+activation = 'silu'
+
+    @pytest.mark.parametrize('activation', ['relu2', 'silu'])
+    @torch.inference_mode()
+    def test_ffn_roundtrip(activation):
+        torch.manual_seed(5090)
+>       controller = Controller()
+                     ^^^^^^^^^^^^
+
+tools/cosmos_e2e/test_adapter.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/cosmos_e2e/adapter.py:34: in __init__
+    self.original_native, self.original_runtime, self.baseline_hashes = load_frozen()
+                                                                        ^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load():
+        root=ROOT/'data_local/baseline_source'
+        if not root.exists():
+>           raise FileNotFoundError('Create data_local/baseline_source with git archive 9b51f0d first; see RTX5090_RESULTS.md')
+E           FileNotFoundError: Create data_local/baseline_source with git archive 9b51f0d first; see RTX5090_RESULTS.md
+
+tools/kernel_handoff/frozen_baseline.py:14: FileNotFoundError
+___________________________ test_attention_boundary ____________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7eff2c1ba6c0>
+
+    @torch.inference_mode()
+    def test_attention_boundary(monkeypatch):
+>       controller = Controller()
+                     ^^^^^^^^^^^^
+
+tools/cosmos_e2e/test_adapter.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/cosmos_e2e/adapter.py:34: in __init__
+    self.original_native, self.original_runtime, self.baseline_hashes = load_frozen()
+                                                                        ^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load():
+        root=ROOT/'data_local/baseline_source'
+        if not root.exists():
+>           raise FileNotFoundError('Create data_local/baseline_source with git archive 9b51f0d first; see RTX5090_RESULTS.md')
+E           FileNotFoundError: Create data_local/baseline_source with git archive 9b51f0d first; see RTX5090_RESULTS.md
+
+tools/kernel_handoff/frozen_baseline.py:14: FileNotFoundError
+=============================== warnings summary ===============================
+packages/fp4-repair/tests/test_cuda.py:6
+  /tmp/thunderworld-release-clean-20260911/packages/fp4-repair/tests/test_cuda.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.cuda - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark=[pytest.mark.cuda,pytest.mark.skipif(not torch.cuda.is_available(),reason='requires SM120 CUDA')]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tools/cosmos_e2e/test_adapter.py::test_ffn_roundtrip[relu2] - FileNotF...
+FAILED tools/cosmos_e2e/test_adapter.py::test_ffn_roundtrip[silu] - FileNotFo...
+FAILED tools/cosmos_e2e/test_adapter.py::test_attention_boundary - FileNotFou...
+3 failed, 123 passed, 1 warning in 87.23s (0:01:27)

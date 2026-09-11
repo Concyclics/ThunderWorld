@@ -1,0 +1,150 @@
+{
+  "sources": {
+    "runs5090/repair_design_edge_20260911/result.json": {
+      "sha256": "161c24ba525b3a0f1f7cdc6d6a441ff1efef73723347e61061a18c592032609c",
+      "campaign_complete": false,
+      "completed_rows": 12,
+      "error": "ValueError('Only unmasked noncausal Generator attention')"
+    },
+    "runs5090/repair_design_edge_attention_20260911/result.json": {
+      "sha256": "20cb472c91461586a6d3a0af4822bd2c5e7025dbb8fb582eb4647db355901aa7",
+      "campaign_complete": true,
+      "completed_rows": 8,
+      "error": null
+    },
+    "runs5090/repair_design_nano_20260911/result.json": {
+      "sha256": "23c09fb48fc2873a3303b7501c555aee368eb22a83734aac32028e2101e30a17",
+      "campaign_complete": true,
+      "completed_rows": 24,
+      "error": null
+    }
+  },
+  "unique_rows": 40,
+  "duplicate_anchor_checks": [
+    {
+      "key": [
+        "edge",
+        "bf16",
+        "robot_table",
+        8501,
+        0
+      ],
+      "hashes_identical": true
+    },
+    {
+      "key": [
+        "edge",
+        "bf16",
+        "policy_table",
+        8501,
+        0
+      ],
+      "hashes_identical": true
+    },
+    {
+      "key": [
+        "edge",
+        "ffn_act2",
+        "robot_table",
+        8501,
+        0
+      ],
+      "hashes_identical": true
+    },
+    {
+      "key": [
+        "edge",
+        "ffn_act2",
+        "policy_table",
+        8501,
+        0
+      ],
+      "hashes_identical": true
+    }
+  ],
+  "merged_output_checks": [
+    {
+      "model": "edge",
+      "case": "robot_table",
+      "signals": {
+        "video": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        },
+        "trajectory": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        }
+      }
+    },
+    {
+      "model": "edge",
+      "case": "policy_table",
+      "signals": {
+        "video": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        },
+        "trajectory": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        },
+        "action": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        }
+      }
+    },
+    {
+      "model": "nano",
+      "case": "robot_table",
+      "signals": {
+        "video": {
+          "bitwise": false,
+          "relative_l2": 0.12223650600582672
+        },
+        "trajectory": {
+          "bitwise": false,
+          "relative_l2": 0.17532003393559756
+        }
+      }
+    },
+    {
+      "model": "nano",
+      "case": "policy_table",
+      "signals": {
+        "video": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        },
+        "trajectory": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        },
+        "action": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        }
+      }
+    },
+    {
+      "model": "nano",
+      "case": "av_pottery",
+      "signals": {
+        "video": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        },
+        "trajectory": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        },
+        "sound_latent": {
+          "bitwise": true,
+          "relative_l2": 0.0
+        }
+      }
+    }
+  ],
+  "scope": "One fresh seed 8501, 35 steps, existing evaluation scenes. Edge initial campaign stopped after 12 completed rows at a causal-AR guard; completion campaign reused four bitwise-identical anchors. Timings are diagnostic eager requests. Equality checks do not establish merged-kernel execution; consult execution receipts."
+}

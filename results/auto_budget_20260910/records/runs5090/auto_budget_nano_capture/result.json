@@ -1,0 +1,238 @@
+{
+  "complete": true,
+  "model": "nano",
+  "model_config": {
+    "_class_name": "Cosmos3OmniTransformer",
+    "_diffusers_version": "0.37.1",
+    "action_dim": 64,
+    "action_gen": true,
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "base_fps": 24,
+    "dtype": "bfloat16",
+    "enable_fps_modulation": true,
+    "freeze_und": false,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "hidden_size": 4096,
+    "initializer_range": 0.02,
+    "intermediate_size": 12288,
+    "joint_attn_implementation": "two_way",
+    "latent_channel": 48,
+    "latent_patch_size": 2,
+    "max_action_dim": 64,
+    "max_position_embeddings": 262144,
+    "model_type": "qwen3_vl_text",
+    "num_attention_heads": 32,
+    "num_embodiment_domains": 32,
+    "num_hidden_layers": 36,
+    "num_key_value_heads": 8,
+    "patch_latent_dim": 192,
+    "position_embedding_type": "unified_3d_mrope",
+    "qk_norm": false,
+    "qk_norm_for_diffusion": true,
+    "qk_norm_for_text": true,
+    "rms_norm_eps": 1e-06,
+    "rope_scaling": {
+      "mrope_interleaved": true,
+      "mrope_section": [
+        24,
+        20,
+        20
+      ],
+      "rope_type": "default"
+    },
+    "rope_theta": 5000000,
+    "sound_dim": 64,
+    "sound_gen": true,
+    "sound_latent_fps": 25,
+    "temporal_compression_factor_sound": 1,
+    "timestep_scale": 0.001,
+    "unified_3d_mrope_reset_spatial_ids": true,
+    "unified_3d_mrope_temporal_modality_margin": 15000,
+    "use_cache": true,
+    "use_moe": true,
+    "video_temporal_causal": false,
+    "vocab_size": 151936
+  },
+  "args": {
+    "model": "nano",
+    "output": "runs5090/auto_budget_nano_capture",
+    "cases": [
+      "robot_observe",
+      "policy_observe",
+      "av_waterfall"
+    ],
+    "seeds": [
+      7101
+    ],
+    "steps": 35,
+    "sample": false,
+    "samples_per_role": 32,
+    "modes": [
+      "bf16"
+    ],
+    "rounds": 1,
+    "policy": null,
+    "budget_policy": null,
+    "capture_budget": "data_local/auto_budget_nano_capture"
+  },
+  "cases": [
+    {
+      "id": "robot_observe",
+      "task": "i2v",
+      "split": "development",
+      "image": "data_local/e2e_inputs/robot_153.jpg",
+      "prompt": "A stationary camera observes a robot arm moving smoothly toward an object on the table. The lighting and background remain unchanged.",
+      "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+    },
+    {
+      "id": "policy_observe",
+      "task": "policy",
+      "split": "development",
+      "image": "data_local/e2e_inputs/robot_153.jpg",
+      "prompt": "Move the robot gripper toward the object on the table.",
+      "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+    },
+    {
+      "id": "av_waterfall",
+      "task": "av",
+      "split": "development",
+      "prompt": "A waterfall flows over rocks in a forest, with synchronized rushing water and splashing sounds. The camera remains steady."
+    }
+  ],
+  "source_sha256": {
+    "tools/finding_resample/test_runtime.py": "73e78bca4db70efbf4180f15994df61543ddf739938811512fa8f8d0d4f3b44c",
+    "tools/finding_resample/validate.py": "f1fb47ec11813376fc42d1278cdb610445aaf829ac9ca6e6ace6f89bed02d12d",
+    "tools/finding_resample/ffn.py": "ebf8124400f2a63cbe57acea64f6bcb779ae86f129f932a66d1268110f5685ff",
+    "tools/finding_resample/analyze.py": "f4d5b882a0b9017c5a5db7e310392fad6df9e4dc10658eb655f65cb9e17e6b87",
+    "tools/finding_resample/archive.py": "fdbe8d27f7816346a281d4b7045b9e8b88eaead13117705e1cf97880e595e691",
+    "tools/finding_resample/validate_postprocessing.py": "bdc6ac0bc7b69f5a21d90479f4ca46ec44b5262bcc58b36801312c3bd6926b2e",
+    "tools/finding_resample/decode_audio.py": "e3c203bb0d68d5dd302c3fd4e1640217fdb77ae0bd8cd6e0e4c92cf8490cbc1d",
+    "tools/finding_resample/merge_sampling.py": "934f0c43690cfd8a105d0257f392628b2c1ce4ecd4fb9f58ce97dc53b408229c",
+    "tools/finding_resample/summarize_ablation.py": "587e1b04da99d382b7d46b4f98b6627a11f736cfadb0076adfe4accbaccc7bc9",
+    "tools/finding_resample/perceptual.py": "cd72fb5373edbe819090ca45bcc2f8236c73b58f8ba0654cb3c95f8356f61003",
+    "tools/finding_resample/trajectory_error.py": "7c36e853d62b471067caeca418bd3c137833fe8113485e8ff25014f1c32ebb58",
+    "tools/finding_resample/run.py": "f252d04677739665b1c120548d02d3deb9ff5271fc19e6abe43469c8b5bc4277",
+    "tools/finding_resample/runtime.py": "a638a099ec56a62c671c0daf712db38d6bdcdd817eb09ae3d394579f0028b2f2",
+    "tools/auto_budget/allocate.py": "0f7adcb7f704161312ae7b844150d2114e1a6118475a6285695a4c4215896018",
+    "tools/auto_budget/capture.py": "94661543f92a7a2695b1797121f9a65c3cb71a50011d8914349964a67a235779",
+    "tools/auto_budget/test_budget.py": "dc33403a3ce0c9ab0de5abad293ce8aff2a85506be96ce7bb31177cc2e8b57bb",
+    "tools/auto_budget/dynamic.py": "e7d5ea2137d53df078ebb475f099fefa2a2a47032fd34342a2c80a16852abdfb",
+    "tools/auto_budget/calibrate.py": "92f950c2e0ae9a24aa33c25a32876a4f90a88ffb30f17a3b5883a4bf10d6836b",
+    "experiments/ffn_block_repair_20260907/native.py": "491c933fce1a29559fdb1a8a3792fa765d4cf266fb84ed831d98ad3c9a93af02",
+    "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+    "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "1c3fc2d2d6652e06862e2fa139d753fdcca8576fb9a7f7b64f7b7b2cfcd07de9",
+    "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+    "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+    "packages/fp4-repair/src/thunderworld_fp4/config.py": "cafe2306ee6ba30f0fb7fa9bc694e4e9297cc1744a0715263e35789bdc9f983e",
+    "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+    "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+    "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "9f041d516b5ba258e5df48455e255994c558ddff85d5e9964696da69bd9ac3b9"
+  },
+  "model_revision": "411f42a8fdfb8c5b2583cb8786e0938f49796eaa",
+  "diffusers_commit": "04e724ce518e087301052b65ff81ec35d54f4040",
+  "torch": "2.11.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "scope": "Full Generator encode/denoise/decode; eager for all modes; sampling wall time is not a performance result",
+  "policy_input_limit": "Robot observation images; bridge_orig_lerobot interface/domain selected, without matched action ground truth. Not a task success benchmark.",
+  "ffn": "BF16 for baseline/sampling. All attention ablations share model-local RTN W4 + full ACT2 FFNs. FFN term ablations keep BF16 attention.",
+  "rows": [
+    {
+      "mode": "bf16",
+      "case": "robot_observe",
+      "seed": 7101,
+      "repeat": 0,
+      "wall_seconds": 12.385052213001472,
+      "transformer_seconds": 10.179442115783692,
+      "peak_allocated_bytes": 32448637952,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "ffn_calls": 0,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "f00b1c851ccb0784b8beca1f7de3660c6594972f400294060d70cc4a5a98acd1",
+        "trajectory": "a6a926defe85a6162aeaefa1d3a6dac09caeb2a2bc0b2b4baaf755bd22fd8475"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_observe",
+      "seed": 7101,
+      "repeat": 0,
+      "wall_seconds": 4.1759361189979245,
+      "transformer_seconds": 3.5516848030090333,
+      "peak_allocated_bytes": 32372313600,
+      "counts": {
+        "full": 1260,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 35,
+      "ffn_calls": 0,
+      "video_shape": [
+        17,
+        176,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "b6f06cf89e6cdc16094b7314bb3f0b29392f5e45023739419566b8650581a535",
+        "trajectory": "ba773a08f21ef855d3007300790f24208435db06b927f2107c952865f7a7eefe",
+        "action": "681e3065ebfe5c35111377e4525b0635be78cf566306cf3510e2a0849f76d378"
+      }
+    },
+    {
+      "mode": "bf16",
+      "case": "av_waterfall",
+      "seed": 7101,
+      "repeat": 0,
+      "wall_seconds": 11.441234397003427,
+      "transformer_seconds": 9.993761405944824,
+      "peak_allocated_bytes": 32448719872,
+      "counts": {
+        "full": 2520,
+        "base": 0,
+        "reused_output": 0,
+        "reused_delta": 0,
+        "reused_mask": 0
+      },
+      "cache_max_age": 0,
+      "calls": 70,
+      "ffn_calls": 0,
+      "video_shape": [
+        61,
+        192,
+        320,
+        3
+      ],
+      "sha256": {
+        "video": "a8c9d62f70bd3107bb15f893dc37a429051bf452c0535c3285477a64d894f2d1",
+        "trajectory": "e412078f371474a0f1fbd2e8d7f9d062e93a39462a6dc43ddc8fcfb88eb2f9e8",
+        "sound_latent": "e80c8beea8d9b842e54ec6677ea00e608707cbcc318fa1f549437a1a94d42fd3"
+      }
+    }
+  ],
+  "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "audio_placement": "Audio decoder stays on CPU. Save generated sound latents; waveform decoding runs separately after the Transformer is released. AV wall time excludes waveform decode."
+}

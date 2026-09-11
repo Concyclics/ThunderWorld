@@ -1,0 +1,188 @@
+{
+  "complete": true,
+  "checks": [
+    {
+      "model": "edge",
+      "mode": "bf16",
+      "seed": 5090,
+      "round": 0,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "bf16",
+      "seed": 5090,
+      "round": 1,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "bf16",
+      "seed": 5090,
+      "round": 2,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "bf16",
+      "seed": 5091,
+      "round": 3,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_original",
+      "seed": 5090,
+      "round": 0,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_original",
+      "seed": 5090,
+      "round": 1,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_original",
+      "seed": 5090,
+      "round": 2,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_original",
+      "seed": 5091,
+      "round": 3,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_optimized",
+      "seed": 5090,
+      "round": 0,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_optimized",
+      "seed": 5090,
+      "round": 1,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_optimized",
+      "seed": 5090,
+      "round": 2,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "ffn_optimized",
+      "seed": 5091,
+      "round": 3,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "joint_original",
+      "seed": 5090,
+      "round": 0,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "joint_original",
+      "seed": 5090,
+      "round": 1,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "joint_original",
+      "seed": 5090,
+      "round": 2,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "joint_original",
+      "seed": 5091,
+      "round": 3,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "joint_optimized",
+      "seed": 5090,
+      "round": 0,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "joint_optimized",
+      "seed": 5090,
+      "round": 1,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "joint_optimized",
+      "seed": 5090,
+      "round": 2,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "edge",
+      "mode": "joint_optimized",
+      "seed": 5091,
+      "round": 3,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "nano",
+      "mode": "bf16",
+      "seed": 5090,
+      "round": 0,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "nano",
+      "mode": "bf16",
+      "seed": 5091,
+      "round": 1,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "nano",
+      "mode": "ffn_optimized",
+      "seed": 5090,
+      "round": 0,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "nano",
+      "mode": "ffn_optimized",
+      "seed": 5091,
+      "round": 1,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "nano",
+      "mode": "joint_optimized",
+      "seed": 5090,
+      "round": 0,
+      "eager_graph_video_identical": true
+    },
+    {
+      "model": "nano",
+      "mode": "joint_optimized",
+      "seed": 5091,
+      "round": 1,
+      "eager_graph_video_identical": true
+    }
+  ],
+  "note": "Nano eager is an output-equivalence panel with one run per seed, not a stable timing comparison"
+}

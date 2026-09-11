@@ -1,0 +1,474 @@
+{
+  "schema_version": 1,
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "sources": {
+    "attention": {
+      "path": "runs5090/tune_attention_layout.json",
+      "sha256": "c8ce1d2780beeb695d21b1f9bc05ba19810355a77e5959503b2bab9c4d845c80"
+    },
+    "ffn": {
+      "path": "runs5090/tune_ffn_split_k.json",
+      "sha256": "4de12aa72a0b772e475814edeb915640f8f32494c234f666cf544d252654e74d"
+    }
+  },
+  "configs": {
+    "attention:attention_av_step17.pt:128:fp4_base": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_av_step17.pt:128:full_act2": {
+      "tile_m": 32,
+      "splits": 8,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_av_step17.pt:128:balanced": {
+      "tile_m": 32,
+      "splits": 8,
+      "num_warps": 4,
+      "transpose_v": false
+    },
+    "attention:attention_av_step17.pt:128:quality": {
+      "tile_m": 32,
+      "splits": 8,
+      "num_warps": 4,
+      "transpose_v": false
+    },
+    "attention:attention_av_step17.pt:128:full_dual": {
+      "tile_m": 32,
+      "splits": 8,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_av_step17.pt:128:head_guided": {
+      "tile_m": 32,
+      "splits": 8,
+      "num_warps": 4,
+      "transpose_v": false
+    },
+    "attention:attention_av_step17.pt:560:fp4_base": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_av_step17.pt:560:full_act2": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_av_step17.pt:560:balanced": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": false
+    },
+    "attention:attention_av_step17.pt:560:quality": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": false
+    },
+    "attention:attention_av_step17.pt:560:full_dual": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_av_step17.pt:560:head_guided": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": false
+    },
+    "attention:attention_robot_step17.pt:128:fp4_base": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_robot_step17.pt:128:full_act2": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_robot_step17.pt:128:balanced": {
+      "tile_m": 32,
+      "splits": 8,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_robot_step17.pt:128:quality": {
+      "tile_m": 32,
+      "splits": 8,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_robot_step17.pt:128:full_dual": {
+      "tile_m": 32,
+      "splits": 8,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_robot_step17.pt:128:head_guided": {
+      "tile_m": 32,
+      "splits": 8,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_robot_step17.pt:560:fp4_base": {
+      "tile_m": 32,
+      "splits": 1,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_robot_step17.pt:560:full_act2": {
+      "tile_m": 32,
+      "splits": 1,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_robot_step17.pt:560:balanced": {
+      "tile_m": 32,
+      "splits": 1,
+      "num_warps": 4,
+      "transpose_v": false
+    },
+    "attention:attention_robot_step17.pt:560:quality": {
+      "tile_m": 32,
+      "splits": 1,
+      "num_warps": 4,
+      "transpose_v": false
+    },
+    "attention:attention_robot_step17.pt:560:full_dual": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": true
+    },
+    "attention:attention_robot_step17.pt:560:head_guided": {
+      "tile_m": 32,
+      "splits": 2,
+      "num_warps": 4,
+      "transpose_v": false
+    },
+    "ffn:ffn_l0_gate.pt:128:base": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:128:a50": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": true
+    },
+    "ffn:ffn_l0_gate.pt:128:a75": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:128:full_act2": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:128:a75_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:128:a93_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:512:base": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:512:a50": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:512:a75": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:512:full_act2": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:512:a75_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_gate.pt:512:a93_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:128:base": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:128:a50": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:128:a75": {
+      "tile_m": 64,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:128:full_act2": {
+      "tile_m": 64,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:128:a75_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:128:a93_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:512:base": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:512:a50": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:512:a75": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:512:full_act2": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:512:a75_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_up.pt:512:a93_w6": {
+      "tile_m": 64,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:128:base": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 4,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:128:a50": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 8,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:128:a75": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 8,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:128:full_act2": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 8,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:128:a75_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 8,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:128:a93_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 8,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:512:base": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 3,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:512:a50": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 1,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:512:a75": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:512:full_act2": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:512:a75_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    },
+    "ffn:ffn_l0_down.pt:512:a93_w6": {
+      "tile_m": 128,
+      "num_warps": 4,
+      "num_stages": 2,
+      "split_k": 2,
+      "block_k": 128,
+      "indexed_repair": false
+    }
+  },
+  "selection_notes": {
+    "attention:attention_av_step17.pt:560:balanced": "Below 3% improvement; prefer simpler execution",
+    "attention:attention_av_step17.pt:560:quality": "Below 3% improvement; prefer simpler execution",
+    "attention:attention_av_step17.pt:560:head_guided": "Below 3% improvement; prefer simpler execution",
+    "attention:attention_robot_step17.pt:560:head_guided": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_gate.pt:128:base": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_gate.pt:128:a50": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_gate.pt:512:base": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_gate.pt:512:a50": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_gate.pt:512:a75": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_gate.pt:512:full_act2": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_gate.pt:512:a75_w6": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_gate.pt:512:a93_w6": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_up.pt:128:base": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_up.pt:128:a75": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_up.pt:128:full_act2": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_up.pt:512:base": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_up.pt:512:a50": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_up.pt:512:a75": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_up.pt:512:full_act2": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_up.pt:512:a75_w6": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_up.pt:512:a93_w6": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_down.pt:512:base": "Below 3% improvement; prefer simpler execution",
+    "ffn:ffn_l0_down.pt:512:a50": "Below 3% improvement; prefer simpler execution"
+  },
+  "selection_rule": "Prefer original attention layout/settings or unsplit FFN when the measured gain is below 3%."
+}

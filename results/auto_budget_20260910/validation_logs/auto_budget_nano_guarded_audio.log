@@ -1,0 +1,12 @@
+/home/chenhan/miniconda3/envs/vllm/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+bf16_av_pottery_seed7203_r0 0.034 None
+bf16_av_pottery_seed7204_r0 0.024 None
+ffn_act2_av_pottery_seed7203_r0 0.024 {'relative_l2': 0.09754601866006851, 'rmse': 0.0267694890499115, 'log_spectral_l1': 0.518216073513031}
+ffn_act2_av_pottery_seed7204_r0 0.024 {'relative_l2': 0.13693943619728088, 'rmse': 0.03733314946293831, 'log_spectral_l1': 0.37917670607566833}
+ffn_uniform75_av_pottery_seed7203_r0 0.024 {'relative_l2': 0.10074995458126068, 'rmse': 0.027648745104670525, 'log_spectral_l1': 0.4610690176486969}
+ffn_uniform75_av_pottery_seed7204_r0 0.024 {'relative_l2': 0.08643876016139984, 'rmse': 0.02356538735330105, 'log_spectral_l1': 0.4356245696544647}
+ffn_auto50_av_pottery_seed7203_r0 0.024 {'relative_l2': 0.08803462982177734, 'rmse': 0.024159284308552742, 'log_spectral_l1': 0.4855860471725464}
+ffn_auto50_av_pottery_seed7204_r0 0.024 {'relative_l2': 0.08477989584207535, 'rmse': 0.023113133385777473, 'log_spectral_l1': 0.3972180485725403}
+ffn_auto75_av_pottery_seed7203_r0 0.024 {'relative_l2': 0.05558284744620323, 'rmse': 0.015253562480211258, 'log_spectral_l1': 0.4182054400444031}
+ffn_auto75_av_pottery_seed7204_r0 0.028 {'relative_l2': 0.059568483382463455, 'rmse': 0.016239872202277184, 'log_spectral_l1': 0.3772522211074829}

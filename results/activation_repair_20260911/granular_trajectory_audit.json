@@ -1,0 +1,27 @@
+{
+  "source": "runs5090/activation_edge_granular_20260911/result.json",
+  "sha256": "b890cc0e38f1f57193208719bc705395ca57e0a7986b053ba6d40cc9cbe7a292",
+  "duplicate_anchors": [
+    {
+      "mode": "bf16",
+      "case": "robot_table",
+      "bitwise": true
+    },
+    {
+      "mode": "bf16",
+      "case": "policy_table",
+      "bitwise": true
+    },
+    {
+      "mode": "ffn_act2",
+      "case": "robot_table",
+      "bitwise": true
+    },
+    {
+      "mode": "ffn_act2",
+      "case": "policy_table",
+      "bitwise": true
+    }
+  ],
+  "unique_new_rows": 2
+}

@@ -1,0 +1,7697 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.05500535602154939,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.05848517119884491,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.08638601951228762,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.06282875434212062,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.07776075031446374,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1898290469096257,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.06726568527804076,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.07623496428779934,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.17613119809132702,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.05500535602154939,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.06282875434212062,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.06726568527804076,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.054557724352236145,
+          0.054399480448140726,
+          0.05460342592841027,
+          0.05456979764650946,
+          0.05456189791361491
+        ],
+        "gather": [
+          0.06298104446299754,
+          0.06312825507011967,
+          0.06316078390393938,
+          0.06318627119064331,
+          0.06320365436041533
+        ],
+        "direct": [
+          0.06345291844120732,
+          0.06378375337674068,
+          0.06375828411268152,
+          0.06481720959698713,
+          0.06382268040450578
+        ]
+      },
+      "median_ms": {
+        "original": 0.05456189791361491,
+        "gather": 0.06316078390393938,
+        "direct": 0.06378375337674068
+      },
+      "speedups": {
+        "gather": 0.8638571996920996,
+        "direct": 0.8554199937301181
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.05382313850598457,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.05826244227933568,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11065475800458123,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.060485110826940344,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.058141283612502245,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11385116111941454,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.05366018116474151,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.05541480993613219,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1116490261895316,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.05382313850598457,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.058141283612502245,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.05366018116474151,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.058377799987792967,
+          0.05814132034778595,
+          0.05505764092071147,
+          0.053941119313240055,
+          0.05458413818736135
+        ],
+        "gather": [
+          0.06286696889042075,
+          0.06305462161436776,
+          0.059323519468307495,
+          0.06074890802370622,
+          0.058801110920153166
+        ],
+        "direct": [
+          0.05449138230192447,
+          0.057623466352621715,
+          0.0543794161564595,
+          0.05526074134499018,
+          0.05488547574753729
+        ]
+      },
+      "median_ms": {
+        "original": 0.05505764092071147,
+        "gather": 0.06074890802370622,
+        "direct": 0.05488547574753729
+      },
+      "speedups": {
+        "gather": 0.9063149069153007,
+        "direct": 1.0031368075220137
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09078907436794705,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09666658921675249,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.13993609601801094,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09723932122531002,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11391557894254986,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.21201457765367296,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09919697688176082,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11193607629063618,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.22790377253577823,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09078907436794705,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09723932122531002,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09919697688176082,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.09083429490677034,
+          0.09144912817898919,
+          0.09060906646072224,
+          0.09880695757658585,
+          0.09812414792119241
+        ],
+        "gather": [
+          0.09706674888730049,
+          0.09717692726536802,
+          0.10280361901158871,
+          0.10429060812349672,
+          0.10061161725417428
+        ],
+        "direct": [
+          0.09919897959782527,
+          0.09938624000549316,
+          0.0987931095636808,
+          0.10857343991597493,
+          0.10724068641662597
+        ]
+      },
+      "median_ms": {
+        "original": 0.09144912817898919,
+        "gather": 0.10061161725417428,
+        "direct": 0.09938624000549316
+      },
+      "speedups": {
+        "gather": 0.9089320962604351,
+        "direct": 0.9201387251790059
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:2048:9216",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.08994983504800236,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0947274451353112,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.17865631056994927,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09537905579182639,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09249547858570897,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.17057640041623795,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.08951829151042456,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09021638007391067,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.16239593311891717,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.08994983504800236,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09249547858570897,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.08951829151042456,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.0888181223727689,
+          0.09033270354318147,
+          0.08985386736252729,
+          0.09065314944427792,
+          0.09083630561828614
+        ],
+        "gather": [
+          0.09195725846998762,
+          0.09233912771398371,
+          0.0923406998316447,
+          0.09218401571716925,
+          0.09215398216247558
+        ],
+        "direct": [
+          0.08931821249063733,
+          0.08979237195357535,
+          0.09231268155692827,
+          0.09087942897683324,
+          0.09212383937835693
+        ]
+      },
+      "median_ms": {
+        "original": 0.09033270354318147,
+        "gather": 0.09218401571716925,
+        "direct": 0.09087942897683324
+      },
+      "speedups": {
+        "gather": 0.9799172105968154,
+        "direct": 0.9939840573405107
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "416:2048:9216",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.07582523610332224,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06510486735237969,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.09523988761524163,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.07769773746358938,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.07889997808782905,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.17898832082748412,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.07636412908864576,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.07833339108361138,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1814979902127894,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06510486735237969,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.07769773746358938,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.07636412908864576,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.059917160490868794,
+          0.059714179343365606,
+          0.059774830916832236,
+          0.060043710211048956,
+          0.05989546674363157
+        ],
+        "gather": [
+          0.0757823130406371,
+          0.07577318651922818,
+          0.07598027607490276,
+          0.0763357442220052,
+          0.07632223491010995
+        ],
+        "direct": [
+          0.07725427792622493,
+          0.07646387860744815,
+          0.07628417648045363,
+          0.07667632888345158,
+          0.07707292503780788
+        ]
+      },
+      "median_ms": {
+        "original": 0.05989546674363157,
+        "gather": 0.07598027607490276,
+        "direct": 0.07667632888345158
+      },
+      "speedups": {
+        "gather": 0.7883028311793117,
+        "direct": 0.7811467713154733
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "416:2048:9216",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.07176647720336914,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06110868786656579,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11283789715134954,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.08775135610521455,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06854808482717961,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.12266133504036145,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.07994526572849439,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.05845319235099936,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11478821591633122,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06110868786656579,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06854808482717961,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.05845319235099936,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.06033161633635221,
+          0.061359542324429465,
+          0.06116816748434038,
+          0.06206813454627991,
+          0.06112078387721055
+        ],
+        "gather": [
+          0.0638262592443899,
+          0.06437998104812508,
+          0.06503680009108323,
+          0.06493739114291426,
+          0.06525720192568146
+        ],
+        "direct": [
+          0.058486288123660614,
+          0.059132778884580475,
+          0.05958393651085931,
+          0.060441142685559335,
+          0.059230753805785054
+        ]
+      },
+      "median_ms": {
+        "original": 0.06116816748434038,
+        "gather": 0.06493739114291426,
+        "direct": 0.059230753805785054
+      },
+      "speedups": {
+        "gather": 0.9419560350017978,
+        "direct": 1.0327095901042898
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "416:2048:9216",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1128864009205888,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0953648308912913,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1376710194260327,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1152115435213656,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11490053783763539,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.22449996782385784,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.12032980254933803,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.115168356012415,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.22125804812409156,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0953648308912913,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11490053783763539,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.115168356012415,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.09504515296534488,
+          0.09555873443831259,
+          0.0956136213766562,
+          0.09537563224633534,
+          0.09569804394831423
+        ],
+        "gather": [
+          0.1153364626566569,
+          0.11511307366286652,
+          0.11482778742343565,
+          0.11524615532312638,
+          0.11506199103135328
+        ],
+        "direct": [
+          0.11515572584128078,
+          0.11526574122754833,
+          0.11552039980888366,
+          0.11901893417040507,
+          0.11547248005867004
+        ]
+      },
+      "median_ms": {
+        "original": 0.09555873443831259,
+        "gather": 0.11511307366286652,
+        "direct": 0.11547248005867004
+      },
+      "speedups": {
+        "gather": 0.8301292928566651,
+        "direct": 0.8275455276422612
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "416:2048:9216",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.11308830789772861,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09503620068232219,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1697559269991788,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.13057377735773723,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09939626775762087,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.19011804616009748,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.13164829762776692,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09473212174694948,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.16484154339494375,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09503620068232219,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09939626775762087,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09473212174694948,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.0943089495000151,
+          0.09616389323755638,
+          0.09626746674378713,
+          0.09638498590347615,
+          0.09635216427832535
+        ],
+        "gather": [
+          0.1005856688304614,
+          0.10157509575719419,
+          0.101207644144694,
+          0.10176010446234064,
+          0.1019554106743781
+        ],
+        "direct": [
+          0.09236230373382569,
+          0.09430886482705875,
+          0.09434008942436926,
+          0.09489771557837418,
+          0.09484569018649072
+        ]
+      },
+      "median_ms": {
+        "original": 0.09626746674378713,
+        "gather": 0.10157509575719419,
+        "direct": 0.09434008942436926
+      },
+      "speedups": {
+        "gather": 0.947746748611545,
+        "direct": 1.0204300984997794
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.04881543655395508,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.03787456786561155,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.03570521999167525,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.046661667317651506,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04349315211458026,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07544576025009156,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.048191792876632125,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04114674910520896,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.06318265597025553,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.03570521999167525,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04349315211458026,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04114674910520896,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.035723578279668634,
+          0.03563014290162495,
+          0.035772168104815635,
+          0.03576957126995465,
+          0.036731647729873654
+        ],
+        "gather": [
+          0.043739079403620894,
+          0.04630892276763916,
+          0.04350889430326574,
+          0.043656910585435055,
+          0.043881470329907475
+        ],
+        "direct": [
+          0.04126453088156542,
+          0.041303944313663174,
+          0.04074555057840249,
+          0.041014093794721235,
+          0.04106904560205888
+        ]
+      },
+      "median_ms": {
+        "original": 0.03576957126995465,
+        "gather": 0.043739079403620894,
+        "direct": 0.04106904560205888
+      },
+      "speedups": {
+        "gather": 0.8177943330694222,
+        "direct": 0.8709618337992603
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.050046054341576315,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04665689155703685,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.045346109257187954,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.06043535052119075,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04661079781954405,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.05181264608137069,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.05341248020981297,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.03906811982393265,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.0462873000651598,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.045346109257187954,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04661079781954405,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.03906811982393265,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.04542949235261376,
+          0.04589566491370978,
+          0.045435549691319466,
+          0.046379675414111164,
+          0.04918872137538722
+        ],
+        "gather": [
+          0.046794118295168746,
+          0.046790844599405926,
+          0.047128394981483364,
+          0.04678292707963423,
+          0.05052390657989672
+        ],
+        "direct": [
+          0.03925361217014373,
+          0.03956450309950052,
+          0.03974630871757132,
+          0.040459815661112467,
+          0.04080119158359284
+        ]
+      },
+      "median_ms": {
+        "original": 0.04589566491370978,
+        "gather": 0.046794118295168746,
+        "direct": 0.03974630871757132
+      },
+      "speedups": {
+        "gather": 0.9807998651498958,
+        "direct": 1.1547151520367451
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.08340618673679048,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.05654151895073023,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.0559087308637935,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.0802976549717418,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06295721190316336,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07877345596040998,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.07534797191619873,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06196117321650187,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07483161698039781,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.0559087308637935,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06295721190316336,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06196117321650187,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.0516588474969444,
+          0.05213314731668982,
+          0.052072236567367744,
+          0.05339581553752606,
+          0.051626023867272386
+        ],
+        "gather": [
+          0.06304205492002155,
+          0.06369652474512819,
+          0.06445559978485108,
+          0.0631341517413104,
+          0.06359741634792751
+        ],
+        "direct": [
+          0.062102720737457276,
+          0.06180763176019243,
+          0.06279944798042034,
+          0.06329710278017768,
+          0.061812863826751704
+        ]
+      },
+      "median_ms": {
+        "original": 0.052072236567367744,
+        "gather": 0.06359741634792751,
+        "direct": 0.062102720737457276
+      },
+      "speedups": {
+        "gather": 0.8187791196185072,
+        "direct": 0.8384855920806761
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "316:9216:2048",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.07578430412229428,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06079209526972984,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.06834601011031713,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.08726665220762554,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.07661518036849856,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.06541127488017082,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.0840243911743164,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06347592604075764,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.06065849449674962,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06079209526972984,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.06541127488017082,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.06065849449674962,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.06090591421314314,
+          0.06213310581364044,
+          0.06229408704317533,
+          0.06246617767545912,
+          0.062295989449142566
+        ],
+        "gather": [
+          0.06617407935006278,
+          0.06712279390932908,
+          0.06718347690723561,
+          0.06778068335159965,
+          0.06703369689710212
+        ],
+        "direct": [
+          0.06082581820553296,
+          0.06146665272647387,
+          0.062249577450914445,
+          0.06178996974024279,
+          0.06218952836661503
+        ]
+      },
+      "median_ms": {
+        "original": 0.06229408704317533,
+        "gather": 0.06712279390932908,
+        "direct": 0.06178996974024279
+      },
+      "speedups": {
+        "gather": 0.9280615930159809,
+        "direct": 1.0081585620619622
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "416:9216:2048",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.0645375766893373,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04597357777186802,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.03847570331008346,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.06001946727434794,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04927209688269574,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.09435852636205087,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.05566207947269563,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0456501101399516,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07506196692183212,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.03847570331008346,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04927209688269574,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0456501101399516,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.038160454227078346,
+          0.040024399757385254,
+          0.03864756841508169,
+          0.039142930038332004,
+          0.03881885707378387
+        ],
+        "gather": [
+          0.0491204216094788,
+          0.05059900908243088,
+          0.04943919990743909,
+          0.049364965612238104,
+          0.04935679921133076
+        ],
+        "direct": [
+          0.04546647577978379,
+          0.04553938155824488,
+          0.04617030382156372,
+          0.046072949662720415,
+          0.04579175002872944
+        ]
+      },
+      "median_ms": {
+        "original": 0.03881885707378387,
+        "gather": 0.049364965612238104,
+        "direct": 0.04579175002872944
+      },
+      "speedups": {
+        "gather": 0.7863645115993003,
+        "direct": 0.8477259997582355
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "416:9216:2048",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.06362393338915329,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04871861351860894,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.05247559944788615,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.076325945854187,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.05496355791269622,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.056752639876471625,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.06733143934563025,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04897351368613865,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.04945287732850937,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04871861351860894,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.05496355791269622,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.04897351368613865,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.05114894070468106,
+          0.05091289365014365,
+          0.05072167204387153,
+          0.051157952893164854,
+          0.0506412661352823
+        ],
+        "gather": [
+          0.056735537187108456,
+          0.05725543939383926,
+          0.056974509339895306,
+          0.057217279780994765,
+          0.05642134569868257
+        ],
+        "direct": [
+          0.04828602440503179,
+          0.046212537018294184,
+          0.046038517700998406,
+          0.04567802656499833,
+          0.04511116896261716
+        ]
+      },
+      "median_ms": {
+        "original": 0.05091289365014365,
+        "gather": 0.056974509339895306,
+        "direct": 0.046038517700998406
+      },
+      "speedups": {
+        "gather": 0.8936082862321882,
+        "direct": 1.1058760401627685
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "416:9216:2048",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09751098489248625,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06736875691808256,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.05626433009193057,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09110400037067692,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.07308657149638026,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.0844147720722237,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.08673015890769588,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06948490142822265,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.08559102569658732,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.05626433009193057,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.07308657149638026,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06948490142822265,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.05745131277268933,
+          0.05834928790465096,
+          0.0572811902955521,
+          0.05763625282990305,
+          0.057643606413656207
+        ],
+        "gather": [
+          0.07406061156457212,
+          0.07749730237325032,
+          0.07492066701253255,
+          0.07541108987270258,
+          0.07503766771090233
+        ],
+        "direct": [
+          0.0760355548253135,
+          0.07262827529907227,
+          0.07086640000343322,
+          0.07179967446055839,
+          0.07210650367121543
+        ]
+      },
+      "median_ms": {
+        "original": 0.05763625282990305,
+        "gather": 0.07503766771090233,
+        "direct": 0.07210650367121543
+      },
+      "speedups": {
+        "gather": 0.7680976046851333,
+        "direct": 0.7993211415811742
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "416:9216:2048",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09332256991453845,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0745701117515564,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07118963123291962,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.10465416747532534,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.07865613657852699,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.0719889404296875,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.09752522016826429,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06941335779247862,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07207021222395055,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07118963123291962,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.0719889404296875,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.06941335779247862,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.07812900983370268,
+          0.07607151818653894,
+          0.07528205826168968,
+          0.07390907481312751,
+          0.07364028143504309
+        ],
+        "gather": [
+          0.07947875420878253,
+          0.07544407043457031,
+          0.07501101955290763,
+          0.07511562271118163,
+          0.0749660360134714
+        ],
+        "direct": [
+          0.07550782583709946,
+          0.07536547274989937,
+          0.07238554954528809,
+          0.07228387445211411,
+          0.07226665019989013
+        ]
+      },
+      "median_ms": {
+        "original": 0.07528205826168968,
+        "gather": 0.07511562271118163,
+        "direct": 0.07238554954528809
+      },
+      "speedups": {
+        "gather": 1.0022157248319432,
+        "direct": 1.0400150131427737
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1440726325625465,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10067977276477184,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.09652113100377524,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.16208562036839927,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10626381497050441,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.19302073887416296,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.13459399403005406,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10342760414912783,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.19438511011551837,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.09652113100377524,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10626381497050441,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10342760414912783,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.09696300235795385,
+          0.10694132058516792,
+          0.10720891132149646,
+          0.09996953010559081,
+          0.09786781478714157
+        ],
+        "gather": [
+          0.11313229871083455,
+          0.11742179672439378,
+          0.11031839961097353,
+          0.11011105105280876,
+          0.11022967611040388
+        ],
+        "direct": [
+          0.10378236216168071,
+          0.11557242703992267,
+          0.11035501655490919,
+          0.10599541880867698,
+          0.10719311454079368
+        ]
+      },
+      "median_ms": {
+        "original": 0.09996953010559081,
+        "gather": 0.11031839961097353,
+        "direct": 0.10719311454079368
+      },
+      "speedups": {
+        "gather": 0.9061909024978885,
+        "direct": 0.932611488469683
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.15462095698372263,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12067619794374937,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.12462649159617238,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1816265070213462,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14112324785830369,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1301969541262274,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.16589704875288339,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11904379963874817,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1301574119149822,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12067619794374937,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1301969541262274,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11904379963874817,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.1232541133195926,
+          0.12492077778547238,
+          0.1247494226926333,
+          0.12485710779825847,
+          0.12546535516396548
+        ],
+        "gather": [
+          0.13445183256982077,
+          0.13531698499407088,
+          0.1354618522099086,
+          0.13548928124564036,
+          0.14644209767731142
+        ],
+        "direct": [
+          0.11927538159527357,
+          0.12350508082996715,
+          0.12405390739440918,
+          0.12359210423060826,
+          0.12447525082212506
+        ]
+      },
+      "median_ms": {
+        "original": 0.12485710779825847,
+        "gather": 0.1354618522099086,
+        "direct": 0.12359210423060826
+      },
+      "speedups": {
+        "gather": 0.9217141635180267,
+        "direct": 1.0102353105445139
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.23002046540726062,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.16479793364001857,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.16511349443529472,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.24797192982264926,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15392942601984197,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.22437968364981717,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.24740159939496945,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1529561183491691,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2441102213329739,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.16479793364001857,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15392942601984197,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1529561183491691,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.15429569987927452,
+          0.1575876267751058,
+          0.15787930806477865,
+          0.1584330670038859,
+          0.15801077365875243
+        ],
+        "gather": [
+          0.1597131692446195,
+          0.15907141367594402,
+          0.15954410552978515,
+          0.16049800646507134,
+          0.15950952950170486
+        ],
+        "direct": [
+          0.15312865679381324,
+          0.15817497221090027,
+          0.15832356539639558,
+          0.15953241930169573,
+          0.1591550924010196
+        ]
+      },
+      "median_ms": {
+        "original": 0.15787930806477865,
+        "gather": 0.15954410552978515,
+        "direct": 0.15832356539639558
+      },
+      "speedups": {
+        "gather": 0.9895652837848297,
+        "direct": 0.9971939911124118
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:2048:9216",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.23421506881713866,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.19102068300600406,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2030945254307167,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.28608264923095705,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.20636350753459523,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.18682497435925055,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.2672111087375217,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.18686425078148935,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1818288299272645,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.19102068300600406,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.18682497435925055,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1818288299272645,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.1730815977420447,
+          0.17862808969285754,
+          0.17889902150189435,
+          0.17918299039204916,
+          0.17919561598036024
+        ],
+        "gather": [
+          0.19183929634094238,
+          0.19322476768493652,
+          0.1936420696537669,
+          0.1929303035736084,
+          0.19194246673583984
+        ],
+        "direct": [
+          0.1827373427729453,
+          0.18637101229499367,
+          0.18793668933943206,
+          0.18703159257477406,
+          0.18727598564297546
+        ]
+      },
+      "median_ms": {
+        "original": 0.17889902150189435,
+        "gather": 0.1929303035736084,
+        "direct": 0.18703159257477406
+      },
+      "speedups": {
+        "gather": 0.9272727932739674,
+        "direct": 0.9565176612094112
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.12979300022125245,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09091929626464844,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07535051902135213,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.13165370256472858,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0977586401269791,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.17323298887772992,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.11323047963584341,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08845085773653197,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.14421631886408878,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07535051902135213,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0977586401269791,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08845085773653197,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.07488887266679244,
+          0.07785735451258147,
+          0.07628980885381284,
+          0.07596154579749474,
+          0.07602612314553096
+        ],
+        "gather": [
+          0.09846814205771999,
+          0.09789285240592538,
+          0.09866600519494165,
+          0.09901690172112507,
+          0.09966888632825625
+        ],
+        "direct": [
+          0.08843322267719343,
+          0.09197702407836914,
+          0.09213732658548558,
+          0.09222270695850103,
+          0.09247569935296171
+        ]
+      },
+      "median_ms": {
+        "original": 0.07602612314553096,
+        "gather": 0.09866600519494165,
+        "direct": 0.09213732658548558
+      },
+      "speedups": {
+        "gather": 0.7705401976630207,
+        "direct": 0.82513923469435
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.13554528554280598,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10211805260699729,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.09714047373557577,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.16677102522416548,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11432729930412479,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11509638599965764,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1607342532186797,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09574224487427742,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.0973300542329487,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.09714047373557577,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11432729930412479,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09574224487427742,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.0964653434753418,
+          0.09735053150924211,
+          0.0970464011033376,
+          0.09831270925777474,
+          0.09828938356379872
+        ],
+        "gather": [
+          0.11933945667596511,
+          0.12041273678050321,
+          0.11980164176539371,
+          0.11873548030853272,
+          0.12018352150917053
+        ],
+        "direct": [
+          0.09361134236401851,
+          0.10032125926408611,
+          0.1010176386151995,
+          0.10020982975862464,
+          0.09990259481936085
+        ]
+      },
+      "median_ms": {
+        "original": 0.09735053150924211,
+        "gather": 0.11980164176539371,
+        "direct": 0.10020982975862464
+      },
+      "speedups": {
+        "gather": 0.8125976411899483,
+        "direct": 0.9714668884652362
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.19188597348271585,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1386709299954501,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11460546400488877,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.20394281427910987,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14166337071043072,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.17131405898502894,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1982045332590739,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14871959005083357,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1628275328669055,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11460546400488877,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14166337071043072,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14871959005083357,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.11297210555478751,
+          0.11465170906811226,
+          0.11546602478946548,
+          0.11649901072184245,
+          0.11396859251422646
+        ],
+        "gather": [
+          0.14717191871331664,
+          0.1476459811283992,
+          0.1491482987999916,
+          0.1486040472984314,
+          0.14591217041015625
+        ],
+        "direct": [
+          0.13638614967687807,
+          0.13987004009645376,
+          0.14358654302709242,
+          0.14345643200091462,
+          0.14267467669586636
+        ]
+      },
+      "median_ms": {
+        "original": 0.11465170906811226,
+        "gather": 0.1476459811283992,
+        "direct": 0.14267467669586636
+      },
+      "speedups": {
+        "gather": 0.776531187587194,
+        "direct": 0.8035883572563511
+      }
+    },
+    {
+      "model": "edge",
+      "shape": "960:9216:2048",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.20186955066437418,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14586948981651893,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.15221820535330938,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.22091410810297185,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.17100142751421246,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1398737147234488,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.21337036257204803,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1643270492553711,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.13179239988327027,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14586948981651893,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1398737147234488,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.13179239988327027,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.1505333166856032,
+          0.1538907989859581,
+          0.15445363635108583,
+          0.1541906519940025,
+          0.1524163564046224
+        ],
+        "gather": [
+          0.14989836251557764,
+          0.14911542012141302,
+          0.14668740932758037,
+          0.14902109586275541,
+          0.14993430050936613
+        ],
+        "direct": [
+          0.13229457515559784,
+          0.1424634974343436,
+          0.14000041692153267,
+          0.13997622898646764,
+          0.13981102150930486
+        ]
+      },
+      "median_ms": {
+        "original": 0.1538907989859581,
+        "gather": 0.14911542012141302,
+        "direct": 0.13997622898646764
+      },
+      "speedups": {
+        "gather": 1.0320247152216508,
+        "direct": 1.0994066642617988
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.36319407710322626,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.24178159952163697,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.20277818757660535,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.3341252326965332,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.24063775777816773,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.47752560138702393,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.302792113167899,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.21810733658926829,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4039622079758417,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.20277818757660535,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.24063775777816773,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.21810733658926829,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.21766419410705568,
+          0.20923329211295918,
+          0.20781617266066532,
+          0.20728115731097282,
+          0.20868446268933885
+        ],
+        "gather": [
+          0.24886047412187626,
+          0.25510189407750183,
+          0.2518390730807656,
+          0.2514342528123122,
+          0.25196109319988047
+        ],
+        "direct": [
+          0.23732807636260986,
+          0.23207344781784783,
+          0.23084480152573697,
+          0.23162979171389625,
+          0.23256487392243885
+        ]
+      },
+      "median_ms": {
+        "original": 0.20868446268933885,
+        "gather": 0.2518390730807656,
+        "direct": 0.23207344781784783
+      },
+      "speedups": {
+        "gather": 0.8286421171126733,
+        "direct": 0.8992173152575956
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.3713789499722994,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.2740404973711286,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2508947347339831,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.46968685785929365,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.30562120079994204,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2944269555987734,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.41548426151275636,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.24297616004943848,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.26632078016126476,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2508947347339831,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2944269555987734,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.24297616004943848,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.25037487745285036,
+          0.2542950928211212,
+          0.27282542931406123,
+          0.26141620782705455,
+          0.2545606588705992
+        ],
+        "gather": [
+          0.30909180641174316,
+          0.3333100349672379,
+          0.3322716159820557,
+          0.3215723991394043,
+          0.31005801539267264
+        ],
+        "direct": [
+          0.24631343841552733,
+          0.26568657385336386,
+          0.2815393648649517,
+          0.27052168717255465,
+          0.2696257745897448
+        ]
+      },
+      "median_ms": {
+        "original": 0.2545606588705992,
+        "gather": 0.3215723991394043,
+        "direct": 0.2696257745897448
+      },
+      "speedups": {
+        "gather": 0.791612276276998,
+        "direct": 0.9441258323983741
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.52969421810574,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3707120646601138,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.31394070088863374,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5468222247229682,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.36424026886622113,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4918815994262695,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5304664823744032,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3476093371709188,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4669933727809361,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.31394070088863374,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.36424026886622113,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3476093371709188,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.3138764977455139,
+          0.315067869617093,
+          0.34279650151729585,
+          0.32459710240364076,
+          0.31895432318410566
+        ],
+        "gather": [
+          0.3879737586975098,
+          0.4266439619518462,
+          0.41787999593294584,
+          0.4115948791503906,
+          0.3886033935546875
+        ],
+        "direct": [
+          0.3499300582068307,
+          0.3741901544424204,
+          0.4046770322890509,
+          0.3793494151188777,
+          0.3788071375626784
+        ]
+      },
+      "median_ms": {
+        "original": 0.31895432318410566,
+        "gather": 0.4115948791503906,
+        "direct": 0.3788071375626784
+      },
+      "speedups": {
+        "gather": 0.7749229627017894,
+        "direct": 0.8419966034334045
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5525806215074327,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.40173373619715375,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4114521344502767,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.6116145968437194,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.46447444213064093,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3762051729055551,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5936811983585357,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4125472029050191,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3614114372818558,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.40173373619715375,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3762051729055551,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3614114372818558,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.4115937536413019,
+          0.4204615592956543,
+          0.4222909371058146,
+          0.4461173910843699,
+          0.4350179345984208
+        ],
+        "gather": [
+          0.39647243239662866,
+          0.39914373159408567,
+          0.40097138595581056,
+          0.43309547503789264,
+          0.4025276107788086
+        ],
+        "direct": [
+          0.36313742178457753,
+          0.3860811462402344,
+          0.38941939544677734,
+          0.4159685134887695,
+          0.41523999801048866
+        ]
+      },
+      "median_ms": {
+        "original": 0.4222909371058146,
+        "gather": 0.40097138595581056,
+        "direct": 0.38941939544677734
+      },
+      "speedups": {
+        "gather": 1.0531697569869827,
+        "direct": 1.08441167040826
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.3955839991569519,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.27356891359601704,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.21332417571026346,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.40471986929575604,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.28474277328042424,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4183664612148119,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.37087122599283856,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.2658744864993625,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.44777718594199734,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.21332417571026346,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.28474277328042424,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.2658744864993625,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.21477405316120868,
+          0.21884451129219748,
+          0.21894268556074664,
+          0.2372004975212945,
+          0.23405603408813477
+        ],
+        "gather": [
+          0.2960441184766365,
+          0.29798329770565035,
+          0.2985055056485263,
+          0.28945329785346985,
+          0.3169655658580639
+        ],
+        "direct": [
+          0.2658199124866062,
+          0.2772247804914202,
+          0.27860726765223914,
+          0.2990402810713824,
+          0.3000422561869902
+        ]
+      },
+      "median_ms": {
+        "original": 0.21894268556074664,
+        "gather": 0.29798329770565035,
+        "direct": 0.27860726765223914
+      },
+      "speedups": {
+        "gather": 0.7347481796681756,
+        "direct": 0.7858470003518842
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.4289892113727072,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.31815903981526694,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2847018051147461,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5099100564655504,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.35911549815425164,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3190168603261312,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.458935614994594,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.307703427345522,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.276904411315918,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2847018051147461,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3190168603261312,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.276904411315918,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.27561352866036554,
+          0.2774609375,
+          0.279246613184611,
+          0.2772288921901158,
+          0.27872679829597474
+        ],
+        "gather": [
+          0.33303922455886315,
+          0.33425489294117894,
+          0.33549286651611326,
+          0.33371023309641873,
+          0.33366874497512294
+        ],
+        "direct": [
+          0.27831104006086077,
+          0.28961611815861293,
+          0.29349061503554835,
+          0.29524788175310407,
+          0.29484004974365235
+        ]
+      },
+      "median_ms": {
+        "original": 0.2774609375,
+        "gather": 0.33371023309641873,
+        "direct": 0.29349061503554835
+      },
+      "speedups": {
+        "gather": 0.8314427008291153,
+        "direct": 0.9453826571810251
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.6257981808980306,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.44307962145124163,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.34980628673846903,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.7372910719651442,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4607187128067017,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.47301119804382324,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.6673433235713414,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.42726274987925655,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.5157101480584395,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.34980628673846903,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4607187128067017,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.42726274987925655,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.3481018943786621,
+          0.3548247725875289,
+          0.35533817155020575,
+          0.35729576040197303,
+          0.35672580930921766
+        ],
+        "gather": [
+          0.4640376363481794,
+          0.46475154331752233,
+          0.464401980808803,
+          0.46669744764055526,
+          0.4671617553347633
+        ],
+        "direct": [
+          0.42978490331898567,
+          0.4490830508145419,
+          0.4507496382060804,
+          0.44977454272183504,
+          0.45128509348089046
+        ]
+      },
+      "median_ms": {
+        "original": 0.35533817155020575,
+        "gather": 0.46475154331752233,
+        "direct": 0.44977454272183504
+      },
+      "speedups": {
+        "gather": 0.7645766359670496,
+        "direct": 0.7900362021377589
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.652761595589774,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4730499219894409,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4378935730975607,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.7878193195049579,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.5999511400858561,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.44807346083901145,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.700835448044997,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.5163580693696674,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.40889479716618854,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4378935730975607,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.44807346083901145,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.40889479716618854,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.44016204313798385,
+          0.4465249408375133,
+          0.44461599696766246,
+          0.4464951255104759,
+          0.44398953264409846
+        ],
+        "gather": [
+          0.4772659846714565,
+          0.4807855939865112,
+          0.4827646446228027,
+          0.4833054447174072,
+          0.4825387239456177
+        ],
+        "direct": [
+          0.41354719797770184,
+          0.4403213024139404,
+          0.4462814591147683,
+          0.445900652625344,
+          0.4475005106492476
+        ]
+      },
+      "median_ms": {
+        "original": 0.44461599696766246,
+        "gather": 0.4825387239456177,
+        "direct": 0.445900652625344
+      },
+      "speedups": {
+        "gather": 0.9214099820468934,
+        "direct": 0.9971189643923645
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.11562936637974992,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08084109762440557,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07224258069069155,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.11199504017829895,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08720806049850752,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.16353197426631533,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.10097617785135905,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08126426089893687,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.13510438537597655,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.07224258069069155,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08720806049850752,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08126426089893687,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.07211606463447946,
+          0.07458455930880414,
+          0.07458095627446329,
+          0.07435291712401343,
+          0.07460710036853128
+        ],
+        "gather": [
+          0.08661969354219526,
+          0.08708440417335148,
+          0.08670070920671735,
+          0.08741606198824368,
+          0.08839579445975167
+        ],
+        "direct": [
+          0.081347390920809,
+          0.08318874099037864,
+          0.08431733360996953,
+          0.08371519998672905,
+          0.08432074751809378
+        ]
+      },
+      "median_ms": {
+        "original": 0.07458095627446329,
+        "gather": 0.08708440417335148,
+        "direct": 0.08371519998672905
+      },
+      "speedups": {
+        "gather": 0.8564215025919149,
+        "direct": 0.8908890653822273
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.12255374886268793,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09553663969039916,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.09159087012795841,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1528849925994873,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1028949903405231,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11888860834055934,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1378926168169294,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08327381292978922,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.09224779629012914,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.09159087012795841,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1028949903405231,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08327381292978922,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.0942412351307116,
+          0.09562143612933416,
+          0.09591281218606917,
+          0.09503149911761284,
+          0.09552086448669433
+        ],
+        "gather": [
+          0.10625218916475103,
+          0.10763456132676866,
+          0.10748052275582645,
+          0.10750798119439019,
+          0.10806705792744954
+        ],
+        "direct": [
+          0.0810565053370961,
+          0.08506367354266411,
+          0.08447400033473969,
+          0.08574474148634004,
+          0.08450809073659171
+        ]
+      },
+      "median_ms": {
+        "original": 0.09552086448669433,
+        "gather": 0.10750798119439019,
+        "direct": 0.08450809073659171
+      },
+      "speedups": {
+        "gather": 0.8885002157558759,
+        "direct": 1.1303162058699088
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.18250853869379782,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12120574315388997,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11300236270541236,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1751537444374778,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12940253416697184,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.16390101827424147,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.16781928246481376,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.13811874647398253,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.15499891465710056,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11300236270541236,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12940253416697184,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.13811874647398253,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.11141280129898426,
+          0.1137618064880371,
+          0.11382937204270135,
+          0.11371165797823951,
+          0.11353666503708085
+        ],
+        "gather": [
+          0.1339887323513837,
+          0.1334538197171861,
+          0.1336356122153146,
+          0.13424671468600421,
+          0.13497677666800362
+        ],
+        "direct": [
+          0.12932799829019082,
+          0.13055462307400173,
+          0.13171065355602063,
+          0.13145298084742588,
+          0.13163764344321358
+        ]
+      },
+      "median_ms": {
+        "original": 0.11371165797823951,
+        "gather": 0.1339887323513837,
+        "direct": 0.13145298084742588
+      },
+      "speedups": {
+        "gather": 0.8486658242279073,
+        "direct": 0.8650367397162467
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1795872022520821,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14140895009040833,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.14353151179071683,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.20795642365800573,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15003949850797654,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1391599359512329,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1970684051513672,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12952203106235813,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.13571087605244406,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14140895009040833,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.1391599359512329,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12952203106235813,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.14966120384108852,
+          0.14930230095272973,
+          0.146509162473007,
+          0.14393154641856318,
+          0.13995803136091967
+        ],
+        "gather": [
+          0.1507722812540391,
+          0.14433027096648715,
+          0.14596370298471023,
+          0.1461560010910034,
+          0.14550390528209173
+        ],
+        "direct": [
+          0.1376353524980091,
+          0.1354713453005438,
+          0.13548872101474815,
+          0.13609135990411464,
+          0.13613579709764936
+        ]
+      },
+      "median_ms": {
+        "original": 0.146509162473007,
+        "gather": 0.14596370298471023,
+        "direct": 0.13609135990411464
+      },
+      "speedups": {
+        "gather": 1.0037369529351685,
+        "direct": 1.076550065898617
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "416:12288:4096",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.15030554245258199,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11468974947929382,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.10329043865203857,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.15137689309042007,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10435334552418102,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2736683872767857,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.14117056673223322,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09543772769230668,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.24977508726574124,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.10329043865203857,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10435334552418102,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09543772769230668,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.11498946266612788,
+          0.11307929282964661,
+          0.11211250584299971,
+          0.11070617153531029,
+          0.11163059139251709
+        ],
+        "gather": [
+          0.1101621075110002,
+          0.10813741235172047,
+          0.11003679795698686,
+          0.10866917778463925,
+          0.10824852100638456
+        ],
+        "direct": [
+          0.10272024411421556,
+          0.09745506203692893,
+          0.09897140442056859,
+          0.09995445954172234,
+          0.09931857378586478
+        ]
+      },
+      "median_ms": {
+        "original": 0.11211250584299971,
+        "gather": 0.10866917778463925,
+        "direct": 0.09931857378586478
+      },
+      "speedups": {
+        "gather": 1.0316863357996915,
+        "direct": 1.1288171141554972
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "416:12288:4096",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.16238662931654188,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11743257075180243,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.16890942880085535,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.19593874289064991,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.13583990914481026,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.15743852948385573,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.17309376109730112,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10894835272500682,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.15631590827566677,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11743257075180243,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.13583990914481026,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10894835272500682,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.12022775888442994,
+          0.1317408392700968,
+          0.13099466592837603,
+          0.12351387432643346,
+          0.12339236919696514
+        ],
+        "gather": [
+          0.14154017351675724,
+          0.15212574005126953,
+          0.14446261032767918,
+          0.1448133636923397,
+          0.14312169598598107
+        ],
+        "direct": [
+          0.10915627923122673,
+          0.12214750335330055,
+          0.12080297582289752,
+          0.11736158003290015,
+          0.11566887696584066
+        ]
+      },
+      "median_ms": {
+        "original": 0.12351387432643346,
+        "gather": 0.14446261032767918,
+        "direct": 0.11736158003290015
+      },
+      "speedups": {
+        "gather": 0.8549885264171229,
+        "direct": 1.0524217064205221
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "416:12288:4096",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.22766660645950673,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.17925186517103664,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.15961838415113547,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.24358178652249848,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15687632083892822,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.27193506184746236,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.2352729750842583,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1491454526782036,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2822649053625158,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.15961838415113547,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15687632083892822,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1491454526782036,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.17460615675328142,
+          0.17211232769246004,
+          0.16824016571044922,
+          0.16624529443938157,
+          0.1653767601918366
+        ],
+        "gather": [
+          0.17238871849189372,
+          0.1668680289696003,
+          0.16574602127075194,
+          0.16593638781843514,
+          0.16612656994869834
+        ],
+        "direct": [
+          0.1610601411146276,
+          0.15934962611044606,
+          0.16111664464396816,
+          0.15845109126606927,
+          0.15768216013908387
+        ]
+      },
+      "median_ms": {
+        "original": 0.16824016571044922,
+        "gather": 0.16612656994869834,
+        "direct": 0.15934962611044606
+      },
+      "speedups": {
+        "gather": 1.012722803838083,
+        "direct": 1.0557926605603773
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "416:12288:4096",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.2411084747314453,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.17074799707957677,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.22423620223999025,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.2649791975279112,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1965315916100327,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2278913520631336,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.2526002076955942,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.17410017251968385,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.21637511934552875,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.17074799707957677,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1965315916100327,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.17410017251968385,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.18847497190747942,
+          0.18128248850504558,
+          0.18186903882909705,
+          0.1815579855883563,
+          0.18223021825154623
+        ],
+        "gather": [
+          0.22201763518313145,
+          0.2068657712733492,
+          0.205857836946528,
+          0.20652881581732568,
+          0.20700609734717837
+        ],
+        "direct": [
+          0.18994664799083363,
+          0.18997558487786187,
+          0.18465316340608418,
+          0.18512175398052863,
+          0.1851379340549685
+        ]
+      },
+      "median_ms": {
+        "original": 0.18186903882909705,
+        "gather": 0.2068657712733492,
+        "direct": 0.1851379340549685
+      },
+      "speedups": {
+        "gather": 0.8791644828896228,
+        "direct": 0.982343460606507
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.12139553647292288,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08565555035489276,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.10753804402179029,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.11775154655362352,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10578673398947414,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.24473534608498598,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1112444790204366,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1037469820542769,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.258910032419058,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.08565555035489276,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.10578673398947414,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1037469820542769,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.09342438411712646,
+          0.08916839911387517,
+          0.08900335536283605,
+          0.0890423059463501,
+          0.08895146706525017
+        ],
+        "gather": [
+          0.11556372088055278,
+          0.11078215378981371,
+          0.10758438340152603,
+          0.10854788592883519,
+          0.10815108503614153
+        ],
+        "direct": [
+          0.11468963844831599,
+          0.11413450782949273,
+          0.1108323674935561,
+          0.10646098345175557,
+          0.106301866728684
+        ]
+      },
+      "median_ms": {
+        "original": 0.0890423059463501,
+        "gather": 0.10854788592883519,
+        "direct": 0.1108323674935561
+      },
+      "speedups": {
+        "gather": 0.8203043770444954,
+        "direct": 0.8033962276545893
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.13176460266113282,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0955626762830294,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.14919880032539368,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.16247664133707682,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11381921768188477,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.15746970812479655,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.14357455117361886,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09267284823398964,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.15455993185652064,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.0955626762830294,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.11381921768188477,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.09267284823398964,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.0948425843165471,
+          0.09709203243255615,
+          0.09779261958842375,
+          0.10248056921628443,
+          0.10390156094390567
+        ],
+        "gather": [
+          0.11412915407225142,
+          0.11867923736572265,
+          0.11924792458029354,
+          0.11947435241147697,
+          0.1269194006919861
+        ],
+        "direct": [
+          0.0931547225789821,
+          0.09645283173541633,
+          0.09826080166563696,
+          0.09827334755345395,
+          0.10438949325938283
+        ]
+      },
+      "median_ms": {
+        "original": 0.09779261958842375,
+        "gather": 0.11924792458029354,
+        "direct": 0.09826080166563696
+      },
+      "speedups": {
+        "gather": 0.8200781685099834,
+        "direct": 0.9952353118509419
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.20234758567810057,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14122454942162357,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.19488574825987523,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1803125741346827,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15528154691060383,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.28941091190684926,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.17677078600283022,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15320576996099755,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3117957207464403,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14122454942162357,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15528154691060383,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15320576996099755,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.13667727077708525,
+          0.14153524754094143,
+          0.141668012248936,
+          0.14198939764677587,
+          0.15356688499450682
+        ],
+        "gather": [
+          0.15870837370554605,
+          0.1597841114833437,
+          0.16000639981236953,
+          0.16022753222235317,
+          0.1745874522025125
+        ],
+        "direct": [
+          0.15336613576920305,
+          0.1564630539690862,
+          0.15803781350453694,
+          0.15720693270365396,
+          0.16944144090016683
+        ]
+      },
+      "median_ms": {
+        "original": 0.141668012248936,
+        "gather": 0.16000639981236953,
+        "direct": 0.15720693270365396
+      },
+      "speedups": {
+        "gather": 0.8853896620076577,
+        "direct": 0.9011562646285459
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.21373798370361327,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1505691780763514,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2375414638984494,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.2308031990414574,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1612498345922251,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.23459075136882504,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.21500443545254794,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1415428303960544,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.22236203713850541,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1505691780763514,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1612498345922251,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.1415428303960544,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.1431607540915994,
+          0.1483945063690641,
+          0.1480250662023371,
+          0.14806901104045364,
+          0.14839020786863386
+        ],
+        "gather": [
+          0.16783018597101762,
+          0.16889838525804424,
+          0.16920634609157756,
+          0.16880149364471436,
+          0.16940403954457428
+        ],
+        "direct": [
+          0.1406125851531527,
+          0.14790132437179337,
+          0.14943437576293944,
+          0.14969423644396723,
+          0.1485356114127419
+        ]
+      },
+      "median_ms": {
+        "original": 0.14806901104045364,
+        "gather": 0.16889838525804424,
+        "direct": 0.1485356114127419
+      },
+      "speedups": {
+        "gather": 0.8766751133483762,
+        "direct": 0.996858663267008
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "416:4096:12288",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.1784562529179088,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12458720081730892,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11717104028772425,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.20302093992842005,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.13270399975326824,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.24955797446401495,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.15231730900113544,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12886884742312962,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.25651372961095864,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.11717104028772425,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.13270399975326824,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.12886884742312962,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.11556852102279663,
+          0.11778738287430775,
+          0.11760851979255676,
+          0.11636345261021665,
+          0.11746701832059063
+        ],
+        "gather": [
+          0.13620461588320526,
+          0.13728816267372906,
+          0.13655378507531207,
+          0.13687561171395438,
+          0.14336964565774668
+        ],
+        "direct": [
+          0.12995190947023155,
+          0.13294523092416616,
+          0.1335212640359368,
+          0.1325560341418629,
+          0.13348610837694624
+        ]
+      },
+      "median_ms": {
+        "original": 0.11746701832059063,
+        "gather": 0.13687561171395438,
+        "direct": 0.13294523092416616
+      },
+      "speedups": {
+        "gather": 0.8582026911125391,
+        "direct": 0.8835745178974903
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "416:4096:12288",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.19283796198227826,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14547098044193152,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.15438812778842065,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.21672017839219834,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.17297966523603958,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.17088628666741507,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.19720106522242228,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15170412971859887,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.16339368173631572,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.14547098044193152,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.17088628666741507,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.15170412971859887,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.1467274343050443,
+          0.14765654802322387,
+          0.14905670136213303,
+          0.14879205077886581,
+          0.14830816359747023
+        ],
+        "gather": [
+          0.17542423074895686,
+          0.17759988219649703,
+          0.17697558226408783,
+          0.1771375991680004,
+          0.17683484819200304
+        ],
+        "direct": [
+          0.15245249040665165,
+          0.15759810165122703,
+          0.1586636574541936,
+          0.1581734282071473,
+          0.15805221239725747
+        ]
+      },
+      "median_ms": {
+        "original": 0.14830816359747023,
+        "gather": 0.17697558226408783,
+        "direct": 0.15805221239725747
+      },
+      "speedups": {
+        "gather": 0.8380148362849329,
+        "direct": 0.938349178084923
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "416:4096:12288",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.2698101337139423,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.19856766754726193,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2109745590054259,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.32967101977421687,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.19815732410975864,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.28764683405558267,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.3146012814839681,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.19562899531150352,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.31113568890479304,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.19856766754726193,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.19815732410975864,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.19562899531150352,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.18488289815074993,
+          0.18798456379011566,
+          0.18843187631345262,
+          0.1882422965505849,
+          0.18822757496553308
+        ],
+        "gather": [
+          0.20444527686910427,
+          0.20591156127605031,
+          0.20561620428207072,
+          0.2075763722683521,
+          0.20633586315398522
+        ],
+        "direct": [
+          0.19613726933797201,
+          0.20301807687637655,
+          0.20401804294992001,
+          0.20330313245455425,
+          0.20367939869562784
+        ]
+      },
+      "median_ms": {
+        "original": 0.18822757496553308,
+        "gather": 0.20591156127605031,
+        "direct": 0.20330313245455425
+      },
+      "speedups": {
+        "gather": 0.9141185361281894,
+        "direct": 0.9258469001091701
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "416:4096:12288",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.26447247427863046,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.20831727778657955,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.23543422512891815,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.32255829175313316,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.2713720003763835,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.25247259390981575,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.3090946048498154,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.24523602510109926,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.23420402015127786,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.20831727778657955,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.25247259390981575,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.23420402015127786,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.2115432506137424,
+          0.21422044754028322,
+          0.21445397482977974,
+          0.214636656443278,
+          0.21458986467785307
+        ],
+        "gather": [
+          0.2591139366752223,
+          0.26112172925794447,
+          0.2601727124806997,
+          0.2611100904403194,
+          0.2605560199634449
+        ],
+        "direct": [
+          0.23534641731076125,
+          0.2412448811531067,
+          0.24195800304412843,
+          0.24120311737060546,
+          0.24112815856933595
+        ]
+      },
+      "median_ms": {
+        "original": 0.21445397482977974,
+        "gather": 0.2605560199634449,
+        "direct": 0.24120311737060546
+      },
+      "speedups": {
+        "gather": 0.823062828714788,
+        "direct": 0.8891011740129129
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.3668540691507274,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.23674299328826195,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.18925283587708766,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.3134931595094742,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.23187223294886147,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.46525546482631136,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.28790381094988654,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.21222490435061248,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.38151618517362157,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.18925283587708766,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.23187223294886147,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.21222490435061248,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.195499267578125,
+          0.19716264763656927,
+          0.19709687914167132,
+          0.19680006260774574,
+          0.19690409485174684
+        ],
+        "gather": [
+          0.24149823904037476,
+          0.2430240750312805,
+          0.24262689159762474,
+          0.2419480800628662,
+          0.2431920003890991
+        ],
+        "direct": [
+          0.2128847630818685,
+          0.22292517285014307,
+          0.2237582894258721,
+          0.22383451598031182,
+          0.22425443738005882
+        ]
+      },
+      "median_ms": {
+        "original": 0.19690409485174684,
+        "gather": 0.24262689159762474,
+        "direct": 0.2237582894258721
+      },
+      "speedups": {
+        "gather": 0.8115509931945009,
+        "direct": 0.8799856995554051
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.36192521342524775,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.28152839042044975,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2621491184234619,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.4794480020349676,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.29632019563154743,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2822396332877023,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.3913931541442871,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.23464296620066574,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.262131979658797,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2621491184234619,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2822396332877023,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.23464296620066574,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.24411688089370728,
+          0.24790687561035157,
+          0.24754896653004183,
+          0.2472075511247684,
+          0.24726153887235203
+        ],
+        "gather": [
+          0.29564267071810635,
+          0.2969869584748239,
+          0.29761590668649385,
+          0.28826938397956614,
+          0.2979822505604137
+        ],
+        "direct": [
+          0.23568397847617545,
+          0.2519657844152206,
+          0.25206164058886077,
+          0.2529463792458559,
+          0.25295237516745545
+        ]
+      },
+      "median_ms": {
+        "original": 0.24726153887235203,
+        "gather": 0.2969869584748239,
+        "direct": 0.25206164058886077
+      },
+      "speedups": {
+        "gather": 0.8325669926456141,
+        "direct": 0.9809566354273707
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.493431914480109,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3513269353795935,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.296848100604433,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5166950677570544,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3850277936017072,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.48813055992126464,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.4992538396049948,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3357087990333294,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.45579002017066594,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.296848100604433,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3850277936017072,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3357087990333294,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.2951326089746812,
+          0.29997897148132324,
+          0.3000810658490216,
+          0.2995049707817309,
+          0.29050529897212984
+        ],
+        "gather": [
+          0.37187644709711487,
+          0.371382031073937,
+          0.3719368312669837,
+          0.37164123608515814,
+          0.37646769010103664
+        ],
+        "direct": [
+          0.33742400202257883,
+          0.35646980780142323,
+          0.3551492761682581,
+          0.358739439646403,
+          0.3614741325378418
+        ]
+      },
+      "median_ms": {
+        "original": 0.2995049707817309,
+        "gather": 0.37187644709711487,
+        "direct": 0.35646980780142323
+      },
+      "speedups": {
+        "gather": 0.8053883840175435,
+        "direct": 0.8401973020631653
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5219724337259929,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3767651786804199,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.39354705810546875,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5728913026697495,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4764590263366699,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3765423994797927,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5548232873280843,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3825024032592773,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.35854352315266924,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.3767651786804199,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3765423994797927,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.35854352315266924,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.39066701126098635,
+          0.39695397949218747,
+          0.39670599699020387,
+          0.3962441285451253,
+          0.395384708404541
+        ],
+        "gather": [
+          0.38756556701660155,
+          0.3884833221435547,
+          0.38755123138427733,
+          0.3880042190551758,
+          0.38771122741699215
+        ],
+        "direct": [
+          0.3610541025797526,
+          0.38185356903076173,
+          0.38252886258638824,
+          0.3812110023498535,
+          0.3833431053161621
+        ]
+      },
+      "median_ms": {
+        "original": 0.3962441285451253,
+        "gather": 0.38771122741699215,
+        "direct": 0.38185356903076173
+      },
+      "speedups": {
+        "gather": 1.0220083931666901,
+        "direct": 1.037686067858133
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "a50",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.36324053870307077,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.24402687788009644,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.20723944539609163,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.338430013327763,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.30644461495535713,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.428794272740682,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.33090659503279063,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.26078569094340004,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4459176757118919,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.20723944539609163,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.30644461495535713,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.26078569094340004,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.21002734018408734,
+          0.21238677342732748,
+          0.21245489968193904,
+          0.21319260279337565,
+          0.21257130516899958
+        ],
+        "gather": [
+          0.29176038973259205,
+          0.2919328042439052,
+          0.29144727244521634,
+          0.29249484033295603,
+          0.2930425210432573
+        ],
+        "direct": [
+          0.26151550138318863,
+          0.27090382311079236,
+          0.2714446585518973,
+          0.27266267776489256,
+          0.27246153150285995
+        ]
+      },
+      "median_ms": {
+        "original": 0.21245489968193904,
+        "gather": 0.2919328042439052,
+        "direct": 0.2714446585518973
+      },
+      "speedups": {
+        "gather": 0.7277527451297879,
+        "direct": 0.7826821894943272
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "act2",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.39273279905319214,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.315809596379598,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.27395164436764186,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.4817836761474609,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.31290229366671657,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.3421866355403777,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.45365585413846105,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.26568700687305347,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.2723916451136271,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.27395164436764186,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.31290229366671657,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.26568700687305347,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.27280905314854215,
+          0.27626568930489676,
+          0.2763848277500698,
+          0.2771377399989537,
+          0.2776696695600237
+        ],
+        "gather": [
+          0.32816896120707195,
+          0.32889412847058525,
+          0.32876070943372004,
+          0.3299443685091459,
+          0.33002261786625303
+        ],
+        "direct": [
+          0.2646847982664366,
+          0.28360093902139105,
+          0.2839499855041504,
+          0.28391096732195686,
+          0.28326710252200854
+        ]
+      },
+      "median_ms": {
+        "original": 0.2763848277500698,
+        "gather": 0.32889412847058525,
+        "direct": 0.28360093902139105
+      },
+      "speedups": {
+        "gather": 0.8403458858791648,
+        "direct": 0.9745554041667789
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "a50w",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5953179955482483,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.377703426361084,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.34007279872894286,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5618635233710794,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.42897753093553626,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4602083024524507,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.6150168474982767,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4294230212336001,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.5027171385915655,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.34007279872894286,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.42897753093553626,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4294230212336001,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.33474184891273234,
+          0.3431790828704834,
+          0.3435405731201172,
+          0.3445886884416853,
+          0.34335245745522636
+        ],
+        "gather": [
+          0.4476610920645974,
+          0.4501921393654563,
+          0.4502356312491677,
+          0.4501232017170299,
+          0.4517057464236305
+        ],
+        "direct": [
+          0.4159966634667438,
+          0.43547156073830345,
+          0.43665663719177245,
+          0.43668203353881835,
+          0.4370053854855624
+        ]
+      },
+      "median_ms": {
+        "original": 0.34335245745522636,
+        "gather": 0.4501921393654563,
+        "direct": 0.43665663719177245
+      },
+      "speedups": {
+        "gather": 0.7626798147546068,
+        "direct": 0.7863213981204906
+      }
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "dual",
+      "candidates": [
+        {
+          "layout": "original",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.5898576021194458,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4323319218375466,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.43155227744061014,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.6668049176534017,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4844375991821289,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4365127303383567,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 32,
+          "stages": 3,
+          "ms": 0.6482451121012369,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 64,
+          "stages": 3,
+          "ms": 0.4893305176182797,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4070883827209473,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      ],
+      "winners": {
+        "original": {
+          "layout": "original",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.43155227744061014,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "gather": {
+          "layout": "gather",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4365127303383567,
+          "relative_l2": 0.0,
+          "bitwise": true
+        },
+        "direct": {
+          "layout": "direct",
+          "bm": 128,
+          "stages": 2,
+          "ms": 0.4070883827209473,
+          "relative_l2": 0.0,
+          "bitwise": true
+        }
+      },
+      "samples_ms": {
+        "original": [
+          0.42594045970750893,
+          0.43377265496687456,
+          0.43473460985266643,
+          0.43588595390319823,
+          0.43592523661526766
+        ],
+        "gather": [
+          0.4664545422508603,
+          0.46958155859084355,
+          0.46974338803972515,
+          0.4705450739179339,
+          0.47004531057257404
+        ],
+        "direct": [
+          0.4125980019569397,
+          0.43413323922590774,
+          0.4353339672088623,
+          0.426564303688381,
+          0.43469746631124745
+        ]
+      },
+      "median_ms": {
+        "original": 0.43473460985266643,
+        "gather": 0.46974338803972515,
+        "direct": 0.43413323922590774
+      },
+      "speedups": {
+        "gather": 0.9254725471854899,
+        "direct": 1.001385221338571
+      }
+    }
+  ],
+  "sources": {
+    "runs5090/auto_budget_edge_bench/316_2048_9216.pt": "240e46727c2ebbd704cecf68eeee348daaae1e70dbf15da42fcf40ac52403c19",
+    "runs5090/auto_budget_edge_bench/316_9216_2048.pt": "d592428bf9f1cf89372b271c4c360292b5a7918a5da5d0d108dd0ddff823e561",
+    "runs5090/auto_budget_edge_bench/960_2048_9216.pt": "f2ab5ee2bc50e1dee40cfcb33843658d4a455aa1c57e4161e4d4f1c06453fd76",
+    "runs5090/auto_budget_edge_bench/960_9216_2048.pt": "0d5d4979d36e834103c1700c2a41bf744676970df5b83a1a22400ab37111c1eb",
+    "runs5090/auto_budget_nano_bench/1024_12288_4096.pt": "02346ab283f1b146abe3401dcc30ad9af7bc6c55d913a85fc7846f7a1a157762",
+    "runs5090/auto_budget_nano_bench/1024_4096_12288.pt": "51124c9a348f2f99c978eb5593898550ae73aaf257ab0fec8a285ef4df676461",
+    "runs5090/auto_budget_nano_bench/316_12288_4096.pt": "e527bc6b5ade23e69c411bc075e33d7c0a41c747b672ee88c2c8d00f2a5ea61d",
+    "runs5090/auto_budget_nano_bench/316_4096_12288.pt": "2b49bf8bac9aa2024ea4342aa0ef1184b9f0da836e0f2f43c22137d8697ffc75",
+    "runs5090/auto_budget_nano_bench/960_12288_4096.pt": "9fc6175044373973bfc0a01011077482bda90392d89baacb463603a5b587566c",
+    "runs5090/auto_budget_nano_bench/960_4096_12288.pt": "07590cf104d275939df5755ec51d21a85688517b876ce6b3293de25151be5144",
+    "tools/activation_repair/paired_activation.py": "a03c4b968d325faf7cb62c9441b2c1a4adfee6b1ba29e5015233323fe4eab17a",
+    "tools/activation_repair/validate.py": "6eeb06d92e4d11596c513374ab0c17648ef887d8ee7cd938f9dac0f071e84721",
+    "tools/activation_repair/run_trajectories.py": "77a216c236effbf52e850a47d46785b0ca58f10acca02068f132e97cb7a5737b",
+    "tools/activation_repair/summarize.py": "8141166500801c0246c97acf446439d2270d130a6bb8a6b723d678418200a912",
+    "tools/activation_repair/packing.py": "375c2a7649089e436e4516264d09a583e8cbf14725c44ad98aa4d6b41615137a",
+    "tools/activation_repair/benchmark.py": "557ff2ace4fd36a0c553e1225d469fa9a773cbc8f8fb9267bc134b90881ce4de",
+    "tools/activation_repair/calibrate.py": "be5f55a59bd3bbc0d76990dad46506cfdd464e63502c010fc0c2ac78221a1087"
+  },
+  "scope": "Real model weights and repeated captured probes. Current-input partial selector, online packing and GEMM included. Matched 3-launch search and five randomized 10-ms CUDA Graph retimings. M416 reshapes development probes; it is a shape timing test, not evaluation-policy quality."
+}

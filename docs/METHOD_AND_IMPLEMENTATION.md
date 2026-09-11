@@ -1,5 +1,10 @@
 # Method and implementation decisions
 
+> Historical sparse-attention design for the 2026-08-29 evidence snapshot.
+> The current project direction is [dense FP4 base computation with selective precision repair](THUNDERWORLD_ITERFP4_DESIGN.md).
+> The edge-skipping buckets below are preserved as historical methods and
+> comparison candidates, not the execution semantics of the new repair policy.
+
 ## Recommended runtime
 
 The retained method compiles measurement-time Q-head information into four

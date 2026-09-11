@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "m": 1,
+      "tier": "a50",
+      "direct": false,
+      "reference_l2": 0.0015835758531466126,
+      "graph_updated_input": true
+    },
+    {
+      "m": 1,
+      "tier": "a50",
+      "direct": true,
+      "reference_l2": 0.0016239411197602749,
+      "graph_updated_input": true
+    },
+    {
+      "m": 1,
+      "tier": "act2",
+      "direct": false,
+      "reference_l2": 0.0016228662570938468,
+      "graph_updated_input": true
+    },
+    {
+      "m": 1,
+      "tier": "act2",
+      "direct": true,
+      "reference_l2": 0.0017808058764785528,
+      "graph_updated_input": true
+    },
+    {
+      "m": 1,
+      "tier": "a50w",
+      "direct": false,
+      "reference_l2": 0.0015351328765973449,
+      "graph_updated_input": true
+    },
+    {
+      "m": 1,
+      "tier": "a50w",
+      "direct": true,
+      "reference_l2": 0.0017379660857841372,
+      "graph_updated_input": true
+    },
+    {
+      "m": 1,
+      "tier": "dual",
+      "direct": false,
+      "reference_l2": 0.001691836747340858,
+      "graph_updated_input": true
+    },
+    {
+      "m": 1,
+      "tier": "dual",
+      "direct": true,
+      "reference_l2": 0.0014747363748028874,
+      "graph_updated_input": true
+    },
+    {
+      "m": 257,
+      "tier": "a50",
+      "direct": false,
+      "reference_l2": 0.001672236598096788,
+      "graph_updated_input": true
+    },
+    {
+      "m": 257,
+      "tier": "a50",
+      "direct": true,
+      "reference_l2": 0.0016632674960419536,
+      "graph_updated_input": true
+    },
+    {
+      "m": 257,
+      "tier": "act2",
+      "direct": false,
+      "reference_l2": 0.001659382483921945,
+      "graph_updated_input": true
+    },
+    {
+      "m": 257,
+      "tier": "act2",
+      "direct": true,
+      "reference_l2": 0.0016591582680121064,
+      "graph_updated_input": true
+    },
+    {
+      "m": 257,
+      "tier": "a50w",
+      "direct": false,
+      "reference_l2": 0.0016469127731397748,
+      "graph_updated_input": true
+    },
+    {
+      "m": 257,
+      "tier": "a50w",
+      "direct": true,
+      "reference_l2": 0.0016558290226384997,
+      "graph_updated_input": true
+    },
+    {
+      "m": 257,
+      "tier": "dual",
+      "direct": false,
+      "reference_l2": 0.0016507479595020413,
+      "graph_updated_input": true
+    },
+    {
+      "m": 257,
+      "tier": "dual",
+      "direct": true,
+      "reference_l2": 0.0016661409754306078,
+      "graph_updated_input": true
+    },
+    {
+      "m": 257,
+      "tier": "dual_calibrated",
+      "direct": false,
+      "reference_l2": 0.0016413910780102015
+    },
+    {
+      "m": 257,
+      "tier": "dual_calibrated",
+      "direct": true,
+      "reference_l2": 0.0016413910780102015
+    }
+  ],
+  "baseline_packing_bitwise": true,
+  "direct_layout_exact": true
+}

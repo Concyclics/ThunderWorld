@@ -1,0 +1,34 @@
+{
+  "model_repo": "nvidia/Cosmos3-Nano",
+  "revision": "411f42a8fdfb8c5b2583cb8786e0938f49796eaa",
+  "torch": "2.11.0+cu130",
+  "files": {
+    "ffn_l0_gate.pt": {
+      "bytes": 157289093,
+      "verified_tensor_sha256": {
+        "weight_bf16": "e08e4bf3cbba3819c9d842325e9d6344e9b2151ee373498015c88ce363cf011e",
+        "codes": "c0e606e8b28345f0e3b3aa13b78ae93b9cef682abfc4a1d2bebb5e88f639ec97",
+        "scales": "baab675cb41c1b027e2028bcbef8dbc8c9dbb8f4fdf6cc120bfe2383c9804825",
+        "global_scale": "debcd648e99c1b7f6b7cf5fb1b114bf171080637c2e1e69cae41915a81a971d7"
+      }
+    },
+    "ffn_l0_up.pt": {
+      "bytes": 157289073,
+      "verified_tensor_sha256": {
+        "weight_bf16": "9dd96e2d279932eebacbf209556859267527b1c801bbf916c06677ef4073706f",
+        "codes": "95ff66789695a0617ba84cda55c4bf8f696a13853da7f4c73023aeb370b79169",
+        "scales": "c157d2acdf6dfe59cf3603942c24732de0c51c6a07d37c6c0b22d27bd5b983b7",
+        "global_scale": "690ef6adca5951059d77e582793adc533df035cbd3adba99fca454d6340d5850"
+      }
+    },
+    "ffn_l0_down.pt": {
+      "bytes": 157289093,
+      "verified_tensor_sha256": {
+        "weight_bf16": "a5701ad5ffe7ab1636303b9190917ba90c34e5af40b4724dfd591c9d18f95ef3",
+        "codes": "ec070ff6b43a57ba7352bdfa4d39e0c1d7e2ede5242f583ab26d8cbb60a23685",
+        "scales": "a51e22e9e4b16a0857afcbf76d6c843cd36caa09421daf8e8f2ffcb1e46abead",
+        "global_scale": "2f78a828f60246192cc75ffaf590db4d7c25cf31d5c7c4a9e603ec6072ee5ea5"
+      }
+    }
+  }
+}

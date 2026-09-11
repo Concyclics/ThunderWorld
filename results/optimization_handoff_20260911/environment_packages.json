@@ -1,0 +1,19 @@
+{
+  "torch": "2.11.0",
+  "triton": "3.6.0",
+  "diffusers": "0.41.0.dev0",
+  "transformers": "5.9.0",
+  "tokenizers": "0.22.2",
+  "huggingface_hub": "1.30.0",
+  "accelerate": "1.15.0",
+  "safetensors": "0.8.0",
+  "av": "18.1.0",
+  "imageio": "2.37.4",
+  "imageio-ffmpeg": "0.6.0",
+  "scikit-image": "0.26.0",
+  "numpy": "2.2.5",
+  "pillow": "11.1.0",
+  "sentencepiece": "0.2.0",
+  "protobuf": "5.29.6",
+  "pytest": "9.1.1"
+}

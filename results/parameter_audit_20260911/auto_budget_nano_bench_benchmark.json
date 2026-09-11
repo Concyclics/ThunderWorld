@@ -1,0 +1,2385 @@
+{
+  "complete": true,
+  "model": "nano",
+  "rows": [
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "base",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.14608443040114183,
+      "optimized_ms": 0.13575545324795488,
+      "bf16_ms": 0.46595732825142994,
+      "packed_gemm_ms": 0.13631062050388285,
+      "fixed_mask_ms": 0.14228780945735192,
+      "pack_ms": 0.007167450706334585,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 711.844436801332,
+      "achieved_tflops_gemm": 708.9452296730414,
+      "bf16_relative_l2": 0.04671473056077957,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.13575545324795488,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.2848627763635972,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.2849172732409309,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.18368893569370487,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.17758785530372903,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.1512521982192993,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.13575545324795488,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "a50",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.19373860452689376,
+      "optimized_ms": 0.1909504628648945,
+      "bf16_ms": 0.46595732825142994,
+      "packed_gemm_ms": 0.18901999913729153,
+      "fixed_mask_ms": 0.19728384991081394,
+      "pack_ms": 0.008346475095165019,
+      "select_ms": 0.0019775278803328394,
+      "achieved_tflops_operator": 759.1243512332403,
+      "achieved_tflops_gemm": 766.8772981779258,
+      "bf16_relative_l2": 0.040887534618377686,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.1909504628648945,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.34241177013942176,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.3399547576904297,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.23076037906465074,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.22790273178455442,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.19710902045754825,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.1909504628648945,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "act2",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.23370068480328815,
+      "optimized_ms": 0.22793175896932913,
+      "bf16_ms": 0.46595732825142994,
+      "packed_gemm_ms": 0.2233713453466242,
+      "fixed_mask_ms": 0.23048068455287388,
+      "pack_ms": 0.008696930677820947,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 847.9447058801805,
+      "achieved_tflops_gemm": 865.2565888434845,
+      "bf16_relative_l2": 0.03586767986416817,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.22793175896932913,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.35803804397583006,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.35423736912863596,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.26584916759181665,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.2617751379270811,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.24366447925567628,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.22793175896932913,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "wgt2",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.2599663960306268,
+      "optimized_ms": 0.2362041752512862,
+      "bf16_ms": 0.46595732825142994,
+      "packed_gemm_ms": 0.24282919255698598,
+      "fixed_mask_ms": 0.24963142688457782,
+      "pack_ms": 0.007129719121284579,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 818.2477219735242,
+      "achieved_tflops_gemm": 795.9237778820333,
+      "bf16_relative_l2": 0.030103711411356926,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.2362041752512862,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.45778681891305106,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.4497815218838778,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.30011770129203796,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.2944383014332164,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.2614523681434425,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.2362041752512862,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "a50w",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.29710503746481504,
+      "optimized_ms": 0.29658559560775755,
+      "bf16_ms": 0.46595732825142994,
+      "packed_gemm_ms": 0.2869822202410017,
+      "fixed_mask_ms": 0.29639272978811554,
+      "pack_ms": 0.008650105340140206,
+      "select_ms": 0.0019778484328192955,
+      "achieved_tflops_operator": 814.577356344412,
+      "achieved_tflops_gemm": 841.8358119785823,
+      "bf16_relative_l2": 0.020154276862740517,
+      "winner": {
+        "bm": 128,
+        "num_stages": 2,
+        "ms": 0.29658559560775755,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.5075316127977874,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.5031065238149542,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.34158949170793806,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.3401775973183768,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.29658559560775755,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.3003226011991501,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:12288:4096",
+      "tier": "dual",
+      "task": "i2v",
+      "source": "00000.pt",
+      "original_ms": 0.3716564912062425,
+      "optimized_ms": 0.34014223690690665,
+      "bf16_ms": 0.46595732825142994,
+      "packed_gemm_ms": 0.3463643414633615,
+      "fixed_mask_ms": 0.35591845688996493,
+      "pack_ms": 0.008699080810783813,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 852.3207676773919,
+      "achieved_tflops_gemm": 837.009639200018,
+      "bf16_relative_l2": 0.005066609475761652,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.34014223690690665,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.5295313782162137,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.5220811793678686,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.36894240012535684,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.3692447992471548,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.3914355239868164,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.34014223690690665,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "base",
+      "task": "i2v",
+      "source": "00002.pt",
+      "original_ms": 0.15469992237706337,
+      "optimized_ms": 0.15369542837142944,
+      "bf16_ms": 0.46472654776139694,
+      "packed_gemm_ms": 0.14604188133688534,
+      "fixed_mask_ms": 0.1601824583830657,
+      "pack_ms": 0.014984605441222319,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 628.7549680818215,
+      "achieved_tflops_gemm": 661.7058290086047,
+      "bf16_relative_l2": 0.04831872135400772,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.15369542837142944,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.33211618949627053,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.31206039305656186,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.1970702365953095,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.19275059127807617,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.15978437423706054,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.15369542837142944,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "a50",
+      "task": "i2v",
+      "source": "00002.pt",
+      "original_ms": 0.2116504160563151,
+      "optimized_ms": 0.20177388901406146,
+      "bf16_ms": 0.46472654776139694,
+      "packed_gemm_ms": 0.1909908936573909,
+      "fixed_mask_ms": 0.20972208769425102,
+      "pack_ms": 0.018525714193071637,
+      "select_ms": 0.00400381459305618,
+      "achieved_tflops_operator": 718.403887382565,
+      "achieved_tflops_gemm": 758.9636524766875,
+      "bf16_relative_l2": 0.04565584659576416,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.20177388901406146,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.3659315696129432,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.3736403722029466,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.24654793617052911,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.24357809409117087,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.21173532274034287,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.20177388901406146,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "act2",
+      "task": "i2v",
+      "source": "00002.pt",
+      "original_ms": 0.26594471401638453,
+      "optimized_ms": 0.27434520721435546,
+      "bf16_ms": 0.46472654776139694,
+      "packed_gemm_ms": 0.25641431557504757,
+      "fixed_mask_ms": 0.2758257375444685,
+      "pack_ms": 0.019730093685197243,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 704.4902671435724,
+      "achieved_tflops_gemm": 753.7548279492707,
+      "bf16_relative_l2": 0.04408419132232666,
+      "winner": {
+        "bm": 128,
+        "num_stages": 2,
+        "ms": 0.27434520721435546,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.41941231022710385,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.3939864387512207,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.2898970199353767,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.3219561545054118,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.27434520721435546,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.28422964881448187,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "wgt2",
+      "task": "i2v",
+      "source": "00002.pt",
+      "original_ms": 0.2776790864127023,
+      "optimized_ms": 0.2755744007655552,
+      "bf16_ms": 0.46472654776139694,
+      "packed_gemm_ms": 0.27220204141404897,
+      "fixed_mask_ms": 0.2903295040130615,
+      "pack_ms": 0.015190742021501773,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 701.3479038077537,
+      "achieved_tflops_gemm": 710.0370273344494,
+      "bf16_relative_l2": 0.020576370880007744,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.2755744007655552,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.5438705709245469,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.5072048839769865,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.31789440339611424,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.31426983494912425,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.27794376918247765,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.2755744007655552,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "a50w",
+      "task": "i2v",
+      "source": "00002.pt",
+      "original_ms": 0.34053759739316747,
+      "optimized_ms": 0.3249244689941406,
+      "bf16_ms": 0.46472654776139694,
+      "packed_gemm_ms": 0.3163364133527202,
+      "fixed_mask_ms": 0.3433619431086949,
+      "pack_ms": 0.018800404991012022,
+      "select_ms": 0.0038957068710836745,
+      "achieved_tflops_operator": 743.5325235673669,
+      "achieved_tflops_gemm": 763.7183081121334,
+      "bf16_relative_l2": 0.012943102046847343,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.3249244689941406,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.5999588012695313,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.5952683985233307,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.36874128855191746,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.3698224031008207,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.3387526852743966,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.3249244689941406,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "960:4096:12288",
+      "tier": "dual",
+      "task": "i2v",
+      "source": "00002.pt",
+      "original_ms": 0.4057421366373698,
+      "optimized_ms": 0.40394773085912067,
+      "bf16_ms": 0.46472654776139694,
+      "packed_gemm_ms": 0.40196893612543744,
+      "fixed_mask_ms": 0.42640858563509854,
+      "pack_ms": 0.020161866780483362,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 717.6925882549592,
+      "achieved_tflops_gemm": 721.2256132885137,
+      "bf16_relative_l2": 0.005373040214180946,
+      "winner": {
+        "bm": 64,
+        "num_stages": 2,
+        "ms": 0.40394773085912067,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.6375530687967936,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.5882145881652832,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.40394773085912067,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.41099798368371054,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.4316925214684528,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.4217417799908182,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/960_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "base",
+      "task": "policy",
+      "source": "00864.pt",
+      "original_ms": 0.05621351590797083,
+      "optimized_ms": 0.05549158300243834,
+      "bf16_ms": 0.1679697068532308,
+      "packed_gemm_ms": 0.05275475725214532,
+      "fixed_mask_ms": 0.057301833357992056,
+      "pack_ms": 0.005066799986011842,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 573.2329087566715,
+      "achieved_tflops_gemm": 602.9712426495231,
+      "bf16_relative_l2": 0.04535706713795662,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.05549158300243834,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.10300915729568665,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.09963808785314146,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.06523181390071262,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.06347907630490585,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.05770178391383245,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.05549158300243834,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "a50",
+      "task": "policy",
+      "source": "00864.pt",
+      "original_ms": 0.07010843413216727,
+      "optimized_ms": 0.0705630770096412,
+      "bf16_ms": 0.1679697068532308,
+      "packed_gemm_ms": 0.06701043243408203,
+      "fixed_mask_ms": 0.07136709988117218,
+      "pack_ms": 0.005554705426312875,
+      "select_ms": 0.0019472222361299728,
+      "achieved_tflops_operator": 676.1950346564487,
+      "achieved_tflops_gemm": 712.0443872815852,
+      "bf16_relative_l2": 0.039287351071834564,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.0705630770096412,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.11519522094726563,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.11495991506074604,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.07811394815859588,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.07794409895365217,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.07072077489668323,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.0705630770096412,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "act2",
+      "task": "policy",
+      "source": "00864.pt",
+      "original_ms": 0.0906662040286594,
+      "optimized_ms": 0.08839516741164187,
+      "bf16_ms": 0.1679697068532308,
+      "packed_gemm_ms": 0.08639989710868673,
+      "fixed_mask_ms": 0.09008542558421259,
+      "pack_ms": 0.005995519936084747,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 719.7135876867086,
+      "achieved_tflops_gemm": 736.3342457684903,
+      "bf16_relative_l2": 0.03452080488204956,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.08839516741164187,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.12442355346679687,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.12076180531428411,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.09024658834233003,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.09471684712082593,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.09308557108224157,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.08839516741164187,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "wgt2",
+      "task": "policy",
+      "source": "00864.pt",
+      "original_ms": 0.09225190353393554,
+      "optimized_ms": 0.09391495222897873,
+      "bf16_ms": 0.1679697068532308,
+      "packed_gemm_ms": 0.09091134326798575,
+      "fixed_mask_ms": 0.09524988746643066,
+      "pack_ms": 0.005502147423593622,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 677.4129311899861,
+      "achieved_tflops_gemm": 699.7938957349382,
+      "bf16_relative_l2": 0.029596423730254173,
+      "winner": {
+        "bm": 128,
+        "num_stages": 2,
+        "ms": 0.09391495222897873,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.16809240809658116,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.16575051357871606,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.10322197989413613,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.10664658546447754,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.09391495222897873,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.09557440029947381,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "a50w",
+      "task": "policy",
+      "source": "00864.pt",
+      "original_ms": 0.1063430388768514,
+      "optimized_ms": 0.11246989015219869,
+      "bf16_ms": 0.1679697068532308,
+      "packed_gemm_ms": 0.10940659876619832,
+      "fixed_mask_ms": 0.11537002041226342,
+      "pack_ms": 0.0055584091118403844,
+      "select_ms": 0.0019766037615965,
+      "achieved_tflops_operator": 707.0692763404053,
+      "achieved_tflops_gemm": 726.8666125883562,
+      "bf16_relative_l2": 0.019251102581620216,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.11246989015219869,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.1808431064381319,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.18002498333270733,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.11508909297894827,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.11638456658471989,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.11322544529324487,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.11246989015219869,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:12288:4096",
+      "tier": "dual",
+      "task": "policy",
+      "source": "00864.pt",
+      "original_ms": 0.13962902568635488,
+      "optimized_ms": 0.13424606607921089,
+      "bf16_ms": 0.1679697068532308,
+      "packed_gemm_ms": 0.13536484434797957,
+      "fixed_mask_ms": 0.14199291865030925,
+      "pack_ms": 0.005651825414030094,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 710.8499146015419,
+      "achieved_tflops_gemm": 704.9748039652243,
+      "bf16_relative_l2": 0.004920283332467079,
+      "winner": {
+        "bm": 64,
+        "num_stages": 3,
+        "ms": 0.13424606607921089,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.19163980674743653,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.18039366164297427,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.13921284820094254,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.13424606607921089,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.14298959970474243,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.1352175297944442,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "base",
+      "task": "policy",
+      "source": "00866.pt",
+      "original_ms": 0.09102400044600169,
+      "optimized_ms": 0.06304682282840504,
+      "bf16_ms": 0.1674615062651087,
+      "packed_gemm_ms": 0.05653091042728747,
+      "fixed_mask_ms": 0.06484318740076299,
+      "pack_ms": 0.008612153187711188,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 504.5393266299304,
+      "achieved_tflops_gemm": 562.6939544325029,
+      "bf16_relative_l2": 0.04802510887384415,
+      "winner": {
+        "bm": 64,
+        "num_stages": 3,
+        "ms": 0.06304682282840504,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.10231977687162512,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.10237131010402332,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.07003587484359741,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.06304682282840504,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.09149686983316252,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.07895410520988598,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "a50",
+      "task": "policy",
+      "source": "00866.pt",
+      "original_ms": 0.10797721328157367,
+      "optimized_ms": 0.08559202967949633,
+      "bf16_ms": 0.1674615062651087,
+      "packed_gemm_ms": 0.07717582702636719,
+      "fixed_mask_ms": 0.08515348604747228,
+      "pack_ms": 0.009822481653116045,
+      "select_ms": 0.0040066478957592605,
+      "achieved_tflops_operator": 557.4631479434356,
+      "achieved_tflops_gemm": 618.2557951429317,
+      "bf16_relative_l2": 0.04551044851541519,
+      "winner": {
+        "bm": 64,
+        "num_stages": 2,
+        "ms": 0.08559202967949633,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.12098312109289035,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.12175085097551346,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.08559202967949633,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.08644872179218367,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.10872952219951584,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.11468740628089434,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "act2",
+      "task": "policy",
+      "source": "00866.pt",
+      "original_ms": 0.14839122679925734,
+      "optimized_ms": 0.09192599994795662,
+      "bf16_ms": 0.1674615062651087,
+      "packed_gemm_ms": 0.090012382009755,
+      "fixed_mask_ms": 0.09664388481451541,
+      "pack_ms": 0.009984669264625101,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 692.0697420535828,
+      "achieved_tflops_gemm": 706.7827964502187,
+      "bf16_relative_l2": 0.043683506548404694,
+      "winner": {
+        "bm": 64,
+        "num_stages": 3,
+        "ms": 0.09192599994795662,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.13122289415816185,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.12885624219293465,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.11357088442201968,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.09192599994795662,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.14826768080393474,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.13435024342066806,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "wgt2",
+      "task": "policy",
+      "source": "00866.pt",
+      "original_ms": 0.1546372179125176,
+      "optimized_ms": 0.10992568408741671,
+      "bf16_ms": 0.1674615062651087,
+      "packed_gemm_ms": 0.1060231557456396,
+      "fixed_mask_ms": 0.11403379440307618,
+      "pack_ms": 0.008297123445203601,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 578.7473928423117,
+      "achieved_tflops_gemm": 600.0500798582998,
+      "bf16_relative_l2": 0.02067219838500023,
+      "winner": {
+        "bm": 64,
+        "num_stages": 3,
+        "ms": 0.10992568408741671,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.1693687831654268,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.16797765932585063,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.12212723262274443,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.10992568408741671,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.15526048472670256,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.14264276846131282,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "a50w",
+      "task": "policy",
+      "source": "00866.pt",
+      "original_ms": 0.19278132185644034,
+      "optimized_ms": 0.13493338045866593,
+      "bf16_ms": 0.1674615062651087,
+      "packed_gemm_ms": 0.12860340460752828,
+      "fixed_mask_ms": 0.1369328921181815,
+      "pack_ms": 0.009750851377462729,
+      "select_ms": 0.003982583849716691,
+      "achieved_tflops_operator": 589.3575301358477,
+      "achieved_tflops_gemm": 618.3662406348515,
+      "bf16_relative_l2": 0.014013002626597881,
+      "winner": {
+        "bm": 64,
+        "num_stages": 2,
+        "ms": 0.13493338045866593,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.18938854789733886,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.18802599420352858,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.13493338045866593,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.13672111207160398,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.19292323443354392,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.18239477230952336,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "316:4096:12288",
+      "tier": "dual",
+      "task": "policy",
+      "source": "00866.pt",
+      "original_ms": 0.235243941516411,
+      "optimized_ms": 0.140935858558206,
+      "bf16_ms": 0.1674615062651087,
+      "packed_gemm_ms": 0.14013764824665767,
+      "fixed_mask_ms": 0.14677187890717477,
+      "pack_ms": 0.00974458662668864,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 677.1080517353804,
+      "achieved_tflops_gemm": 680.9647928444954,
+      "bf16_relative_l2": 0.0052699139341712,
+      "winner": {
+        "bm": 64,
+        "num_stages": 3,
+        "ms": 0.140935858558206,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.19951139887173971,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.19472528963672872,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.1541692884956918,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.140935858558206,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.23569639921188354,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.19877520004908245,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/316_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "base",
+      "task": "av",
+      "source": "01296.pt",
+      "original_ms": 0.15195325272423882,
+      "optimized_ms": 0.1404856714335355,
+      "bf16_ms": 0.5146390778677804,
+      "packed_gemm_ms": 0.14113334064752284,
+      "fixed_mask_ms": 0.14727224292177143,
+      "pack_ms": 0.007751157879829407,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 733.7347222116337,
+      "achieved_tflops_gemm": 730.3675703492195,
+      "bf16_relative_l2": 0.05226166918873787,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.1404856714335355,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.3096808248950589,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.30987788169614733,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.1989159305890401,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.19167833709716797,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.15901529280865778,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.1404856714335355,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "a50",
+      "task": "av",
+      "source": "01296.pt",
+      "original_ms": 0.19467928663213202,
+      "optimized_ms": 0.19760674009931847,
+      "bf16_ms": 0.5146390778677804,
+      "packed_gemm_ms": 0.19665036582946777,
+      "fixed_mask_ms": 0.20494774757547582,
+      "pack_ms": 0.009036779706120239,
+      "select_ms": 0.0020241179103739778,
+      "achieved_tflops_operator": 782.4572308529939,
+      "achieved_tflops_gemm": 786.2625731908533,
+      "bf16_relative_l2": 0.04376167058944702,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.19760674009931847,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.3677205012394832,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.3624729780050424,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.24392429402000027,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.2411433831239358,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.19875499441268596,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.19760674009931847,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "act2",
+      "task": "av",
+      "source": "01296.pt",
+      "original_ms": 0.24338456153869628,
+      "optimized_ms": 0.23008967808314731,
+      "bf16_ms": 0.5146390778677804,
+      "packed_gemm_ms": 0.23346299903337345,
+      "fixed_mask_ms": 0.24037775993347169,
+      "pack_ms": 0.009373731628248963,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 895.991649540666,
+      "achieved_tflops_gemm": 883.0454121705587,
+      "bf16_relative_l2": 0.03849053382873535,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.23008967808314731,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.38775244903564454,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.3774465194115272,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.2737131595611572,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.2713309341006809,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.25512968364514804,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.23008967808314731,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "wgt2",
+      "task": "av",
+      "source": "01296.pt",
+      "original_ms": 0.2696116756748509,
+      "optimized_ms": 0.25024869136321237,
+      "bf16_ms": 0.5146390778677804,
+      "packed_gemm_ms": 0.2552206773024339,
+      "fixed_mask_ms": 0.2631473309284932,
+      "pack_ms": 0.007720322169541499,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 823.8142189074647,
+      "achieved_tflops_gemm": 807.765391060789,
+      "bf16_relative_l2": 0.035639405250549316,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.25024869136321237,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.4887191963195801,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.48016799449920655,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.3235330073038737,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.3128553267448179,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.27429861068725586,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.25024869136321237,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "a50w",
+      "task": "av",
+      "source": "01296.pt",
+      "original_ms": 0.30864850282669065,
+      "optimized_ms": 0.30963413097240305,
+      "bf16_ms": 0.5146390778677804,
+      "packed_gemm_ms": 0.3044120967388153,
+      "fixed_mask_ms": 0.31070959866046904,
+      "pack_ms": 0.009021526888797158,
+      "select_ms": 0.0020481926142970055,
+      "achieved_tflops_operator": 832.2662522723246,
+      "achieved_tflops_gemm": 846.5433552763975,
+      "bf16_relative_l2": 0.021568916738033295,
+      "winner": {
+        "bm": 128,
+        "num_stages": 2,
+        "ms": 0.30963413097240305,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.5439895047081842,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.5366319974263509,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.3660372168929489,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.3686503373659574,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.30963413097240305,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.31723402976989745,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:12288:4096",
+      "tier": "dual",
+      "task": "av",
+      "source": "01296.pt",
+      "original_ms": 0.3927845153808594,
+      "optimized_ms": 0.35065599509647916,
+      "bf16_ms": 0.5146390778677804,
+      "packed_gemm_ms": 0.3626975977862323,
+      "fixed_mask_ms": 0.3707272639641395,
+      "pack_ms": 0.009249410834363711,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 881.8832406584597,
+      "achieved_tflops_gemm": 852.6046138697046,
+      "bf16_relative_l2": 0.005579741206020117,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.35065599509647916,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.5646053650799919,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.5606800026363796,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.38950118255615235,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.39598310470581055,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.4200190627056619,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.35065599509647916,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_12288_4096.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "base",
+      "task": "av",
+      "source": "01298.pt",
+      "original_ms": 0.15919988923153636,
+      "optimized_ms": 0.15747719832829066,
+      "bf16_ms": 0.5044049644470214,
+      "packed_gemm_ms": 0.14810741481496328,
+      "fixed_mask_ms": 0.1652544538853532,
+      "pack_ms": 0.015901582241058348,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 654.5659701737397,
+      "achieved_tflops_gemm": 695.9760605691561,
+      "bf16_relative_l2": 0.061240311712026596,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.15747719832829066,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.34985622337886263,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.3404705113378064,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.22385452221601437,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.21298617257012262,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.16604242818108922,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.15747719832829066,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "a50",
+      "task": "av",
+      "source": "01298.pt",
+      "original_ms": 0.21246884062483504,
+      "optimized_ms": 0.20675255526667055,
+      "bf16_ms": 0.5044049644470214,
+      "packed_gemm_ms": 0.20053720863497987,
+      "fixed_mask_ms": 0.21508869222692542,
+      "pack_ms": 0.01994820101219311,
+      "select_ms": 0.004097235901602383,
+      "achieved_tflops_operator": 747.8447966777088,
+      "achieved_tflops_gemm": 771.0231119125576,
+      "bf16_relative_l2": 0.05765879899263382,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.20675255526667055,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.3997530698776245,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.4021114706993103,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.27741778237479076,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.2769453729901995,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.21666174585169012,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.20675255526667055,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "act2",
+      "task": "av",
+      "source": "01298.pt",
+      "original_ms": 0.2686992883682251,
+      "optimized_ms": 0.28066334163441375,
+      "bf16_ms": 0.5044049644470214,
+      "packed_gemm_ms": 0.2606409323842902,
+      "fixed_mask_ms": 0.28268041338239397,
+      "pack_ms": 0.021647199988365173,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 734.5399260461229,
+      "achieved_tflops_gemm": 790.967206578432,
+      "bf16_relative_l2": 0.05423905700445175,
+      "winner": {
+        "bm": 128,
+        "num_stages": 2,
+        "ms": 0.28066334163441375,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.4385719299316406,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.4355400292769722,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.31922176043192546,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.3218799940745036,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.28066334163441375,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.28081167164970844,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "wgt2",
+      "task": "av",
+      "source": "01298.pt",
+      "original_ms": 0.289942302125873,
+      "optimized_ms": 0.2763279506138393,
+      "bf16_ms": 0.5044049644470214,
+      "packed_gemm_ms": 0.27617873873029436,
+      "fixed_mask_ms": 0.29478515856193777,
+      "pack_ms": 0.016154693651802932,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 746.0643403971129,
+      "achieved_tflops_gemm": 746.4674187296021,
+      "bf16_relative_l2": 0.029071452096104622,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.2763279506138393,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.5667403333327349,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.5350727028316922,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.3821240310668945,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.3607736834773311,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.28962938424312706,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.2763279506138393,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "a50w",
+      "task": "av",
+      "source": "01298.pt",
+      "original_ms": 0.35604254757916487,
+      "optimized_ms": 0.334899195309343,
+      "bf16_ms": 0.5044049644470214,
+      "packed_gemm_ms": 0.32308397600727695,
+      "fixed_mask_ms": 0.3617680549621582,
+      "pack_ms": 0.019719695925712585,
+      "select_ms": 0.003978375843910626,
+      "achieved_tflops_operator": 769.4794175959931,
+      "achieved_tflops_gemm": 797.6193711142014,
+      "bf16_relative_l2": 0.020489491522312164,
+      "winner": {
+        "bm": 128,
+        "num_stages": 3,
+        "ms": 0.334899195309343,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.6314231427510579,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.6319080543518066,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.4415896719152277,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.43999941999262027,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.36069902137473775,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.334899195309343,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_4096_12288.pt"
+    },
+    {
+      "model": "nano",
+      "shape": "1024:4096:12288",
+      "tier": "dual",
+      "task": "av",
+      "source": "01298.pt",
+      "original_ms": 0.4252123791238536,
+      "optimized_ms": 0.4495799616763466,
+      "bf16_ms": 0.5044049644470214,
+      "packed_gemm_ms": 0.4078529278437297,
+      "fixed_mask_ms": 0.45581473300331515,
+      "pack_ms": 0.02139888024330139,
+      "select_ms": 0.0,
+      "achieved_tflops_operator": 687.8368069585377,
+      "achieved_tflops_gemm": 758.208717409246,
+      "bf16_relative_l2": 0.0069285505451262,
+      "winner": {
+        "bm": 128,
+        "num_stages": 2,
+        "ms": 0.4495799616763466,
+        "relative_l2": 0.0
+      },
+      "candidates": [
+        {
+          "bm": 32,
+          "num_stages": 2,
+          "ms": 0.6670054308573405,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 32,
+          "num_stages": 3,
+          "ms": 0.6624972788492839,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 2,
+          "ms": 0.47953439235687256,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 64,
+          "num_stages": 3,
+          "ms": 0.47211916333153137,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 2,
+          "ms": 0.4495799616763466,
+          "relative_l2": 0.0
+        },
+        {
+          "bm": 128,
+          "num_stages": 3,
+          "ms": 0.48222672939300537,
+          "relative_l2": 0.0
+        }
+      ],
+      "payload": "runs5090/auto_budget_nano_bench/1024_4096_12288.pt"
+    }
+  ],
+  "launches": {
+    "960:12288:4096|base": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:12288:4096|a50": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:12288:4096|act2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:12288:4096|wgt2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:12288:4096|a50w": {
+      "bm": 128,
+      "num_stages": 2
+    },
+    "960:12288:4096|dual": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:4096:12288|base": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:4096:12288|a50": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:4096:12288|act2": {
+      "bm": 128,
+      "num_stages": 2
+    },
+    "960:4096:12288|wgt2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:4096:12288|a50w": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "960:4096:12288|dual": {
+      "bm": 64,
+      "num_stages": 2
+    },
+    "316:12288:4096|base": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "316:12288:4096|a50": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "316:12288:4096|act2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "316:12288:4096|wgt2": {
+      "bm": 128,
+      "num_stages": 2
+    },
+    "316:12288:4096|a50w": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "316:12288:4096|dual": {
+      "bm": 64,
+      "num_stages": 3
+    },
+    "316:4096:12288|base": {
+      "bm": 64,
+      "num_stages": 3
+    },
+    "316:4096:12288|a50": {
+      "bm": 64,
+      "num_stages": 2
+    },
+    "316:4096:12288|act2": {
+      "bm": 64,
+      "num_stages": 3
+    },
+    "316:4096:12288|wgt2": {
+      "bm": 64,
+      "num_stages": 3
+    },
+    "316:4096:12288|a50w": {
+      "bm": 64,
+      "num_stages": 2
+    },
+    "316:4096:12288|dual": {
+      "bm": 64,
+      "num_stages": 3
+    },
+    "1024:12288:4096|base": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "1024:12288:4096|a50": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "1024:12288:4096|act2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "1024:12288:4096|wgt2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "1024:12288:4096|a50w": {
+      "bm": 128,
+      "num_stages": 2
+    },
+    "1024:12288:4096|dual": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "1024:4096:12288|base": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "1024:4096:12288|a50": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "1024:4096:12288|act2": {
+      "bm": 128,
+      "num_stages": 2
+    },
+    "1024:4096:12288|wgt2": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "1024:4096:12288|a50w": {
+      "bm": 128,
+      "num_stages": 3
+    },
+    "1024:4096:12288|dual": {
+      "bm": 128,
+      "num_stages": 2
+    }
+  },
+  "scope": "CUDA Graph operator timing; 3x10 ms per candidate; all packing and GPU selection included in optimized_ms; captured rows repeated to actual M for latency only"
+}

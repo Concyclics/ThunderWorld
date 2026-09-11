@@ -1,0 +1,68 @@
+"""Model-local RTN term ablations; deliberately no imported calibration policy."""
+import math
+import sys
+
+import torch
+
+from runtime import ROOT
+sys.path.insert(0, str(ROOT / 'tools/cosmos_e2e'))
+from adapter import load_native
+from thunderworld_fp4.linear import _pack
+
+
+class TermLinear(torch.nn.Module):
+    def __init__(self, source):
+        super().__init__()
+        if source.bias is not None:
+            raise ValueError('Bias-free generation FFN expected')
+        self.in_features = source.in_features
+        self.out_features = source.out_features
+        w = source.weight.detach().to('cuda').contiguous()
+        d = torch.ones(self.in_features, device='cuda')
+        codes, scales, factor, _ = _pack(w, d, True, True, w)
+        # Offline immutable two-plane source; only selected planes are deployed.
+        self.codes, self.scales, self.factor = codes.cpu(), scales.cpu(), factor.cpu()
+        self.native_cls = load_native().Native
+        self.op = None
+        self.calls = 0
+        self.configure('ffn_act2')
+
+    def configure(self, mode):
+        a = mode in ('ffn_act2', 'ffn_dual', 'ffn_four')
+        w = mode in ('ffn_wgt2', 'ffn_dual', 'ffn_four')
+        if mode not in ('ffn_base', 'ffn_act2', 'ffn_wgt2', 'ffn_dual', 'ffn_four'):
+            raise ValueError(mode)
+        self.op = None
+        k, n = self.in_features, self.out_features
+        am = torch.full((1, k), a, dtype=torch.bool, device='cuda')
+        wm = torch.full((n, k), w, dtype=torch.bool, device='cuda')
+        self.op = self.native_cls(self.codes.cuda(), self.scales.cuda(), self.factor.cuda(),
+                                  torch.ones(k, device='cuda'), am, wm, cross=mode == 'ffn_four',
+                                  bm=128, interleave=True, num_stages=2, split_k=1)
+        self.am, self.ai, self.union = self.op.am, self.op.ai, self.op.union
+        self.support_cache = {}
+
+    def forward(self, x):
+        self.calls += 1
+        shape = x.shape
+        flat = x.reshape(-1, shape[-1]).contiguous()
+        rows = math.ceil(flat.shape[0] / 128)
+        if rows not in self.support_cache:
+            # Native uses flattened pointer arithmetic, not PyTorch strides.
+            # In particular CROSS reads AM even when A repair is full.
+            self.support_cache[rows] = tuple(t.expand(rows,-1).contiguous() for t in (self.am,self.ai,self.union))
+        self.op.am, self.op.ai, self.op.union = self.support_cache[rows]
+        return self.op(flat).reshape(*shape[:-1], self.out_features)
+
+
+def install(transformer):
+    modules = []
+    for i, layer in enumerate(transformer.layers):
+        for name, child in list(layer.mlp_moe_gen.named_children()):
+            if isinstance(child, torch.nn.Linear):
+                replacement = TermLinear(child)
+                setattr(layer.mlp_moe_gen, name, replacement)
+                modules.append(replacement)
+        if i % 8 == 0:
+            print('Prepared FFN layer', i, flush=True)
+    return modules

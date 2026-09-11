@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "input": "runs5090/findings_edge_ablation_v2",
+      "lpips_trajectories": 68,
+      "verified_waveforms": 0,
+      "passed": true
+    },
+    {
+      "input": "runs5090/findings_nano_ablation",
+      "lpips_trajectories": 102,
+      "verified_waveforms": 34,
+      "passed": true
+    }
+  ]
+}

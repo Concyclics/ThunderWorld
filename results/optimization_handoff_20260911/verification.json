@@ -1,0 +1,75 @@
+{
+  "complete": true,
+  "date": "2026-09-11",
+  "pytest": {
+    "passed": 126,
+    "warnings": 1,
+    "seconds": 26.49,
+    "command": "bash tools/kernel_handoff/python5090.sh -m pytest packages/fp4-repair/tests tools/auto_budget/test_budget.py tools/auto_budget/test_execution.py tools/cosmos_e2e/test_adapter.py tools/finding_resample/test_runtime.py -q"
+  },
+  "retiming": {
+    "a_cases": 56,
+    "w_cases": 30,
+    "rounds": 5
+  },
+  "smoke": {
+    "models": [
+      "edge",
+      "nano"
+    ],
+    "cases": [
+      "policy_table"
+    ],
+    "seed": 8701,
+    "steps": 2,
+    "modes": [
+      "bf16",
+      "ffn_act2",
+      "ffn_auto50",
+      "ffn_auto75"
+    ],
+    "phase_graph": true,
+    "fuse_ffn": true,
+    "scope": "Integration only"
+  },
+  "files": {
+    "SPEED_AUDIT.md": "21a5bcd7a63a0b7e3544eb4d11d25d2d4642e81ca232b51779da8e391b5e6be9",
+    "archived_stage_gains.csv": "1843a5755e37084e65a6bd85bb2c3ff66f3c505b3125e0b4b72f8ba55c4d7d93",
+    "audit_sources.json": "206a58f41a50c33aef8dfd21cb5ecf3096066a36f6d8c1b95e0e19ce35f84c3a",
+    "clean_checkout_adapter_pytest.txt": "d7e6b0791793b94f0e3c989b0b88f6951b2338cf13f55c73d27f83536ccd516f",
+    "clean_checkout_initial_pytest.txt": "c9fe7b04f8d86d76cd9dd2f94e2e1a06da2a6776bc57861aaa8967b1bc1c3fea",
+    "environment_packages.json": "ab88ebd9463a0aad9334945dc5d600f6e5d98d01930e49ff9afa873d0b1f021b",
+    "input_check.json": "32a3e06f2ec709bf70592670558fd8f7e1b94b559fbeda0923d746731c1df0e6",
+    "pytest.txt": "a4b0d2dcbb4adfeda9728a181981653f9686d04ffa8c0ea67a9beabd2ca8f065",
+    "ranges.csv": "e0bb3277802f8313cae82e2a10c6122a4936987aded3b2c1a54821ee96d255a7",
+    "retime.csv": "2ea865c294d957596be381c6bc493ff3ec79f8a05989cf607f452c0e208864c8",
+    "retime.json": "dfdbb08a2b90b0dad777842b67ab9c22469f098b2a24f24a1bc4bc6906285378",
+    "smoke_edge.json": "ef8865284dec82a06b5564a828db0da787713166796221d1497dac68aea6e796",
+    "smoke_nano.json": "52fbe518a77560e2c5d2f1b3ba6bd7d6423f34801f4ccfde999e2958d8db3e3a"
+  },
+  "staging_review": {
+    "files_before_final_receipts": 1012,
+    "text_files_scanned": 871,
+    "credential_pattern_matches": 0,
+    "excluded": [
+      "models/",
+      "data_local/",
+      "runs5090/",
+      ".cache5090/"
+    ],
+    "scope": "Pattern scan, not proof of absence of every possible secret. Scientific evidence logs retained unchanged."
+  },
+  "clean_checkout": {
+    "initial_run": {
+      "passed": 123,
+      "failed": 3,
+      "reason": "Missing ignored data_local/baseline_source; all three failures were original-vs-optimized adapter fixtures."
+    },
+    "resolution": "Fixed baseline export is documented and exercised. Entire adapter module rerun: 4 passed, including all three previously failing cases; all 126 unique cases now pass across the clean-checkout runs.",
+    "adapter_rerun": {
+      "passed": 4,
+      "seconds": 13.76
+    },
+    "complete": true
+  }
+}
