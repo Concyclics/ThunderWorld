@@ -113,3 +113,15 @@ def test_restricted_allocation_filters_before_pareto_pruning():
            dict(id=1,base_mma=100,mma=110,loss=8.,a_blocks=1,w_blocks=[]),
            dict(id=2,base_mma=100,mma=105,loss=7.,a_blocks=0,w_blocks=[0])]
     assert allocate({'op':group},1.125,preference='a')['assignments']['op']['id']==1
+
+
+def test_attention_accounts_probability_quantization_separately_from_qkv_pack():
+    from thunderworld_fp4.cosmos.budget import attention_cost
+    # ACT2 PV repairs P only: no Q/K/V residual codes are needed, but online P1
+    # quantization still executes for the selected padded MMA tiles.
+    cost=attention_cost(129,384,4,2,pv_counts=[1,0,2,3],pv_terms=2)
+    work=cost['non_mma']
+    assert work['probability_residual_quantized_elements']==5*6*32*128
+    assert work['probability_base_quantized_elements']==5*4*3*32*128
+    assert work['qkv_residual_quantized_elements_upper']==0
+    assert work['combine_output_elements']==129*4*128

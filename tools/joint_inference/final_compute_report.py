@@ -9,9 +9,9 @@ from thunderworld_fp4.cosmos.cohorts import Cohort
 from thunderworld_fp4.cosmos.quality import gate
 
 
-def frontier(rows):
+def frontier(rows,metric='lpips'):
     """Finite three-objective frontier; no claim about unsearched configurations."""
-    keys=('lpips','mma','prepared_weight_bytes')
+    keys=(metric,'mma','prepared_weight_bytes')
     return [r['name'] for r in rows if not any(
         all(q[k]<=r[k] for k in keys) and any(q[k]<r[k] for k in keys)
         for q in rows if q is not r)]
@@ -73,16 +73,20 @@ def main():
         same=gate(rows,samples(control),task,cohort=cohort)
         same['scope']='Paired consistency against the validation-selected uncalibrated control at the same compute cap'
         fp8=gate(rows,samples('fp8'),task,cohort=cohort)
-        comparisons.append(dict(budget=decision['budget'],selected=name,control=control,same_budget_gate=same,fp8_gate=fp8))
+        comparisons.append(dict(budget=decision['budget'],selected=name,control=control,same_budget_gate=same,fp8_gate=fp8,
+            actual_mma_ratios=dict(selected=summaries[name]['compute']['ratio'],control=summaries[control]['compute']['ratio']),
+            comparison_scope='Same hard cap; actual issued MMA can differ due to allocation and integer quotas'))
+    modality,metric={'policy':('action','relative_l2'),'av':('waveform','log_spectral_l1')}.get(cohort.value['task'],('video','lpips'))
     for name,summary in summaries.items():
         if summary['compute']:
             points.append(dict(name=name,lpips=summary['metrics']['video']['lpips'],mma=summary['compute']['total_mma'],
+                primary_error=summary['metrics'][modality][metric],
                 prepared_weight_bytes=summary['prepared_weight_bytes']))
     title=f"{cohort.value['model']} {cohort.value['task']}"
     result=dict(complete=True,scope=title+' final new seeds on existing scenes; observed compute frontier only',
         performance_eligible=False,resource_mode='shared-calibration',cohort_sha256=cohort.fingerprint,
         quality_sha256=hashlib.sha256(a.quality.read_bytes()).hexdigest(),selection_sha256=hashlib.sha256(a.selection.read_bytes()).hexdigest(),
-        summaries=summaries,comparisons=comparisons,frontier=frontier(points),frontier_objectives=['mean video LPIPS','issued MMA FLOPs','prepared quantized weight bytes'],
+        summaries=summaries,comparisons=comparisons,frontier=frontier(points,'primary_error'),frontier_objectives=[f'mean {modality}.{metric}','issued MMA FLOPs','prepared quantized weight bytes'],
         expand_to_next_task=any(c['same_budget_gate']['passed'] for c in comparisons),
         limitations=['Shared GPU timings cannot establish acceleration or latency Pareto optimality.',
             'Packing traffic is an implementation-derived bound; fields ending in upper are not measured savings.',
@@ -92,11 +96,16 @@ def main():
     a.output.mkdir(parents=True);atomic_json(a.output/'report.json',result)
     lines=['# '+title+' compute-constrained FP4 final results','',
         'All runs used shared PRO 6000 GPUs, 35 steps, identical inputs and Graph execution with debug off. No latency speedup is claimed.','',
-        '| Budget | Selected | LPIPS ↓ | SSIM ↑ | Relative L2 ↓ | Same-budget gate | FP8 gate | MMA/C0 | W1 MiB |',
-        '|---|---|---:|---:|---:|---|---|---:|---:|']
+        '| Budget | Selected | LPIPS ↓ | Control LPIPS ↓ | SSIM ↑ | Relative L2 ↓ | Same-budget gate | FP8 gate | MMA/C0 (selected/control) | W1 MiB |',
+        '|---|---|---:|---:|---:|---:|---|---|---:|---:|']
     for c in comparisons:
         s=summaries[c['selected']];m=s['metrics']['video'];ledger=s['compute']
-        lines.append(f"| {c['budget']:g} | {c['selected']} | {m['lpips']:.6f} | {m['ssim_mean']:.6f} | {m['relative_l2']:.6f} | {c['same_budget_gate']['passed']} | {c['fp8_gate']['passed']} | {ledger['ratio']:.9f} | {ledger['w1_support_union_bytes']/2**20:.2f} |")
+        control=summaries[c['control']]
+        lines.append(f"| {c['budget']:g} | {c['selected']} | {m['lpips']:.6f} | {control['metrics']['video']['lpips']:.6f} | {m['ssim_mean']:.6f} | {m['relative_l2']:.6f} | {c['same_budget_gate']['passed']} | {c['fp8_gate']['passed']} | {ledger['ratio']:.6f}/{control['compute']['ratio']:.6f} | {ledger['w1_support_union_bytes']/2**20:.2f} |")
+    if modality!='video':
+        lines+=['',f'| Budget | Selected {modality}.{metric} ↓ | Control ↓ |','|---|---:|---:|']
+        for c in comparisons:
+            lines.append(f"| {c['budget']:g} | {summaries[c['selected']]['metrics'][modality][metric]:.8f} | {summaries[c['control']]['metrics'][modality][metric]:.8f} |")
     lines+=['','Paired 95% bootstrap intervals, worst-seed degradation, complete cost and memory breakdowns are in report.json.',
         '', 'Observed nondominated configurations: '+', '.join(result['frontier']), '',*result['limitations']]
     (a.output/'README.md').write_text('\n'.join(lines)+'\n')

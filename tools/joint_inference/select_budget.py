@@ -22,6 +22,7 @@ def main():
     a=p.parse_args();quality=json.loads(a.quality.read_text());jobs=json.loads(a.jobs.read_text())['jobs'];cohort=Cohort.load(a.cohort)
     if not quality['complete'] or quality['suite']!='validation':raise ValueError('Complete independent validation required')
     if quality.get('cohort_sha256')!=cohort.fingerprint:raise ValueError('Validation/cohort provenance mismatch')
+    primary={'policy':'action.relative_l2','av':'waveform.log_spectral_l1'}.get(cohort.value['task'],'lpips')
     if a.output.exists():raise FileExistsError(a.output)
     matrix_path=a.quality.parent/'matrix.json';runtime_ledgers={}
     if matrix_path.exists():
@@ -38,20 +39,24 @@ def main():
             for key in keys:result[modality+'.'+key]=float(np.mean([r['metrics'][modality][key] for r in rows]))
         if not all(np.isfinite(v) for v in result.values()):raise ValueError('Nonfinite validation metrics')
         return result
-    decisions=[];frozen=[]
-    for budget in cohort.value['budgets']:
+    decisions=[];frozen=[];incumbent=None
+    for budget in sorted(cohort.value['budgets']):
         controls=[j for j in jobs if j.get('control',False) and j.get('budget')==budget]
         candidates=[j for j in jobs if j.get('candidate',False) and j.get('budget')==budget]
         if not controls or not candidates or len(candidates)>3:raise ValueError('Missing controls/candidates or too many candidates')
-        control=min(controls,key=lambda j:metrics(j['name'])['lpips']);baseline=metrics(control['name'])
+        # The resource constraint is an upper bound. Reuse the already evaluated
+        # lower-cap incumbent; this adds no validation requests or new search trial.
+        if incumbent is not None and all(j['name']!=incumbent['name'] for j in candidates):candidates.append(incumbent)
+        control=min(controls,key=lambda j:metrics(j['name'])[primary]);baseline=metrics(control['name'])
         def guarded(job):
             m=metrics(job['name'])
-            return m['ssim_mean']>=baseline['ssim_mean'] and all(m[key]<=baseline[key] for key in baseline if key not in ('lpips','ssim_mean'))
+            return m['ssim_mean']>=baseline['ssim_mean'] and all(m[key]<=baseline[key] for key in baseline if key not in (primary,'ssim_mean'))
         eligible=[j for j in candidates if guarded(j)]
         if not eligible:
             frozen.append(freeze(control))
             decisions.append(dict(budget=budget,selected=control['name'],optimized_candidate=False,
                 reason='No optimized candidate satisfies SSIM/L2 guardrails; retain best feasible uncalibrated FP4 control',control=control['name']))
+            incumbent=control
             continue
         def key(job):
             m=metrics(job['name'])
@@ -63,21 +68,26 @@ def main():
             traffic=ledger.get('packing_traffic',{})
             # These are disjoint linear and attention writes; do not sum aliases.
             packing=traffic.get('base_write_bytes',0)+traffic.get('base_code_scale_write_bytes',0)+traffic.get('base_factor_write_bytes',0)+traffic.get('residual_write_bytes',traffic.get('selected_residual_write_bytes',0))+traffic.get('selected_residual_write_bytes_upper',0)
-            return (m['lpips'],ledger['total_mma'],packing,ledger['w1_support_union_bytes'])
+            return (m[primary],ledger['total_mma'],packing,ledger['w1_support_union_bytes'])
         selected=min([control,*eligible],key=key)
         if selected['name']==control['name']:
             frozen.append(freeze(control))
             decisions.append(dict(budget=budget,selected=control['name'],optimized_candidate=False,
                 reason='Uncalibrated control is the lowest-error feasible validation configuration',
                 control=control['name'],metrics=baseline))
+            incumbent=control
             continue
         for job in (selected,control):
             frozen.append(freeze(job))
-        decisions.append(dict(budget=budget,selected=selected['name'],control=control['name'],metrics=metrics(selected['name'])))
+        decisions.append(dict(budget=budget,selected=selected['name'],control=control['name'],metrics=metrics(selected['name']),
+            selected_from_budget=selected['budget'],optimized_candidate=selected.get('candidate',False)))
+        incumbent=selected
     for job in jobs:
         if job['name'] in ('bf16','fp8','fp4','full_dual'):frozen.append(freeze(job))
-    atomic_json(a.output,dict(complete=True,cohort_sha256=cohort.fingerprint,
-                validation_sha256=hashlib.sha256(a.quality.read_bytes()).hexdigest(),decisions=decisions,jobs=frozen))
+    frozen=list({j['name']:j for j in frozen}.values())
+    atomic_json(a.output,dict(complete=True,primary_metric=primary,cohort_sha256=cohort.fingerprint,
+                validation_sha256=hashlib.sha256(a.quality.read_bytes()).hexdigest(),decisions=decisions,jobs=frozen,
+                incumbent_scope='Reuse already evaluated lower-cap incumbent; at most three newly evaluated candidates per cap'))
 
 
 if __name__=='__main__':main()

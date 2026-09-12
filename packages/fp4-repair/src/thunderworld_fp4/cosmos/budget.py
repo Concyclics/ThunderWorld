@@ -105,6 +105,7 @@ def attention_cost(m, n, h, hk, *, bm=32, qk_counts=None, pv_counts=None,
         terms[prefix+'_a']=selected*tile
         terms[prefix+'_w']=selected*tile if t>=3 else 0
         terms[prefix+'_cross']=selected*tile if t==4 else 0
+        if prefix=='pv':pv_selected=selected
     # Existing attention selector issues 16 x (next_power_of_two(N128)*8) x 128 BF16.
     selection=selector and explicit_masks is None and ((any(qk_counts) and not all(c==nt for c in qk_counts)) or (any(pv_counts) and not all(c==nt for c in pv_counts)))
     bt=1<<(nt-1).bit_length()
@@ -134,7 +135,13 @@ def attention_cost(m, n, h, hk, *, bm=32, qk_counts=None, pv_counts=None,
                      residual_allocation_bytes_upper=(h*mp+2*hk*npad)*72 if explicit_masks is not None or any(qk_counts+pv_counts) else 0),
         gqa_support_union_upper=union,gqa_union_scope='Exact provided mask union' if explicit_masks is not None else 'Upper bound, not measured packing savings',
         padded_base_mma=2*base_one-4*m*n*h*128,
-        non_mma=dict(softmax_elements=ctas*bm*nt*128*h,selector_rank_pairs=h*mt*bt*bt if selection else 0))
+        non_mma=dict(softmax_elements=ctas*bm*nt*128*h,
+                     probability_base_quantized_elements=ctas*bm*nt*128*h,
+                     probability_residual_quantized_elements=pv_selected*bm*128,
+                     qkv_base_quantized_elements=(h*mp+2*hk*npad)*128,
+                     qkv_residual_quantized_elements_upper=(q_rows+(k_tiles+v_tiles)*128)*128,
+                     combine_output_elements=m*h*128,
+                     selector_rank_pairs=h*mt*bt*bt if selection else 0))
 
 
 class RepairPlan:

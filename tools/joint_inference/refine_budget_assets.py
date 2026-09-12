@@ -14,16 +14,23 @@ from capture_budget import atomic_json
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ('capture','candidate','output'):p.add_argument('--'+name,type=Path,required=True)
+    p.add_argument('--assets',type=Path,help='Optional asset bank separate from the fixed candidate plan')
     p.add_argument('--search-prescale',action='store_true',help='One additional teacher+student coordinate search with fixed block supports')
     p.add_argument('--resume',action='store_true')
     a=p.parse_args();a.output.mkdir(parents=True,exist_ok=a.resume)
     capture=json.loads((a.capture/'manifest.json').read_text());plan=RepairPlan.load(a.candidate/'plan.json')
-    source=a.candidate/'assets';manifest=json.loads((source/'manifest.json').read_text())
+    source=a.assets or a.candidate/'assets';manifest=json.loads((source/'manifest.json').read_text())
     if capture['model_identity']!=manifest['model_identity']:raise ValueError('Model mismatch')
-    manifest={**manifest,'complete':False,'modules':dict(manifest['modules']),'refinement':[]}
+    if capture['cohort_sha256']!=manifest.get('cohort_sha256'):raise ValueError('Calibration/asset cohort mismatch')
+    manifest={**manifest,'complete':False,'modules':dict(manifest['modules']),'refinement':[],
+        'source_asset_sha256':hashlib.sha256((source/'manifest.json').read_bytes()).hexdigest(),
+        'capture_sha256':hashlib.sha256((a.capture/'manifest.json').read_bytes()).hexdigest()}
     if a.resume and (a.output/'manifest.json').exists():
         previous=json.loads((a.output/'manifest.json').read_text())
         if previous.get('plan_sha256')!=manifest.get('plan_sha256'):raise ValueError('Resume plan mismatch')
+        for field in ('source_asset_sha256','capture_sha256'):
+            if previous.get(field)!=manifest[field]:raise ValueError('Resume refinement inputs changed')
+        if previous.get('refinement_options',{}).get('search_prescale')!=a.search_prescale:raise ValueError('Resume refinement search changed')
         manifest=previous
     completed={r['name'] for r in manifest['refinement']}
     with shared_worker():

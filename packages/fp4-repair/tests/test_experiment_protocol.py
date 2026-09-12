@@ -132,3 +132,51 @@ def test_validation_retains_lower_error_control_even_if_candidate_passes_guardra
     assert result['decisions'][0]['selected']=='control'
     assert not result['decisions'][0]['optimized_candidate']
     assert result['jobs'][0]['assets_manifest_sha256']
+
+
+def test_policy_selection_uses_action_primary_without_dropping_video_guardrails(tmp_path,monkeypatch):
+    from thunderworld_fp4.cosmos.cohorts import Cohort
+    tools=Path(__file__).resolve().parents[3]/'tools/joint_inference'
+    monkeypatch.syspath_prepend(str(tools))
+    value=json.loads((tools/'cohorts/edge_i2v_compute_v1.json').read_text())
+    value.update(task='policy',budgets=[1.25]);cohort=Cohort(value)
+    cohort_path=tmp_path/'cohort.json';cohort_path.write_text(json.dumps(value))
+    jobs=[];rows=[]
+    for name,is_candidate,lpips,action in [('video_control',False,.1,.3),('action_control',False,.2,.1),('candidate',True,.15,.05)]:
+        folder=tmp_path/name;folder.mkdir();(folder/'config.json').write_text('{}');(folder/'manifest.json').write_text('{}')
+        (folder/'compute.json').write_text(json.dumps(dict(total_mma=125,packing_traffic={},w1_support_union_bytes=1)))
+        jobs.append(dict(name=name,candidate=is_candidate,control=not is_candidate,budget=1.25,config=str(folder/'config.json'),assets=str(folder)))
+        rows.extend(dict(config=name,seed=seed,metrics=dict(video=dict(lpips=lpips,ssim_mean=.9 if is_candidate else .8,relative_l2=.1 if is_candidate else .2),
+            action=dict(relative_l2=action,rmse=.1 if is_candidate else .2))) for seed in cohort.seeds['validation'])
+    quality=tmp_path/'quality.json';quality.write_text(json.dumps(dict(complete=True,suite='validation',cohort_sha256=cohort.fingerprint,rows=rows)))
+    manifest=tmp_path/'jobs.json';manifest.write_text(json.dumps(dict(jobs=jobs)));output=tmp_path/'frozen.json'
+    monkeypatch.setattr('sys.argv',['select','--quality',str(quality),'--jobs',str(manifest),'--cohort',str(cohort_path),'--output',str(output)])
+    load('select_budget').main();result=json.loads(output.read_text())
+    assert result['primary_metric']=='action.relative_l2'
+    assert result['decisions'][0]['control']=='action_control'
+    assert result['decisions'][0]['selected']=='candidate'
+
+
+def test_budget_cap_reuses_lower_cost_incumbent_without_duplicate_final_jobs(tmp_path,monkeypatch):
+    from thunderworld_fp4.cosmos.cohorts import Cohort
+    tools=Path(__file__).resolve().parents[3]/'tools/joint_inference'
+    monkeypatch.syspath_prepend(str(tools))
+    value=json.loads((tools/'cohorts/edge_i2v_compute_v1.json').read_text())
+    value['budgets']=[1.5,1.25]  # Manifest order must not change feasibility.
+    cohort=Cohort(value);cohort_path=tmp_path/'cohort.json';cohort_path.write_text(json.dumps(value))
+    jobs=[];rows=[]
+    for name,budget,candidate,error in [('low_control',1.25,False,.4),('low',1.25,True,.1),
+                                       ('high_control',1.5,False,.3),('high',1.5,True,.2)]:
+        folder=tmp_path/name;folder.mkdir();(folder/'config.json').write_text('{}')
+        (folder/'compute.json').write_text(json.dumps(dict(total_mma=int(100*budget),packing_traffic={},w1_support_union_bytes=1)))
+        jobs.append(dict(name=name,candidate=candidate,control=not candidate,budget=budget,config=str(folder/'config.json')))
+        rows.extend(dict(config=name,seed=seed,metrics=dict(video=dict(lpips=error,ssim_mean=1-error,relative_l2=error)))
+                    for seed in cohort.seeds['validation'])
+    quality=tmp_path/'quality.json';quality.write_text(json.dumps(dict(complete=True,suite='validation',cohort_sha256=cohort.fingerprint,rows=rows)))
+    manifest=tmp_path/'jobs.json';manifest.write_text(json.dumps(dict(jobs=jobs)));output=tmp_path/'frozen.json'
+    monkeypatch.setattr('sys.argv',['select','--quality',str(quality),'--jobs',str(manifest),'--cohort',str(cohort_path),'--output',str(output)])
+    load('select_budget').main();result=json.loads(output.read_text())
+    assert [d['selected'] for d in result['decisions']]==['low','low']
+    assert result['decisions'][1]['selected_from_budget']==1.25
+    assert result['decisions'][1]['control']=='high_control'
+    assert [j['name'] for j in result['jobs']].count('low')==1
