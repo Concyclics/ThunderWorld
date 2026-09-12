@@ -1,0 +1,597 @@
+{
+  "complete": true,
+  "model": "edge",
+  "suite": "validation",
+  "rows": [
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "fp8",
+      "seed": 92001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.0778790778101844,
+          "rmse": 0.037207828916485164,
+          "ssim_mean": 0.9585176110267639,
+          "lpips": 0.02756882113788058
+        },
+        "action": {
+          "relative_l2": 0.38233797823672033,
+          "rmse": 0.19675204995085632
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "fp8",
+      "seed": 92002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.14504566299309882,
+          "rmse": 0.06800628716307534,
+          "ssim_mean": 0.9308536648750305,
+          "lpips": 0.05547509545131641
+        },
+        "action": {
+          "relative_l2": 0.5310947231482498,
+          "rmse": 0.2762139679140044
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "fp8",
+      "seed": 92003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.07304909322067543,
+          "rmse": 0.03414622244121294,
+          "ssim_mean": 0.9670864343643188,
+          "lpips": 0.012917067561134258
+        },
+        "action": {
+          "relative_l2": 0.2841577445308133,
+          "rmse": 0.1398990758633854
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "fp8",
+      "seed": 92004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.05215587414316742,
+          "rmse": 0.02504993186427735,
+          "ssim_mean": 0.9770779609680176,
+          "lpips": 0.009879950105267413
+        },
+        "action": {
+          "relative_l2": 0.010948814458894762,
+          "rmse": 0.005690992396590905
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "fp8",
+      "seed": 92005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.17352398641880032,
+          "rmse": 0.08261972355485638,
+          "ssim_mean": 0.9043232798576355,
+          "lpips": 0.07828455215991091
+        },
+        "action": {
+          "relative_l2": 0.19313342013349358,
+          "rmse": 0.10341784080537081
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "fp8",
+      "seed": 92006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.050845785561459175,
+          "rmse": 0.023996084521041326,
+          "ssim_mean": 0.9822074770927429,
+          "lpips": 0.0076814063883348885
+        },
+        "action": {
+          "relative_l2": 0.3667053443435738,
+          "rmse": 0.18913654538127225
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "fp8",
+      "seed": 92007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.06410026417460556,
+          "rmse": 0.028895324548668787,
+          "ssim_mean": 0.9740233421325684,
+          "lpips": 0.02236554695478202
+        },
+        "action": {
+          "relative_l2": 0.1045626490799838,
+          "rmse": 0.059779791617763346
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "fp8",
+      "seed": 92008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.019037196338587175,
+          "rmse": 0.00894123418077958,
+          "ssim_mean": 0.9962624907493591,
+          "lpips": 0.0014635568530887693
+        },
+        "action": {
+          "relative_l2": 0.2172867781022505,
+          "rmse": 0.11126706431478019
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "four",
+      "seed": 92001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.015692057451107085,
+          "rmse": 0.007497101986897118,
+          "ssim_mean": 0.9967321753501892,
+          "lpips": 0.0015921110731570104
+        },
+        "action": {
+          "relative_l2": 0.11410506849683164,
+          "rmse": 0.058718744708731445
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "four",
+      "seed": 92002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.1653122673911259,
+          "rmse": 0.07750851211811072,
+          "ssim_mean": 0.919176459312439,
+          "lpips": 0.06711360130130369
+        },
+        "action": {
+          "relative_l2": 0.5021956819189143,
+          "rmse": 0.26118403351822056
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "four",
+      "seed": 92003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.043631182288415726,
+          "rmse": 0.020395052013755553,
+          "ssim_mean": 0.9905297756195068,
+          "lpips": 0.0047691272373092085
+        },
+        "action": {
+          "relative_l2": 0.1417768154710774,
+          "rmse": 0.06980082663594851
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "four",
+      "seed": 92004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.1288455148372718,
+          "rmse": 0.0618831803840875,
+          "ssim_mean": 0.8940997123718262,
+          "lpips": 0.03874819725067081
+        },
+        "action": {
+          "relative_l2": 0.049177234639306365,
+          "rmse": 0.02556142214925349
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "four",
+      "seed": 92005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.019191646393742948,
+          "rmse": 0.009137690715488351,
+          "ssim_mean": 0.9961047172546387,
+          "lpips": 0.0018931369268102571
+        },
+        "action": {
+          "relative_l2": 0.008424400264803482,
+          "rmse": 0.004511043634312356
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "four",
+      "seed": 92006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.019504394526866354,
+          "rmse": 0.009204874984824392,
+          "ssim_mean": 0.9959805607795715,
+          "lpips": 0.0014569070879267255
+        },
+        "action": {
+          "relative_l2": 0.020218104159261792,
+          "rmse": 0.010427942853373685
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "four",
+      "seed": 92007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.030069332044765803,
+          "rmse": 0.013554750820190996,
+          "ssim_mean": 0.9909206628799438,
+          "lpips": 0.005755802017280503
+        },
+        "action": {
+          "relative_l2": 0.07380529149389968,
+          "rmse": 0.042195420493016146
+        }
+      }
+    },
+    {
+      "case": "policy_table",
+      "task": "policy",
+      "config": "four",
+      "seed": 92008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.008354075163766175,
+          "rmse": 0.003923673479779395,
+          "ssim_mean": 0.99871826171875,
+          "lpips": 0.0003509045606787207
+        },
+        "action": {
+          "relative_l2": 0.03129758839201526,
+          "rmse": 0.01602670356165501
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 92001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2839509346935469,
+          "rmse": 0.16795121255214146,
+          "ssim_mean": 0.6308971047401428,
+          "lpips": 0.2774034742739235
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 92002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3751991503534467,
+          "rmse": 0.18551233593689856,
+          "ssim_mean": 0.5285952687263489,
+          "lpips": 0.46568490833532616
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 92003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.36396476669203254,
+          "rmse": 0.19766880722029787,
+          "ssim_mean": 0.5766974091529846,
+          "lpips": 0.4031095921565763
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 92004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.19512337318831743,
+          "rmse": 0.09782837880390496,
+          "ssim_mean": 0.8745330572128296,
+          "lpips": 0.10062150218233955
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 92005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.21773263116166522,
+          "rmse": 0.10793694873945998,
+          "ssim_mean": 0.8529213666915894,
+          "lpips": 0.12870501839845885
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 92006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.24094830485690907,
+          "rmse": 0.11840603494047866,
+          "ssim_mean": 0.8600336313247681,
+          "lpips": 0.13121033362189277
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 92007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3014554047328771,
+          "rmse": 0.14729133072367753,
+          "ssim_mean": 0.812859058380127,
+          "lpips": 0.1730178174425344
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 92008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2909147382379398,
+          "rmse": 0.14942536845763693,
+          "ssim_mean": 0.6427642107009888,
+          "lpips": 0.2894645087176659
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "four",
+      "seed": 92001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.25343004397561825,
+          "rmse": 0.14989872538642826,
+          "ssim_mean": 0.6790437698364258,
+          "lpips": 0.23162902313376182
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "four",
+      "seed": 92002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.20868538817734034,
+          "rmse": 0.1031817737332496,
+          "ssim_mean": 0.8315587043762207,
+          "lpips": 0.1075944266755317
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "four",
+      "seed": 92003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.21171575019472857,
+          "rmse": 0.1149825577654153,
+          "ssim_mean": 0.7676817178726196,
+          "lpips": 0.20292145874900896
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "four",
+      "seed": 92004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.06784950788220032,
+          "rmse": 0.03401748980811409,
+          "ssim_mean": 0.9724781513214111,
+          "lpips": 0.01925799319688536
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "four",
+      "seed": 92005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.15120944738867056,
+          "rmse": 0.07495930345688374,
+          "ssim_mean": 0.9181506633758545,
+          "lpips": 0.06350335190225331
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "four",
+      "seed": 92006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.14615626482869387,
+          "rmse": 0.07182363789757097,
+          "ssim_mean": 0.9219146966934204,
+          "lpips": 0.06252449376367368
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "four",
+      "seed": 92007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2896949308032667,
+          "rmse": 0.14154515458008388,
+          "ssim_mean": 0.830242395401001,
+          "lpips": 0.156249821796769
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "four",
+      "seed": 92008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2763364212853327,
+          "rmse": 0.14193736563134549,
+          "ssim_mean": 0.6640428304672241,
+          "lpips": 0.27011211901200843
+        }
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "case": "policy_table",
+      "config": "four",
+      "passed": false,
+      "failures": [
+        "video.lpips"
+      ],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": -0.01174452614457229,
+          "ci95": [
+            -0.0340984428524915,
+            0.006335694149557268
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": 0.011488758027553558
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": -0.02812955882043956
+        },
+        "action.relative_l2": {
+          "mean_paired_difference": -0.14365340839973376,
+          "ci95": [
+            -0.2281131804757584,
+            -0.06213475709001749
+          ]
+        },
+        "action.rmse": {
+          "mean_paired_difference": -0.07421639883618905
+        }
+      },
+      "seeds": [
+        92001,
+        92002,
+        92003,
+        92004,
+        92005,
+        92006,
+        92007,
+        92008
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    },
+    {
+      "case": "robot_table",
+      "config": "four",
+      "passed": true,
+      "failures": [],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": -0.10692805836235315,
+          "ci95": [
+            -0.1906591188205714,
+            -0.04369937794375592
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": 0.10072647780179977
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": -0.08302644367261043
+        }
+      },
+      "seeds": [
+        92001,
+        92002,
+        92003,
+        92004,
+        92005,
+        92006,
+        92007,
+        92008
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    }
+  ]
+}

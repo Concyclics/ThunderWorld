@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "source_commit": "f721e84",
+  "wheel": "thunderworld_fp4-0.2.0-py3-none-any.whl",
+  "sha256": "ebf8425f5a94adf7faf3bdf68b8e3e412e9fd6746d764ff5d2a7d0e3e8b8d086",
+  "independent_target": "/tmp/joint-installed-final",
+  "cpu_only_import": true,
+  "cli_help": true
+}

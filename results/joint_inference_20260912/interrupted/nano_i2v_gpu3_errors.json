@@ -1,0 +1,10 @@
+{
+  "performance_eligible": false,
+  "failures": [
+    {
+      "output": "/tmp/joint-nano-i2v-gpu3-performance/00_robot_table_four_legacy_waveform",
+      "error": "RuntimeError('Formal timing requires an idle GPU; competing PIDs: 1092604,1092612')",
+      "sha256": "70321e65358d4fa040bca6d473f30c145d6ba06a114ca56651919731db62d9b8"
+    }
+  ]
+}

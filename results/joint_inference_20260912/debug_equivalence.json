@@ -1,0 +1,59 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "execution": "eager",
+      "debug": "off",
+      "sha256": {
+        "video": "feb9403480c839c682b898a0713dcb8c467db6d97e98899d39347c4d29c652bd",
+        "action": "5a8a270237cfbab8bee33ac0a840e9bf35dfc2ac4b6eecfb97239ad198819994"
+      },
+      "bitwise": true
+    },
+    {
+      "execution": "eager",
+      "debug": "timing",
+      "sha256": {
+        "video": "feb9403480c839c682b898a0713dcb8c467db6d97e98899d39347c4d29c652bd",
+        "action": "5a8a270237cfbab8bee33ac0a840e9bf35dfc2ac4b6eecfb97239ad198819994"
+      },
+      "bitwise": true
+    },
+    {
+      "execution": "eager",
+      "debug": "trace",
+      "sha256": {
+        "video": "feb9403480c839c682b898a0713dcb8c467db6d97e98899d39347c4d29c652bd",
+        "action": "5a8a270237cfbab8bee33ac0a840e9bf35dfc2ac4b6eecfb97239ad198819994"
+      },
+      "bitwise": true
+    },
+    {
+      "execution": "graph",
+      "debug": "off",
+      "sha256": {
+        "video": "feb9403480c839c682b898a0713dcb8c467db6d97e98899d39347c4d29c652bd",
+        "action": "5a8a270237cfbab8bee33ac0a840e9bf35dfc2ac4b6eecfb97239ad198819994"
+      },
+      "bitwise": true
+    },
+    {
+      "execution": "graph",
+      "debug": "timing",
+      "sha256": {
+        "video": "feb9403480c839c682b898a0713dcb8c467db6d97e98899d39347c4d29c652bd",
+        "action": "5a8a270237cfbab8bee33ac0a840e9bf35dfc2ac4b6eecfb97239ad198819994"
+      },
+      "bitwise": true
+    },
+    {
+      "execution": "graph",
+      "debug": "trace",
+      "sha256": {
+        "video": "feb9403480c839c682b898a0713dcb8c467db6d97e98899d39347c4d29c652bd",
+        "action": "5a8a270237cfbab8bee33ac0a840e9bf35dfc2ac4b6eecfb97239ad198819994"
+      },
+      "bitwise": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "case": "policy_table",
+      "config": "four_dual_attention",
+      "seed": 91001,
+      "steps": 35,
+      "bitwise": true,
+      "sha256": {
+        "video": "7b4b017ada89910bb0b092de4fdf142eb76309cae92247d2e6d97e1f1849227e",
+        "action": "4f4d357615b38c253cfb2025c352fbbc0f1eda5ba3a8dbd580ee13faead6a881"
+      }
+    },
+    {
+      "case": "av_pottery",
+      "config": "four",
+      "seed": 91001,
+      "steps": 35,
+      "bitwise": true,
+      "sha256": {
+        "video": "cd7262c29ef5576f3564239a7859153d8e31488581ffcc68e7341c9e33524cbc",
+        "sound_latent": "6fc5a5a8ab5581201f944626fbc6de0016b1c2d854dac690ac491bc005d8a784",
+        "waveform": "2592b7d608994a124bd2a6c56e6cec3a24134b63d3a03ea07d2693b13c9a4204"
+      }
+    }
+  ]
+}

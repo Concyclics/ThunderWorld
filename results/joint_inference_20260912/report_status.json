@@ -1,0 +1,16 @@
+{
+  "complete": false,
+  "pending": [
+    "performance_nano_i2v.json",
+    "ablation.json",
+    "cold_edge.json",
+    "cold_nano_i2v.json",
+    "cold_nano_policy_av.json",
+    "all_tiers_edge.json",
+    "all_tiers_nano.json",
+    "tuned_equivalence_edge.json",
+    "tuned_equivalence_nano_i2v.json",
+    "offline_assets_validation.json",
+    "tests_full_final.log"
+  ]
+}

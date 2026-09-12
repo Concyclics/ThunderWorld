@@ -1,0 +1,14 @@
+{
+  "scope": "Local full outputs/assets; not shipped with Git. Original /tmp paths remain symlinks for resume.",
+  "locations": {
+    "/tmp/joint-edge-final": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-edge-final",
+    "/tmp/joint-nano-final": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-nano-final",
+    "/tmp/joint-edge-gpu3-tuning": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-edge-gpu3-tuning",
+    "/tmp/joint-nano-gpu3-tuning": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-nano-gpu3-tuning",
+    "/tmp/joint-nano-i2v-gpu3-tuning": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-nano-i2v-gpu3-tuning",
+    "/tmp/joint-edge-gpu3-performance": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-edge-gpu3-performance",
+    "/tmp/joint-nano-gpu3-performance": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-nano-gpu3-performance",
+    "/tmp/joint-nano-i2v-gpu3-performance": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-nano-i2v-gpu3-performance",
+    "/tmp/joint-edge-prepared": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-edge-prepared"
+  }
+}

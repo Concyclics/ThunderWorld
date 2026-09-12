@@ -1,0 +1,469 @@
+{
+  "source": "/tmp/joint-edge-development",
+  "tier": "dual",
+  "decisions": [
+    {
+      "module": "layers.0.mlp_moe_gen.up_proj",
+      "loss": 1.314551082032267e-05,
+      "candidates": [
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 1.0,
+          "loss": 1.444644135517592e-05
+        },
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 0.875,
+          "loss": 1.9807104308711132e-05
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 1.0,
+          "loss": 2.142920448022778e-05
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 0.875,
+          "loss": 2.747755297605181e-05
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 1.0,
+          "loss": 5.295619212120073e-05
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 0.875,
+          "loss": 6.574561484740116e-05
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 1.0,
+          "loss": 6.16560273556388e-05
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 0.875,
+          "loss": 7.820397331670392e-05
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 1.0,
+          "loss": 2.819942756104865e-05
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 0.875,
+          "loss": 3.570447825040901e-05
+        },
+        {
+          "activation_scale": [
+            0.875,
+            1.0
+          ],
+          "loss": 1.9582166260079248e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            0.875
+          ],
+          "loss": 1.5616718656019657e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            1.125
+          ],
+          "loss": 1.657762959439424e-05
+        }
+      ]
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.down_proj",
+      "loss": 1.017333602248982e-05,
+      "candidates": [
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 1.0,
+          "loss": 1.0549354783506715e-05
+        },
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 0.875,
+          "loss": 1.2470683941501193e-05
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 1.0,
+          "loss": 2.5274148356402293e-05
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 0.875,
+          "loss": 3.186636331520276e-05
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 1.0,
+          "loss": 1.8811629161064047e-05
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 0.875,
+          "loss": 2.194155194956693e-05
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 1.0,
+          "loss": 1.0343755320718628e-05
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 0.875,
+          "loss": 1.1982170235569356e-05
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 1.0,
+          "loss": 1.017333602248982e-05
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 0.875,
+          "loss": 1.1902112873940496e-05
+        },
+        {
+          "activation_scale": [
+            0.875,
+            1.0
+          ],
+          "loss": 1.375188048768905e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            0.875
+          ],
+          "loss": 1.1088671953984885e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            1.125
+          ],
+          "loss": 1.1382813454474672e-05
+        }
+      ]
+    },
+    {
+      "module": "layers.0.self_attn.add_q_proj",
+      "loss": 4.299894544601557e-05,
+      "candidates": [
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 1.0,
+          "loss": 8.505478672304889e-05
+        },
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 0.875,
+          "loss": 0.00015029536916699726
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 1.0,
+          "loss": 0.0001861327809820068
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 0.875,
+          "loss": 0.00029691624695260543
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 1.0,
+          "loss": 0.0006527966688736342
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 0.875,
+          "loss": 0.0010352545359637588
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 1.0,
+          "loss": 0.0003495463388389908
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 0.875,
+          "loss": 0.000517937536642421
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 1.0,
+          "loss": 7.27448250472662e-05
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 0.875,
+          "loss": 0.00011155604988744017
+        },
+        {
+          "activation_scale": [
+            0.875,
+            1.0
+          ],
+          "loss": 8.70010003382049e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            0.875
+          ],
+          "loss": 5.442660085464013e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            1.125
+          ],
+          "loss": 5.90582458244171e-05
+        }
+      ]
+    },
+    {
+      "module": "layers.0.self_attn.add_k_proj",
+      "loss": 4.787351281265728e-05,
+      "candidates": [
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 1.0,
+          "loss": 9.174704882752849e-05
+        },
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 0.875,
+          "loss": 0.00021093553004902788
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 1.0,
+          "loss": 0.0002189806145906914
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 0.875,
+          "loss": 0.00042325352842453867
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 1.0,
+          "loss": 0.0007638973547727801
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 0.875,
+          "loss": 0.0014358863554662094
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 1.0,
+          "loss": 0.0003651720726338681
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 0.875,
+          "loss": 0.0006892744640936144
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 1.0,
+          "loss": 8.642007469461532e-05
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 0.875,
+          "loss": 0.0001497649518569233
+        },
+        {
+          "activation_scale": [
+            0.875,
+            1.0
+          ],
+          "loss": 0.00010157731685467297
+        },
+        {
+          "activation_scale": [
+            1.0,
+            0.875
+          ],
+          "loss": 6.239422509679571e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            1.125
+          ],
+          "loss": 6.692544593533967e-05
+        }
+      ]
+    },
+    {
+      "module": "layers.0.self_attn.add_v_proj",
+      "loss": 4.298112980904989e-05,
+      "candidates": [
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 1.0,
+          "loss": 4.540073132375255e-05
+        },
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 0.875,
+          "loss": 8.40642096591182e-05
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 1.0,
+          "loss": 7.864014150982257e-05
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 0.875,
+          "loss": 0.00013181015674490482
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 1.0,
+          "loss": 0.0002171562628063839
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 0.875,
+          "loss": 0.0003148404575767927
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 1.0,
+          "loss": 0.00021160746473469771
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 0.875,
+          "loss": 0.0003416624676901847
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 1.0,
+          "loss": 6.809376463934314e-05
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 0.875,
+          "loss": 0.00011809162424469832
+        },
+        {
+          "activation_scale": [
+            0.875,
+            1.0
+          ],
+          "loss": 9.125825999944936e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            0.875
+          ],
+          "loss": 5.9223554671916645e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            1.125
+          ],
+          "loss": 6.387862049450632e-05
+        }
+      ]
+    },
+    {
+      "module": "layers.0.self_attn.to_add_out",
+      "loss": 2.221181694039842e-05,
+      "candidates": [
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 1.0,
+          "loss": 2.5874301172734704e-05
+        },
+        {
+          "alpha": 0.0,
+          "weight_base_scale": 0.875,
+          "loss": 3.307663564555696e-05
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 1.0,
+          "loss": 3.324807539684116e-05
+        },
+        {
+          "alpha": 0.25,
+          "weight_base_scale": 0.875,
+          "loss": 4.2790007682924625e-05
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 1.0,
+          "loss": 5.522732681129128e-05
+        },
+        {
+          "alpha": 0.5,
+          "weight_base_scale": 0.875,
+          "loss": 6.773510722268838e-05
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 1.0,
+          "loss": 2.8075906357116764e-05
+        },
+        {
+          "alpha": 0.75,
+          "weight_base_scale": 0.875,
+          "loss": 3.381211354280822e-05
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 1.0,
+          "loss": 2.221181694039842e-05
+        },
+        {
+          "alpha": 1.0,
+          "weight_base_scale": 0.875,
+          "loss": 2.6249657821608707e-05
+        },
+        {
+          "activation_scale": [
+            0.875,
+            1.0
+          ],
+          "loss": 2.831808751579956e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            0.875
+          ],
+          "loss": 2.4938894512160914e-05
+        },
+        {
+          "activation_scale": [
+            1.0,
+            1.125
+          ],
+          "loss": 2.6816274839802645e-05
+        }
+      ]
+    }
+  ],
+  "scope": "Development teacher-input proxy; full trajectories must independently validate and select assets"
+}

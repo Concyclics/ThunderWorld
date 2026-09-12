@@ -1,0 +1,153 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "case": "policy_table",
+      "config": "base",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 0.7766120680025779,
+      "p90_seconds": 0.7807284681824967,
+      "peak_allocated_bytes": 6959815680,
+      "peak_reserved_bytes": 7413432320
+    },
+    {
+      "case": "policy_table",
+      "config": "bf16",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 0.8470200580195524,
+      "p90_seconds": 0.849464802572038,
+      "peak_allocated_bytes": 8935388160,
+      "peak_reserved_bytes": 9432989696
+    },
+    {
+      "case": "policy_table",
+      "config": "dual",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 0.9266456879558973,
+      "p90_seconds": 0.9333519434207119,
+      "peak_allocated_bytes": 7772150784,
+      "peak_reserved_bytes": 8208252928
+    },
+    {
+      "case": "policy_table",
+      "config": "dual_legacy",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 0.9835764110321179,
+      "p90_seconds": 0.984802247013431,
+      "peak_allocated_bytes": 7772150784,
+      "peak_reserved_bytes": 8208252928
+    },
+    {
+      "case": "policy_table",
+      "config": "ffn_only",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 0.8372310270206071,
+      "p90_seconds": 0.8385868418263271,
+      "peak_allocated_bytes": 6959801344,
+      "peak_reserved_bytes": 7415529472
+    },
+    {
+      "case": "policy_table",
+      "config": "fp8",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 0.8409187019569799,
+      "p90_seconds": 0.8432778056478127,
+      "peak_allocated_bytes": 7534904320,
+      "peak_reserved_bytes": 8019509248
+    },
+    {
+      "case": "robot_table",
+      "config": "base",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 1.839254466991406,
+      "p90_seconds": 1.8419413713854738,
+      "peak_allocated_bytes": 6845840384,
+      "peak_reserved_bytes": 7390363648
+    },
+    {
+      "case": "robot_table",
+      "config": "bf16",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 2.121984624012839,
+      "p90_seconds": 2.1232582460041156,
+      "peak_allocated_bytes": 8810738688,
+      "peak_reserved_bytes": 9221177344
+    },
+    {
+      "case": "robot_table",
+      "config": "dual",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 2.361677762994077,
+      "p90_seconds": 2.3641011508181693,
+      "peak_allocated_bytes": 7659879424,
+      "peak_reserved_bytes": 8078229504
+    },
+    {
+      "case": "robot_table",
+      "config": "dual_legacy",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 2.473868252011016,
+      "p90_seconds": 2.4760659399908036,
+      "peak_allocated_bytes": 7659879424,
+      "peak_reserved_bytes": 8078229504
+    },
+    {
+      "case": "robot_table",
+      "config": "ffn_only",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 2.0289137549698353,
+      "p90_seconds": 2.0299965877784416,
+      "peak_allocated_bytes": 6845156352,
+      "peak_reserved_bytes": 7453278208
+    },
+    {
+      "case": "robot_table",
+      "config": "fp8",
+      "audio_output": "waveform",
+      "n": 15,
+      "median_seconds": 1.9105726879788563,
+      "p90_seconds": 1.9132931500091217,
+      "peak_allocated_bytes": 7405995008,
+      "peak_reserved_bytes": 7935623168
+    }
+  ],
+  "recommendations": {
+    "policy_table": null,
+    "robot_table": "dual"
+  },
+  "environment": {
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "sm": 188,
+    "capability": [
+      12,
+      0
+    ],
+    "hardware": "GPU-d6ab2357-2f6c-a4c8-67a4-b554b9f3f281, 610.43.02, 600.00",
+    "cuda": "13.0",
+    "torch": "2.11.0+cu130",
+    "triton": "3.6.0",
+    "kernels": {
+      "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+      "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+      "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+      "_kernels.py": "7e4ed9cf50a64ff7fb36026cef80dfd7b420df0753da49879c4f69c20f4f53d0",
+      "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+      "_native.py": "26539e040a58db0e592a5d2adf4924cb017dbbaafed69eaf923c63990a137cc0",
+      "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+      "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+      "linears.py": "207e773e409bbd22ff20fada4493c2e2a9377394a3f1de82f825cf3af8dd4553"
+    }
+  },
+  "scope": "Same-device warm requests. Null recommendation means no demonstrated FP8-quality winner."
+}

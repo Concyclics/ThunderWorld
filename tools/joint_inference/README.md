@@ -123,6 +123,8 @@ Nano 使用 `--model-name nano`；质量矩阵包含 four 与 four_dual_attentio
 
 如果正式矩阵被独占检查中断，在同一 GPU 恢复空闲后运行 `python tools/joint_inference/resume.py /path/to/matrix.json`。它保留此前每次尝试，按原有随机顺序重测整个未完成轮次；不能把缺轮或混合设备的数据填入正式报告。
 
+本次本机 GPU3 队列的续跑命令为 `bash tools/joint_inference/continue_local_20260912.sh`。它依赖本机保留的 `/tmp/joint-*` 矩阵，先检查独占，再重测 Nano I2V 被中止的整轮，继续全档位、消融、冷启动和离线资产验证；已完整结束的项目跳过。若非 performance 项目也被中断，其目录仍保留，需检查后用新输出目录重跑，脚本不会覆盖失败证据。其他机器使用上面的通用流程重新调优。`collect_local_20260912.py` 只归档完整矩阵，`report.py --allow-incomplete` 明确列出待测项。
+
 质量检查严格按配对 bootstrap 95% CI：video LPIPS 改善且 SSIM/L2 不退化；policy 还需 action L2 改善且 RMSE 不退化；AV 还需 log-spectral error 改善且 waveform/sound latent L2 不退化。缺少任何指标即失败。没有通过的任务返回 null 推荐。
 
 ## 检查和消融

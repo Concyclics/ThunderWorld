@@ -1,0 +1,40 @@
+usage: __main__.py [-h] --model MODEL --config CONFIG [--case CASE] --output
+                   OUTPUT [--assets ASSETS] [--tuning TUNING] [--tune]
+                   [--debug {off,timing,trace}] [--execution {graph,eager}]
+                   [--attention-policy ATTENTION_POLICY]
+                   [--ffn-policy FFN_POLICY]
+                   [--ffn-policy-mode FFN_POLICY_MODE]
+                   [--projection-config PROJECTION_CONFIG] [--steps STEPS]
+                   [--seeds SEEDS [SEEDS ...]]
+                   [--audio-output {latent,waveform}] [--save-outputs]
+                   {prepare,warmup,infer,benchmark}
+
+Installed entry point; local assets only, fresh outputs, explicit GPU
+selection.
+
+positional arguments:
+  {prepare,warmup,infer,benchmark}
+
+options:
+  -h, --help            show this help message and exit
+  --model MODEL
+  --config CONFIG
+  --case CASE
+  --output OUTPUT
+  --assets ASSETS
+  --tuning TUNING
+  --tune
+  --debug {off,timing,trace}
+  --execution {graph,eager}
+  --attention-policy ATTENTION_POLICY
+                        Independent RepairPolicy JSON
+  --ffn-policy FFN_POLICY
+                        Independent layer/phase FFN policy JSON
+  --ffn-policy-mode FFN_POLICY_MODE
+                        Named policy in the FFN allocation file
+  --projection-config PROJECTION_CONFIG
+                        Independent LinearSpec JSON
+  --steps STEPS
+  --seeds SEEDS [SEEDS ...]
+  --audio-output {latent,waveform}
+  --save-outputs

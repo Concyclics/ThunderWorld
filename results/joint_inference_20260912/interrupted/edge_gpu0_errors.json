@@ -1,0 +1,10 @@
+{
+  "performance_eligible": false,
+  "failures": [
+    {
+      "output": "/tmp/joint-edge-performance-release/04_robot_table_base_waveform_retry1",
+      "error": "RuntimeError('Formal timing requires an idle GPU; competing PIDs: 1031198')",
+      "sha256": "b94521bc2513d136e8c185c64aa3f30eeeee3d241bdcb992c9b9aaa0f52ca5a8"
+    }
+  ]
+}
