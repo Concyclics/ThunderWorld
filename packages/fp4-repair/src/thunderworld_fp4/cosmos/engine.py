@@ -16,6 +16,17 @@ from .linears import RepairLinear, FP8Linear
 from .trees import signature, clone_tree, copy_tree
 
 
+def attention_tuning_spec(config, mask):
+    spec=config.to_dict()
+    if mask is not None:
+        # Configuration preparation only. An explicit mask overrides quotas
+        # and uses a different kernel path, so it must not reuse a quota-only
+        # timing entry or a profile measured for another support pattern.
+        import hashlib
+        spec['explicit_mask_sha256']=hashlib.sha256(mask.cpu().numpy().tobytes()).hexdigest()
+    return spec
+
+
 def generation_targets(transformer):
     result=[]
     for i,layer in enumerate(transformer.layers):
@@ -111,7 +122,7 @@ class JointEngine:
         explicit=self.explicit_masks.get((layer,self.branch))
         if self.warming and key not in self.attention_prepared:
             quotas=torch.tensor(cfg.head_counts(q.shape[2],k.shape[1]),device=q.device,dtype=torch.int32)
-            tune_key=self.table.key('attention',[list(q.shape),list(k.shape)],cfg.to_dict())
+            tune_key=self.table.key('attention',[list(q.shape),list(k.shape)],attention_tuning_spec(cfg,explicit))
             current=[cfg]
             def apply(v):current[0]=replace(cfg,**v)
             def fn():return fp4_attention(q,k,v,current[0],repair_mask=explicit,counts_tensor=quotas)[0]

@@ -6,6 +6,7 @@ from pathlib import Path
 import numpy as np
 import torch
 from thunderworld_fp4.cosmos.quality import compare,gate
+from provenance import provenance
 
 
 def main():
@@ -35,8 +36,7 @@ def main():
             if config=='fp8' and (run['config']['precision']!='fp8' or run['config']['attention_backend']!='bf16'):
                 raise ValueError('FP8 control must be W8A8 projections plus BF16 attention')
             if run['config']['execution']!=bf['config']['execution']:raise ValueError('Execution mode mismatch')
-            result['provenance'][case+'|'+config]={k:run[k] for k in ('config','model_identity','targets')}
-            result['provenance'][case+'|'+config].update({k:run.get(k) for k in ('asset_identity','ffn_policy_identity')})
+            result['provenance'][case+'|'+config]=provenance(run)
             for key in ('model_identity','targets','case'):
                 if run[key]!=bf[key]:raise ValueError(f'Unmatched baseline {key}')
             for row in run['rows']:

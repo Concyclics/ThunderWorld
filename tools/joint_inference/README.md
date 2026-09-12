@@ -54,7 +54,19 @@ tw-cosmos benchmark --model "$MODEL" --config tools/joint_inference/configs/dual
   --steps 35 --seeds 93001 93002 93003 --output /tmp/policy-benchmark
 ```
 
-可另传 `--attention-policy policy.json`、`--ffn-policy ffn.json`、`--projection-config linear-spec.json`。FFN policy 兼容现有 `task|branch|phase|layer.part` 分配表，阶段边界固定为0/.2/.5/.8/1。规则并集决定捕获阶段，而不是只按 FFN 四个阶段粗分。
+可另传 `--attention-policy policy.json`、`--ffn-policy ffn.json --ffn-policy-mode auto50`、`--projection-config linear-spec.json`。FFN policy 兼容现有 `task|branch|phase|layer.part` 分配表，阶段边界固定为0/.2/.5/.8/1。规则并集决定捕获阶段，而不是只按 FFN 四个阶段粗分。
+
+例如下列 attention policy 只控制补项：layer 0、CFG branch 0 的前7步，head 0 全修复、head 1 不修复、其余 head 修复50%的 K128 blocks；其他位置默认25% ACT2。block 由当前 Q/K/V 选择，不沿用旧步输出。这只是配置示例，不是已经达到质量门槛的推荐。每项 rule 包含完整配置，不与 default 合并；第一条匹配的规则生效。
+
+```json
+{
+  "default": {"coverage": 0.25, "terms": 2},
+  "rules": [{
+    "layers": [0], "steps": [0, 7], "branches": ["0"],
+    "config": {"coverage": 0.5, "terms": 3, "head_budgets": [[0, 1.0], [1, 0.0]]}
+  }]
+}
+```
 
 `--execution graph|eager` 默认 graph。`--debug off|timing|trace` 默认 off。off 不注册诊断 hook、不创建诊断 CUDA Event、不收集轨迹。已知调度表保留 CPU，模型每轮仍接收当前 timestep 张量。域 ID 在每请求第一次 Transformer 调用时检查一次。timing 预分配 Event，记录编码、逐调用 Transformer、解码，结束后读取；trace 额外保存 GPU 摘要、修复 mask 和 NVTX。debug 模式不进入正式性能排行榜。
 
@@ -69,6 +81,8 @@ tw-cosmos infer --model "$MODEL" --assets /tmp/prepared/assets \
 
 资产 manifest 包含模型 config/index 身份、投影范围、每个文件 SHA256。W0 保留，W1 只存最终策略需要的支持并集；不足以支持新增预算时拒绝加载，必须重新准备。CPU 准备时展开，GPU 只保留所选 W1 block。全量 W1 的高预算方案实际接近双份 FP4 权重，不能宣称仍是单份 W4 存储。不同 A/M/cross 共用 W0，相同 W 支持共用 W1；多个不同非零 W 档位目前分别存储对应 GPU residual bank，尚非最小单一 bank。
 
+当前 loader 先载入原始 BF16 pipeline，再替换生成投影；导出资产免去再次量化，但尚未实现直接从打包权重构造整个 pipeline。因此暖机显存不代表启动峰值，也不能据此保证32GB 5090能够加载所有配置。本轮完整模型性能仅在96GB PRO 6000上验证。
+
 ```bash
 python tools/joint_inference/capture.py --help
 python tools/joint_inference/calibrate.py --help
@@ -80,6 +94,8 @@ python tools/joint_inference/calibrate_attention.py --help
 ## 可复现实验
 
 小输入可用 `python tools/optimization_handoff/prepare_inputs.py` 获取；模型直接下载到本机，不随数据包传递。`cases/` 使用相同场景、输入、CFG、分辨率和35步。validation 使用92001–92008；最终 quality 使用91001–91008。这是已有场景的新种子测试，不证明跨场景泛化。
+
+模型仓库与固定 revision 见 [models.json](models.json)，不可用后来更新的 `main` 替代本轮基线。仅需同步代码、`cases`、设备调优表和必要输入；模型与本机离线资产重新生成。更换 GPU 后原调优表会被拒绝，先运行 tuning 再 benchmark。各模型实际 safetensors 的 SHA256 已随报告归档。
 
 ```bash
 python tools/joint_inference/matrix.py --model "$MODEL" --model-name edge \
@@ -104,6 +120,8 @@ Nano 使用 `--model-name nano`；质量矩阵包含 four 与 four_dual_attentio
 `tune_ffn_tiers.py --model "$MODEL" --case tools/joint_inference/cases/policy_table.json --output /tmp/all-tiers` 使用真实请求覆盖 M416 上下投影的全部8种 FFN 修复档位；不把旧 M316 或合成 M416 的性能冒充实际请求测量。
 
 `cold` 记录从父进程启动到子进程完成 Graph 准备的时间，包含解释器/库导入；保留磁盘 kernel cache，不能当作全新环境首次编译时间。`verify_tuned.py` 将冻结调优后的35步输出与原始质量轨迹逐位对照；它只验证等价性，不重新选参。`archive.py` 保留原始数值行、每次加载/准备/显存测量及文件哈希，省去模型权重和视频/音频大文件。
+
+如果正式矩阵被独占检查中断，在同一 GPU 恢复空闲后运行 `python tools/joint_inference/resume.py /path/to/matrix.json`。它保留此前每次尝试，按原有随机顺序重测整个未完成轮次；不能把缺轮或混合设备的数据填入正式报告。
 
 质量检查严格按配对 bootstrap 95% CI：video LPIPS 改善且 SSIM/L2 不退化；policy 还需 action L2 改善且 RMSE 不退化；AV 还需 log-spectral error 改善且 waveform/sound latent L2 不退化。缺少任何指标即失败。没有通过的任务返回 null 推荐。
 

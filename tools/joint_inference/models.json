@@ -1,0 +1,10 @@
+{
+  "edge": {
+    "repo_id": "nvidia/Cosmos3-Edge",
+    "revision": "a9d944e2c6a1bf9f48b92ad16348e70c5f1836ba"
+  },
+  "nano": {
+    "repo_id": "nvidia/Cosmos3-Nano",
+    "revision": "411f42a8fdfb8c5b2583cb8786e0938f49796eaa"
+  }
+}

@@ -18,6 +18,20 @@ def idle_guard():
     if others:raise RuntimeError('Formal timing requires an idle GPU; competing PIDs: '+','.join(others))
 
 
+def policy_overrides(config,*,attention_policy=None,ffn_policy=None,ffn_policy_mode=None,projection_config=None):
+    """Parse independent policy files through the same schema as RunConfig."""
+    from dataclasses import replace
+    from .settings import RunConfig, LinearSpec
+    if attention_policy:
+        attention=RunConfig.from_dict({'attention':json.loads(Path(attention_policy).read_text())}).attention
+        config=replace(config,attention=attention)
+    if ffn_policy:config=replace(config,ffn_policy=str(Path(ffn_policy).resolve()))
+    if ffn_policy_mode is not None:config=replace(config,ffn_policy_mode=ffn_policy_mode)
+    if projection_config:
+        config=replace(config,projection=LinearSpec(**json.loads(Path(projection_config).read_text())))
+    return config
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('operation',choices=['prepare','warmup','infer','benchmark'])
@@ -32,6 +46,7 @@ def main():
     p.add_argument('--execution',choices=['graph','eager'])
     p.add_argument('--attention-policy',type=Path,help='Independent RepairPolicy JSON')
     p.add_argument('--ffn-policy',type=Path,help='Independent layer/phase FFN policy JSON')
+    p.add_argument('--ffn-policy-mode',help='Named policy in the FFN allocation file')
     p.add_argument('--projection-config',type=Path,help='Independent LinearSpec JSON')
     p.add_argument('--steps',type=int,default=35)
     p.add_argument('--seeds',type=int,nargs='+',default=[91001])
@@ -44,13 +59,8 @@ def main():
     from dataclasses import replace
     from .settings import RunConfig
     config=RunConfig.from_dict(json.loads(a.config.read_text()))
-    if a.attention_policy:
-        from thunderworld_fp4.config import RepairPolicy
-        config=replace(config,attention=RepairPolicy.from_dict(json.loads(a.attention_policy.read_text())))
-    if a.ffn_policy:config=replace(config,ffn_policy=str(a.ffn_policy.resolve()))
-    if a.projection_config:
-        from .settings import LinearSpec
-        config=replace(config,projection=LinearSpec(**json.loads(a.projection_config.read_text())))
+    config=policy_overrides(config,attention_policy=a.attention_policy,ffn_policy=a.ffn_policy,
+                            ffn_policy_mode=a.ffn_policy_mode,projection_config=a.projection_config)
     for field in ('debug','execution'):
         if getattr(a,field) is not None:config=replace(config,**{field:getattr(a,field)})
     if a.operation=='benchmark':

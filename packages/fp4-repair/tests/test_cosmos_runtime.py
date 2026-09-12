@@ -54,6 +54,18 @@ def test_host_schedule_matches_reference():
         assert torch.equal(host.sigmas,reference.sigmas)
 
 
+def test_explicit_mask_tuning_identity_separates_supports():
+    from thunderworld_fp4.cosmos.engine import attention_tuning_spec
+    from thunderworld_fp4 import RepairConfig
+    cfg=RepairConfig(coverage=1.)
+    assert attention_tuning_spec(cfg,None)==cfg.to_dict()
+    mask=torch.ones((2,2,3),dtype=torch.bool)
+    first=attention_tuning_spec(cfg,mask)
+    assert first==attention_tuning_spec(cfg,mask.clone())
+    mask[0,0,0]=False
+    assert first!=attention_tuning_spec(cfg,mask)
+
+
 @pytest.mark.skipif(not torch.cuda.is_available(),reason='SM120 GPU')
 @torch.inference_mode()
 def test_packed_linear_all_terms_and_graph():
@@ -187,6 +199,11 @@ def test_joint_graph_phases_heads_masks_and_owned_outputs(share_pack):
         saved.append((a,a.clone()))
     assert len(graph.cache)==2
     assert all(torch.equal(a,b) for a,b in saved)
+    for engine in (graph,eager):engine.reset_request(4,1,'i2v')
+    for step in range(4):
+        x.mul_(.9);t.add_(1)
+        assert torch.equal(graph(x=x,t=t)[0],eager(x=x,t=t)[0])
+    assert all(torch.equal(a,b) for a,b in saved)
     graph.reset_request(4,1,'new_task')
     with pytest.raises(RuntimeError,match='Unwarmed'):graph(x=x,t=t)
 
@@ -206,3 +223,15 @@ def test_attention_reload_residual_is_exact(coverage,terms):
     a=_forward(q,k,v,cfg)[0]
     b=_forward(q,k,v,replace(cfg,reload_q=True))[0]
     assert torch.equal(a,b)
+
+
+@pytest.mark.skipif(not torch.cuda.is_available(),reason='SM120 GPU')
+@torch.inference_mode()
+def test_zero_attention_with_tail_and_nonuniform_quota():
+    from thunderworld_fp4 import fp4_attention,RepairConfig
+    q=torch.zeros(1,129,4,128,device='cuda',dtype=torch.bfloat16)
+    k=torch.zeros(1,257,2,128,device='cuda',dtype=torch.bfloat16);v=torch.zeros_like(k)
+    for coverage,heads in ((0.,()),(.5,((0,0.),(1,1.))),(1.,())):
+        cfg=RepairConfig(coverage=coverage,terms=4,head_budgets=heads,reload_q=True,transpose_v=True)
+        y=fp4_attention(q,k,v,cfg)
+        assert torch.isfinite(y).all() and torch.equal(y,torch.zeros_like(y))

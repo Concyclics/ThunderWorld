@@ -194,9 +194,17 @@ class CosmosRunner:
     def benchmark(self,case,seeds,steps=35,audio_output='waveform'):
         if self.config.debug!='off':raise ValueError('Formal benchmark requires debug off')
         if not self.config.strict_tuning:raise ValueError('Formal benchmark requires strict_tuning')
+        from .cli import idle_guard
+        idle_guard()
         self.warmup(case,steps,audio_output)
         self.warm_request(case,steps,audio_output)
-        return [self.infer(case,seed,steps,audio_output)[1] for seed in seeds]
+        rows=[]
+        for seed in seeds:
+            idle_guard()
+            _,row=self.infer(case,seed,steps,audio_output)
+            idle_guard()
+            rows.append(row)
+        return rows
 
     def warm_request(self,case,steps=35,audio_output='waveform'):
         """One complete untabulated request after all compilation/capture."""

@@ -36,9 +36,10 @@ def main():
             y=_forward(q,k,v,cfg,repair_mask=mask)[0].float()
             benefits.append(baseline-(y-gold.float()).square().sum((0,1,3)))
         gains=torch.stack(benefits,1).cpu()
-        # Allocate an exact global padded-tile quota, using measured positive gain.
+        # Spend at most the requested quota; never propose measured harmful repairs.
         remaining=math.ceil(a.coverage*h*nb)
-        order=torch.argsort(gains.flatten(),descending=True,stable=True)[:remaining]
+        order=torch.argsort(gains.flatten(),descending=True,stable=True)
+        order=order[gains.flatten()[order]>0][:remaining]
         counts=torch.bincount(order//nb,minlength=h)
         ph=row['phase'];bounds=[0,7,18,28,35]
         budgets=[[i,(int(c)-.25)/nb if c else 0.] for i,c in enumerate(counts)]

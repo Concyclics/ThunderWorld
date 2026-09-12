@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import statistics
 import numpy as np
+from provenance import provenance as run_provenance
 
 
 def main():
@@ -20,8 +21,8 @@ def main():
         key=(job['case'],job['config'],job['audio_output'])
         rounds.setdefault(key,set()).add(job['round'])
         cfg=dict(r['config']);cfg.pop('strict_tuning',None)
-        provenance[job['case']+'|'+job['config']]=dict(config=cfg,model_identity=r['model_identity'],targets=r['targets'])
-        provenance[job['case']+'|'+job['config']].update({k:r.get(k) for k in ('asset_identity','ffn_policy_identity')})
+        provenance[job['case']+'|'+job['config']]=run_provenance(r)
+        provenance[job['case']+'|'+job['config']]['config']=cfg
         for v in r['rows']:
             if v['debug']!='off' or not v['performance_eligible']:raise ValueError('Diagnostic timing cannot enter leaderboard')
             if v.get('timing_scope')!='complete_request_v2_including_host_setup':
