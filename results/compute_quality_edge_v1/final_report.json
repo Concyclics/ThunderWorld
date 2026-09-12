@@ -1,0 +1,4076 @@
+{
+  "complete": true,
+  "scope": "edge i2v final new seeds on existing scenes; observed compute frontier only",
+  "performance_eligible": false,
+  "resource_mode": "shared-calibration",
+  "cohort_sha256": "f81fd6f900f55c0e9c2e270f9e8576dd997e9f2d48f6e1b460e9a60389ddbe1c",
+  "quality_sha256": "55ab19010cca8e389f0928561f381fcdb6870311d08ba3f6c6febf2594a6b18c",
+  "selection_sha256": "16102447d1553db786bbaa709fae6fb9c61a2b4f5e2c85582fab02da6585aa39",
+  "summaries": {
+    "control_b1_a": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3733161108897931,
+          "rmse": 0.18968490481617234,
+          "ssim_mean": 0.5826059114187956,
+          "lpips": 0.40671131097268864
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 36608409600,
+          "quantized_base_elements": 36608409600,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0,
+          "softmax_elements": 30828134400
+        },
+        "packing_traffic": {
+          "base_write_bytes": 20592230400,
+          "selected_residual_write_bytes": 0,
+          "input_read_bytes_minimum": 88935956480,
+          "residual_write_bytes": 0,
+          "base_code_scale_write_bytes": 4479713280,
+          "base_factor_write_bytes": 248872960,
+          "selected_residual_write_bytes_upper": 0
+        },
+        "w1_support_union_bytes": 0,
+        "schema_version": 1,
+        "budget": 1.0,
+        "steps": 35,
+        "branches": 2,
+        "base_mma": 217819266416640,
+        "total_mma": 217819266416640,
+        "ratio": 1.0,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 217819266416640,
+          "bf16": 0
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "ca98b80283e25115745477dd2e5f691b3b1e8c2f37ff86f251aaf22eb8fde8cf"
+      },
+      "prepared_weight_bytes": 794919104,
+      "resident_model_state_bytes": 6136662904,
+      "support_buffer_bytes": 170240,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5357096448,
+          "reserved_bytes": 8197767168
+        },
+        "after_warmup": {
+          "allocated_bytes": 6224413184,
+          "reserved_bytes": 7413432320,
+          "peak_allocated_bytes": 6848179200,
+          "peak_reserved_bytes": 9030336512
+        }
+      },
+      "request_peak_allocated_bytes": 6848179200,
+      "request_peak_reserved_bytes": 7413432320,
+      "live_non_model_allocated_after_warmup_bytes": 87750280,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "control_joint_b1.125_balanced": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.35123745506827486,
+          "rmse": 0.1784319646909995,
+          "ssim_mean": 0.6070187166333199,
+          "lpips": 0.36528411507224817
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 36608409600,
+          "quantized_base_elements": 36608409600,
+          "selected_residual_elements": 2167603200,
+          "selector_rank_pairs": 293027840,
+          "softmax_elements": 30828134400
+        },
+        "packing_traffic": {
+          "base_write_bytes": 20592230400,
+          "selected_residual_write_bytes": 1219276800,
+          "input_read_bytes_minimum": 88935956480,
+          "residual_write_bytes": 20592230400,
+          "base_code_scale_write_bytes": 4479713280,
+          "base_factor_write_bytes": 248872960,
+          "selected_residual_write_bytes_upper": 2239856640
+        },
+        "w1_support_union_bytes": 51093504,
+        "schema_version": 1,
+        "budget": 1.125,
+        "steps": 35,
+        "branches": 2,
+        "base_mma": 217819266416640,
+        "total_mma": 244980908032000,
+        "ratio": 1.1246980676328502,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 244915141345280,
+          "bf16": 65766686720
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "4d806e9e4678938386f28916aa2e03018b57387173f1710261f2b2619558d51b"
+      },
+      "prepared_weight_bytes": 846056960,
+      "resident_model_state_bytes": 6187800760,
+      "support_buffer_bytes": 170240,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6275062272,
+          "reserved_bytes": 7457472512,
+          "peak_allocated_bytes": 6897895424,
+          "peak_reserved_bytes": 9114222592
+        }
+      },
+      "request_peak_allocated_bytes": 6898527232,
+      "request_peak_reserved_bytes": 7457472512,
+      "live_non_model_allocated_after_warmup_bytes": 87261512,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {
+        "('i2v', 0, 0, 0)": {
+          "q_union": 0.5,
+          "k_union": 0.28125,
+          "v_union": 0.28125
+        },
+        "('i2v', 0, 0, 1)": {
+          "q_union": 0.5,
+          "k_union": 0.1875,
+          "v_union": 0.1875
+        },
+        "('i2v', 0, 0, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 0, 0, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.265625,
+          "v_union": 0.265625
+        },
+        "('i2v', 0, 0, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.171875,
+          "v_union": 0.171875
+        },
+        "('i2v', 0, 0, 5)": {
+          "q_union": 0.5,
+          "k_union": 0.328125,
+          "v_union": 0.328125
+        },
+        "('i2v', 0, 0, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 0, 0, 7)": {
+          "q_union": 0.5,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 0, 0, 8)": {
+          "q_union": 0.5,
+          "k_union": 0.1875,
+          "v_union": 0.1875
+        },
+        "('i2v', 0, 0, 9)": {
+          "q_union": 0.5,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 0, 0, 10)": {
+          "q_union": 0.5,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 0, 0, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.078125,
+          "v_union": 0.078125
+        },
+        "('i2v', 0, 0, 12)": {
+          "q_union": 0.5,
+          "k_union": 0.171875,
+          "v_union": 0.171875
+        },
+        "('i2v', 0, 0, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.109375,
+          "v_union": 0.109375
+        },
+        "('i2v', 0, 0, 14)": {
+          "q_union": 0.5,
+          "k_union": 0.1875,
+          "v_union": 0.1875
+        },
+        "('i2v', 0, 0, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.140625,
+          "v_union": 0.140625
+        },
+        "('i2v', 0, 0, 16)": {
+          "q_union": 0.5,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 0, 0, 17)": {
+          "q_union": 0.5,
+          "k_union": 0.265625,
+          "v_union": 0.265625
+        },
+        "('i2v', 0, 0, 18)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 0, 0, 19)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 0, 0, 20)": {
+          "q_union": 0.5,
+          "k_union": 0.1875,
+          "v_union": 0.1875
+        },
+        "('i2v', 0, 0, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.078125,
+          "v_union": 0.078125
+        },
+        "('i2v', 0, 0, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 0, 0, 23)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 0, 0, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.21875,
+          "v_union": 0.21875
+        },
+        "('i2v', 0, 0, 25)": {
+          "q_union": 0.5,
+          "k_union": 0.171875,
+          "v_union": 0.171875
+        },
+        "('i2v', 0, 0, 26)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 0, 0, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.1875,
+          "v_union": 0.1875
+        },
+        "('i2v', 1, 0, 0)": {
+          "q_union": 0.5,
+          "k_union": 0.296875,
+          "v_union": 0.296875
+        },
+        "('i2v', 1, 0, 1)": {
+          "q_union": 0.5,
+          "k_union": 0.1875,
+          "v_union": 0.1875
+        },
+        "('i2v', 1, 0, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 1, 0, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.265625,
+          "v_union": 0.265625
+        },
+        "('i2v', 1, 0, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.171875,
+          "v_union": 0.171875
+        },
+        "('i2v', 1, 0, 5)": {
+          "q_union": 0.5,
+          "k_union": 0.28125,
+          "v_union": 0.28125
+        },
+        "('i2v', 1, 0, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 1, 0, 7)": {
+          "q_union": 0.5,
+          "k_union": 0.1875,
+          "v_union": 0.1875
+        },
+        "('i2v', 1, 0, 8)": {
+          "q_union": 0.5,
+          "k_union": 0.171875,
+          "v_union": 0.171875
+        },
+        "('i2v', 1, 0, 9)": {
+          "q_union": 0.5,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 1, 0, 10)": {
+          "q_union": 0.5,
+          "k_union": 0.140625,
+          "v_union": 0.140625
+        },
+        "('i2v', 1, 0, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.09375,
+          "v_union": 0.09375
+        },
+        "('i2v', 1, 0, 12)": {
+          "q_union": 0.5,
+          "k_union": 0.203125,
+          "v_union": 0.203125
+        },
+        "('i2v', 1, 0, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 1, 0, 14)": {
+          "q_union": 0.5,
+          "k_union": 0.1875,
+          "v_union": 0.1875
+        },
+        "('i2v', 1, 0, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.140625,
+          "v_union": 0.140625
+        },
+        "('i2v', 1, 0, 16)": {
+          "q_union": 0.5,
+          "k_union": 0.140625,
+          "v_union": 0.140625
+        },
+        "('i2v', 1, 0, 17)": {
+          "q_union": 0.5,
+          "k_union": 0.265625,
+          "v_union": 0.265625
+        },
+        "('i2v', 1, 0, 18)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 1, 0, 19)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 1, 0, 20)": {
+          "q_union": 0.5,
+          "k_union": 0.265625,
+          "v_union": 0.265625
+        },
+        "('i2v', 1, 0, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.078125,
+          "v_union": 0.078125
+        },
+        "('i2v', 1, 0, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 1, 0, 23)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 1, 0, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 1, 0, 25)": {
+          "q_union": 0.5,
+          "k_union": 0.171875,
+          "v_union": 0.171875
+        },
+        "('i2v', 1, 0, 26)": {
+          "q_union": 0.5,
+          "k_union": 0.0625,
+          "v_union": 0.0625
+        },
+        "('i2v', 1, 0, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.125,
+          "v_union": 0.125
+        }
+      },
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "b1.25_grow_mixed": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3020367980945077,
+          "rmse": 0.15382982018395103,
+          "ssim_mean": 0.6924352049827576,
+          "lpips": 0.27486806897805305
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 36608409600,
+          "quantized_base_elements": 36608409600,
+          "selected_residual_elements": 7503298560,
+          "selector_rank_pairs": 18567168,
+          "base_reencoded_elements": 1542144000,
+          "softmax_elements": 30828134400
+        },
+        "packing_traffic": {
+          "base_write_bytes": 20592230400,
+          "selected_residual_write_bytes": 4220605440,
+          "input_read_bytes_minimum": 88935956480,
+          "residual_write_bytes": 4220605440,
+          "base_code_scale_write_bytes": 4479713280,
+          "base_factor_write_bytes": 248872960,
+          "selected_residual_write_bytes_upper": 3443668992
+        },
+        "w1_support_union_bytes": 90243072,
+        "schema_version": 1,
+        "budget": 1.25,
+        "steps": 35,
+        "branches": 2,
+        "base_mma": 217819266416640,
+        "total_mma": 272273210605568,
+        "ratio": 1.2499959947747215,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 272216369397760,
+          "bf16": 56841207808
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "1875854f3eb1c5047e77eef5bb538163c3b11975c19b6ed22963b6175c93f16b"
+      },
+      "prepared_weight_bytes": 885254352,
+      "resident_model_state_bytes": 6226998152,
+      "support_buffer_bytes": 198400,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6319144448,
+          "reserved_bytes": 7446986752,
+          "peak_allocated_bytes": 6941114368,
+          "peak_reserved_bytes": 9135194112
+        }
+      },
+      "request_peak_allocated_bytes": 6941114368,
+      "request_peak_reserved_bytes": 7446986752,
+      "live_non_model_allocated_after_warmup_bytes": 92146296,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {
+        "('i2v', 0, 0, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.171875,
+          "v_union": 0.171875
+        },
+        "('i2v', 0, 0, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 0, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 0, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.6875
+        },
+        "('i2v', 0, 0, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 0, 5)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 6)": {
+          "q_union": 1.0,
+          "k_union": 0.734375,
+          "v_union": 0.734375
+        },
+        "('i2v', 0, 0, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.296875,
+          "v_union": 0.296875
+        },
+        "('i2v', 0, 0, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.84375,
+          "v_union": 0.84375
+        },
+        "('i2v', 0, 0, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.328125,
+          "v_union": 0.328125
+        },
+        "('i2v', 0, 0, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 0, 0, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.59375,
+          "v_union": 0.703125
+        },
+        "('i2v', 0, 0, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 0, 0, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.71875
+        },
+        "('i2v', 0, 0, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 0, 0, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 0, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 0, 0, 17)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 0, 18)": {
+          "q_union": 0.5,
+          "k_union": 0.71875,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 0, 19)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 0, 20)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 0, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 0, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.234375,
+          "v_union": 0.328125
+        },
+        "('i2v', 0, 0, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.421875,
+          "v_union": 0.421875
+        },
+        "('i2v', 0, 0, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 0, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.25,
+          "v_union": 0.25
+        },
+        "('i2v', 0, 0, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 0, 0, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 1, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.171875,
+          "v_union": 0.1875
+        },
+        "('i2v', 0, 1, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.484375,
+          "v_union": 0.484375
+        },
+        "('i2v', 0, 1, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 1, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 1, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 1, 5)": {
+          "q_union": 0.5,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 1, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.578125,
+          "v_union": 0.59375
+        },
+        "('i2v', 0, 1, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 0, 1, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 0, 1, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.71875,
+          "v_union": 0.71875
+        },
+        "('i2v', 0, 1, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 1, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.6875,
+          "v_union": 0.6875
+        },
+        "('i2v', 0, 1, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.71875
+        },
+        "('i2v', 0, 1, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 1, 16)": {
+          "q_union": 0.5,
+          "k_union": 0.671875,
+          "v_union": 0.65625
+        },
+        "('i2v', 0, 1, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 18)": {
+          "q_union": 0.5,
+          "k_union": 0.640625,
+          "v_union": 0.5625
+        },
+        "('i2v', 0, 1, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 1, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.53125,
+          "v_union": 0.640625
+        },
+        "('i2v', 0, 1, 23)": {
+          "q_union": 0.5,
+          "k_union": 0.59375,
+          "v_union": 0.5625
+        },
+        "('i2v', 0, 1, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 1, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.25,
+          "v_union": 0.25
+        },
+        "('i2v', 0, 1, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 1, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 2, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.15625,
+          "v_union": 0.171875
+        },
+        "('i2v', 0, 2, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 2, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 2, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 2, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 2, 5)": {
+          "q_union": 0.5,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 2, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.578125,
+          "v_union": 0.59375
+        },
+        "('i2v', 0, 2, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.671875,
+          "v_union": 0.671875
+        },
+        "('i2v', 0, 2, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 0, 2, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 2, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 2, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 0, 2, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.71875
+        },
+        "('i2v', 0, 2, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 2, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.59375,
+          "v_union": 0.59375
+        },
+        "('i2v', 0, 2, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 18)": {
+          "q_union": 0.5,
+          "k_union": 0.875,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 2, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 2, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.53125,
+          "v_union": 0.65625
+        },
+        "('i2v', 0, 2, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.421875,
+          "v_union": 0.421875
+        },
+        "('i2v', 0, 2, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 2, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 2, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 2, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 3, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.15625,
+          "v_union": 0.171875
+        },
+        "('i2v', 0, 3, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 3, 2)": {
+          "q_union": 0.25,
+          "k_union": 0.375,
+          "v_union": 0.25
+        },
+        "('i2v', 0, 3, 3)": {
+          "q_union": 1.0,
+          "k_union": 0.890625,
+          "v_union": 0.890625
+        },
+        "('i2v', 0, 3, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 3, 5)": {
+          "q_union": 0.5,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 3, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.578125,
+          "v_union": 0.59375
+        },
+        "('i2v', 0, 3, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.640625,
+          "v_union": 0.640625
+        },
+        "('i2v', 0, 3, 8)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.71875
+        },
+        "('i2v', 0, 3, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.734375,
+          "v_union": 0.734375
+        },
+        "('i2v', 0, 3, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 3, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.6875,
+          "v_union": 0.6875
+        },
+        "('i2v', 0, 3, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.703125
+        },
+        "('i2v', 0, 3, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 3, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.5625,
+          "v_union": 0.5625
+        },
+        "('i2v', 0, 3, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 18)": {
+          "q_union": 0.5,
+          "k_union": 0.875,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 3, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 3, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.453125,
+          "v_union": 0.578125
+        },
+        "('i2v', 0, 3, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.46875,
+          "v_union": 0.46875
+        },
+        "('i2v', 0, 3, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 3, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.734375,
+          "v_union": 0.734375
+        },
+        "('i2v', 0, 3, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 3, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 0, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.15625,
+          "v_union": 0.140625
+        },
+        "('i2v', 1, 0, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.53125,
+          "v_union": 0.53125
+        },
+        "('i2v', 1, 0, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 0, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 0, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 0, 5)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.546875,
+          "v_union": 0.546875
+        },
+        "('i2v', 1, 0, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.546875,
+          "v_union": 0.546875
+        },
+        "('i2v', 1, 0, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 0, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.328125,
+          "v_union": 0.328125
+        },
+        "('i2v', 1, 0, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 0, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.609375,
+          "v_union": 0.71875
+        },
+        "('i2v', 1, 0, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.703125,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 0, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.609375,
+          "v_union": 0.734375
+        },
+        "('i2v', 1, 0, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 0, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 0, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.5625,
+          "v_union": 0.5625
+        },
+        "('i2v', 1, 0, 17)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 0, 18)": {
+          "q_union": 0.5,
+          "k_union": 0.765625,
+          "v_union": 0.65625
+        },
+        "('i2v', 1, 0, 19)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 0, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.953125,
+          "v_union": 0.953125
+        },
+        "('i2v', 1, 0, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 0, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.265625,
+          "v_union": 0.359375
+        },
+        "('i2v', 1, 0, 23)": {
+          "q_union": 0.5,
+          "k_union": 0.25,
+          "v_union": 0.21875
+        },
+        "('i2v', 1, 0, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 0, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 1, 0, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 1, 0, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 1, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.15625,
+          "v_union": 0.15625
+        },
+        "('i2v', 1, 1, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.515625,
+          "v_union": 0.515625
+        },
+        "('i2v', 1, 1, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 1, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 1, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 1, 5)": {
+          "q_union": 0.5,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 1, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.546875,
+          "v_union": 0.546875
+        },
+        "('i2v', 1, 1, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.546875,
+          "v_union": 0.546875
+        },
+        "('i2v', 1, 1, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 1, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 1, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 1, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 1, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.46875,
+          "v_union": 0.46875
+        },
+        "('i2v', 1, 1, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.71875
+        },
+        "('i2v', 1, 1, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 1, 16)": {
+          "q_union": 0.5,
+          "k_union": 0.671875,
+          "v_union": 0.671875
+        },
+        "('i2v', 1, 1, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 18)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.640625
+        },
+        "('i2v', 1, 1, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 1, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.59375,
+          "v_union": 0.6875
+        },
+        "('i2v', 1, 1, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.546875,
+          "v_union": 0.546875
+        },
+        "('i2v', 1, 1, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 1, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 1, 1, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 1, 1, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 2, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.15625,
+          "v_union": 0.15625
+        },
+        "('i2v', 1, 2, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.515625,
+          "v_union": 0.515625
+        },
+        "('i2v', 1, 2, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 2, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.6875
+        },
+        "('i2v', 1, 2, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 2, 5)": {
+          "q_union": 0.5,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 2, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.578125,
+          "v_union": 0.578125
+        },
+        "('i2v', 1, 2, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.546875,
+          "v_union": 0.546875
+        },
+        "('i2v', 1, 2, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.953125,
+          "v_union": 0.953125
+        },
+        "('i2v', 1, 2, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 2, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 2, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 1, 2, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 2, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 2, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.5625,
+          "v_union": 0.5625
+        },
+        "('i2v', 1, 2, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 18)": {
+          "q_union": 1.0,
+          "k_union": 0.4375,
+          "v_union": 0.4375
+        },
+        "('i2v', 1, 2, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.921875,
+          "v_union": 0.921875
+        },
+        "('i2v', 1, 2, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 2, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.609375,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 2, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.515625,
+          "v_union": 0.515625
+        },
+        "('i2v', 1, 2, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 2, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.71875,
+          "v_union": 0.71875
+        },
+        "('i2v', 1, 2, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.640625,
+          "v_union": 0.640625
+        },
+        "('i2v', 1, 2, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 3, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.15625,
+          "v_union": 0.15625
+        },
+        "('i2v', 1, 3, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.53125,
+          "v_union": 0.53125
+        },
+        "('i2v', 1, 3, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.546875,
+          "v_union": 0.453125
+        },
+        "('i2v', 1, 3, 3)": {
+          "q_union": 1.0,
+          "k_union": 0.828125,
+          "v_union": 0.828125
+        },
+        "('i2v', 1, 3, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 3, 5)": {
+          "q_union": 0.5,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 3, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.5625,
+          "v_union": 0.5625
+        },
+        "('i2v', 1, 3, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.5625,
+          "v_union": 0.5625
+        },
+        "('i2v', 1, 3, 8)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 3, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.640625,
+          "v_union": 0.640625
+        },
+        "('i2v', 1, 3, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 11)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 3, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.65625,
+          "v_union": 0.65625
+        },
+        "('i2v', 1, 3, 13)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.71875
+        },
+        "('i2v', 1, 3, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 1, 3, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 3, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.578125,
+          "v_union": 0.578125
+        },
+        "('i2v', 1, 3, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 18)": {
+          "q_union": 0.5,
+          "k_union": 0.875,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 3, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 21)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 3, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.546875,
+          "v_union": 0.671875
+        },
+        "('i2v', 1, 3, 23)": {
+          "q_union": 0.5,
+          "k_union": 0.59375,
+          "v_union": 0.59375
+        },
+        "('i2v', 1, 3, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 3, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.703125,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 3, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 1, 3, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        }
+      },
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "control_joint_b1.25_balanced": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3535493779566745,
+          "rmse": 0.17961757984973742,
+          "ssim_mean": 0.6266422495245934,
+          "lpips": 0.34441317448613895
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 36608409600,
+          "quantized_base_elements": 36608409600,
+          "selected_residual_elements": 3130982400,
+          "selector_rank_pairs": 293027840,
+          "softmax_elements": 30828134400
+        },
+        "packing_traffic": {
+          "base_write_bytes": 20592230400,
+          "selected_residual_write_bytes": 1761177600,
+          "input_read_bytes_minimum": 88935956480,
+          "residual_write_bytes": 20592230400,
+          "base_code_scale_write_bytes": 4479713280,
+          "base_factor_write_bytes": 248872960,
+          "selected_residual_write_bytes_upper": 4344238080
+        },
+        "w1_support_union_bytes": 97542144,
+        "schema_version": 1,
+        "budget": 1.25,
+        "steps": 35,
+        "branches": 2,
+        "base_mma": 217819266416640,
+        "total_mma": 262754355118080,
+        "ratio": 1.2062952898550725,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 262688588431360,
+          "bf16": 65766686720
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "9d069badded6632bd5062f939d998155d887f223897130814e8984dd55eac20b"
+      },
+      "prepared_weight_bytes": 892545920,
+      "resident_model_state_bytes": 6234289720,
+      "support_buffer_bytes": 170240,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6331877888,
+          "reserved_bytes": 7438598144,
+          "peak_allocated_bytes": 6954543104,
+          "peak_reserved_bytes": 9095348224
+        }
+      },
+      "request_peak_allocated_bytes": 6953208832,
+      "request_peak_reserved_bytes": 7438598144,
+      "live_non_model_allocated_after_warmup_bytes": 97588168,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {
+        "('i2v', 0, 0, 0)": {
+          "q_union": 0.9375,
+          "k_union": 0.515625,
+          "v_union": 0.515625
+        },
+        "('i2v', 0, 0, 1)": {
+          "q_union": 0.9375,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 0, 2)": {
+          "q_union": 0.9375,
+          "k_union": 0.296875,
+          "v_union": 0.296875
+        },
+        "('i2v', 0, 0, 3)": {
+          "q_union": 0.9375,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 0, 4)": {
+          "q_union": 0.9375,
+          "k_union": 0.390625,
+          "v_union": 0.390625
+        },
+        "('i2v', 0, 0, 5)": {
+          "q_union": 0.9375,
+          "k_union": 0.53125,
+          "v_union": 0.53125
+        },
+        "('i2v', 0, 0, 6)": {
+          "q_union": 0.9375,
+          "k_union": 0.40625,
+          "v_union": 0.40625
+        },
+        "('i2v', 0, 0, 7)": {
+          "q_union": 0.9375,
+          "k_union": 0.296875,
+          "v_union": 0.296875
+        },
+        "('i2v', 0, 0, 8)": {
+          "q_union": 0.9375,
+          "k_union": 0.21875,
+          "v_union": 0.21875
+        },
+        "('i2v', 0, 0, 9)": {
+          "q_union": 0.9375,
+          "k_union": 0.25,
+          "v_union": 0.25
+        },
+        "('i2v', 0, 0, 10)": {
+          "q_union": 0.9375,
+          "k_union": 0.453125,
+          "v_union": 0.453125
+        },
+        "('i2v', 0, 0, 11)": {
+          "q_union": 0.9375,
+          "k_union": 0.28125,
+          "v_union": 0.28125
+        },
+        "('i2v', 0, 0, 12)": {
+          "q_union": 0.9375,
+          "k_union": 0.34375,
+          "v_union": 0.34375
+        },
+        "('i2v', 0, 0, 13)": {
+          "q_union": 0.9375,
+          "k_union": 0.328125,
+          "v_union": 0.328125
+        },
+        "('i2v', 0, 0, 14)": {
+          "q_union": 0.9375,
+          "k_union": 0.34375,
+          "v_union": 0.34375
+        },
+        "('i2v', 0, 0, 15)": {
+          "q_union": 0.9375,
+          "k_union": 0.28125,
+          "v_union": 0.28125
+        },
+        "('i2v', 0, 0, 16)": {
+          "q_union": 0.9375,
+          "k_union": 0.28125,
+          "v_union": 0.28125
+        },
+        "('i2v', 0, 0, 17)": {
+          "q_union": 0.9375,
+          "k_union": 0.375,
+          "v_union": 0.375
+        },
+        "('i2v', 0, 0, 18)": {
+          "q_union": 0.9375,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 0, 0, 19)": {
+          "q_union": 0.9375,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 0, 0, 20)": {
+          "q_union": 0.9375,
+          "k_union": 0.359375,
+          "v_union": 0.359375
+        },
+        "('i2v', 0, 0, 21)": {
+          "q_union": 0.9375,
+          "k_union": 0.15625,
+          "v_union": 0.15625
+        },
+        "('i2v', 0, 0, 22)": {
+          "q_union": 0.9375,
+          "k_union": 0.140625,
+          "v_union": 0.140625
+        },
+        "('i2v', 0, 0, 23)": {
+          "q_union": 0.9375,
+          "k_union": 0.140625,
+          "v_union": 0.140625
+        },
+        "('i2v', 0, 0, 24)": {
+          "q_union": 0.9375,
+          "k_union": 0.328125,
+          "v_union": 0.328125
+        },
+        "('i2v', 0, 0, 25)": {
+          "q_union": 0.9375,
+          "k_union": 0.25,
+          "v_union": 0.25
+        },
+        "('i2v', 0, 0, 26)": {
+          "q_union": 0.9375,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 0, 0, 27)": {
+          "q_union": 0.9375,
+          "k_union": 0.265625,
+          "v_union": 0.265625
+        },
+        "('i2v', 1, 0, 0)": {
+          "q_union": 0.9375,
+          "k_union": 0.46875,
+          "v_union": 0.46875
+        },
+        "('i2v', 1, 0, 1)": {
+          "q_union": 0.9375,
+          "k_union": 0.515625,
+          "v_union": 0.515625
+        },
+        "('i2v', 1, 0, 2)": {
+          "q_union": 0.9375,
+          "k_union": 0.296875,
+          "v_union": 0.296875
+        },
+        "('i2v', 1, 0, 3)": {
+          "q_union": 0.9375,
+          "k_union": 0.546875,
+          "v_union": 0.546875
+        },
+        "('i2v', 1, 0, 4)": {
+          "q_union": 0.9375,
+          "k_union": 0.390625,
+          "v_union": 0.390625
+        },
+        "('i2v', 1, 0, 5)": {
+          "q_union": 0.9375,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 0, 6)": {
+          "q_union": 0.9375,
+          "k_union": 0.390625,
+          "v_union": 0.390625
+        },
+        "('i2v', 1, 0, 7)": {
+          "q_union": 0.9375,
+          "k_union": 0.34375,
+          "v_union": 0.34375
+        },
+        "('i2v', 1, 0, 8)": {
+          "q_union": 0.9375,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 1, 0, 9)": {
+          "q_union": 0.9375,
+          "k_union": 0.296875,
+          "v_union": 0.296875
+        },
+        "('i2v', 1, 0, 10)": {
+          "q_union": 0.9375,
+          "k_union": 0.421875,
+          "v_union": 0.421875
+        },
+        "('i2v', 1, 0, 11)": {
+          "q_union": 0.9375,
+          "k_union": 0.328125,
+          "v_union": 0.328125
+        },
+        "('i2v', 1, 0, 12)": {
+          "q_union": 0.9375,
+          "k_union": 0.375,
+          "v_union": 0.375
+        },
+        "('i2v', 1, 0, 13)": {
+          "q_union": 0.9375,
+          "k_union": 0.359375,
+          "v_union": 0.359375
+        },
+        "('i2v', 1, 0, 14)": {
+          "q_union": 0.9375,
+          "k_union": 0.265625,
+          "v_union": 0.265625
+        },
+        "('i2v', 1, 0, 15)": {
+          "q_union": 0.9375,
+          "k_union": 0.21875,
+          "v_union": 0.21875
+        },
+        "('i2v', 1, 0, 16)": {
+          "q_union": 0.9375,
+          "k_union": 0.328125,
+          "v_union": 0.328125
+        },
+        "('i2v', 1, 0, 17)": {
+          "q_union": 0.9375,
+          "k_union": 0.4375,
+          "v_union": 0.4375
+        },
+        "('i2v', 1, 0, 18)": {
+          "q_union": 0.9375,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 1, 0, 19)": {
+          "q_union": 0.9375,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 1, 0, 20)": {
+          "q_union": 0.9375,
+          "k_union": 0.453125,
+          "v_union": 0.453125
+        },
+        "('i2v', 1, 0, 21)": {
+          "q_union": 0.9375,
+          "k_union": 0.140625,
+          "v_union": 0.140625
+        },
+        "('i2v', 1, 0, 22)": {
+          "q_union": 0.9375,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 1, 0, 23)": {
+          "q_union": 0.9375,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('i2v', 1, 0, 24)": {
+          "q_union": 0.9375,
+          "k_union": 0.34375,
+          "v_union": 0.34375
+        },
+        "('i2v', 1, 0, 25)": {
+          "q_union": 0.9375,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 1, 0, 26)": {
+          "q_union": 0.9375,
+          "k_union": 0.234375,
+          "v_union": 0.234375
+        },
+        "('i2v', 1, 0, 27)": {
+          "q_union": 0.9375,
+          "k_union": 0.1875,
+          "v_union": 0.1875
+        }
+      },
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "b1.5_refined": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2960642401587438,
+          "rmse": 0.15062381797909058,
+          "ssim_mean": 0.7072492726147175,
+          "lpips": 0.2647631154748703
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 36608409600,
+          "quantized_base_elements": 36608409600,
+          "selected_residual_elements": 13088931840,
+          "selector_rank_pairs": 11352064,
+          "base_reencoded_elements": 1123368960,
+          "softmax_elements": 30828134400
+        },
+        "packing_traffic": {
+          "base_write_bytes": 20592230400,
+          "selected_residual_write_bytes": 7362524160,
+          "input_read_bytes_minimum": 88935956480,
+          "residual_write_bytes": 7362524160,
+          "base_code_scale_write_bytes": 4479713280,
+          "base_factor_write_bytes": 248872960,
+          "selected_residual_write_bytes_upper": 4041123840
+        },
+        "w1_support_union_bytes": 194605056,
+        "schema_version": 1,
+        "budget": 1.5,
+        "steps": 35,
+        "branches": 2,
+        "base_mma": 217819266416640,
+        "total_mma": 326728731852800,
+        "ratio": 1.4999992297643696,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 326694271451136,
+          "bf16": 34460401664
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "17454ed859b4fc5d6dea257e24bb20d262bb477df24301cbcd30685b56c640e3"
+      },
+      "prepared_weight_bytes": 989721356,
+      "resident_model_state_bytes": 6331465156,
+      "support_buffer_bytes": 227200,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6430178816,
+          "reserved_bytes": 7499415552,
+          "peak_allocated_bytes": 7055605760,
+          "peak_reserved_bytes": 9154068480
+        }
+      },
+      "request_peak_allocated_bytes": 7054295040,
+      "request_peak_reserved_bytes": 7499415552,
+      "live_non_model_allocated_after_warmup_bytes": 98713660,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {
+        "('i2v', 0, 0, 0)": {
+          "q_union": 0.5,
+          "k_union": 0.53125,
+          "v_union": 0.4375
+        },
+        "('i2v', 0, 0, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.921875,
+          "v_union": 0.921875
+        },
+        "('i2v', 0, 0, 2)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 0, 4)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 5)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 6)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 0, 0, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 0, 0, 8)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.71875,
+          "v_union": 0.71875
+        },
+        "('i2v', 0, 0, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.9375,
+          "v_union": 0.9375
+        },
+        "('i2v', 0, 0, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 0, 0, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 0, 0, 13)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 15)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.921875,
+          "v_union": 0.921875
+        },
+        "('i2v', 0, 0, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.53125,
+          "v_union": 0.65625
+        },
+        "('i2v', 0, 0, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.921875,
+          "v_union": 0.921875
+        },
+        "('i2v', 0, 0, 24)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 0, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.765625,
+          "v_union": 0.765625
+        },
+        "('i2v', 0, 0, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.59375,
+          "v_union": 0.59375
+        },
+        "('i2v', 0, 0, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 1, 0)": {
+          "q_union": 0.5,
+          "k_union": 0.53125,
+          "v_union": 0.4375
+        },
+        "('i2v', 0, 1, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.78125,
+          "v_union": 0.78125
+        },
+        "('i2v', 0, 1, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 1, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 1, 4)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 5)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 1, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 0, 1, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 0, 1, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 0, 1, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 11)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 0, 1, 13)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 15)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.921875,
+          "v_union": 0.921875
+        },
+        "('i2v', 0, 1, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 1, 23)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 24)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 1, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.765625,
+          "v_union": 0.765625
+        },
+        "('i2v', 0, 1, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 0, 1, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 2, 0)": {
+          "q_union": 0.5,
+          "k_union": 0.390625,
+          "v_union": 0.375
+        },
+        "('i2v', 0, 2, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.78125,
+          "v_union": 0.78125
+        },
+        "('i2v', 0, 2, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 2, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 2, 4)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 5)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 2, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 0, 2, 8)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.953125,
+          "v_union": 0.953125
+        },
+        "('i2v', 0, 2, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 11)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.953125,
+          "v_union": 0.953125
+        },
+        "('i2v', 0, 2, 13)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 15)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 16)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 2, 23)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 2, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 2, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.9375,
+          "v_union": 0.9375
+        },
+        "('i2v', 0, 2, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.9375,
+          "v_union": 0.9375
+        },
+        "('i2v', 0, 2, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 3, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.15625,
+          "v_union": 0.171875
+        },
+        "('i2v', 0, 3, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.78125,
+          "v_union": 0.78125
+        },
+        "('i2v', 0, 3, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 0, 3, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 3, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 3, 5)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 3, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 0, 3, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 0, 3, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 0, 3, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 11)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 12)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 13)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 15)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 16)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 3, 23)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 0, 3, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 3, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.9375,
+          "v_union": 0.9375
+        },
+        "('i2v', 0, 3, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.9375,
+          "v_union": 0.9375
+        },
+        "('i2v', 0, 3, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 0, 0)": {
+          "q_union": 0.5,
+          "k_union": 0.484375,
+          "v_union": 0.421875
+        },
+        "('i2v', 1, 0, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.90625,
+          "v_union": 0.90625
+        },
+        "('i2v', 1, 0, 2)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 0, 4)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 5)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.578125,
+          "v_union": 0.578125
+        },
+        "('i2v', 1, 0, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 1, 0, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 0, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 0, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 1, 0, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 0, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.59375,
+          "v_union": 0.59375
+        },
+        "('i2v', 1, 0, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.9375,
+          "v_union": 0.9375
+        },
+        "('i2v', 1, 0, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 15)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 0, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.546875,
+          "v_union": 0.671875
+        },
+        "('i2v', 1, 0, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.9375,
+          "v_union": 0.9375
+        },
+        "('i2v', 1, 0, 24)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 0, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 0, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.59375,
+          "v_union": 0.59375
+        },
+        "('i2v', 1, 0, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 1, 0)": {
+          "q_union": 0.5,
+          "k_union": 0.40625,
+          "v_union": 0.34375
+        },
+        "('i2v', 1, 1, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.703125,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 1, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 1, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 1, 4)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 5)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 1, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 1, 1, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 1, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.953125,
+          "v_union": 0.953125
+        },
+        "('i2v', 1, 1, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 11)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 12)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 13)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 15)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 1, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 1, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.90625,
+          "v_union": 0.90625
+        },
+        "('i2v', 1, 1, 24)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 1, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.734375,
+          "v_union": 0.734375
+        },
+        "('i2v', 1, 1, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.5625,
+          "v_union": 0.5625
+        },
+        "('i2v', 1, 1, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 2, 0)": {
+          "q_union": 0.5,
+          "k_union": 0.40625,
+          "v_union": 0.34375
+        },
+        "('i2v', 1, 2, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.734375,
+          "v_union": 0.734375
+        },
+        "('i2v', 1, 2, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 2, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 2, 4)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 5)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 2, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 1, 2, 8)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.9375,
+          "v_union": 0.9375
+        },
+        "('i2v', 1, 2, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 11)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.96875,
+          "v_union": 0.96875
+        },
+        "('i2v', 1, 2, 13)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 15)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 16)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 2, 23)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 2, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 2, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.703125,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 2, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 1, 2, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 3, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 3, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.71875,
+          "v_union": 0.71875
+        },
+        "('i2v', 1, 3, 2)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 3, 3)": {
+          "q_union": 1.0,
+          "k_union": 0.828125,
+          "v_union": 0.828125
+        },
+        "('i2v', 1, 3, 4)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 3, 5)": {
+          "q_union": 0.5,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('i2v', 1, 3, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 3, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.984375,
+          "v_union": 0.984375
+        },
+        "('i2v', 1, 3, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.953125,
+          "v_union": 0.953125
+        },
+        "('i2v', 1, 3, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 3, 10)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 11)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 12)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 13)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 14)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 15)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 3, 16)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 17)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 19)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 20)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 3, 23)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('i2v', 1, 3, 24)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 3, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.875,
+          "v_union": 0.875
+        },
+        "('i2v', 1, 3, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.875,
+          "v_union": 0.875
+        },
+        "('i2v', 1, 3, 27)": {
+          "q_union": 0.5,
+          "k_union": 0.75,
+          "v_union": 0.75
+        }
+      },
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "control_joint_b1.5_balanced": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3451778328990884,
+          "rmse": 0.17553948289280008,
+          "ssim_mean": 0.6471991613507271,
+          "lpips": 0.3307897822481015
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 36608409600,
+          "quantized_base_elements": 36608409600,
+          "selected_residual_elements": 7707033600,
+          "selector_rank_pairs": 293027840,
+          "softmax_elements": 30828134400
+        },
+        "packing_traffic": {
+          "base_write_bytes": 20592230400,
+          "selected_residual_write_bytes": 4335206400,
+          "input_read_bytes_minimum": 88935956480,
+          "residual_write_bytes": 20592230400,
+          "base_code_scale_write_bytes": 4479713280,
+          "base_factor_write_bytes": 248872960,
+          "selected_residual_write_bytes_upper": 4479713280
+        },
+        "w1_support_union_bytes": 196632576,
+        "schema_version": 1,
+        "budget": 1.5,
+        "steps": 35,
+        "branches": 2,
+        "base_mma": 217819266416640,
+        "total_mma": 317209171722240,
+        "ratio": 1.4562952898550725,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 317143405035520,
+          "bf16": 65766686720
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "3f146c295b68220c695a18eb5db25b8ec302254afc9fcf974f0a5133ea183ffa"
+      },
+      "prepared_weight_bytes": 991722368,
+      "resident_model_state_bytes": 6333466168,
+      "support_buffer_bytes": 170240,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6417480192,
+          "reserved_bytes": 7472152576,
+          "peak_allocated_bytes": 7043853312,
+          "peak_reserved_bytes": 9126805504
+        }
+      },
+      "request_peak_allocated_bytes": 7043853312,
+      "request_peak_reserved_bytes": 7472152576,
+      "live_non_model_allocated_after_warmup_bytes": 84014024,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {
+        "('i2v', 0, 0, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.6875,
+          "v_union": 0.6875
+        },
+        "('i2v', 0, 0, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.78125,
+          "v_union": 0.78125
+        },
+        "('i2v', 0, 0, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 0, 3)": {
+          "q_union": 1.0,
+          "k_union": 0.890625,
+          "v_union": 0.890625
+        },
+        "('i2v', 0, 0, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.828125,
+          "v_union": 0.828125
+        },
+        "('i2v', 0, 0, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.8125,
+          "v_union": 0.8125
+        },
+        "('i2v', 0, 0, 6)": {
+          "q_union": 1.0,
+          "k_union": 0.734375,
+          "v_union": 0.734375
+        },
+        "('i2v', 0, 0, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.59375,
+          "v_union": 0.59375
+        },
+        "('i2v', 0, 0, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.8125,
+          "v_union": 0.8125
+        },
+        "('i2v', 0, 0, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 0, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 0, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.703125,
+          "v_union": 0.703125
+        },
+        "('i2v', 0, 0, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 0, 0, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.734375,
+          "v_union": 0.734375
+        },
+        "('i2v', 0, 0, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.6875,
+          "v_union": 0.6875
+        },
+        "('i2v', 0, 0, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.734375,
+          "v_union": 0.734375
+        },
+        "('i2v', 0, 0, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.59375,
+          "v_union": 0.59375
+        },
+        "('i2v', 0, 0, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.8125,
+          "v_union": 0.8125
+        },
+        "('i2v', 0, 0, 18)": {
+          "q_union": 1.0,
+          "k_union": 0.390625,
+          "v_union": 0.390625
+        },
+        "('i2v', 0, 0, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.375,
+          "v_union": 0.375
+        },
+        "('i2v', 0, 0, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.671875,
+          "v_union": 0.671875
+        },
+        "('i2v', 0, 0, 21)": {
+          "q_union": 1.0,
+          "k_union": 0.484375,
+          "v_union": 0.484375
+        },
+        "('i2v', 0, 0, 22)": {
+          "q_union": 1.0,
+          "k_union": 0.515625,
+          "v_union": 0.515625
+        },
+        "('i2v', 0, 0, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.40625,
+          "v_union": 0.40625
+        },
+        "('i2v', 0, 0, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 0, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 0, 0, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 0, 0, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.671875,
+          "v_union": 0.671875
+        },
+        "('i2v', 1, 0, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.6875,
+          "v_union": 0.6875
+        },
+        "('i2v', 1, 0, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.703125,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 0, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.78125,
+          "v_union": 0.78125
+        },
+        "('i2v', 1, 0, 3)": {
+          "q_union": 1.0,
+          "k_union": 0.8125,
+          "v_union": 0.8125
+        },
+        "('i2v', 1, 0, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.828125,
+          "v_union": 0.828125
+        },
+        "('i2v', 1, 0, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.8125,
+          "v_union": 0.8125
+        },
+        "('i2v', 1, 0, 6)": {
+          "q_union": 1.0,
+          "k_union": 0.65625,
+          "v_union": 0.65625
+        },
+        "('i2v', 1, 0, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.578125,
+          "v_union": 0.578125
+        },
+        "('i2v', 1, 0, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.6875,
+          "v_union": 0.6875
+        },
+        "('i2v', 1, 0, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('i2v', 1, 0, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.734375,
+          "v_union": 0.734375
+        },
+        "('i2v', 1, 0, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.671875,
+          "v_union": 0.671875
+        },
+        "('i2v', 1, 0, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.59375,
+          "v_union": 0.59375
+        },
+        "('i2v', 1, 0, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.78125,
+          "v_union": 0.78125
+        },
+        "('i2v', 1, 0, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('i2v', 1, 0, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.671875,
+          "v_union": 0.671875
+        },
+        "('i2v', 1, 0, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 1, 0, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.828125,
+          "v_union": 0.828125
+        },
+        "('i2v', 1, 0, 18)": {
+          "q_union": 1.0,
+          "k_union": 0.375,
+          "v_union": 0.375
+        },
+        "('i2v', 1, 0, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.34375,
+          "v_union": 0.34375
+        },
+        "('i2v', 1, 0, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.703125,
+          "v_union": 0.703125
+        },
+        "('i2v', 1, 0, 21)": {
+          "q_union": 1.0,
+          "k_union": 0.46875,
+          "v_union": 0.46875
+        },
+        "('i2v', 1, 0, 22)": {
+          "q_union": 1.0,
+          "k_union": 0.5625,
+          "v_union": 0.5625
+        },
+        "('i2v', 1, 0, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.5625,
+          "v_union": 0.5625
+        },
+        "('i2v', 1, 0, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.609375,
+          "v_union": 0.609375
+        },
+        "('i2v', 1, 0, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.71875,
+          "v_union": 0.71875
+        },
+        "('i2v', 1, 0, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.546875,
+          "v_union": 0.546875
+        },
+        "('i2v', 1, 0, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.671875,
+          "v_union": 0.671875
+        }
+      },
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "bf16": {
+      "metrics": {},
+      "compute": null,
+      "prepared_weight_bytes": 0,
+      "resident_model_state_bytes": 8158137016,
+      "support_buffer_bytes": 0,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 8192146944,
+          "reserved_bytes": 8227127296
+        },
+        "after_warmup": {
+          "allocated_bytes": 8194802176,
+          "reserved_bytes": 9315549184,
+          "peak_allocated_bytes": 8812626944,
+          "peak_reserved_bytes": 9315549184
+        }
+      },
+      "request_peak_allocated_bytes": 8812311552,
+      "request_peak_reserved_bytes": 9315549184,
+      "live_non_model_allocated_after_warmup_bytes": 36665160,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "bf16",
+      "attention": "bf16"
+    },
+    "fp8": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.24101438343373888,
+          "rmse": 0.12282081146508038,
+          "ssim_mean": 0.7861607372760773,
+          "lpips": 0.17622778510324633
+        }
+      },
+      "compute": null,
+      "prepared_weight_bytes": 1409286816,
+      "resident_model_state_bytes": 6748851544,
+      "support_buffer_bytes": 0,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 6783921664,
+          "reserved_bytes": 8246001664
+        },
+        "after_warmup": {
+          "allocated_bytes": 6786576896,
+          "reserved_bytes": 7944011776,
+          "peak_allocated_bytes": 7404946432,
+          "peak_reserved_bytes": 8352956416
+        }
+      },
+      "request_peak_allocated_bytes": 7404946432,
+      "request_peak_reserved_bytes": 7946108928,
+      "live_non_model_allocated_after_warmup_bytes": 37725352,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp8",
+      "attention": "bf16"
+    },
+    "fp4": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3733161108897931,
+          "rmse": 0.18968490481617234,
+          "ssim_mean": 0.5826059114187956,
+          "lpips": 0.40671131097268864
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 36608409600,
+          "quantized_base_elements": 36608409600,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0,
+          "softmax_elements": 30828134400
+        },
+        "packing_traffic": {
+          "base_write_bytes": 20592230400,
+          "selected_residual_write_bytes": 0,
+          "input_read_bytes_minimum": 88935956480,
+          "residual_write_bytes": 0,
+          "base_code_scale_write_bytes": 4479713280,
+          "base_factor_write_bytes": 248872960,
+          "selected_residual_write_bytes_upper": 0
+        },
+        "w1_support_union_bytes": 0,
+        "schema_version": 1,
+        "budget": 1.0,
+        "steps": 35,
+        "branches": 2,
+        "base_mma": 217819266416640,
+        "total_mma": 217819266416640,
+        "ratio": 1.0,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 217819266416640,
+          "bf16": 0
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "ca98b80283e25115745477dd2e5f691b3b1e8c2f37ff86f251aaf22eb8fde8cf"
+      },
+      "prepared_weight_bytes": 794919104,
+      "resident_model_state_bytes": 6136662904,
+      "support_buffer_bytes": 170240,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6227728896,
+          "reserved_bytes": 7405043712,
+          "peak_allocated_bytes": 6852111360,
+          "peak_reserved_bytes": 9061793792
+        }
+      },
+      "request_peak_allocated_bytes": 6852111360,
+      "request_peak_reserved_bytes": 7405043712,
+      "live_non_model_allocated_after_warmup_bytes": 91065992,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "full_dual": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.18748180467589592,
+          "rmse": 0.09555822022252418,
+          "ssim_mean": 0.8318133242428303,
+          "lpips": 0.12656074078374524
+        }
+      },
+      "compute": null,
+      "prepared_weight_bytes": 1587986624,
+      "resident_model_state_bytes": 6929730424,
+      "support_buffer_bytes": 170240,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 7047166464,
+          "reserved_bytes": 8090812416,
+          "peak_allocated_bytes": 7669398528,
+          "peak_reserved_bytes": 8493465600
+        }
+      },
+      "request_peak_allocated_bytes": 7669398528,
+      "request_peak_reserved_bytes": 8090812416,
+      "live_non_model_allocated_after_warmup_bytes": 117436040,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4",
+      "analytical_anchor_mma": {
+        "base_mma": 217819266416640,
+        "total_mma": 653457799249920,
+        "ratio": 3.0,
+        "mma_by_dtype": {
+          "fp4": 653457799249920,
+          "bf16": 0
+        },
+        "scope": "Derived full dual cost: matched observed FP4 tiles, base plus both first-order terms, no selector/cross; outside the four budgets"
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "budget": 1.0,
+      "selected": "control_b1_a",
+      "control": "control_b1_a",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Paired consistency against the validation-selected uncalibrated control at the same compute cap"
+      },
+      "fp8_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.2304835258694423,
+            "worst_seed_difference": 0.4016248861969006,
+            "ci95": [
+              0.19113991168024308,
+              0.27168997539898915
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.20355482585728168,
+            "worst_seed_difference": -0.3039827346801758
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.13230172745605426,
+            "worst_seed_difference": 0.3091049053471467
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Per-task BF16 consistency versus FP8, not task success"
+      },
+      "actual_mma_ratios": {
+        "selected": 1.0,
+        "control": 1.0
+      },
+      "comparison_scope": "Same hard cap; actual issued MMA can differ due to allocation and integer quotas"
+    },
+    {
+      "budget": 1.125,
+      "selected": "control_joint_b1.125_balanced",
+      "control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Paired consistency against the validation-selected uncalibrated control at the same compute cap"
+      },
+      "fp8_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.1890563299690018,
+            "worst_seed_difference": 0.4217193238818865,
+            "ci95": [
+              0.1379600182469269,
+              0.2424614452347758
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.17914202064275742,
+            "worst_seed_difference": -0.4318077564239502
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.11022307163453605,
+            "worst_seed_difference": 0.26227709041374414
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Per-task BF16 consistency versus FP8, not task success"
+      },
+      "actual_mma_ratios": {
+        "selected": 1.1246980676328502,
+        "control": 1.1246980676328502
+      },
+      "comparison_scope": "Same hard cap; actual issued MMA can differ due to allocation and integer quotas"
+    },
+    {
+      "budget": 1.25,
+      "selected": "b1.25_grow_mixed",
+      "control": "control_joint_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": true,
+        "failures": [],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.06954510550808589,
+            "worst_seed_difference": 0.11873911415822191,
+            "ci95": [
+              -0.11880552148490334,
+              -0.02330180670799819
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.06579295545816422,
+            "worst_seed_difference": -0.05364745855331421
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.05151257986216683,
+            "worst_seed_difference": 0.036769984797294875
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Paired consistency against the validation-selected uncalibrated control at the same compute cap"
+      },
+      "fp8_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.09864028387480667,
+            "worst_seed_difference": 0.29504206617836093,
+            "ci95": [
+              0.06181236109448231,
+              0.13705100678458532
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.0937255322933197,
+            "worst_seed_difference": -0.18482136726379395
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.06102241466076884,
+            "worst_seed_difference": 0.16489938455062
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Per-task BF16 consistency versus FP8, not task success"
+      },
+      "actual_mma_ratios": {
+        "selected": 1.2499959947747215,
+        "control": 1.2062952898550725
+      },
+      "comparison_scope": "Same hard cap; actual issued MMA can differ due to allocation and integer quotas"
+    },
+    {
+      "budget": 1.5,
+      "selected": "b1.5_refined",
+      "control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": true,
+        "failures": [],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.06602666677323124,
+            "worst_seed_difference": 0.013434250640576018,
+            "ci95": [
+              -0.1031355451265747,
+              -0.03653642065335471
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0600501112639904,
+            "worst_seed_difference": -0.005251884460449219
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.04911359274034458,
+            "worst_seed_difference": 0.0260622436788725
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Paired consistency against the validation-selected uncalibrated control at the same compute cap"
+      },
+      "fp8_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.08853533037162395,
+            "worst_seed_difference": 0.3235127226922844,
+            "ci95": [
+              0.05381684075890932,
+              0.13140805781199635
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.07891146466135979,
+            "worst_seed_difference": -0.27955830097198486
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.055049856725004925,
+            "worst_seed_difference": 0.20400052699531648
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Per-task BF16 consistency versus FP8, not task success"
+      },
+      "actual_mma_ratios": {
+        "selected": 1.4999992297643696,
+        "control": 1.4562952898550725
+      },
+      "comparison_scope": "Same hard cap; actual issued MMA can differ due to allocation and integer quotas"
+    }
+  ],
+  "frontier": [
+    "control_b1_a",
+    "control_joint_b1.125_balanced",
+    "b1.25_grow_mixed",
+    "control_joint_b1.25_balanced",
+    "b1.5_refined",
+    "fp4"
+  ],
+  "frontier_objectives": [
+    "mean video LPIPS",
+    "issued MMA FLOPs",
+    "prepared quantized weight bytes"
+  ],
+  "expand_to_next_task": true,
+  "limitations": [
+    "Shared GPU timings cannot establish acceleration or latency Pareto optimality.",
+    "Packing traffic is an implementation-derived bound; fields ending in upper are not measured savings.",
+    "Residual address space is still allocated in full; sparse writes do not imply proportional scratch reduction.",
+    "Prepared weight bytes cover replaced projections; resident model state and request peaks are reported separately.",
+    "New seeds in existing scenes do not establish cross-scene generalization."
+  ]
+}

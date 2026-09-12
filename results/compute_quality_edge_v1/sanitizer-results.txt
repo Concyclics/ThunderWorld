@@ -1,0 +1,8 @@
+========= COMPUTE-SANITIZER
+........                                                                 [100%]
+8 passed in 60.62s (0:01:00)
+========= ERROR SUMMARY: 0 errors
+========= COMPUTE-SANITIZER
+........                                                                 [100%]
+8 passed in 379.53s (0:06:19)
+========= RACECHECK SUMMARY: 0 hazards displayed (0 errors, 0 warnings)

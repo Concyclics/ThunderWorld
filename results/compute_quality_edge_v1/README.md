@@ -1,12 +1,47 @@
-# Shared GPU compute-constrained Edge I2V
+# 计算量约束 FP4：Edge I2V 最终结果
 
-These results are not eligible for performance ranking. No latency speedup is inferred from MMA counts.
+已完成全层离线校准、局部组合搜索、独立验证和冻结后的 16 种子测试。1.25× 与 1.5× 相对最强同预算上限对照通过质量改善门槛；四档均未超过 FP8。共享 GPU 数据不用于延迟或加速结论。
 
-Captured 3136 full-M panels across 168 generation projections.
+固定条件：Cosmos3 Edge a9d944e，35 steps，相同生成投影范围、输入、CFG、Graph，debug off；PRO 6000 GPU0/3。最终种子为 101001–101016，仅属于现有场景上的新种子测试。
 
-Local objective: 0.01337827 → 0.01121593 across 168 modules.
-This is a teacher-input local objective; full videos must be evaluated separately.
+| 预算上限 | 最终方案 | 实际 MMA/C0 | LPIPS ↓ | 对照 LPIPS ↓ | SSIM ↑ | 相对 L2 ↓ | W1 MiB | 请求峰值 GiB |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| 1× | 普通 FP4 对照 | 1.000000 | 0.406711 | 0.406711 | 0.582606 | 0.373316 | 0.00 | 6.378 |
+| 1.125× | 未校准均衡联合对照 | 1.124698 | 0.365284 | 0.365284 | 0.607019 | 0.351237 | 48.73 | 6.425 |
+| 1.25× | 校准＋混合修复 | 1.249996 | 0.274868 | 0.344413 | 0.692435 | 0.302037 | 86.06 | 6.464 |
+| 1.5× | 校准＋细化混合修复 | 1.499999 | 0.264763 | 0.330790 | 0.707249 | 0.296064 | 185.59 | 6.570 |
 
-See report.json for paired quality results.
+1.25×、1.5× 的对照实际使用 1.206295×、1.456295× MMA；“同预算”指同一上限，并非完全相同的实际计算量。
 
-Frontier within searched configurations only; latency Pareto frontier requires exclusive-GPU measurements
+| 参考 | LPIPS ↓ | SSIM ↑ | 相对 L2 ↓ | 请求峰值 GiB |
+|---|---:|---:|---:|---:|
+| fp8 | 0.176228 | 0.786161 | 0.241014 | 6.896 |
+| full_dual | 0.126561 | 0.831813 | 0.187482 | 7.143 |
+| BF16 原生参考 | 0 | 1 | 0 | 8.207 |
+
+全量 dual 的匹配 FP4 tile 计算量为 3.0×C0，通过 [FP8 配对质量门槛](full_dual_fp8_gate.json)，但不属于本轮四个预算内的候选。BF16 的 prepared_weight_bytes=0 表示没有替换为量化投影，不能解释为模型无权重显存。
+
+## 配对验收
+
+- 1.25×：相对同上限对照，LPIPS 差值 -0.069545，95% CI [-0.118806, -0.023302]；最差种子 LPIPS 退化 0.118739。平均 SSIM/L2 通过不退化约束。
+- 1.5×：相对同上限对照，LPIPS 差值 -0.066027，95% CI [-0.103136, -0.036536]；最差种子 LPIPS 退化 0.013434。平均 SSIM/L2 通过不退化约束。
+
+1.0× 的基础校准虽降低局部 NMSE，但未改善独立验证视频；1.125× 的优化候选未通过验证 L2 约束，因此两档均保留最佳可行未校准对照。学生轨迹再校准也未稳定改善完整输出。失败配置与全部验证结果均保留。
+
+## 实现与成本
+
+- 全部 168 个生成投影、28 层 attention，3136 个 full-M 教师面板，四阶段和实际 CFG 分支均覆盖。
+- 离线 prescale、基础/残差尺度、真实 FP4 残差、受支付 W1 支持约束的 outlier 拆分；不训练、不求梯度。
+- 整请求预算在 Graph capture 前按真实形状验证，计入 padding、A/W/交叉项和 BF16 selector MMA；动态交集使用可证明上界。
+- 在线 A 选择使用当前量化残差和离线通道敏感度，只编码选中残差；attention K/V 采用当前 GQA 支持并集；W1 使用单一常驻支持并集。
+- 残差地址空间仍完整分配。packing 字节数是实现模型的界，不能把 per-head 覆盖率当作 GQA 并集密度或实际带宽节省。
+- 非模型活跃分配包含 activation、scratch 与 Graph 输入输出；不冒充独立 scratch 峰值。
+- 当前结果无法单独归因于 prescale：离线资产、修复分配与预算利用率均参与变化。
+
+## 验证与复测
+
+162 项测试通过；8 个 CUDA 用例分别通过 memcheck/racecheck，零错误、零 race hazards。见 [测试输出](test-results.txt) 与 [sanitizer 输出](sanitizer-results.txt)。
+完整框架入口、离线校准与复测命令见 [实现说明](../../tools/joint_inference/COMPUTE_CALIBRATION.md)。
+最终配对数据见 [final_quality.json](final_quality.json)，计算/存储/显存及非支配集合见 [final_report.json](final_report.json)。原始请求 JSON、NPZ 与离线资产位于本机 `/home/yufeng/thunderworld/compute_quality_edge_v1`，索引见 [raw_artifacts.json](raw_artifacts.json)。
+
+Edge I2V 已闭环；[Edge policy](../compute_quality_edge_policy_v1/README.md) 已完成独立校准和最终测试，但未通过同预算质量门槛，因此未扩展 Nano。上述结果不声明延迟 Pareto 最优或跨场景泛化。

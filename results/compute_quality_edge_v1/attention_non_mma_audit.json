@@ -1,0 +1,84 @@
+{
+  "complete": true,
+  "performance_eligible": false,
+  "method": "Static element counts from immutable saved execution inventories; no MMA, output, or timing changes; not hardware profiling",
+  "rows": [
+    {
+      "config": "b1.25_grow_mixed",
+      "request_json_sha256": "e468ec1c8365583d67d8d7ff60a8707b2312ba7afcee3291b9547766a24380f5",
+      "attention_non_mma_elements": {
+        "probability_base_quantized_elements": 30828134400,
+        "probability_residual_quantized_elements": 13149143040,
+        "qkv_base_quantized_elements": 7963934720,
+        "qkv_residual_quantized_elements_upper": 6122078208,
+        "combine_output_elements": 3853516800
+      }
+    },
+    {
+      "config": "b1.5_refined",
+      "request_json_sha256": "df764585b2dd4841bf3b10a74ed1ae8ee5934ec67aa6bd6feac701ae2b88516d",
+      "attention_non_mma_elements": {
+        "probability_base_quantized_elements": 30828134400,
+        "probability_residual_quantized_elements": 21551185920,
+        "qkv_base_quantized_elements": 7963934720,
+        "qkv_residual_quantized_elements_upper": 7184220160,
+        "combine_output_elements": 3853516800
+      }
+    },
+    {
+      "config": "control_b1_a",
+      "request_json_sha256": "165699503c648462a07397ee5b02f69fd308e765d6b3986710ba255aa7dbae59",
+      "attention_non_mma_elements": {
+        "probability_base_quantized_elements": 30828134400,
+        "probability_residual_quantized_elements": 0,
+        "qkv_base_quantized_elements": 7963934720,
+        "qkv_residual_quantized_elements_upper": 0,
+        "combine_output_elements": 3853516800
+      }
+    },
+    {
+      "config": "control_joint_b1.125_balanced",
+      "request_json_sha256": "cc6d091019c0ba11b96523b35a9cfdcb05fdb61bdd556cb40dcc02ea9123262c",
+      "attention_non_mma_elements": {
+        "probability_base_quantized_elements": 30828134400,
+        "probability_residual_quantized_elements": 1926758400,
+        "qkv_base_quantized_elements": 7963934720,
+        "qkv_residual_quantized_elements_upper": 3981967360,
+        "combine_output_elements": 3853516800
+      }
+    },
+    {
+      "config": "control_joint_b1.25_balanced",
+      "request_json_sha256": "7d0ae08c225c6aa5de45a10949e703744119fdcd59045dd72736d69a25170af7",
+      "attention_non_mma_elements": {
+        "probability_base_quantized_elements": 30828134400,
+        "probability_residual_quantized_elements": 3612672000,
+        "qkv_base_quantized_elements": 7963934720,
+        "qkv_residual_quantized_elements_upper": 7723089920,
+        "combine_output_elements": 3853516800
+      }
+    },
+    {
+      "config": "control_joint_b1.5_balanced",
+      "request_json_sha256": "eab5179595460e9522be210bc4bb88b2d5159241f8a4eac96bb751b5c3f3f1f7",
+      "attention_non_mma_elements": {
+        "probability_base_quantized_elements": 30828134400,
+        "probability_residual_quantized_elements": 7466188800,
+        "qkv_base_quantized_elements": 7963934720,
+        "qkv_residual_quantized_elements_upper": 7963934720,
+        "combine_output_elements": 3853516800
+      }
+    },
+    {
+      "config": "fp4",
+      "request_json_sha256": "16c528adf3b6e01769d5b8f7acb28e9465576a94f8f8d9f95600e4543cc56945",
+      "attention_non_mma_elements": {
+        "probability_base_quantized_elements": 30828134400,
+        "probability_residual_quantized_elements": 0,
+        "qkv_base_quantized_elements": 7963934720,
+        "qkv_residual_quantized_elements_upper": 0,
+        "combine_output_elements": 3853516800
+      }
+    }
+  ]
+}

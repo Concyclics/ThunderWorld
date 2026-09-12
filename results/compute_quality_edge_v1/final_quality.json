@@ -1,0 +1,4686 @@
+{
+  "complete": true,
+  "model": "edge",
+  "suite": "quality",
+  "rows": [
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.31001891913173857,
+          "rmse": 0.152947281379642,
+          "ssim_mean": 0.6477009654045105,
+          "lpips": 0.32080351109387445
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.45023485482311254,
+          "rmse": 0.2284076337237161,
+          "ssim_mean": 0.44307661056518555,
+          "lpips": 0.5070096772225177
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.43299459511080346,
+          "rmse": 0.22726056288089103,
+          "ssim_mean": 0.4543740451335907,
+          "lpips": 0.5065013267954842
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.41011438464753486,
+          "rmse": 0.19143226219344178,
+          "ssim_mean": 0.6448193192481995,
+          "lpips": 0.3336591591111949
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.39195398589235836,
+          "rmse": 0.2188240912908519,
+          "ssim_mean": 0.47853145003318787,
+          "lpips": 0.5339297619266589
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.296040377848857,
+          "rmse": 0.14543940833717064,
+          "ssim_mean": 0.7182111740112305,
+          "lpips": 0.2980543229667867
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3314756575996226,
+          "rmse": 0.16551058832754004,
+          "ssim_mean": 0.6131333112716675,
+          "lpips": 0.37579850559351874
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4189584807786811,
+          "rmse": 0.20239129517531587,
+          "ssim_mean": 0.6156193614006042,
+          "lpips": 0.377591821746748
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101009,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.26446010067996467,
+          "rmse": 0.13160340691827538,
+          "ssim_mean": 0.7288496494293213,
+          "lpips": 0.2903705449377904
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101010,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3798467998319863,
+          "rmse": 0.18816565194641308,
+          "ssim_mean": 0.5702507495880127,
+          "lpips": 0.38406329223367036
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101011,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2449252882804818,
+          "rmse": 0.12562107483374885,
+          "ssim_mean": 0.7265253663063049,
+          "lpips": 0.27304102675836595
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101012,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.34582375299031987,
+          "rmse": 0.1772150530630269,
+          "ssim_mean": 0.6645774841308594,
+          "lpips": 0.3519039327492479
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101013,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4285463540472919,
+          "rmse": 0.22474669892794402,
+          "ssim_mean": 0.4176754951477051,
+          "lpips": 0.5522371310679639
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101014,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.294119645756233,
+          "rmse": 0.14951960269549788,
+          "ssim_mean": 0.6815624833106995,
+          "lpips": 0.32963796424084024
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101015,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.38571586651113954,
+          "rmse": 0.2003049800642137,
+          "ssim_mean": 0.5068800449371338,
+          "lpips": 0.4657695264112754
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_b1_a",
+      "seed": 101016,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.5878287103065643,
+          "rmse": 0.30556888530106807,
+          "ssim_mean": 0.4099070727825165,
+          "lpips": 0.6070094707070804
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4634906309129661,
+          "rmse": 0.2286622769397811,
+          "ssim_mean": 0.434564471244812,
+          "lpips": 0.5399132556602603
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3784216165792583,
+          "rmse": 0.1919762210029918,
+          "ssim_mean": 0.514505922794342,
+          "lpips": 0.4832516385883581
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4839334939033751,
+          "rmse": 0.25399623797441073,
+          "ssim_mean": 0.42158618569374084,
+          "lpips": 0.5278647534671377
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.27098249718578304,
+          "rmse": 0.126488595360256,
+          "ssim_mean": 0.7506481409072876,
+          "lpips": 0.22117464879497153
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.35281383152736717,
+          "rmse": 0.19697252447388627,
+          "ssim_mean": 0.5343311429023743,
+          "lpips": 0.4442069048031432
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2669806659811239,
+          "rmse": 0.13116288521149908,
+          "ssim_mean": 0.7611784934997559,
+          "lpips": 0.2148571903588342
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.30729069209156495,
+          "rmse": 0.15343468538218774,
+          "ssim_mean": 0.6067606806755066,
+          "lpips": 0.3624516942950546
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4068447053845035,
+          "rmse": 0.19653934849331134,
+          "ssim_mean": 0.6535865664482117,
+          "lpips": 0.32840036368760905
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101009,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2657805469428316,
+          "rmse": 0.13226050122625982,
+          "ssim_mean": 0.7472240328788757,
+          "lpips": 0.26252774051466926
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101010,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4034143311504242,
+          "rmse": 0.19984035842613826,
+          "ssim_mean": 0.5437957644462585,
+          "lpips": 0.42001747376606113
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101011,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.23604927838355014,
+          "rmse": 0.12106860942147725,
+          "ssim_mean": 0.744360625743866,
+          "lpips": 0.22907448144721204
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101012,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.34835500446569145,
+          "rmse": 0.17851217583335438,
+          "ssim_mean": 0.6957013607025146,
+          "lpips": 0.3116174071538644
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101013,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3421227692525911,
+          "rmse": 0.1794227445676071,
+          "ssim_mean": 0.533027172088623,
+          "lpips": 0.40355364306539787
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101014,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3129268408529978,
+          "rmse": 0.15908048847534692,
+          "ssim_mean": 0.7067874670028687,
+          "lpips": 0.29973687280396943
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101015,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3365543536974717,
+          "rmse": 0.1747750584326805,
+          "ssim_mean": 0.6129252910614014,
+          "lpips": 0.3097587229042757
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.125_balanced",
+      "seed": 101016,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.44383802278089846,
+          "rmse": 0.23071872383480396,
+          "ssim_mean": 0.45131614804267883,
+          "lpips": 0.4861390498451522
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.366112925049842,
+          "rmse": 0.18062115925424274,
+          "ssim_mean": 0.6815508604049683,
+          "lpips": 0.29866285011416577
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2771317140771992,
+          "rmse": 0.14059106789286524,
+          "ssim_mean": 0.643552303314209,
+          "lpips": 0.3034487244535665
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4552541274861374,
+          "rmse": 0.23894365064735443,
+          "ssim_mean": 0.48642992973327637,
+          "lpips": 0.4284181985088059
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.335358012051412,
+          "rmse": 0.15653765216470372,
+          "ssim_mean": 0.7737036943435669,
+          "lpips": 0.20973496401651961
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3615051864528621,
+          "rmse": 0.2018248232439261,
+          "ssim_mean": 0.5686090588569641,
+          "lpips": 0.40766701844261316
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.1931880933955748,
+          "rmse": 0.09490989778287415,
+          "ssim_mean": 0.8440587520599365,
+          "lpips": 0.13756477530496042
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.26101752287152374,
+          "rmse": 0.13032982297132706,
+          "ssim_mean": 0.7000364661216736,
+          "lpips": 0.21826490417855685
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2164491403243669,
+          "rmse": 0.10456268069430491,
+          "ssim_mean": 0.829517662525177,
+          "lpips": 0.14686012542882904
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101009,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.1903130851484235,
+          "rmse": 0.09470559196742309,
+          "ssim_mean": 0.8510010242462158,
+          "lpips": 0.1284074392169714
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101010,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2958847726214638,
+          "rmse": 0.1465731741479992,
+          "ssim_mean": 0.6918541789054871,
+          "lpips": 0.23403978506561185
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101011,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.23460421520050445,
+          "rmse": 0.12032744303751042,
+          "ssim_mean": 0.8170018792152405,
+          "lpips": 0.16549620807903712
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101012,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.29782423512101713,
+          "rmse": 0.1526180234123589,
+          "ssim_mean": 0.7590936422348022,
+          "lpips": 0.23234965160611223
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101013,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.34890355672333273,
+          "rmse": 0.18297885835970565,
+          "ssim_mean": 0.5396713614463806,
+          "lpips": 0.4801942470376609
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101014,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.29552856971653424,
+          "rmse": 0.15023584778082963,
+          "ssim_mean": 0.754288911819458,
+          "lpips": 0.2582510137533555
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101015,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3610891897348855,
+          "rmse": 0.18751617247552477,
+          "ssim_mean": 0.5464147925376892,
+          "lpips": 0.42310219218374273
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.25_grow_mixed",
+      "seed": 101016,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3424244235370434,
+          "rmse": 0.17800125711026657,
+          "ssim_mean": 0.5921787619590759,
+          "lpips": 0.3254270062583392
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.33123674878178144,
+          "rmse": 0.16341505983277377,
+          "ssim_mean": 0.6755761504173279,
+          "lpips": 0.28655296588530305
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4721267485742925,
+          "rmse": 0.23951356120994446,
+          "ssim_mean": 0.46527621150016785,
+          "lpips": 0.47017901103760373
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4832239957008741,
+          "rmse": 0.2536238523541651,
+          "ssim_mean": 0.4410609304904938,
+          "lpips": 0.5935972585785584
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.34906864864915144,
+          "rmse": 0.1629374720156294,
+          "ssim_mean": 0.7353653311729431,
+          "lpips": 0.22297456353658535
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3839760702560776,
+          "rmse": 0.2143700987245315,
+          "ssim_mean": 0.5079127550125122,
+          "lpips": 0.4932774225341492
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2830710329887446,
+          "rmse": 0.1390677982997774,
+          "ssim_mean": 0.7629144191741943,
+          "lpips": 0.21514092648371322
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4003158501569274,
+          "rmse": 0.19988349176560424,
+          "ssim_mean": 0.5197180509567261,
+          "lpips": 0.4459969883815187
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3833588508389941,
+          "rmse": 0.18519375522371068,
+          "ssim_mean": 0.6923589110374451,
+          "lpips": 0.2679518608406919
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101009,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.19974089628581246,
+          "rmse": 0.09939715815178267,
+          "ssim_mean": 0.818448543548584,
+          "lpips": 0.15135817593116252
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101010,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4326500612089877,
+          "rmse": 0.2143229345832422,
+          "ssim_mean": 0.5247008800506592,
+          "lpips": 0.5027740082291307
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101011,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.22923452317837317,
+          "rmse": 0.11757335223667051,
+          "ssim_mean": 0.7943793535232544,
+          "lpips": 0.1761535812841087
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101012,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.26105425032372226,
+          "rmse": 0.13377549235243572,
+          "ssim_mean": 0.7573672533035278,
+          "lpips": 0.2083294714083437
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101013,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.40245426770136955,
+          "rmse": 0.21106297435764512,
+          "ssim_mean": 0.5015193223953247,
+          "lpips": 0.49304018279568096
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101014,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.29995591828329715,
+          "rmse": 0.1524865488415997,
+          "ssim_mean": 0.7322524189949036,
+          "lpips": 0.25935183111272875
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101015,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.34741985413728516,
+          "rmse": 0.18041758973083669,
+          "ssim_mean": 0.6000622510910034,
+          "lpips": 0.3043630780255208
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.25_balanced",
+      "seed": 101016,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3979023302411016,
+          "rmse": 0.20684013791545,
+          "ssim_mean": 0.49736320972442627,
+          "lpips": 0.4195694657134228
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3255139229284577,
+          "rmse": 0.16059171389464072,
+          "ssim_mean": 0.7641280293464661,
+          "lpips": 0.21025980205931624
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.33013903271771194,
+          "rmse": 0.16748209174634993,
+          "ssim_mean": 0.5973913073539734,
+          "lpips": 0.35742380677676594
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.36821729301944356,
+          "rmse": 0.19326169476240843,
+          "ssim_mean": 0.5309528112411499,
+          "lpips": 0.42979711654489156
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.20457628385586665,
+          "rmse": 0.09549165373293045,
+          "ssim_mean": 0.8487741351127625,
+          "lpips": 0.13529280789929335
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3451536644886299,
+          "rmse": 0.19269592785356726,
+          "ssim_mean": 0.5699828267097473,
+          "lpips": 0.3828210137082172
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2456301860061436,
+          "rmse": 0.12067377153775184,
+          "ssim_mean": 0.8148889541625977,
+          "lpips": 0.168940575152147
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.22238653939182043,
+          "rmse": 0.11104081439163806,
+          "ssim_mean": 0.7782917618751526,
+          "lpips": 0.17851624066834568
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.38057785751567114,
+          "rmse": 0.18385030744450562,
+          "ssim_mean": 0.740431010723114,
+          "lpips": 0.2392926511705899
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101009,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.19308492843799896,
+          "rmse": 0.09608494567489648,
+          "ssim_mean": 0.8601304888725281,
+          "lpips": 0.12646147726317408
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101010,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.36422613225336814,
+          "rmse": 0.1804276030802149,
+          "ssim_mean": 0.5796730518341064,
+          "lpips": 0.4036635154339134
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101011,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.1984361937250261,
+          "rmse": 0.10177702807522752,
+          "ssim_mean": 0.8354335427284241,
+          "lpips": 0.14059236260955452
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101012,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.30353987330627596,
+          "rmse": 0.15554696370501156,
+          "ssim_mean": 0.7662844657897949,
+          "lpips": 0.22642119589154838
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101013,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3148969712777337,
+          "rmse": 0.16514445667006716,
+          "ssim_mean": 0.5965992212295532,
+          "lpips": 0.3661213642993911
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101014,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2508646987515934,
+          "rmse": 0.12753037965628353,
+          "ssim_mean": 0.7916340231895447,
+          "lpips": 0.20997391314413705
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101015,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3588099241672963,
+          "rmse": 0.18633253373074984,
+          "ssim_mean": 0.6027588248252869,
+          "lpips": 0.36717703381217404
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "b1.5_refined",
+      "seed": 101016,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.33097434069686293,
+          "rmse": 0.1720492017092057,
+          "ssim_mean": 0.6386339068412781,
+          "lpips": 0.29345497116446495
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.37357939506926024,
+          "rmse": 0.18430472893499297,
+          "ssim_mean": 0.6506458520889282,
+          "lpips": 0.3271706666736329
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3615236585264498,
+          "rmse": 0.1834037558278534,
+          "ssim_mean": 0.5719634294509888,
+          "lpips": 0.4153837528629381
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.42763727841923804,
+          "rmse": 0.2244487337712348,
+          "ssim_mean": 0.4790855348110199,
+          "lpips": 0.471695324070141
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.33859858669707626,
+          "rmse": 0.15805028024713338,
+          "ssim_mean": 0.7522521018981934,
+          "lpips": 0.2134304130602567
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.39914905436842274,
+          "rmse": 0.2228410279153531,
+          "ssim_mean": 0.5080227255821228,
+          "lpips": 0.5055722822358862
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.23361076167358838,
+          "rmse": 0.11476884067601408,
+          "ssim_mean": 0.7985119223594666,
+          "lpips": 0.16644412108132098
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2768598933659785,
+          "rmse": 0.1382401476088218,
+          "ssim_mean": 0.6832213997840881,
+          "lpips": 0.25646793488107744
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.36972963874705844,
+          "rmse": 0.17860972837126673,
+          "ssim_mean": 0.7162886261940002,
+          "lpips": 0.2577258614120913
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101009,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2697342985324185,
+          "rmse": 0.13422800852872374,
+          "ssim_mean": 0.7962079644203186,
+          "lpips": 0.2096624606456913
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101010,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4102539189421558,
+          "rmse": 0.20322850200519477,
+          "ssim_mean": 0.5406057238578796,
+          "lpips": 0.4492284096166736
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101011,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.1723739500461536,
+          "rmse": 0.08840982093012545,
+          "ssim_mean": 0.8406854271888733,
+          "lpips": 0.1271581119689785
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101012,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3016819771808628,
+          "rmse": 0.15459489734865603,
+          "ssim_mean": 0.7479351162910461,
+          "lpips": 0.22642771459993769
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101013,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3865439889573914,
+          "rmse": 0.2027189933787802,
+          "ssim_mean": 0.5225974917411804,
+          "lpips": 0.4581970478423306
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101014,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3169968970123405,
+          "rmse": 0.16114955522649368,
+          "ssim_mean": 0.7368616461753845,
+          "lpips": 0.2636565820115512
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101015,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3643036562505445,
+          "rmse": 0.18918546769316802,
+          "ssim_mean": 0.5686753988265991,
+          "lpips": 0.37474214316147275
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "control_joint_b1.5_balanced",
+      "seed": 101016,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.5202683725964742,
+          "rmse": 0.2704492378209892,
+          "ssim_mean": 0.4416262209415436,
+          "lpips": 0.569673689845644
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.201213540499222,
+          "rmse": 0.09926834169449839,
+          "ssim_mean": 0.8663722276687622,
+          "lpips": 0.11819393177837377
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2386614524916387,
+          "rmse": 0.12107480582794262,
+          "ssim_mean": 0.7317259907722473,
+          "lpips": 0.2103131211622328
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.37226107955613336,
+          "rmse": 0.19538410740883677,
+          "ssim_mean": 0.5307276248931885,
+          "lpips": 0.40257161248047824
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2508159336771694,
+          "rmse": 0.11707529259000699,
+          "ssim_mean": 0.866227924823761,
+          "lpips": 0.12089526218927053
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3584626345897301,
+          "rmse": 0.20012619618407018,
+          "ssim_mean": 0.6236791610717773,
+          "lpips": 0.3465337087343004
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.19497825211447964,
+          "rmse": 0.09578937113985007,
+          "ssim_mean": 0.881984531879425,
+          "lpips": 0.09739343080761247
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.18435675897447115,
+          "rmse": 0.09205199519319984,
+          "ssim_mean": 0.8536329865455627,
+          "lpips": 0.10558702545545873
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.36026634262450824,
+          "rmse": 0.17403818048110184,
+          "ssim_mean": 0.7698827981948853,
+          "lpips": 0.21036311463437607
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101009,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.1234875027961194,
+          "rmse": 0.06145114532594808,
+          "ssim_mean": 0.934710681438446,
+          "lpips": 0.05184879230495664
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101010,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.16022560525805166,
+          "rmse": 0.07937135572874482,
+          "ssim_mean": 0.8592313528060913,
+          "lpips": 0.08015079274162894
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101011,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.09229714647578219,
+          "rmse": 0.047338789823523846,
+          "ssim_mean": 0.9450234770774841,
+          "lpips": 0.03913238088096507
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101012,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.17726212975020328,
+          "rmse": 0.09083678451267849,
+          "ssim_mean": 0.8795768618583679,
+          "lpips": 0.09208944566608941
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101013,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.23746231741167428,
+          "rmse": 0.12453465407890031,
+          "ssim_mean": 0.7216582298278809,
+          "lpips": 0.18515218085929996
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101014,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2791842824038284,
+          "rmse": 0.1419270136699581,
+          "ssim_mean": 0.794215202331543,
+          "lpips": 0.22956356398578062
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101015,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.34657135135739225,
+          "rmse": 0.17997695623046192,
+          "ssim_mean": 0.6081658601760864,
+          "lpips": 0.32447161346093795
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp8",
+      "seed": 101016,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.27872380495941756,
+          "rmse": 0.14488799355156376,
+          "ssim_mean": 0.7117568850517273,
+          "lpips": 0.20538458451017982
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.31001891913173857,
+          "rmse": 0.152947281379642,
+          "ssim_mean": 0.6477009654045105,
+          "lpips": 0.32080351109387445
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.45023485482311254,
+          "rmse": 0.2284076337237161,
+          "ssim_mean": 0.44307661056518555,
+          "lpips": 0.5070096772225177
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.43299459511080346,
+          "rmse": 0.22726056288089103,
+          "ssim_mean": 0.4543740451335907,
+          "lpips": 0.5065013267954842
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.41011438464753486,
+          "rmse": 0.19143226219344178,
+          "ssim_mean": 0.6448193192481995,
+          "lpips": 0.3336591591111949
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.39195398589235836,
+          "rmse": 0.2188240912908519,
+          "ssim_mean": 0.47853145003318787,
+          "lpips": 0.5339297619266589
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.296040377848857,
+          "rmse": 0.14543940833717064,
+          "ssim_mean": 0.7182111740112305,
+          "lpips": 0.2980543229667867
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3314756575996226,
+          "rmse": 0.16551058832754004,
+          "ssim_mean": 0.6131333112716675,
+          "lpips": 0.37579850559351874
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4189584807786811,
+          "rmse": 0.20239129517531587,
+          "ssim_mean": 0.6156193614006042,
+          "lpips": 0.377591821746748
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101009,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.26446010067996467,
+          "rmse": 0.13160340691827538,
+          "ssim_mean": 0.7288496494293213,
+          "lpips": 0.2903705449377904
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101010,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.3798467998319863,
+          "rmse": 0.18816565194641308,
+          "ssim_mean": 0.5702507495880127,
+          "lpips": 0.38406329223367036
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101011,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2449252882804818,
+          "rmse": 0.12562107483374885,
+          "ssim_mean": 0.7265253663063049,
+          "lpips": 0.27304102675836595
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101012,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.34582375299031987,
+          "rmse": 0.1772150530630269,
+          "ssim_mean": 0.6645774841308594,
+          "lpips": 0.3519039327492479
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101013,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.4285463540472919,
+          "rmse": 0.22474669892794402,
+          "ssim_mean": 0.4176754951477051,
+          "lpips": 0.5522371310679639
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101014,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.294119645756233,
+          "rmse": 0.14951960269549788,
+          "ssim_mean": 0.6815624833106995,
+          "lpips": 0.32963796424084024
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101015,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.38571586651113954,
+          "rmse": 0.2003049800642137,
+          "ssim_mean": 0.5068800449371338,
+          "lpips": 0.4657695264112754
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "fp4",
+      "seed": 101016,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.5878287103065643,
+          "rmse": 0.30556888530106807,
+          "ssim_mean": 0.4099070727825165,
+          "lpips": 0.6070094707070804
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101001,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.1310689287173935,
+          "rmse": 0.0646626224515958,
+          "ssim_mean": 0.9349281787872314,
+          "lpips": 0.050720366546273474
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101002,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.19409532002241342,
+          "rmse": 0.09846606118618756,
+          "ssim_mean": 0.8098966479301453,
+          "lpips": 0.13624555149237763
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101003,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.299153051811974,
+          "rmse": 0.1570127934851658,
+          "ssim_mean": 0.6210774183273315,
+          "lpips": 0.2948010765077149
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101004,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2609417718391521,
+          "rmse": 0.12180180835857472,
+          "ssim_mean": 0.8458614945411682,
+          "lpips": 0.15007433896792716
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101005,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2799703567315742,
+          "rmse": 0.15630472225121664,
+          "ssim_mean": 0.630090057849884,
+          "lpips": 0.291763729705918
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101006,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.15540966071748752,
+          "rmse": 0.07635002113181867,
+          "ssim_mean": 0.9099418520927429,
+          "lpips": 0.06938500844751347
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101007,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.16706154222843725,
+          "rmse": 0.0834162434169836,
+          "ssim_mean": 0.8491122126579285,
+          "lpips": 0.08491185600258654
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101008,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.16297062411342875,
+          "rmse": 0.07872817284553417,
+          "ssim_mean": 0.9123396873474121,
+          "lpips": 0.061307540991664175
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101009,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.11934545309629296,
+          "rmse": 0.059389935144448375,
+          "ssim_mean": 0.9389826655387878,
+          "lpips": 0.053400389083897784
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101010,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.1466443494295167,
+          "rmse": 0.07264357532265042,
+          "ssim_mean": 0.8728801012039185,
+          "lpips": 0.06942132868055927
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101011,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.05746117135659451,
+          "rmse": 0.02947157542489196,
+          "ssim_mean": 0.9723858833312988,
+          "lpips": 0.018745817362376658
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101012,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.13628350007168624,
+          "rmse": 0.06983756172900867,
+          "ssim_mean": 0.9187197685241699,
+          "lpips": 0.055123529011444725
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101013,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2649203065910099,
+          "rmse": 0.13893471224990947,
+          "ssim_mean": 0.693349301815033,
+          "lpips": 0.23333569322941733
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101014,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.22649528958862292,
+          "rmse": 0.11514186896498724,
+          "ssim_mean": 0.8286002278327942,
+          "lpips": 0.16657612704076483
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101015,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.12054932042222773,
+          "rmse": 0.06260211549589308,
+          "ssim_mean": 0.8830553293228149,
+          "lpips": 0.05890898552501849
+        }
+      }
+    },
+    {
+      "case": "robot_table",
+      "task": "i2v",
+      "config": "full_dual",
+      "seed": 101016,
+      "metrics": {
+        "video": {
+          "relative_l2": 0.2773382280765232,
+          "rmse": 0.14416773410152064,
+          "ssim_mean": 0.6877923607826233,
+          "lpips": 0.23025051394446952
+        }
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "case": "robot_table",
+      "config": "b1.25_grow_mixed",
+      "passed": false,
+      "failures": [
+        "video.lpips",
+        "video.ssim_mean",
+        "video.relative_l2"
+      ],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": 0.09864028387480667,
+          "worst_seed_difference": 0.29504206617836093,
+          "ci95": [
+            0.06181236109448231,
+            0.13705100678458532
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": -0.0937255322933197,
+          "worst_seed_difference": -0.18482136726379395
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": 0.06102241466076884,
+          "worst_seed_difference": 0.16489938455062
+        }
+      },
+      "seeds": [
+        101001,
+        101002,
+        101003,
+        101004,
+        101005,
+        101006,
+        101007,
+        101008,
+        101009,
+        101010,
+        101011,
+        101012,
+        101013,
+        101014,
+        101015,
+        101016
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    },
+    {
+      "case": "robot_table",
+      "config": "b1.5_refined",
+      "passed": false,
+      "failures": [
+        "video.lpips",
+        "video.ssim_mean",
+        "video.relative_l2"
+      ],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": 0.08853533037162395,
+          "worst_seed_difference": 0.3235127226922844,
+          "ci95": [
+            0.05381684075890932,
+            0.13140805781199635
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": -0.07891146466135979,
+          "worst_seed_difference": -0.27955830097198486
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": 0.055049856725004925,
+          "worst_seed_difference": 0.20400052699531648
+        }
+      },
+      "seeds": [
+        101001,
+        101002,
+        101003,
+        101004,
+        101005,
+        101006,
+        101007,
+        101008,
+        101009,
+        101010,
+        101011,
+        101012,
+        101013,
+        101014,
+        101015,
+        101016
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    },
+    {
+      "case": "robot_table",
+      "config": "control_b1_a",
+      "passed": false,
+      "failures": [
+        "video.lpips",
+        "video.ssim_mean",
+        "video.relative_l2"
+      ],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": 0.2304835258694423,
+          "worst_seed_difference": 0.4016248861969006,
+          "ci95": [
+            0.19113991168024308,
+            0.27168997539898915
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": -0.20355482585728168,
+          "worst_seed_difference": -0.3039827346801758
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": 0.13230172745605426,
+          "worst_seed_difference": 0.3091049053471467
+        }
+      },
+      "seeds": [
+        101001,
+        101002,
+        101003,
+        101004,
+        101005,
+        101006,
+        101007,
+        101008,
+        101009,
+        101010,
+        101011,
+        101012,
+        101013,
+        101014,
+        101015,
+        101016
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    },
+    {
+      "case": "robot_table",
+      "config": "control_joint_b1.125_balanced",
+      "passed": false,
+      "failures": [
+        "video.lpips",
+        "video.ssim_mean",
+        "video.relative_l2"
+      ],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": 0.1890563299690018,
+          "worst_seed_difference": 0.4217193238818865,
+          "ci95": [
+            0.1379600182469269,
+            0.2424614452347758
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": -0.17914202064275742,
+          "worst_seed_difference": -0.4318077564239502
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": 0.11022307163453605,
+          "worst_seed_difference": 0.26227709041374414
+        }
+      },
+      "seeds": [
+        101001,
+        101002,
+        101003,
+        101004,
+        101005,
+        101006,
+        101007,
+        101008,
+        101009,
+        101010,
+        101011,
+        101012,
+        101013,
+        101014,
+        101015,
+        101016
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    },
+    {
+      "case": "robot_table",
+      "config": "control_joint_b1.25_balanced",
+      "passed": false,
+      "failures": [
+        "video.lpips",
+        "video.ssim_mean",
+        "video.relative_l2"
+      ],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": 0.16818538938289254,
+          "worst_seed_difference": 0.4226232154875017,
+          "ci95": [
+            0.11507392028370453,
+            0.2253692568648461
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": -0.15951848775148392,
+          "worst_seed_difference": -0.33453047275543213
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": 0.11253499452293567,
+          "worst_seed_difference": 0.272424455950936
+        }
+      },
+      "seeds": [
+        101001,
+        101002,
+        101003,
+        101004,
+        101005,
+        101006,
+        101007,
+        101008,
+        101009,
+        101010,
+        101011,
+        101012,
+        101013,
+        101014,
+        101015,
+        101016
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    },
+    {
+      "case": "robot_table",
+      "config": "control_joint_b1.5_balanced",
+      "passed": false,
+      "failures": [
+        "video.lpips",
+        "video.ssim_mean",
+        "video.relative_l2"
+      ],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": 0.1545619971448552,
+          "worst_seed_difference": 0.36907761687504465,
+          "ci95": [
+            0.10848752358878166,
+            0.2071440415556488
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": -0.1389615759253502,
+          "worst_seed_difference": -0.31862562894821167
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": 0.1041634494653495,
+          "worst_seed_difference": 0.25002831368410416
+        }
+      },
+      "seeds": [
+        101001,
+        101002,
+        101003,
+        101004,
+        101005,
+        101006,
+        101007,
+        101008,
+        101009,
+        101010,
+        101011,
+        101012,
+        101013,
+        101014,
+        101015,
+        101016
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    },
+    {
+      "case": "robot_table",
+      "config": "fp4",
+      "passed": false,
+      "failures": [
+        "video.lpips",
+        "video.ssim_mean",
+        "video.relative_l2"
+      ],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": 0.2304835258694423,
+          "worst_seed_difference": 0.4016248861969006,
+          "ci95": [
+            0.19113991168024308,
+            0.27168997539898915
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": -0.20355482585728168,
+          "worst_seed_difference": -0.3039827346801758
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": 0.13230172745605426,
+          "worst_seed_difference": 0.3091049053471467
+        }
+      },
+      "seeds": [
+        101001,
+        101002,
+        101003,
+        101004,
+        101005,
+        101006,
+        101007,
+        101008,
+        101009,
+        101010,
+        101011,
+        101012,
+        101013,
+        101014,
+        101015,
+        101016
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    },
+    {
+      "case": "robot_table",
+      "config": "full_dual",
+      "passed": true,
+      "failures": [],
+      "metrics": {
+        "video.lpips": {
+          "mean_paired_difference": -0.049667044319501086,
+          "worst_seed_difference": 0.048183512370117365,
+          "ci95": [
+            -0.08836582433678948,
+            -0.016428662381525516
+          ]
+        },
+        "video.ssim_mean": {
+          "mean_paired_difference": 0.045652586966753006,
+          "worst_seed_difference": -0.0283089280128479
+        },
+        "video.relative_l2": {
+          "mean_paired_difference": -0.05353257875784292,
+          "worst_seed_difference": 0.027457989179335618
+        }
+      },
+      "seeds": [
+        101001,
+        101002,
+        101003,
+        101004,
+        101005,
+        101006,
+        101007,
+        101008,
+        101009,
+        101010,
+        101011,
+        101012,
+        101013,
+        101014,
+        101015,
+        101016
+      ],
+      "scope": "Per-task BF16 consistency versus FP8, not task success"
+    }
+  ],
+  "provenance": {
+    "robot_table|control_b1_a": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": 1.0,
+        "budget_plan": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_a/plan.json",
+        "precision": "fp4",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "fp4",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "strict_tuning": false,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "targets": [
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out"
+      ],
+      "case": {
+        "id": "robot_table",
+        "task": "i2v",
+        "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement."
+      },
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "asset_identity": "832ca2a17b0b813a3249ffe8c42c509a630cb145dc393454d81dc2f2302230be",
+      "ffn_policy_identity": null,
+      "numerical_environment": {
+        "torch": "2.11.0+cu130",
+        "triton": "3.6.0",
+        "cuda": "13.0",
+        "kernels": {
+          "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+          "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+          "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+          "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+          "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+          "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+          "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+          "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+          "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+          "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+          "linears.py": "578457eb31ffc429acf4a9d343df158813cd35b70b09a1d30edc2a3396c9a035"
+        }
+      }
+    },
+    "robot_table|control_joint_b1.125_balanced": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": 1.125,
+        "budget_plan": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.125_balanced/plan.json",
+        "precision": "fp4",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "fp4",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "strict_tuning": false,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "targets": [
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out"
+      ],
+      "case": {
+        "id": "robot_table",
+        "task": "i2v",
+        "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement."
+      },
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "asset_identity": "e71b1a39cf975d901c77f9575d27d90a633fae45101e2da36a4f3297c9cd5e31",
+      "ffn_policy_identity": null,
+      "numerical_environment": {
+        "torch": "2.11.0+cu130",
+        "triton": "3.6.0",
+        "cuda": "13.0",
+        "kernels": {
+          "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+          "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+          "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+          "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+          "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+          "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+          "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+          "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+          "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+          "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+          "linears.py": "578457eb31ffc429acf4a9d343df158813cd35b70b09a1d30edc2a3396c9a035"
+        }
+      }
+    },
+    "robot_table|b1.25_grow_mixed": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": 1.25,
+        "budget_plan": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.25_grow_mixed/plan.json",
+        "precision": "fp4",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "fp4",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "strict_tuning": false,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "targets": [
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out"
+      ],
+      "case": {
+        "id": "robot_table",
+        "task": "i2v",
+        "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement."
+      },
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "asset_identity": "bdc58e251dbf350a14523db21c28aaf20128929fead809cee3196dadc5c418b4",
+      "ffn_policy_identity": null,
+      "numerical_environment": {
+        "torch": "2.11.0+cu130",
+        "triton": "3.6.0",
+        "cuda": "13.0",
+        "kernels": {
+          "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+          "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+          "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+          "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+          "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+          "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+          "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+          "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+          "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+          "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+          "linears.py": "578457eb31ffc429acf4a9d343df158813cd35b70b09a1d30edc2a3396c9a035"
+        }
+      }
+    },
+    "robot_table|control_joint_b1.25_balanced": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": 1.25,
+        "budget_plan": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.25_balanced/plan.json",
+        "precision": "fp4",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "fp4",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "strict_tuning": false,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "targets": [
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out"
+      ],
+      "case": {
+        "id": "robot_table",
+        "task": "i2v",
+        "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement."
+      },
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "asset_identity": "b69aa7a9fb6bdd2e8c08fa72c1ad3db10f2abab77528bc94dadf957ee5b58b0a",
+      "ffn_policy_identity": null,
+      "numerical_environment": {
+        "torch": "2.11.0+cu130",
+        "triton": "3.6.0",
+        "cuda": "13.0",
+        "kernels": {
+          "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+          "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+          "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+          "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+          "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+          "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+          "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+          "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+          "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+          "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+          "linears.py": "578457eb31ffc429acf4a9d343df158813cd35b70b09a1d30edc2a3396c9a035"
+        }
+      }
+    },
+    "robot_table|b1.5_refined": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": 1.5,
+        "budget_plan": "/home/yufeng/thunderworld/compute_quality_edge_v1/reserved_b1.5/plan.json",
+        "precision": "fp4",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "fp4",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "strict_tuning": false,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "targets": [
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out"
+      ],
+      "case": {
+        "id": "robot_table",
+        "task": "i2v",
+        "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement."
+      },
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "asset_identity": "53ab5dc88c72990888ab4620f797059a5d1b223d3dddce4a7d5dade80a795609",
+      "ffn_policy_identity": null,
+      "numerical_environment": {
+        "torch": "2.11.0+cu130",
+        "triton": "3.6.0",
+        "cuda": "13.0",
+        "kernels": {
+          "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+          "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+          "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+          "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+          "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+          "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+          "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+          "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+          "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+          "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+          "linears.py": "578457eb31ffc429acf4a9d343df158813cd35b70b09a1d30edc2a3396c9a035"
+        }
+      }
+    },
+    "robot_table|control_joint_b1.5_balanced": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": 1.5,
+        "budget_plan": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.5_balanced/plan.json",
+        "precision": "fp4",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "fp4",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "strict_tuning": false,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "targets": [
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out"
+      ],
+      "case": {
+        "id": "robot_table",
+        "task": "i2v",
+        "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement."
+      },
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "asset_identity": "6d1192b800d224479fd246b5186e9f0be629d23608b0a3bd0299bd977ffaf0bc",
+      "ffn_policy_identity": null,
+      "numerical_environment": {
+        "torch": "2.11.0+cu130",
+        "triton": "3.6.0",
+        "cuda": "13.0",
+        "kernels": {
+          "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+          "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+          "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+          "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+          "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+          "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+          "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+          "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+          "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+          "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+          "linears.py": "578457eb31ffc429acf4a9d343df158813cd35b70b09a1d30edc2a3396c9a035"
+        }
+      }
+    },
+    "robot_table|fp8": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": null,
+        "budget_plan": null,
+        "precision": "fp8",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 1.0,
+          "weight": 0.0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 1.0,
+          "weight": 0.0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "bf16",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "strict_tuning": false,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "targets": [
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out"
+      ],
+      "case": {
+        "id": "robot_table",
+        "task": "i2v",
+        "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement."
+      },
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "asset_identity": null,
+      "ffn_policy_identity": null,
+      "numerical_environment": {
+        "torch": "2.11.0+cu130",
+        "triton": "3.6.0",
+        "cuda": "13.0",
+        "kernels": {
+          "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+          "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+          "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+          "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+          "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+          "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+          "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+          "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+          "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+          "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+          "linears.py": "578457eb31ffc429acf4a9d343df158813cd35b70b09a1d30edc2a3396c9a035"
+        }
+      }
+    },
+    "robot_table|fp4": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": 1.0,
+        "budget_plan": "/home/yufeng/thunderworld/compute_quality_edge_v1/base_identity/plan.json",
+        "precision": "fp4",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "fp4",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "strict_tuning": false,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "targets": [
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out"
+      ],
+      "case": {
+        "id": "robot_table",
+        "task": "i2v",
+        "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement."
+      },
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "asset_identity": "832ca2a17b0b813a3249ffe8c42c509a630cb145dc393454d81dc2f2302230be",
+      "ffn_policy_identity": null,
+      "numerical_environment": {
+        "torch": "2.11.0+cu130",
+        "triton": "3.6.0",
+        "cuda": "13.0",
+        "kernels": {
+          "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+          "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+          "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+          "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+          "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+          "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+          "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+          "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+          "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+          "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+          "linears.py": "578457eb31ffc429acf4a9d343df158813cd35b70b09a1d30edc2a3396c9a035"
+        }
+      }
+    },
+    "robot_table|full_dual": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": null,
+        "budget_plan": null,
+        "precision": "fp4",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 1,
+          "weight": 1,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 1,
+          "weight": 1,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "fp4",
+        "attention": {
+          "default": {
+            "coverage": 1,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "strict_tuning": false,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "targets": [
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out"
+      ],
+      "case": {
+        "id": "robot_table",
+        "task": "i2v",
+        "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement."
+      },
+      "image_sha256": "3f3e3b7d84d4e3f70aade11bc430edf3bfab07aa36a22dc4c5dd37761eaa81bc",
+      "asset_identity": "f4837f6c58aa764bf97a7e952c008eac4bc1bef8f042ff609f01a12a749584bd",
+      "ffn_policy_identity": null,
+      "numerical_environment": {
+        "torch": "2.11.0+cu130",
+        "triton": "3.6.0",
+        "cuda": "13.0",
+        "kernels": {
+          "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+          "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+          "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+          "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+          "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+          "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+          "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+          "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+          "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+          "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+          "linears.py": "578457eb31ffc429acf4a9d343df158813cd35b70b09a1d30edc2a3396c9a035"
+        }
+      }
+    }
+  },
+  "matrix_sha256": "e9e7846dc27b241b76222f51ee6b2a753f68fca9e97e691b05496eed72d89c7f",
+  "metric_definition": "LPIPS alex v0.1; all-frame SSIM; waveform log-STFT 512/hop128; paired bootstrap 10000",
+  "lpips_state_sha256": {
+    "scaling_layer.shift": "58ead6ece77a9e39d52001643b05fb3f9c562c401f999030137c70af75e5e835",
+    "scaling_layer.scale": "2db6dcccc768c9c243c3a2dc114f4026486b5eddc7bf18088f749c14a4ec838b",
+    "net.slice1.0.weight": "773e4bd41d838a8fcd8640b53a6456b165a65cd3f778e5e3b3aaaddafa4426e1",
+    "net.slice1.0.bias": "1650bc2c61c27bc5c6dd0569b5471133ca074c4c0b5eef1fee85e0a0ba301681",
+    "net.slice2.3.weight": "1918ec03598fcb19b87db2a9c1c886c4276899082405ae292fc29267beefae4d",
+    "net.slice2.3.bias": "32454d8c50c6e8c7d158f9161d968fce7ddb8645a017a3120131db575a1e7b8f",
+    "net.slice3.6.weight": "121de1060ad00f9a856e9a5baf828d99accbe38652100afe81c9215b231b3301",
+    "net.slice3.6.bias": "d74eb2693a64bcaccc90c26a3acf98c3eda8eadc18d2dffb9e3729a33f31d6fe",
+    "net.slice4.8.weight": "16adf963706e1a5e40700123791bd333d5b87804b0fd9e31b0cf11dc74e677be",
+    "net.slice4.8.bias": "a3443d4b64a683d1c2d680afc856a3e787ac29363e8def8f61fec9d740582c41",
+    "net.slice5.10.weight": "82669e3c4465e69bdbc5700abeb58bd30f55810b30aadacb45a70df5c2a7792b",
+    "net.slice5.10.bias": "a240db2e8beb55fdaa74d3fb13758a0439618eb39833456574dbc3af9b3779ca",
+    "lin0.model.1.weight": "1b21ee01e0de563ae9c7d645f8c40534d878fe5fc00b00cc01a29e3887cb8822",
+    "lin1.model.1.weight": "96b20e99719b4f1ac74b927546a2418913e87e95adc90a6629587fff450e3306",
+    "lin2.model.1.weight": "ba5d4595d966dde9d19855d8e139ef6271f012a945b279cccffed2485e0e5992",
+    "lin3.model.1.weight": "51c7dbf1c5c1e31db1baaf2618172ddd8b8240a8cd957a915582e0748cfb2a89",
+    "lin4.model.1.weight": "60b6388e7b80292d96b8150f1f12605aa514f148847959ce322453731810029c",
+    "lins.0.model.1.weight": "1b21ee01e0de563ae9c7d645f8c40534d878fe5fc00b00cc01a29e3887cb8822",
+    "lins.1.model.1.weight": "96b20e99719b4f1ac74b927546a2418913e87e95adc90a6629587fff450e3306",
+    "lins.2.model.1.weight": "ba5d4595d966dde9d19855d8e139ef6271f012a945b279cccffed2485e0e5992",
+    "lins.3.model.1.weight": "51c7dbf1c5c1e31db1baaf2618172ddd8b8240a8cd957a915582e0748cfb2a89",
+    "lins.4.model.1.weight": "60b6388e7b80292d96b8150f1f12605aa514f148847959ce322453731810029c"
+  },
+  "cohort_sha256": "f81fd6f900f55c0e9c2e270f9e8576dd997e9f2d48f6e1b460e9a60389ddbe1c",
+  "metric_workers": 4
+}

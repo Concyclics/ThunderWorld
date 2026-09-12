@@ -1,0 +1,141 @@
+[
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/run_shared.py",
+      "--model",
+      "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Edge-a9d944e",
+      "--case",
+      "tools/joint_inference/cases/policy_observe.json",
+      "--cohort",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/cohort.json",
+      "--jobs",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/development_jobs.json",
+      "--role",
+      "trajectory",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/development"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/evaluate.py",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/development/matrix.json",
+      "--cohort",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/cohort.json",
+      "--workers",
+      "4",
+      "--lpips-cache",
+      "/tmp/thunderworld-lpips-cache",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/development/quality.json"
+    ],
+    "cpu": true
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/capture_budget.py",
+      "--model",
+      "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Edge-a9d944e",
+      "--case",
+      "tools/joint_inference/cases/policy_observe.json",
+      "--cohort",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/cohort.json",
+      "--student-config",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.5/config.json",
+      "--student-assets",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/refined_b1.5",
+      "--reference-capture",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_capture"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/merge_calibration.py",
+      "--teacher",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture",
+      "--student",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_capture",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/teacher_student"
+    ],
+    "cpu": true
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/refine_budget_assets.py",
+      "--capture",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/teacher_student",
+      "--candidate",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.5",
+      "--assets",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/refined_b1.5",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_refined",
+      "--search-prescale"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/run_shared.py",
+      "--model",
+      "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Edge-a9d944e",
+      "--case",
+      "tools/joint_inference/cases/policy_observe.json",
+      "--cohort",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/cohort.json",
+      "--jobs",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_development_jobs.json",
+      "--role",
+      "trajectory",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_development"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/evaluate.py",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_development/matrix.json",
+      "--cohort",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/cohort.json",
+      "--workers",
+      "4",
+      "--lpips-cache",
+      "/tmp/thunderworld-lpips-cache",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_development/quality.json"
+    ],
+    "cpu": true
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/run_compute_cohort.py",
+      "--model",
+      "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Edge-a9d944e",
+      "--case",
+      "tools/joint_inference/cases/policy_table.json",
+      "--cohort",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/cohort.json",
+      "--jobs",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/validation_jobs.json",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation",
+      "--lpips-cache",
+      "/tmp/thunderworld-lpips-cache"
+    ],
+    "cpu": false
+  }
+]

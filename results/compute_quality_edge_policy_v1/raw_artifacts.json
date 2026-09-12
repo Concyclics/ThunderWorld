@@ -1,0 +1,187 @@
+{
+  "root": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1",
+  "files": [
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/cohort.json",
+      "copy": "cohort.json",
+      "sha256": "c4e6c4e6bff2848baab2e470b3effa1451f42f1fab8fcbfdc81cc91bd9cde98d"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/candidate_retention.json",
+      "copy": "candidate_retention.json",
+      "sha256": "afb13a1129af305c7cb09e8010c370261b69b6e5eaa7e461d3e5770bd80ef897"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/development/quality.json",
+      "copy": "development_quality.json",
+      "sha256": "1914a2db3ff75b10e2553e253d1e2cc900a615f74915cde8352e3323eab260a1"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_development/quality.json",
+      "copy": "student_development_quality.json",
+      "sha256": "b41719333f9cb86a130c0a0b64b023355a89fac201b188bd9196c74d01e060c1"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/validation/quality.json",
+      "copy": "validation_quality.json",
+      "sha256": "10cbb34c011c0a4d476fa7c636ae1cf30b7a8e20d1744959e53074934c134894"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/quality.json",
+      "copy": "final_quality.json",
+      "sha256": "8e8544e71e3bd1085a475c2da196a3a980c0e6f7827b5e30e9ba9a1c168c974d"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/report/report.json",
+      "copy": "original_final_report.json",
+      "sha256": "b1d312092802ccce1b7399c82996235ae3b119dfa45eb648087b8333f2849ed6"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/envelope_report/report.json",
+      "copy": "final_report.json",
+      "sha256": "d095beee2cc9334372376fc9c575fafda98b7b59a192e198ee551eb1310160b3"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/frozen_final_jobs.json",
+      "copy": "original_frozen_jobs.json",
+      "sha256": "0c76b48e1c91f85768cda9a4e043fcf725e76abe49c4cb88b2030559af900518"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/validation_envelope.json",
+      "copy": "validation_envelope.json",
+      "sha256": "cfb2a12ffa2fbca0f063b61dd99ffddac38c3754389a8d1777ff74efb48bbc50"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/envelope_report/README.md",
+      "copy": "FINAL_RESULTS.md",
+      "sha256": "f9439afa62354ecb69019b30d5dd9f705693a3c69c2b31dba0b200e163b009c5"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/commands.json",
+      "copy": "offline_commands.json",
+      "sha256": "b003b303a7e9b31fb3323d5f20f3f036d9466d7e85ab8ffb79b1f46c7675c6b6"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/quality_commands.json",
+      "copy": "quality_commands.json",
+      "sha256": "0b1cea802a18c323cf167b3267324b7ae9808ffdb78becd0d3c5a7f4db8307f1"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture/manifest.json",
+      "sha256": "30173c60bfde9cc3be55d92ba502fe9c0bcad1fa8f0cd842ce7469d81065cd6d"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/base_calibration/manifest.json",
+      "sha256": "0550fe1214c674026d51d9f119f8ba21f7ca138c84c67659fd4fd3bb1adf36e1"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/repair_search/search.json",
+      "sha256": "f9daea47cf224254bef6c404bb3871623c3c900d853edf8d6607af6cb77d24f0"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_capture/manifest.json",
+      "sha256": "3daaaf8191a342362f31529f25b72bc33673567576fd0e18085fe6f03cf0eaa4"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/student_refined/manifest.json",
+      "sha256": "e66c96522d060bd99f9e559e3b899c020d6a62a51f8dcc0555271d2c31a98027"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/matrix.json",
+      "sha256": "2758ade6d6e7c5d85f44e0408748cba906019b0627f04ddecfbb89cc72edc65a"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/control_b1_a/result.json",
+      "copy": "requests/control_b1_a.json",
+      "sha256": "db01d28daea20a6e5b6b0890eef3899fbe4286bfa1b61773ba6901edfca5ba4a"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/control_joint_b1.125_balanced/result.json",
+      "copy": "requests/control_joint_b1.125_balanced.json",
+      "sha256": "bb98ac8813b999763750eec74f9a633ef136116f4ad987fd2f1125e52309065f"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/b1.25_refined/result.json",
+      "copy": "requests/b1.25_refined.json",
+      "sha256": "f4a08d467375553068ff11a5658b683655f80cea2f0aafe7d6c72ad028521a04"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/control_b1.25_balanced/result.json",
+      "copy": "requests/control_b1.25_balanced.json",
+      "sha256": "f140343c2911fa586375f5dec49abdbd5e2ecbd8e5fb822bd8d63bbf0dd5ffc8"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/b1.5_refined/result.json",
+      "copy": "requests/b1.5_refined.json",
+      "sha256": "107046b16bdfb3e7347c864b6910d7618d0b9be2f649c1581e64b69fbcd48f8a"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/control_joint_b1.5_balanced/result.json",
+      "copy": "requests/control_joint_b1.5_balanced.json",
+      "sha256": "ccbd8e6c37fbd8b6954f15ed12da0f57bbfe4e7d4f4b0cbd120c070aa1f2cbbe"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/bf16/result.json",
+      "copy": "requests/bf16.json",
+      "sha256": "d952e6dff3b686d17005210706e625541e19f5775068d239163521e8d55cb2f9"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/fp8/result.json",
+      "copy": "requests/fp8.json",
+      "sha256": "3f2b02d7ffb31468d33b94dec7ceac0baa4b84fc3dead768f14f068727f9071a"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/fp4/result.json",
+      "copy": "requests/fp4.json",
+      "sha256": "d9aea3b99c09dfb52ace0dfbf4dd81d8288a23cb2ae458a608081de952a73f66"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/evaluation/final/full_dual/result.json",
+      "copy": "requests/full_dual.json",
+      "sha256": "76af15687e28af4a0aa9deaffb21bbefe03ced8b6e015f040d5445c830013edb"
+    }
+  ],
+  "selected_assets": [
+    {
+      "budget": 1.0,
+      "name": "control_b1_a",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls/control_b1_a/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls/control_b1_a/assets",
+      "config_sha256": "b1ae2c2fd77bf5d9c8b6cce4cb629fd9a430483977fd9edbf94c90ac7862de61",
+      "assets_manifest_sha256": "88328f8785528c8442d5f7bce5ba8407de3d56f169ab17ed34662cbbffe6928b",
+      "plan": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls/control_b1_a/plan.json",
+      "plan_sha256": "d46a7eb77838e299b4152fc24eee1af7ef6d1e5aa5b1dfb366ad59ca040b87da"
+    },
+    {
+      "budget": 1.125,
+      "name": "control_joint_b1.125_balanced",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls_joint/control_joint_b1.125_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls_joint/control_joint_b1.125_balanced/assets",
+      "config_sha256": "056182f81a3c849d2a9f3ee10e06a04cadfc54cfd48a81317d674914fa1c4906",
+      "assets_manifest_sha256": "87dd3e8254304e0c2ceb06e424e7427eb80c91118d81551091fb129d5df3318b",
+      "plan": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls_joint/control_joint_b1.125_balanced/plan.json",
+      "plan_sha256": "c5910070c7f699bd29e2bdeb4e2055f88e7769b1a686c7e75488bfbeb95bf8a2"
+    },
+    {
+      "budget": 1.25,
+      "name": "b1.25_refined",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.25/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/refined_b1.25",
+      "config_sha256": "04e0fe587458ad130a4203049868584baaacb4e9651411ec164688108f300362",
+      "assets_manifest_sha256": "4563bd8383e90c8f9db5fb02090fde6915f1099a386085faf32e35d46a7498b6",
+      "plan": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.25/plan.json",
+      "plan_sha256": "b5e4e689e21968235cf4d9a04543332df5fd2738173ad81d5fdbd3b2757aac3b"
+    },
+    {
+      "budget": 1.5,
+      "name": "b1.25_refined",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.25/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/refined_b1.25",
+      "config_sha256": "04e0fe587458ad130a4203049868584baaacb4e9651411ec164688108f300362",
+      "assets_manifest_sha256": "4563bd8383e90c8f9db5fb02090fde6915f1099a386085faf32e35d46a7498b6",
+      "plan": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.25/plan.json",
+      "plan_sha256": "b5e4e689e21968235cf4d9a04543332df5fd2738173ad81d5fdbd3b2757aac3b"
+    }
+  ],
+  "large_files": "Original NPZ, full-M panels and immutable quantized weights remain in the experiment root; paths and hashes identify them."
+}

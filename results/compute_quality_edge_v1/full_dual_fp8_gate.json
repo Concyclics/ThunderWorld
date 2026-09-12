@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "failures": [],
+  "metrics": {
+    "video.lpips": {
+      "mean_paired_difference": -0.049667044319501086,
+      "worst_seed_difference": 0.048183512370117365,
+      "ci95": [
+        -0.08836582433678948,
+        -0.016428662381525516
+      ]
+    },
+    "video.ssim_mean": {
+      "mean_paired_difference": 0.045652586966753006,
+      "worst_seed_difference": -0.0283089280128479
+    },
+    "video.relative_l2": {
+      "mean_paired_difference": -0.05353257875784292,
+      "worst_seed_difference": 0.027457989179335618
+    }
+  },
+  "seeds": [
+    101001,
+    101002,
+    101003,
+    101004,
+    101005,
+    101006,
+    101007,
+    101008,
+    101009,
+    101010,
+    101011,
+    101012,
+    101013,
+    101014,
+    101015,
+    101016
+  ],
+  "scope": "Full dual quality anchor versus FP8, 3.0x C0 and outside all four hard compute budgets",
+  "performance_eligible": false
+}

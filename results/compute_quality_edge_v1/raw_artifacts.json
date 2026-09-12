@@ -1,0 +1,84 @@
+{
+  "experiment": "/home/yufeng/thunderworld/compute_quality_edge_v1",
+  "requests": [
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/b1.5_refined/result.json",
+      "sha256": "df764585b2dd4841bf3b10a74ed1ae8ee5934ec67aa6bd6feac701ae2b88516d"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/b1.25_grow_mixed/result.json",
+      "sha256": "e468ec1c8365583d67d8d7ff60a8707b2312ba7afcee3291b9547766a24380f5"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/full_dual/result.json",
+      "sha256": "fa9d92c44775d4d61b8559cad6833ed01d43c7567128e1b24a4ba1ce402c1de2"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/control_joint_b1.5_balanced/result.json",
+      "sha256": "eab5179595460e9522be210bc4bb88b2d5159241f8a4eac96bb751b5c3f3f1f7"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/control_joint_b1.125_balanced/result.json",
+      "sha256": "cc6d091019c0ba11b96523b35a9cfdcb05fdb61bdd556cb40dcc02ea9123262c"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/bf16/result.json",
+      "sha256": "bad0f99b2d11c3e26f6599e46b7e78167a9ea718d6ab3724c0a0309c0a2eaca3"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/fp4/result.json",
+      "sha256": "16c528adf3b6e01769d5b8f7acb28e9465576a94f8f8d9f95600e4543cc56945"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/control_b1_a/result.json",
+      "sha256": "165699503c648462a07397ee5b02f69fd308e765d6b3986710ba255aa7dbae59"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/control_joint_b1.25_balanced/result.json",
+      "sha256": "7d0ae08c225c6aa5de45a10949e703744119fdcd59045dd72736d69a25170af7"
+    },
+    {
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/final/fp8/result.json",
+      "sha256": "c13fa1afd9fba36e9c3aee5c8610dcae49e8c649726b04bdeeea4c8a35f60676"
+    }
+  ],
+  "budget_assets": [
+    {
+      "budget": 1.0,
+      "name": "control_b1_a",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_a/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_a/assets",
+      "config_sha256": "3fb24a2c22e816b8ccd5a03c367159c0a4d9b46edd002044d8a912a1f7c6dd1f",
+      "assets_manifest_sha256": "832ca2a17b0b813a3249ffe8c42c509a630cb145dc393454d81dc2f2302230be",
+      "budget_plan_sha256": "79c0a442cff457093942abdb6dd5335c086a96a34f0f31a1507a9bcf5ef3cb9b"
+    },
+    {
+      "budget": 1.125,
+      "name": "control_joint_b1.125_balanced",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.125_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.125_balanced/assets",
+      "config_sha256": "d68e0b6f7d02afc8cc3cbb19527b523c4b7b97d413eeb08dcf330630e7f3b12f",
+      "assets_manifest_sha256": "e71b1a39cf975d901c77f9575d27d90a633fae45101e2da36a4f3297c9cd5e31",
+      "budget_plan_sha256": "3b4473f9cfefd68e854b6e26c5e89dd6ceb18296db049e5fad86daeb0c4d1849"
+    },
+    {
+      "budget": 1.25,
+      "name": "b1.25_grow_mixed",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.25_grow_mixed/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.25_grow_mixed/assets",
+      "config_sha256": "0a8425d926b96745f7637722898272278d76b457dfa2a90a9fc4f17af0c0aedd",
+      "assets_manifest_sha256": "bdc58e251dbf350a14523db21c28aaf20128929fead809cee3196dadc5c418b4",
+      "budget_plan_sha256": "4191375f09face61e6347eae3f06a6ed3589adec511fe52a84c6464796b8a6d7"
+    },
+    {
+      "budget": 1.5,
+      "name": "b1.5_refined",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/reserved_b1.5/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/refined_reserved_b1.5",
+      "config_sha256": "9cd1b954c6916b4bf58aee2ed095342bcfc5492c8dc4546f2520f895af097189",
+      "assets_manifest_sha256": "53ab5dc88c72990888ab4620f797059a5d1b223d3dddce4a7d5dade80a795609",
+      "budget_plan_sha256": "5c9e1da5457284fe48beaee47fc17eece2aedcc42437261eb91e92b9b4edb65f"
+    }
+  ],
+  "large_files_in_git": false
+}

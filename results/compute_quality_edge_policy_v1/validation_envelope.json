@@ -1,0 +1,158 @@
+{
+  "complete": true,
+  "primary_metric": "action.relative_l2",
+  "cohort_sha256": "7525e4b3c01745e3b213c48755551e261dab4c9deeb71f12789769f8aec30528",
+  "validation_sha256": "10cbb34c011c0a4d476fa7c636ae1cf30b7a8e20d1744959e53074934c134894",
+  "decisions": [
+    {
+      "budget": 1.0,
+      "selected": "control_b1_a",
+      "optimized_candidate": false,
+      "reason": "No optimized candidate satisfies SSIM/L2 guardrails; retain best feasible uncalibrated FP4 control",
+      "control": "control_b1_a"
+    },
+    {
+      "budget": 1.125,
+      "selected": "control_joint_b1.125_balanced",
+      "optimized_candidate": false,
+      "reason": "No optimized candidate satisfies SSIM/L2 guardrails; retain best feasible uncalibrated FP4 control",
+      "control": "control_joint_b1.125_balanced"
+    },
+    {
+      "budget": 1.25,
+      "selected": "b1.25_refined",
+      "control": "control_b1.25_balanced",
+      "metrics": {
+        "lpips": 0.04584273045903127,
+        "ssim_mean": 0.9266975447535515,
+        "relative_l2": 0.11734171676860489,
+        "action.relative_l2": 0.2652613540937147,
+        "action.rmse": 0.13266670666614172
+      }
+    },
+    {
+      "budget": 1.5,
+      "selected": "b1.25_refined",
+      "control": "control_joint_b1.5_balanced",
+      "metrics": {
+        "video.relative_l2": 0.11734171676860487,
+        "video.rmse": 0.05515595833783687,
+        "video.ssim_mean": 0.9266975447535515,
+        "video.lpips": 0.04584273045903126,
+        "action.relative_l2": 0.2652613540937147,
+        "action.rmse": 0.13266670666614175
+      },
+      "original_selected": "b1.5_refined",
+      "promotion": "Use unchanged lower-budget configuration within the larger cap"
+    }
+  ],
+  "jobs": [
+    {
+      "name": "control_b1_a",
+      "budget": 1.0,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls/control_b1_a/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls/control_b1_a/assets",
+      "frozen": true,
+      "config_sha256": "b1ae2c2fd77bf5d9c8b6cce4cb629fd9a430483977fd9edbf94c90ac7862de61",
+      "budget_plan_sha256": "d46a7eb77838e299b4152fc24eee1af7ef6d1e5aa5b1dfb366ad59ca040b87da",
+      "assets_manifest_sha256": "88328f8785528c8442d5f7bce5ba8407de3d56f169ab17ed34662cbbffe6928b"
+    },
+    {
+      "name": "control_joint_b1.125_balanced",
+      "budget": 1.125,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls_joint/control_joint_b1.125_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls_joint/control_joint_b1.125_balanced/assets",
+      "frozen": true,
+      "config_sha256": "056182f81a3c849d2a9f3ee10e06a04cadfc54cfd48a81317d674914fa1c4906",
+      "budget_plan_sha256": "c5910070c7f699bd29e2bdeb4e2055f88e7769b1a686c7e75488bfbeb95bf8a2",
+      "assets_manifest_sha256": "87dd3e8254304e0c2ceb06e424e7427eb80c91118d81551091fb129d5df3318b"
+    },
+    {
+      "name": "b1.25_refined",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.25/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/refined_b1.25",
+      "budget": 1.25,
+      "candidate": true,
+      "frozen": true,
+      "config_sha256": "04e0fe587458ad130a4203049868584baaacb4e9651411ec164688108f300362",
+      "budget_plan_sha256": "b5e4e689e21968235cf4d9a04543332df5fd2738173ad81d5fdbd3b2757aac3b",
+      "assets_manifest_sha256": "4563bd8383e90c8f9db5fb02090fde6915f1099a386085faf32e35d46a7498b6"
+    },
+    {
+      "name": "control_b1.25_balanced",
+      "budget": 1.25,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls/control_b1.25_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls/control_b1.25_balanced/assets",
+      "frozen": true,
+      "config_sha256": "dfac3dd049377e858596633c813ed104b4e9b1a03e472c6893080d05aabe4c44",
+      "budget_plan_sha256": "24ad024edf598e25532433e4bdcab98feab1bdcce67f73bedf658cc92a2d3cfe",
+      "assets_manifest_sha256": "142c22d01e1d8342a08912de4b7a24ef233b68ec0624c60da9ab464ec39f36c5"
+    },
+    {
+      "name": "b1.5_refined",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.5/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/refined_b1.5",
+      "budget": 1.5,
+      "candidate": true,
+      "frozen": true,
+      "config_sha256": "622f3206ec65eb7aefd93ebd7ee60dcb968efc86ec17e25e1854293276669db7",
+      "budget_plan_sha256": "cbe4d13cd4271add6a7fd0bdb06e1bd84eafda063d362ec48f126f5188bd355b",
+      "assets_manifest_sha256": "e3e22c873349919b38b523da368acad22a3fe5aac535598c1021ff97677a698c"
+    },
+    {
+      "name": "control_joint_b1.5_balanced",
+      "budget": 1.5,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls_joint/control_joint_b1.5_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls_joint/control_joint_b1.5_balanced/assets",
+      "frozen": true,
+      "config_sha256": "1a13726d9ca286ce43ec55016a679d20baf649307da499cf3f79fd08c99c9e5f",
+      "budget_plan_sha256": "349fd986c4c636a5164b7f7762b29b51447f93536a052708628e8f269b4b72a9",
+      "assets_manifest_sha256": "8ffd31a61ceb391fc76f101f92c38d3352c5d80f77cf479a3e1afea7289fe9b4"
+    },
+    {
+      "name": "bf16",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/bf16.json",
+      "frozen": true,
+      "config_sha256": "b57aeda7c3f819ab2178bbd7a435fb4a5599b73b1a62c41d1ed0d883cee6cded"
+    },
+    {
+      "name": "fp8",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/fp8.json",
+      "frozen": true,
+      "config_sha256": "9c8519760b24584f4dd0d88b244807b956793069459331d1930aaaf563d0684f"
+    },
+    {
+      "name": "fp4",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls/control_b1_a/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls/control_b1_a/assets",
+      "frozen": true,
+      "config_sha256": "b1ae2c2fd77bf5d9c8b6cce4cb629fd9a430483977fd9edbf94c90ac7862de61",
+      "budget_plan_sha256": "d46a7eb77838e299b4152fc24eee1af7ef6d1e5aa5b1dfb366ad59ca040b87da",
+      "assets_manifest_sha256": "88328f8785528c8442d5f7bce5ba8407de3d56f169ab17ed34662cbbffe6928b"
+    },
+    {
+      "name": "full_dual",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/full_dual.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/uncalibrated/assets",
+      "frozen": true,
+      "config_sha256": "2f88807993e26c15d35794bb0db0fe8e0a93405aa47b5b09ff316bfaec3c13bb",
+      "assets_manifest_sha256": "5e9f77445266c16d48a91f64f32e120adc1e33ba9d8b5126b915bd8108faaf11"
+    }
+  ],
+  "frozen_at_utc": "2026-09-12T17:50:07.703519+00:00",
+  "frozen_before_final_metrics": true,
+  "original_selection_sha256": "0c76b48e1c91f85768cda9a4e043fcf725e76abe49c4cb88b2030559af900518",
+  "updates": [
+    {
+      "budget": 1.5,
+      "original": "b1.5_refined",
+      "selected": "b1.25_refined",
+      "reason": "Lower-cap configuration dominates every reported validation error/SSIM, MMA and prepared weight bytes"
+    }
+  ],
+  "scope": "Validation-only feasibility envelope; original frozen inference jobs remain unchanged and all diagnostics are retained"
+}

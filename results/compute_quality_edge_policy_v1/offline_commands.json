@@ -1,0 +1,160 @@
+[
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "-m",
+      "thunderworld_fp4.cosmos.cli",
+      "prepare",
+      "--model",
+      "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Edge-a9d944e",
+      "--config",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/full_dual.json",
+      "--case",
+      "tools/joint_inference/cases/policy_observe.json",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/uncalibrated"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/capture_budget.py",
+      "--model",
+      "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Edge-a9d944e",
+      "--case",
+      "tools/joint_inference/cases/policy_observe.json",
+      "--cohort",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/cohort.json",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/calibrate_budget.py",
+      "--capture",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/base_calibration"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/search_budget.py",
+      "--capture",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture",
+      "--assets",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/base_calibration",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/repair_search"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/export_budget.py",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/repair_search/search.json",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/candidates"
+    ],
+    "cpu": true
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/controls_budget.py",
+      "--capture",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture",
+      "--assets",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/uncalibrated/assets",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls"
+    ],
+    "cpu": true
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/controls_budget.py",
+      "--capture",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture",
+      "--assets",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/uncalibrated/assets",
+      "--joint-attention",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/controls_joint"
+    ],
+    "cpu": true
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/refine_budget_assets.py",
+      "--capture",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture",
+      "--candidate",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/candidates/b1.125_grow_mixed",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/refined_b1.125"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/reserve_outliers.py",
+      "--candidate",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/candidates/b1.25_grow_mixed",
+      "--search",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/repair_search/search.json",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.25"
+    ],
+    "cpu": true
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/refine_budget_assets.py",
+      "--capture",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture",
+      "--candidate",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.25",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/refined_b1.25"
+    ],
+    "cpu": false
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/reserve_outliers.py",
+      "--candidate",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/candidates/b1.5_grow_mixed",
+      "--search",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/repair_search/search.json",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.5"
+    ],
+    "cpu": true
+  },
+  {
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "tools/joint_inference/refine_budget_assets.py",
+      "--capture",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/capture",
+      "--candidate",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/reserved_b1.5",
+      "--output",
+      "/home/yufeng/thunderworld/compute_quality_edge_policy_v1/refined_b1.5"
+    ],
+    "cpu": false
+  }
+]

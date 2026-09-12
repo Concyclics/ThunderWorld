@@ -1,0 +1,2576 @@
+{
+  "complete": true,
+  "scope": "edge policy final new seeds on existing scenes; observed compute frontier only",
+  "performance_eligible": false,
+  "resource_mode": "shared-calibration",
+  "cohort_sha256": "7525e4b3c01745e3b213c48755551e261dab4c9deeb71f12789769f8aec30528",
+  "quality_sha256": "8e8544e71e3bd1085a475c2da196a3a980c0e6f7827b5e30e9ba9a1c168c974d",
+  "selection_sha256": "0c76b48e1c91f85768cda9a4e043fcf725e76abe49c4cb88b2030559af900518",
+  "summaries": {
+    "control_b1_a": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.14862513919532758,
+          "rmse": 0.06942448686119321,
+          "ssim_mean": 0.892743892967701,
+          "lpips": 0.07855586476558957
+        },
+        "action": {
+          "relative_l2": 0.4512959451650576,
+          "rmse": 0.23624496238726705
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 7931822080,
+          "quantized_base_elements": 7931822080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0,
+          "softmax_elements": 4174643200,
+          "probability_base_quantized_elements": 4174643200,
+          "probability_residual_quantized_elements": 0,
+          "qkv_base_quantized_elements": 2119434240,
+          "qkv_residual_quantized_elements_upper": 0,
+          "combine_output_elements": 834928640
+        },
+        "packing_traffic": {
+          "base_write_bytes": 4461649920,
+          "selected_residual_write_bytes": 0,
+          "input_read_bytes_minimum": 19729203200,
+          "residual_write_bytes": 0,
+          "base_code_scale_write_bytes": 1192181760,
+          "base_factor_write_bytes": 66232320,
+          "selected_residual_write_bytes_upper": 0
+        },
+        "w1_support_union_bytes": 0,
+        "schema_version": 1,
+        "budget": 1.0,
+        "steps": 35,
+        "branches": 1,
+        "base_mma": 52646232719360,
+        "total_mma": 52646232719360,
+        "ratio": 1.0,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 52646232719360,
+          "bf16": 0
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "69f490e9a27659677f79594a92b2f7e41a3bdb9e618c9fed7bad9d8290e37b28"
+      },
+      "prepared_weight_bytes": 794919104,
+      "resident_model_state_bytes": 6136662904,
+      "support_buffer_bytes": 85120,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5357096448,
+          "reserved_bytes": 8197767168
+        },
+        "after_warmup": {
+          "allocated_bytes": 6208698880,
+          "reserved_bytes": 7436500992,
+          "peak_allocated_bytes": 6956897280,
+          "peak_reserved_bytes": 9164554240
+        }
+      },
+      "request_peak_allocated_bytes": 6956897280,
+      "request_peak_reserved_bytes": 7436500992,
+      "live_non_model_allocated_after_warmup_bytes": 72035976,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "control_joint_b1.125_balanced": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.12162213557949181,
+          "rmse": 0.05671371492608504,
+          "ssim_mean": 0.9216937124729156,
+          "lpips": 0.053061746115203916
+        },
+        "action": {
+          "relative_l2": 0.4231224028218842,
+          "rmse": 0.22115523295507478
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 7931822080,
+          "quantized_base_elements": 7931822080,
+          "selected_residual_elements": 469647360,
+          "selector_rank_pairs": 73256960,
+          "softmax_elements": 4174643200,
+          "probability_base_quantized_elements": 4174643200,
+          "probability_residual_quantized_elements": 208732160,
+          "qkv_base_quantized_elements": 2119434240,
+          "qkv_residual_quantized_elements_upper": 529858560,
+          "combine_output_elements": 834928640
+        },
+        "packing_traffic": {
+          "base_write_bytes": 4461649920,
+          "selected_residual_write_bytes": 264176640,
+          "input_read_bytes_minimum": 19729203200,
+          "residual_write_bytes": 4461649920,
+          "base_code_scale_write_bytes": 1192181760,
+          "base_factor_write_bytes": 66232320,
+          "selected_residual_write_bytes_upper": 298045440
+        },
+        "w1_support_union_bytes": 51093504,
+        "schema_version": 1,
+        "budget": 1.125,
+        "steps": 35,
+        "branches": 1,
+        "base_mma": 52646232719360,
+        "total_mma": 59157134704640,
+        "ratio": 1.1236727045596502,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 59140693032960,
+          "bf16": 16441671680
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "5b306a74776bb8e0c7dddc72d10d2fd397d0c4967850df9e305579e990c14ee4"
+      },
+      "prepared_weight_bytes": 846056960,
+      "resident_model_state_bytes": 6187800760,
+      "support_buffer_bytes": 85120,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6259984896,
+          "reserved_bytes": 7457472512,
+          "peak_allocated_bytes": 7007396864,
+          "peak_reserved_bytes": 9248440320
+        }
+      },
+      "request_peak_allocated_bytes": 7007396864,
+      "request_peak_reserved_bytes": 7457472512,
+      "live_non_model_allocated_after_warmup_bytes": 72184136,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {
+        "('policy', 0, 0, 0)": {
+          "q_union": 0.25,
+          "k_union": 0.20000000298023224,
+          "v_union": 0.20000000298023224
+        },
+        "('policy', 0, 0, 1)": {
+          "q_union": 0.25,
+          "k_union": 0.07500000298023224,
+          "v_union": 0.07500000298023224
+        },
+        "('policy', 0, 0, 2)": {
+          "q_union": 0.25,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('policy', 0, 0, 3)": {
+          "q_union": 0.25,
+          "k_union": 0.15000000596046448,
+          "v_union": 0.15000000596046448
+        },
+        "('policy', 0, 0, 4)": {
+          "q_union": 0.25,
+          "k_union": 0.07500000298023224,
+          "v_union": 0.07500000298023224
+        },
+        "('policy', 0, 0, 5)": {
+          "q_union": 0.25,
+          "k_union": 0.17499999701976776,
+          "v_union": 0.17499999701976776
+        },
+        "('policy', 0, 0, 6)": {
+          "q_union": 0.25,
+          "k_union": 0.05000000074505806,
+          "v_union": 0.05000000074505806
+        },
+        "('policy', 0, 0, 7)": {
+          "q_union": 0.25,
+          "k_union": 0.15000000596046448,
+          "v_union": 0.15000000596046448
+        },
+        "('policy', 0, 0, 8)": {
+          "q_union": 0.25,
+          "k_union": 0.15000000596046448,
+          "v_union": 0.15000000596046448
+        },
+        "('policy', 0, 0, 9)": {
+          "q_union": 0.25,
+          "k_union": 0.05000000074505806,
+          "v_union": 0.05000000074505806
+        },
+        "('policy', 0, 0, 10)": {
+          "q_union": 0.25,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('policy', 0, 0, 11)": {
+          "q_union": 0.25,
+          "k_union": 0.07500000298023224,
+          "v_union": 0.07500000298023224
+        },
+        "('policy', 0, 0, 12)": {
+          "q_union": 0.25,
+          "k_union": 0.15000000596046448,
+          "v_union": 0.15000000596046448
+        },
+        "('policy', 0, 0, 13)": {
+          "q_union": 0.25,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('policy', 0, 0, 14)": {
+          "q_union": 0.25,
+          "k_union": 0.15000000596046448,
+          "v_union": 0.15000000596046448
+        },
+        "('policy', 0, 0, 15)": {
+          "q_union": 0.25,
+          "k_union": 0.07500000298023224,
+          "v_union": 0.07500000298023224
+        },
+        "('policy', 0, 0, 16)": {
+          "q_union": 0.25,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('policy', 0, 0, 17)": {
+          "q_union": 0.25,
+          "k_union": 0.17499999701976776,
+          "v_union": 0.17499999701976776
+        },
+        "('policy', 0, 0, 18)": {
+          "q_union": 0.25,
+          "k_union": 0.05000000074505806,
+          "v_union": 0.05000000074505806
+        },
+        "('policy', 0, 0, 19)": {
+          "q_union": 0.25,
+          "k_union": 0.07500000298023224,
+          "v_union": 0.07500000298023224
+        },
+        "('policy', 0, 0, 20)": {
+          "q_union": 0.25,
+          "k_union": 0.17499999701976776,
+          "v_union": 0.17499999701976776
+        },
+        "('policy', 0, 0, 21)": {
+          "q_union": 0.25,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('policy', 0, 0, 22)": {
+          "q_union": 0.25,
+          "k_union": 0.05000000074505806,
+          "v_union": 0.05000000074505806
+        },
+        "('policy', 0, 0, 23)": {
+          "q_union": 0.25,
+          "k_union": 0.05000000074505806,
+          "v_union": 0.05000000074505806
+        },
+        "('policy', 0, 0, 24)": {
+          "q_union": 0.25,
+          "k_union": 0.17499999701976776,
+          "v_union": 0.17499999701976776
+        },
+        "('policy', 0, 0, 25)": {
+          "q_union": 0.25,
+          "k_union": 0.125,
+          "v_union": 0.125
+        },
+        "('policy', 0, 0, 26)": {
+          "q_union": 0.25,
+          "k_union": 0.05000000074505806,
+          "v_union": 0.05000000074505806
+        },
+        "('policy', 0, 0, 27)": {
+          "q_union": 0.25,
+          "k_union": 0.17499999701976776,
+          "v_union": 0.17499999701976776
+        }
+      },
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "b1.25_refined": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.11896210322883646,
+          "rmse": 0.05567055184645375,
+          "ssim_mean": 0.9342309013009071,
+          "lpips": 0.04638984966485997
+        },
+        "action": {
+          "relative_l2": 0.39224272327323695,
+          "rmse": 0.20346451788580938
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 7931822080,
+          "quantized_base_elements": 7931822080,
+          "selected_residual_elements": 1625022464,
+          "selector_rank_pairs": 5126144,
+          "base_reencoded_elements": 335994880,
+          "softmax_elements": 4174643200,
+          "probability_base_quantized_elements": 4174643200,
+          "probability_residual_quantized_elements": 2633433088,
+          "qkv_base_quantized_elements": 2119434240,
+          "qkv_residual_quantized_elements_upper": 2037547008,
+          "combine_output_elements": 834928640
+        },
+        "packing_traffic": {
+          "base_write_bytes": 4461649920,
+          "selected_residual_write_bytes": 914075136,
+          "input_read_bytes_minimum": 19729203200,
+          "residual_write_bytes": 914075136,
+          "base_code_scale_write_bytes": 1192181760,
+          "base_factor_write_bytes": 66232320,
+          "selected_residual_write_bytes_upper": 1146120192
+        },
+        "w1_support_union_bytes": 87275520,
+        "schema_version": 1,
+        "budget": 1.25,
+        "steps": 35,
+        "branches": 1,
+        "base_mma": 52646232719360,
+        "total_mma": 65655621550080,
+        "ratio": 1.2471095871202946,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 65639179878400,
+          "bf16": 16441671680
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "aac9439d8aec3fe41b89437ce2077a39f540bcbcc45cfdde7255e78426a91d2f"
+      },
+      "prepared_weight_bytes": 882283060,
+      "resident_model_state_bytes": 6224026860,
+      "support_buffer_bytes": 94720,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6303934976,
+          "reserved_bytes": 7438598144,
+          "peak_allocated_bytes": 7049826304,
+          "peak_reserved_bytes": 9269411840
+        }
+      },
+      "request_peak_allocated_bytes": 7048987648,
+      "request_peak_reserved_bytes": 7574913024,
+      "live_non_model_allocated_after_warmup_bytes": 79908116,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {
+        "('policy', 0, 0, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.7750000357627869,
+          "v_union": 0.7750000357627869
+        },
+        "('policy', 0, 0, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.699999988079071,
+          "v_union": 0.699999988079071
+        },
+        "('policy', 0, 0, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.8500000238418579,
+          "v_union": 0.8500000238418579
+        },
+        "('policy', 0, 0, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.675000011920929
+        },
+        "('policy', 0, 0, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 6)": {
+          "q_union": 1.0,
+          "k_union": 0.574999988079071,
+          "v_union": 0.574999988079071
+        },
+        "('policy', 0, 0, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.6500000357627869,
+          "v_union": 0.6500000357627869
+        },
+        "('policy', 0, 0, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.699999988079071,
+          "v_union": 0.699999988079071
+        },
+        "('policy', 0, 0, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('policy', 0, 0, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('policy', 0, 0, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.800000011920929,
+          "v_union": 0.800000011920929
+        },
+        "('policy', 0, 0, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.7750000357627869,
+          "v_union": 0.7750000357627869
+        },
+        "('policy', 0, 0, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.7750000357627869,
+          "v_union": 0.7750000357627869
+        },
+        "('policy', 0, 0, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 0, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 0, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('policy', 0, 0, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 18)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 21)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.574999988079071,
+          "v_union": 0.7250000238418579
+        },
+        "('policy', 0, 0, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.5250000357627869,
+          "v_union": 0.5250000357627869
+        },
+        "('policy', 0, 0, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.550000011920929,
+          "v_union": 0.550000011920929
+        },
+        "('policy', 0, 0, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.7750000357627869,
+          "v_union": 0.7750000357627869
+        },
+        "('policy', 0, 1, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.699999988079071,
+          "v_union": 0.699999988079071
+        },
+        "('policy', 0, 1, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.8500000238418579,
+          "v_union": 0.8500000238418579
+        },
+        "('policy', 0, 1, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.675000011920929
+        },
+        "('policy', 0, 1, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.675000011920929,
+          "v_union": 0.625
+        },
+        "('policy', 0, 1, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.6500000357627869,
+          "v_union": 0.6500000357627869
+        },
+        "('policy', 0, 1, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.699999988079071,
+          "v_union": 0.699999988079071
+        },
+        "('policy', 0, 1, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('policy', 0, 1, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.9000000357627869,
+          "v_union": 0.9000000357627869
+        },
+        "('policy', 0, 1, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.800000011920929,
+          "v_union": 0.800000011920929
+        },
+        "('policy', 0, 1, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('policy', 0, 1, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 1, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 1, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.7750000357627869,
+          "v_union": 0.7750000357627869
+        },
+        "('policy', 0, 1, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 1, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 1, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 1, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 1, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.574999988079071,
+          "v_union": 0.7250000238418579
+        },
+        "('policy', 0, 1, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.5250000357627869,
+          "v_union": 0.5250000357627869
+        },
+        "('policy', 0, 1, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.550000011920929,
+          "v_union": 0.550000011920929
+        },
+        "('policy', 0, 1, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.7750000357627869,
+          "v_union": 0.7750000357627869
+        },
+        "('policy', 0, 2, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.699999988079071,
+          "v_union": 0.699999988079071
+        },
+        "('policy', 0, 2, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.824999988079071,
+          "v_union": 0.824999988079071
+        },
+        "('policy', 0, 2, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.675000011920929
+        },
+        "('policy', 0, 2, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.675000011920929,
+          "v_union": 0.625
+        },
+        "('policy', 0, 2, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.675000011920929,
+          "v_union": 0.675000011920929
+        },
+        "('policy', 0, 2, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('policy', 0, 2, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 11)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 2, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('policy', 0, 2, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 2, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 2, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 2, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 2, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.6000000238418579,
+          "v_union": 0.75
+        },
+        "('policy', 0, 2, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.5250000357627869,
+          "v_union": 0.5250000357627869
+        },
+        "('policy', 0, 2, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.550000011920929,
+          "v_union": 0.550000011920929
+        },
+        "('policy', 0, 2, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.675000011920929,
+          "v_union": 0.675000011920929
+        },
+        "('policy', 0, 3, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.699999988079071,
+          "v_union": 0.699999988079071
+        },
+        "('policy', 0, 3, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.824999988079071,
+          "v_union": 0.824999988079071
+        },
+        "('policy', 0, 3, 3)": {
+          "q_union": 0.5,
+          "k_union": 0.625,
+          "v_union": 0.675000011920929
+        },
+        "('policy', 0, 3, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 6)": {
+          "q_union": 0.5,
+          "k_union": 0.675000011920929,
+          "v_union": 0.625
+        },
+        "('policy', 0, 3, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.675000011920929,
+          "v_union": 0.675000011920929
+        },
+        "('policy', 0, 3, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.75,
+          "v_union": 0.75
+        },
+        "('policy', 0, 3, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.9000000357627869,
+          "v_union": 0.9000000357627869
+        },
+        "('policy', 0, 3, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 3, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 3, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 3, 22)": {
+          "q_union": 0.5,
+          "k_union": 0.574999988079071,
+          "v_union": 0.7250000238418579
+        },
+        "('policy', 0, 3, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.5250000357627869,
+          "v_union": 0.5250000357627869
+        },
+        "('policy', 0, 3, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.550000011920929,
+          "v_union": 0.550000011920929
+        },
+        "('policy', 0, 3, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        }
+      },
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "control_b1.25_balanced": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.13477852221860231,
+          "rmse": 0.06290857599815103,
+          "ssim_mean": 0.9109042659401894,
+          "lpips": 0.06364330193087774
+        },
+        "action": {
+          "relative_l2": 0.4213479338491753,
+          "rmse": 0.21929517781239827
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 7931822080,
+          "quantized_base_elements": 7931822080,
+          "selected_residual_elements": 991477760,
+          "selector_rank_pairs": 69242880,
+          "softmax_elements": 4174643200,
+          "probability_base_quantized_elements": 4174643200,
+          "probability_residual_quantized_elements": 0,
+          "qkv_base_quantized_elements": 2119434240,
+          "qkv_residual_quantized_elements_upper": 0,
+          "combine_output_elements": 834928640
+        },
+        "packing_traffic": {
+          "base_write_bytes": 4461649920,
+          "selected_residual_write_bytes": 557706240,
+          "input_read_bytes_minimum": 19729203200,
+          "residual_write_bytes": 4461649920,
+          "base_code_scale_write_bytes": 1192181760,
+          "base_factor_write_bytes": 66232320,
+          "selected_residual_write_bytes_upper": 0
+        },
+        "w1_support_union_bytes": 105799680,
+        "schema_version": 1,
+        "budget": 1.25,
+        "steps": 35,
+        "branches": 1,
+        "base_mma": 52646232719360,
+        "total_mma": 65700920033280,
+        "ratio": 1.2479700187382885,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 65700920033280,
+          "bf16": 0
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "6e329d0642268caf3c3203a85ba2bc8bf4a150c3911f8e9bf415fd2dbc297de8"
+      },
+      "prepared_weight_bytes": 900810624,
+      "resident_model_state_bytes": 6242554424,
+      "support_buffer_bytes": 85120,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6321859072,
+          "reserved_bytes": 7516192768,
+          "peak_allocated_bytes": 7067173888,
+          "peak_reserved_bytes": 9237954560
+        }
+      },
+      "request_peak_allocated_bytes": 7065863168,
+      "request_peak_reserved_bytes": 7516192768,
+      "live_non_model_allocated_after_warmup_bytes": 79304648,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "b1.5_refined": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.14189033056312805,
+          "rmse": 0.0663542935432589,
+          "ssim_mean": 0.9170614778995514,
+          "lpips": 0.058757583272274455
+        },
+        "action": {
+          "relative_l2": 0.40132125752619796,
+          "rmse": 0.20873507419647763
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 7931822080,
+          "quantized_base_elements": 7931822080,
+          "selected_residual_elements": 2925551616,
+          "selector_rank_pairs": 6942720,
+          "base_reencoded_elements": 247816192,
+          "softmax_elements": 4174643200,
+          "probability_base_quantized_elements": 4174643200,
+          "probability_residual_quantized_elements": 3327787008,
+          "qkv_base_quantized_elements": 2119434240,
+          "qkv_residual_quantized_elements_upper": 2119434240,
+          "combine_output_elements": 834928640
+        },
+        "packing_traffic": {
+          "base_write_bytes": 4461649920,
+          "selected_residual_write_bytes": 1645622784,
+          "input_read_bytes_minimum": 19729203200,
+          "residual_write_bytes": 1645622784,
+          "base_code_scale_write_bytes": 1192181760,
+          "base_factor_write_bytes": 66232320,
+          "selected_residual_write_bytes_upper": 1192181760
+        },
+        "w1_support_union_bytes": 196549632,
+        "schema_version": 1,
+        "budget": 1.5,
+        "steps": 35,
+        "branches": 1,
+        "base_mma": 52646232719360,
+        "total_mma": 78706399772672,
+        "ratio": 1.4950053537967343,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 78689958100992,
+          "bf16": 16441671680
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "a13d6dd3cb695512143f09607e0c21224f82fe1e2aa244543515b44000f40355"
+      },
+      "prepared_weight_bytes": 991661652,
+      "resident_model_state_bytes": 6333405452,
+      "support_buffer_bytes": 101120,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6423067648,
+          "reserved_bytes": 7610564608,
+          "peak_allocated_bytes": 7166678528,
+          "peak_reserved_bytes": 9290383360
+        }
+      },
+      "request_peak_allocated_bytes": 7165892096,
+      "request_peak_reserved_bytes": 7610564608,
+      "live_non_model_allocated_after_warmup_bytes": 89662196,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {
+        "('policy', 0, 0, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.8500000238418579,
+          "v_union": 0.8500000238418579
+        },
+        "('policy', 0, 0, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.824999988079071,
+          "v_union": 0.824999988079071
+        },
+        "('policy', 0, 0, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.8500000238418579,
+          "v_union": 0.8500000238418579
+        },
+        "('policy', 0, 0, 3)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 0, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 6)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 0, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 0, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 0, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 0, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 18)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 0, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 0, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 0, 22)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 0, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 0, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.9000000357627869,
+          "v_union": 0.9000000357627869
+        },
+        "('policy', 0, 0, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.8500000238418579,
+          "v_union": 0.8500000238418579
+        },
+        "('policy', 0, 1, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.824999988079071,
+          "v_union": 0.824999988079071
+        },
+        "('policy', 0, 1, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.8500000238418579,
+          "v_union": 0.8500000238418579
+        },
+        "('policy', 0, 1, 3)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 1, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 6)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 1, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 1, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 1, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 1, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.9000000357627869,
+          "v_union": 0.9000000357627869
+        },
+        "('policy', 0, 1, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 1, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 1, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 1, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 1, 18)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 1, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 1, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 1, 22)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 1, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 1, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.9000000357627869,
+          "v_union": 0.9000000357627869
+        },
+        "('policy', 0, 1, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.8500000238418579,
+          "v_union": 0.8500000238418579
+        },
+        "('policy', 0, 2, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.824999988079071,
+          "v_union": 0.824999988079071
+        },
+        "('policy', 0, 2, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.8500000238418579,
+          "v_union": 0.8500000238418579
+        },
+        "('policy', 0, 2, 3)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 6)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 2, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 2, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 2, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.9000000357627869,
+          "v_union": 0.9000000357627869
+        },
+        "('policy', 0, 2, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 2, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 2, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 2, 18)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 2, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 2, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 21)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 2, 22)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 2, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 2, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.9000000357627869,
+          "v_union": 0.9000000357627869
+        },
+        "('policy', 0, 2, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 0)": {
+          "q_union": 1.0,
+          "k_union": 0.7750000357627869,
+          "v_union": 0.7750000357627869
+        },
+        "('policy', 0, 3, 1)": {
+          "q_union": 1.0,
+          "k_union": 0.824999988079071,
+          "v_union": 0.824999988079071
+        },
+        "('policy', 0, 3, 2)": {
+          "q_union": 1.0,
+          "k_union": 0.8500000238418579,
+          "v_union": 0.8500000238418579
+        },
+        "('policy', 0, 3, 3)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 3, 4)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 5)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 6)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 3, 7)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 3, 8)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 9)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 10)": {
+          "q_union": 1.0,
+          "k_union": 0.9000000357627869,
+          "v_union": 0.9000000357627869
+        },
+        "('policy', 0, 3, 11)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 12)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 13)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 3, 14)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 3, 15)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 16)": {
+          "q_union": 1.0,
+          "k_union": 0.949999988079071,
+          "v_union": 0.949999988079071
+        },
+        "('policy', 0, 3, 17)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 18)": {
+          "q_union": 1.0,
+          "k_union": 1.0,
+          "v_union": 1.0
+        },
+        "('policy', 0, 3, 19)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 20)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 21)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 22)": {
+          "q_union": 1.0,
+          "k_union": 0.9750000238418579,
+          "v_union": 0.9750000238418579
+        },
+        "('policy', 0, 3, 23)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 24)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 25)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        },
+        "('policy', 0, 3, 26)": {
+          "q_union": 1.0,
+          "k_union": 0.9000000357627869,
+          "v_union": 0.9000000357627869
+        },
+        "('policy', 0, 3, 27)": {
+          "q_union": 1.0,
+          "k_union": 0.925000011920929,
+          "v_union": 0.925000011920929
+        }
+      },
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "control_joint_b1.5_balanced": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.14949455075250737,
+          "rmse": 0.06960849819809109,
+          "ssim_mean": 0.9089753665030003,
+          "lpips": 0.06604762197671601
+        },
+        "action": {
+          "relative_l2": 0.4711443408907569,
+          "rmse": 0.24515616809538113
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 7931822080,
+          "quantized_base_elements": 7931822080,
+          "selected_residual_elements": 1669857280,
+          "selector_rank_pairs": 73256960,
+          "softmax_elements": 4174643200,
+          "probability_base_quantized_elements": 4174643200,
+          "probability_residual_quantized_elements": 782745600,
+          "qkv_base_quantized_elements": 2119434240,
+          "qkv_residual_quantized_elements_upper": 2035138560,
+          "combine_output_elements": 834928640
+        },
+        "packing_traffic": {
+          "base_write_bytes": 4461649920,
+          "selected_residual_write_bytes": 939294720,
+          "input_read_bytes_minimum": 19729203200,
+          "residual_write_bytes": 4461649920,
+          "base_code_scale_write_bytes": 1192181760,
+          "base_factor_write_bytes": 66232320,
+          "selected_residual_write_bytes_upper": 1144765440
+        },
+        "w1_support_union_bytes": 196632576,
+        "schema_version": 1,
+        "budget": 1.5,
+        "steps": 35,
+        "branches": 1,
+        "base_mma": 52646232719360,
+        "total_mma": 76383896207360,
+        "ratio": 1.450890068707058,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 76367454535680,
+          "bf16": 16441671680
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "24786a569c921adc98b14db1bea3d1e007d789d7ff2272c2dd5258d3ac97338d"
+      },
+      "prepared_weight_bytes": 991722368,
+      "resident_model_state_bytes": 6333466168,
+      "support_buffer_bytes": 85120,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6416091648,
+          "reserved_bytes": 7631536128,
+          "peak_allocated_bytes": 7160366080,
+          "peak_reserved_bytes": 9263120384
+        }
+      },
+      "request_peak_allocated_bytes": 7158522880,
+      "request_peak_reserved_bytes": 7631536128,
+      "live_non_model_allocated_after_warmup_bytes": 82625480,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {
+        "('policy', 0, 0, 0)": {
+          "q_union": 0.9375,
+          "k_union": 0.6500000357627869,
+          "v_union": 0.6500000357627869
+        },
+        "('policy', 0, 0, 1)": {
+          "q_union": 0.9375,
+          "k_union": 0.4749999940395355,
+          "v_union": 0.4749999940395355
+        },
+        "('policy', 0, 0, 2)": {
+          "q_union": 0.9375,
+          "k_union": 0.3499999940395355,
+          "v_union": 0.3499999940395355
+        },
+        "('policy', 0, 0, 3)": {
+          "q_union": 0.9375,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('policy', 0, 0, 4)": {
+          "q_union": 0.9375,
+          "k_union": 0.4000000059604645,
+          "v_union": 0.4000000059604645
+        },
+        "('policy', 0, 0, 5)": {
+          "q_union": 0.9375,
+          "k_union": 0.4749999940395355,
+          "v_union": 0.4749999940395355
+        },
+        "('policy', 0, 0, 6)": {
+          "q_union": 0.9375,
+          "k_union": 0.32500001788139343,
+          "v_union": 0.32500001788139343
+        },
+        "('policy', 0, 0, 7)": {
+          "q_union": 0.9375,
+          "k_union": 0.45000001788139343,
+          "v_union": 0.45000001788139343
+        },
+        "('policy', 0, 0, 8)": {
+          "q_union": 0.9375,
+          "k_union": 0.375,
+          "v_union": 0.375
+        },
+        "('policy', 0, 0, 9)": {
+          "q_union": 0.9375,
+          "k_union": 0.375,
+          "v_union": 0.375
+        },
+        "('policy', 0, 0, 10)": {
+          "q_union": 0.9375,
+          "k_union": 0.5,
+          "v_union": 0.5
+        },
+        "('policy', 0, 0, 11)": {
+          "q_union": 0.9375,
+          "k_union": 0.4000000059604645,
+          "v_union": 0.4000000059604645
+        },
+        "('policy', 0, 0, 12)": {
+          "q_union": 0.9375,
+          "k_union": 0.45000001788139343,
+          "v_union": 0.45000001788139343
+        },
+        "('policy', 0, 0, 13)": {
+          "q_union": 0.9375,
+          "k_union": 0.5250000357627869,
+          "v_union": 0.5250000357627869
+        },
+        "('policy', 0, 0, 14)": {
+          "q_union": 0.9375,
+          "k_union": 0.4749999940395355,
+          "v_union": 0.4749999940395355
+        },
+        "('policy', 0, 0, 15)": {
+          "q_union": 0.9375,
+          "k_union": 0.42500001192092896,
+          "v_union": 0.42500001192092896
+        },
+        "('policy', 0, 0, 16)": {
+          "q_union": 0.9375,
+          "k_union": 0.5250000357627869,
+          "v_union": 0.5250000357627869
+        },
+        "('policy', 0, 0, 17)": {
+          "q_union": 0.9375,
+          "k_union": 0.625,
+          "v_union": 0.625
+        },
+        "('policy', 0, 0, 18)": {
+          "q_union": 0.9375,
+          "k_union": 0.3499999940395355,
+          "v_union": 0.3499999940395355
+        },
+        "('policy', 0, 0, 19)": {
+          "q_union": 0.9375,
+          "k_union": 0.30000001192092896,
+          "v_union": 0.30000001192092896
+        },
+        "('policy', 0, 0, 20)": {
+          "q_union": 0.9375,
+          "k_union": 0.42500001192092896,
+          "v_union": 0.42500001192092896
+        },
+        "('policy', 0, 0, 21)": {
+          "q_union": 0.9375,
+          "k_union": 0.4000000059604645,
+          "v_union": 0.4000000059604645
+        },
+        "('policy', 0, 0, 22)": {
+          "q_union": 0.9375,
+          "k_union": 0.42500001192092896,
+          "v_union": 0.42500001192092896
+        },
+        "('policy', 0, 0, 23)": {
+          "q_union": 0.9375,
+          "k_union": 0.30000001192092896,
+          "v_union": 0.30000001192092896
+        },
+        "('policy', 0, 0, 24)": {
+          "q_union": 0.9375,
+          "k_union": 0.5250000357627869,
+          "v_union": 0.5250000357627869
+        },
+        "('policy', 0, 0, 25)": {
+          "q_union": 0.9375,
+          "k_union": 0.30000001192092896,
+          "v_union": 0.30000001192092896
+        },
+        "('policy', 0, 0, 26)": {
+          "q_union": 0.9375,
+          "k_union": 0.20000000298023224,
+          "v_union": 0.20000000298023224
+        },
+        "('policy', 0, 0, 27)": {
+          "q_union": 0.9375,
+          "k_union": 0.4000000059604645,
+          "v_union": 0.4000000059604645
+        }
+      },
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "bf16": {
+      "metrics": {},
+      "compute": null,
+      "prepared_weight_bytes": 0,
+      "resident_model_state_bytes": 8158137016,
+      "support_buffer_bytes": 0,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 8192146944,
+          "reserved_bytes": 8227127296
+        },
+        "after_warmup": {
+          "allocated_bytes": 8192895488,
+          "reserved_bytes": 9374269440,
+          "peak_allocated_bytes": 8936457216,
+          "peak_reserved_bytes": 9374269440
+        }
+      },
+      "request_peak_allocated_bytes": 8936457216,
+      "request_peak_reserved_bytes": 9374269440,
+      "live_non_model_allocated_after_warmup_bytes": 34758472,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "bf16",
+      "attention": "bf16"
+    },
+    "fp8": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.060145739008100406,
+          "rmse": 0.02806140512551973,
+          "ssim_mean": 0.9751447178423405,
+          "lpips": 0.016723393649954232
+        },
+        "action": {
+          "relative_l2": 0.1942541024548591,
+          "rmse": 0.1020978447863922
+        }
+      },
+      "compute": null,
+      "prepared_weight_bytes": 1409286816,
+      "resident_model_state_bytes": 6748851544,
+      "support_buffer_bytes": 0,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 6783921664,
+          "reserved_bytes": 8246001664
+        },
+        "after_warmup": {
+          "allocated_bytes": 6784670208,
+          "reserved_bytes": 7891582976,
+          "peak_allocated_bytes": 7538226176,
+          "peak_reserved_bytes": 8436842496
+        }
+      },
+      "request_peak_allocated_bytes": 7538226176,
+      "request_peak_reserved_bytes": 7891582976,
+      "live_non_model_allocated_after_warmup_bytes": 35818664,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp8",
+      "attention": "bf16"
+    },
+    "fp4": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.14862513919532758,
+          "rmse": 0.06942448686119321,
+          "ssim_mean": 0.892743892967701,
+          "lpips": 0.07855586476558957
+        },
+        "action": {
+          "relative_l2": 0.4512959451650576,
+          "rmse": 0.23624496238726705
+        }
+      },
+      "compute": {
+        "non_mma_work": {
+          "amax_elements": 7931822080,
+          "quantized_base_elements": 7931822080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0,
+          "softmax_elements": 4174643200,
+          "probability_base_quantized_elements": 4174643200,
+          "probability_residual_quantized_elements": 0,
+          "qkv_base_quantized_elements": 2119434240,
+          "qkv_residual_quantized_elements_upper": 0,
+          "combine_output_elements": 834928640
+        },
+        "packing_traffic": {
+          "base_write_bytes": 4461649920,
+          "selected_residual_write_bytes": 0,
+          "input_read_bytes_minimum": 19729203200,
+          "residual_write_bytes": 0,
+          "base_code_scale_write_bytes": 1192181760,
+          "base_factor_write_bytes": 66232320,
+          "selected_residual_write_bytes_upper": 0
+        },
+        "w1_support_union_bytes": 0,
+        "schema_version": 1,
+        "budget": 1.0,
+        "steps": 35,
+        "branches": 1,
+        "base_mma": 52646232719360,
+        "total_mma": 52646232719360,
+        "ratio": 1.0,
+        "feasible": true,
+        "mma_by_dtype": {
+          "fp4": 52646232719360,
+          "bf16": 0
+        },
+        "scope": "Whole request generated projections + attention, all issued MMA FLOPs; not a latency bound",
+        "plan_sha256": "69f490e9a27659677f79594a92b2f7e41a3bdb9e618c9fed7bad9d8290e37b28"
+      },
+      "prepared_weight_bytes": 794919104,
+      "resident_model_state_bytes": 6136662904,
+      "support_buffer_bytes": 85120,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 6213831168,
+          "reserved_bytes": 7405043712,
+          "peak_allocated_bytes": 6960665600,
+          "peak_reserved_bytes": 9198108672
+        }
+      },
+      "request_peak_allocated_bytes": 6960194560,
+      "request_peak_reserved_bytes": 7405043712,
+      "live_non_model_allocated_after_warmup_bytes": 77168264,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4"
+    },
+    "full_dual": {
+      "metrics": {
+        "video": {
+          "relative_l2": 0.025549649005367027,
+          "rmse": 0.01194775370931558,
+          "ssim_mean": 0.9917197562754154,
+          "lpips": 0.005411070726214507
+        },
+        "action": {
+          "relative_l2": 0.050227367010518026,
+          "rmse": 0.0267795124857512
+        }
+      },
+      "compute": null,
+      "prepared_weight_bytes": 1587986624,
+      "resident_model_state_bytes": 6929730424,
+      "support_buffer_bytes": 85120,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5375753728,
+          "reserved_bytes": 8229224448
+        },
+        "after_warmup": {
+          "allocated_bytes": 7027790336,
+          "reserved_bytes": 8233418752,
+          "peak_allocated_bytes": 7771008000,
+          "peak_reserved_bytes": 8579448832
+        }
+      },
+      "request_peak_allocated_bytes": 7771008000,
+      "request_peak_reserved_bytes": 8233418752,
+      "live_non_model_allocated_after_warmup_bytes": 98059912,
+      "non_model_memory_scope": "Combined live activation/scratch/Graph allocations, not an isolated scratch peak",
+      "gqa_warmup_samples": {},
+      "gqa_scope": "Warmup samples only; request cost bound uses arbitrary online support unions",
+      "precision": "fp4",
+      "attention": "fp4",
+      "analytical_anchor_mma": {
+        "base_mma": 52646232719360,
+        "total_mma": 157938698158080,
+        "ratio": 3.0,
+        "mma_by_dtype": {
+          "fp4": 157938698158080,
+          "bf16": 0
+        },
+        "scope": "Derived full dual cost: matched observed FP4 tiles, base plus both first-order terms, no selector/cross; outside the four budgets"
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "budget": 1.0,
+      "selected": "control_b1_a",
+      "control": "control_b1_a",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "action.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "action.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "action.rmse": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Paired consistency against the validation-selected uncalibrated control at the same compute cap"
+      },
+      "fp8_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2",
+          "action.relative_l2",
+          "action.rmse"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.061832471115635335,
+            "worst_seed_difference": 0.34565711901043816,
+            "ci95": [
+              0.028770284712681244,
+              0.10762123139334442
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.08240082487463951,
+            "worst_seed_difference": -0.3867796063423157
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.08847940018722715,
+            "worst_seed_difference": 0.21615973077057485
+          },
+          "action.relative_l2": {
+            "mean_paired_difference": 0.2570418427101985,
+            "worst_seed_difference": 0.8639523136949947,
+            "ci95": [
+              0.10641361462652983,
+              0.4163246998732392
+            ]
+          },
+          "action.rmse": {
+            "mean_paired_difference": 0.13414711760087486,
+            "worst_seed_difference": 0.45401773092307746
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Per-task BF16 consistency versus FP8, not task success"
+      },
+      "actual_mma_ratios": {
+        "selected": 1.0,
+        "control": 1.0
+      },
+      "comparison_scope": "Same hard cap; actual issued MMA can differ due to allocation and integer quotas"
+    },
+    {
+      "budget": 1.125,
+      "selected": "control_joint_b1.125_balanced",
+      "control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "action.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "action.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "action.rmse": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Paired consistency against the validation-selected uncalibrated control at the same compute cap"
+      },
+      "fp8_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2",
+          "action.relative_l2",
+          "action.rmse"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.03633835246524969,
+            "worst_seed_difference": 0.16969526080099645,
+            "ci95": [
+              0.017488353556927905,
+              0.06012546609521624
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.05345100536942482,
+            "worst_seed_difference": -0.23151016235351562
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.06147639657139138,
+            "worst_seed_difference": 0.13635886506036574
+          },
+          "action.relative_l2": {
+            "mean_paired_difference": 0.2288683003670251,
+            "worst_seed_difference": 0.9209091903440418,
+            "ci95": [
+              0.08744602488258041,
+              0.3822191749970897
+            ]
+          },
+          "action.rmse": {
+            "mean_paired_difference": 0.11905738816868258,
+            "worst_seed_difference": 0.48843416701467274
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Per-task BF16 consistency versus FP8, not task success"
+      },
+      "actual_mma_ratios": {
+        "selected": 1.1236727045596502,
+        "control": 1.1236727045596502
+      },
+      "comparison_scope": "Same hard cap; actual issued MMA can differ due to allocation and integer quotas"
+    },
+    {
+      "budget": 1.25,
+      "selected": "b1.25_refined",
+      "control": "control_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "action.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.01725345226601776,
+            "worst_seed_difference": 0.07641014189678519,
+            "ci95": [
+              -0.0561945032928259,
+              0.010881568492475388
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.023326635360717773,
+            "worst_seed_difference": -0.09512519836425781
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.015816418989765872,
+            "worst_seed_difference": 0.22631943862265608
+          },
+          "action.relative_l2": {
+            "mean_paired_difference": -0.02910521057593843,
+            "worst_seed_difference": 0.6772339638569419,
+            "ci95": [
+              -0.18837372036034247,
+              0.1353330309623113
+            ]
+          },
+          "action.rmse": {
+            "mean_paired_difference": -0.015830659926588907,
+            "worst_seed_difference": 0.35004878442190973
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Paired consistency against the validation-selected uncalibrated control at the same compute cap"
+      },
+      "fp8_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2",
+          "action.relative_l2",
+          "action.rmse"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.02966645601490574,
+            "worst_seed_difference": 0.11907640005708398,
+            "ci95": [
+              0.012807493410868093,
+              0.04868091728253133
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.040913816541433334,
+            "worst_seed_difference": -0.14557033777236938
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.05881636422073605,
+            "worst_seed_difference": 0.25646079597460425
+          },
+          "action.relative_l2": {
+            "mean_paired_difference": 0.19798862081837776,
+            "worst_seed_difference": 0.6634160023576723,
+            "ci95": [
+              0.08501252626317433,
+              0.3136456019455176
+            ]
+          },
+          "action.rmse": {
+            "mean_paired_difference": 0.10136667309941719,
+            "worst_seed_difference": 0.3429065545808945
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Per-task BF16 consistency versus FP8, not task success"
+      },
+      "actual_mma_ratios": {
+        "selected": 1.2471095871202946,
+        "control": 1.2479700187382885
+      },
+      "comparison_scope": "Same hard cap; actual issued MMA can differ due to allocation and integer quotas"
+    },
+    {
+      "budget": 1.5,
+      "selected": "b1.5_refined",
+      "control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "action.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.007290038704441566,
+            "worst_seed_difference": 0.06218310049050214,
+            "ci95": [
+              -0.04228941316483704,
+              0.017031110107042387
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.008086111396551132,
+            "worst_seed_difference": -0.05833333730697632
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.007604220189379292,
+            "worst_seed_difference": 0.12681601755167438
+          },
+          "action.relative_l2": {
+            "mean_paired_difference": -0.069823083364559,
+            "worst_seed_difference": 0.5766384902457045,
+            "ci95": [
+              -0.1897468066041883,
+              0.05410440650385919
+            ]
+          },
+          "action.rmse": {
+            "mean_paired_difference": -0.036421093898903495,
+            "worst_seed_difference": 0.29406780007369754
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Paired consistency against the validation-selected uncalibrated control at the same compute cap"
+      },
+      "fp8_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2",
+          "action.relative_l2",
+          "action.rmse"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.04203418962232022,
+            "worst_seed_difference": 0.13770219021449415,
+            "ci95": [
+              0.021062444412372962,
+              0.06562105702286691
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.05808323994278908,
+            "worst_seed_difference": -0.17345231771469116
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.08174459155502765,
+            "worst_seed_difference": 0.3178434688110239
+          },
+          "action.relative_l2": {
+            "mean_paired_difference": 0.20706715507133883,
+            "worst_seed_difference": 0.9619284762271357,
+            "ci95": [
+              0.08586822138257208,
+              0.3483384385203789
+            ]
+          },
+          "action.rmse": {
+            "mean_paired_difference": 0.10663722941008545,
+            "worst_seed_difference": 0.5055054279779606
+          }
+        },
+        "seeds": [
+          101001,
+          101002,
+          101003,
+          101004,
+          101005,
+          101006,
+          101007,
+          101008,
+          101009,
+          101010,
+          101011,
+          101012,
+          101013,
+          101014,
+          101015,
+          101016
+        ],
+        "scope": "Per-task BF16 consistency versus FP8, not task success"
+      },
+      "actual_mma_ratios": {
+        "selected": 1.4950053537967343,
+        "control": 1.450890068707058
+      },
+      "comparison_scope": "Same hard cap; actual issued MMA can differ due to allocation and integer quotas"
+    }
+  ],
+  "frontier": [
+    "control_b1_a",
+    "control_joint_b1.125_balanced",
+    "b1.25_refined",
+    "fp4"
+  ],
+  "frontier_objectives": [
+    "mean action.relative_l2",
+    "issued MMA FLOPs",
+    "prepared quantized weight bytes"
+  ],
+  "expand_to_next_task": false,
+  "limitations": [
+    "Shared GPU timings cannot establish acceleration or latency Pareto optimality.",
+    "Packing traffic is an implementation-derived bound; fields ending in upper are not measured savings.",
+    "Residual address space is still allocated in full; sparse writes do not imply proportional scratch reduction.",
+    "Prepared weight bytes cover replaced projections; resident model state and request peaks are reported separately.",
+    "New seeds in existing scenes do not establish cross-scene generalization."
+  ]
+}
