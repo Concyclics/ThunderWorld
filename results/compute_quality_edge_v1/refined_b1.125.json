@@ -1,0 +1,8556 @@
+{
+  "complete": true,
+  "precision": "fp4",
+  "model_identity": {
+    "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+    "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+  },
+  "modules": {
+    "layers.0.mlp_moe_gen.up_proj": {
+      "file": "linear_000.pt",
+      "sha256": "5bd7dbb18fd370d76fba79e5780bff79a4cea915bee3220216ee1bfce8fe67a8"
+    },
+    "layers.0.mlp_moe_gen.down_proj": {
+      "file": "linear_001.pt",
+      "sha256": "af2199953f131dba8490300f282941d3136b2bd762ea54151401d7c5e37a71aa"
+    },
+    "layers.0.self_attn.add_q_proj": {
+      "file": "linear_002.pt",
+      "sha256": "183cc0dc8087d52de44f5f25a0590d97e654ab4660c7739986be4252321333b8"
+    },
+    "layers.0.self_attn.add_k_proj": {
+      "file": "linear_003.pt",
+      "sha256": "5957569c0809d260b1e4708b245a4dfc56c1e705b490da35fb4a5f4134e9cacf"
+    },
+    "layers.0.self_attn.add_v_proj": {
+      "file": "linear_004.pt",
+      "sha256": "c8ebc4a3982ccf337fc4667183c848954a416e8308f9361adbcce0c9f7dc6768"
+    },
+    "layers.0.self_attn.to_add_out": {
+      "file": "linear_005.pt",
+      "sha256": "ff8eef6b55c825d55352792e787281f7e7fbd2da9c9702b1e50545a3088bb7ca"
+    },
+    "layers.1.mlp_moe_gen.up_proj": {
+      "file": "linear_006.pt",
+      "sha256": "2eaf1ce1275bd48f98e5ac3d2eba38bd1d2ad0901b5536abcd7fc9b89bd67069"
+    },
+    "layers.1.mlp_moe_gen.down_proj": {
+      "file": "linear_007.pt",
+      "sha256": "ec95672d640855e99011d1b5144c5251698a4544707e5e2c667cb63f1802c795"
+    },
+    "layers.1.self_attn.add_q_proj": {
+      "file": "linear_008.pt",
+      "sha256": "3495f132d19cad2d193b69c392b0f7aac59990da87f3c0473727b2c886628402"
+    },
+    "layers.1.self_attn.add_k_proj": {
+      "file": "linear_009.pt",
+      "sha256": "44c76231ed7e8206ce315b7c4c87a0e906f4e7c806d731737dfb2ce14f411535"
+    },
+    "layers.1.self_attn.add_v_proj": {
+      "file": "linear_010.pt",
+      "sha256": "9801f91ced4b3bcdc9187518527ac25af6b0d17b18bc81b0cd10366cfabbf33c"
+    },
+    "layers.1.self_attn.to_add_out": {
+      "file": "linear_011.pt",
+      "sha256": "234eb0449587082f1a2cf6a07b70876955193621be3daa3070a3652ffff1c6b1"
+    },
+    "layers.2.mlp_moe_gen.up_proj": {
+      "file": "linear_012.pt",
+      "sha256": "9a49f81277f1274ae0294bea12da4e2abadf07aca647b79856307599f80743d6"
+    },
+    "layers.2.mlp_moe_gen.down_proj": {
+      "file": "linear_013.pt",
+      "sha256": "1433771a81b4a3ea74024595adb18ed09e657cbea2bbc857b187d67ce7e4efc1"
+    },
+    "layers.2.self_attn.add_q_proj": {
+      "file": "linear_014.pt",
+      "sha256": "ecc89ee05af5b1bc5334f002e72721b90a84659d38903fe5a1f979847993f5f3"
+    },
+    "layers.2.self_attn.add_k_proj": {
+      "file": "linear_015.pt",
+      "sha256": "28824f5d4acdeaf1ed9817c3ade6b8ad3c5761138f1ac80d0a2bba1a2958ccdc"
+    },
+    "layers.2.self_attn.add_v_proj": {
+      "file": "linear_016.pt",
+      "sha256": "6c8b7f620f8565d9ab3587653461eaf8697e556c61453f6b559087ad19feb677"
+    },
+    "layers.2.self_attn.to_add_out": {
+      "file": "linear_017.pt",
+      "sha256": "f65c8c33f8f7f68b39b5f118553232e6d1a8f3163b663a85b168f8945851431b"
+    },
+    "layers.3.mlp_moe_gen.up_proj": {
+      "file": "linear_018.pt",
+      "sha256": "238eaf122be0306d6c6df7ff8e39c1c85d2a75d042347f8ffd70f73bbb21d57e"
+    },
+    "layers.3.mlp_moe_gen.down_proj": {
+      "file": "linear_019.pt",
+      "sha256": "4785f645419777b324e42ede80cc4cdbab4a61cac6083888746bc859d1f5c3a0"
+    },
+    "layers.3.self_attn.add_q_proj": {
+      "file": "linear_020.pt",
+      "sha256": "9b8b5e4d90d0d5094c2635fafadc2875ab6e88707bde0067fe11e780ab3d00e3"
+    },
+    "layers.3.self_attn.add_k_proj": {
+      "file": "linear_021.pt",
+      "sha256": "e882a2875c3aeb6eee1e08d0f90ff2b99e874047d2cf5285b1b57be91a6cbba0"
+    },
+    "layers.3.self_attn.add_v_proj": {
+      "file": "linear_022.pt",
+      "sha256": "2594306e79e2d0947a6978c3ad29005bf48b38269b017c7b1120c42a3c94a67b"
+    },
+    "layers.3.self_attn.to_add_out": {
+      "file": "linear_023.pt",
+      "sha256": "afe6694af051e34ae3418fd0758e012627ee047a8cf5fcbcbcfd07b95c161e95"
+    },
+    "layers.4.mlp_moe_gen.up_proj": {
+      "file": "linear_024.pt",
+      "sha256": "d6724c6de0ffeffe90bcc5d83bcdc1b2bbc3ca400e6186a01d1c1e2609229d30"
+    },
+    "layers.4.mlp_moe_gen.down_proj": {
+      "file": "linear_025.pt",
+      "sha256": "e100d04e889964aa73581fff74a3df3f82e415514efff0c834f1024b18aa289d"
+    },
+    "layers.4.self_attn.add_q_proj": {
+      "file": "linear_026.pt",
+      "sha256": "91610f3437dfbdd5b7079e446b2a0684460feb4219b76524f93ce9709a52f600"
+    },
+    "layers.4.self_attn.add_k_proj": {
+      "file": "linear_027.pt",
+      "sha256": "42105667463b5fe4bc323889b70a46db0cf05f39b90f06b9800ec70360c5e44b"
+    },
+    "layers.4.self_attn.add_v_proj": {
+      "file": "linear_028.pt",
+      "sha256": "dfb9f771d147f86924bb67e1f7629a590756198557107e641c04324702f2309e"
+    },
+    "layers.4.self_attn.to_add_out": {
+      "file": "linear_029.pt",
+      "sha256": "cbd629defeaa05db85e8a18816e0932d39709460472c4fbad6792f35edf227c6"
+    },
+    "layers.5.mlp_moe_gen.up_proj": {
+      "file": "linear_030.pt",
+      "sha256": "559bfcdabad1a5d375868db8649b7ed6fda6a4c8cd4f0a34c7ed2bedf411b95b"
+    },
+    "layers.5.mlp_moe_gen.down_proj": {
+      "file": "linear_031.pt",
+      "sha256": "4e7b263b6f1c85814572db81c0c070ceea0534964bc303227c0d629975f54abe"
+    },
+    "layers.5.self_attn.add_q_proj": {
+      "file": "linear_032.pt",
+      "sha256": "845a6980f13cefe779d8727f31254b194bcbfb5497d6fe2efe7052183cbc510b"
+    },
+    "layers.5.self_attn.add_k_proj": {
+      "file": "linear_033.pt",
+      "sha256": "3a7ad2ece4085c7f62fa0672e043f1360a90f9f9290e3bf0ac7d7d0bd50e9975"
+    },
+    "layers.5.self_attn.add_v_proj": {
+      "file": "linear_034.pt",
+      "sha256": "2121730d26b0364c719d5896bc99896275d188b3a831a3c0be2db152ecdbec39"
+    },
+    "layers.5.self_attn.to_add_out": {
+      "file": "linear_035.pt",
+      "sha256": "b34d7cceabba2e2a138b6c46cf92e2c6b147a139bb86403a79c98a91d8172d8f"
+    },
+    "layers.6.mlp_moe_gen.up_proj": {
+      "file": "linear_036.pt",
+      "sha256": "5235cfcc660e2839b842162c35e4b04f740372e1a2792772133ac7e49255dc94"
+    },
+    "layers.6.mlp_moe_gen.down_proj": {
+      "file": "linear_037.pt",
+      "sha256": "f2fab24c7115d79a1f5e4d0f5287370fab354c4ee2fc53fffd23417c357d722d"
+    },
+    "layers.6.self_attn.add_q_proj": {
+      "file": "linear_038.pt",
+      "sha256": "eef8fbfa1b918521b0d3c904697b5f88472711d54d485f58cd2b4abfb21d547a"
+    },
+    "layers.6.self_attn.add_k_proj": {
+      "file": "linear_039.pt",
+      "sha256": "cce02832e8002b198c7f319dc7a3939cc0af5402530800df068c53e85a9b873b"
+    },
+    "layers.6.self_attn.add_v_proj": {
+      "file": "linear_040.pt",
+      "sha256": "7ba8c951793081c599426c7de1b09b565656d93403b97fff32398030d67fa9a5"
+    },
+    "layers.6.self_attn.to_add_out": {
+      "file": "linear_041.pt",
+      "sha256": "7463eeb598fef7050692b37988e5dcf3bb14d9a7760f10d90b3e5c5720b1b452"
+    },
+    "layers.7.mlp_moe_gen.up_proj": {
+      "file": "linear_042.pt",
+      "sha256": "11667b3463813060d6298dc47f81ee5a1be54629d17d49b3aca5b0bd96b0fe82"
+    },
+    "layers.7.mlp_moe_gen.down_proj": {
+      "file": "linear_043.pt",
+      "sha256": "cebd304133b529fdaf7d570494d5f57df66e892b0ba6d2b04c17ee117f6f8afa"
+    },
+    "layers.7.self_attn.add_q_proj": {
+      "file": "linear_044.pt",
+      "sha256": "75f4a954faef97cb3ce8eb316756fdec97292a1136d38695c144f6d1ac0cbc2a"
+    },
+    "layers.7.self_attn.add_k_proj": {
+      "file": "linear_045.pt",
+      "sha256": "2e2549e7ffc77a88008a51db073b2fb74551f96ae68050faaa50e46e94037b5d"
+    },
+    "layers.7.self_attn.add_v_proj": {
+      "file": "linear_046.pt",
+      "sha256": "095ad6583ef3348968ab3f2dc692c45d75fbb1bedb96bfecda55634b5a4da0c1"
+    },
+    "layers.7.self_attn.to_add_out": {
+      "file": "linear_047.pt",
+      "sha256": "f828eaf15f2f99ff38136942cb49e2b535dcd6d363ea61b30d871047064ce5b7"
+    },
+    "layers.8.mlp_moe_gen.up_proj": {
+      "file": "linear_048.pt",
+      "sha256": "76ebd18f03f071e3e4edfb592133d2be258155cef7d49eae3c8638c62c0f42ca"
+    },
+    "layers.8.mlp_moe_gen.down_proj": {
+      "file": "linear_049.pt",
+      "sha256": "91ba4d25729a5a4b47d1a3572c655df6fd794f9a9a57b5701a20ddeda257778a"
+    },
+    "layers.8.self_attn.add_q_proj": {
+      "file": "linear_050.pt",
+      "sha256": "661d98ec5c5b28ef45535aaa22e091755600936585ff896d829eed27661fe95d"
+    },
+    "layers.8.self_attn.add_k_proj": {
+      "file": "linear_051.pt",
+      "sha256": "4c569566074bc0d2d40fbfce71c45ebd938a52c145bb12d349662ced64f7390b"
+    },
+    "layers.8.self_attn.add_v_proj": {
+      "file": "linear_052.pt",
+      "sha256": "792c9c1b422ae8937af141120d9d0ac479038a6f5ee5dbde8bee2c37fa39d2fc"
+    },
+    "layers.8.self_attn.to_add_out": {
+      "file": "linear_053.pt",
+      "sha256": "6ac695a745af54fc1f6c5d8f6d636e40bf7439daaa83fa75d3709d9aab012312"
+    },
+    "layers.9.mlp_moe_gen.up_proj": {
+      "file": "linear_054.pt",
+      "sha256": "91ce854f2b9232be5d8ccc05febcd73832dbd871896dd2646b70df4f311ef33f"
+    },
+    "layers.9.mlp_moe_gen.down_proj": {
+      "file": "linear_055.pt",
+      "sha256": "e340bd47e00bf4fae1aee0d9cfb1e0c258b9fb6ab32fccde0384e4090a758bbc"
+    },
+    "layers.9.self_attn.add_q_proj": {
+      "file": "linear_056.pt",
+      "sha256": "f886310ac8e922543ca04a48fb00859329527563a3236ebbb2e06a1729027b9b"
+    },
+    "layers.9.self_attn.add_k_proj": {
+      "file": "linear_057.pt",
+      "sha256": "35f47a86951aec4566c45dcbe5b8daf26d1e555bb9193eaff12982c40b44b2ce"
+    },
+    "layers.9.self_attn.add_v_proj": {
+      "file": "linear_058.pt",
+      "sha256": "926305f5e147737b4b911c1d79d6ecfec27a4b747a76606fe7b895a51587ddad"
+    },
+    "layers.9.self_attn.to_add_out": {
+      "file": "linear_059.pt",
+      "sha256": "c0592f1d776a1b00a353943b2dee8b2e7fb855f8ce627241565961cc10596e52"
+    },
+    "layers.10.mlp_moe_gen.up_proj": {
+      "file": "linear_060.pt",
+      "sha256": "f3a573957494042ec1862c57c340d39f3965f20f708c784f5a56e3aef785278d"
+    },
+    "layers.10.mlp_moe_gen.down_proj": {
+      "file": "linear_061.pt",
+      "sha256": "f825d09c8500d6db1c547b927b8eca014ffc087b8ccebafedfe2102a6c2f25fb"
+    },
+    "layers.10.self_attn.add_q_proj": {
+      "file": "linear_062.pt",
+      "sha256": "510a04994819a8d193899ec225fc8b2aaaa7466af9860e7ad540b9b86fa43753"
+    },
+    "layers.10.self_attn.add_k_proj": {
+      "file": "linear_063.pt",
+      "sha256": "f9e37f3d38b74ff50a8fb3ed70bb8fbdad88a7bd1a3ae45bf74948ef048678e7"
+    },
+    "layers.10.self_attn.add_v_proj": {
+      "file": "linear_064.pt",
+      "sha256": "756671698288a72bcf6b0d461929ffc0e483f5424fa1d4d8bec5208ced284536"
+    },
+    "layers.10.self_attn.to_add_out": {
+      "file": "linear_065.pt",
+      "sha256": "a4baa607796a5b67e954917a0b26a65479396c2055673c3322e09059d598a91c"
+    },
+    "layers.11.mlp_moe_gen.up_proj": {
+      "file": "linear_066.pt",
+      "sha256": "5c6ece6208e2abe732d4b89ab4266232ac34280322cea1a544132ad48cc5915e"
+    },
+    "layers.11.mlp_moe_gen.down_proj": {
+      "file": "linear_067.pt",
+      "sha256": "d5585ecdf6fd5fa7366ea8e7607f83024c37f2d96065108ab3e113b268069a8c"
+    },
+    "layers.11.self_attn.add_q_proj": {
+      "file": "linear_068.pt",
+      "sha256": "22eba9cb2c84bc9b16445545899adbe19982a8320d92fea912ae12bfb113b1bc"
+    },
+    "layers.11.self_attn.add_k_proj": {
+      "file": "linear_069.pt",
+      "sha256": "4867f90b6fe2eeb95ccac4fc6f8d5f5706ab9ba19281b7a78b68a1ef2a6c81fb"
+    },
+    "layers.11.self_attn.add_v_proj": {
+      "file": "linear_070.pt",
+      "sha256": "bc2c68f5077fceddeb6ce0dc4b8c7796d25a24024c176bb6fc770c059570d3e1"
+    },
+    "layers.11.self_attn.to_add_out": {
+      "file": "linear_071.pt",
+      "sha256": "4cfe30ec011e054d5353b88a21ae53ceeb297227da0f735ee459034a6c9b7b02"
+    },
+    "layers.12.mlp_moe_gen.up_proj": {
+      "file": "linear_072.pt",
+      "sha256": "6b5b3b4135f0d3173a0c6429d247659100a30caf7044e8e3db5085738e0c18c8"
+    },
+    "layers.12.mlp_moe_gen.down_proj": {
+      "file": "linear_073.pt",
+      "sha256": "847cb5aaf4d52c0e7f2affcb88044a4fb78a8694f083910ee84cbb8f7cc2ee50"
+    },
+    "layers.12.self_attn.add_q_proj": {
+      "file": "linear_074.pt",
+      "sha256": "d05c010e9ee5a50663c006628f1358236d6313f16874433482eb10f076ebff78"
+    },
+    "layers.12.self_attn.add_k_proj": {
+      "file": "linear_075.pt",
+      "sha256": "040ea6afd33d22a0ba13fea860266a40c714f22df0dcdc0eac1189f7d3559e30"
+    },
+    "layers.12.self_attn.add_v_proj": {
+      "file": "linear_076.pt",
+      "sha256": "74877f65248277cd262ee68610940074762f45fdf20940c55a44df3bb45c7be8"
+    },
+    "layers.12.self_attn.to_add_out": {
+      "file": "linear_077.pt",
+      "sha256": "d2b8de7082b01033b028688747a87f9933dd7bb98ef41008db0421c492464615"
+    },
+    "layers.13.mlp_moe_gen.up_proj": {
+      "file": "linear_078.pt",
+      "sha256": "ab53f698d37d975d9f4ec8d06dc708d2b876937467fce9851dbb4a2460c88c38"
+    },
+    "layers.13.mlp_moe_gen.down_proj": {
+      "file": "linear_079.pt",
+      "sha256": "0b8dabf5b21ec1c12bf920b29026949f7964def677466d71aeb5107efe7bad9d"
+    },
+    "layers.13.self_attn.add_q_proj": {
+      "file": "linear_080.pt",
+      "sha256": "834960f53fcdda0171b285c1cf53b004ffcce68ead9e4b7762353536d4891dcc"
+    },
+    "layers.13.self_attn.add_k_proj": {
+      "file": "linear_081.pt",
+      "sha256": "86c308dad2ed47e6127ab1abeaf36e2af40dcc837a407eadc2b00e434634980e"
+    },
+    "layers.13.self_attn.add_v_proj": {
+      "file": "linear_082.pt",
+      "sha256": "3b6a40575e553d6549b07c2db730a126964e171fe286e1430cda3c4c49e4c19c"
+    },
+    "layers.13.self_attn.to_add_out": {
+      "file": "linear_083.pt",
+      "sha256": "b2acd0e9966a9be2ce8562f1ee6b88279539f727b9a25a33c62e707de2b9a6a8"
+    },
+    "layers.14.mlp_moe_gen.up_proj": {
+      "file": "linear_084.pt",
+      "sha256": "3c0ea07b9cbaa1489d45c20e7156a7ffcbdcb32a846ca265017a59485161cbbb"
+    },
+    "layers.14.mlp_moe_gen.down_proj": {
+      "file": "linear_085.pt",
+      "sha256": "78bf81a574d27a4a8aaf758a0be2b41a2fc7d23b72219b30f18a9522141d2a0a"
+    },
+    "layers.14.self_attn.add_q_proj": {
+      "file": "linear_086.pt",
+      "sha256": "c6994c51280932a0ece63e69090d04ff02fb32b05b1fedebf9bd8f2053eb25c9"
+    },
+    "layers.14.self_attn.add_k_proj": {
+      "file": "linear_087.pt",
+      "sha256": "ea38f8828ecb1e4f697de88e6a8f8a579513d6c99fb78561d05ce45ca0108a63"
+    },
+    "layers.14.self_attn.add_v_proj": {
+      "file": "linear_088.pt",
+      "sha256": "e49248bd0d8575cf53c6aafbd7b4d37c8d27f4545291151df25ebea9b7824be1"
+    },
+    "layers.14.self_attn.to_add_out": {
+      "file": "linear_089.pt",
+      "sha256": "6b4de087d3f104b8413780c93b3958541ac552ea9a40cc60fe320ef3aaf452c4"
+    },
+    "layers.15.mlp_moe_gen.up_proj": {
+      "file": "linear_090.pt",
+      "sha256": "03aee9e4c22f479c35f2a7171154f9507cf3659727bbb3a274bc28cc7102d6ef"
+    },
+    "layers.15.mlp_moe_gen.down_proj": {
+      "file": "linear_091.pt",
+      "sha256": "530013d20c607cef5feed94e33366233a5f52e671a4c63e98a3ef01b3b6164a1"
+    },
+    "layers.15.self_attn.add_q_proj": {
+      "file": "linear_092.pt",
+      "sha256": "276df8dc4c744668138a0f50be379c00402762ccea9751834bc87d986288e00f"
+    },
+    "layers.15.self_attn.add_k_proj": {
+      "file": "linear_093.pt",
+      "sha256": "452c4a7702931a97c0e37e1511b71f7726c10eaf6ba2eb0c116ec8f084560c5b"
+    },
+    "layers.15.self_attn.add_v_proj": {
+      "file": "linear_094.pt",
+      "sha256": "0c2928ccc8c8ce6e68bdc6bf0b7cc3895b117c7d482370b2677ba2ad4201caac"
+    },
+    "layers.15.self_attn.to_add_out": {
+      "file": "linear_095.pt",
+      "sha256": "c690afcc54e3fe6f8d5b55851f25ce9f40527893076b8c4d6875c15b45950a34"
+    },
+    "layers.16.mlp_moe_gen.up_proj": {
+      "file": "linear_096.pt",
+      "sha256": "be73fe83c44145b85ce9408b2586c56ca2e4bf461778efead16243832d6c5c76"
+    },
+    "layers.16.mlp_moe_gen.down_proj": {
+      "file": "linear_097.pt",
+      "sha256": "e0970621550e598a5d0d1213080f9ffe552bdd069a5ff57d96acd553be872660"
+    },
+    "layers.16.self_attn.add_q_proj": {
+      "file": "linear_098.pt",
+      "sha256": "7e8ebeb3a1bcbfbebbe469f1e8791946ab4e2d2a81e319512875effbde63039a"
+    },
+    "layers.16.self_attn.add_k_proj": {
+      "file": "linear_099.pt",
+      "sha256": "c0a696fbaf12681849c388484cbd4d63bf8d344f837a5d6ae40fd360976ca762"
+    },
+    "layers.16.self_attn.add_v_proj": {
+      "file": "linear_100.pt",
+      "sha256": "b60a699c4f72879a09521ea4082ad40c5860403e2c1bbee05b7cb12bd4e97552"
+    },
+    "layers.16.self_attn.to_add_out": {
+      "file": "linear_101.pt",
+      "sha256": "25b21e830e2b7e3927573db362dac19539521f35e3d9ff3ac0227ac879ace6bd"
+    },
+    "layers.17.mlp_moe_gen.up_proj": {
+      "file": "linear_102.pt",
+      "sha256": "833fa714bc4738b9abe205e235773579e69d5d71007870f8cfff8a952eb729b7"
+    },
+    "layers.17.mlp_moe_gen.down_proj": {
+      "file": "linear_103.pt",
+      "sha256": "b02e8d34f437346b4304bce8d7fa8f2a38ea8a7b5a92cd1240e20d36e3c58056"
+    },
+    "layers.17.self_attn.add_q_proj": {
+      "file": "linear_104.pt",
+      "sha256": "f40ed2ed61a84031179d90143f38414eb86c6dbb44b2490976fc8546a3903861"
+    },
+    "layers.17.self_attn.add_k_proj": {
+      "file": "linear_105.pt",
+      "sha256": "71413a76e3346baa41e7562aec50ce10d58b71de9800725c618cbd0b5e15c89d"
+    },
+    "layers.17.self_attn.add_v_proj": {
+      "file": "linear_106.pt",
+      "sha256": "ab04e165d6c786d61408167545e630224ef648ac4b29d6719ed5e16a22321e77"
+    },
+    "layers.17.self_attn.to_add_out": {
+      "file": "linear_107.pt",
+      "sha256": "2a91b666386aed012cd9bc402e82d45dcb6de2476ed1cb952901e8f59b2679dc"
+    },
+    "layers.18.mlp_moe_gen.up_proj": {
+      "file": "linear_108.pt",
+      "sha256": "b93707e2b3ddd6cbebfd3c183f9b86f9840b782b2823229fc86e51dc45f71eb3"
+    },
+    "layers.18.mlp_moe_gen.down_proj": {
+      "file": "linear_109.pt",
+      "sha256": "dcd1c44889da233d9fc124225df0e3f1b8a754ef3c8eb3b63988739e9b947478"
+    },
+    "layers.18.self_attn.add_q_proj": {
+      "file": "linear_110.pt",
+      "sha256": "864699793db9198b74cfe27770b83313bcbda3927c6dca800bf93ae09220a793"
+    },
+    "layers.18.self_attn.add_k_proj": {
+      "file": "linear_111.pt",
+      "sha256": "c7bf0418b9ef139b0cf542bdd9d65e5802007cec28f9614756a301aa9421a171"
+    },
+    "layers.18.self_attn.add_v_proj": {
+      "file": "linear_112.pt",
+      "sha256": "173dcbd1f9e2ae15713f65785f9d5e1caf323ac5f7472deb25297c97e33844fe"
+    },
+    "layers.18.self_attn.to_add_out": {
+      "file": "linear_113.pt",
+      "sha256": "7b7fb0468a82e12336731616e89c6430376ce247c2e6282990d208eef6e3f61f"
+    },
+    "layers.19.mlp_moe_gen.up_proj": {
+      "file": "linear_114.pt",
+      "sha256": "7910221fde76953f8cff80a720c44dfb7425672aadc7c4187eac07de3ddf8276"
+    },
+    "layers.19.mlp_moe_gen.down_proj": {
+      "file": "linear_115.pt",
+      "sha256": "bdb70577b82f7397d654adbd5fc30d8cad5b30e01f24fc573bdf8588c5e10cd0"
+    },
+    "layers.19.self_attn.add_q_proj": {
+      "file": "linear_116.pt",
+      "sha256": "40702b128b32d4e571f58a91049f758e4aa3c616dd1d669bce35c429c7c7d94e"
+    },
+    "layers.19.self_attn.add_k_proj": {
+      "file": "linear_117.pt",
+      "sha256": "3d0325b853939cfdd63779f44b97e830ef5deb9dfcf99ec9140911ca9046d962"
+    },
+    "layers.19.self_attn.add_v_proj": {
+      "file": "linear_118.pt",
+      "sha256": "192910a1fa67455a84f4467e41dc63b4ffcaf6508d5b2d0c2b79e4534d42d651"
+    },
+    "layers.19.self_attn.to_add_out": {
+      "file": "linear_119.pt",
+      "sha256": "5c16740fb7dc5c788bf2045e6695cecf0c47ff2a8a46c67f259537ed2712add6"
+    },
+    "layers.20.mlp_moe_gen.up_proj": {
+      "file": "linear_120.pt",
+      "sha256": "de222e6d7751936d5576f5bcbf5aab102dfdafbd5ce7ffafa3b9027ce0ea7601"
+    },
+    "layers.20.mlp_moe_gen.down_proj": {
+      "file": "linear_121.pt",
+      "sha256": "a6f51d053f03a4ee187f0e207b601b0e347294999b8816074b819b8a462f9d3d"
+    },
+    "layers.20.self_attn.add_q_proj": {
+      "file": "linear_122.pt",
+      "sha256": "f8605b46494766699770e6b6c56b7ba36a947d551f27abdd0246ace79a22b6cd"
+    },
+    "layers.20.self_attn.add_k_proj": {
+      "file": "linear_123.pt",
+      "sha256": "69106cb7b0f2d9de8b93e170589d98b0ef108f9a8d8e6d0e6863f74f6adff0dd"
+    },
+    "layers.20.self_attn.add_v_proj": {
+      "file": "linear_124.pt",
+      "sha256": "5280657f29c7452b248e9b4ab6c36b0fe34310fce51d2c0bf1da54300f3c81e6"
+    },
+    "layers.20.self_attn.to_add_out": {
+      "file": "linear_125.pt",
+      "sha256": "d73d854f8dbdee95c3d1465a63a1266fcdc00656cd8953424feabb9f206eef01"
+    },
+    "layers.21.mlp_moe_gen.up_proj": {
+      "file": "linear_126.pt",
+      "sha256": "125036dcb5837d365c20d1c5211c17b68033d8f5f8d34322df8c08684f0ca692"
+    },
+    "layers.21.mlp_moe_gen.down_proj": {
+      "file": "linear_127.pt",
+      "sha256": "094eedcd0ce0e42c93341452980b2718c0b5c98a590db1df979658fb252240a5"
+    },
+    "layers.21.self_attn.add_q_proj": {
+      "file": "linear_128.pt",
+      "sha256": "c0ba771d2521066fce458ca1bf67b4c84cda99a9fa5da15ee892cf47bc42eea0"
+    },
+    "layers.21.self_attn.add_k_proj": {
+      "file": "linear_129.pt",
+      "sha256": "7143ea5a60be98b38c3c572133a2ae7eb64d1ce0b93f888e66b297a1f7dbd64c"
+    },
+    "layers.21.self_attn.add_v_proj": {
+      "file": "linear_130.pt",
+      "sha256": "569b45f6ee72e1cb2d369bf5ecae3cf85a33ddfd81b41f4e123bf84ec2126a7a"
+    },
+    "layers.21.self_attn.to_add_out": {
+      "file": "linear_131.pt",
+      "sha256": "752364b5470dc7bdf3e99275f09d771e195497bd87e6cd99790cfde68f1ba8d7"
+    },
+    "layers.22.mlp_moe_gen.up_proj": {
+      "file": "linear_132.pt",
+      "sha256": "35ffbd0e53a754b3956161ce9994c6bdc2fe9eb3501180d0904c1b27bfc41f8e"
+    },
+    "layers.22.mlp_moe_gen.down_proj": {
+      "file": "linear_133.pt",
+      "sha256": "7086533b67f5ab16bd4da51119171855f73786806a7abf893fd05aad2342fcbd"
+    },
+    "layers.22.self_attn.add_q_proj": {
+      "file": "linear_134.pt",
+      "sha256": "bfff2d805914c3ef67987edf6a3ce97818ab41b0800f734df934611fba075923"
+    },
+    "layers.22.self_attn.add_k_proj": {
+      "file": "linear_135.pt",
+      "sha256": "448a46abd135a007f45b2880cf04f10ce21942e2aa378eed8566e12b6fc92d2f"
+    },
+    "layers.22.self_attn.add_v_proj": {
+      "file": "linear_136.pt",
+      "sha256": "230bc69525ac20ca5e4ea09e3a9eed93eb3fff8993930aafcec17355569ce31d"
+    },
+    "layers.22.self_attn.to_add_out": {
+      "file": "linear_137.pt",
+      "sha256": "08a60b9836ce912b81ba02578de9568a5c282e5746f14775987d395170a20cda"
+    },
+    "layers.23.mlp_moe_gen.up_proj": {
+      "file": "linear_138.pt",
+      "sha256": "1a045a64b6412ea57a9d0cde01b45a18e41093fbb54de7b44313b8dc7acb4e11"
+    },
+    "layers.23.mlp_moe_gen.down_proj": {
+      "file": "linear_139.pt",
+      "sha256": "28a8edd8890fa59b537feccb8f09001122f21be7c0b909dbb0b29815e19000be"
+    },
+    "layers.23.self_attn.add_q_proj": {
+      "file": "linear_140.pt",
+      "sha256": "41bc7a3139c4629a552b8a6e383bb3d12465b430e690486879092d4678dbfbb2"
+    },
+    "layers.23.self_attn.add_k_proj": {
+      "file": "linear_141.pt",
+      "sha256": "e44770e06a2b34b50b6c17a309029826c1b39b0980202a9ce1f333f83561ea16"
+    },
+    "layers.23.self_attn.add_v_proj": {
+      "file": "linear_142.pt",
+      "sha256": "79d3858249a89adee7f9d1346f069e135ea24ca5f274f2bd1fc7b861ec76e0dd"
+    },
+    "layers.23.self_attn.to_add_out": {
+      "file": "linear_143.pt",
+      "sha256": "f4436271b9903c502ca01596b1448c6aeb30a1b1ed11bf376b332861e2fb42d7"
+    },
+    "layers.24.mlp_moe_gen.up_proj": {
+      "file": "linear_144.pt",
+      "sha256": "65fa380478d8577987858115a01a13fde88dcfd7c9a54c7733a6b56b2a07911e"
+    },
+    "layers.24.mlp_moe_gen.down_proj": {
+      "file": "linear_145.pt",
+      "sha256": "142ec86cf13a98a21e91ae3bc273afe50161e95011af81238966a73067db7a07"
+    },
+    "layers.24.self_attn.add_q_proj": {
+      "file": "linear_146.pt",
+      "sha256": "ca4720489fbe6da1d95f58b557d54c3827e5878efb991dabea71e2e639bbb42a"
+    },
+    "layers.24.self_attn.add_k_proj": {
+      "file": "linear_147.pt",
+      "sha256": "f3bac93e6f67c2948aeefe0098e45ca2014142919a08d389d4ecb5221d0d682c"
+    },
+    "layers.24.self_attn.add_v_proj": {
+      "file": "linear_148.pt",
+      "sha256": "70b7f13c86c8f40191ec84bec9727e0f9a735646abe8f8e369536ff83406ea1c"
+    },
+    "layers.24.self_attn.to_add_out": {
+      "file": "linear_149.pt",
+      "sha256": "321c1aae6b1fbd5e4f1ec56f0abf90e8929f850989bba9a55a5695fe0c5a5cf8"
+    },
+    "layers.25.mlp_moe_gen.up_proj": {
+      "file": "linear_150.pt",
+      "sha256": "d951f394f0dbf9ecb70bf3d9901c1c2249fc1919556182e1f6c434fecd0129a4"
+    },
+    "layers.25.mlp_moe_gen.down_proj": {
+      "file": "linear_151.pt",
+      "sha256": "a695965e5b362ffb5cce4de4b129d7a5a0cca075e61300d42a042bf3c1e75d14"
+    },
+    "layers.25.self_attn.add_q_proj": {
+      "file": "linear_152.pt",
+      "sha256": "583014b593704c52b725821503ab090c72bc88b37b90c05d5295845844d27dee"
+    },
+    "layers.25.self_attn.add_k_proj": {
+      "file": "linear_153.pt",
+      "sha256": "5b75adf50cd81651fa1f722476145e021d50b3b75fabd0035c17b8f873d35796"
+    },
+    "layers.25.self_attn.add_v_proj": {
+      "file": "linear_154.pt",
+      "sha256": "0bab7d692966f1087c3656a2a967b2877f5a8a378936ee484cb0e3a26da79021"
+    },
+    "layers.25.self_attn.to_add_out": {
+      "file": "linear_155.pt",
+      "sha256": "981195b17a841dc5f3cf8f201c0d445ca9854dbd432cf4b522f3f0d62b372531"
+    },
+    "layers.26.mlp_moe_gen.up_proj": {
+      "file": "linear_156.pt",
+      "sha256": "0c57c00531097cf47409181db97985e8deb72fd1741030108b4a50d5249a702b"
+    },
+    "layers.26.mlp_moe_gen.down_proj": {
+      "file": "linear_157.pt",
+      "sha256": "c8092d86632ee14ecd7e05519b70e9498323c6d2cb17e137d303e0b41a370018"
+    },
+    "layers.26.self_attn.add_q_proj": {
+      "file": "linear_158.pt",
+      "sha256": "d3aa1e7c553b6695bb34e78286d3b4c979b51448225535a46a0547f24d084885"
+    },
+    "layers.26.self_attn.add_k_proj": {
+      "file": "linear_159.pt",
+      "sha256": "6cbe7e97589d9cbdf22a366813bb2903daffdc18b65f6753bac8d116e8e987eb"
+    },
+    "layers.26.self_attn.add_v_proj": {
+      "file": "linear_160.pt",
+      "sha256": "bf83b75d361e405064afd65f603e7571a362525db15460ca30a639cedcc766a1"
+    },
+    "layers.26.self_attn.to_add_out": {
+      "file": "linear_161.pt",
+      "sha256": "9405617724434af297594a4e307990190c11b07a7196e0bfb5a0681adf020182"
+    },
+    "layers.27.mlp_moe_gen.up_proj": {
+      "file": "linear_162.pt",
+      "sha256": "bfa46436b06f635e6c114e94efef73c65e2c2cfa89f6846b05daf93abec79e40"
+    },
+    "layers.27.mlp_moe_gen.down_proj": {
+      "file": "linear_163.pt",
+      "sha256": "45e7e25cb984fd975f4e82a452305797e2e5da7a3888e92a9f483f78e996b5f3"
+    },
+    "layers.27.self_attn.add_q_proj": {
+      "file": "linear_164.pt",
+      "sha256": "1e0b482281f25e226b5823c7081999072e4dd38768073830ca572c4018c74588"
+    },
+    "layers.27.self_attn.add_k_proj": {
+      "file": "linear_165.pt",
+      "sha256": "40646ab1fd1ca62a211ccd41cdb8f90b99f2d4e8d701889b687042e280c7f404"
+    },
+    "layers.27.self_attn.add_v_proj": {
+      "file": "linear_166.pt",
+      "sha256": "97272c5ab23ad241b1376a5c768dbc2afc5c463e16fdd1bede1a436ed00c8d29"
+    },
+    "layers.27.self_attn.to_add_out": {
+      "file": "linear_167.pt",
+      "sha256": "8eced05f73e0165d3cb32f3b8e0984640ad88fc3ae5ecf5ecb604dc978a3681e"
+    }
+  },
+  "cohort_sha256": "f81fd6f900f55c0e9c2e270f9e8576dd997e9f2d48f6e1b460e9a60389ddbe1c",
+  "plan_sha256": "2dde2fd397cc83a3970b6ba76a2933e4072f0c59a9aad50eaf6019a591e21d3f",
+  "performance_eligible": false,
+  "refinement": [
+    {
+      "name": "layers.0.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.0.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.0.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.0.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.0.self_attn.add_v_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.0.self_attn.to_add_out",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.1.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.1.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.1.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.1.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.1.self_attn.add_v_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.1.self_attn.to_add_out",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.2.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.2.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.2.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.2.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.2.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        48,
+        49,
+        50,
+        51,
+        53,
+        55,
+        56,
+        57,
+        58,
+        62,
+        63,
+        82,
+        83,
+        87,
+        89,
+        95
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.006395635689841583,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.006395635689841583
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0064075257105287164
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.006395635689841583
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0064105688652489334
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.010590975871309638
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.006737293006153777
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.01078428648179397
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.009903662343276665
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.006656212295638397
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.010051300923805684
+        }
+      ]
+    },
+    {
+      "name": "layers.2.self_attn.to_add_out",
+      "reserved_w_blocks": [],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.005086237099021673,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.005086237099021673
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.005111477337777615
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.005112127269967459
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.005118092696648091
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.005090096325147897
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.005086237099021673
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.005092157472972758
+        }
+      ]
+    },
+    {
+      "name": "layers.3.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.3.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.3.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.3.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.3.self_attn.add_v_proj",
+      "reserved_w_blocks": [],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.005224368593189865,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.005232925381278619
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.005225393251748756
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.005224368593189865
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.005225598317338154
+        }
+      ]
+    },
+    {
+      "name": "layers.3.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        0,
+        14,
+        16,
+        30,
+        32,
+        46,
+        48,
+        62,
+        64,
+        78,
+        80,
+        94,
+        96,
+        110,
+        112,
+        126,
+        128,
+        142,
+        144,
+        158,
+        160,
+        174,
+        176,
+        190,
+        192,
+        206,
+        208,
+        222,
+        224,
+        238,
+        240,
+        254
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.0017668843975116033,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0017668843975116033
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0018032053594652098
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0017668843975116033
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0018312148495169822
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.0072145177982747555
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.004703006707131863
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.008019956876523793
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.00189781953667989
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0018114945232809987
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0019352098170202225
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0018045496472041123
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.0017668843975116033
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0018336842003918719
+        }
+      ]
+    },
+    {
+      "name": "layers.4.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.4.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.4.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.4.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.4.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        66,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.008419885853072628,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.008419885853072628
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00842806079890579
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.008419885853072628
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.008432567468844354
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.01144393946742639
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.008846838056342676
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.011540399573277682
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.010555823391769081
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.008695773663930595
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.010614484985126182
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.008424258616287261
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.008419885853072628
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.008426819404121488
+        }
+      ]
+    },
+    {
+      "name": "layers.4.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        8,
+        13,
+        24,
+        29,
+        40,
+        45,
+        56,
+        61,
+        72,
+        77,
+        88,
+        93,
+        104,
+        109,
+        120,
+        125,
+        136,
+        141,
+        152,
+        157,
+        168,
+        173,
+        184,
+        189,
+        200,
+        205,
+        216,
+        221,
+        232,
+        237,
+        248,
+        253
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.01040706571075134,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.010418534628115594
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.010424744483316317
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.01040706571075134
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.010433804854983464
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.01287690078606829
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.011609997367486358
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.013262872060295194
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.010685830900911242
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.010517289367271587
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.010702930798288435
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.01042051671538502
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.01040706571075134
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.010430380963953212
+        }
+      ]
+    },
+    {
+      "name": "layers.5.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.5.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.5.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.5.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.5.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        35,
+        40,
+        42,
+        43,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        65,
+        96,
+        97,
+        98,
+        99,
+        101,
+        102,
+        104,
+        106,
+        115,
+        118,
+        119
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00740441349989851,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00740441349989851
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007419582228976651
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00740441349989851
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007426773828228761
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.009201994027534965
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.007985675118106883
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.0092637792986352
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.00773039572959533
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.007481637763703475
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0077322507386270445
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.007414176887323265
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00740441349989851
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007420361853291979
+        }
+      ]
+    },
+    {
+      "name": "layers.5.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        7,
+        14,
+        23,
+        31,
+        39,
+        47,
+        55,
+        63,
+        71,
+        79,
+        87,
+        95,
+        103,
+        111,
+        119,
+        127,
+        135,
+        143,
+        151,
+        159,
+        167,
+        175,
+        183,
+        190,
+        199,
+        206,
+        215,
+        222,
+        231,
+        247,
+        254,
+        255
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00969450079719536,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00969450079719536
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.009708786179544404
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.009694859443698078
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00971826136810705
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.011428665486164391
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.010560375289060175
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.011687111284118146
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.009807567053940147
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.009740779583808035
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.00982907135039568
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.009711094666272402
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00969450079719536
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.009724540635943413
+        }
+      ]
+    },
+    {
+      "name": "layers.6.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.6.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.6.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.6.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.6.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.008603288530139253,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.008603288530139253
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.008613482816144824
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.008603296591900289
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.008616129867732525
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.011409303842810914
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.009103387623326853
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.0112845697440207
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.00967828300781548
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.008791806583758444
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.009624125232221559
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.008606894145486876
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.008603288530139253
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.008608807518612593
+        }
+      ]
+    },
+    {
+      "name": "layers.6.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        8,
+        9,
+        24,
+        25,
+        40,
+        41,
+        56,
+        57,
+        72,
+        73,
+        88,
+        89,
+        104,
+        105,
+        120,
+        121,
+        136,
+        137,
+        152,
+        153,
+        168,
+        169,
+        184,
+        185,
+        200,
+        201,
+        216,
+        217,
+        232,
+        233,
+        248,
+        249
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.003833149283309467,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.003833149283309467
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0038717806164640933
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0038364545616786927
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0039020556287141517
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.008728803863050416
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.0065337117412127554
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.009480314736720175
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.003961298934882507
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0038812302373116836
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0040001865272643045
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.003867830819217488
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.003833149283309467
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.003896826907293871
+        }
+      ]
+    },
+    {
+      "name": "layers.7.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.7.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.7.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.7.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.7.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        37,
+        42,
+        43,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        56,
+        57,
+        58,
+        59,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        84,
+        93,
+        96,
+        98,
+        100,
+        101,
+        105,
+        107,
+        109,
+        110,
+        111,
+        117,
+        121,
+        124
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.004418963385433017,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.004418963385433017
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.004443276766323834
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.004419748984219041
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.004458047758816974
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.007814485870767385
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.005907920218305662
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.00820631672104355
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.004785396891747951
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.004545173089354648
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.004824087634915486
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00443967327100836
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.004418963385433017
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.004454404317584704
+        }
+      ]
+    },
+    {
+      "name": "layers.7.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        0,
+        6,
+        8,
+        9,
+        16,
+        22,
+        24,
+        25,
+        28,
+        32,
+        38,
+        41,
+        48,
+        54,
+        56,
+        57,
+        64,
+        70,
+        72,
+        73,
+        80,
+        86,
+        88,
+        89,
+        96,
+        102,
+        104,
+        105,
+        112,
+        118,
+        120,
+        121,
+        128,
+        134,
+        136,
+        137,
+        144,
+        150,
+        152,
+        153,
+        160,
+        166,
+        169,
+        176,
+        182,
+        184,
+        185,
+        192,
+        198,
+        200,
+        201,
+        208,
+        214,
+        216,
+        217,
+        224,
+        230,
+        232,
+        233,
+        240,
+        246,
+        248,
+        249,
+        252
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00951181590789929,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00951181590789929
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.009544927335809916
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00951417363830842
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.009556388715282083
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.014001045434270054
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.011832123447675258
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.014764695311896503
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.01007921464042738
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.009734073508298025
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.01009306128253229
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.009541994804749265
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00951181590789929
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.009561055718222633
+        }
+      ]
+    },
+    {
+      "name": "layers.8.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.8.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.8.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.8.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.8.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        3,
+        4,
+        6,
+        9,
+        11,
+        13,
+        21,
+        27,
+        30,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        58,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        106,
+        109,
+        113,
+        117,
+        123
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.004497550148698792,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.004497550148698792
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.004522736576291209
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.004497990427807963
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.004534847485956561
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.008842845156323165
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.006314762060355861
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.009243364300346002
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.005191372325498378
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.004755585732709733
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.005259602727164747
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.004520645446064009
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.004497550148698792
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.004534985454483831
+        }
+      ]
+    },
+    {
+      "name": "layers.8.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        5,
+        8,
+        10,
+        11,
+        21,
+        24,
+        26,
+        27,
+        37,
+        40,
+        42,
+        43,
+        53,
+        56,
+        58,
+        59,
+        69,
+        72,
+        74,
+        75,
+        85,
+        88,
+        90,
+        91,
+        101,
+        104,
+        106,
+        107,
+        117,
+        120,
+        122,
+        123,
+        133,
+        136,
+        138,
+        139,
+        149,
+        154,
+        155,
+        164,
+        165,
+        168,
+        170,
+        171,
+        181,
+        186,
+        187,
+        197,
+        200,
+        202,
+        203,
+        212,
+        213,
+        216,
+        218,
+        219,
+        229,
+        232,
+        234,
+        235,
+        245,
+        248,
+        250,
+        251
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.011770658689783886,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.01178619300480932
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.011825036781374365
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.011770658689783886
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.011853227857500315
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.016674241283908486
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.014386415015906096
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.017639912897720933
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.01204868359491229
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.011872192815644667
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.012098409730242565
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.011810766707640141
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.011770658689783886
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.011842558160424232
+        }
+      ]
+    },
+    {
+      "name": "layers.9.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.9.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.9.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.9.self_attn.add_k_proj",
+      "reserved_w_blocks": [],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007971020910190418,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.007971020910190418
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007974738255143166
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.007973356608999893
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007974197942530736
+        }
+      ]
+    },
+    {
+      "name": "layers.9.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00020308582861616742,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00020308582861616742
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0002385575489824987
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00020308582861616742
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0002606085408842773
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.007247833593282849
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.0036544385948218405
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.008086720248684287
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0008296632768178824
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0004607416231010575
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0008978919395303819
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00023810316179151414
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00020308582861616742
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0002617026448206161
+        }
+      ]
+    },
+    {
+      "name": "layers.9.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        5,
+        14,
+        21,
+        30,
+        37,
+        47,
+        53,
+        69,
+        85,
+        99,
+        100,
+        101,
+        117,
+        126,
+        133,
+        139,
+        142,
+        149,
+        165,
+        174,
+        181,
+        196,
+        197,
+        203,
+        213,
+        222,
+        229,
+        235,
+        238,
+        243,
+        245,
+        251
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.013101442134939134,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.013101442134939134
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.013123440614435822
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.013101442134939134
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.01312252477509901
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.015131473599467427
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.014112506585661322
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.015539996966253966
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.013292695337440819
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.013163531082682312
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.013342473190277815
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.013113661261741072
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.013101442134939134
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.013122681120876223
+        }
+      ]
+    },
+    {
+      "name": "layers.10.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.10.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.10.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.10.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.10.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00023417006832460174,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00023417006832460174
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.000272150491582579
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00023417006832460174
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00029898267985117855
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.007659780443646014
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.004046551344799809
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.00856137677328661
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0008600779874541331
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0005075990829936927
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0009391892854182515
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00027279162259219447
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00023417006832460174
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0003021961219928926
+        }
+      ]
+    },
+    {
+      "name": "layers.10.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        6,
+        7,
+        8,
+        12,
+        14,
+        22,
+        23,
+        24,
+        28,
+        39,
+        44,
+        51,
+        52,
+        54,
+        55,
+        56,
+        60,
+        71,
+        76,
+        84,
+        85,
+        92,
+        100,
+        103,
+        104,
+        108,
+        119,
+        124,
+        132,
+        135,
+        136,
+        137,
+        140,
+        144,
+        148,
+        151,
+        156,
+        164,
+        172,
+        174,
+        183,
+        184,
+        188,
+        191,
+        198,
+        199,
+        200,
+        204,
+        206,
+        208,
+        215,
+        218,
+        220,
+        222,
+        223,
+        228,
+        230,
+        231,
+        232,
+        234,
+        236,
+        240,
+        247,
+        252
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.01361540099605918,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.01361540099605918
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.013650996726937592
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.01361540099605918
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.013631978479679674
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.016005524317733943
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.014733198913745582
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.01666096958797425
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.013861064391676337
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.013707436388358474
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.013930676272138953
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.013634801376610994
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.01361540099605918
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.01364936848403886
+        }
+      ]
+    },
+    {
+      "name": "layers.11.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.11.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.11.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.11.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.11.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00025084363915084396,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00025119318070210284
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00029195922979852185
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00025084363915084396
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0003219480540792574
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.00798258144641295
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.004211392952129245
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.009107007732382044
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.000790546811913373
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.00047778206317161676
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0008797050468274392
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0002930605041910894
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00025084363915084396
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0003229759304304025
+        }
+      ]
+    },
+    {
+      "name": "layers.11.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        10,
+        12,
+        13,
+        15,
+        26,
+        28,
+        29,
+        42,
+        44,
+        45,
+        47,
+        58,
+        60,
+        61,
+        63,
+        66,
+        74,
+        76,
+        77,
+        78,
+        79,
+        90,
+        92,
+        93,
+        95,
+        106,
+        108,
+        109,
+        111,
+        124,
+        125,
+        127,
+        138,
+        140,
+        141,
+        143,
+        154,
+        156,
+        157,
+        158,
+        159,
+        172,
+        173,
+        175,
+        186,
+        188,
+        189,
+        190,
+        191,
+        202,
+        204,
+        205,
+        207,
+        218,
+        220,
+        221,
+        222,
+        223,
+        237,
+        239,
+        250,
+        252,
+        253,
+        255
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.012322792230406776,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.012322792230406776
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.01234457574901171
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.012322792230406776
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.012365784059511498
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.017290905059780926
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.014830581319984049
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.018377831671386957
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.013420610455796123
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.012767590000294149
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.013569895178079605
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.012350918812444434
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.012322792230406776
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.012373841542284936
+        }
+      ]
+    },
+    {
+      "name": "layers.12.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.12.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.12.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.12.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.12.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00021964414827380097,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00021966702479403466
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00025530294806230813
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00021964414827380097
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0002823010281645111
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.007511736504966393
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.0038390923582483083
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.008435316354734823
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0008042827284953091
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0004626227273547556
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0008862670038070064
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0002574166474005324
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00021964414827380097
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.00028239606399438344
+        }
+      ]
+    },
+    {
+      "name": "layers.12.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        0,
+        1,
+        4,
+        6,
+        7,
+        10,
+        11,
+        12,
+        16,
+        17,
+        18,
+        20,
+        22,
+        26,
+        27,
+        28,
+        30,
+        32,
+        33,
+        36,
+        38,
+        39,
+        42,
+        48,
+        49,
+        54,
+        55,
+        58,
+        60,
+        64,
+        65,
+        68,
+        70,
+        71,
+        74,
+        75,
+        76,
+        80,
+        81,
+        82,
+        83,
+        84,
+        86,
+        87,
+        90,
+        92,
+        96,
+        97,
+        98,
+        100,
+        101,
+        102,
+        103,
+        106,
+        108,
+        112,
+        113,
+        116,
+        117,
+        118,
+        119,
+        122,
+        123,
+        124,
+        128,
+        129,
+        133,
+        134,
+        135,
+        138,
+        140,
+        144,
+        145,
+        148,
+        150,
+        151,
+        154,
+        155,
+        160,
+        161,
+        164,
+        165,
+        166,
+        167,
+        170,
+        171,
+        176,
+        177,
+        178,
+        180,
+        181,
+        182,
+        183,
+        186,
+        187,
+        188,
+        192,
+        193,
+        196,
+        198,
+        199,
+        202,
+        203,
+        204,
+        206,
+        208,
+        209,
+        212,
+        214,
+        215,
+        218,
+        219,
+        220,
+        224,
+        225,
+        228,
+        229,
+        230,
+        231,
+        234,
+        235,
+        240,
+        241,
+        244,
+        246,
+        247,
+        250,
+        251
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.009710220212582499,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.009716666012536734
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00975820209714584
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.009710220212582499
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00978443687199615
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.0186750169377774
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.014457735407631844
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.02028716151835397
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.011285403918009251
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.010339342115912586
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.011525895388331264
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.009761545748915523
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.009710220212582499
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.009796253958484158
+        }
+      ]
+    },
+    {
+      "name": "layers.13.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.13.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.13.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.13.self_attn.add_k_proj",
+      "reserved_w_blocks": [],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.0069746721419505775,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.006977779412409291
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00697567593306303
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0069746721419505775
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0069748742680530995
+        }
+      ]
+    },
+    {
+      "name": "layers.13.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00023799485825293232,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00023812518156773876
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.000277626305432932
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00023799485825293232
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00030574050924769836
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.007945012621348724
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.0041902516823029146
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.00891450175549835
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0008646652822790202
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0005088480920676375
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0009506590977252927
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00027773736019298667
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00023799485825293232
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0003071510473091621
+        }
+      ]
+    },
+    {
+      "name": "layers.13.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        1,
+        2,
+        3,
+        6,
+        12,
+        14,
+        15,
+        17,
+        18,
+        19,
+        22,
+        23,
+        28,
+        30,
+        31,
+        33,
+        34,
+        38,
+        39,
+        44,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        54,
+        58,
+        60,
+        62,
+        64,
+        65,
+        66,
+        67,
+        70,
+        71,
+        76,
+        78,
+        79,
+        80,
+        81,
+        82,
+        86,
+        87,
+        92,
+        94,
+        95,
+        97,
+        98,
+        102,
+        103,
+        107,
+        108,
+        110,
+        111,
+        114,
+        115,
+        118,
+        119,
+        124,
+        126,
+        128,
+        129,
+        130,
+        131,
+        134,
+        135,
+        140,
+        142,
+        143,
+        145,
+        146,
+        150,
+        151,
+        156,
+        158,
+        160,
+        161,
+        162,
+        165,
+        166,
+        167,
+        172,
+        174,
+        175,
+        177,
+        178,
+        179,
+        182,
+        183,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        198,
+        199,
+        200,
+        203,
+        204,
+        206,
+        209,
+        210,
+        211,
+        214,
+        215,
+        220,
+        221,
+        222,
+        223,
+        225,
+        226,
+        227,
+        230,
+        231,
+        236,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        246,
+        247,
+        252,
+        254
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.009210010612150654,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.009210010612150654
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.009256407909560949
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.009210010612150654
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.009299122175434604
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.017221035959664732
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.013466070464346558
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.018739833321888
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.010526105994358659
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.00975485917297192
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.010745879029855132
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.009255994140403345
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.009210010612150654
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.009289073233958334
+        }
+      ]
+    },
+    {
+      "name": "layers.14.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.14.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.14.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.14.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.14.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00023922179661894916,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00023922179661894916
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0002806941565722809
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00023922179661894916
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0003092091192229418
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.011611221125349402
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.005251254449831322
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.012883839721325785
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.004735348105896264
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.001836390198150184
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.005120341083966196
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00028201584427733906
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00023922179661894916
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0003120285482509644
+        }
+      ]
+    },
+    {
+      "name": "layers.14.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        5,
+        6,
+        7,
+        9,
+        20,
+        21,
+        23,
+        25,
+        37,
+        38,
+        39,
+        41,
+        48,
+        53,
+        55,
+        57,
+        69,
+        70,
+        71,
+        73,
+        85,
+        86,
+        87,
+        89,
+        101,
+        102,
+        103,
+        105,
+        117,
+        119,
+        121,
+        133,
+        134,
+        135,
+        137,
+        149,
+        150,
+        151,
+        153,
+        165,
+        166,
+        167,
+        169,
+        181,
+        182,
+        183,
+        185,
+        197,
+        198,
+        199,
+        201,
+        213,
+        214,
+        215,
+        217,
+        219,
+        229,
+        231,
+        233,
+        240,
+        245,
+        246,
+        247,
+        249
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.010129225585842505,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.010131146787898615
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.010151202761335298
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.010129225585842505
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.010169046581722796
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.016564594581723213
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.012296954198973253
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.017260255641303957
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.012400776438880712
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.010584756411844864
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.012603446433786303
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.010154450021218508
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.010129225585842505
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.010175296338275075
+        }
+      ]
+    },
+    {
+      "name": "layers.15.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.15.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.15.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.15.self_attn.add_k_proj",
+      "reserved_w_blocks": [
+        34,
+        37,
+        40,
+        41,
+        45,
+        50,
+        56,
+        57,
+        61,
+        73,
+        89,
+        105,
+        109,
+        120,
+        121,
+        125
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007795979821821675,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.007795979821821675
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007804315420798957
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.007797018362907693
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007803813001373783
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.009863544721156359
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.007983456365764141
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.00987220779643394
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.009403547912370414
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.007877251919126138
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.009332888730568811
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0077968372497707605
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.007795979821821675
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007797265920089558
+        }
+      ]
+    },
+    {
+      "name": "layers.15.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.0002550390017859172,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0002550390017859172
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0002976224586745957
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0002550390017859172
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00032776343505247496
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.008063051354838535
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.004283630565623753
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.009009789326228201
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0008347551556653343
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0004950290931446943
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0009120305912801996
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0002972353604491218
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.0002550390017859172
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.00032919021396082826
+        }
+      ]
+    },
+    {
+      "name": "layers.15.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        1,
+        8,
+        11,
+        12,
+        17,
+        24,
+        27,
+        33,
+        40,
+        43,
+        48,
+        49,
+        56,
+        59,
+        65,
+        72,
+        75,
+        80,
+        81,
+        88,
+        91,
+        96,
+        97,
+        104,
+        107,
+        108,
+        113,
+        120,
+        123,
+        128,
+        129,
+        136,
+        139,
+        140,
+        145,
+        152,
+        155,
+        161,
+        168,
+        171,
+        176,
+        177,
+        184,
+        187,
+        188,
+        192,
+        193,
+        200,
+        203,
+        204,
+        208,
+        209,
+        216,
+        219,
+        220,
+        225,
+        232,
+        235,
+        236,
+        240,
+        241,
+        248,
+        251,
+        252
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.010680758336093277,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.010680758336093277
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.010706657107220963
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.010680758336093277
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.010726600274210796
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.014892819861415774
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.012887300516013056
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.015512196987401694
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.01099927636096254
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.010829367383848876
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.01109236481715925
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.01070888151298277
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.010680758336093277
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.010734054842032492
+        }
+      ]
+    },
+    {
+      "name": "layers.16.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.16.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.16.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.16.self_attn.add_k_proj",
+      "reserved_w_blocks": [
+        8,
+        9,
+        18,
+        24,
+        25,
+        29,
+        41,
+        54,
+        56,
+        57,
+        73,
+        104,
+        105,
+        120,
+        121,
+        125
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.008566413540393114,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.008566413540393114
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.008572819293476641
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.008566413540393114
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.008570703153964132
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.01130134321283549
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.008913279831176624
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.011092789645772427
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.01074003439862281
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.008758812648011371
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.01052285818150267
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.008569946920033544
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.008566413540393114
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.00857142562745139
+        }
+      ]
+    },
+    {
+      "name": "layers.16.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.0002449869534757454,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0002449869534757454
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0002848194699254236
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0002452470034768339
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00031398763348988723
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.007849327230360359
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.004193147557089105
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.008818973990855739
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0008564591116737574
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0005096668810438132
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0009490072661719751
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0002861051243598922
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.0002449869534757454
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.00031475039941142313
+        }
+      ]
+    },
+    {
+      "name": "layers.16.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        29,
+        36,
+        38,
+        39,
+        40,
+        41,
+        42,
+        44,
+        45,
+        46,
+        52,
+        54,
+        55,
+        56,
+        57,
+        58,
+        61,
+        62,
+        67,
+        68,
+        70,
+        71,
+        72,
+        73,
+        74,
+        77,
+        83,
+        84,
+        86,
+        87,
+        88,
+        89,
+        90,
+        93,
+        100,
+        102,
+        103,
+        104,
+        105,
+        106,
+        109,
+        110,
+        116,
+        118,
+        119,
+        120,
+        121,
+        122,
+        125,
+        126,
+        132,
+        134,
+        135,
+        136,
+        137,
+        138,
+        141,
+        142,
+        148,
+        150,
+        151,
+        152,
+        153,
+        154,
+        157,
+        164,
+        166,
+        167,
+        168,
+        169,
+        170,
+        173,
+        180,
+        182,
+        183,
+        184,
+        185,
+        186,
+        189,
+        190,
+        196,
+        198,
+        199,
+        200,
+        201,
+        202,
+        212,
+        214,
+        215,
+        216,
+        217,
+        218,
+        221,
+        222,
+        227,
+        228,
+        230,
+        231,
+        232,
+        233,
+        234,
+        237,
+        238,
+        243,
+        244,
+        246,
+        247,
+        248,
+        249,
+        250,
+        253,
+        254
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00743049758602865,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00743049758602865
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007483412133296952
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00743049758602865
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007523936626967043
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.01562723144888878
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.012021377973724157
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.01722373761003837
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.008017044223379344
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.007682566094445065
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.008146770735038444
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.007482254644855857
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00743049758602865
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007524124812334776
+        }
+      ]
+    },
+    {
+      "name": "layers.17.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.17.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.17.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.17.self_attn.add_k_proj",
+      "reserved_w_blocks": [],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007568119181087241,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0075689278019126505
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007571470778202638
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0075689278019126505
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007568119181087241
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.007569345529191196
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.007568119181087241
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007569624314783141
+        }
+      ]
+    },
+    {
+      "name": "layers.17.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.0003154960786559968,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0003154960786559968
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0003673968767543556
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0003154960786559968
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.000408140604122309
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.009244368498912081
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.005159645763342269
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.010568182566203177
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0009369921172037721
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0005759924733865773
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0010416508739581332
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0003688084652821999
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.0003154960786559968
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0004059200127812801
+        }
+      ]
+    },
+    {
+      "name": "layers.17.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        9,
+        25,
+        41,
+        45,
+        57,
+        61,
+        73,
+        76,
+        77,
+        89,
+        105,
+        121,
+        129,
+        137,
+        141,
+        153,
+        157,
+        161,
+        169,
+        173,
+        177,
+        185,
+        192,
+        193,
+        201,
+        205,
+        217,
+        221,
+        225,
+        233,
+        249,
+        253
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.011385642894310877,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.011385642894310877
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.011399232578696683
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.011389554420020431
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.011402337462641299
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.012710052484180778
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.011940316995605826
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.012950031086802483
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.011520485219080001
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.01142368049477227
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.01153514051111415
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.01139482282451354
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.011385642894310877
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.011401066818507388
+        }
+      ]
+    },
+    {
+      "name": "layers.18.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.18.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.18.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.18.self_attn.add_k_proj",
+      "reserved_w_blocks": [
+        8,
+        9,
+        24,
+        41,
+        54,
+        56,
+        57,
+        72,
+        88,
+        89,
+        98,
+        104,
+        105,
+        118,
+        120,
+        121
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.008328489202540368,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.008328489202540368
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.008340214408235624
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.008328489202540368
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.008335232210811228
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.010752619011327624
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.008595432853326201
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.010633636673446745
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.01030262652784586
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.008473389694700018
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.010174753231694922
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00833049908396788
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.008328489202540368
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.008331097575137392
+        }
+      ]
+    },
+    {
+      "name": "layers.18.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.000278433089988539,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0002785854085232131
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00032252867276838515
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.000278433089988539
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.000354970085027162
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.008234456094214693
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.004433304056874476
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.00928391472552903
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0010839640272024553
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0005717543317587115
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0011328280343150254
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00032534274123463547
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.000278433089988539
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0003571105053197243
+        }
+      ]
+    },
+    {
+      "name": "layers.18.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        4,
+        12,
+        20,
+        28,
+        36,
+        44,
+        52,
+        60,
+        68,
+        76,
+        84,
+        92,
+        100,
+        108,
+        116,
+        124,
+        132,
+        140,
+        148,
+        156,
+        164,
+        172,
+        180,
+        188,
+        196,
+        204,
+        212,
+        220,
+        228,
+        236,
+        244,
+        252
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007385389122646302,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.007385389122646302
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0074159057112410665
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.007385389122646302
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007444742615916766
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.01026031729998067
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.008948370756115764
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.010742242069682106
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.007524699802161194
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.007435386360157281
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.007559015750302933
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00741314294282347
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.007385389122646302
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007438620712491684
+        }
+      ]
+    },
+    {
+      "name": "layers.19.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.19.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.19.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.19.self_attn.add_k_proj",
+      "reserved_w_blocks": [
+        2,
+        8,
+        9,
+        18,
+        24,
+        40,
+        56,
+        57,
+        73,
+        82,
+        88,
+        89,
+        92,
+        93,
+        104,
+        120
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.008906846051104367,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.008906846051104367
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.008910147123970091
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.008908604504540563
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.008921932225348428
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.011032362002879381
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.009333413385320455
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.011085110600106418
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.01043645667959936
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.009129909478360787
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.010453618509927765
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.008913033554563299
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.008906846051104367
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.008915142330806702
+        }
+      ]
+    },
+    {
+      "name": "layers.19.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.0002780743207040359,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0002780743207040359
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0003253581935496186
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0002780743207040359
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00035799048964690883
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.008652483869809657
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.004581069792038761
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.009808127681026235
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.001086573724023765
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.000527764948856202
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0011162306291225832
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0003247359991291887
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.0002780743207040359
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0003583416664696415
+        }
+      ]
+    },
+    {
+      "name": "layers.19.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        1,
+        3,
+        4,
+        11,
+        17,
+        19,
+        20,
+        27,
+        33,
+        35,
+        36,
+        43,
+        49,
+        51,
+        52,
+        58,
+        59,
+        65,
+        67,
+        68,
+        74,
+        75,
+        81,
+        83,
+        84,
+        97,
+        99,
+        100,
+        107,
+        113,
+        115,
+        116,
+        123,
+        129,
+        131,
+        132,
+        145,
+        147,
+        148,
+        154,
+        155,
+        161,
+        163,
+        164,
+        171,
+        177,
+        179,
+        180,
+        187,
+        193,
+        195,
+        196,
+        202,
+        209,
+        211,
+        212,
+        225,
+        227,
+        228,
+        241,
+        243,
+        244,
+        250,
+        251
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.006180125739774667,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.006180125739774667
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00621836754726246
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.006180125739774667
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.006259203975787386
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.012205695558805019
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.009524885565042496
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.013408519269432873
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.006617349936277606
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.006374047734425403
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.006729109998559579
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.006226849262020551
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.006180125739774667
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.006268259734497406
+        }
+      ]
+    },
+    {
+      "name": "layers.20.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.20.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.20.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.20.self_attn.add_k_proj",
+      "reserved_w_blocks": [
+        8,
+        9,
+        24,
+        25,
+        41,
+        56,
+        57,
+        73,
+        82,
+        86,
+        88,
+        89,
+        95,
+        104,
+        105,
+        120
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.008295761566841975,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.008295761566841975
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.008307191077619791
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.008296723972307518
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.008311201730975881
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.011847049987409264
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.008854801912093535
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.011702845280524343
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.011232586752157658
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.008655434852698818
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.011046532250475138
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.008300875255372375
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.008295761566841975
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.00830327536095865
+        }
+      ]
+    },
+    {
+      "name": "layers.20.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00023908362982183462,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00023908362982183462
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0002776071787593537
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00023908362982183462
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00030598135799664306
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.00785934302257374
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.004121779202250764
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.008836131019052118
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.001156670678028604
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0005739579974033404
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.001236433832673356
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00027942037831962807
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00023908362982183462
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0003084609143115813
+        }
+      ]
+    },
+    {
+      "name": "layers.20.self_attn.to_add_out",
+      "reserved_w_blocks": [],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007493976969271898,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.007493994780816138
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007495315920095891
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.007493976969271898
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0074947591638192534
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.007494875666452572
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.007493976969271898
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007495207304600626
+        }
+      ]
+    },
+    {
+      "name": "layers.21.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.21.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.21.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.21.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.21.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00026493054338061484,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00026493054338061484
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.0003100172734775697
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00026493054338061484
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0003389891780898324
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.011048314365325496
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.005219840328209102
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.012232399894855917
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0035855631140293553
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.001431743621651549
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0038621231651632115
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00031041138390719425
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00026493054338061484
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.00034272621724085184
+        }
+      ]
+    },
+    {
+      "name": "layers.21.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        0,
+        5,
+        16,
+        21,
+        32,
+        37,
+        48,
+        53,
+        64,
+        69,
+        80,
+        85,
+        96,
+        101,
+        112,
+        117,
+        128,
+        133,
+        144,
+        149,
+        160,
+        165,
+        176,
+        181,
+        192,
+        197,
+        208,
+        213,
+        224,
+        229,
+        240,
+        245
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.005257307406282052,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0052582722855731845
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.005257307406282052
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0052582722855731845
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.005260103207547218
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.006697193311993033
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.005877379240700975
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.006833419407485053
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.005379246766096912
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0053068686538608745
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.005378407018724829
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.005262766077066772
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.005257307406282052
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.005266343883704394
+        }
+      ]
+    },
+    {
+      "name": "layers.22.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.22.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.22.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.22.self_attn.add_k_proj",
+      "reserved_w_blocks": [
+        9,
+        18,
+        25,
+        40,
+        41,
+        56,
+        57,
+        66,
+        72,
+        82,
+        88,
+        89,
+        98,
+        104,
+        105,
+        120
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007967949786689132,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.007967949786689132
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007968342979438603
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.007967949786689132
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007968504069140181
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.010455542244017124
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.008380308165214956
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.010268909274600446
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.00990523790824227
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.008201209071557969
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.00966048231930472
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.007972947525558993
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.007967949786689132
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007974801439559087
+        }
+      ]
+    },
+    {
+      "name": "layers.22.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.0003030804782611085,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0003032017339137383
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00035327879413671326
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.0003030804782611085
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00038929140464460943
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.010416900651762262
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.005457803723402321
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.011793270474299788
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0020993306461605243
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0010360070882597938
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0023253457693499513
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0003548776476236526
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.0003030804782611085
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.00039127828677010257
+        }
+      ]
+    },
+    {
+      "name": "layers.22.self_attn.to_add_out",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.23.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.23.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.23.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.23.self_attn.add_k_proj",
+      "reserved_w_blocks": [
+        8,
+        34,
+        40,
+        41,
+        50,
+        51,
+        52,
+        53,
+        54,
+        56,
+        57,
+        62,
+        73,
+        88,
+        89,
+        121
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007758979772916064,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.007758979772916064
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007763781264657155
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.007758979772916064
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007772194338031113
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.01265414641238749
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.008324481721501797
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.012146242370363325
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.011894826428033412
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.008106007473543286
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.011401010968256742
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.007765169691992924
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.007758979772916064
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007767316739773378
+        }
+      ]
+    },
+    {
+      "name": "layers.23.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.0003644185962912161,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0003644185962912161
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00042390362978039775
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00036444679426494986
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0004670421640184941
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.011072441469877958
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.0060086601006332785
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.0125670459237881
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0014581578434444964
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0007290930916497018
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0015241271030390635
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0004253202641848475
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.0003644185962912161
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.00046747793749091215
+        }
+      ]
+    },
+    {
+      "name": "layers.23.self_attn.to_add_out",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.24.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.24.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.24.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.24.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.24.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.000208053147616738,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.000208053147616738
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00024414255676674657
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.000208053147616738
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00026991702634404646
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.009407086297869682
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.0039235720760189
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.010392684140242636
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.0031758404948050156
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0011005822889273986
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0034157738264184445
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.000244164830291993
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.000208053147616738
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0002686557581910165
+        }
+      ]
+    },
+    {
+      "name": "layers.24.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        3,
+        6,
+        7,
+        9,
+        19,
+        22,
+        23,
+        25,
+        35,
+        39,
+        41,
+        44,
+        51,
+        55,
+        57,
+        60,
+        67,
+        70,
+        71,
+        73,
+        76,
+        83,
+        86,
+        87,
+        89,
+        99,
+        103,
+        105,
+        108,
+        115,
+        119,
+        121,
+        131,
+        135,
+        137,
+        147,
+        150,
+        151,
+        153,
+        163,
+        166,
+        167,
+        169,
+        172,
+        179,
+        183,
+        185,
+        195,
+        198,
+        199,
+        201,
+        204,
+        211,
+        214,
+        215,
+        217,
+        227,
+        231,
+        233,
+        243,
+        246,
+        247,
+        249,
+        252
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.004766974860103801,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.004766974860103801
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.004791567771462724
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.004766974860103801
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0048188894434133545
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.010038235021056607
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.007196712860604748
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.010805199039168656
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.005520768230780959
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.005001953075407073
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.005623351986287162
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.004794181848410517
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.004766974860103801
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.004813085542991757
+        }
+      ]
+    },
+    {
+      "name": "layers.25.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.25.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.25.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.25.self_attn.add_k_proj",
+      "reserved_w_blocks": [],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.008180041157174855,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.008180041157174855
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.008187076135072857
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.008181247132597491
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.008188408974092454
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.008181573823094368
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.008180041157174855
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.008181910263374448
+        }
+      ]
+    },
+    {
+      "name": "layers.25.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.00021042878870503046,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.00021042878870503046
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00025155218463623896
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.00021042878870503046
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00027673700878949603
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.01361530675785616
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.005033936788095161
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.01483027549693361
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.007765421469230205
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0024286763873533346
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.008279299567220733
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.00025104909582296386
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.00021042878870503046
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.0002765132157946937
+        }
+      ]
+    },
+    {
+      "name": "layers.25.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        4,
+        9,
+        13,
+        14,
+        15,
+        20,
+        25,
+        29,
+        30,
+        45,
+        46,
+        52,
+        61,
+        62,
+        63,
+        68,
+        73,
+        77,
+        78,
+        79,
+        84,
+        89,
+        93,
+        94,
+        95,
+        100,
+        108,
+        109,
+        110,
+        116,
+        125,
+        126,
+        127,
+        132,
+        137,
+        141,
+        142,
+        157,
+        158,
+        164,
+        173,
+        174,
+        175,
+        180,
+        189,
+        190,
+        191,
+        196,
+        201,
+        205,
+        206,
+        212,
+        221,
+        222,
+        223,
+        233,
+        237,
+        238,
+        239,
+        244,
+        249,
+        253,
+        254,
+        255
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007159551838412881,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.007159551838412881
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007187734270701185
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.007159551838412881
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007216018726467155
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.012145850632805377
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.009852467046584934
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.012941340624820441
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.007384150609141216
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.0072505672433180735
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.007443582493579015
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.007199616506113671
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.007159551838412881
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.00723266537534073
+        }
+      ]
+    },
+    {
+      "name": "layers.26.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.26.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.26.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.26.self_attn.add_k_proj",
+      "reserved_w_blocks": [],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007533638039603829,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.007533638039603829
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007537640776718035
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.007535239448770881
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.00754382528248243
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.007537322700954974
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.007533638039603829
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007538908743299544
+        }
+      ]
+    },
+    {
+      "name": "layers.26.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        41,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.006702446524286643,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.006702446524286643
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.006727782951202244
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.006702446524286643
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.006734105903888121
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.015785577532369643
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.008252198487753049
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.016468783956952393
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.013927660242188722
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.007842322171200067
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.0144771026680246
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.006716499250615016
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.006702446524286643
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.006722630088916048
+        }
+      ]
+    },
+    {
+      "name": "layers.26.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        0,
+        9,
+        12,
+        15,
+        16,
+        25,
+        28,
+        31,
+        32,
+        36,
+        41,
+        44,
+        47,
+        57,
+        60,
+        63,
+        64,
+        69,
+        73,
+        76,
+        79,
+        80,
+        89,
+        92,
+        94,
+        95,
+        96,
+        105,
+        108,
+        111,
+        112,
+        121,
+        124,
+        127,
+        128,
+        137,
+        140,
+        143,
+        144,
+        153,
+        156,
+        159,
+        160,
+        169,
+        172,
+        175,
+        185,
+        188,
+        191,
+        192,
+        201,
+        204,
+        207,
+        208,
+        217,
+        220,
+        223,
+        233,
+        236,
+        239,
+        248,
+        249,
+        252,
+        255
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.007332656736252829,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.0073549263179302216
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.007349226914811879
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.007332656736252829
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.007379409245913848
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.01399570528883487
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.010812213644385338
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.01507079676957801
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.008076311874901876
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.007584338192828
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.008230088540585712
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.007373366242973134
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.007332656736252829
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.007400749484077096
+        }
+      ]
+    },
+    {
+      "name": "layers.27.mlp_moe_gen.up_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.27.mlp_moe_gen.down_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.27.self_attn.add_q_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.27.self_attn.add_k_proj",
+      "skipped": "No residual computation in any phase"
+    },
+    {
+      "name": "layers.27.self_attn.add_v_proj",
+      "reserved_w_blocks": [
+        32,
+        33,
+        34,
+        35,
+        37,
+        38,
+        39,
+        40,
+        41,
+        43,
+        44,
+        46,
+        47,
+        67,
+        73,
+        99,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.006815322354668751,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.006815322354668751
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.006836207816377282
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.006815322354668751
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.0068429914535954595
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.014333609491586685
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.00818092719418928
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.015002854284830391
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.012681961641646922
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.007790934992954135
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.013217252737376839
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.0068274840887170285
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.006815322354668751
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.006831556471297517
+        }
+      ]
+    },
+    {
+      "name": "layers.27.self_attn.to_add_out",
+      "reserved_w_blocks": [
+        0,
+        1,
+        2,
+        4,
+        14,
+        17,
+        18,
+        20,
+        32,
+        33,
+        34,
+        36,
+        48,
+        49,
+        50,
+        52,
+        64,
+        65,
+        66,
+        68,
+        78,
+        80,
+        81,
+        82,
+        84,
+        96,
+        97,
+        98,
+        100,
+        113,
+        114,
+        116,
+        128,
+        129,
+        130,
+        132,
+        145,
+        146,
+        148,
+        158,
+        160,
+        161,
+        162,
+        164,
+        176,
+        177,
+        178,
+        180,
+        192,
+        193,
+        194,
+        196,
+        208,
+        209,
+        210,
+        212,
+        224,
+        225,
+        226,
+        228,
+        240,
+        241,
+        242,
+        244
+      ],
+      "mandatory_w_blocks": [],
+      "best_loss": 0.004423145859618671,
+      "trials": [
+        {
+          "label": "original",
+          "loss": 0.004424132755957544
+        },
+        {
+          "label": "outlier=None,wres=0.875",
+          "loss": 0.00446539674885571
+        },
+        {
+          "label": "outlier=None,wres=1.0",
+          "loss": 0.004423145859618671
+        },
+        {
+          "label": "outlier=None,wres=1.125",
+          "loss": 0.004502680865698494
+        },
+        {
+          "label": "outlier=2.0,wres=0.875",
+          "loss": 0.011987919511739165
+        },
+        {
+          "label": "outlier=2.0,wres=1.0",
+          "loss": 0.00867237092461437
+        },
+        {
+          "label": "outlier=2.0,wres=1.125",
+          "loss": 0.013547326903790236
+        },
+        {
+          "label": "outlier=3.0,wres=0.875",
+          "loss": 0.004857268897467293
+        },
+        {
+          "label": "outlier=3.0,wres=1.0",
+          "loss": 0.004607994225807488
+        },
+        {
+          "label": "outlier=3.0,wres=1.125",
+          "loss": 0.00497976248152554
+        },
+        {
+          "label": "ares=0.875",
+          "loss": 0.004471736567211337
+        },
+        {
+          "label": "ares=1.0",
+          "loss": 0.004423145859618671
+        },
+        {
+          "label": "ares=1.125",
+          "loss": 0.004504514989093877
+        }
+      ]
+    }
+  ],
+  "resource": {
+    "device": 3,
+    "free_mib": 58866,
+    "minimum_mib": 12288,
+    "resource_mode": "shared-calibration",
+    "performance_eligible": false
+  }
+}

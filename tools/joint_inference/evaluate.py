@@ -11,9 +11,16 @@ from provenance import provenance
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('matrix',type=Path)
+    p.add_argument('--cohort',type=Path)
+    p.add_argument('--workers',type=int,default=1,help='CPU metric threads; does not run concurrent GPU experiments')
     p.add_argument('--output',type=Path,required=True);p.add_argument('--lpips-cache',type=Path)
     a=p.parse_args();m=json.loads(a.matrix.read_text())
-    if not m['complete'] or m['suite'] not in ('quality','validation'):raise ValueError('Complete quality/validation matrix required')
+    if not 1<=a.workers<=8:raise ValueError('Metric workers must be in [1,8]')
+    from thunderworld_fp4.cosmos.cohorts import Cohort
+    cohort=Cohort.load(a.cohort) if a.cohort else None
+    if cohort and m.get('cohort_sha256')!=cohort.fingerprint:raise ValueError('Cohort provenance mismatch')
+    if not m['complete'] or m['suite'] not in ('quality','validation','trajectory'):raise ValueError('Complete quality/validation matrix required')
+    if m['suite']=='trajectory' and cohort is None:raise ValueError('Development trajectory evaluation requires an explicit cohort')
     if a.output.exists():raise FileExistsError(a.output)
     if a.lpips_cache:torch.hub.set_dir(str(a.lpips_cache))
     import lpips
@@ -24,8 +31,20 @@ def main():
         matrix_sha256=hashlib.sha256(a.matrix.read_bytes()).hexdigest(),
         metric_definition='LPIPS alex v0.1; all-frame SSIM; waveform log-STFT 512/hop128; paired bootstrap 10000')
     result['lpips_state_sha256']={k:hashlib.sha256(v.cpu().numpy().tobytes()).hexdigest() for k,v in metric.state_dict().items()}
-    def save():a.output.write_text(json.dumps(result,indent=2)+'\n')
+    if cohort:result['cohort_sha256']=cohort.fingerprint
+    def save():
+        tmp=a.output.with_suffix('.json.tmp');tmp.write_text(json.dumps(result,indent=2)+'\n');tmp.replace(a.output)
+    def measure(task):
+        folder,row,base,reference_row,case,config=task
+        for root,item in ((folder,row),(base,reference_row)):
+            if item.get('outputs_sha256') and hashlib.sha256((root/item['outputs']).read_bytes()).hexdigest()!=item['outputs_sha256']:
+                raise ValueError('Saved output content changed')
+        with np.load(folder/row['outputs']) as z:signals=dict(z)
+        with np.load(base/reference_row['outputs']) as z:reference=dict(z)
+        return dict(case=case,task=row['task'],config=config,seed=row['seed'],metrics=compare(signals,reference,metric))
+    result['metric_workers']=a.workers
     for case in sorted(set(k[0] for k in jobs)):
+        tasks=[]
         base=Path(jobs[case,'bf16']['output'])
         for (c,config),job in jobs.items():
             if c!=case or config=='bf16':continue
@@ -39,19 +58,25 @@ def main():
             result['provenance'][case+'|'+config]=provenance(run)
             for key in ('model_identity','targets','case'):
                 if run[key]!=bf[key]:raise ValueError(f'Unmatched baseline {key}')
+            if run.get('image_sha256')!=bf.get('image_sha256'):raise ValueError('Unmatched input image content')
+            if cohort:cohort.validate('final' if m['suite']=='quality' else m['suite'],[r['seed'] for r in run['rows']],complete=True)
             for row in run['rows']:
                 if m['suite']=='quality' and row['steps']!=35:raise ValueError('Final quality requires 35 steps')
-                with np.load(folder/row['outputs']) as z:signals=dict(z)
                 reference_row=next(x for x in bf['rows'] if x['seed']==row['seed'])
                 if row['steps']!=reference_row['steps']:raise ValueError('Step mismatch')
-                with np.load(base/reference_row['outputs']) as z:reference=dict(z)
-                result['rows'].append(dict(case=case,task=row['task'],config=config,seed=row['seed'],
-                    metrics=compare(signals,reference,metric)))
-                save()
+                tasks.append((folder,row,base,reference_row,case,config))
+        if a.workers==1:
+            for task in tasks:result['rows'].append(measure(task));save()
+        else:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=a.workers) as pool:
+                for row in pool.map(measure,tasks):result['rows'].append(row);save()
         fp8=[r for r in result['rows'] if r['case']==case and r['config']=='fp8']
         for config in sorted(set(r['config'] for r in result['rows'] if r['case']==case)-{'fp8'}):
             candidate=[r for r in result['rows'] if r['case']==case and r['config']==config]
-            result['decisions'].append(dict(case=case,config=config,**gate(candidate,fp8,candidate[0]['task'],final=m['suite']=='quality')))
+            if m['suite']=='trajectory':
+                result['decisions'].append(dict(case=case,config=config,passed=None,scope='Development only; two seeds do not satisfy a paired quality gate'))
+            else:result['decisions'].append(dict(case=case,config=config,**gate(candidate,fp8,candidate[0]['task'],final=m['suite']=='quality',cohort=cohort)))
     result['complete']=True;save()
 
 

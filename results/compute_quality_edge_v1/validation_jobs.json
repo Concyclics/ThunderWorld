@@ -1,0 +1,176 @@
+{
+  "jobs": [
+    {
+      "name": "bf16",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/bf16.json"
+    },
+    {
+      "name": "fp8",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/fp8.json"
+    },
+    {
+      "name": "fp4",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/base_identity/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/base_identity/assets"
+    },
+    {
+      "name": "b1_grow_mixed",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1_grow_mixed/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1_grow_mixed/assets",
+      "budget": 1.0,
+      "candidate": true
+    },
+    {
+      "name": "b1.125_grow_mixed",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.125_grow_mixed/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.125_grow_mixed/assets",
+      "budget": 1.125,
+      "candidate": true
+    },
+    {
+      "name": "b1.125_grow_a_corrected",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.125_grow_a_corrected/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.125_grow_a_corrected/assets",
+      "budget": 1.125,
+      "candidate": true
+    },
+    {
+      "name": "b1.25_grow_mixed",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.25_grow_mixed/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.25_grow_mixed/assets",
+      "budget": 1.25,
+      "candidate": true
+    },
+    {
+      "name": "b1.25_grow_w_corrected",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.25_grow_w_corrected/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.25_grow_w_corrected/assets",
+      "budget": 1.25,
+      "candidate": true
+    },
+    {
+      "name": "b1.5_grow_mixed",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.5_grow_mixed/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.5_grow_mixed/assets",
+      "budget": 1.5,
+      "candidate": true
+    },
+    {
+      "name": "b1.125_refined",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.125_grow_mixed/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/refined_b1.125",
+      "budget": 1.125,
+      "candidate": true
+    },
+    {
+      "name": "b1.25_refined",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/reserved_b1.25/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/refined_reserved_b1.25",
+      "budget": 1.25,
+      "candidate": true
+    },
+    {
+      "name": "b1.5_refined",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/reserved_b1.5/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/refined_reserved_b1.5",
+      "budget": 1.5,
+      "candidate": true
+    },
+    {
+      "name": "b1.5_student",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.5_grow_mixed/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/student_refined_b1.5",
+      "budget": 1.5,
+      "candidate": true
+    },
+    {
+      "name": "control_b1_a",
+      "budget": 1.0,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_a/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_a/assets"
+    },
+    {
+      "name": "control_b1_w",
+      "budget": 1.0,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_w/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_w/assets"
+    },
+    {
+      "name": "control_b1_balanced",
+      "budget": 1.0,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_balanced/assets"
+    },
+    {
+      "name": "control_b1.125_a",
+      "budget": 1.125,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.125_a/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.125_a/assets"
+    },
+    {
+      "name": "control_b1.125_w",
+      "budget": 1.125,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.125_w/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.125_w/assets"
+    },
+    {
+      "name": "control_b1.125_balanced",
+      "budget": 1.125,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.125_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.125_balanced/assets"
+    },
+    {
+      "name": "control_b1.25_a",
+      "budget": 1.25,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.25_a/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.25_a/assets"
+    },
+    {
+      "name": "control_b1.25_w",
+      "budget": 1.25,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.25_w/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.25_w/assets"
+    },
+    {
+      "name": "control_b1.25_balanced",
+      "budget": 1.25,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.25_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.25_balanced/assets"
+    },
+    {
+      "name": "control_b1.5_a",
+      "budget": 1.5,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.5_a/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.5_a/assets"
+    },
+    {
+      "name": "control_b1.5_w",
+      "budget": 1.5,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.5_w/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.5_w/assets"
+    },
+    {
+      "name": "control_b1.5_balanced",
+      "budget": 1.5,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.5_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1.5_balanced/assets"
+    },
+    {
+      "name": "full_dual",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/full_dual.json",
+      "assets": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-edge-prepared/assets"
+    }
+  ]
+}

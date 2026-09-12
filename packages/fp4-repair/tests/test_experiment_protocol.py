@@ -54,7 +54,7 @@ def test_python_benchmark_rejects_competing_process_after_request(monkeypatch):
         if len(checks)==3:raise RuntimeError('competing process')
     monkeypatch.setattr('thunderworld_fp4.cosmos.cli.idle_guard',guard)
     def infer(case,seed,*args):requests.append(seed);return {},dict(seed=seed)
-    runner=SimpleNamespace(config=SimpleNamespace(debug='off',strict_tuning=True),
+    runner=SimpleNamespace(config=SimpleNamespace(debug='off',strict_tuning=True,resource_mode='exclusive'),
         warmup=lambda *args:None,warm_request=lambda *args:None,infer=infer)
     with pytest.raises(RuntimeError,match='competing process'):
         CosmosRunner.benchmark(runner,{},[1,2])
@@ -77,3 +77,58 @@ def test_cli_independent_policy_overrides(tmp_path):
     first=config.attention.resolve(layer=0,step=0,branch='0')
     assert first.head_counts(3,416)==(4,0,2)
     assert config.attention.resolve(layer=0,step=7,branch='0').coverage==.25
+
+
+def test_final_freeze_binds_plan_and_control_assets(tmp_path,monkeypatch):
+    import hashlib
+    tools=Path(__file__).resolve().parents[3]/'tools/joint_inference'
+    monkeypatch.syspath_prepend(str(tools))
+    freeze=load('select_budget').freeze
+    plan=tmp_path/'plan.json';plan.write_text('{"budget":1.25}')
+    config=tmp_path/'config.json';config.write_text(json.dumps(dict(budget_plan=str(plan))))
+    assets=tmp_path/'assets';assets.mkdir();(assets/'manifest.json').write_text('{}')
+    job=dict(name='control',control=True,config=str(config),assets=str(assets))
+    frozen=freeze(job)
+    assert frozen['budget_plan_sha256']==hashlib.sha256(plan.read_bytes()).hexdigest()
+    assert frozen['assets_manifest_sha256']==hashlib.sha256(b'{}').hexdigest()
+    plan.write_text('{"budget":1.5}')
+    assert freeze(job)['budget_plan_sha256']!=frozen['budget_plan_sha256']
+
+
+def test_compute_frontier_excludes_dominated_and_retains_tradeoff(monkeypatch):
+    tools=Path(__file__).resolve().parents[3]/'tools/joint_inference'
+    monkeypatch.syspath_prepend(str(tools))
+    fn=load('final_compute_report').frontier
+    rows=[dict(name='base',lpips=.3,mma=100,prepared_weight_bytes=100),
+          dict(name='repair',lpips=.2,mma=125,prepared_weight_bytes=110),
+          dict(name='dominated',lpips=.25,mma=130,prepared_weight_bytes=120)]
+    assert fn(rows)==['base','repair']
+
+
+def test_validation_retains_lower_error_control_even_if_candidate_passes_guardrails(tmp_path,monkeypatch):
+    import hashlib
+    from thunderworld_fp4.cosmos.cohorts import Cohort
+    tools=Path(__file__).resolve().parents[3]/'tools/joint_inference'
+    monkeypatch.syspath_prepend(str(tools))
+    value=json.loads((tools/'cohorts/edge_i2v_compute_v1.json').read_text());value['budgets']=[1.25]
+    cohort=Cohort(value);cohort_path=tmp_path/'cohort.json';cohort_path.write_text(json.dumps(value))
+    jobs=[];rows=[];matrix_jobs=[]
+    for name,candidate,error,ssim,l2 in [('control',False,.1,.8,.2),('candidate',True,.2,.9,.1)]:
+        folder=tmp_path/name;folder.mkdir();(folder/'config.json').write_text('{}')
+        (folder/'manifest.json').write_text('{}')
+        (folder/'compute.json').write_text(json.dumps(dict(total_mma=125)))  # Older export metadata.
+        (folder/'result.json').write_text(json.dumps(dict(compute_ledger=dict(total_mma=125,packing_traffic={},w1_support_union_bytes=1))))
+        matrix_jobs.append(dict(config=name,output=str(folder)))
+        jobs.append(dict(name=name,candidate=candidate,control=not candidate,budget=1.25,config=str(folder/'config.json'),assets=str(folder)))
+        rows.extend(dict(config=name,seed=seed,metrics=dict(video=dict(lpips=error,ssim_mean=ssim,relative_l2=l2))) for seed in cohort.seeds['validation'])
+    matrix=tmp_path/'matrix.json';matrix.write_text(json.dumps(dict(jobs=matrix_jobs)))
+    quality=tmp_path/'quality.json';quality.write_text(json.dumps(dict(complete=True,suite='validation',cohort_sha256=cohort.fingerprint,rows=rows,
+        matrix_sha256=hashlib.sha256(matrix.read_bytes()).hexdigest())))
+    manifest=tmp_path/'jobs.json';manifest.write_text(json.dumps(dict(jobs=jobs)))
+    output=tmp_path/'frozen.json'
+    monkeypatch.setattr('sys.argv',['select','--quality',str(quality),'--jobs',str(manifest),'--cohort',str(cohort_path),'--output',str(output)])
+    load('select_budget').main()
+    result=json.loads(output.read_text())
+    assert result['decisions'][0]['selected']=='control'
+    assert not result['decisions'][0]['optimized_candidate']
+    assert result['jobs'][0]['assets_manifest_sha256']

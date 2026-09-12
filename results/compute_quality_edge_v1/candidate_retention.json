@@ -1,0 +1,26 @@
+{
+  "scope": "Development-only active candidate retention; no final seeds used",
+  "max_retained_per_budget": 4,
+  "retired_before_student": {
+    "name": "b1.5_grow_w_corrected",
+    "reason": "Worst complete development LPIPS at 1.5x; replaced by the single allowed student-calibration candidate"
+  },
+  "development_lpips": {
+    "b1_grow_mixed": 0.26545351957444285,
+    "b1.125_grow_mixed": 0.20698577364082218,
+    "b1.125_grow_a_corrected": 0.23264375267947307,
+    "b1.125_grow_w_corrected": 0.2695057753046028,
+    "b1.25_grow_mixed": 0.18465854294720244,
+    "b1.25_grow_a_corrected": 0.24687233081728707,
+    "b1.25_grow_w_corrected": 0.2384335806623834,
+    "b1.5_grow_mixed": 0.16595298879337117,
+    "b1.5_grow_a_corrected": 0.25465591603004545,
+    "b1.5_grow_w_corrected": 0.2757226820485514,
+    "b1.125_refined": 0.19115733648421335,
+    "b1.25_refined": 0.17919477844824555,
+    "b1.5_refined": 0.16873116418719292,
+    "b1.5_student": 0.1700400780947482
+  },
+  "student_recalibration_rounds": 1,
+  "validation_jobs": "/home/yufeng/thunderworld/compute_quality_edge_v1/validation_jobs.json"
+}

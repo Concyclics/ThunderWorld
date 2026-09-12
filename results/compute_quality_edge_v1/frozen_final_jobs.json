@@ -1,0 +1,143 @@
+{
+  "complete": true,
+  "cohort_sha256": "f81fd6f900f55c0e9c2e270f9e8576dd997e9f2d48f6e1b460e9a60389ddbe1c",
+  "validation_sha256": "0769d21c751a27752159e422060a3e8f6c93fe470d310d52d8ebf8407462978b",
+  "decisions": [
+    {
+      "budget": 1.0,
+      "selected": "control_b1_a",
+      "optimized_candidate": false,
+      "reason": "Uncalibrated control is the lowest-error feasible validation configuration",
+      "control": "control_b1_a",
+      "metrics": {
+        "lpips": 0.35314891337737686,
+        "ssim_mean": 0.6176595948636532,
+        "relative_l2": 0.36190288865262965
+      }
+    },
+    {
+      "budget": 1.125,
+      "selected": "control_joint_b1.125_balanced",
+      "optimized_candidate": false,
+      "reason": "No optimized candidate satisfies SSIM/L2 guardrails; retain best feasible uncalibrated FP4 control",
+      "control": "control_joint_b1.125_balanced"
+    },
+    {
+      "budget": 1.25,
+      "selected": "b1.25_grow_mixed",
+      "control": "control_joint_b1.25_balanced",
+      "metrics": {
+        "lpips": 0.22655466103880498,
+        "ssim_mean": 0.7341456636786461,
+        "relative_l2": 0.29009783130373434
+      }
+    },
+    {
+      "budget": 1.5,
+      "selected": "b1.5_refined",
+      "control": "control_joint_b1.5_balanced",
+      "metrics": {
+        "lpips": 0.21887571745185702,
+        "ssim_mean": 0.7469561323523521,
+        "relative_l2": 0.2612863190745939
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "name": "control_b1_a",
+      "budget": 1.0,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_a/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls/control_b1_a/assets",
+      "frozen": true,
+      "config_sha256": "3fb24a2c22e816b8ccd5a03c367159c0a4d9b46edd002044d8a912a1f7c6dd1f",
+      "budget_plan_sha256": "79c0a442cff457093942abdb6dd5335c086a96a34f0f31a1507a9bcf5ef3cb9b",
+      "assets_manifest_sha256": "832ca2a17b0b813a3249ffe8c42c509a630cb145dc393454d81dc2f2302230be"
+    },
+    {
+      "name": "control_joint_b1.125_balanced",
+      "budget": 1.125,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.125_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.125_balanced/assets",
+      "frozen": true,
+      "config_sha256": "d68e0b6f7d02afc8cc3cbb19527b523c4b7b97d413eeb08dcf330630e7f3b12f",
+      "budget_plan_sha256": "3b4473f9cfefd68e854b6e26c5e89dd6ceb18296db049e5fad86daeb0c4d1849",
+      "assets_manifest_sha256": "e71b1a39cf975d901c77f9575d27d90a633fae45101e2da36a4f3297c9cd5e31"
+    },
+    {
+      "name": "b1.25_grow_mixed",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.25_grow_mixed/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/candidates/b1.25_grow_mixed/assets",
+      "budget": 1.25,
+      "candidate": true,
+      "frozen": true,
+      "config_sha256": "0a8425d926b96745f7637722898272278d76b457dfa2a90a9fc4f17af0c0aedd",
+      "budget_plan_sha256": "4191375f09face61e6347eae3f06a6ed3589adec511fe52a84c6464796b8a6d7",
+      "assets_manifest_sha256": "bdc58e251dbf350a14523db21c28aaf20128929fead809cee3196dadc5c418b4"
+    },
+    {
+      "name": "control_joint_b1.25_balanced",
+      "budget": 1.25,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.25_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.25_balanced/assets",
+      "frozen": true,
+      "config_sha256": "01af0dac65c3201c409ca1b587fc362f30dccd58d8ee4b303e818d15aa774f5b",
+      "budget_plan_sha256": "cc0e19dfd82e1b57d64920c4c28085b92c147f3a1d2acee29a03d31746c95d46",
+      "assets_manifest_sha256": "b69aa7a9fb6bdd2e8c08fa72c1ad3db10f2abab77528bc94dadf957ee5b58b0a"
+    },
+    {
+      "name": "b1.5_refined",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/reserved_b1.5/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/refined_reserved_b1.5",
+      "budget": 1.5,
+      "candidate": true,
+      "frozen": true,
+      "config_sha256": "9cd1b954c6916b4bf58aee2ed095342bcfc5492c8dc4546f2520f895af097189",
+      "budget_plan_sha256": "5c9e1da5457284fe48beaee47fc17eece2aedcc42437261eb91e92b9b4edb65f",
+      "assets_manifest_sha256": "53ab5dc88c72990888ab4620f797059a5d1b223d3dddce4a7d5dade80a795609"
+    },
+    {
+      "name": "control_joint_b1.5_balanced",
+      "budget": 1.5,
+      "control": true,
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.5_balanced/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.5_balanced/assets",
+      "frozen": true,
+      "config_sha256": "9fa5bb8e41f704f7e1de4751a1808c3c8598891a2c3384da814789c1b602c859",
+      "budget_plan_sha256": "cad84cf4b26c89446d6a7af5f8fea89e41b0441750aa2e5bb244d48b0a0cc6e4",
+      "assets_manifest_sha256": "6d1192b800d224479fd246b5186e9f0be629d23608b0a3bd0299bd977ffaf0bc"
+    },
+    {
+      "name": "bf16",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/bf16.json",
+      "frozen": true,
+      "config_sha256": "e66bea3be8eeb907634ea53fbc0c113f6a2f8ddc092b2676245ecaeab4958323"
+    },
+    {
+      "name": "fp8",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/fp8.json",
+      "frozen": true,
+      "config_sha256": "7b9b1b81d18786eecb1571d46e9a41d607b0742038b89e1517e82c51745b8be0"
+    },
+    {
+      "name": "fp4",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/base_identity/config.json",
+      "assets": "/home/yufeng/thunderworld/compute_quality_edge_v1/base_identity/assets",
+      "frozen": true,
+      "config_sha256": "e4d963410eaee7782602e1e3ea7d7c1bddce27f01f106f94d529eafbbba16b6f",
+      "budget_plan_sha256": "79c0a442cff457093942abdb6dd5335c086a96a34f0f31a1507a9bcf5ef3cb9b",
+      "assets_manifest_sha256": "832ca2a17b0b813a3249ffe8c42c509a630cb145dc393454d81dc2f2302230be"
+    },
+    {
+      "name": "full_dual",
+      "config": "/home/yufeng/thunderworld/compute_quality_edge_v1/full_dual.json",
+      "assets": "/home/yufeng/thunderworld/joint_experiments_20260912/joint-edge-prepared/assets",
+      "frozen": true,
+      "config_sha256": "2f88807993e26c15d35794bb0db0fe8e0a93405aa47b5b09ff316bfaec3c13bb",
+      "assets_manifest_sha256": "f4837f6c58aa764bf97a7e952c008eac4bc1bef8f042ff609f01a12a749584bd"
+    }
+  ]
+}

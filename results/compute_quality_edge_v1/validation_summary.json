@@ -1,0 +1,1369 @@
+{
+  "complete": true,
+  "scope": "Independent validation only; final candidates already frozen",
+  "performance_eligible": false,
+  "rows": [
+    {
+      "name": "fp8",
+      "budget": null,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.18873666995872942,
+        "ssim_mean": 0.7711180299520493,
+        "relative_l2": 0.2817682630455049
+      }
+    },
+    {
+      "name": "fp4",
+      "budget": null,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.35314891337737686,
+        "ssim_mean": 0.6176595948636532,
+        "relative_l2": 0.36190288865262965
+      }
+    },
+    {
+      "name": "b1_grow_mixed",
+      "budget": 1.0,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.3576302597238148,
+        "ssim_mean": 0.6196759827435017,
+        "relative_l2": 0.3387680591391682
+      },
+      "selected": false,
+      "matched_control": "control_b1_a",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.004481346346437931,
+            "worst_seed_difference": 0.08325549715855085,
+            "ci95": [
+              -0.030009340092952013,
+              0.035594392521306854
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0020163878798484802,
+            "worst_seed_difference": -0.13754892349243164
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.023134829513461436,
+            "worst_seed_difference": 0.14765674199296008
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "b1.125_grow_mixed",
+      "budget": 1.125,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.2725733935023795,
+        "ssim_mean": 0.6967026889324188,
+        "relative_l2": 0.3370018541262057
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.031233117808816862,
+            "worst_seed_difference": 0.1011579003734667,
+            "ci95": [
+              -0.06961401376623248,
+              0.014383363810398392
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.02441771700978279,
+            "worst_seed_difference": -0.10259205102920532
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.016680048212122517,
+            "worst_seed_difference": 0.21452669440427077
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "b1.125_grow_a_corrected",
+      "budget": 1.125,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.32398907624979,
+        "ssim_mean": 0.6527126133441925,
+        "relative_l2": 0.31200331622448557
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.02018256493859359,
+            "worst_seed_difference": 0.06294298599489398,
+            "ci95": [
+              -0.018162664642450636,
+              0.050153017806683145
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.019572358578443527,
+            "worst_seed_difference": -0.07461151480674744
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.008318489689597638,
+            "worst_seed_difference": 0.058642362279037574
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "b1.25_grow_mixed",
+      "budget": 1.25,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.22655466103880498,
+        "ssim_mean": 0.7341456636786461,
+        "relative_l2": 0.29009783130373434
+      },
+      "selected": true,
+      "matched_control": "control_joint_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": true,
+        "failures": [],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.0726661903165342,
+            "worst_seed_difference": 0.03844779815341606,
+            "ci95": [
+              -0.1271264731280933,
+              -0.021522069063617814
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.06675586849451065,
+            "worst_seed_difference": -0.022861957550048828
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.06529568078224403,
+            "worst_seed_difference": 0.03660547273181919
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "b1.25_grow_w_corrected",
+      "budget": 1.25,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.3597372895961658,
+        "ssim_mean": 0.6245601363480091,
+        "relative_l2": 0.35722384829221077
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.060516438240826614,
+            "worst_seed_difference": 0.19162011403040805,
+            "ci95": [
+              -0.0119737735796781,
+              0.12211955494903881
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.04282965883612633,
+            "worst_seed_difference": -0.14098703861236572
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.001830336206232415,
+            "worst_seed_difference": 0.15026561073792305
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "b1.5_grow_mixed",
+      "budget": 1.5,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.22478446347417586,
+        "ssim_mean": 0.7432999163866043,
+        "relative_l2": 0.27859445838073016
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": true,
+        "failures": [],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.06648029960485816,
+            "worst_seed_difference": 0.01113180327610891,
+            "ci95": [
+              -0.1121214998029573,
+              -0.025198422553500605
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.06736127659678459,
+            "worst_seed_difference": 0.004799306392669678
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.09570354744405099,
+            "worst_seed_difference": -0.006586214930248829
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "b1.125_refined",
+      "budget": 1.125,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.29357404305340085,
+        "ssim_mean": 0.6830550469458103,
+        "relative_l2": 0.3484621174995079
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.010232468257795588,
+            "worst_seed_difference": 0.13455102928593513,
+            "ci95": [
+              -0.05453858890982925,
+              0.04274353889565244
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.010770075023174286,
+            "worst_seed_difference": -0.140943706035614
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.028140311585424706,
+            "worst_seed_difference": 0.23317616187223886
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "b1.25_refined",
+      "budget": 1.25,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.24684300568702888,
+        "ssim_mean": 0.713267482817173,
+        "relative_l2": 0.31502266889508845
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.052377845668310274,
+            "worst_seed_difference": 0.1361840022880523,
+            "ci95": [
+              -0.1156864238999303,
+              0.016008878493162446
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.04587768763303757,
+            "worst_seed_difference": -0.13608229160308838
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.040370843190889925,
+            "worst_seed_difference": 0.21761396942421413
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "b1.5_refined",
+      "budget": 1.5,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.21887571745185702,
+        "ssim_mean": 0.7469561323523521,
+        "relative_l2": 0.2612863190745939
+      },
+      "selected": true,
+      "matched_control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": true,
+        "failures": [],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.072389045627177,
+            "worst_seed_difference": 0.011951700036154422,
+            "ci95": [
+              -0.12382396622236483,
+              -0.026843473700745434
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.07101749256253242,
+            "worst_seed_difference": -0.006033062934875488
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.1130116867501873,
+            "worst_seed_difference": -0.012401725173627282
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "b1.5_student",
+      "budget": 1.5,
+      "candidate": true,
+      "metrics": {
+        "lpips": 0.2772226048763231,
+        "ssim_mean": 0.6908695437014103,
+        "relative_l2": 0.32165485240569847
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": -0.014042158202710936,
+            "worst_seed_difference": 0.20072294075469505,
+            "ci95": [
+              -0.08510601359675254,
+              0.06017914379672073
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.014930903911590576,
+            "worst_seed_difference": -0.17564448714256287
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.0526431534190827,
+            "worst_seed_difference": 0.06222633783432979
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1_a",
+      "budget": 1.0,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.35314891337737686,
+        "ssim_mean": 0.6176595948636532,
+        "relative_l2": 0.36190288865262965
+      },
+      "selected": true,
+      "matched_control": "control_b1_a",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1_w",
+      "budget": 1.0,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.35314891337737686,
+        "ssim_mean": 0.6176595948636532,
+        "relative_l2": 0.36190288865262965
+      },
+      "selected": false,
+      "matched_control": "control_b1_a",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1_balanced",
+      "budget": 1.0,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.35314891337737686,
+        "ssim_mean": 0.6176595948636532,
+        "relative_l2": 0.36190288865262965
+      },
+      "selected": false,
+      "matched_control": "control_b1_a",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1.125_a",
+      "budget": 1.125,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.3269004759714618,
+        "ssim_mean": 0.6545468606054783,
+        "relative_l2": 0.3186269175243366
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.023093964660265413,
+            "worst_seed_difference": 0.0649070534549776,
+            "ci95": [
+              -0.02253557164527354,
+              0.054469937901394316
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.017738111317157745,
+            "worst_seed_difference": -0.04792910814285278
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.0016948883897465947,
+            "worst_seed_difference": 0.06400757877836427
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1.125_w",
+      "budget": 1.125,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.35698689633339153,
+        "ssim_mean": 0.6252049803733826,
+        "relative_l2": 0.3533993187299403
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.05318038502219515,
+            "worst_seed_difference": 0.11372682049137647,
+            "ci95": [
+              0.034949633592289316,
+              0.0741867153508375
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.047079991549253464,
+            "worst_seed_difference": -0.08377492427825928
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.033077512815857066,
+            "worst_seed_difference": 0.09296539455071517
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1.125_balanced",
+      "budget": 1.125,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.35074639494423987,
+        "ssim_mean": 0.6285771057009697,
+        "relative_l2": 0.36332901028394043
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.04693988363304343,
+            "worst_seed_difference": 0.07382527775451783,
+            "ci95": [
+              0.03417452873459818,
+              0.058858542771796224
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.043707866221666336,
+            "worst_seed_difference": -0.08802670240402222
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.04300720436985726,
+            "worst_seed_difference": 0.14731593263129045
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1.25_a",
+      "budget": 1.25,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.322069249161687,
+        "ssim_mean": 0.6547168903052807,
+        "relative_l2": 0.3245640566087731
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.02284839780634786,
+            "worst_seed_difference": 0.09796301018996315,
+            "ci95": [
+              -0.02670590995436871,
+              0.06687982718967905
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.012672904878854752,
+            "worst_seed_difference": -0.07297992706298828
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.030829455477205264,
+            "worst_seed_difference": 0.030684067642300472
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1.25_w",
+      "budget": 1.25,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.35191484134583195,
+        "ssim_mean": 0.6295923739671707,
+        "relative_l2": 0.33167491365510576
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.05269398999049282,
+            "worst_seed_difference": 0.23460911055568787,
+            "ci95": [
+              -0.018613922592924277,
+              0.12599928090043488
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.03779742121696472,
+            "worst_seed_difference": -0.20249831676483154
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.023718598430872602,
+            "worst_seed_difference": 0.23666991938086418
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1.25_balanced",
+      "budget": 1.25,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.341434792661276,
+        "ssim_mean": 0.6399582363665104,
+        "relative_l2": 0.32908831087727686
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.042213941305936836,
+            "worst_seed_difference": 0.1440365203335637,
+            "ci95": [
+              -0.012730544677279045,
+              0.09095418703165974
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.027431558817625046,
+            "worst_seed_difference": -0.1010010838508606
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.026305201208701504,
+            "worst_seed_difference": 0.11108005470056526
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1.5_a",
+      "budget": 1.5,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.34487196067958825,
+        "ssim_mean": 0.63539182767272,
+        "relative_l2": 0.3744624924964088
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.05360719760055424,
+            "worst_seed_difference": 0.1834029357758213,
+            "ci95": [
+              0.023730651357165383,
+              0.09523792038137305
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.04054681211709976,
+            "worst_seed_difference": -0.16001462936401367
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0001644866716275957,
+            "worst_seed_difference": 0.20704990046624264
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1.5_w",
+      "budget": 1.5,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.3423350179781679,
+        "ssim_mean": 0.6379328705370426,
+        "relative_l2": 0.32793079896020993
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.051070254899133916,
+            "worst_seed_difference": 0.106090425467882,
+            "ci95": [
+              0.012145470789171841,
+              0.08436677582012336
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.0380057692527771,
+            "worst_seed_difference": -0.09527873992919922
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.04636720686457124,
+            "worst_seed_difference": 0.026617258957807505
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_b1.5_balanced",
+      "budget": 1.5,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.35332385707096975,
+        "ssim_mean": 0.6325916312634945,
+        "relative_l2": 0.36219517381272737
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.06205909399193575,
+            "worst_seed_difference": 0.1656684174706213,
+            "ci95": [
+              0.013079468317360426,
+              0.1075287519084847
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.043347008526325226,
+            "worst_seed_difference": -0.1443037986755371
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.012102832012053758,
+            "worst_seed_difference": 0.19156617656433153
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "full_dual",
+      "budget": null,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.11293653871856447,
+        "ssim_mean": 0.8465807437896729,
+        "relative_l2": 0.1777375141987601
+      }
+    },
+    {
+      "name": "control_joint_b1.125_a",
+      "budget": 1.125,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.3362527523708881,
+        "ssim_mean": 0.6469991989433765,
+        "relative_l2": 0.3430634791649899
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.03244624105969168,
+            "worst_seed_difference": 0.14861729447958894,
+            "ci95": [
+              -0.0008574548671709148,
+              0.07264738706795523
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.02528577297925949,
+            "worst_seed_difference": -0.09571987390518188
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.022741673250906657,
+            "worst_seed_difference": 0.16646826584353797
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_joint_b1.125_balanced",
+      "budget": 1.125,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.3038065113111964,
+        "ssim_mean": 0.672284971922636,
+        "relative_l2": 0.3203218059140832
+      },
+      "selected": true,
+      "matched_control": "control_joint_b1.125_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_joint_b1.25_a",
+      "budget": 1.25,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.3601146521138363,
+        "ssim_mean": 0.6230432279407978,
+        "relative_l2": 0.38467971888195984
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean",
+          "video.relative_l2"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.06089380075849714,
+            "worst_seed_difference": 0.23613662761254386,
+            "ci95": [
+              0.015479166556882543,
+              0.11915581903466184
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.04434656724333763,
+            "worst_seed_difference": -0.20451772212982178
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.029286206795981533,
+            "worst_seed_difference": 0.2431495729785853
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_joint_b1.25_balanced",
+      "budget": 1.25,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.29922085135533916,
+        "ssim_mean": 0.6673897951841354,
+        "relative_l2": 0.35539351208597836
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.25_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_joint_b1.5_a",
+      "budget": 1.5,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.30571813464592223,
+        "ssim_mean": 0.6648251451551914,
+        "relative_l2": 0.33243507174686293
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips",
+          "video.ssim_mean"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.014453371566888248,
+            "worst_seed_difference": 0.10222491661666847,
+            "ci95": [
+              -0.04435657231007382,
+              0.0591256227764133
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": -0.011113494634628296,
+            "worst_seed_difference": -0.07362717390060425
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": -0.04186293407791826,
+            "worst_seed_difference": 0.05579651925530424
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    },
+    {
+      "name": "control_joint_b1.5_balanced",
+      "budget": 1.5,
+      "candidate": false,
+      "metrics": {
+        "lpips": 0.291264763079034,
+        "ssim_mean": 0.6759386397898197,
+        "relative_l2": 0.37429800582478123
+      },
+      "selected": false,
+      "matched_control": "control_joint_b1.5_balanced",
+      "same_budget_gate": {
+        "passed": false,
+        "failures": [
+          "video.lpips"
+        ],
+        "metrics": {
+          "video.lpips": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "video.ssim_mean": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          },
+          "video.relative_l2": {
+            "mean_paired_difference": 0.0,
+            "worst_seed_difference": 0.0
+          }
+        },
+        "seeds": [
+          92101,
+          92102,
+          92103,
+          92104,
+          92105,
+          92106,
+          92107,
+          92108
+        ],
+        "scope": "Paired comparison with best same-cap uncalibrated validation control"
+      }
+    }
+  ]
+}

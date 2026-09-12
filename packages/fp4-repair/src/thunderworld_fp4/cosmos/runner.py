@@ -21,11 +21,17 @@ def model_identity(path):
 
 class CosmosRunner:
     def __init__(self,model,config,*,tuning=None,tune=False,assets=None,audio=False):
+        if config.resource_mode == 'shared-calibration' and tune:
+            raise ValueError('Shared calibration prohibits timing-based tuning')
         self.path=Path(model);self.config=config;self.audio=audio
         self.table=LaunchTable(tuning,tune=tune)
         self.assets_path=Path(assets) if assets else None
         self.pipe=None;self.engine=None;self.diagnostics=None;self.timings={}
         self._warmed=set();self.identity=model_identity(self.path)
+        if config.budget_plan:
+            from .budget import RepairPlan
+            plan=RepairPlan.load(config.budget_plan)
+            if plan.value.get('model_identity')!=self.identity:raise ValueError('Budget plan/model identity mismatch')
         self.memory={}
         self.asset_identity=None
 
@@ -152,6 +158,15 @@ class CosmosRunner:
         start=time.perf_counter()
         torch.cuda.reset_peak_memory_stats()
         self._context(case,steps,audio_output)
+        if self.config.compute_budget is not None:
+            if steps!=35:raise ValueError('Compute plans require exactly 35 denoising steps')
+            self.engine.warming=True;self.engine.discovering=True
+            try:
+                self.pipe(**self._args(case,6099,2))
+                self.engine.compile_budget()
+            finally:
+                self.engine.warming=False;self.engine.discovering=False
+            self._context(case,steps,audio_output)
         self.engine.warming=True
         try:self.pipe(**self._args(case,6099,2))
         finally:self.engine.warming=False
@@ -180,7 +195,8 @@ class CosmosRunner:
         if not all(np.isfinite(x).all() for x in signals.values()):raise RuntimeError('Nonfinite output')
         stats=dict(seed=seed,steps=steps,case=case['id'],task=case['task'],wall_seconds=seconds,
             audio_output=audio_output,debug=self.config.debug,execution=self.config.execution,
-            performance_eligible=self.config.debug=='off',
+            performance_eligible=self.config.debug=='off' and self.config.resource_mode=='exclusive',
+            resource_mode=self.config.resource_mode,compute_ledger=self.engine.budget_ledger,
             timing_scope='complete_request_v2_including_host_setup',
             peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved(),
             captures=len(self.engine.cache),calls=self.engine.call,
@@ -194,6 +210,8 @@ class CosmosRunner:
     def benchmark(self,case,seeds,steps=35,audio_output='waveform'):
         if self.config.debug!='off':raise ValueError('Formal benchmark requires debug off')
         if not self.config.strict_tuning:raise ValueError('Formal benchmark requires strict_tuning')
+        if self.config.resource_mode == 'shared-calibration':
+            raise RuntimeError('Shared calibration results are ineligible for benchmark')
         from .cli import idle_guard
         idle_guard()
         self.warmup(case,steps,audio_output)
@@ -230,8 +248,10 @@ class CosmosRunner:
         for op in self.engine.linears.values():
             if hasattr(op,'ops'):
                 for native in op.ops.values():
-                    for name in ('wc','ws','wg','wr','wrs','wi','off','d'):
-                        value=getattr(native,name);storage=value.untyped_storage()
+                    for name in ('wc','ws','wg','wr','wrs','wi','off','d','wloc'):
+                        value=getattr(native,name,None)
+                        if value is None:continue
+                        storage=value.untyped_storage()
                         storages[storage.data_ptr()]=storage.nbytes()
                     for name in ('am','union','ai'):
                         storage=getattr(native,name).untyped_storage()
@@ -251,6 +271,8 @@ class CosmosRunner:
                 json.dumps(self.engine.policy,sort_keys=True).encode()).hexdigest(),
             timings={**self.timings,'graph_capture_seconds':self.engine.graph_capture_seconds},
             targets=self.engine.targets,observed_shapes=list(self.engine.shapes.values()),
+            warmup_gqa_union_density={str(key):row['warmup_union_density'] for key,row in self.engine.attention_shapes.items() if 'warmup_union_density' in row},
+            packing_density_scope='Warmup samples only; request cost bound uses arbitrary online support unions',
             tuning_missing=sorted(self.table.misses),tuning_hits=sorted(self.table.hits),
             prepared_weight_bytes=sum(storages.values()),support_buffer_bytes=sum(scratch.values()),
             resident_model_state_bytes=sum(model_state.values()),

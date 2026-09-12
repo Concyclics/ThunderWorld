@@ -42,27 +42,46 @@ def main():
     p.add_argument('--assets',type=Path)
     p.add_argument('--tuning',type=Path)
     p.add_argument('--tune',action='store_true')
+    p.add_argument('--resource-mode',choices=['exclusive','shared-calibration'])
+    p.add_argument('--compute-budget',type=float)
+    p.add_argument('--budget-plan',type=Path)
     p.add_argument('--debug',choices=['off','timing','trace'])
     p.add_argument('--execution',choices=['graph','eager'])
     p.add_argument('--attention-policy',type=Path,help='Independent RepairPolicy JSON')
     p.add_argument('--ffn-policy',type=Path,help='Independent layer/phase FFN policy JSON')
     p.add_argument('--ffn-policy-mode',help='Named policy in the FFN allocation file')
     p.add_argument('--projection-config',type=Path,help='Independent LinearSpec JSON')
+    p.add_argument('--cohort',type=Path)
+    p.add_argument('--cohort-role',choices=['calibration','trajectory','validation','final'])
     p.add_argument('--steps',type=int,default=35)
     p.add_argument('--seeds',type=int,nargs='+',default=[91001])
     p.add_argument('--audio-output',choices=['latent','waveform'],default='waveform')
     p.add_argument('--save-outputs',action='store_true')
     a=p.parse_args()
-    if os.environ.get('CUDA_VISIBLE_DEVICES') not in ('0','3'):p.error('Set CUDA_VISIBLE_DEVICES=0 or 3')
+    from contextlib import ExitStack
+    resources=ExitStack()
     if a.steps<1 or not a.seeds:p.error('Positive steps and seeds required')
+    cohort=None
+    if a.cohort:
+        from .cohorts import Cohort
+        if a.cohort_role is None:p.error('--cohort-role is required with --cohort')
+        cohort=Cohort.load(a.cohort);cohort.validate(a.cohort_role,a.seeds)
+        if a.steps!=cohort.value['steps']:p.error('Cohort step mismatch')
+    elif a.cohort_role:p.error('--cohort is required with --cohort-role')
     if a.operation!='prepare' and a.case is None:p.error('--case required')
     from dataclasses import replace
     from .settings import RunConfig
     config=RunConfig.from_dict(json.loads(a.config.read_text()))
     config=policy_overrides(config,attention_policy=a.attention_policy,ffn_policy=a.ffn_policy,
                             ffn_policy_mode=a.ffn_policy_mode,projection_config=a.projection_config)
-    for field in ('debug','execution'):
-        if getattr(a,field) is not None:config=replace(config,**{field:getattr(a,field)})
+    for field in ('debug','execution','resource_mode','compute_budget','budget_plan'):
+        if getattr(a,field) is not None:config=replace(config,**{field:str(getattr(a,field)) if field=='budget_plan' else getattr(a,field)})
+    if config.resource_mode=='shared-calibration':
+        if a.operation=='benchmark' or a.tune:p.error('Shared calibration prohibits benchmark and tuning')
+        from .resources import shared_worker, select_shared_device
+        resources.enter_context(shared_worker())
+        select_shared_device()
+    if os.environ.get('CUDA_VISIBLE_DEVICES') not in ('0','3'):p.error('Set CUDA_VISIBLE_DEVICES=0 or 3')
     if a.operation=='benchmark':
         if config.debug!='off':p.error('Benchmark rejects diagnostic probes')
         config=replace(config,strict_tuning=True)
@@ -70,6 +89,7 @@ def main():
     if a.tune:idle_guard()
     a.output.mkdir(parents=True,exist_ok=False)
     result=dict(complete=False,operation=a.operation,rows=[],config=config.to_dict())
+    if cohort:result.update(cohort_sha256=cohort.fingerprint,cohort_role=a.cohort_role)
     def save():
         (a.output/'result.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
     save()
@@ -109,6 +129,8 @@ def main():
         print(a.output/'result.json',flush=True)
     except Exception as error:
         result['error']=repr(error);save();raise
+    finally:
+        resources.close()
 
 
 if __name__=='__main__':main()

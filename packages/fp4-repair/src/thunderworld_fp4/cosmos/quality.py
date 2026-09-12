@@ -10,7 +10,7 @@ def interval(values):
     return np.quantile(means,[.025,.975]).tolist()
 
 
-def gate(candidate,fp8,task,*,final=True):
+def gate(candidate,fp8,task,*,final=True,cohort=None):
     """Rows contain seed and metrics relative to the identical BF16 reference."""
     def index(rows):
         result={r['seed']:r for r in rows}
@@ -18,7 +18,9 @@ def gate(candidate,fp8,task,*,final=True):
         return result
     a,b=index(candidate),index(fp8)
     if set(a)!=set(b):raise ValueError('Mismatched quality seeds')
-    if final and set(a)!=set(range(91001,91009)):raise ValueError('Final quality requires reserved seeds 91001..91008')
+    if cohort is not None:
+        cohort.validate('final' if final else 'validation',list(a),complete=True)
+    elif final and set(a)!=set(range(91001,91009)):raise ValueError('Final quality requires reserved seeds 91001..91008')
     required={'video':('lpips','ssim_mean','relative_l2')}
     primary=[('video','lpips')]
     if task=='policy':
@@ -35,7 +37,7 @@ def gate(candidate,fp8,task,*,final=True):
             except KeyError:
                 failures.append('missing:'+key);continue
             if not np.isfinite(diff).all():failures.append('nonfinite:'+key);continue
-            mean=float(diff.mean());record={'mean_paired_difference':mean}
+            mean=float(diff.mean());record={'mean_paired_difference':mean,'worst_seed_difference':float(diff.min() if metric=='ssim_mean' else diff.max())}
             if (modality,metric) in primary:
                 try:record['ci95']=interval(diff)
                 except ValueError:failures.append('insufficient_seeds:'+key);continue

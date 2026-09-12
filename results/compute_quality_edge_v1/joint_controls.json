@@ -1,0 +1,41 @@
+{
+  "complete": true,
+  "candidates": [
+    {
+      "name": "control_joint_b1.125_a",
+      "budget": 1.125,
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.125_a",
+      "ratio": 1.0836730072463767
+    },
+    {
+      "name": "control_joint_b1.125_balanced",
+      "budget": 1.125,
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.125_balanced",
+      "ratio": 1.1246980676328502
+    },
+    {
+      "name": "control_joint_b1.25_a",
+      "budget": 1.25,
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.25_a",
+      "ratio": 1.2086730072463767
+    },
+    {
+      "name": "control_joint_b1.25_balanced",
+      "budget": 1.25,
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.25_balanced",
+      "ratio": 1.2062952898550725
+    },
+    {
+      "name": "control_joint_b1.5_a",
+      "budget": 1.5,
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.5_a",
+      "ratio": 1.4586730072463767
+    },
+    {
+      "name": "control_joint_b1.5_balanced",
+      "budget": 1.5,
+      "path": "/home/yufeng/thunderworld/compute_quality_edge_v1/controls_joint_even/control_joint_b1.5_balanced",
+      "ratio": 1.4562952898550725
+    }
+  ]
+}

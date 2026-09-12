@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "name": "edge-i2v-compute-v1",
+  "model": "edge",
+  "task": "i2v",
+  "development_case": "robot_observe",
+  "steps": 35,
+  "phases": [0, 7, 18, 28, 35],
+  "budgets": [1.0, 1.125, 1.25, 1.5],
+  "seeds": {
+    "calibration": [7101, 7102],
+    "trajectory": [7103, 7104],
+    "validation": [92101, 92102, 92103, 92104, 92105, 92106, 92107, 92108],
+    "final": [101001, 101002, 101003, 101004, 101005, 101006, 101007, 101008, 101009, 101010, 101011, 101012, 101013, 101014, 101015, 101016]
+  },
+  "historical_excluded_seeds": [91001, 91002, 91003, 91004, 91005, 91006, 91007, 91008],
+  "selection": {"max_candidates_per_budget": 4, "max_coordinate_rounds": 3, "max_validation_candidates": 3, "max_student_recalibration_rounds": 1},
+  "scope": "New seeds on existing scenes; no cross-scene generalization claim"
+}

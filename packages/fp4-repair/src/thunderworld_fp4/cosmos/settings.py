@@ -11,17 +11,35 @@ class LinearSpec:
     activation: float = 1.
     weight: float = 0.
     cross: bool = False
+    activation_blocks: int | None = None
+    weight_support: tuple[int, ...] | None = None
 
     def __post_init__(self):
         for x in (self.activation, self.weight):
             if isinstance(x, bool) or not math.isfinite(x) or not 0 <= x <= 1:
                 raise ValueError("Repair fractions must be finite and in [0,1]")
-        if type(self.cross) is not bool or self.cross and not (self.activation and self.weight):
+        if self.activation_blocks is not None and (type(self.activation_blocks) is not int or self.activation_blocks < 0):
+            raise ValueError('A quota must be a nonnegative integer')
+        if self.weight_support is not None:
+            ids=tuple(self.weight_support)
+            if len(set(ids))!=len(ids) or any(type(i) is not int or i<0 for i in ids):
+                raise ValueError('W support must contain unique nonnegative integers')
+            object.__setattr__(self,'weight_support',ids)
+        has_a = self.activation if self.activation_blocks is None else self.activation_blocks
+        has_w = self.weight if self.weight_support is None else bool(self.weight_support)
+        if type(self.cross) is not bool or self.cross and not (has_a and has_w):
             raise ValueError("Cross repair requires both residuals")
+
+    def counts(self, n, k):
+        a=math.ceil(self.activation*(k//128)) if self.activation_blocks is None else self.activation_blocks
+        w=math.ceil(self.weight*(n//128)*(k//128)) if self.weight_support is None else len(self.weight_support)
+        if a>k//128 or (self.weight_support and max(self.weight_support)>=n//128*(k//128)):
+            raise ValueError('Repair quota/support exceeds shape')
+        return a,w
 
     @property
     def key(self):
-        return json.dumps(asdict(self), sort_keys=True, separators=(',', ':'))
+        return json.dumps({k:v for k,v in asdict(self).items() if v is not None}, sort_keys=True, separators=(',', ':'))
 
 
 TIERS = {"base": LinearSpec(0, 0), "a50": LinearSpec(.5, 0),
@@ -32,6 +50,9 @@ TIERS = {"base": LinearSpec(0, 0), "a50": LinearSpec(.5, 0),
 
 @dataclass(frozen=True)
 class RunConfig:
+    resource_mode: str = "exclusive"
+    compute_budget: float | None = None
+    budget_plan: str | None = None
     precision: str = "fp4"
     debug: str = "off"
     execution: str = "graph"
@@ -49,6 +70,17 @@ class RunConfig:
     ffn_policy_mode: str = "auto50"
 
     def __post_init__(self):
+        if self.budget_plan and self.compute_budget is None:
+            raise ValueError('A budget plan requires an explicit compute budget')
+        if self.budget_plan and self.ffn_policy:
+            raise ValueError('Choose a unified budget plan or a legacy FFN policy')
+        if self.resource_mode not in ('exclusive', 'shared-calibration'):
+            raise ValueError('Invalid resource mode')
+        if self.compute_budget is not None:
+            if self.compute_budget not in (1., 1.125, 1.25, 1.5) or isinstance(self.compute_budget, bool):
+                raise ValueError('Compute budget must be 1, 1.125, 1.25 or 1.5')
+            if self.precision != 'fp4' or self.attention_backend != 'fp4':
+                raise ValueError('Compute budgets require joint FP4')
         if self.precision not in ('bf16', 'fp8', 'fp4'):
             raise ValueError('precision must be bf16/fp8/fp4')
         if self.debug not in ('off', 'timing', 'trace') or self.execution not in ('graph', 'eager'):

@@ -47,6 +47,11 @@ class JointEngine:
         self.policy=json.loads(Path(config.ffn_policy).read_text()) if config.ffn_policy else None
         if self.policy and tuple(self.policy['phases'])!=(0,.2,.5,.8,1):
             raise ValueError('Unsupported FFN phase boundaries')
+        from .budget import RepairPlan
+        self.budget_plan=RepairPlan.load(config.budget_plan) if config.budget_plan else None
+        if self.budget_plan and config.compute_budget!=self.budget_plan.value['budget']:
+            raise ValueError('Compute budget and plan must agree')
+        self.discovering=False;self.budget_ledger=None;self.attention_shapes={}
         self.targets=generation_targets(transformer);self.linears={};self.shapes={}
         self.cache={};self.pool=torch.cuda.graph_pool_handle();self.replays=Counter()
         self.attention_prepared={};self.trace_masks={};self.mask_history=[]
@@ -70,17 +75,25 @@ class JointEngine:
         transformer.forward=self
 
     def linear_spec(self,name,default):
+        if self.budget_plan is not None:
+            return self.budget_plan.linear(self.task,self.branch,phase(self.step,self.steps),name)
         if self.policy is None or '.mlp_moe_gen.' not in name:return default
         p=self.policy['policies'][self.config.ffn_policy_mode]
         parts=name.split('.')
         return TIERS[p['assignments'][f'{self.task}|{self.branch}|{phase(self.step,self.steps)}|{parts[1]}.{parts[-1]}']]
+
+    def attention_config(self,layer,step,branch):
+        cfg=self.config.attention.resolve(layer=layer,step=step,branch=str(branch))
+        if self.budget_plan is not None:
+            cfg=self.budget_plan.attention_config(self.task,branch,phase(step,self.steps),layer,cfg)
+        return cfg
 
     def schedule(self,step):
         old=self.step;self.step=step
         try:
             linears=tuple((name,self.linear_spec(name,op.default).key)
                           for name,op in self.linears.items() if isinstance(op,RepairLinear))
-            attention=tuple(self.config.attention.resolve(layer=i,step=step,branch=str(self.branch))
+            attention=tuple(self.attention_config(i,step,self.branch)
                             for i in range(len(self.model.layers))) if self.config.attention_backend=='fp4' else ()
             return (linears,attention)
         finally:self.step=old
@@ -88,6 +101,7 @@ class JointEngine:
     def record_linear(self,name,shape,n,spec,op):
         key=(self.task,self.branch,phase(self.step,self.steps),name,tuple(shape),spec.key)
         self.shapes[str(key)]=dict(module=name,m=int(shape[0]),n=n,k=int(shape[1]),
+            branch=self.branch,phase=phase(self.step,self.steps),task=self.task,w_blocks=list(op.weight_ids),
             repair=spec.key,actual_a=op.na/(op.k//128),actual_w=op.wi.numel()/(op.n//128*(op.k//128)),
             launch=dict(bm=op.bm,stages=op.num_stages))
 
@@ -117,11 +131,13 @@ class JointEngine:
             layer.self_attn.set_processor(processor)
 
     def attend(self,layer,q,k,v):
-        cfg=self.config.attention.resolve(layer=layer,step=self.step,branch=str(self.branch))
+        cfg=self.attention_config(layer,self.step,self.branch)
         key=(layer,tuple(q.shape),tuple(k.shape),cfg,self.branch)
         explicit=self.explicit_masks.get((layer,self.branch))
         if self.warming and key not in self.attention_prepared:
             quotas=torch.tensor(cfg.head_counts(q.shape[2],k.shape[1]),device=q.device,dtype=torch.int32)
+            if cfg.pv_head_quotas is not None or cfg.pv_terms is not None:
+                quotas=(quotas,torch.tensor(cfg.pv_counts(q.shape[2],k.shape[1]),device=q.device,dtype=torch.int32))
             tune_key=self.table.key('attention',[list(q.shape),list(k.shape)],attention_tuning_spec(cfg,explicit))
             current=[cfg]
             def apply(v):current[0]=replace(cfg,**v)
@@ -134,8 +150,16 @@ class JointEngine:
             self.attention_prepared[key]=(replace(cfg,**launch),quotas)
         if key not in self.attention_prepared:raise RuntimeError(f'Unwarmed attention layer {layer}')
         launch,quotas=self.attention_prepared[key]
-        out,mask,_=fp4_attention(q,k,v,launch,repair_mask=explicit,counts_tensor=quotas,
+        if self.warming:
+            self.attention_shapes[self.task,self.branch,phase(self.step,self.steps),layer]=dict(
+                q=list(q.shape),k=list(k.shape),config=launch,explicit=explicit)
+        out,mask,held=fp4_attention(q,k,v,launch,repair_mask=explicit,counts_tensor=quotas,
                               return_mask=self.config.debug=='trace')
+        if self.warming and launch.sparse_pack and held and isinstance(held[-1],dict):
+            unions=held[-1]
+            self.attention_shapes[self.task,self.branch,phase(self.step,self.steps),layer]['warmup_union_density']={
+                name:float(value.float().mean().cpu()) for name,value in unions.items()}
+        if self.capture_attention is not None and not self.warming:self.capture_attention(layer,q,k,v,out)
         if mask is not None:self.trace_masks[layer]=mask
         return out
 
@@ -144,7 +168,9 @@ class JointEngine:
             mlp=layer.mlp_moe_gen
             # External calibrated assets may have a nonidentity down prescale.
             if not bool((mlp.down_proj.asset['prescale']==1).all()):continue
-            shared=(self.config.share_pack and mlp.hidden_act=='silu' and
+            shared=(self.config.share_pack and self.budget_plan is None and mlp.hidden_act=='silu' and
+                mlp.gate_proj.asset.get('selector')!='residual_sensitivity' and
+                mlp.up_proj.asset.get('selector')!='residual_sensitivity' and
                 torch.equal(mlp.gate_proj.asset['prescale'],mlp.up_proj.asset['prescale']) and
                 mlp.gate_proj.asset.get('activation_scale',(1.,1.))==(1.,1.) and
                 mlp.up_proj.asset.get('activation_scale',(1.,1.))==(1.,1.))
@@ -204,6 +230,51 @@ class JointEngine:
         self._schedules=self._schedule_cache[key]
         self.branch=0;self.step=0
 
+    def compile_budget(self):
+        from .budget import linear_cost,attention_cost,compile_request
+        rows=[]
+        for branch in range(self.branches):
+            for ph,start in enumerate((0,7,18,28)):
+                for name,op in self.linears.items():
+                    observed=[r for r in self.shapes.values() if r['task']==self.task and r['branch']==branch and r['module']==name]
+                    shapes={(r['m'],r['n'],r['k']) for r in observed}
+                    if len(shapes)!=1:raise ValueError('Budget requires one observed shape per operator and branch')
+                    m,n,k=next(iter(shapes))
+                    old_step,old_branch=self.step,self.branch;self.step,self.branch=start,branch
+                    try:spec=self.linear_spec(name,op.default)
+                    finally:self.step,self.branch=old_step,old_branch
+                    if (m,spec.key) not in op.ops:raise ValueError('Unobserved repair schedule')
+                    native=op.ops[m,spec.key]
+                    cost=linear_cost(m,n,k,bm=native.bm,a_blocks=native.na,w_blocks=native.weight_ids,cross=spec.cross)
+                    sparse=op.asset.get('selector')=='residual_sensitivity' and 0<native.na<k//128
+                    cost['packing']['implementation']='selected_codes' if sparse else 'legacy_full_plane'
+                    cost['packing']['residual_write_bytes']=cost['packing']['selected_residual_write_bytes'] if sparse else cost['packing']['residual_allocation_bytes']
+                    if sparse:cost['non_mma']['base_reencoded_elements']=cost['non_mma']['selected_residual_elements']
+                    rows.append({**cost,'name':name,'branch':branch,'phase':ph})
+                for layer in range(len(self.model.layers)):
+                    cfg=self.attention_config(layer,start,branch)
+                    observed=[r for (t,b,p,l),r in self.attention_shapes.items() if t==self.task and b==branch and l==layer]
+                    shapes={(tuple(r['q']),tuple(r['k'])) for r in observed}
+                    if len(shapes)!=1:raise ValueError('Budget requires one observed attention shape per branch')
+                    q,k=next(iter(shapes))
+                    key=(layer,q,k,cfg,branch)
+                    if key not in self.attention_prepared:raise ValueError('Unobserved attention schedule')
+                    launch,_=self.attention_prepared[key]
+                    explicit=self.explicit_masks.get((layer,branch));masks=None
+                    if explicit is not None:
+                        mask=explicit.cpu().tolist();masks=dict(qk=mask,pv=mask)
+                    cost=attention_cost(q[1],k[1],q[2],k[2],bm=launch.query_tile or 32,
+                         qk_counts=cfg.head_counts(q[2],k[1]),pv_counts=cfg.pv_counts(q[2],k[1]),
+                         qk_terms=cfg.terms,pv_terms=cfg.pv_terms or cfg.terms,explicit_masks=masks)
+                    cost['packing_implementation']='gqa_union_selected_codes' if cfg.sparse_pack else 'full_residual_planes'
+                    rows.append({**cost,'name':str(layer),'branch':branch,'phase':ph})
+        if any(op.split_k!=1 for layer in self.linears.values() for op in getattr(layer,'ops',{}).values()):
+            raise ValueError('Split-K requires its own budget/quality protocol')
+        self.budget_ledger=compile_request(rows,self.config.compute_budget,steps=self.steps,branches=self.branches,
+            expected_modules=self.targets,expected_layers=[str(i) for i in range(len(self.model.layers))])
+        if self.budget_plan:self.budget_ledger['plan_sha256']=self.budget_plan.fingerprint
+        return self.budget_ledger
+
     def clear(self):
         torch.cuda.synchronize();self.cache.clear();self.pool=torch.cuda.graph_pool_handle()
 
@@ -224,6 +295,7 @@ class JointEngine:
                 if key in self.cache:continue
                 static=clone_tree(kwargs)
                 for _ in range(2):self.forward(**static)
+                if self.discovering:continue
                 if self.config.execution=='graph':
                     torch.cuda.synchronize();graph=torch.cuda.CUDAGraph()
                     capture_start=time.perf_counter()
@@ -236,6 +308,9 @@ class JointEngine:
                     self.cache[key]=(static,graph,output,dict(self.trace_masks))
                 else:self.cache[key]=None
             self.step=saved
+        if self.discovering:
+            result=self.forward(**kwargs);self.call+=1
+            return result
         key=(basekey,current)
         if key not in self.cache:raise RuntimeError('Unwarmed task/shape/joint policy')
         if self.config.execution=='graph':

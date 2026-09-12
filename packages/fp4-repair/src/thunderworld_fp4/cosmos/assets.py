@@ -5,6 +5,12 @@ from .settings import TIERS
 
 
 def required_weight_fraction(config, name, policy=None):
+    if config.budget_plan:
+        from .budget import RepairPlan
+        plan=RepairPlan.load(config.budget_plan)
+        rows=[r['w_blocks'] for key,r in plan.linears.items() if key.split('|',2)[-1]==name]
+        if not rows:raise ValueError(f'Missing budget support: {name}')
+        return sorted(set(i for ids in rows for i in ids))
     default = config.ffn if '.mlp_moe_gen.' in name else config.projection
     if policy is None or '.mlp_moe_gen.' not in name:
         return default.weight
@@ -19,10 +25,16 @@ def required_weight_fraction(config, name, policy=None):
 
 def compact(asset, fraction):
     score = asset['score'].flatten()
-    count = math.ceil(score.numel() * fraction)
-    indices = torch.argsort(score, descending=True, stable=True)[:count]
+    explicit=isinstance(fraction,(list,tuple,set))
+    count = len(fraction) if explicit else math.ceil(score.numel() * fraction)
+    if explicit:
+        from .budget import support
+        support(fraction,score.numel())
+    indices = torch.tensor(sorted(fraction),dtype=torch.long) if explicit else torch.argsort(score, descending=True, stable=True)[:count]
+    if not set(asset.get('mandatory_w_blocks',())).issubset(indices.tolist()):
+        raise ValueError('Cannot discard mandatory outlier support')
     result = {k: v for k, v in asset.items() if k not in ('codes', 'scales')}
-    result.update(storage_schema=1, weight_support_fraction=fraction, residual_indices=indices)
+    result.update(storage_schema=2 if explicit else 1, weight_support_fraction=count/score.numel(), residual_indices=indices)
     nb, kb = asset['score'].shape
     for name in ('codes', 'scales'):
         value = asset[name]
@@ -36,7 +48,9 @@ def compact(asset, fraction):
 def expand(asset, required):
     if 'storage_schema' not in asset:
         return asset
-    if asset['storage_schema'] != 1 or required > asset['weight_support_fraction']:
+    explicit=isinstance(required,(list,tuple,set))
+    insufficient=(not set(required).issubset(asset['residual_indices'].tolist())) if explicit else required>asset['weight_support_fraction']
+    if asset['storage_schema'] not in (1,2) or insufficient or (asset['storage_schema']==2 and not explicit):
         raise ValueError('Offline W1 support is insufficient; prepare this policy again')
     result = {k: v for k, v in asset.items() if k not in (
         'storage_schema', 'weight_support_fraction', 'residual_indices',

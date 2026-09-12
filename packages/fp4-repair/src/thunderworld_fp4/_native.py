@@ -10,7 +10,7 @@ from .linear import _pack
 @triton.jit
 def gemm(AC,AS,WC,WS,WG,AG,AI,AM,WR,WRS,WI,OFF,Y,
          M:tl.constexpr,N:tl.constexpr,K:tl.constexpr,MP:tl.constexpr,
-         NA:tl.constexpr,HASW:tl.constexpr,CROSS:tl.constexpr,B:tl.constexpr,BM:tl.constexpr,INTERLEAVE:tl.constexpr,SPLIT_K:tl.constexpr=1,DENSE_W:tl.constexpr=False):
+         NA:tl.constexpr,HASW:tl.constexpr,CROSS:tl.constexpr,B:tl.constexpr,BM:tl.constexpr,INTERLEAVE:tl.constexpr,SPLIT_K:tl.constexpr=1,DENSE_W:tl.constexpr=False,WLOC=None,SHARED_BANK:tl.constexpr=False):
     mi=tl.program_id(0)*BM+tl.arange(0,BM);nb=tl.program_id(1);ni=nb*128+tl.arange(0,128)
     dk=tl.arange(0,B//2);ds=tl.arange(0,B//16);acc=tl.full((BM,128),0,tl.float32)
     part=tl.program_id(2)
@@ -45,10 +45,11 @@ def gemm(AC,AS,WC,WS,WG,AG,AI,AM,WR,WRS,WI,OFF,Y,
             if DENSE_W:kb=slot-begin
             else:kb=tl.load(WI+slot)
             if SPLIT_K==1 or (kb>=begin_k and kb<end_k):
+                storage_slot=tl.load(WLOC+slot) if SHARED_BANK else slot
                 ai=mi[:,None]*(K//2)+kb*(B//2)+dk[None,:];asi=mi[:,None]*(K//16)+kb*(B//16)+ds[None,:]
                 a=tl.load(AC+ai,mi[:,None]<MP,0);s=tl.load(AS+asi,mi[:,None]<MP,0.)
-                w=tl.load(WR+slot*128*(B//2)+tl.arange(0,128)[:,None]*(B//2)+dk[None,:])
-                ws=tl.load(WRS+slot*128*(B//16)+tl.arange(0,128)[:,None]*(B//16)+ds[None,:])
+                w=tl.load(WR+storage_slot*128*(B//2)+tl.arange(0,128)[:,None]*(B//2)+dk[None,:])
+                ws=tl.load(WRS+storage_slot*128*(B//16)+tl.arange(0,128)[:,None]*(B//16)+ds[None,:])
                 acc=tl.dot_scaled(a,s,'e2m1',w.T,ws,'e2m1',acc)
                 if CROSS and NA>0:
                     selected=tl.load(AM+(tl.program_id(0)*BM//128)*(K//B)+kb)
@@ -94,6 +95,7 @@ class Native:
         self.dense_w=bool(wm.all())
         self.off=torch.cat([torch.zeros(1,device=wc.device,dtype=torch.int32),wm.sum(-1).int().cumsum(0).int()])
         self.wi=pairs[:,1].int().contiguous()
+        self.wloc=self.wi;self.shared_bank=False
         tiles=wc[1].reshape(self.n//128,128,self.k//b,b//2).permute(0,2,1,3)
         scales=ws[1].view(torch.uint8).reshape(self.n//128,128,self.k//b,b//16).permute(0,2,1,3)
         self.wr=tiles[pairs[:,0],pairs[:,1]].contiguous()
@@ -105,7 +107,7 @@ class Native:
         ac,sc,ag,mp=packed;m=x.shape[0]
         out=torch.empty((m,self.n),device=x.device,dtype=x.dtype)
         parts=out if self.split_k==1 else torch.empty((self.split_k,m,self.n),device=x.device,dtype=torch.float32)
-        gemm[(triton.cdiv(m,self.bm),self.n//128,self.split_k)](ac,sc,self.wc,self.ws,self.wg,ag,self.ai,self.am,self.wr,self.wrs,self.wi,self.off,parts,m,self.n,self.k,mp,self.na,self.hasw,self.cross,self.b,self.bm,self.interleave,self.split_k,self.dense_w,num_warps=self.num_warps,num_stages=self.num_stages)
+        gemm[(triton.cdiv(m,self.bm),self.n//128,self.split_k)](ac,sc,self.wc,self.ws,self.wg,ag,self.ai,self.am,self.wr,self.wrs,self.wi,self.off,parts,m,self.n,self.k,mp,self.na,self.hasw,self.cross,self.b,self.bm,self.interleave,self.split_k,self.dense_w,WLOC=self.wloc,SHARED_BANK=self.shared_bank,num_warps=self.num_warps,num_stages=self.num_stages)
         if self.split_k>1:
             reduce_split_k[(triton.cdiv(m*self.n,512),)](parts,out,self.wg,ag,m*self.n,self.split_k,512,num_warps=4)
         return out
