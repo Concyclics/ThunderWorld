@@ -51,14 +51,14 @@ def pack_v(X, CODES, SCALES, FACTORS, ENERGY, N:tl.constexpr,H:tl.constexpr,
 def streaming_attention(QC,QS,QF,KC,KS,KF,VC,VS,VF,FLAGS,O,STATS,
                      M:tl.constexpr,N:tl.constexpr,HQ:tl.constexpr,HK:tl.constexpr,
                      MP:tl.constexpr,NP:tl.constexpr,
-                     BM:tl.constexpr,BN:tl.constexpr,REPAIR:tl.constexpr,FULL:tl.constexpr,TERMS:tl.constexpr,SPLITS:tl.constexpr,LAZY_P:tl.constexpr,FAST_P:tl.constexpr=False,TRANSPOSE_V:tl.constexpr=False):
+                     BM:tl.constexpr,BN:tl.constexpr,REPAIR:tl.constexpr,FULL:tl.constexpr,TERMS:tl.constexpr,SPLITS:tl.constexpr,LAZY_P:tl.constexpr,FAST_P:tl.constexpr=False,TRANSPOSE_V:tl.constexpr=False,RELOAD_Q:tl.constexpr=False):
     mi=tl.program_id(0)*BM+tl.arange(0,BM);h=tl.program_id(1);kh=h//(HQ//HK)
     dd=tl.arange(0,128);dk=tl.arange(0,64);ds=tl.arange(0,8)
     qi=(h*MP+mi[:,None])*64+dk[None,:]
     qsi=(h*MP+mi[:,None])*8+ds[None,:]
     q0=tl.load(QC+qi,mi[:,None]<MP,0);qs=tl.load(QS+qsi,mi[:,None]<MP,0.0)
     qf=tl.load(QF+h*MP+mi,mi<MP,0)
-    if REPAIR:
+    if REPAIR and not RELOAD_Q:
         q1=tl.load(QC+HQ*MP*64+qi,mi[:,None]<MP,0)
         qr=tl.load(QS+HQ*MP*8+qsi,mi[:,None]<MP,0.0)
     acc=tl.full((BM,128),0,tl.float32)
@@ -74,6 +74,9 @@ def streaming_attention(QC,QS,QF,KC,KS,KF,VC,VS,VF,FLAGS,O,STATS,
             if FULL:selected=True
             else:selected=tl.load(FLAGS+(h*tl.cdiv(M,128)+tl.program_id(0)*BM//128)*tl.cdiv(N,128)+start*BN//128)>1
             if selected:
+                if RELOAD_Q:
+                    q1=tl.load(QC+HQ*MP*64+qi,mi[:,None]<MP,0)
+                    qr=tl.load(QS+HQ*MP*8+qsi,mi[:,None]<MP,0.0)
                 score=tl.dot_scaled(q1,qr,'e2m1',k0.T,ks,'e2m1',score)
                 if TERMS>=3:
                     k1=tl.load(KC+HK*NP*64+ki);kr=tl.load(KS+HK*NP*8+ksi)

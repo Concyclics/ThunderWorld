@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "thunderworld-fp4"
-version = "0.1.0"
+version = "0.2.0"
 description = "Configurable native FP4 streaming attention with block residual repair"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -12,6 +12,11 @@ requires-python = ">=3.10"
 [project.optional-dependencies]
 cuda = ["torch>=2.11,<2.12", "triton>=3.6,<3.7; platform_system == 'Linux'"]
 test = ["pytest>=8"]
+cosmos = ["diffusers>=0.41.0.dev0", "transformers>=5", "accelerate", "safetensors", "numpy", "pillow", "sentencepiece", "protobuf", "av"]
+evaluation = ["lpips", "scikit-image", "scipy"]
+
+[project.scripts]
+tw-cosmos = "thunderworld_fp4.cosmos.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -8,7 +8,7 @@ pip install './packages/fp4-repair[cuda]'
 pytest packages/fp4-repair/tests -q
 ```
 
-开发验证环境：PyTorch 2.11.0+cu130、Triton 3.6.0、RTX PRO 6000 Blackwell (SM120)。其他架构主动报错，不静默切换成 BF16。配置模块不依赖 torch；运行内核需 CUDA extra。此包尚未接入整个 Cosmos pipeline 的默认推理入口，调用者需在对应 FFN/attention processor 使用下述接口。
+开发验证环境：PyTorch 2.11.0+cu130、Triton 3.6.0、RTX PRO 6000 Blackwell (SM120)。其他架构主动报错，不静默切换成 BF16。配置模块不依赖 torch；运行内核需 CUDA extra。0.2.0 新增可安装的 `tw-cosmos` 完整请求入口，联合 FFN/投影/attention Graph，默认关闭探针；使用说明和复测命令见 [联合推理文档](../../tools/joint_inference/README.md)。以下底层接口保持兼容。
 
 ## 三个独立配置
 

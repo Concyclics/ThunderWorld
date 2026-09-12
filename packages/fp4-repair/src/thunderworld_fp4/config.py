@@ -39,6 +39,7 @@ class RepairConfig:
     lazy_p: bool = True
     fast_p: bool = True
     transpose_v: bool = False
+    reload_q: bool = False
 
     def __post_init__(self):
         _fraction(self.coverage, "coverage")
@@ -51,8 +52,8 @@ class RepairConfig:
             type(self.query_tile) is not int or self.query_tile not in (16, 32, 64)
         ):
             raise ValueError("query_tile must be None, 16, 32, or 64; BM128 failed validation")
-        if any(type(x) is not bool for x in (self.lazy_p,self.fast_p,self.transpose_v)):
-            raise ValueError("lazy_p, fast_p and transpose_v must be booleans")
+        if any(type(x) is not bool for x in (self.lazy_p,self.fast_p,self.transpose_v,self.reload_q)):
+            raise ValueError("lazy_p, fast_p, transpose_v and reload_q must be booleans")
         budgets = tuple(tuple(pair) for pair in self.head_budgets)
         seen = set()
         for pair in budgets:
