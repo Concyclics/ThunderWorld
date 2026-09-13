@@ -32,6 +32,8 @@ RTX PRO 6000 Blackwell 与 RTX 5090 对应 SM120。采用 CUTLASS 的 SM120 bloc
 | policy / 416 | FFN up | 31.00 | 28.69 | 1.080 |
 | policy / 416 | FFN down | 87.80 | 47.44 | 1.851 |
 
+表中四个 FFN 样本在当前冻结策略的该层/阶段均为零修复，使用直接 BF16 epilogue；这些收益不能直接外推到高修复覆盖率 FFN。两个 K projection 均有 2 个 A blocks 与 16 个 W blocks；I2V Q 有 32 个 W blocks，policy Q 为零修复。全量修复及交叉项目前有正确性覆盖，没有对应的正式速度结论。
+
 8 个真实算子中 6 个逐位一致；两个 K projection 相对现有输出的 L2 差异分别为 1.44e-5、2.38e-5。局部 NMSE 几乎相同，但尚未运行完整轨迹门槛。
 
 原始结果位于 [results/i2v.json](results/i2v.json) 和 [results/policy.json](results/policy.json)，包含所有样本、NMSE、实际修复配额和逐项 MMA。M128/K128 固定 launch 保持本次对照的 padded MMA 口径。桥接类拒绝不同 BM、BK 或 Split-K，避免悄悄改变计算账本。
