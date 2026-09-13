@@ -1,0 +1,136 @@
+"""Experimental CUTLASS base + current sparse FP4 repairs; not a production backend.
+
+Preserves codes, factors and support, but changes accumulation order. Full trajectory
+quality revalidation is required before using this for a production recommendation.
+"""
+import ctypes
+import torch
+import triton
+import triton.language as tl
+
+
+@triton.jit
+def _swizzle(S,O,AG,WG,ALPHA,ROWS:tl.constexpr,COLS:tl.constexpr,SIZE:tl.constexpr,BLOCK:tl.constexpr,FACTOR:tl.constexpr):
+    i=tl.program_id(0)*BLOCK+tl.arange(0,BLOCK)
+    row=i//(128*COLS)*128+(i//4%4)*32+i//16%32
+    col=i//512%(COLS//4)*4+i%4
+    v=tl.load(S+row*COLS+col,(i<SIZE)&(row<ROWS),0)
+    tl.store(O+i,v,i<SIZE)
+    if FACTOR:
+        if tl.program_id(0)==0:tl.store(ALPHA,tl.load(AG)*tl.load(WG))
+
+
+def swizzle(scales,ag=None,wg=None,alpha=None):
+    if scales.dtype!=torch.float8_e4m3fn or not scales.is_contiguous():
+        raise ValueError('Contiguous E4M3 scales required')
+    rows,cols=scales.shape
+    if cols%4:raise ValueError('Scale columns must be divisible by four')
+    out=torch.empty((triton.cdiv(rows,128)*128,cols),device=scales.device,dtype=scales.dtype)
+    _swizzle[(triton.cdiv(out.numel(),256),)](scales.view(torch.uint8),out.view(torch.uint8),ag,wg,alpha,rows,cols,out.numel(),256,alpha is not None)
+    return out
+
+
+@triton.jit
+def repair(BASE,AC,AS,WC,WS,WR,WRS,WI,OFF,WLOC,AM,WG,AG,Y,
+           M:tl.constexpr,N:tl.constexpr,K:tl.constexpr,MP:tl.constexpr,
+           NA:tl.constexpr,HASW:tl.constexpr,CROSS:tl.constexpr,
+           DENSE_W:tl.constexpr,SHARED:tl.constexpr,BM:tl.constexpr):
+    mi=tl.program_id(0)*BM+tl.arange(0,BM)
+    nb=tl.program_id(1);ni=nb*128+tl.arange(0,128)
+    dk=tl.arange(0,64);ds=tl.arange(0,8)
+    acc=tl.load(BASE+mi[:,None]*N+ni[None,:],mi[:,None]<M,0)
+    if NA>0:
+        for kb in range(K//128):
+            if NA==K//128:selected=True
+            else:selected=tl.load(AM+(tl.program_id(0)*BM//128)*(K//128)+kb)
+            if selected:
+                a=tl.load(AC+MP*(K//2)+mi[:,None]*(K//2)+kb*64+dk[None,:],mi[:,None]<MP,0)
+                sa=tl.load(AS+MP*(K//16)+mi[:,None]*(K//16)+kb*8+ds[None,:],mi[:,None]<MP,0.)
+                w=tl.load(WC+ni[:,None]*(K//2)+kb*64+dk[None,:])
+                sw=tl.load(WS+ni[:,None]*(K//16)+kb*8+ds[None,:])
+                acc=tl.dot_scaled(a,sa,'e2m1',w.T,sw,'e2m1',acc)
+    if HASW:
+        if DENSE_W:begin=nb*(K//128);end=(nb+1)*(K//128)
+        else:begin=tl.load(OFF+nb);end=tl.load(OFF+nb+1)
+        for slot in range(begin,end):
+            if DENSE_W:kb=slot-begin
+            else:kb=tl.load(WI+slot)
+            location=tl.load(WLOC+slot) if SHARED else slot
+            ai=mi[:,None]*(K//2)+kb*64+dk[None,:]
+            si=mi[:,None]*(K//16)+kb*8+ds[None,:]
+            a=tl.load(AC+ai,mi[:,None]<MP,0);sa=tl.load(AS+si,mi[:,None]<MP,0.)
+            w=tl.load(WR+location*128*64+tl.arange(0,128)[:,None]*64+dk[None,:])
+            sw=tl.load(WRS+location*128*8+tl.arange(0,128)[:,None]*8+ds[None,:])
+            acc=tl.dot_scaled(a,sa,'e2m1',w.T,sw,'e2m1',acc)
+            if CROSS and NA>0:
+                if tl.load(AM+(tl.program_id(0)*BM//128)*(K//128)+kb):
+                    a=tl.load(AC+MP*(K//2)+ai,mi[:,None]<MP,0)
+                    sa=tl.load(AS+MP*(K//16)+si,mi[:,None]<MP,0.)
+                    acc=tl.dot_scaled(a,sa,'e2m1',w.T,sw,'e2m1',acc)
+    tl.store(Y+mi[:,None]*N+ni[None,:],acc*(tl.load(WG)*tl.load(AG)),mi[:,None]<M)
+
+
+class CutlassBridge:
+    """Offline construction. Caller owns current packing and current AM selection."""
+    def __init__(self,op,m,library):
+        if op.b!=128 or op.bm!=128 or op.split_k!=1:
+            raise ValueError('Bridge requires M128/K128 and unsplit accumulation to preserve issued-MMA accounting')
+        if torch.cuda.get_device_capability(op.wc.device)!=(12,0):raise ValueError('SM120 required')
+        self.op=op;self.m=m
+        self.lib=ctypes.CDLL(str(library))
+        self.lib.tw_workspace.argtypes=[ctypes.c_int]*3;self.lib.tw_workspace.restype=ctypes.c_size_t
+        self.lib.tw_base.argtypes=[ctypes.c_int]*3+[ctypes.c_void_p]*7;self.lib.tw_base.restype=ctypes.c_int
+        self.lib.tw_dense.argtypes=[ctypes.c_int]*3+[ctypes.c_void_p]*8;self.lib.tw_dense.restype=ctypes.c_int
+        self.lib.tw_status.argtypes=[ctypes.c_int];self.lib.tw_status.restype=ctypes.c_char_p
+        self.ws=swizzle(op.ws)  # Immutable W0 scale layout, prepared offline.
+        size=self.lib.tw_workspace(m,op.n,op.k)
+        self.workspace=torch.empty(max(size,1),device=op.wc.device,dtype=torch.uint8)
+
+    def __getattr__(self,name):return getattr(self.op,name)
+
+    def __call__(self,x):return self.run_packed(x,self.op.pack(x))
+
+    def _validate(self,packed):
+        ac,sc,ag,mp=packed;op=self.op
+        planes=2 if op.na else 1
+        if mp!=triton.cdiv(self.m,16)*16 or ac.ndim!=3 or ac.shape[0]<planes:
+            raise ValueError('Invalid packed M or missing activation residual plane')
+        if ac.shape[1:]!=(mp,op.k//2) or sc.shape!=(ac.shape[0],mp,op.k//16):
+            raise ValueError('Packed code/scale shape mismatch')
+        if ac.dtype!=torch.uint8 or sc.dtype!=torch.float8_e4m3fn or ag.dtype!=torch.float32 or ag.numel()!=1:
+            raise ValueError('Invalid packed dtypes/factor')
+        if any(t.device!=op.wc.device or not t.is_contiguous() for t in (ac,sc,ag)):
+            raise ValueError('Packed inputs must be contiguous on the prepared device')
+
+    def base(self,packed):
+        self._validate(packed)
+        ac,sc,_,_=packed;op=self.op
+        scales=swizzle(sc[0])
+        output=torch.empty((self.m,op.n),device=ac.device,dtype=torch.float32)
+        status=self.lib.tw_base(self.m,op.n,op.k,ac.data_ptr(),op.wc.data_ptr(),scales.data_ptr(),
+            self.ws.data_ptr(),output.data_ptr(),self.workspace.data_ptr(),torch.cuda.current_stream(ac.device).cuda_stream)
+        if status:raise RuntimeError(self.lib.tw_status(status).decode())
+        return output
+
+    def finish(self,x,packed,base):
+        op=self.op;ac,sc,ag,mp=packed
+        output=torch.empty((self.m,op.n),device=x.device,dtype=x.dtype)
+        repair[(triton.cdiv(self.m,op.bm),op.n//128)](base,ac,sc,op.wc,op.ws,op.wr,op.wrs,
+            op.wi,op.off,op.wloc,op.am,op.wg,ag,output,self.m,op.n,op.k,mp,op.na,
+            op.hasw,op.cross,op.dense_w,op.shared_bank,op.bm,num_warps=op.num_warps,num_stages=op.num_stages)
+        return output
+
+    def run_packed(self,x,packed):
+        if x.shape!=(self.m,self.op.k) or x.dtype!=torch.bfloat16 or x.device!=self.op.wc.device:
+            raise ValueError('Input must match prepared BF16 shape/device')
+        self._validate(packed)
+        if self.op.na==0 and not self.op.hasw:
+            ac,sc,ag,_=packed;op=self.op
+            alpha=torch.empty((),device=x.device,dtype=torch.float32)
+            scales=swizzle(sc[0],ag,op.wg,alpha)
+            output=torch.empty((self.m,op.n),device=x.device,dtype=torch.bfloat16)
+            status=self.lib.tw_dense(self.m,op.n,op.k,ac.data_ptr(),op.wc.data_ptr(),scales.data_ptr(),
+                self.ws.data_ptr(),output.data_ptr(),alpha.data_ptr(),self.workspace.data_ptr(),torch.cuda.current_stream(x.device).cuda_stream)
+            if status:raise RuntimeError(self.lib.tw_status(status).decode())
+            return output
+        return self.finish(x,packed,self.base(packed))

@@ -1,0 +1,14 @@
+BEGIN memcheck
+========= COMPUTE-SANITIZER
+{'device': 3, 'free_mib': 97291, 'minimum_mib': 12288, 'resource_mode': 'shared-calibration', 'performance_eligible': False}
+......                                                                   [100%]
+6 passed in 1.89s
+========= ERROR SUMMARY: 0 errors
+COMPLETE memcheck
+BEGIN racecheck
+========= COMPUTE-SANITIZER
+{'device': 3, 'free_mib': 97291, 'minimum_mib': 12288, 'resource_mode': 'shared-calibration', 'performance_eligible': False}
+......                                                                   [100%]
+6 passed in 16.80s
+========= RACECHECK SUMMARY: 0 hazards displayed (0 errors, 0 warnings)
+COMPLETE racecheck

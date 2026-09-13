@@ -1,0 +1,3 @@
+{'device': 3, 'free_mib': 97291, 'minimum_mib': 12288, 'resource_mode': 'shared-calibration', 'performance_eligible': False}
+......                                                                   [100%]
+6 passed in 3.02s
