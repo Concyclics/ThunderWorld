@@ -22,7 +22,7 @@ tw-cosmos = "thunderworld_fp4.cosmos.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-thunderworld_fp4 = ["presets/*.json"]
+thunderworld_fp4 = ["presets/*.json", "cutlass/*.cu", "cutlass/*.cuh"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

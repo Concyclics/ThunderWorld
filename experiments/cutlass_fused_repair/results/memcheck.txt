@@ -1,0 +1,5 @@
+========= COMPUTE-SANITIZER
+{'device': 0, 'free_mib': 97291, 'minimum_mib': 12288, 'resource_mode': 'shared-calibration', 'performance_eligible': False}
+........                                                                 [100%]
+8 passed in 2.21s
+========= ERROR SUMMARY: 0 errors

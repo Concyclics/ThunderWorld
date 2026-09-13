@@ -14,14 +14,14 @@ import triton.testing
 
 def identity():
     root = Path(__file__).resolve().parents[1]
-    paths = list(root.glob('_*.py')) + [Path(__file__).with_name('linears.py')]
+    paths = list(root.glob('_*.py')) + list((root/'cutlass').glob('*.py')) + [Path(__file__).with_name('linears.py')]
     prop = torch.cuda.get_device_properties(torch.cuda.current_device())
     hardware = subprocess.check_output(['nvidia-smi', '-i', os.environ.get('CUDA_VISIBLE_DEVICES', '0'),
         '--query-gpu=uuid,driver_version,power.limit', '--format=csv,noheader,nounits'], text=True).strip()
     return dict(gpu=prop.name, sm=prop.multi_processor_count, capability=[prop.major, prop.minor],
                 hardware=hardware, cuda=torch.version.cuda,
                 torch=torch.__version__, triton=triton.__version__,
-                kernels={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)})
+                kernels={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)})
 
 
 class LaunchTable:

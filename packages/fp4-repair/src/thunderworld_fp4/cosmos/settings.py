@@ -64,6 +64,9 @@ class RunConfig:
     fuse_ffn: bool = True
     share_pack: bool = False
     kernel_variant: str = 'optimized'
+    linear_backend: str = 'triton'
+    cutlass_library: str | None = None
+    cutlass_small_library: str | None = None
     strict_tuning: bool = False
     # A separate frozen FFN policy uses task|branch|phase|layer.part keys.
     ffn_policy: str | None = None
@@ -87,6 +90,13 @@ class RunConfig:
             raise ValueError('Invalid debug/execution mode')
         if self.attention_backend not in ('bf16', 'fp4'):
             raise ValueError('Invalid attention backend')
+        if self.linear_backend not in ('triton','cutlass-fused'):
+            raise ValueError('Invalid linear backend')
+        if self.linear_backend=='cutlass-fused':
+            if self.precision!='fp4' or self.kernel_variant!='optimized' or not self.cutlass_library:
+                raise ValueError('CUTLASS requires optimized FP4 and an offline library')
+        elif self.cutlass_library is not None or self.cutlass_small_library is not None:
+            raise ValueError('A CUTLASS library requires the cutlass-fused backend')
         if self.kernel_variant not in ('optimized','legacy'):
             raise ValueError('Invalid kernel variant')
         if self.precision != 'fp4' and self.attention_backend != 'bf16':

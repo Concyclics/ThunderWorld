@@ -42,6 +42,15 @@ def generation_targets(transformer):
 class JointEngine:
     def __init__(self, transformer, config, table, assets=None):
         self.model=transformer;self.config=config;self.table=table
+        self.cutlass_artifact=None
+        if config.linear_backend=='cutlass-fused':
+            from ..cutlass.artifact import verify_library
+            self.cutlass_artifact=verify_library(config.cutlass_library)
+            if config.cutlass_small_library:
+                small=verify_library(config.cutlass_small_library)
+                if self.cutlass_artifact['tile']!=[128,128,128] or small['tile']!=[128,64,128]:
+                    raise ValueError('Dual-library dispatch requires N128 primary and N64 small-grid kernels')
+                self.cutlass_artifact={'primary':self.cutlass_artifact,'small_grid':small}
         self.forward=transformer.forward
         self.warming=False;self.step=0;self.branch=0;self.steps=35;self.task='i2v'
         self.policy=json.loads(Path(config.ffn_policy).read_text()) if config.ffn_policy else None
@@ -103,7 +112,9 @@ class JointEngine:
         self.shapes[str(key)]=dict(module=name,m=int(shape[0]),n=n,k=int(shape[1]),
             branch=self.branch,phase=phase(self.step,self.steps),task=self.task,w_blocks=list(op.weight_ids),
             repair=spec.key,actual_a=op.na/(op.k//128),actual_w=op.wi.numel()/(op.n//128*(op.k//128)),
-            launch=dict(bm=op.bm,stages=op.num_stages))
+            backend=self.config.linear_backend,
+            launch=(dict(tile=[128,op.tile_n,128],schedule='TMA cooperative + sparse cp.async')
+                    if self.config.linear_backend=='cutlass-fused' else dict(bm=op.bm,stages=op.num_stages)))
 
     def _install_attention(self):
         # Copy processor function globals for this instance; never patch the
@@ -246,6 +257,15 @@ class JointEngine:
                     if (m,spec.key) not in op.ops:raise ValueError('Unobserved repair schedule')
                     native=op.ops[m,spec.key]
                     cost=linear_cost(m,n,k,bm=native.bm,a_blocks=native.na,w_blocks=native.weight_ids,cross=spec.cross)
+                    if self.config.linear_backend=='cutlass-fused':
+                        cost['launch']['bn']=native.tile_n
+                        cost['repair_block']=[128,128]
+                        cost['execution_ctas']=triton.cdiv(m,128)*(n//native.tile_n)
+                        cost['packing']['cutlass_scale_read_bytes']=triton.cdiv(m,16)*16*(k//16)
+                        cost['packing']['cutlass_scale_write_bytes']=triton.cdiv(m,128)*128*(k//16)
+                        cost['packing']['cutlass_alpha_write_bytes']=4
+                        cost['cutlass_extra_weight_scale_bytes']=n*(k//16)
+                        cost['cutlass_fp32_gmem_scratch_bytes']=0
                     sparse=op.asset.get('selector')=='residual_sensitivity' and 0<native.na<k//128
                     cost['packing']['implementation']='selected_codes' if sparse else 'legacy_full_plane'
                     cost['packing']['residual_write_bytes']=cost['packing']['selected_residual_write_bytes'] if sparse else cost['packing']['residual_allocation_bytes']

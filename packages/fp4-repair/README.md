@@ -127,3 +127,19 @@ y = attention(q, k, v, step=step_index)
 - 有效输入须有限且幅度在 BF16/FP32 数值范围内。构造线性层时避免 `.to(dtype=...)` 转换 packed buffers 的 FP8 scale 类型，只移动设备。
 
 验证命令与结果见 [VALIDATION.md](VALIDATION.md)。
+
+### Experimental CUTLASS repair fusion (SM120)
+
+`tw-cosmos` accepts `--linear-backend cutlass-fused --cutlass-library PATH.so` and
+an optional `--cutlass-small-library N64.so`. Build N128/N64 binaries offline with
+`python -m thunderworld_fp4.cutlass.build --tile-n 128 --output PATH.so` (or64).
+The backend fuses dense FP4 and selected A/W repair into the same FP32 accumulator
+and writes BF16 once. It retains the existing FP4 attention implementation.
+Device-bound exclusive tuning compares only bitwise-equivalent tile candidates;
+shared calibration never tunes or contributes formal latency results.
+
+This backend changes accumulation order relative to Triton and remains
+experimental: complete development outputs show small quality changes, and the
+FP8 quality target has not passed. See the
+[CUTLASS report and 5090 handoff](../../experiments/cutlass_fused_repair/README.md)
+for source builds, verified offline weight reconstruction, measurements and limits.

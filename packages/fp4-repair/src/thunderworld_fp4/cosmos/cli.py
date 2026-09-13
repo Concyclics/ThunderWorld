@@ -45,6 +45,9 @@ def main():
     p.add_argument('--resource-mode',choices=['exclusive','shared-calibration'])
     p.add_argument('--compute-budget',type=float)
     p.add_argument('--budget-plan',type=Path)
+    p.add_argument('--linear-backend',choices=['triton','cutlass-fused'])
+    p.add_argument('--cutlass-library',type=Path)
+    p.add_argument('--cutlass-small-library',type=Path)
     p.add_argument('--debug',choices=['off','timing','trace'])
     p.add_argument('--execution',choices=['graph','eager'])
     p.add_argument('--attention-policy',type=Path,help='Independent RepairPolicy JSON')
@@ -74,6 +77,11 @@ def main():
     config=RunConfig.from_dict(json.loads(a.config.read_text()))
     config=policy_overrides(config,attention_policy=a.attention_policy,ffn_policy=a.ffn_policy,
                             ffn_policy_mode=a.ffn_policy_mode,projection_config=a.projection_config)
+    backend_updates={}
+    if a.linear_backend is not None:backend_updates['linear_backend']=a.linear_backend
+    if a.cutlass_library is not None:backend_updates['cutlass_library']=str(a.cutlass_library.resolve())
+    if a.cutlass_small_library is not None:backend_updates['cutlass_small_library']=str(a.cutlass_small_library.resolve())
+    if backend_updates:config=replace(config,**backend_updates)
     for field in ('debug','execution','resource_mode','compute_budget','budget_plan'):
         if getattr(a,field) is not None:config=replace(config,**{field:str(getattr(a,field)) if field=='budget_plan' else getattr(a,field)})
     if config.resource_mode=='shared-calibration':

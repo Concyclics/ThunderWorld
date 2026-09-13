@@ -247,14 +247,16 @@ class CosmosRunner:
         scratch={}
         for op in self.engine.linears.values():
             if hasattr(op,'ops'):
-                for native in op.ops.values():
-                    for name in ('wc','ws','wg','wr','wrs','wi','off','d','wloc'):
+                for native in (v for prepared in op.ops.values() for v in getattr(prepared,'tuning_variants',(prepared,))):
+                    for name in ('wc','ws','wg','wr','wrs','wi','off','d','wloc','w0_scales'):
                         value=getattr(native,name,None)
                         if value is None:continue
                         storage=value.untyped_storage()
                         storages[storage.data_ptr()]=storage.nbytes()
-                    for name in ('am','union','ai'):
-                        storage=getattr(native,name).untyped_storage()
+                    for name in ('am','union','ai','workspace'):
+                        value=getattr(native,name,None)
+                        if value is None:continue
+                        storage=value.untyped_storage()
                         scratch[storage.data_ptr()]=storage.nbytes()
             else:
                 for value in op.buffers():
@@ -266,7 +268,8 @@ class CosmosRunner:
                 if value.is_cuda:
                     storage=value.untyped_storage();model_state[storage.data_ptr()]=storage.nbytes()
         return dict(config=self.config.to_dict(),model_identity=self.identity,environment=self.table.identity,
-            asset_identity=self.asset_identity,
+            asset_identity=self.asset_identity,cutlass_artifact=self.engine.cutlass_artifact,
+            experimental_backend=self.config.linear_backend=='cutlass-fused',
             ffn_policy_identity=None if self.engine.policy is None else hashlib.sha256(
                 json.dumps(self.engine.policy,sort_keys=True).encode()).hexdigest(),
             timings={**self.timings,'graph_capture_seconds':self.engine.graph_capture_seconds},

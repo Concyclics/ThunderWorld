@@ -121,6 +121,20 @@ class RepairLinear(torch.nn.Module):
         op.na=na
         op.weight_ids=tuple(ids.tolist())
         op.am=op.union=torch.full((mb,k//128),op.na==k//128,device='cuda',dtype=torch.bool)
+        if getattr(getattr(self.controller,'config',None),'linear_backend','triton')=='cutlass-fused':
+            from ..cutlass.backend import CutlassFused
+            config=self.controller.config
+            libraries=[config.cutlass_library]
+            small=getattr(config,'cutlass_small_library',None)
+            if small:libraries.append(small)
+            variants=[CutlassFused(op,m,library) for library in libraries]
+            scales=next(iter(self.ops.values())).w0_scales if self.ops else variants[0].w0_scales
+            for wrapped in variants:wrapped.w0_scales=scales
+            # Topology proposes the default; only exclusive --tune measures choices.
+            if small and triton.cdiv(m,128)*(n//128)<torch.cuda.get_device_properties(c.device).multi_processor_count:
+                variants.reverse()
+            for wrapped in variants:wrapped.tuning_variants=tuple(variants)
+            op=variants[0]
         self.ops[key]=op;self.bound=op
 
     def _compute(self, x, factor=None, packed=None):
@@ -155,12 +169,26 @@ class RepairLinear(torch.nn.Module):
             tune_spec=dict(repair=spec.key,activation_scale=self.asset.get('activation_scale',(1.,1.)),
                 identity_prescale=bool((self.asset['prescale']==1).all()),
                 kernel_variant=getattr(getattr(c,'config',None),'kernel_variant','optimized'))
-            tune_key=c.table.key('linear',[len(flat),self.out_features,self.in_features],tune_spec)
-            def apply(v):
-                self.bound.bm=v['bm'];self.bound.num_stages=v['stages']
-            c.table.search(tune_key,[dict(bm=b,stages=s) for b,s in
-                [(128,2),(32,2),(32,3),(64,2),(64,3),(128,3)]],apply,lambda:self._compute(flat))
-            apply(c.table.get(tune_key,dict(bm=128,stages=2)))
+            if getattr(getattr(c,'config',None),'linear_backend','triton')=='cutlass-fused':
+                # The table binds compiled binaries and the device. N64/N128
+                # candidates are admitted only after bitwise output verification.
+                variants=self.bound.tuning_variants
+                tune_spec['artifact']=[v.artifact for v in variants]
+                tune_key=c.table.key('cutlass-linear',[len(flat),self.out_features,self.in_features],tune_spec)
+                launches=[dict(tile=[128,v.tile_n,128],schedule='cooperative_sparse_v1') for v in variants]
+                def apply(v):
+                    if v not in launches:raise ValueError('Unsupported CUTLASS launch profile')
+                    self.bound=variants[launches.index(v)]
+                c.table.search(tune_key,launches,apply,lambda:self._compute(flat))
+                apply(c.table.get(tune_key,launches[0]))
+                self.ops[key]=self.bound
+            else:
+                tune_key=c.table.key('linear',[len(flat),self.out_features,self.in_features],tune_spec)
+                def apply(v):
+                    self.bound.bm=v['bm'];self.bound.num_stages=v['stages']
+                c.table.search(tune_key,[dict(bm=b,stages=s) for b,s in
+                    [(128,2),(32,2),(32,3),(64,2),(64,3),(128,3)]],apply,lambda:self._compute(flat))
+                apply(c.table.get(tune_key,dict(bm=128,stages=2)))
             c.record_linear(self.name,flat.shape,self.out_features,spec,self.bound)
         elif key not in self.ops: raise RuntimeError(f'Unwarmed projection {self.name}: {key}')
         else: self.bound=self.ops[key]
