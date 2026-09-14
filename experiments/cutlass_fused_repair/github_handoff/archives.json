@@ -1,0 +1,10 @@
+{
+  "cutlass-5090-core.tar.gz": {
+    "bytes": 13867527,
+    "sha256": "325572ea67ec64e2ed9d6eedb95d5a432f927938ada9fa1ad9b474d649dea703"
+  },
+  "cutlass-5090-panels.tar.gz": {
+    "bytes": 228433695,
+    "sha256": "9a9280f18bae4d695c54241e56efa65c096e2d57e7ad7977e407ddbc0b4403f1"
+  }
+}

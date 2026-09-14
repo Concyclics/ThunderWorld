@@ -80,4 +80,4 @@ CUTLASS 1.25的LPIPS比原实现高约2.60%；1.5高约0.82%，且L2退化。不
 
 [5090交接说明](README_5090.md)包含离线构建、两tile正确性检查、sanitizer、实际面板、原模型下载、资产重建、统一推理、设备专属调优和复测命令。两档全部168个资产均已从小配方逐字节重建并用于完整推理，无需传输约1.8 GiB量化权重。可选面板包含真实M416/M960四阶段数据，和核心代码/配方分包。
 
-完整请求receipt以`.json.gz`保留；质量JSON、算子原始samples、编译manifest、测试日志和计数器摘要均有SHA256索引。未推送或合并到远端。
+完整请求receipt以`.json.gz`保留；质量JSON、算子原始samples、编译manifest、测试日志和计数器摘要均有SHA256索引。以上结果冻结于24322c0；GitHub分支和Release交接入口见[发布索引](github_handoff/README.md)，本次同步不合并main。

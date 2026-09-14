@@ -1,0 +1,10 @@
+{
+  "commit": "24322c069a0614e981ff586827e8f0009364dd4b",
+  "archive_sha256_verified": true,
+  "extracted_core_files_verified": 539,
+  "panel_capsules_verified": 3,
+  "portable_config_entry_verified": true,
+  "model_weights_included": false,
+  "compiled_libraries_included": false,
+  "profiles_from_pro6000_reused_on_5090": false
+}

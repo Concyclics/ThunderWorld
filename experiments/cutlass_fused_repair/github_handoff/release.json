@@ -1,0 +1,25 @@
+{
+  "repository": "Concyclics/ThunderWorld",
+  "tag": "cutlass-5090-handoff-20260914",
+  "branch": "feat/joint-inference-runtime",
+  "source_commit": "24322c069a0614e981ff586827e8f0009364dd4b",
+  "release_url": "https://github.com/Concyclics/ThunderWorld/releases/tag/cutlass-5090-handoff-20260914",
+  "files": {
+    "cutlass-5090-core.tar.gz": {
+      "bytes": 13867527,
+      "sha256": "325572ea67ec64e2ed9d6eedb95d5a432f927938ada9fa1ad9b474d649dea703"
+    },
+    "cutlass-5090-panels.tar.gz": {
+      "bytes": 228433695,
+      "sha256": "9a9280f18bae4d695c54241e56efa65c096e2d57e7ad7977e407ddbc0b4403f1"
+    },
+    "archives.json": {
+      "bytes": 288,
+      "sha256": "bb709184397aa165d80b3dd1fcd5da3aa4be9a7dcc178b8e1452a331b160c708"
+    },
+    "verification.json": {
+      "bytes": 332,
+      "sha256": "997b7301875bc3b1605791afb77817b4d9a9cd1fc208c3442f7edf3c238325fb"
+    }
+  }
+}

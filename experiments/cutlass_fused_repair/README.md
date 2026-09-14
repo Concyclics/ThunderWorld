@@ -1,5 +1,7 @@
 # CUTLASS sparse repair integration
 
+GitHub同步入口：[下载交接包并校验](github_handoff/README.md)。
+
 The packaged experimental backend is `thunderworld_fp4.cutlass`. It implements
 `A0W0 + selected(A1)W0 + A0 selected(W1) + optional selected(A1)selected(W1)` in one CUTLASS GEMM launch. The output is BF16 after a single epilogue; all terms share FP32 registers. No FP32 intermediate is written to global memory. W1 remains an offline compact support union. A1 and its mask consume current request inputs.
 

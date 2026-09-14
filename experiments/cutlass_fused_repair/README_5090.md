@@ -1,5 +1,7 @@
 # 5090 CUTLASS 复测交接
 
+GitHub同步入口：[下载交接包并校验](github_handoff/README.md)。
+
 这是可运行的实验后端。PRO 6000 结果不代表5090性能；N64/N128尚不是已证明最优的内核集合。Attention继续使用现有流式FP4路径，本次CUTLASS融合覆盖生成投影/FFN的GEMM与稀疏修复。
 
 ## 包含什么
