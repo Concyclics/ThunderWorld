@@ -1,0 +1,915 @@
+{
+  "complete": true,
+  "scope": "Edge I2V; 5 isolated randomized rounds x 3 seeds; full request including fresh AR prefill; exact output equality across each base/candidate and all repeats",
+  "common": {
+    "environment": {
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "sm": 170,
+      "capability": [
+        12,
+        0
+      ],
+      "hardware": "GPU-3d9b02f0-891b-c57f-93f4-870d99e35702, 616.92, 460.00",
+      "cuda": "13.0",
+      "torch": "2.11.0+cu130",
+      "triton": "3.6.0",
+      "kernels": {
+        "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+        "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+        "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+        "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+        "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+        "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+        "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+        "cosmos/engine.py": "2ffa45209b3d4deb7aa4ff29757c2b6f273409f361aa42a5a4691e166fa71269",
+        "cosmos/linears.py": "0e988f8c358c968104c7c9e078975cac3c2372582c4f7c6a39fc4a29a222a15b",
+        "cosmos/settings.py": "33506c818bf5431a1c7d9c33a319f61dc4c89890c80f4fb3a80b5b5885af5b24",
+        "cosmos/tuning.py": "14ad2ccf8938ef032fae6797fd8d9edf924d7265aa04744076242c21772b5340",
+        "cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+        "cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+        "cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c",
+        "cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+        "cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14",
+        "cutlass/packing.py": "ff8bc3a60c61d3d4604e2e7deaf69c5994bcac66426d84491863f0461174839c"
+      }
+    },
+    "source_sha256": {
+      "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+      "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+      "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+      "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+      "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+      "linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+      "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+      "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+      "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+      "head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+      "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+      "runtime.py": "0844d11313929037ad2cbc47fe6550daf6383e71be5488d373ed4bfa965da264",
+      "config.py": "ce4940f20b63fb2cd57bf3f80edc3f88a6ddbf37b6f851457ac86eaca293773c",
+      "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+      "cosmos/trees.py": "1bb368d61ba9147b59e6088cc9af8dc7cf6a87bc19b287cd2c848baf9cc6e6d5",
+      "cosmos/norm_fusion.py": "b54c38a2ee5087df68a3eaf76f54667f2baf188ec3604b9c4d9e4c283315d265",
+      "cosmos/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "cosmos/diagnostics.py": "358941666076b9ff517bf25b7ca6eb7dfd5329a35880e18abd4e7bf095151fdb",
+      "cosmos/allocation.py": "6b49160bc275c553b10fca3095287e159304a84a4fc6c0843df6f460af6b87ba",
+      "cosmos/__init__.py": "095c38bf617115576d3723cfedd70a36a12fdc63bd99792c57eb5ca8a985f88b",
+      "cosmos/budget.py": "4b78de6b1f7b96dcb046fd4ce45b485b4a5244b9e7f12be248e8ccbc210c9afb",
+      "cosmos/runner.py": "27f6a26397375219be932b2fa3249e3cae04243fd13fc204933aedb6e4eb9f28",
+      "cosmos/scheduler.py": "dcebbdae0d83c24aeb95d3fafa034ff8696b1bdaa3ebe77ea8a6b64164a69033",
+      "cosmos/codec_graph.py": "43e5926a9e4797ecf1071b7f168bc5468e0ded56c2fea6c0b7450d30b640944e",
+      "cosmos/tuning.py": "14ad2ccf8938ef032fae6797fd8d9edf924d7265aa04744076242c21772b5340",
+      "cosmos/resources.py": "0b62f0836070239d390b2d8521052929af486ace0c62c1c103b5c234508a143c",
+      "cosmos/ar_cache.py": "26ec06b70b111ee6cbf2b2a406d4eb3b5fcf45fa44219f00955c7ea7e2e07469",
+      "cosmos/cli.py": "d7a2526dc67537255d16d2a87ce6c61709fe19e378297e98ba43cddbe0c3bf00",
+      "cosmos/linears.py": "0e988f8c358c968104c7c9e078975cac3c2372582c4f7c6a39fc4a29a222a15b",
+      "cosmos/calibration.py": "5561458c2e5dd973f7767072ec5b681f4494e2e86e798dc4ce7a8ebe1be5452c",
+      "cosmos/settings.py": "33506c818bf5431a1c7d9c33a319f61dc4c89890c80f4fb3a80b5b5885af5b24",
+      "cosmos/cohorts.py": "00c7e7e47f6e141343f88cd60697cfd6dcd4a5f5fb2e0d38e67a0c5209e18e53",
+      "cosmos/engine.py": "2ffa45209b3d4deb7aa4ff29757c2b6f273409f361aa42a5a4691e166fa71269",
+      "cosmos/quality.py": "3eaf3cae07ae45f9348669e236c2fd393ba8034556237a29d83bd385bb672cc0",
+      "cosmos/assets.py": "031c5cfed4f87b97338c79c63fc15008fc8af3500666de341fc20367c1268017",
+      "cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+      "cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+      "cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+      "cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14",
+      "cutlass/packing.py": "ff8bc3a60c61d3d4604e2e7deaf69c5994bcac66426d84491863f0461174839c",
+      "cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c"
+    },
+    "model_identity": {
+      "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+      "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+    },
+    "case": {
+      "id": "robot_observe",
+      "task": "i2v",
+      "prompt": "A stationary camera observes a robot arm moving smoothly toward an object on the table. The lighting and background remain unchanged.",
+      "split": "development",
+      "image": "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_inputs/robot_153.jpg"
+    },
+    "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+  },
+  "rows": [
+    {
+      "name": "bf16_ar",
+      "n": 15,
+      "median_seconds": 2.4044797380011005,
+      "p90_seconds": 2.445631777998642,
+      "same_precision_speedup": 1.1161073048724452,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.1263062985900676,
+          1.1117357756281443,
+          1.1017703770939196,
+          1.1343998386306366,
+          1.13007427009955
+        ],
+        "median": 1.1263062985900676,
+        "ci95": [
+          1.1017703770939196,
+          1.1343998386306366
+        ]
+      },
+      "fair_bf16_speedup": 1.0,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "peak_allocated_bytes": 8828704256,
+      "peak_reserved_bytes": 9315549184,
+      "ar_cache": {
+        "enabled": true,
+        "slots": 2,
+        "total_prefills": 10,
+        "last_request_prefills": 2,
+        "calls": 284,
+        "prefill_graphs": 2,
+        "capture_seconds": 0.0471327739978733,
+        "buffer_bytes": 16744448,
+        "scope": "Fresh graphed AR prefill per request and CFG branch; stable K/V/output buffers; prefill and input copies included in request timing"
+      },
+      "model_bytes": 8158137016
+    },
+    {
+      "name": "joint125_ar",
+      "n": 15,
+      "median_seconds": 1.8467023949997383,
+      "p90_seconds": 1.8991470248016413,
+      "same_precision_speedup": 1.1374249200566797,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.1468786378353677,
+          1.1353433342847747,
+          1.1330849263754332,
+          1.1086480182256562,
+          1.1975651586272877
+        ],
+        "median": 1.1353433342847747,
+        "ci95": [
+          1.1086480182256562,
+          1.1975651586272877
+        ]
+      },
+      "fair_bf16_speedup": 1.3020396488961294,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.2867017422191693,
+          1.2990573712091655,
+          1.305598787255445,
+          1.2879068600547527,
+          1.2985905790142775
+        ],
+        "median": 1.2985905790142775,
+        "ci95": [
+          1.2867017422191693,
+          1.305598787255445
+        ]
+      },
+      "peak_allocated_bytes": 7062018560,
+      "peak_reserved_bytes": 7547650048,
+      "ar_cache": {
+        "enabled": true,
+        "slots": 2,
+        "total_prefills": 12,
+        "last_request_prefills": 2,
+        "calls": 288,
+        "prefill_graphs": 2,
+        "capture_seconds": 0.06679337799869245,
+        "buffer_bytes": 16744448,
+        "scope": "Fresh graphed AR prefill per request and CFG branch; stable K/V/output buffers; prefill and input copies included in request timing"
+      },
+      "model_bytes": 6315078536
+    },
+    {
+      "name": "cutlass150_original",
+      "n": 15,
+      "median_seconds": 2.2539750910000294,
+      "p90_seconds": 2.2741844374009816,
+      "same_precision_speedup": 1.0,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "fair_bf16_speedup": 1.190633122218819,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.1706942944774463,
+          1.1889179373728997,
+          1.2017837093588317,
+          1.2035576041015652,
+          1.2084409621737935
+        ],
+        "median": 1.2017837093588317,
+        "ci95": [
+          1.1706942944774463,
+          1.2084409621737935
+        ]
+      },
+      "peak_allocated_bytes": 7149492224,
+      "peak_reserved_bytes": 7566524416,
+      "ar_cache": {
+        "enabled": false
+      },
+      "model_bytes": 6419578168
+    },
+    {
+      "name": "cutlass150_ar",
+      "n": 15,
+      "median_seconds": 1.94980681800007,
+      "p90_seconds": 2.0070925542000624,
+      "same_precision_speedup": 1.1559991842227462,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.1966044764750936,
+          1.1579880228966621,
+          1.1175965362068396,
+          1.1527597350475374,
+          1.1273295840608861
+        ],
+        "median": 1.1527597350475374,
+        "ci95": [
+          1.1175965362068396,
+          1.1966044764750936
+        ]
+      },
+      "fair_bf16_speedup": 1.2331887014670466,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.2440262666151833,
+          1.22939759570254,
+          1.2104938915411703,
+          1.2307581735925595,
+          1.2173090603723684
+        ],
+        "median": 1.22939759570254,
+        "ci95": [
+          1.2104938915411703,
+          1.2440262666151833
+        ]
+      },
+      "peak_allocated_bytes": 7170866176,
+      "peak_reserved_bytes": 7608467456,
+      "ar_cache": {
+        "enabled": true,
+        "slots": 2,
+        "total_prefills": 12,
+        "last_request_prefills": 2,
+        "calls": 288,
+        "prefill_graphs": 2,
+        "capture_seconds": 0.05205179900076473,
+        "buffer_bytes": 16744448,
+        "scope": "Fresh graphed AR prefill per request and CFG branch; stable K/V/output buffers; prefill and input copies included in request timing"
+      },
+      "model_bytes": 6419578168
+    },
+    {
+      "name": "joint125_original",
+      "n": 15,
+      "median_seconds": 2.100485324001056,
+      "p90_seconds": 2.1762524718011265,
+      "same_precision_speedup": 1.0,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "fair_bf16_speedup": 1.2776368248500374,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.243710160004379,
+          1.2723741749936313,
+          1.2911933718424298,
+          1.277974706189709,
+          1.2403834599613355
+        ],
+        "median": 1.2723741749936313,
+        "ci95": [
+          1.2403834599613355,
+          1.2911933718424298
+        ]
+      },
+      "peak_allocated_bytes": 7038416384,
+      "peak_reserved_bytes": 7455375360,
+      "ar_cache": {
+        "enabled": false
+      },
+      "model_bytes": 6315078536
+    },
+    {
+      "name": "bf16_original",
+      "n": 15,
+      "median_seconds": 2.6836574000008113,
+      "p90_seconds": 2.7337397210016205,
+      "same_precision_speedup": 1.0,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "fair_bf16_speedup": 1.0,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "peak_allocated_bytes": 8812966400,
+      "peak_reserved_bytes": 9206497280,
+      "ar_cache": {
+        "enabled": false
+      },
+      "model_bytes": 8158137016
+    }
+  ],
+  "samples": [
+    {
+      "name": "bf16_ar",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 2.44030840099731
+    },
+    {
+      "name": "bf16_ar",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 2.3522048109989555
+    },
+    {
+      "name": "bf16_ar",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 2.365529996000987
+    },
+    {
+      "name": "joint125_ar",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.8276271240029018
+    },
+    {
+      "name": "joint125_ar",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.8280886190004821
+    },
+    {
+      "name": "joint125_ar",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.8806059960006678
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 2.27359823200095
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 2.2745752410010027
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 2.3200404190029076
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.9304448949988
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.9008580409972637
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.901511293999647
+    },
+    {
+      "name": "joint125_original",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 2.088108561001718
+    },
+    {
+      "name": "joint125_original",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 2.1410392409998167
+    },
+    {
+      "name": "joint125_original",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 2.156826842998271
+    },
+    {
+      "name": "bf16_original",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 2.6747574979999627
+    },
+    {
+      "name": "bf16_original",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 2.662832256999536
+    },
+    {
+      "name": "bf16_original",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 2.664311333999649
+    },
+    {
+      "name": "joint125_ar",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.8290041420004854
+    },
+    {
+      "name": "joint125_ar",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.8553988780004147
+    },
+    {
+      "name": "joint125_ar",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.904104647001077
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 2.2611085349999485
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 2.253799734000495
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 2.2564164260002144
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.9408376300016243
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.9463066019998223
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.9771499679991393
+    },
+    {
+      "name": "bf16_original",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 2.642145616999187
+    },
+    {
+      "name": "bf16_original",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 2.6795829309994588
+    },
+    {
+      "name": "bf16_original",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 2.767114309997851
+    },
+    {
+      "name": "bf16_ar",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 2.3837404060031986
+    },
+    {
+      "name": "bf16_ar",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 2.410269588999654
+    },
+    {
+      "name": "bf16_ar",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 2.430703417001496
+    },
+    {
+      "name": "joint125_original",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 2.076547660999495
+    },
+    {
+      "name": "joint125_original",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 2.118112394997297
+    },
+    {
+      "name": "joint125_original",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 2.0785628439989523
+    },
+    {
+      "name": "bf16_ar",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 2.44918069599953
+    },
+    {
+      "name": "bf16_ar",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.3964901409999584
+    },
+    {
+      "name": "bf16_ar",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 2.4044797380011005
+    },
+    {
+      "name": "bf16_original",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 2.6984347390025505
+    },
+    {
+      "name": "bf16_original",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.6288506149976456
+    },
+    {
+      "name": "bf16_original",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 2.6679020409974328
+    },
+    {
+      "name": "joint125_ar",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.90002110000205
+    },
+    {
+      "name": "joint125_ar",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.8355486879991076
+    },
+    {
+      "name": "joint125_ar",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.8152015560008294
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.94980681800007
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.012225465001393
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.9863625539983332
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 2.191035944997566
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.2134236759993655
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 2.2199519099995086
+    },
+    {
+      "name": "joint125_original",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 2.0898765420024574
+    },
+    {
+      "name": "joint125_original",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.079832549999992
+    },
+    {
+      "name": "joint125_original",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 2.0589416090006125
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.9324516659980873
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.9356186949989933
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.961052964998089
+    },
+    {
+      "name": "bf16_ar",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 2.3783806829997047
+    },
+    {
+      "name": "bf16_ar",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 2.3650907880000887
+    },
+    {
+      "name": "bf16_ar",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 2.4704009289998794
+    },
+    {
+      "name": "bf16_original",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 2.698034662997088
+    },
+    {
+      "name": "bf16_original",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 2.688025995998032
+    },
+    {
+      "name": "bf16_original",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 2.6836574000008113
+    },
+    {
+      "name": "joint125_ar",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.8467023949997383
+    },
+    {
+      "name": "joint125_ar",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.8972192440014624
+    },
+    {
+      "name": "joint125_ar",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.8978359120010282
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 2.2417162700003246
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 2.2313032940000994
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 2.2457479179975053
+    },
+    {
+      "name": "joint125_original",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 2.078436289997626
+    },
+    {
+      "name": "joint125_original",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 2.103348355001799
+    },
+    {
+      "name": "joint125_original",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 2.100485324001056
+    },
+    {
+      "name": "bf16_ar",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 2.421831048999593
+    },
+    {
+      "name": "bf16_ar",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 2.4338794429968402
+    },
+    {
+      "name": "bf16_ar",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.36933638699702
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 2.2647767170019506
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 2.2539750910000294
+    },
+    {
+      "name": "cutlass150_original",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.256698396999127
+    },
+    {
+      "name": "joint125_ar",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.876772081002855
+    },
+    {
+      "name": "joint125_ar",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.7936794909983291
+    },
+    {
+      "name": "joint125_ar",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.8245445680004195
+    },
+    {
+      "name": "joint125_original",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 2.1631146720028482
+    },
+    {
+      "name": "joint125_original",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 2.2001872470027592
+    },
+    {
+      "name": "joint125_original",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.1850110049999785
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.9885646289985743
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.9993931879980664
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.0126165190013126
+    },
+    {
+      "name": "bf16_original",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 2.7368489550026425
+    },
+    {
+      "name": "bf16_original",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 2.729075870000088
+    },
+    {
+      "name": "bf16_original",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.6937865510008123
+    }
+  ]
+}

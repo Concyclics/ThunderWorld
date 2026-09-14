@@ -1,0 +1,14 @@
+{
+  "ar_comparison.png": "bfbb0b4df9709817e5575d1aef010909a31da4b3a386177ae4deaad79a834403",
+  "ar_comparison.svg": "6238e0f404806d4318bf94ff5b333964a798592b3b6f8fe221a5f0d5b87064bf",
+  "ar_kernel_breakdown.png": "ff120e4166fd17ccc9be0e928249b61d0873638eba803b47d8dc23b231fad6fc",
+  "ar_kernel_breakdown.svg": "065c9ba517c184b0ced98e14d9c8326033f049ee37c946bae90920a31d5d1d3a",
+  "optimized_breakdown.json": "f354473b00c05f107f9135fd4d6bfaea9b3026bee922f4329ad9741b82b6a943",
+  "optimized_trace.json.xz": "c622d923448b1ae210c01a500a55cc589aa789bcc5ed06f9fba3109a1f26d5d7",
+  "performance_matrix.json": "ec1639ef16f7279aea3f58221f2dfb26f2b9ae7a7786b6b2850ff63c06359cb8",
+  "profile_receipt.json.xz": "511a3771f3517f45f8911763313ee0559b64737cc17cb710f4c73668e20a86c8",
+  "receipts.json.xz": "67645b8d08efa9d8ffad78a31359ea43cf5e3c683c33cfe48e2ba4d2c001ffc2",
+  "summary.json": "4a3f912d3a27929dabe629dd1a51d9764830e296270bd7feea726f3c47d73f5b",
+  "trace_comparison.json": "3f80c4a92f8b7de9e11ee58f635c8484a1228c5054d088bf60a46a74ed8f34c5",
+  "validation.json.xz": "7e628d52af97d8804c9d1fee34497ec1dab23271986d0b519b3e152269bd99f3"
+}

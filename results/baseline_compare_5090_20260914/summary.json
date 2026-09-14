@@ -1,0 +1,1318 @@
+{
+  "complete": true,
+  "common": {
+    "model_identity": {
+      "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+      "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+    },
+    "case": {
+      "id": "robot_observe",
+      "task": "i2v",
+      "prompt": "A stationary camera observes a robot arm moving smoothly toward an object on the table. The lighting and background remain unchanged.",
+      "split": "development",
+      "image": "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_inputs/robot_153.jpg"
+    },
+    "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d",
+    "environment": {
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "sm": 170,
+      "capability": [
+        12,
+        0
+      ],
+      "hardware": "GPU-3d9b02f0-891b-c57f-93f4-870d99e35702, 616.92, 460.00",
+      "cuda": "13.0",
+      "torch": "2.11.0+cu130",
+      "triton": "3.6.0",
+      "kernels": {
+        "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+        "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+        "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+        "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+        "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+        "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+        "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+        "cosmos/engine.py": "2ffa45209b3d4deb7aa4ff29757c2b6f273409f361aa42a5a4691e166fa71269",
+        "cosmos/linears.py": "0e988f8c358c968104c7c9e078975cac3c2372582c4f7c6a39fc4a29a222a15b",
+        "cosmos/settings.py": "33506c818bf5431a1c7d9c33a319f61dc4c89890c80f4fb3a80b5b5885af5b24",
+        "cosmos/tuning.py": "14ad2ccf8938ef032fae6797fd8d9edf924d7265aa04744076242c21772b5340",
+        "cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+        "cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+        "cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c",
+        "cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+        "cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14",
+        "cutlass/packing.py": "ff8bc3a60c61d3d4604e2e7deaf69c5994bcac66426d84491863f0461174839c"
+      }
+    },
+    "source_sha256": {
+      "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+      "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+      "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+      "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+      "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+      "linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+      "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+      "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+      "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+      "head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+      "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+      "runtime.py": "0844d11313929037ad2cbc47fe6550daf6383e71be5488d373ed4bfa965da264",
+      "config.py": "ce4940f20b63fb2cd57bf3f80edc3f88a6ddbf37b6f851457ac86eaca293773c",
+      "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+      "cosmos/trees.py": "1bb368d61ba9147b59e6088cc9af8dc7cf6a87bc19b287cd2c848baf9cc6e6d5",
+      "cosmos/norm_fusion.py": "b54c38a2ee5087df68a3eaf76f54667f2baf188ec3604b9c4d9e4c283315d265",
+      "cosmos/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "cosmos/diagnostics.py": "358941666076b9ff517bf25b7ca6eb7dfd5329a35880e18abd4e7bf095151fdb",
+      "cosmos/allocation.py": "6b49160bc275c553b10fca3095287e159304a84a4fc6c0843df6f460af6b87ba",
+      "cosmos/__init__.py": "095c38bf617115576d3723cfedd70a36a12fdc63bd99792c57eb5ca8a985f88b",
+      "cosmos/budget.py": "4b78de6b1f7b96dcb046fd4ce45b485b4a5244b9e7f12be248e8ccbc210c9afb",
+      "cosmos/runner.py": "b577dad6fcda8ee32a1de752d1f2a7973708f499016a50a2864f7dc86085d29c",
+      "cosmos/scheduler.py": "dcebbdae0d83c24aeb95d3fafa034ff8696b1bdaa3ebe77ea8a6b64164a69033",
+      "cosmos/pipeline_tuning.py": "4519e1a291799f05f8197397e5a2f46dc19a8cd56ffeb41a9972b9738b0567e3",
+      "cosmos/calibrated_fusion.py": "52deaad87a0e8a21a2b64c9f8ac6eebb8e257e43fc09e0543a7dd5c0d8c9ae8e",
+      "cosmos/codec_graph.py": "43e5926a9e4797ecf1071b7f168bc5468e0ded56c2fea6c0b7450d30b640944e",
+      "cosmos/tuning.py": "14ad2ccf8938ef032fae6797fd8d9edf924d7265aa04744076242c21772b5340",
+      "cosmos/resources.py": "0b62f0836070239d390b2d8521052929af486ace0c62c1c103b5c234508a143c",
+      "cosmos/ar_cache.py": "5273922e7f5751a49793f0f825bba65699e665ca6eac306dd7e2ec0c754a7a09",
+      "cosmos/cli.py": "2feb7ca37705ed69d3ed5b6ea21a2d049d4566268d05a984fcd6c605453caa52",
+      "cosmos/linears.py": "0e988f8c358c968104c7c9e078975cac3c2372582c4f7c6a39fc4a29a222a15b",
+      "cosmos/calibration.py": "5561458c2e5dd973f7767072ec5b681f4494e2e86e798dc4ce7a8ebe1be5452c",
+      "cosmos/settings.py": "33506c818bf5431a1c7d9c33a319f61dc4c89890c80f4fb3a80b5b5885af5b24",
+      "cosmos/cohorts.py": "00c7e7e47f6e141343f88cd60697cfd6dcd4a5f5fb2e0d38e67a0c5209e18e53",
+      "cosmos/engine.py": "2ffa45209b3d4deb7aa4ff29757c2b6f273409f361aa42a5a4691e166fa71269",
+      "cosmos/quality.py": "3eaf3cae07ae45f9348669e236c2fd393ba8034556237a29d83bd385bb672cc0",
+      "cosmos/assets.py": "031c5cfed4f87b97338c79c63fc15008fc8af3500666de341fc20367c1268017",
+      "cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+      "cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+      "cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+      "cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14",
+      "cutlass/packing.py": "ff8bc3a60c61d3d4604e2e7deaf69c5994bcac66426d84491863f0461174839c",
+      "cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c"
+    }
+  },
+  "fp4_backend": "fp4_cutlass",
+  "rows": [
+    {
+      "name": "bf16_original",
+      "label": "Original BF16",
+      "n": 15,
+      "median_seconds": 2.9017076999989513,
+      "p90_seconds": 2.941721083001903,
+      "peak_allocated_bytes": 8812966400,
+      "peak_reserved_bytes": 9206497280,
+      "speedups": {
+        "bf16_original": {
+          "ratio_of_medians": 1.0,
+          "paired_median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "fp8_original": {
+          "ratio_of_medians": 0.8823531584519251,
+          "paired_median": 0.8821660050703665,
+          "ci95": [
+            0.8620269993059597,
+            0.8941395375168674
+          ]
+        },
+        "fp4_original": {
+          "ratio_of_medians": 0.7404763053836829,
+          "paired_median": 0.7452537686374971,
+          "ci95": [
+            0.7009233266087099,
+            0.7554152780441917
+          ]
+        },
+        "bf16_tuned": {
+          "ratio_of_medians": 0.7437034919129423,
+          "paired_median": 0.7427752573901998,
+          "ci95": [
+            0.6783978733769968,
+            0.7512905980035598
+          ]
+        },
+        "fp8_tuned": {
+          "ratio_of_medians": 0.6231196381359791,
+          "paired_median": 0.6310260512910321,
+          "ci95": [
+            0.5745154897360888,
+            0.6396159879509304
+          ]
+        },
+        "fp4_tuned": {
+          "ratio_of_medians": 0.466292618653094,
+          "paired_median": 0.4674185529836928,
+          "ci95": [
+            0.4278996501883445,
+            0.47719845940963745
+          ]
+        }
+      },
+      "resident_model_state_bytes": 8158137016,
+      "linear_backend": "torch_bf16",
+      "asset_identity": null
+    },
+    {
+      "name": "fp8_original",
+      "label": "Original FP8",
+      "n": 15,
+      "median_seconds": 2.5603309539983456,
+      "p90_seconds": 2.591735455401067,
+      "peak_allocated_bytes": 7403897344,
+      "peak_reserved_bytes": 7954497536,
+      "speedups": {
+        "bf16_original": {
+          "ratio_of_medians": 1.1333330542551516,
+          "paired_median": 1.1335734932567874,
+          "ci95": [
+            1.1183936712798987,
+            1.1600564724830265
+          ]
+        },
+        "fp8_original": {
+          "ratio_of_medians": 1.0,
+          "paired_median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "fp4_original": {
+          "ratio_of_medians": 0.8392062727840598,
+          "paired_median": 0.8401489443487566,
+          "ci95": [
+            0.808039702144656,
+            0.847679819029867
+          ]
+        },
+        "bf16_tuned": {
+          "ratio_of_medians": 0.8428637499499163,
+          "paired_median": 0.8385421620434075,
+          "ci95": [
+            0.7821344316683883,
+            0.8599392225562461
+          ]
+        },
+        "fp8_tuned": {
+          "ratio_of_medians": 0.7062020826550142,
+          "paired_median": 0.7013628130492242,
+          "ci95": [
+            0.65111619251459,
+            0.7204445393061476
+          ]
+        },
+        "fp4_tuned": {
+          "ratio_of_medians": 0.5284648376747437,
+          "paired_median": 0.5277963634274961,
+          "ci95": [
+            0.4933315136222113,
+            0.5469613276839523
+          ]
+        }
+      },
+      "resident_model_state_bytes": 6748851544,
+      "linear_backend": "vllm_native_cutlass_w8a8",
+      "asset_identity": "b34bd0dd415e037c06a9d0012b16611c7754ab4836e981e0bb7b1681675e7407"
+    },
+    {
+      "name": "fp4_original",
+      "label": "Original FP4 (no repair)",
+      "n": 15,
+      "median_seconds": 2.1486457969986077,
+      "p90_seconds": 2.19850739619942,
+      "peak_allocated_bytes": 6847232512,
+      "peak_reserved_bytes": 7411335168,
+      "speedups": {
+        "bf16_original": {
+          "ratio_of_medians": 1.3504821055440026,
+          "paired_median": 1.3418248146912966,
+          "ci95": [
+            1.3237751857349913,
+            1.4266895707955936
+          ]
+        },
+        "fp8_original": {
+          "ratio_of_medians": 1.1916021512595567,
+          "paired_median": 1.1902651389690815,
+          "ci95": [
+            1.1796907010768014,
+            1.2375629530898706
+          ]
+        },
+        "fp4_original": {
+          "ratio_of_medians": 1.0,
+          "paired_median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "bf16_tuned": {
+          "ratio_of_medians": 1.0043582576590173,
+          "paired_median": 0.9893069133286364,
+          "ci95": [
+            0.9678631707968708,
+            1.0227065336081014
+          ]
+        },
+        "fp8_tuned": {
+          "ratio_of_medians": 0.8415119209156942,
+          "paired_median": 0.8341989178268738,
+          "ci95": [
+            0.808750157618036,
+            0.8527117877433601
+          ]
+        },
+        "fp4_tuned": {
+          "ratio_of_medians": 0.6297198374382571,
+          "paired_median": 0.6264673091685091,
+          "ci95": [
+            0.6104799682707939,
+            0.654247377332071
+          ]
+        }
+      },
+      "resident_model_state_bytes": 6136662904,
+      "linear_backend": "triton",
+      "asset_identity": "ef5b68c1e71cc701fa3d5272a3e8031e8ba64724bee9b4f705e28b0af5992d49"
+    },
+    {
+      "name": "bf16_tuned",
+      "label": "Tuned BF16",
+      "n": 15,
+      "median_seconds": 2.1580101489998924,
+      "p90_seconds": 2.1756951063987797,
+      "peak_allocated_bytes": 8308237824,
+      "peak_reserved_bytes": 9506390016,
+      "speedups": {
+        "bf16_original": {
+          "ratio_of_medians": 1.3446218968635146,
+          "paired_median": 1.3463022496381742,
+          "ci95": [
+            1.3310428782914994,
+            1.4740612246057023
+          ]
+        },
+        "fp8_original": {
+          "ratio_of_medians": 1.1864313776211408,
+          "paired_median": 1.1925458793427188,
+          "ci95": [
+            1.162872879582595,
+            1.2785525857324525
+          ]
+        },
+        "fp4_original": {
+          "ratio_of_medians": 0.995660654327495,
+          "paired_median": 1.010808664659368,
+          "ci95": [
+            0.9777976058019372,
+            1.0332038971755377
+          ]
+        },
+        "bf16_tuned": {
+          "ratio_of_medians": 1.0,
+          "paired_median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "fp8_tuned": {
+          "ratio_of_medians": 0.8378603098033072,
+          "paired_median": 0.8372692700813291,
+          "ci95": [
+            0.8229109288545996,
+            0.8598422861011638
+          ]
+        },
+        "fp4_tuned": {
+          "ratio_of_medians": 0.6269872653867788,
+          "paired_median": 0.6321121908346827,
+          "ci95": [
+            0.6206590218521049,
+            0.6390794739794967
+          ]
+        }
+      },
+      "resident_model_state_bytes": 8158137016,
+      "linear_backend": "torch_bf16",
+      "asset_identity": null
+    },
+    {
+      "name": "fp8_tuned",
+      "label": "Tuned FP8",
+      "n": 15,
+      "median_seconds": 1.808111051999731,
+      "p90_seconds": 1.8633221166004659,
+      "peak_allocated_bytes": 6899037696,
+      "peak_reserved_bytes": 8355053568,
+      "speedups": {
+        "bf16_original": {
+          "ratio_of_medians": 1.6048282525510402,
+          "paired_median": 1.584720627546319,
+          "ci95": [
+            1.5634380922897086,
+            1.740597108111677
+          ]
+        },
+        "fp8_original": {
+          "ratio_of_medians": 1.416025277411294,
+          "paired_median": 1.4257955816796581,
+          "ci95": [
+            1.388031896199934,
+            1.5358241915901858
+          ]
+        },
+        "fp4_original": {
+          "ratio_of_medians": 1.1883372952243463,
+          "paired_median": 1.1987548516666091,
+          "ci95": [
+            1.1727291851405355,
+            1.2364758022987479
+          ]
+        },
+        "bf16_tuned": {
+          "ratio_of_medians": 1.1935163753427538,
+          "paired_median": 1.1943588947231563,
+          "ci95": [
+            1.163003978944048,
+            1.2151983464260083
+          ]
+        },
+        "fp8_tuned": {
+          "ratio_of_medians": 1.0,
+          "paired_median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "fp4_tuned": {
+          "ratio_of_medians": 0.7483195683704935,
+          "paired_median": 0.7575383958216,
+          "ci95": [
+            0.7346764969983697,
+            0.7764857337939464
+          ]
+        }
+      },
+      "resident_model_state_bytes": 6748851544,
+      "linear_backend": "vllm_native_cutlass_w8a8",
+      "asset_identity": "b34bd0dd415e037c06a9d0012b16611c7754ab4836e981e0bb7b1681675e7407"
+    },
+    {
+      "name": "fp4_tuned",
+      "label": "Tuned FP4 (no repair)",
+      "n": 15,
+      "median_seconds": 1.3530448819983576,
+      "p90_seconds": 1.3878807786015386,
+      "peak_allocated_bytes": 6414224896,
+      "peak_reserved_bytes": 7828668416,
+      "speedups": {
+        "bf16_original": {
+          "ratio_of_medians": 2.144576088055055,
+          "paired_median": 2.139410157377488,
+          "ci95": [
+            2.0955641835833725,
+            2.3369965354256297
+          ]
+        },
+        "fp8_original": {
+          "ratio_of_medians": 1.8922734848358516,
+          "paired_median": 1.8946701214574984,
+          "ci95": [
+            1.8282828225432137,
+            2.027034503953848
+          ]
+        },
+        "fp4_original": {
+          "ratio_of_medians": 1.588007778297199,
+          "paired_median": 1.596252486545977,
+          "ci95": [
+            1.5284738382565013,
+            1.6380553858835623
+          ]
+        },
+        "bf16_tuned": {
+          "ratio_of_medians": 1.594928725359542,
+          "paired_median": 1.5819976493089525,
+          "ci95": [
+            1.564750615088731,
+            1.6111906293022311
+          ]
+        },
+        "fp8_tuned": {
+          "ratio_of_medians": 1.3363274759439396,
+          "paired_median": 1.3200651023311294,
+          "ci95": [
+            1.2878536674639882,
+            1.3611433114924039
+          ]
+        },
+        "fp4_tuned": {
+          "ratio_of_medians": 1.0,
+          "paired_median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "resident_model_state_bytes": 6225775480,
+      "linear_backend": "cutlass-fused",
+      "asset_identity": "ef5b68c1e71cc701fa3d5272a3e8031e8ba64724bee9b4f705e28b0af5992d49"
+    },
+    {
+      "name": "thunder125",
+      "label": "ThunderWorld 1.25",
+      "n": 15,
+      "median_seconds": 1.5677213880007912,
+      "p90_seconds": 1.6048421008010336,
+      "peak_allocated_bytes": 6520785408,
+      "peak_reserved_bytes": 7904165888,
+      "speedups": {
+        "bf16_original": {
+          "ratio_of_medians": 1.8509077711182484,
+          "paired_median": 1.8502595414762149,
+          "ci95": [
+            1.8220906780251465,
+            1.9876535854347392
+          ]
+        },
+        "fp8_original": {
+          "ratio_of_medians": 1.6331543178493992,
+          "paired_median": 1.6283579726731976,
+          "ci95": [
+            1.6001706890778598,
+            1.7305337166824615
+          ]
+        },
+        "fp4_original": {
+          "ratio_of_medians": 1.370553347963588,
+          "paired_median": 1.3754070065083939,
+          "ci95": [
+            1.3377684266584948,
+            1.3929034111250582
+          ]
+        },
+        "bf16_tuned": {
+          "ratio_of_medians": 1.3765265725894424,
+          "paired_median": 1.3555633783660677,
+          "ci95": [
+            1.3465227691355235,
+            1.3815824770625618
+          ]
+        },
+        "fp8_tuned": {
+          "ratio_of_medians": 1.1533369805622748,
+          "paired_median": 1.160327772058853,
+          "ci95": [
+            1.1159649738214759,
+            1.1633567978039892
+          ]
+        },
+        "fp4_tuned": {
+          "ratio_of_medians": 0.8630646314800897,
+          "paired_median": 0.8585397250101757,
+          "ci95": [
+            0.852273081063192,
+            0.882941002700432
+          ]
+        }
+      },
+      "resident_model_state_bytes": 6316110728,
+      "linear_backend": "cutlass-fused",
+      "asset_identity": "a808e0565f98ac5ba68923f1a451aa6371cbf65c24efe4c584d2c01f4ca05160"
+    },
+    {
+      "name": "thunder150",
+      "label": "ThunderWorld 1.50",
+      "n": 15,
+      "median_seconds": 1.6823675600026036,
+      "p90_seconds": 1.7090213900009985,
+      "peak_allocated_bytes": 6634077184,
+      "peak_reserved_bytes": 7939817472,
+      "speedups": {
+        "bf16_original": {
+          "ratio_of_medians": 1.724776302744723,
+          "paired_median": 1.7140314859852146,
+          "ci95": [
+            1.6940507756757621,
+            1.8379234885529443
+          ]
+        },
+        "fp8_original": {
+          "ratio_of_medians": 1.5218618183498398,
+          "paired_median": 1.5147177770928164,
+          "ci95": [
+            1.4775414185797697,
+            1.6213536215217423
+          ]
+        },
+        "fp4_original": {
+          "ratio_of_medians": 1.277155984269741,
+          "paired_median": 1.27861425850884,
+          "ci95": [
+            1.2415581827933735,
+            1.310118097405588
+          ]
+        },
+        "bf16_tuned": {
+          "ratio_of_medians": 1.2827221591199445,
+          "paired_median": 1.2806851155626797,
+          "ci95": [
+            1.265214606194464,
+            1.2898948280874813
+          ]
+        },
+        "fp8_tuned": {
+          "ratio_of_medians": 1.074741985631804,
+          "paired_median": 1.0623667211174856,
+          "ci95": [
+            1.045587185437719,
+            1.1119497834696939
+          ]
+        },
+        "fp4_tuned": {
+          "ratio_of_medians": 0.8042504587976386,
+          "paired_median": 0.8083984203141751,
+          "ci95": [
+            0.7922885852360431,
+            0.8169233717576103
+          ]
+        }
+      },
+      "resident_model_state_bytes": 6420610360,
+      "linear_backend": "cutlass-fused",
+      "asset_identity": "ceb5efe8e526d3a9ae4be3bbadbc55b5cb3939a62c376013c6f02bb87abd98ea"
+    }
+  ],
+  "samples": [
+    {
+      "name": "bf16_tuned",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 2.009908825999446
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.969774139997753
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.9432509139987815
+    },
+    {
+      "name": "fp4_original",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 2.0472702989973186
+    },
+    {
+      "name": "fp4_original",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 2.0351783180012717
+    },
+    {
+      "name": "fp4_original",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 2.0316303510007856
+    },
+    {
+      "name": "thunder125",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.4780441830007476
+    },
+    {
+      "name": "thunder125",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.4553081489975739
+    },
+    {
+      "name": "thunder125",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.4592523930004972
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.6557301770008053
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.6398099690013623
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.6663754279979912
+    },
+    {
+      "name": "thunder150",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.5626608800012036
+    },
+    {
+      "name": "thunder150",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.5262543249991722
+    },
+    {
+      "name": "thunder150",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.6109617729998718
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.2237872309997329
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.242435594998824
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.276346623999416
+    },
+    {
+      "name": "fp8_original",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 2.533625877000304
+    },
+    {
+      "name": "fp8_original",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 2.518459820003045
+    },
+    {
+      "name": "fp8_original",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 2.5603309539983456
+    },
+    {
+      "name": "bf16_original",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 2.872051135997026
+    },
+    {
+      "name": "bf16_original",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 2.903567681001732
+    },
+    {
+      "name": "bf16_original",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 2.9004882510016614
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.7668069399987871
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.7770856210008787
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.7892826520001108
+    },
+    {
+      "name": "fp4_original",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 2.1486457969986077
+    },
+    {
+      "name": "fp4_original",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 2.1302900100017723
+    },
+    {
+      "name": "fp4_original",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 2.096993973998906
+    },
+    {
+      "name": "fp8_original",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 2.5480124290006643
+    },
+    {
+      "name": "fp8_original",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 2.5481447800011665
+    },
+    {
+      "name": "fp8_original",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 2.528473248999944
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.3130023800003983
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.3937366520003707
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.3893524530030845
+    },
+    {
+      "name": "thunder150",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.730604193002364
+    },
+    {
+      "name": "thunder150",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.6844113979968824
+    },
+    {
+      "name": "thunder150",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.7112706400002935
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 2.1974340950000624
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 2.147829058001662
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 2.1743333199992776
+    },
+    {
+      "name": "bf16_original",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 2.9474206330014567
+    },
+    {
+      "name": "bf16_original",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 2.9817743499988865
+    },
+    {
+      "name": "bf16_original",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 2.9331717580025725
+    },
+    {
+      "name": "thunder125",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.5677213880007912
+    },
+    {
+      "name": "thunder125",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.5924206069976208
+    },
+    {
+      "name": "thunder125",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.6040071269999316
+    },
+    {
+      "name": "fp8_original",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 2.5907987570026307
+    },
+    {
+      "name": "fp8_original",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.5708665649981413
+    },
+    {
+      "name": "fp8_original",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 2.564242929001921
+    },
+    {
+      "name": "fp4_original",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 2.2028494410005806
+    },
+    {
+      "name": "fp4_original",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.1701380260019505
+    },
+    {
+      "name": "fp4_original",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 2.131029000000126
+    },
+    {
+      "name": "thunder125",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.5814803979992575
+    },
+    {
+      "name": "thunder125",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.55396625800131
+    },
+    {
+      "name": "thunder125",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.5501669309996942
+    },
+    {
+      "name": "bf16_original",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 2.8653508809984487
+    },
+    {
+      "name": "bf16_original",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.8752408959990134
+    },
+    {
+      "name": "bf16_original",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 2.883488501996908
+    },
+    {
+      "name": "thunder150",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.705647515002056
+    },
+    {
+      "name": "thunder150",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.6972578019995126
+    },
+    {
+      "name": "thunder150",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.6989090389979538
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.808111051999731
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.8031102060012927
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.8291789229988353
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.3462842749977426
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.3720605260023149
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.3856732669992198
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 2.1580101489998924
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.14693255200109
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 2.166337801001646
+    },
+    {
+      "name": "bf16_original",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 2.8799208689997613
+    },
+    {
+      "name": "bf16_original",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 2.8477659029995266
+    },
+    {
+      "name": "bf16_original",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 2.915620318999572
+    },
+    {
+      "name": "fp4_original",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 2.146271880999848
+    },
+    {
+      "name": "fp4_original",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 2.1705498580013227
+    },
+    {
+      "name": "fp4_original",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 2.167619454998203
+    },
+    {
+      "name": "thunder125",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.5665813609994075
+    },
+    {
+      "name": "thunder125",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.493423748001078
+    },
+    {
+      "name": "thunder125",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.5759840139980952
+    },
+    {
+      "name": "fp8_original",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 2.531936979998136
+    },
+    {
+      "name": "fp8_original",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 2.557891941996786
+    },
+    {
+      "name": "fp8_original",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 2.5662661339993065
+    },
+    {
+      "name": "thunder150",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.6823675600026036
+    },
+    {
+      "name": "thunder150",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.697620586000994
+    },
+    {
+      "name": "thunder150",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.6813390950010216
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.8198804469975585
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.8100747859971307
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.8164891630003694
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.3372614350009826
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.292384858999867
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.3530448819983576
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 2.154583093000838
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 2.1663135390008392
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 2.1695399889977125
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.3650452109977778
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.3682381389990041
+    },
+    {
+      "name": "fp4_tuned",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.3732127889998083
+    },
+    {
+      "name": "fp4_original",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 2.219229035999888
+    },
+    {
+      "name": "fp4_original",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 2.177968451000197
+    },
+    {
+      "name": "fp4_original",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.19199432899768
+    },
+    {
+      "name": "thunder150",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.6741661939995538
+    },
+    {
+      "name": "thunder150",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.6698805670021102
+    },
+    {
+      "name": "thunder150",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.6809566679985437
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 2.1594983149989275
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 2.176602963998448
+    },
+    {
+      "name": "bf16_tuned",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.1443584199987527
+    },
+    {
+      "name": "bf16_original",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 2.9030355760005477
+    },
+    {
+      "name": "bf16_original",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 2.930365467000229
+    },
+    {
+      "name": "bf16_original",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.9017076999989513
+    },
+    {
+      "name": "thunder125",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.6156502169978921
+    },
+    {
+      "name": "thunder125",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.6053987500017683
+    },
+    {
+      "name": "thunder125",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.5925155289987742
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.8568279680002888
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.867651549000584
+    },
+    {
+      "name": "fp8_tuned",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.8691394030029187
+    },
+    {
+      "name": "fp8_original",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 2.5753008169995155
+    },
+    {
+      "name": "fp8_original",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 2.5923599210000248
+    },
+    {
+      "name": "fp8_original",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.638203132999479
+    }
+  ],
+  "scope": "120 full resident requests: eight configurations, five randomized isolated process rounds, three seeds. Original baselines already use transformer graphs and host scheduler; recent pipeline flags disabled. Native FP8 DM projections/BF16 attention; plain FP4 has no repair. Same-family tuned outputs exact; cross-precision quality is separate."
+}

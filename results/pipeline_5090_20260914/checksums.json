@@ -1,0 +1,12 @@
+{
+  "baseline_trace.json.xz": "8de63240555c1a94b519357b48351f9b890e55ac3863afe4bf2b8e44dfae1de5",
+  "breakdown.json": "1c117b5d99830dd354ea10d3af9a6a6a3419d8cfa6217bff06e2f84b4f7f93b4",
+  "codec_pilot_partial.json": "e823c27ae96cac9f5402e76d4880435ccbf634a70fe523a3eee882dd6fe53874",
+  "codec_pilot_partial.log": "3dc09e9ebc85aef82a5cc02b65d4af213422f088450719a1d2af1c20ecefb9bc",
+  "pipeline_breakdown.png": "1f1cf7a28ea4a9da5c458c4fb9882de7d62de00c46547712c77b11c11d983c44",
+  "pipeline_breakdown.svg": "17880c5d27b732b0e0be4a1cd11f8c86bb331552a6307117bb955262d5f6ffc5",
+  "profile_receipt.json.xz": "cc0c2b5fdfce38cdec8e4baf01528045dbd0de968f20e36c56508ee12bdbd333",
+  "profile_receipt_summary.json": "7378d47660914ea4b54f81527b7c8c376b8507f6747f397fb342fbe6bf5faf7b",
+  "source_roles.json": "d6b8e8a1081917f82f3152108a0fe05fe635d611345794db0f322de6384c2087",
+  "validation_status.json": "3f2fd5136ae91c699115c7e6166c48a2e9ed239d8e3bb81bec0b48d2da55ebd8"
+}

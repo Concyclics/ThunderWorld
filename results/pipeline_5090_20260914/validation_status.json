@@ -1,0 +1,16 @@
+{
+  "complete": false,
+  "baseline_profile_complete": true,
+  "baseline_output_equal": true,
+  "cpu_regressions": {
+    "passed": 45,
+    "gpu_dependent_skipped": 15
+  },
+  "new_gpu_regression_status": "blocked_before_execution",
+  "codec_pilot": "component equality/timing completed; final request failed on import; import fixed and CPU-checked",
+  "e2e_candidates": "not run",
+  "norm_fusion": "GPU correctness and performance not yet measured",
+  "blocker": "Automatic approval review failed: Selected model is at capacity. Please try a different model.",
+  "defaults_changed": false,
+  "toolkit_modified": false
+}

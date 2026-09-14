@@ -1,0 +1,1068 @@
+{
+  "complete": true,
+  "scope": "Edge I2V; 5 isolated randomized rounds x 3 seeds; full request including fresh AR prefill; exact output equality across each base/candidate and all repeats",
+  "common": {
+    "environment": {
+      "gpu": "NVIDIA GeForce RTX 5090",
+      "sm": 170,
+      "capability": [
+        12,
+        0
+      ],
+      "hardware": "GPU-3d9b02f0-891b-c57f-93f4-870d99e35702, 616.92, 460.00",
+      "cuda": "13.0",
+      "torch": "2.11.0+cu130",
+      "triton": "3.6.0",
+      "kernels": {
+        "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+        "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+        "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+        "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+        "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+        "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+        "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+        "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+        "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+        "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+        "cosmos/engine.py": "2ffa45209b3d4deb7aa4ff29757c2b6f273409f361aa42a5a4691e166fa71269",
+        "cosmos/linears.py": "0e988f8c358c968104c7c9e078975cac3c2372582c4f7c6a39fc4a29a222a15b",
+        "cosmos/settings.py": "33506c818bf5431a1c7d9c33a319f61dc4c89890c80f4fb3a80b5b5885af5b24",
+        "cosmos/tuning.py": "14ad2ccf8938ef032fae6797fd8d9edf924d7265aa04744076242c21772b5340",
+        "cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+        "cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+        "cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c",
+        "cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+        "cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14",
+        "cutlass/packing.py": "ff8bc3a60c61d3d4604e2e7deaf69c5994bcac66426d84491863f0461174839c"
+      }
+    },
+    "source_sha256": {
+      "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+      "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+      "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+      "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+      "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+      "linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+      "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+      "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+      "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+      "head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+      "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+      "runtime.py": "0844d11313929037ad2cbc47fe6550daf6383e71be5488d373ed4bfa965da264",
+      "config.py": "ce4940f20b63fb2cd57bf3f80edc3f88a6ddbf37b6f851457ac86eaca293773c",
+      "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+      "cosmos/trees.py": "1bb368d61ba9147b59e6088cc9af8dc7cf6a87bc19b287cd2c848baf9cc6e6d5",
+      "cosmos/norm_fusion.py": "b54c38a2ee5087df68a3eaf76f54667f2baf188ec3604b9c4d9e4c283315d265",
+      "cosmos/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "cosmos/diagnostics.py": "358941666076b9ff517bf25b7ca6eb7dfd5329a35880e18abd4e7bf095151fdb",
+      "cosmos/allocation.py": "6b49160bc275c553b10fca3095287e159304a84a4fc6c0843df6f460af6b87ba",
+      "cosmos/__init__.py": "095c38bf617115576d3723cfedd70a36a12fdc63bd99792c57eb5ca8a985f88b",
+      "cosmos/budget.py": "4b78de6b1f7b96dcb046fd4ce45b485b4a5244b9e7f12be248e8ccbc210c9afb",
+      "cosmos/runner.py": "b577dad6fcda8ee32a1de752d1f2a7973708f499016a50a2864f7dc86085d29c",
+      "cosmos/scheduler.py": "dcebbdae0d83c24aeb95d3fafa034ff8696b1bdaa3ebe77ea8a6b64164a69033",
+      "cosmos/pipeline_tuning.py": "4519e1a291799f05f8197397e5a2f46dc19a8cd56ffeb41a9972b9738b0567e3",
+      "cosmos/calibrated_fusion.py": "52deaad87a0e8a21a2b64c9f8ac6eebb8e257e43fc09e0543a7dd5c0d8c9ae8e",
+      "cosmos/codec_graph.py": "43e5926a9e4797ecf1071b7f168bc5468e0ded56c2fea6c0b7450d30b640944e",
+      "cosmos/tuning.py": "14ad2ccf8938ef032fae6797fd8d9edf924d7265aa04744076242c21772b5340",
+      "cosmos/resources.py": "0b62f0836070239d390b2d8521052929af486ace0c62c1c103b5c234508a143c",
+      "cosmos/ar_cache.py": "5273922e7f5751a49793f0f825bba65699e665ca6eac306dd7e2ec0c754a7a09",
+      "cosmos/cli.py": "2feb7ca37705ed69d3ed5b6ea21a2d049d4566268d05a984fcd6c605453caa52",
+      "cosmos/linears.py": "0e988f8c358c968104c7c9e078975cac3c2372582c4f7c6a39fc4a29a222a15b",
+      "cosmos/calibration.py": "5561458c2e5dd973f7767072ec5b681f4494e2e86e798dc4ce7a8ebe1be5452c",
+      "cosmos/settings.py": "33506c818bf5431a1c7d9c33a319f61dc4c89890c80f4fb3a80b5b5885af5b24",
+      "cosmos/cohorts.py": "00c7e7e47f6e141343f88cd60697cfd6dcd4a5f5fb2e0d38e67a0c5209e18e53",
+      "cosmos/engine.py": "2ffa45209b3d4deb7aa4ff29757c2b6f273409f361aa42a5a4691e166fa71269",
+      "cosmos/quality.py": "3eaf3cae07ae45f9348669e236c2fd393ba8034556237a29d83bd385bb672cc0",
+      "cosmos/assets.py": "031c5cfed4f87b97338c79c63fc15008fc8af3500666de341fc20367c1268017",
+      "cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+      "cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+      "cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+      "cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14",
+      "cutlass/packing.py": "ff8bc3a60c61d3d4604e2e7deaf69c5994bcac66426d84491863f0461174839c",
+      "cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c"
+    },
+    "model_identity": {
+      "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+      "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+    },
+    "case": {
+      "id": "robot_observe",
+      "task": "i2v",
+      "prompt": "A stationary camera observes a robot arm moving smoothly toward an object on the table. The lighting and background remain unchanged.",
+      "split": "development",
+      "image": "/home/chenhan/ThunderWorldDev/ThunderWorld/data_local/e2e_inputs/robot_153.jpg"
+    },
+    "image_sha256": "886e6cfa8a0d6c4d96459cfe79b51c56aff4d63e1c523f8366f1771ea9c2788d"
+  },
+  "rows": [
+    {
+      "name": "bf16_best",
+      "n": 15,
+      "median_seconds": 1.9631335019985272,
+      "p90_seconds": 1.98348525399997,
+      "same_precision_speedup": 1.196624881399529,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.1904497146547708,
+          1.1979501417147356,
+          1.2110250028000966,
+          1.2049519691816564,
+          1.213264041349685
+        ],
+        "median": 1.2049519691816564,
+        "ci95": [
+          1.1904497146547708,
+          1.213264041349685
+        ]
+      },
+      "fair_bf16_speedup": 1.0,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "peak_allocated_bytes": 8308237824,
+      "peak_reserved_bytes": 9506390016,
+      "ar_cache": {
+        "enabled": true,
+        "slots": 2,
+        "total_prefills": 10,
+        "last_request_prefills": 2,
+        "calls": 284,
+        "prefill_graphs": 2,
+        "capture_seconds": 0.02786019100312842,
+        "buffer_bytes": 16744448,
+        "scope": "Fresh graphed AR prefill per request and CFG branch; stable K/V/output buffers; prefill and input copies included in request timing"
+      },
+      "codec_graph": {
+        "enabled": true,
+        "captures": 2,
+        "max_graphs": 8,
+        "capture_seconds": 0.25072988299871213,
+        "replays": 10,
+        "keys": [
+          "('encode', ('tensor', (1, 3, 1, 192, 320), (184320, 61440, 61440, 320, 1), 'torch.bfloat16', 'cuda:0'), (('use_tiling', 'True'), ('use_slicing', 'False'), ('tile_sample_min_height', '256'), ('tile_sample_min_width', '256'), ('tile_sample_stride_height', '192'), ('tile_sample_stride_width', '192'), ('spatial_compression_ratio', '16')), 0)",
+          "('decode', ('tensor', (1, 48, 16, 12, 20), (184320, 3840, 240, 20, 1), 'torch.bfloat16', 'cuda:0'), (('use_tiling', 'True'), ('use_slicing', 'False'), ('tile_sample_min_height', '256'), ('tile_sample_min_width', '256'), ('tile_sample_stride_height', '192'), ('tile_sample_stride_width', '192'), ('spatial_compression_ratio', '16')), 0)"
+        ],
+        "scope": "Whole causal codec loop; current-input copies and owned outputs; graph memory retained"
+      },
+      "calibrated_fusion": {
+        "enabled": true,
+        "modules": []
+      },
+      "model_bytes": 8158137016
+    },
+    {
+      "name": "joint125_best",
+      "n": 15,
+      "median_seconds": 1.4144472439984384,
+      "p90_seconds": 1.4373286802016083,
+      "same_precision_speedup": 1.2656651264992418,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.258776198967032,
+          1.249326013211975,
+          1.2852290966888404,
+          1.2526643714730106,
+          1.2678138889578416
+        ],
+        "median": 1.258776198967032,
+        "ci95": [
+          1.249326013211975,
+          1.2852290966888404
+        ]
+      },
+      "fair_bf16_speedup": 1.3879156754189232,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.398378775751198,
+          1.3661098707583115,
+          1.4028757735460509,
+          1.3712174711560945,
+          1.3860320022881831
+        ],
+        "median": 1.3860320022881831,
+        "ci95": [
+          1.3661098707583115,
+          1.4028757735460509
+        ]
+      },
+      "peak_allocated_bytes": 6520785408,
+      "peak_reserved_bytes": 7904165888,
+      "ar_cache": {
+        "enabled": true,
+        "slots": 2,
+        "total_prefills": 12,
+        "last_request_prefills": 2,
+        "calls": 288,
+        "prefill_graphs": 2,
+        "capture_seconds": 0.022309092000796227,
+        "buffer_bytes": 16744448,
+        "scope": "Fresh graphed AR prefill per request and CFG branch; stable K/V/output buffers; prefill and input copies included in request timing"
+      },
+      "codec_graph": {
+        "enabled": true,
+        "captures": 2,
+        "max_graphs": 8,
+        "capture_seconds": 0.3752588499992271,
+        "replays": 12,
+        "keys": [
+          "('encode', ('tensor', (1, 3, 1, 192, 320), (184320, 61440, 61440, 320, 1), 'torch.bfloat16', 'cuda:0'), (('use_tiling', 'True'), ('use_slicing', 'False'), ('tile_sample_min_height', '256'), ('tile_sample_min_width', '256'), ('tile_sample_stride_height', '192'), ('tile_sample_stride_width', '192'), ('spatial_compression_ratio', '16')), 0)",
+          "('decode', ('tensor', (1, 48, 16, 12, 20), (184320, 3840, 240, 20, 1), 'torch.bfloat16', 'cuda:0'), (('use_tiling', 'True'), ('use_slicing', 'False'), ('tile_sample_min_height', '256'), ('tile_sample_min_width', '256'), ('tile_sample_stride_height', '192'), ('tile_sample_stride_width', '192'), ('spatial_compression_ratio', '16')), 0)"
+        ],
+        "scope": "Whole causal codec loop; current-input copies and owned outputs; graph memory retained"
+      },
+      "calibrated_fusion": {
+        "enabled": true,
+        "modules": [
+          "layers.0.mlp_moe_gen",
+          "layers.1.mlp_moe_gen",
+          "layers.2.mlp_moe_gen",
+          "layers.3.mlp_moe_gen",
+          "layers.4.mlp_moe_gen",
+          "layers.5.mlp_moe_gen",
+          "layers.6.mlp_moe_gen",
+          "layers.7.mlp_moe_gen",
+          "layers.8.mlp_moe_gen",
+          "layers.9.mlp_moe_gen",
+          "layers.10.mlp_moe_gen",
+          "layers.11.mlp_moe_gen",
+          "layers.12.mlp_moe_gen",
+          "layers.13.mlp_moe_gen",
+          "layers.14.mlp_moe_gen",
+          "layers.15.mlp_moe_gen",
+          "layers.16.mlp_moe_gen",
+          "layers.17.mlp_moe_gen",
+          "layers.18.mlp_moe_gen",
+          "layers.19.mlp_moe_gen",
+          "layers.20.mlp_moe_gen",
+          "layers.21.mlp_moe_gen",
+          "layers.22.mlp_moe_gen",
+          "layers.23.mlp_moe_gen",
+          "layers.24.mlp_moe_gen",
+          "layers.25.mlp_moe_gen",
+          "layers.26.mlp_moe_gen",
+          "layers.27.mlp_moe_gen"
+        ]
+      },
+      "model_bytes": 6316110728
+    },
+    {
+      "name": "cutlass150_ar",
+      "n": 15,
+      "median_seconds": 1.9271855630031496,
+      "p90_seconds": 1.9677512927977658,
+      "same_precision_speedup": 1.0,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "fair_bf16_speedup": 1.2189456163939678,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.2219736519261242,
+          1.2258402844275647,
+          1.2540793725617183,
+          1.2274280299783153,
+          1.2044848408341762
+        ],
+        "median": 1.2258402844275647,
+        "ci95": [
+          1.2044848408341762,
+          1.2540793725617183
+        ]
+      },
+      "peak_allocated_bytes": 7170866176,
+      "peak_reserved_bytes": 7608467456,
+      "ar_cache": {
+        "enabled": true,
+        "slots": 2,
+        "total_prefills": 12,
+        "last_request_prefills": 2,
+        "calls": 288,
+        "prefill_graphs": 2,
+        "capture_seconds": 0.06083726300494163,
+        "buffer_bytes": 16744448,
+        "scope": "Fresh graphed AR prefill per request and CFG branch; stable K/V/output buffers; prefill and input copies included in request timing"
+      },
+      "codec_graph": {
+        "enabled": false
+      },
+      "calibrated_fusion": {
+        "enabled": false,
+        "modules": []
+      },
+      "model_bytes": 6419578168
+    },
+    {
+      "name": "cutlass150_best",
+      "n": 15,
+      "median_seconds": 1.5247701379994396,
+      "p90_seconds": 1.5569248832012819,
+      "same_precision_speedup": 1.263918747472124,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.2704178487974611,
+          1.245490231076038,
+          1.2660016453121883,
+          1.2489429516274126,
+          1.2866654154557262
+        ],
+        "median": 1.2660016453121883,
+        "ci95": [
+          1.245490231076038,
+          1.2866654154557262
+        ]
+      },
+      "fair_bf16_speedup": 1.2874947200725206,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.2769357903311662,
+          1.274487181017897,
+          1.3083958389593748,
+          1.2722395795680277,
+          1.2758703304948114
+        ],
+        "median": 1.2758703304948114,
+        "ci95": [
+          1.2722395795680277,
+          1.3083958389593748
+        ]
+      },
+      "peak_allocated_bytes": 6634077184,
+      "peak_reserved_bytes": 7939817472,
+      "ar_cache": {
+        "enabled": true,
+        "slots": 2,
+        "total_prefills": 12,
+        "last_request_prefills": 2,
+        "calls": 288,
+        "prefill_graphs": 2,
+        "capture_seconds": 0.02311078999991878,
+        "buffer_bytes": 16744448,
+        "scope": "Fresh graphed AR prefill per request and CFG branch; stable K/V/output buffers; prefill and input copies included in request timing"
+      },
+      "codec_graph": {
+        "enabled": true,
+        "captures": 2,
+        "max_graphs": 8,
+        "capture_seconds": 0.3752911789997597,
+        "replays": 12,
+        "keys": [
+          "('encode', ('tensor', (1, 3, 1, 192, 320), (184320, 61440, 61440, 320, 1), 'torch.bfloat16', 'cuda:0'), (('use_tiling', 'True'), ('use_slicing', 'False'), ('tile_sample_min_height', '256'), ('tile_sample_min_width', '256'), ('tile_sample_stride_height', '192'), ('tile_sample_stride_width', '192'), ('spatial_compression_ratio', '16')), 0)",
+          "('decode', ('tensor', (1, 48, 16, 12, 20), (184320, 3840, 240, 20, 1), 'torch.bfloat16', 'cuda:0'), (('use_tiling', 'True'), ('use_slicing', 'False'), ('tile_sample_min_height', '256'), ('tile_sample_min_width', '256'), ('tile_sample_stride_height', '192'), ('tile_sample_stride_width', '192'), ('spatial_compression_ratio', '16')), 0)"
+        ],
+        "scope": "Whole causal codec loop; current-input copies and owned outputs; graph memory retained"
+      },
+      "calibrated_fusion": {
+        "enabled": true,
+        "modules": [
+          "layers.0.mlp_moe_gen",
+          "layers.1.mlp_moe_gen",
+          "layers.2.mlp_moe_gen",
+          "layers.3.mlp_moe_gen",
+          "layers.4.mlp_moe_gen",
+          "layers.5.mlp_moe_gen",
+          "layers.6.mlp_moe_gen",
+          "layers.7.mlp_moe_gen",
+          "layers.8.mlp_moe_gen",
+          "layers.9.mlp_moe_gen",
+          "layers.10.mlp_moe_gen",
+          "layers.11.mlp_moe_gen",
+          "layers.12.mlp_moe_gen",
+          "layers.13.mlp_moe_gen",
+          "layers.14.mlp_moe_gen",
+          "layers.15.mlp_moe_gen",
+          "layers.16.mlp_moe_gen",
+          "layers.17.mlp_moe_gen",
+          "layers.18.mlp_moe_gen",
+          "layers.19.mlp_moe_gen",
+          "layers.20.mlp_moe_gen",
+          "layers.21.mlp_moe_gen",
+          "layers.22.mlp_moe_gen",
+          "layers.23.mlp_moe_gen",
+          "layers.24.mlp_moe_gen",
+          "layers.25.mlp_moe_gen",
+          "layers.26.mlp_moe_gen",
+          "layers.27.mlp_moe_gen"
+        ]
+      },
+      "model_bytes": 6420610360
+    },
+    {
+      "name": "joint125_ar",
+      "n": 15,
+      "median_seconds": 1.7902165500017873,
+      "p90_seconds": 1.8238942669988318,
+      "same_precision_speedup": 1.0,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "fair_bf16_speedup": 1.3122068355351115,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.339002089991234,
+          1.3060490104028986,
+          1.3269292862562163,
+          1.3005579475893017,
+          1.3079022832205136
+        ],
+        "median": 1.3079022832205136,
+        "ci95": [
+          1.3005579475893017,
+          1.339002089991234
+        ]
+      },
+      "peak_allocated_bytes": 7062018560,
+      "peak_reserved_bytes": 7547650048,
+      "ar_cache": {
+        "enabled": true,
+        "slots": 2,
+        "total_prefills": 12,
+        "last_request_prefills": 2,
+        "calls": 288,
+        "prefill_graphs": 2,
+        "capture_seconds": 0.04986873200323316,
+        "buffer_bytes": 16744448,
+        "scope": "Fresh graphed AR prefill per request and CFG branch; stable K/V/output buffers; prefill and input copies included in request timing"
+      },
+      "codec_graph": {
+        "enabled": false
+      },
+      "calibrated_fusion": {
+        "enabled": false,
+        "modules": []
+      },
+      "model_bytes": 6315078536
+    },
+    {
+      "name": "bf16_ar",
+      "n": 15,
+      "median_seconds": 2.34913439400043,
+      "p90_seconds": 2.3938709252011905,
+      "same_precision_speedup": 1.0,
+      "same_precision_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "fair_bf16_speedup": 1.0,
+      "fair_bf16_paired": {
+        "round_speedups": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "median": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "peak_allocated_bytes": 8828704256,
+      "peak_reserved_bytes": 9315549184,
+      "ar_cache": {
+        "enabled": true,
+        "slots": 2,
+        "total_prefills": 10,
+        "last_request_prefills": 2,
+        "calls": 284,
+        "prefill_graphs": 2,
+        "capture_seconds": 0.04888764200222795,
+        "buffer_bytes": 16744448,
+        "scope": "Fresh graphed AR prefill per request and CFG branch; stable K/V/output buffers; prefill and input copies included in request timing"
+      },
+      "codec_graph": {
+        "enabled": false
+      },
+      "calibrated_fusion": {
+        "enabled": false,
+        "modules": []
+      },
+      "model_bytes": 8158137016
+    }
+  ],
+  "samples": [
+    {
+      "name": "bf16_best",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.9549957099989115
+    },
+    {
+      "name": "bf16_best",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.9982544929989672
+    },
+    {
+      "name": "bf16_best",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.9830222189993947
+    },
+    {
+      "name": "joint125_best",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.4044334390018776
+    },
+    {
+      "name": "joint125_best",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.408249813997827
+    },
+    {
+      "name": "joint125_best",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.4180866110000352
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.947860534000938
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.946704404999764
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 2.037894986999163
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.5332439920020988
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.5595723080004973
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.5529537460024585
+    },
+    {
+      "name": "joint125_ar",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 1.7509109189995797
+    },
+    {
+      "name": "joint125_ar",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 1.7765629409987014
+    },
+    {
+      "name": "joint125_ar",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 1.7850536740006646
+    },
+    {
+      "name": "bf16_ar",
+      "round": 0,
+      "seed": 93001,
+      "seconds": 2.414094195999496
+    },
+    {
+      "name": "bf16_ar",
+      "round": 0,
+      "seed": 93002,
+      "seconds": 2.3788214909982344
+    },
+    {
+      "name": "bf16_ar",
+      "round": 0,
+      "seed": 93003,
+      "seconds": 2.345906908998586
+    },
+    {
+      "name": "joint125_best",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.428140682997764
+    },
+    {
+      "name": "joint125_best",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.43816951700137
+    },
+    {
+      "name": "joint125_best",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.4360674250019656
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.8921178320015315
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.9199970549998397
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.9267315219985903
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.5407895999996981
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.5415593049983727
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.4942640059998666
+    },
+    {
+      "name": "bf16_ar",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 2.329835491000267
+    },
+    {
+      "name": "bf16_ar",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 2.35360973600109
+    },
+    {
+      "name": "bf16_ar",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 2.3428477380002732
+    },
+    {
+      "name": "bf16_best",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.9390853799995966
+    },
+    {
+      "name": "bf16_best",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.9646975729992846
+    },
+    {
+      "name": "bf16_best",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.9815103149994684
+    },
+    {
+      "name": "joint125_ar",
+      "round": 1,
+      "seed": 93001,
+      "seconds": 1.7838805989995308
+    },
+    {
+      "name": "joint125_ar",
+      "round": 1,
+      "seed": 93002,
+      "seconds": 1.7967425889983133
+    },
+    {
+      "name": "joint125_ar",
+      "round": 1,
+      "seed": 93003,
+      "seconds": 1.836631589998433
+    },
+    {
+      "name": "bf16_best",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.9610528060002252
+    },
+    {
+      "name": "bf16_best",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.9698338270027307
+    },
+    {
+      "name": "bf16_best",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.9737390000009327
+    },
+    {
+      "name": "bf16_ar",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 2.3656844399993133
+    },
+    {
+      "name": "bf16_ar",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 2.3962866900001245
+    },
+    {
+      "name": "bf16_ar",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 2.3902472780027892
+    },
+    {
+      "name": "joint125_best",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.3943795999985014
+    },
+    {
+      "name": "joint125_best",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.405110396000964
+    },
+    {
+      "name": "joint125_best",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.4069235759998264
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.5210382760014909
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.5055335460019705
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.4848277429991867
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.925636960000702
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.8807233039988205
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.9059776680005598
+    },
+    {
+      "name": "joint125_ar",
+      "round": 2,
+      "seed": 93001,
+      "seconds": 1.8358979349977744
+    },
+    {
+      "name": "joint125_ar",
+      "round": 2,
+      "seed": 93002,
+      "seconds": 1.805888765000418
+    },
+    {
+      "name": "joint125_ar",
+      "round": 2,
+      "seed": 93003,
+      "seconds": 1.7990022269987094
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.4963546480030345
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.543053315999714
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.5693366949999472
+    },
+    {
+      "name": "bf16_best",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.9837939440003538
+    },
+    {
+      "name": "bf16_best",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.9631335019985272
+    },
+    {
+      "name": "bf16_best",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.939514772999246
+    },
+    {
+      "name": "bf16_ar",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 2.323002796001674
+    },
+    {
+      "name": "bf16_ar",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 2.3654815789996064
+    },
+    {
+      "name": "bf16_ar",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 2.339312111998879
+    },
+    {
+      "name": "joint125_best",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.4551856590005627
+    },
+    {
+      "name": "joint125_best",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.4150480850003078
+    },
+    {
+      "name": "joint125_best",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.4144472439984384
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.9497202019992983
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.9271855630031496
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.8669008190008753
+    },
+    {
+      "name": "joint125_ar",
+      "round": 3,
+      "seed": 93001,
+      "seconds": 1.7902165500017873
+    },
+    {
+      "name": "joint125_ar",
+      "round": 3,
+      "seed": 93002,
+      "seconds": 1.7725803200009977
+    },
+    {
+      "name": "joint125_ar",
+      "round": 3,
+      "seed": 93003,
+      "seconds": 1.7986988709999423
+    },
+    {
+      "name": "bf16_best",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.9625314059994707
+    },
+    {
+      "name": "bf16_best",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.9309988870008965
+    },
+    {
+      "name": "bf16_best",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.9328190650012402
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.929150246000063
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.9473369869992894
+    },
+    {
+      "name": "cutlass150_ar",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.9797720199967443
+    },
+    {
+      "name": "joint125_best",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.3784526080016803
+    },
+    {
+      "name": "joint125_best",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.393184922002547
+    },
+    {
+      "name": "joint125_best",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.4307314899997436
+    },
+    {
+      "name": "joint125_ar",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.7766099629989185
+    },
+    {
+      "name": "joint125_ar",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.7662991940014763
+    },
+    {
+      "name": "joint125_ar",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.8054750010014686
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 1.512637468000321
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 1.513475813997502
+    },
+    {
+      "name": "cutlass150_best",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 1.5247701379994396
+    },
+    {
+      "name": "bf16_ar",
+      "round": 4,
+      "seed": 93001,
+      "seconds": 2.3236322269985976
+    },
+    {
+      "name": "bf16_ar",
+      "round": 4,
+      "seed": 93002,
+      "seconds": 2.34913439400043
+    },
+    {
+      "name": "bf16_ar",
+      "round": 4,
+      "seed": 93003,
+      "seconds": 2.345019870001124
+    }
+  ]
+}

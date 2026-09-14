@@ -1,0 +1,154 @@
+{
+  "complete": true,
+  "scope": "Separate CUPTI diagnostic samples; kernel counts and instrumented durations, not formal end-to-end timing or a utilization measurement.",
+  "rows": [
+    {
+      "category": "Other elementwise / reductions (incl. RoPE / residual)",
+      "before_ms": 208.40524600000614,
+      "after_ms": 162.217762000006,
+      "before_count": 101224,
+      "after_count": 57442
+    },
+    {
+      "category": "Layout / casts / copies",
+      "before_ms": 234.70352399998478,
+      "after_ms": 203.67684399999865,
+      "before_count": 71994,
+      "after_count": 49158
+    },
+    {
+      "category": "VAE convolution",
+      "before_ms": 533.4607599999996,
+      "after_ms": 543.235499,
+      "before_count": 1578,
+      "after_count": 1578
+    },
+    {
+      "category": "Normalization core",
+      "before_ms": 88.51187399999336,
+      "after_ms": 65.02792699999985,
+      "before_count": 42956,
+      "after_count": 25820
+    },
+    {
+      "category": "Nonlinear activation / clipping",
+      "before_ms": 33.449974000000246,
+      "after_ms": 30.53221,
+      "before_count": 10489,
+      "after_count": 6681
+    },
+    {
+      "category": "BF16 / FP32 GEMM + reduction",
+      "before_ms": 176.85877499999825,
+      "after_ms": 22.640223999999982,
+      "before_count": 20190,
+      "after_count": 1152
+    },
+    {
+      "category": "Attention incl. softmax / repair",
+      "before_ms": 138.94007900000003,
+      "after_ms": 126.97011900000017,
+      "before_count": 5928,
+      "after_count": 4024
+    },
+    {
+      "category": "Other kernels",
+      "before_ms": 0.5680770000000006,
+      "after_ms": 0.602996,
+      "before_count": 440,
+      "after_count": 442
+    },
+    {
+      "category": "Activation quantization / residual packing",
+      "before_ms": 107.09091799998862,
+      "after_ms": 110.20556799999706,
+      "before_count": 51214,
+      "after_count": 51214
+    },
+    {
+      "category": "FP4 GEMM incl. fused repair",
+      "before_ms": 275.81532699999775,
+      "after_ms": 280.95746399999956,
+      "before_count": 11760,
+      "after_count": 11760
+    },
+    {
+      "category": "Repair selection / support",
+      "before_ms": 6.876313000000127,
+      "after_ms": 7.0554730000000365,
+      "before_count": 6084,
+      "after_count": 6084
+    }
+  ],
+  "before_stages": [
+    {
+      "stage": "request_other",
+      "kernels": 4136,
+      "kernel_ms": 4.556852,
+      "kernel_union_ms": 4.5569560546875,
+      "gpu_annotation_span_ms": null
+    },
+    {
+      "stage": "video_encode",
+      "kernels": 7815,
+      "kernel_ms": 123.784925,
+      "kernel_union_ms": 123.7848603515625,
+      "gpu_annotation_span_ms": 157.754374
+    },
+    {
+      "stage": "transformer",
+      "kernels": 290888,
+      "kernel_ms": 1088.028661,
+      "kernel_union_ms": 1088.030125,
+      "gpu_annotation_span_ms": 1259.746547
+    },
+    {
+      "stage": "video_decode",
+      "kernels": 21018,
+      "kernel_ms": 588.310429,
+      "kernel_union_ms": 588.310169921875,
+      "gpu_annotation_span_ms": 661.944109
+    }
+  ],
+  "after_stages": [
+    {
+      "stage": "request_other",
+      "kernels": 4136,
+      "kernel_ms": 4.5867070000000005,
+      "kernel_union_ms": 4.5868466796875,
+      "gpu_annotation_span_ms": null
+    },
+    {
+      "stage": "video_encode",
+      "kernels": 7815,
+      "kernel_ms": 124.99169400000001,
+      "kernel_union_ms": 124.9915693359375,
+      "gpu_annotation_span_ms": 202.10500399999998
+    },
+    {
+      "stage": "ar_prefill",
+      "kernels": 3218,
+      "kernel_ms": 8.082152,
+      "kernel_union_ms": 8.0822568359375,
+      "gpu_annotation_span_ms": 10.927150000000001
+    },
+    {
+      "stage": "transformer",
+      "kernels": 179168,
+      "kernel_ms": 817.155643,
+      "kernel_union_ms": 817.156072265625,
+      "gpu_annotation_span_ms": 925.429547
+    },
+    {
+      "stage": "video_decode",
+      "kernels": 21018,
+      "kernel_ms": 598.30589,
+      "kernel_union_ms": 598.305568359375,
+      "gpu_annotation_span_ms": 681.061838
+    }
+  ],
+  "before_kernel_count": 323857,
+  "after_kernel_count": 215355,
+  "before_graph_launches": 70,
+  "after_graph_launches": 72
+}

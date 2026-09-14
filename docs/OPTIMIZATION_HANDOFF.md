@@ -1,5 +1,9 @@
 # ThunderWorld optimization and repair-budget handoff
 
+**Fresh baseline comparison:** [Original and tuned BF16 / FP8 / unrepaired FP4 versus ThunderWorld, including the current FP8 quality gap](ORIGINAL_BASELINE_COMPARISON_5090_20260914.md).
+
+**Latest Edge I2V follow-up (2026-09-14):** [Validated pipeline flags, BF16/FP4 timing, quality gates and reproduction](NEXT_PIPELINE_TUNING_5090_20260914.md). These new measurements cover Edge I2V; the older Edge/Nano audit below retains its original scope.
+
 **Release audit: 2026-09-11 · RTX 5090 / SM120 · Cosmos3-Edge and Cosmos3-Nano**
 
 The compute implementation is ready as an **optimized research baseline**. It is

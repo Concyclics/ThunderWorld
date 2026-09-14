@@ -1,0 +1,17 @@
+{
+  "local_time": "2026-09-14 20:07:37 Asia/Singapore",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "temperature_c": 57,
+  "sm_clock_mhz": 2910,
+  "memory_clock_mhz": 14001,
+  "power_draw_w": 306.31,
+  "power_limit_w": 460,
+  "pstate": "P0",
+  "gpu_utilization_percent": 7,
+  "cpu_load_1_5_15_min": [
+    1.19,
+    1.08,
+    0.78
+  ],
+  "scope": "Single read-only spot check during the multi-process suite, not per-request telemetry or an energy measurement. No clock/power setting changes."
+}

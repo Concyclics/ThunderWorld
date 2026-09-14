@@ -1,0 +1,106 @@
+{
+  "complete": true,
+  "trace_sha256": "c8f11dbfab74ad274734f941d72d1aaf47f7eeb163d39fe1558dabf4a61c22ac",
+  "method": "Source-order inference, verified sequence lengths on all 70 Transformer calls; split-K attached to preceding source GEMM. Codec classification uses External id -> aten::cudnn_convolution.",
+  "roles": {
+    "vision_proj_in": {
+      "count": 70,
+      "kernel_ms": 0.8789309999999998
+    },
+    "FP32_time_embed_linear1": {
+      "count": 70,
+      "kernel_ms": 1.6068820000000006
+    },
+    "FP32_time_embed_linear2": {
+      "count": 70,
+      "kernel_ms": 10.086490999999999
+    },
+    "FP32_rotary_frequency": {
+      "count": 70,
+      "kernel_ms": 0.08902599999999994
+    },
+    "AR_Q": {
+      "count": 1960,
+      "kernel_ms": 17.67142200000002
+    },
+    "AR_K": {
+      "count": 1960,
+      "kernel_ms": 8.781924000000016
+    },
+    "AR_K_splitK": {
+      "count": 1960,
+      "kernel_ms": 2.2223179999999956
+    },
+    "AR_V": {
+      "count": 1960,
+      "kernel_ms": 8.724272000000024
+    },
+    "AR_V_splitK": {
+      "count": 1960,
+      "kernel_ms": 2.1165649999999645
+    },
+    "AR_out": {
+      "count": 1960,
+      "kernel_ms": 18.683235000000014
+    },
+    "AR_FFN_up": {
+      "count": 1960,
+      "kernel_ms": 46.507324000000075
+    },
+    "AR_FFN_down": {
+      "count": 1960,
+      "kernel_ms": 48.37936900000004
+    },
+    "AR_FFN_down_splitK": {
+      "count": 1960,
+      "kernel_ms": 3.3977710000000223
+    },
+    "vision_proj_out": {
+      "count": 70,
+      "kernel_ms": 0.8824779999999997
+    },
+    "AR_Q_splitK": {
+      "count": 980,
+      "kernel_ms": 1.0628589999999887
+    },
+    "AR_out_splitK": {
+      "count": 980,
+      "kernel_ms": 1.103870999999994
+    }
+  },
+  "AR_gemm_and_splitK_ms": 158.65093000000016,
+  "transformer_high_precision_gemm_ms": 172.19473800000014,
+  "codec_convolution_lowered_to_bf16_gemm": {
+    "count": 240,
+    "kernel_ms": 4.664037
+  },
+  "decoder_tiling": {
+    "latent_shape": [
+      12,
+      20
+    ],
+    "tile": 16,
+    "stride": 12,
+    "tile_shapes": [
+      [
+        12,
+        16
+      ],
+      [
+        12,
+        8
+      ]
+    ],
+    "input_area_ratio": 1.2,
+    "scope": "Input tile area only, not a measured FLOP or speed ratio"
+  },
+  "encoder_tiling": {
+    "patchified_shape": [
+      96,
+      160
+    ],
+    "tile": 256,
+    "stride": 192,
+    "tile_count": 1
+  }
+}

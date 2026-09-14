@@ -50,6 +50,16 @@ def main():
     p.add_argument('--cutlass-small-library',type=Path)
     p.add_argument('--cutlass-direct-pack',action=argparse.BooleanOptionalAction,default=None)
     p.add_argument('--joint-tuning',action=argparse.BooleanOptionalAction,default=None)
+    p.add_argument('--fuse-calibrated',action=argparse.BooleanOptionalAction,default=False,help='Fuse calibrated FP4 FFN ReLU-squared and prescaled amax')
+    p.add_argument('--first-frame',action=argparse.BooleanOptionalAction,default=False,help='Encode only the single I2V conditioning frame')
+    p.add_argument('--fuse-pointwise',action=argparse.BooleanOptionalAction,default=False,help='Exact DM RoPE and ReLU-squared fusion; requires AR cache')
+    p.add_argument('--static-rotary',action=argparse.BooleanOptionalAction,default=False,help='Refresh rotary tables once per I2V request and CFG branch')
+    p.add_argument('--ar-cache',action=argparse.BooleanOptionalAction,default=False,
+                   help='Request-local AR prefill for static-text I2V; includes prefill in request timing')
+    p.add_argument('--codec-graph',action=argparse.BooleanOptionalAction,default=False,
+                   help='Experimental resident VAE CUDA Graphs; warm every request shape first')
+    p.add_argument('--fuse-norm',action=argparse.BooleanOptionalAction,default=False,
+                   help='Experimental Edge Nemotron RMSNorm pointwise fusion; validate trajectories before use')
     p.add_argument('--debug',choices=['off','timing','trace'])
     p.add_argument('--execution',choices=['graph','eager'])
     p.add_argument('--attention-policy',type=Path,help='Independent RepairPolicy JSON')
@@ -119,7 +129,7 @@ def main():
             result['image_sha256']=hashlib.sha256(image.read_bytes()).hexdigest()
         result['case']=case
         runner=CosmosRunner(a.model,config,tuning=a.tuning,tune=a.tune,assets=a.assets,
-                            audio=case is not None and case['task']=='av')
+                            audio=case is not None and case['task']=='av',codec_graph=a.codec_graph,fuse_norm=a.fuse_norm,ar_cache=a.ar_cache,first_frame=a.first_frame,fuse_pointwise=a.fuse_pointwise,static_rotary=a.static_rotary,fuse_calibrated=a.fuse_calibrated)
         if a.tune:runner.table.checkpoint_path=a.output/'tuning.partial.json'
         runner.prepare(a.output/'assets' if a.operation=='prepare' else None)
         if a.operation!='prepare':runner.warmup(case,a.steps,a.audio_output)
@@ -139,6 +149,7 @@ def main():
                     path=a.output/f'seed{seed}.npz';np.savez_compressed(path,**signals)
                     row['outputs']=path.name
                 result['rows'].append(row);save()
+        result.update(runner.receipt())
         result['complete']=True;save()
         print(a.output/'result.json',flush=True)
     except Exception as error:

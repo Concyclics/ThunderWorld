@@ -20,10 +20,18 @@ def model_identity(path):
 
 
 class CosmosRunner:
-    def __init__(self,model,config,*,tuning=None,tune=False,assets=None,audio=False):
+    def __init__(self,model,config,*,tuning=None,tune=False,assets=None,audio=False,codec_graph=False,fuse_norm=False,ar_cache=False,first_frame=False,fuse_pointwise=False,static_rotary=False,fuse_calibrated=False):
         if config.resource_mode == 'shared-calibration' and tune:
             raise ValueError('Shared calibration prohibits timing-based tuning')
         self.path=Path(model);self.config=config;self.audio=audio
+        self.codec_graph_enabled=codec_graph;self.codec_graphs=None
+        self.fuse_norm=fuse_norm;self.fused_norm_modules=[]
+        self.ar_cache_enabled=ar_cache;self.ar_cache=None
+        self.first_frame_enabled=first_frame;self.first_frame=None
+        self.fuse_pointwise=fuse_pointwise;self.pointwise_modules=[]
+        self.fuse_calibrated=fuse_calibrated;self.calibrated_modules=[]
+        self.static_rotary_enabled=static_rotary;self.static_rotary=None
+        if fuse_pointwise and not ar_cache:raise ValueError("Pointwise fusion currently requires AR cache")
         self.table=LaunchTable(tuning,tune=tune)
         self.assets_path=Path(assets) if assets else None
         self.pipe=None;self.engine=None;self.diagnostics=None;self.timings={}
@@ -57,6 +65,15 @@ class CosmosRunner:
         self.pipe.transformer.set_attention_backend('_native_flash')
         self.pipe.vae.enable_tiling();self.pipe.set_progress_bar_config(disable=True)
         self.pipe.to('cuda')
+        if self.codec_graph_enabled:
+            from .codec_graph import CodecGraphs
+            self.codec_graphs=CodecGraphs(self.pipe.vae)
+        if self.first_frame_enabled:
+            from .pipeline_tuning import FirstFrameConditioning
+            self.first_frame=FirstFrameConditioning(self.pipe)
+        if self.fuse_norm:
+            from .norm_fusion import install_norm_fusion
+            self.fused_norm_modules=install_norm_fusion(self.pipe.transformer)
         torch.cuda.synchronize();self.timings['load_seconds']=time.perf_counter()-start
         assets=None
         policy=json.loads(Path(self.config.ffn_policy).read_text()) if self.config.ffn_policy else None
@@ -73,6 +90,19 @@ class CosmosRunner:
                 assets[name]=expand(asset,required_weight_fraction(self.config,name,policy)) if self.config.precision=='fp4' else asset
         start=time.perf_counter()
         self.engine=JointEngine(self.pipe.transformer,self.config,self.table,assets)
+        if self.ar_cache_enabled:
+            from .ar_cache import ARCache
+            self.ar_cache=ARCache(self.engine)
+        if self.fuse_pointwise:
+            from .pipeline_tuning import fused_rope, install_relu2
+            self.ar_cache.rope=fused_rope
+            self.pointwise_modules=install_relu2(self.pipe.transformer)
+        if self.fuse_calibrated:
+            from .calibrated_fusion import install
+            self.calibrated_modules=install(self.pipe.transformer)
+        if self.static_rotary_enabled:
+            from .pipeline_tuning import StaticRotary
+            self.static_rotary=StaticRotary(self.engine)
         torch.cuda.synchronize();self.timings['offline_prepare_seconds']=time.perf_counter()-start
         if export:
             folder=Path(export);folder.mkdir(parents=True,exist_ok=False)
@@ -111,6 +141,13 @@ class CosmosRunner:
                 def measured(*args,_fn=original,_label=label,**kwargs):
                     return self.diagnostics.stage(_label,_fn,*args,**kwargs)
                 setattr(obj,method,measured)
+        if self.ar_cache or self.static_rotary:
+            previous=self.pipe.transformer.forward
+            def cached_forward(*args,**kwargs):
+                if self.static_rotary:self.static_rotary.prepare_call(kwargs)
+                if self.ar_cache:self.ar_cache.prepare_call(kwargs)
+                return previous(*args,**kwargs)
+            self.pipe.transformer.forward=cached_forward
         self.memory['after_prepare']=dict(allocated_bytes=torch.cuda.memory_allocated(),reserved_bytes=torch.cuda.memory_reserved())
         return self
 
@@ -142,6 +179,9 @@ class CosmosRunner:
             flow_shift=10. if case['task']=='policy' else 3.,use_karras_sigmas=False)
         branches=1 if case['task']=='policy' else 2
         self.engine.reset_request(steps,branches,case['task'])
+        if self.first_frame:self.first_frame.begin_request(case)
+        if self.static_rotary:self.static_rotary.begin_request(case['task'])
+        if self.ar_cache:self.ar_cache.begin_request(case['task'])
         if self.diagnostics is None or len(self.diagnostics.events)<steps*branches and self.config.debug!='off':
             self.diagnostics=Diagnostics(self.config.debug,steps*branches)
         self.diagnostics.reset()
@@ -158,6 +198,7 @@ class CosmosRunner:
         start=time.perf_counter()
         torch.cuda.reset_peak_memory_stats()
         self._context(case,steps,audio_output)
+        if self.codec_graphs:self.codec_graphs.warming=True
         if self.config.compute_budget is not None:
             if steps!=35:raise ValueError('Compute plans require exactly 35 denoising steps')
             self.engine.warming=True;self.engine.discovering=True
@@ -169,7 +210,9 @@ class CosmosRunner:
             self._context(case,steps,audio_output)
         self.engine.warming=True
         try:self.pipe(**self._args(case,6099,2))
-        finally:self.engine.warming=False
+        finally:
+            self.engine.warming=False
+            if self.codec_graphs:self.codec_graphs.warming=False
         torch.cuda.synchronize()
         self.timings['warmup_seconds']=self.timings.get('warmup_seconds',0)+time.perf_counter()-start
         self._warmed.add(key)
@@ -280,5 +323,12 @@ class CosmosRunner:
             prepared_weight_bytes=sum(storages.values()),support_buffer_bytes=sum(scratch.values()),
             resident_model_state_bytes=sum(model_state.values()),
             memory=self.memory,
+            codec_graph=self.codec_graphs.receipt() if self.codec_graphs else dict(enabled=False),
+            norm_fusion=dict(enabled=self.fuse_norm,modules=self.fused_norm_modules),
+            ar_cache=self.ar_cache.receipt() if self.ar_cache else dict(enabled=False),
+            first_frame=self.first_frame.receipt() if self.first_frame else dict(enabled=False),
+            pointwise_fusion=dict(enabled=self.fuse_pointwise,modules=self.pointwise_modules),
+            calibrated_fusion=dict(enabled=self.fuse_calibrated,modules=self.calibrated_modules),
+            static_rotary=self.static_rotary.receipt() if self.static_rotary else dict(enabled=False),
             source_sha256={str(p.relative_to(Path(__file__).resolve().parents[1])):hashlib.sha256(p.read_bytes()).hexdigest()
                            for p in Path(__file__).resolve().parents[1].rglob('*.py')})

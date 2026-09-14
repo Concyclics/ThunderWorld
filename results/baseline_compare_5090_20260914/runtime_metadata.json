@@ -1,0 +1,8 @@
+{
+  "vllm_version": "0.25.1",
+  "vllm_native_binaries": {
+    "/home/chenhan/miniconda3/envs/vllm/lib/python3.12/site-packages/vllm/_C_stable_libtorch.abi3.so": "186f5c6dde249b76984340b2d44d6f721f9aec7b88f5b976c01c019e76c61b10"
+  },
+  "custom_ops_sha256": "1045a1a54a2e237d537420edcb0c6c5b13de8c342accc64192faad00e52daf22",
+  "diffusers_commit": "77c13f8a49c457f10a89862bb129bdc930b88929"
+}

@@ -1,5 +1,7 @@
 # RTX 5090 kernel 调试交接
 
+**2026-09-14 Edge I2V update:** [Exact pipeline tuning, full-request BF16/FP4 comparison, and new flags](../../docs/NEXT_PIPELINE_TUNING_5090_20260914.md).
+
 **Current Edge/Nano runtime:** [optimization status, repair budgets and receiver
 commands](../../docs/OPTIMIZATION_HANDOFF.md). The original input-package workflow
 below is a historical operator probe, not the current full-model handoff.

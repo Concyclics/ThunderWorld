@@ -1,0 +1,68 @@
+{
+  "complete": false,
+  "scope": "Standalone codec pilot; two changed-input equality checks per codec passed. Final full-request check failed on a DecoderOutput import, corrected locally but GPU rerun blocked by approval service capacity. Not an E2E result.",
+  "rows": [
+    {
+      "kind": "encode",
+      "shape": [
+        1,
+        3,
+        61,
+        192,
+        320
+      ],
+      "times": {
+        "original": [
+          0.18991434599956847,
+          0.15512103499895602,
+          0.15232636899963836,
+          0.1731471210005111,
+          0.1626409929995134
+        ],
+        "graph": [
+          0.12584449499991024,
+          0.12622534900037863,
+          0.12583167099910497,
+          0.1258375060006074,
+          0.12584530800086213
+        ]
+      },
+      "median_seconds": {
+        "original": 0.1626409929995134,
+        "graph": 0.12584449499991024
+      },
+      "speedup": 1.2923965645031148
+    },
+    {
+      "kind": "decode",
+      "shape": [
+        1,
+        48,
+        16,
+        12,
+        20
+      ],
+      "times": {
+        "original": [
+          0.6584520819997124,
+          0.6614362740001525,
+          0.6716546219995507,
+          0.6607926669985318,
+          0.6644417790012085
+        ],
+        "graph": [
+          0.5980176310004026,
+          0.6023375450004096,
+          0.5981684239995957,
+          0.6028268659993046,
+          0.5990132719998655
+        ]
+      },
+      "median_seconds": {
+        "original": 0.6614362740001525,
+        "graph": 0.5990132719998655
+      },
+      "speedup": 1.1042097144056284
+    }
+  ]
+}

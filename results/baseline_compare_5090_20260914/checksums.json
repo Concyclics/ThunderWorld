@@ -1,0 +1,17 @@
+{
+  "configs.json": "8c37fbbb3f03c2b8176960bd945702e88cf8be0681247e5ecc498346aa20740c",
+  "latency_memory.png": "7c68b97731b9d6189dd82c6fa3bb28fe648f689f43d7e834ea93da3db6b3f68a",
+  "latency_memory.svg": "f775baeaeec3d37f617be9a7bfddbd6bdbb3a93215ceb3e91efebde68e5eb68b",
+  "performance_matrix.json": "d3c870d3e8ddfb38dd25c15b8b2f381fddb9c3f89d3d32390a9a3cc1efb1776c",
+  "profiles.json.xz": "7b32d840cea291b95ed86955e29b81d7c4e196fd368e34d5e83c2aba88fada83",
+  "qualification_summary.json": "7cc09e217c5f15eab2561181fae61705406f9160412275e3658e7789535b84a0",
+  "quality.json": "61be9fa8d183aa06215fc883495cfa6bc124c575cb02be31273cada111963ea5",
+  "receipts.json.xz": "6564ea845c13e343924bb02963fc525e8f5ce307ec554f3f782ccb7bd8b8f940",
+  "runtime_metadata.json": "04f4b0eed328c89c5fa6d0930aca4f28f5e2e68289e2688fc39cf2bbbc746509",
+  "speed_quality.png": "2de3499e20772ef28eacacd07731c7146a3f0e9037b1fcbdf25f7a966e46f03c",
+  "speed_quality.svg": "aedb3ab3f9c8d7d3bb619947e56f0f19bf7b7342928a6bc51776417b8b002169",
+  "speedup_matrix.png": "a8035990111d8afcd93772b31667770077f3c473e63cfbc54888158ff78399ce",
+  "speedup_matrix.svg": "bc4e64a18eeb7e68465b2ddef096e14132a26dc2c88967cff416a986932efb96",
+  "summary.json": "ed4465d174c732d0632fdf6c659584932cbe0ab78c7bfdd5e66d588a507334c6",
+  "telemetry_spot_check.json": "f3029bdbf76881e86f10f9d4ac607807200468d8597b1b5ebc778fb6ee8bcdb1"
+}

@@ -1,0 +1,72 @@
+{
+  "bf16": {
+    "debug": "off",
+    "execution": "graph",
+    "strict_tuning": false,
+    "precision": "bf16",
+    "attention_backend": "bf16"
+  },
+  "fp4": {
+    "debug": "off",
+    "execution": "graph",
+    "strict_tuning": false,
+    "precision": "fp4",
+    "ffn": {
+      "activation": 0,
+      "weight": 0,
+      "cross": false
+    },
+    "projection": {
+      "activation": 0,
+      "weight": 0,
+      "cross": false
+    },
+    "attention_backend": "fp4",
+    "attention": {
+      "default": {
+        "coverage": 0,
+        "terms": 3,
+        "query_tile": 32,
+        "splits": 2,
+        "transpose_v": true
+      }
+    }
+  },
+  "fp4_cutlass": {
+    "debug": "off",
+    "execution": "graph",
+    "strict_tuning": false,
+    "precision": "fp4",
+    "ffn": {
+      "activation": 0,
+      "weight": 0,
+      "cross": false
+    },
+    "projection": {
+      "activation": 0,
+      "weight": 0,
+      "cross": false
+    },
+    "attention_backend": "fp4",
+    "attention": {
+      "default": {
+        "coverage": 0,
+        "terms": 3,
+        "query_tile": 32,
+        "splits": 2,
+        "transpose_v": true
+      }
+    },
+    "linear_backend": "cutlass-fused",
+    "cutlass_library": "/home/chenhan/ThunderWorldDev/ThunderWorld/build/cutlass5090_20260914/repair_n128.so",
+    "cutlass_small_library": "/home/chenhan/ThunderWorldDev/ThunderWorld/build/cutlass5090_20260914/repair_n64.so",
+    "joint_tuning": true
+  },
+  "fp8": {
+    "debug": "off",
+    "execution": "graph",
+    "strict_tuning": false,
+    "precision": "fp8",
+    "attention_backend": "bf16"
+  }
+}
