@@ -1,0 +1,2410 @@
+{
+  "complete": true,
+  "resource": {
+    "device": 0,
+    "resource_mode": "exclusive",
+    "performance_eligible": false
+  },
+  "performance_eligible": false,
+  "debug": "timing",
+  "scope": "Fused CUTLASS operator on calibration panels; not full trajectory quality or formal latency",
+  "config_sha256": "7b76ccf6622b98c0a610aa0bdf3071f7901cb2851f25b684448a215be5b55b49",
+  "assets_sha256": "1fc16f337aed29dd7004564f07621914141ac59e3956dae0ee3f24374ab2999d",
+  "library_sha256": "48001d06d4824d6994a7bf54027f12fdc61442d7f5fb8096ae44ed92b2d1c5a4",
+  "torch_version": "2.11.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "device_identity": {
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "sm": 170,
+    "capability": [
+      12,
+      0
+    ],
+    "hardware": "GPU-3d9b02f0-891b-c57f-93f4-870d99e35702, 616.92, 460.00",
+    "cuda": "13.0",
+    "torch": "2.11.0+cu130",
+    "triton": "3.6.0",
+    "kernels": {
+      "__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+      "_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+      "_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+      "_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+      "_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+      "_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+      "_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+      "_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+      "_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+      "_sparse_pack.py": "a9378343d2ecd68ef963eb72d4ec18c42cd1660238a7aecefc5030c94883a5d1",
+      "cosmos/linears.py": "217b96b88199d4c7f47ad010677bdda205b687fca2f905c0a4699d6293ee113e",
+      "cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+      "cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+      "cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c",
+      "cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+      "cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14",
+      "cutlass/packing.py": "ff8bc3a60c61d3d4604e2e7deaf69c5994bcac66426d84491863f0461174839c"
+    }
+  },
+  "rows": [
+    {
+      "module": "layers.0.self_attn.add_q_proj",
+      "phase": 0,
+      "branch": 0,
+      "shape": [
+        960,
+        2048,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[66,73,69,65,76,72,78,190,124,53,108,67,188,49,50,149,44,126,172,185,77,74,60,165,12,117,71,105,220,181,113,97]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.004196601919829845,
+      "bridge_nmse": 0.004196601919829845,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          2048,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 8589934592,
+            "a": 0,
+            "w": 1073741824,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 8589934592,
+        "total_mma": 9663676416,
+        "a_blocks": 0,
+        "w_blocks": [
+          66,
+          73,
+          69,
+          65,
+          76,
+          72,
+          78,
+          190,
+          124,
+          53,
+          108,
+          67,
+          188,
+          49,
+          50,
+          149,
+          44,
+          126,
+          172,
+          185,
+          77,
+          74,
+          60,
+          165,
+          12,
+          117,
+          71,
+          105,
+          220,
+          181,
+          113,
+          97
+        ],
+        "cross_bound": true,
+        "padded_base_mma": 536870912,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 294912,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 256,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 262144,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.02859400026500225,
+          "samples": [
+            0.0281981248408556,
+            0.028516624122858047,
+            0.02973324991762638,
+            0.027738375589251518,
+            0.03053075075149536,
+            0.027687249705195427,
+            0.03089287504553795,
+            0.02859400026500225,
+            0.029756374657154083
+          ]
+        },
+        "bridge_total": {
+          "median": 0.02772737480700016,
+          "samples": [
+            0.02935362420976162,
+            0.02771737426519394,
+            0.027654249221086502,
+            0.02767699956893921,
+            0.027914000675082207,
+            0.02877425029873848,
+            0.02772737480700016,
+            0.027663374319672585,
+            0.028765499591827393
+          ]
+        },
+        "native_packed": {
+          "median": 0.02388625033199787,
+          "samples": [
+            0.02300249971449375,
+            0.027134250849485397,
+            0.023925749585032463,
+            0.02388625033199787,
+            0.02524237520992756,
+            0.02331399917602539,
+            0.02313550002872944,
+            0.02515137568116188,
+            0.02304849959909916
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.023035749793052673,
+          "samples": [
+            0.023035749793052673,
+            0.02275574952363968,
+            0.022784000262618065,
+            0.02282324992120266,
+            0.02277662418782711,
+            0.024975750595331192,
+            0.025927124544978142,
+            0.02370399981737137,
+            0.025009749457240105
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.027820374816656113,
+          "samples": [
+            0.030295124277472496,
+            0.027041500434279442,
+            0.02887525036931038,
+            0.027820374816656113,
+            0.02687712572515011,
+            0.027925999835133553,
+            0.026891374960541725,
+            0.026820875704288483,
+            0.02788349986076355
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.0312552293188355,
+      "direct_pack_speedup": 0.9966571259277113
+    },
+    {
+      "module": "layers.0.self_attn.add_k_proj",
+      "phase": 0,
+      "branch": 0,
+      "shape": [
+        960,
+        1024,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":2,\"cross\":false,\"weight\":0,\"weight_support\":[107,66,101,98,18,34,108,105,73,97,85,25,109,92,30,104]}",
+      "bridge_relative_l2_vs_native": 1.4432010175369214e-05,
+      "bitwise_equal": false,
+      "native_nmse": 0.002367889741435647,
+      "bridge_nmse": 0.0023678902070969343,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          1024,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 4294967296,
+            "a": 536870912,
+            "w": 536870912,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 4294967296,
+        "total_mma": 5368709120,
+        "a_blocks": 2,
+        "w_blocks": [
+          107,
+          66,
+          101,
+          98,
+          18,
+          34,
+          108,
+          105,
+          73,
+          97,
+          85,
+          25,
+          109,
+          92,
+          30,
+          104
+        ],
+        "cross_bound": true,
+        "padded_base_mma": 268435456,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 138240,
+          "residual_allocation_bytes": 1105920,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 245760,
+          "selector_rank_pairs": 2048
+        },
+        "w1_union_bytes": 147456,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 128,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 131072,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.030049750581383705,
+          "samples": [
+            0.033348001539707184,
+            0.030049750581383705,
+            0.031143875792622566,
+            0.02910112589597702,
+            0.030034374445676804,
+            0.031316500157117844,
+            0.0302364993840456,
+            0.029947375878691673,
+            0.0290910005569458
+          ]
+        },
+        "bridge_total": {
+          "median": 0.025447625666856766,
+          "samples": [
+            0.025447625666856766,
+            0.024390125647187233,
+            0.02508999966084957,
+            0.027739375829696655,
+            0.02616949938237667,
+            0.024445125833153725,
+            0.02440987527370453,
+            0.026449749246239662,
+            0.027485249564051628
+          ]
+        },
+        "native_packed": {
+          "median": 0.02121175080537796,
+          "samples": [
+            0.022534500807523727,
+            0.02259800024330616,
+            0.02078999951481819,
+            0.02060149982571602,
+            0.02058112435042858,
+            0.021484874188899994,
+            0.02121175080537796,
+            0.020574625581502914,
+            0.02148200012743473
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.017150625586509705,
+          "samples": [
+            0.017150625586509705,
+            0.01768912561237812,
+            0.018038375303149223,
+            0.01619112491607666,
+            0.016082750633358955,
+            0.016029750928282738,
+            0.018027499318122864,
+            0.019113624468445778,
+            0.016068125143647194
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.023553749546408653,
+          "samples": [
+            0.024462750181555748,
+            0.023524124175310135,
+            0.023524750024080276,
+            0.024382000789046288,
+            0.024626124650239944,
+            0.02569199912250042,
+            0.023553749546408653,
+            0.023549875244498253,
+            0.02354612573981285
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.1808469275198743,
+      "direct_pack_speedup": 1.080406566127255
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.up_proj",
+      "phase": 0,
+      "branch": 0,
+      "shape": [
+        960,
+        9216,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0006411068025045097,
+      "bridge_nmse": 0.0006411068025045097,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          9216,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 38654705664,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 38654705664,
+        "total_mma": 38654705664,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 2415919104,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 1152,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 1179648,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.06073949858546257,
+          "samples": [
+            0.05480024963617325,
+            0.05816037580370903,
+            0.05612962320446968,
+            0.0606672503054142,
+            0.06073949858546257,
+            0.06107437610626221,
+            0.06122174859046936,
+            0.06177187338471413,
+            0.06111849844455719
+          ]
+        },
+        "bridge_total": {
+          "median": 0.05745687335729599,
+          "samples": [
+            0.055691998451948166,
+            0.05520600080490112,
+            0.057081375271081924,
+            0.05940737575292587,
+            0.05745687335729599,
+            0.05795487388968468,
+            0.059494499117136,
+            0.056988999247550964,
+            0.05955750122666359
+          ]
+        },
+        "native_packed": {
+          "median": 0.05566449835896492,
+          "samples": [
+            0.05392349883913994,
+            0.05381012335419655,
+            0.05490987375378609,
+            0.053279124200344086,
+            0.05644625052809715,
+            0.055812373757362366,
+            0.05566449835896492,
+            0.056026000529527664,
+            0.05771062523126602
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.05109887570142746,
+          "samples": [
+            0.049424249678850174,
+            0.049201998859643936,
+            0.05012425035238266,
+            0.05406025052070618,
+            0.051136501133441925,
+            0.05214787647128105,
+            0.051041748374700546,
+            0.054322998970746994,
+            0.05109887570142746
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.058317750692367554,
+          "samples": [
+            0.054875124245882034,
+            0.05544387549161911,
+            0.058058373630046844,
+            0.058317750692367554,
+            0.059054501354694366,
+            0.05930199846625328,
+            0.059333499521017075,
+            0.05690387636423111,
+            0.05872425064444542
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.0571319850238552,
+      "direct_pack_speedup": 0.9852381594823026
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.down_proj",
+      "phase": 0,
+      "branch": 0,
+      "shape": [
+        960,
+        2048,
+        9216
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.00034533016150817275,
+      "bridge_nmse": 0.00034533016150817275,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          2048,
+          9216
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 38654705664,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 38654705664,
+        "total_mma": 38654705664,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 2415919104,
+        "packing": {
+          "base_write_bytes": 4976640,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 17694720
+        },
+        "non_mma": {
+          "amax_elements": 8847360,
+          "quantized_base_elements": 8847360,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 256,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 1179648,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.07954925298690796,
+          "samples": [
+            0.07975362241268158,
+            0.07837987691164017,
+            0.07891024649143219,
+            0.07943087816238403,
+            0.08050350099802017,
+            0.07971512526273727,
+            0.07954925298690796,
+            0.07744212448596954,
+            0.08167887479066849
+          ]
+        },
+        "bridge_total": {
+          "median": 0.06575512140989304,
+          "samples": [
+            0.0659438744187355,
+            0.0642436221241951,
+            0.06257137656211853,
+            0.06575512140989304,
+            0.06704825162887573,
+            0.06526675075292587,
+            0.06751012802124023,
+            0.06709912419319153,
+            0.06537774950265884
+          ]
+        },
+        "native_packed": {
+          "median": 0.06813625246286392,
+          "samples": [
+            0.06808337569236755,
+            0.06769612431526184,
+            0.06777962297201157,
+            0.06813625246286392,
+            0.06733187288045883,
+            0.06840687245130539,
+            0.06859549880027771,
+            0.06843937188386917,
+            0.06844387203454971
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.05460574850440025,
+          "samples": [
+            0.05375324934720993,
+            0.052516501396894455,
+            0.05460574850440025,
+            0.05477675050497055,
+            0.05398600175976753,
+            0.05612112581729889,
+            0.05420900136232376,
+            0.056169748306274414,
+            0.05708462372422218
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.06494162231683731,
+          "samples": [
+            0.06344825029373169,
+            0.060566749423742294,
+            0.06458275020122528,
+            0.06488499790430069,
+            0.06553524732589722,
+            0.06567499786615372,
+            0.06494162231683731,
+            0.06603162735700607,
+            0.06581924855709076
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 552960,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.2097803377325915,
+      "direct_pack_speedup": 1.0125266210487756
+    },
+    {
+      "module": "layers.0.self_attn.add_q_proj",
+      "phase": 1,
+      "branch": 0,
+      "shape": [
+        960,
+        2048,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0030106406193226576,
+      "bridge_nmse": 0.0030106406193226576,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          2048,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 8589934592,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 8589934592,
+        "total_mma": 8589934592,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 536870912,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 256,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 262144,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.020220374688506126,
+          "samples": [
+            0.02110699936747551,
+            0.020220374688506126,
+            0.022039374336600304,
+            0.019962500780820847,
+            0.021052999421954155,
+            0.020200375467538834,
+            0.020267000421881676,
+            0.020058875903487206,
+            0.019912874326109886
+          ]
+        },
+        "bridge_total": {
+          "median": 0.019578250125050545,
+          "samples": [
+            0.01933562569320202,
+            0.019813749939203262,
+            0.018788499757647514,
+            0.02084125019609928,
+            0.01855187490582466,
+            0.01975874975323677,
+            0.019578250125050545,
+            0.018611500039696693,
+            0.02089337445795536
+          ]
+        },
+        "native_packed": {
+          "median": 0.017955999821424484,
+          "samples": [
+            0.017138125374913216,
+            0.018062375485897064,
+            0.017997125163674355,
+            0.01583774946630001,
+            0.017955999821424484,
+            0.01803000085055828,
+            0.018174000084400177,
+            0.015884624794125557,
+            0.01592174917459488
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.01411574985831976,
+          "samples": [
+            0.0163742508739233,
+            0.01411574985831976,
+            0.014000125229358673,
+            0.015099874697625637,
+            0.013982375152409077,
+            0.01405125018209219,
+            0.013966250233352184,
+            0.016211625188589096,
+            0.015049999579787254
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.017748750746250153,
+          "samples": [
+            0.01906212419271469,
+            0.017685750499367714,
+            0.019871750846505165,
+            0.017684999853372574,
+            0.01893162541091442,
+            0.01779799908399582,
+            0.017699625343084335,
+            0.017740124836564064,
+            0.017748750746250153
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.0327978526862305,
+      "direct_pack_speedup": 1.10307764219332
+    },
+    {
+      "module": "layers.0.self_attn.add_k_proj",
+      "phase": 1,
+      "branch": 0,
+      "shape": [
+        960,
+        1024,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":2,\"cross\":false,\"weight\":0,\"weight_support\":[107,66,101,98,18,34,108,105,73,97,85,25,109,92,30,104]}",
+      "bridge_relative_l2_vs_native": 1.6074434228130485e-08,
+      "bitwise_equal": false,
+      "native_nmse": 0.0021300213411450386,
+      "bridge_nmse": 0.0021300213411450386,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          1024,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 4294967296,
+            "a": 536870912,
+            "w": 536870912,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 4294967296,
+        "total_mma": 5368709120,
+        "a_blocks": 2,
+        "w_blocks": [
+          107,
+          66,
+          101,
+          98,
+          18,
+          34,
+          108,
+          105,
+          73,
+          97,
+          85,
+          25,
+          109,
+          92,
+          30,
+          104
+        ],
+        "cross_bound": true,
+        "padded_base_mma": 268435456,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 138240,
+          "residual_allocation_bytes": 1105920,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 245760,
+          "selector_rank_pairs": 2048
+        },
+        "w1_union_bytes": 147456,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 128,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 131072,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.028996000066399574,
+          "samples": [
+            0.028996000066399574,
+            0.02857924997806549,
+            0.028637375682592392,
+            0.030386000871658325,
+            0.029360875487327576,
+            0.03149562329053879,
+            0.028558624908328056,
+            0.03166262432932854,
+            0.02854974940419197
+          ]
+        },
+        "bridge_total": {
+          "median": 0.024585874751210213,
+          "samples": [
+            0.02630075067281723,
+            0.027446124702692032,
+            0.02646150067448616,
+            0.024481000378727913,
+            0.024483874440193176,
+            0.024585874751210213,
+            0.02447899989783764,
+            0.024500250816345215,
+            0.025155125185847282
+          ]
+        },
+        "native_packed": {
+          "median": 0.019845500588417053,
+          "samples": [
+            0.021991625428199768,
+            0.019845500588417053,
+            0.019837500527501106,
+            0.020675500854849815,
+            0.01989162527024746,
+            0.019844375550746918,
+            0.022658249363303185,
+            0.019822999835014343,
+            0.01984100043773651
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.01617712527513504,
+          "samples": [
+            0.01617712527513504,
+            0.015881875529885292,
+            0.015881000086665154,
+            0.015882624313235283,
+            0.019084500148892403,
+            0.018980124965310097,
+            0.01586274988949299,
+            0.017931874841451645,
+            0.01808975078165531
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.024633999913930893,
+          "samples": [
+            0.02448662556707859,
+            0.02691599912941456,
+            0.024633999913930893,
+            0.025759374722838402,
+            0.02396862581372261,
+            0.02375662513077259,
+            0.02376512438058853,
+            0.024699874222278595,
+            0.024835124611854553
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.1793763841968763,
+      "direct_pack_speedup": 0.9980463926731824
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.up_proj",
+      "phase": 1,
+      "branch": 0,
+      "shape": [
+        960,
+        9216,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0006311136530712247,
+      "bridge_nmse": 0.0006311136530712247,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          9216,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 38654705664,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 38654705664,
+        "total_mma": 38654705664,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 2415919104,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 1152,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 1179648,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.06096599996089935,
+          "samples": [
+            0.05735800042748451,
+            0.05835087597370148,
+            0.05615862458944321,
+            0.06104312464594841,
+            0.06096599996089935,
+            0.05942537635564804,
+            0.06148599833250046,
+            0.06159749999642372,
+            0.06114475056529045
+          ]
+        },
+        "bridge_total": {
+          "median": 0.058208126574754715,
+          "samples": [
+            0.056620124727487564,
+            0.05626650154590607,
+            0.05726412683725357,
+            0.05741787329316139,
+            0.05954575166106224,
+            0.059823501855134964,
+            0.06043275073170662,
+            0.058208126574754715,
+            0.05907387658953667
+          ]
+        },
+        "native_packed": {
+          "median": 0.054221998900175095,
+          "samples": [
+            0.05188224837183952,
+            0.05082099884748459,
+            0.054221998900175095,
+            0.056733500212430954,
+            0.053488876670598984,
+            0.05689249932765961,
+            0.05388437584042549,
+            0.05710112676024437,
+            0.0560193732380867
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.053154248744249344,
+          "samples": [
+            0.05044712498784065,
+            0.05116087570786476,
+            0.053154248744249344,
+            0.053025249391794205,
+            0.05405662581324577,
+            0.05214262381196022,
+            0.05431624874472618,
+            0.053387999534606934,
+            0.05423037335276604
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.057189248502254486,
+          "samples": [
+            0.05379987508058548,
+            0.05327925086021423,
+            0.05615675076842308,
+            0.059366751462221146,
+            0.05919774994254112,
+            0.059190623462200165,
+            0.0593857504427433,
+            0.057089876383543015,
+            0.057189248502254486
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.0473795249638003,
+      "direct_pack_speedup": 1.017815902449917
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.down_proj",
+      "phase": 1,
+      "branch": 0,
+      "shape": [
+        960,
+        2048,
+        9216
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0003557093732524663,
+      "bridge_nmse": 0.0003557093732524663,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          2048,
+          9216
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 38654705664,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 38654705664,
+        "total_mma": 38654705664,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 2415919104,
+        "packing": {
+          "base_write_bytes": 4976640,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 17694720
+        },
+        "non_mma": {
+          "amax_elements": 8847360,
+          "quantized_base_elements": 8847360,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 256,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 1179648,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.07924887537956238,
+          "samples": [
+            0.07898849993944168,
+            0.0778837502002716,
+            0.0790218785405159,
+            0.0768316239118576,
+            0.0810527503490448,
+            0.07924887537956238,
+            0.07933762669563293,
+            0.08034312725067139,
+            0.07928737252950668
+          ]
+        },
+        "bridge_total": {
+          "median": 0.06576812267303467,
+          "samples": [
+            0.06576812267303467,
+            0.06504125148057938,
+            0.06258762627840042,
+            0.06745249778032303,
+            0.06556162238121033,
+            0.06562737375497818,
+            0.06792724877595901,
+            0.06702824681997299,
+            0.06599024683237076
+          ]
+        },
+        "native_packed": {
+          "median": 0.0685184970498085,
+          "samples": [
+            0.06831599771976471,
+            0.06487400084733963,
+            0.06793999671936035,
+            0.0685184970498085,
+            0.06862024962902069,
+            0.06887824833393097,
+            0.06976024806499481,
+            0.06794825196266174,
+            0.06885825097560883
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.0543728731572628,
+          "samples": [
+            0.05417362600564957,
+            0.05363462492823601,
+            0.0543728731572628,
+            0.05336324870586395,
+            0.05490712448954582,
+            0.05802037566900253,
+            0.05375400185585022,
+            0.056229375302791595,
+            0.05508974939584732
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.06531324982643127,
+          "samples": [
+            0.061733875423669815,
+            0.06346062570810318,
+            0.06531324982643127,
+            0.06513600051403046,
+            0.06384625285863876,
+            0.06633424758911133,
+            0.06631337851285934,
+            0.06642100214958191,
+            0.06663362681865692
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 552960,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.204973962439936,
+      "direct_pack_speedup": 1.0069644803743836
+    },
+    {
+      "module": "layers.0.self_attn.add_q_proj",
+      "phase": 2,
+      "branch": 0,
+      "shape": [
+        960,
+        2048,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0007221814594231546,
+      "bridge_nmse": 0.0007221814594231546,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          2048,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 8589934592,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 8589934592,
+        "total_mma": 8589934592,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 536870912,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 256,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 262144,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.02117075026035309,
+          "samples": [
+            0.022528624162077904,
+            0.02030625008046627,
+            0.020365500822663307,
+            0.02136162482202053,
+            0.020241500809788704,
+            0.020309874787926674,
+            0.02233700081706047,
+            0.023168625310063362,
+            0.02117075026035309
+          ]
+        },
+        "bridge_total": {
+          "median": 0.019294625148177147,
+          "samples": [
+            0.019243625923991203,
+            0.021851375699043274,
+            0.019835250452160835,
+            0.020745500922203064,
+            0.02073037438094616,
+            0.018629124388098717,
+            0.019294625148177147,
+            0.01857687532901764,
+            0.018610749393701553
+          ]
+        },
+        "native_packed": {
+          "median": 0.015884624794125557,
+          "samples": [
+            0.018317250534892082,
+            0.015881750732660294,
+            0.018112875521183014,
+            0.015884624794125557,
+            0.01588200032711029,
+            0.01892925053834915,
+            0.01584312506020069,
+            0.01589900068938732,
+            0.015881750732660294
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.014037749730050564,
+          "samples": [
+            0.014244374819099903,
+            0.014147499576210976,
+            0.014037749730050564,
+            0.013940875418484211,
+            0.015080749988555908,
+            0.013961000367999077,
+            0.013964124955236912,
+            0.01395025011152029,
+            0.015004499815404415
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.0177646242082119,
+          "samples": [
+            0.019269000738859177,
+            0.017699124291539192,
+            0.0177646242082119,
+            0.018519874662160873,
+            0.017698874697089195,
+            0.017696375027298927,
+            0.01981624960899353,
+            0.01863574981689453,
+            0.017681250348687172
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.0972356341606972,
+      "direct_pack_speedup": 1.086126276696469
+    },
+    {
+      "module": "layers.0.self_attn.add_k_proj",
+      "phase": 2,
+      "branch": 0,
+      "shape": [
+        960,
+        1024,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.001538431504741311,
+      "bridge_nmse": 0.001538431504741311,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          1024,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 4294967296,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 4294967296,
+        "total_mma": 4294967296,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 268435456,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 128,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 131072,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.019351499155163765,
+          "samples": [
+            0.01976737566292286,
+            0.019363874569535255,
+            0.0192671250551939,
+            0.019261499866843224,
+            0.019351499155163765,
+            0.019245624542236328,
+            0.019584499299526215,
+            0.019287999719381332,
+            0.019538499414920807
+          ]
+        },
+        "bridge_total": {
+          "median": 0.01364350039511919,
+          "samples": [
+            0.016243750229477882,
+            0.01555274985730648,
+            0.013509624637663364,
+            0.01633875072002411,
+            0.013517750427126884,
+            0.015692124143242836,
+            0.01364350039511919,
+            0.013467749580740929,
+            0.013574750162661076
+          ]
+        },
+        "native_packed": {
+          "median": 0.01498975045979023,
+          "samples": [
+            0.01498975045979023,
+            0.014035999774932861,
+            0.016920749098062515,
+            0.014041375368833542,
+            0.016940750181674957,
+            0.014881250448524952,
+            0.017201874405145645,
+            0.014897874556481838,
+            0.016903124749660492
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.008267000317573547,
+          "samples": [
+            0.008531125262379646,
+            0.0082396250218153,
+            0.008267000317573547,
+            0.008288124576210976,
+            0.008266624994575977,
+            0.008283750154078007,
+            0.008259749971330166,
+            0.008275249972939491,
+            0.008254875428974628
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.012609750032424927,
+          "samples": [
+            0.013009374961256981,
+            0.012687125243246555,
+            0.012617000378668308,
+            0.012583750300109386,
+            0.012609750032424927,
+            0.01260599959641695,
+            0.012618125416338444,
+            0.012579374946653843,
+            0.01259899977594614
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.4183676178941986,
+      "direct_pack_speedup": 1.081980242275704
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.up_proj",
+      "phase": 2,
+      "branch": 0,
+      "shape": [
+        960,
+        9216,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0006847738986834884,
+      "bridge_nmse": 0.0006847738986834884,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          9216,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 38654705664,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 38654705664,
+        "total_mma": 38654705664,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 2415919104,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 1152,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 1179648,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.06054212525486946,
+          "samples": [
+            0.0572657510638237,
+            0.05635324865579605,
+            0.057717375457286835,
+            0.06102612614631653,
+            0.05792975053191185,
+            0.06154225021600723,
+            0.06054212525486946,
+            0.061575498431921005,
+            0.06162262335419655
+          ]
+        },
+        "bridge_total": {
+          "median": 0.05943262577056885,
+          "samples": [
+            0.05690712481737137,
+            0.056363873183727264,
+            0.056238625198602676,
+            0.06045449897646904,
+            0.05943262577056885,
+            0.059990376234054565,
+            0.056999873369932175,
+            0.06046387553215027,
+            0.05943712592124939
+          ]
+        },
+        "native_packed": {
+          "median": 0.056425873190164566,
+          "samples": [
+            0.05309649929404259,
+            0.05417649820446968,
+            0.05543399974703789,
+            0.05764399841427803,
+            0.056626249104738235,
+            0.05666537582874298,
+            0.056425873190164566,
+            0.057037875056266785,
+            0.05492150038480759
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.05419649928808212,
+          "samples": [
+            0.05226200073957443,
+            0.05122612416744232,
+            0.05419649928808212,
+            0.05461600050330162,
+            0.05466749891638756,
+            0.053986500948667526,
+            0.05485900118947029,
+            0.051997750997543335,
+            0.05516062676906586
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.05814887583255768,
+          "samples": [
+            0.05636125057935715,
+            0.05346962437033653,
+            0.05646374821662903,
+            0.05814887583255768,
+            0.059191249310970306,
+            0.05703287571668625,
+            0.05944100022315979,
+            0.05958612635731697,
+            0.05952249839901924
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.0186681888931457,
+      "direct_pack_speedup": 1.0220769519553188
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.down_proj",
+      "phase": 2,
+      "branch": 0,
+      "shape": [
+        960,
+        2048,
+        9216
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.00038375984877347946,
+      "bridge_nmse": 0.00038375984877347946,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          2048,
+          9216
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 38654705664,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 38654705664,
+        "total_mma": 38654705664,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 2415919104,
+        "packing": {
+          "base_write_bytes": 4976640,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 17694720
+        },
+        "non_mma": {
+          "amax_elements": 8847360,
+          "quantized_base_elements": 8847360,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 256,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 1179648,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.08019137382507324,
+          "samples": [
+            0.08019137382507324,
+            0.0786648765206337,
+            0.07876687496900558,
+            0.08005625009536743,
+            0.08000687509775162,
+            0.0805986225605011,
+            0.08108449727296829,
+            0.08149662613868713,
+            0.0802096277475357
+          ]
+        },
+        "bridge_total": {
+          "median": 0.06838412582874298,
+          "samples": [
+            0.06226162612438202,
+            0.06534737348556519,
+            0.06745725125074387,
+            0.06838412582874298,
+            0.06823312491178513,
+            0.06878362596035004,
+            0.06932125240564346,
+            0.06872724741697311,
+            0.07051374763250351
+          ]
+        },
+        "native_packed": {
+          "median": 0.06915474683046341,
+          "samples": [
+            0.06834187358617783,
+            0.0689070001244545,
+            0.0681653767824173,
+            0.0691053718328476,
+            0.0691704973578453,
+            0.06915474683046341,
+            0.06928150355815887,
+            0.06927850097417831,
+            0.06916362792253494
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.05686037614941597,
+          "samples": [
+            0.054967001080513,
+            0.05473737418651581,
+            0.05546100065112114,
+            0.05686037614941597,
+            0.05698637664318085,
+            0.05716612562537193,
+            0.05703125149011612,
+            0.05720812454819679,
+            0.0549440011382103
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.06578387320041656,
+          "samples": [
+            0.06491749733686447,
+            0.06375887244939804,
+            0.06497599929571152,
+            0.0636959969997406,
+            0.06764374673366547,
+            0.0668020024895668,
+            0.06578387320041656,
+            0.06685587763786316,
+            0.06692487746477127
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 552960,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.1726606555723122,
+      "direct_pack_speedup": 1.0395272047969037
+    },
+    {
+      "module": "layers.0.self_attn.add_q_proj",
+      "phase": 3,
+      "branch": 0,
+      "shape": [
+        960,
+        2048,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0002736255410127342,
+      "bridge_nmse": 0.0002736255410127342,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          2048,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 8589934592,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 8589934592,
+        "total_mma": 8589934592,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 536870912,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 256,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 262144,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.021905874833464622,
+          "samples": [
+            0.02179975062608719,
+            0.02088237553834915,
+            0.023048125207424164,
+            0.021905874833464622,
+            0.02100437507033348,
+            0.023073000833392143,
+            0.021987125277519226,
+            0.021033875644207,
+            0.023130500689148903
+          ]
+        },
+        "bridge_total": {
+          "median": 0.020059125497937202,
+          "samples": [
+            0.01975874975323677,
+            0.020178750157356262,
+            0.020269624888896942,
+            0.02141437493264675,
+            0.021349875256419182,
+            0.019185375422239304,
+            0.019238624721765518,
+            0.020059125497937202,
+            0.0193875003606081
+          ]
+        },
+        "native_packed": {
+          "median": 0.016038749366998672,
+          "samples": [
+            0.016038749366998672,
+            0.018045250326395035,
+            0.015883250162005424,
+            0.015910249203443527,
+            0.015934625640511513,
+            0.016871750354766846,
+            0.01587812416255474,
+            0.01789187453687191,
+            0.01687987521290779
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.014028999954462051,
+          "samples": [
+            0.016222000122070312,
+            0.014070499688386917,
+            0.014028125442564487,
+            0.013987500220537186,
+            0.015185125172138214,
+            0.013956749811768532,
+            0.016275374218821526,
+            0.014028999954462051,
+            0.013992000371217728
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.019270125776529312,
+          "samples": [
+            0.019617250189185143,
+            0.018201500177383423,
+            0.02060599997639656,
+            0.019270125776529312,
+            0.018323250114917755,
+            0.02017124928534031,
+            0.019260374829173088,
+            0.018257375806570053,
+            0.020489249378442764
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.092065296451599,
+      "direct_pack_speedup": 1.0409441915718516
+    },
+    {
+      "module": "layers.0.self_attn.add_k_proj",
+      "phase": 3,
+      "branch": 0,
+      "shape": [
+        960,
+        1024,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0006245339172892272,
+      "bridge_nmse": 0.0006245339172892272,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          1024,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 4294967296,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 4294967296,
+        "total_mma": 4294967296,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 268435456,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 128,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 131072,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.0189800001680851,
+          "samples": [
+            0.0189800001680851,
+            0.020740749314427376,
+            0.018702875822782516,
+            0.020670000463724136,
+            0.01872362568974495,
+            0.020806249231100082,
+            0.018712250515818596,
+            0.02072887495160103,
+            0.018712250515818596
+          ]
+        },
+        "bridge_total": {
+          "median": 0.01319662481546402,
+          "samples": [
+            0.015393249690532684,
+            0.013068875297904015,
+            0.014032875187695026,
+            0.013102125376462936,
+            0.01413699984550476,
+            0.01319662481546402,
+            0.014182000420987606,
+            0.0130797503516078,
+            0.01310774963349104
+          ]
+        },
+        "native_packed": {
+          "median": 0.014773749746382236,
+          "samples": [
+            0.01422912534326315,
+            0.014879999682307243,
+            0.014047374948859215,
+            0.014916124753654003,
+            0.014037124812602997,
+            0.014773749746382236,
+            0.01404349971562624,
+            0.014919250272214413,
+            0.015009875409305096
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.008165375329554081,
+          "samples": [
+            0.008381499908864498,
+            0.008130249567329884,
+            0.00816587544977665,
+            0.008162249810993671,
+            0.008165375329554081,
+            0.008166500367224216,
+            0.008181124925613403,
+            0.008159625343978405,
+            0.008140374906361103
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.013899625279009342,
+          "samples": [
+            0.014636499807238579,
+            0.012020999565720558,
+            0.013899625279009342,
+            0.01205500029027462,
+            0.014193874783813953,
+            0.012137374840676785,
+            0.013918749988079071,
+            0.012015249580144882,
+            0.013904999941587448
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.438246554213167,
+      "direct_pack_speedup": 0.9494230636125878
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.up_proj",
+      "phase": 3,
+      "branch": 0,
+      "shape": [
+        960,
+        9216,
+        2048
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0011071691988036036,
+      "bridge_nmse": 0.0011071691988036036,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          9216,
+          2048
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 38654705664,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 38654705664,
+        "total_mma": 38654705664,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 2415919104,
+        "packing": {
+          "base_write_bytes": 1105920,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 3932160
+        },
+        "non_mma": {
+          "amax_elements": 1966080,
+          "quantized_base_elements": 1966080,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 1152,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 1179648,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.06129062548279762,
+          "samples": [
+            0.058889251202344894,
+            0.05951237678527832,
+            0.05771150067448616,
+            0.06153262406587601,
+            0.06110775098204613,
+            0.06129062548279762,
+            0.06171474978327751,
+            0.06165250018239021,
+            0.06140937656164169
+          ]
+        },
+        "bridge_total": {
+          "median": 0.05799437314271927,
+          "samples": [
+            0.055998001247644424,
+            0.05651700124144554,
+            0.05755374953150749,
+            0.059803374111652374,
+            0.058893248438835144,
+            0.05837950110435486,
+            0.05733662471175194,
+            0.058463625609874725,
+            0.05799437314271927
+          ]
+        },
+        "native_packed": {
+          "median": 0.059342749416828156,
+          "samples": [
+            0.056913625448942184,
+            0.05481500178575516,
+            0.05619562417268753,
+            0.05753812566399574,
+            0.0598246231675148,
+            0.0602053739130497,
+            0.0610009990632534,
+            0.0601276233792305,
+            0.059342749416828156
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.05295337364077568,
+          "samples": [
+            0.05011637508869171,
+            0.05101762339472771,
+            0.05414862558245659,
+            0.05449099838733673,
+            0.052502624690532684,
+            0.05394800007343292,
+            0.05295337364077568,
+            0.05200675129890442,
+            0.05522487685084343
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.057247500866651535,
+          "samples": [
+            0.05586337670683861,
+            0.05521899834275246,
+            0.057623498141765594,
+            0.057247500866651535,
+            0.05851587653160095,
+            0.05636874958872795,
+            0.058788251131772995,
+            0.058694373816251755,
+            0.056923750787973404
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 122880,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.0568374509707443,
+      "direct_pack_speedup": 1.0130463734619166
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.down_proj",
+      "phase": 3,
+      "branch": 0,
+      "shape": [
+        960,
+        2048,
+        9216
+      ],
+      "repair": "{\"activation\":0,\"activation_blocks\":0,\"cross\":false,\"weight\":0,\"weight_support\":[]}",
+      "bridge_relative_l2_vs_native": 0.0,
+      "bitwise_equal": true,
+      "native_nmse": 0.0002912988420575857,
+      "bridge_nmse": 0.0002912988420575857,
+      "cost": {
+        "kind": "linear",
+        "shape": [
+          960,
+          2048,
+          9216
+        ],
+        "launch": {
+          "bm": 128,
+          "bn": 64,
+          "bk": 128
+        },
+        "mma_by_dtype": {
+          "fp4": {
+            "base": 38654705664,
+            "a": 0,
+            "w": 0,
+            "cross": 0
+          },
+          "bf16": {}
+        },
+        "base_mma": 38654705664,
+        "total_mma": 38654705664,
+        "a_blocks": 0,
+        "w_blocks": [],
+        "cross_bound": true,
+        "padded_base_mma": 2415919104,
+        "packing": {
+          "base_write_bytes": 4976640,
+          "selected_residual_write_bytes": 0,
+          "residual_allocation_bytes": 0,
+          "input_read_bytes_minimum": 17694720
+        },
+        "non_mma": {
+          "amax_elements": 8847360,
+          "quantized_base_elements": 8847360,
+          "selected_residual_elements": 0,
+          "selector_rank_pairs": 0
+        },
+        "w1_union_bytes": 0,
+        "cost_scope": "issued MMA including tail padding; packing model must match recorded implementation",
+        "execution_ctas": 256,
+        "repair_block": [
+          128,
+          128
+        ]
+      },
+      "extra_fp32_scratch_bytes": 0,
+      "extra_fp32_traffic_bytes": 0,
+      "extra_weight_scale_bytes": 1179648,
+      "workspace_bytes": 1,
+      "timing_ms": {
+        "native_total": {
+          "median": 0.08024825155735016,
+          "samples": [
+            0.07849262654781342,
+            0.0764203742146492,
+            0.07924062758684158,
+            0.08150900155305862,
+            0.08024825155735016,
+            0.08049950003623962,
+            0.07845312356948853,
+            0.08054687827825546,
+            0.08051737397909164
+          ]
+        },
+        "bridge_total": {
+          "median": 0.06819675117731094,
+          "samples": [
+            0.06519187241792679,
+            0.06339800357818604,
+            0.06753849983215332,
+            0.06868712604045868,
+            0.06819675117731094,
+            0.06892900168895721,
+            0.06885174661874771,
+            0.06889750063419342,
+            0.0667949989438057
+          ]
+        },
+        "native_packed": {
+          "median": 0.06954599916934967,
+          "samples": [
+            0.06811362504959106,
+            0.06769312173128128,
+            0.06886512786149979,
+            0.06705600023269653,
+            0.06957437843084335,
+            0.06959199905395508,
+            0.06962350010871887,
+            0.06965787708759308,
+            0.06954599916934967
+          ]
+        },
+        "bridge_packed": {
+          "median": 0.055391501635313034,
+          "samples": [
+            0.052692875266075134,
+            0.05489112436771393,
+            0.054785873740911484,
+            0.05743887647986412,
+            0.056350499391555786,
+            0.055391501635313034,
+            0.054446250200271606,
+            0.055813875049352646,
+            0.05754462629556656
+          ]
+        },
+        "bridge_direct_total": {
+          "median": 0.06760987639427185,
+          "samples": [
+            0.06521199643611908,
+            0.06463699787855148,
+            0.06662175059318542,
+            0.06734837591648102,
+            0.0679091215133667,
+            0.06792525202035904,
+            0.06760987639427185,
+            0.06796562671661377,
+            0.06829924881458282
+          ]
+        }
+      },
+      "direct_pack_bitwise": true,
+      "direct_pack_removed_scale_read_bytes": 552960,
+      "direct_pack_removed_launches": 1,
+      "diagnostic_native_over_bridge": 1.1767166349127895,
+      "direct_pack_speedup": 1.0086803114328546
+    }
+  ],
+  "timing_protocol": {
+    "graph_batch": 32,
+    "rounds": 9,
+    "replays": 8,
+    "alternating_order": true
+  }
+}

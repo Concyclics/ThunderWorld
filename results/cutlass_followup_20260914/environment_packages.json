@@ -1,0 +1,16 @@
+{
+  "versions": {
+    "torch": "2.11.0",
+    "triton": "3.6.0",
+    "transformers": "5.9.0",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0",
+    "numpy": "2.2.5",
+    "Pillow": "11.1.0",
+    "av": "18.1.0",
+    "protobuf": "5.29.6",
+    "pytest": "9.1.1"
+  },
+  "diffusers_source_commit": "77c13f8a49c457f10a89862bb129bdc930b88929",
+  "scope": "Local Python packages, not identical to PRO 6000 environment-tested.json"
+}

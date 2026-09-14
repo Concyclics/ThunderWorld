@@ -67,6 +67,7 @@ class RunConfig:
     linear_backend: str = 'triton'
     cutlass_library: str | None = None
     cutlass_small_library: str | None = None
+    cutlass_direct_pack: bool = False
     strict_tuning: bool = False
     # A separate frozen FFN policy uses task|branch|phase|layer.part keys.
     ffn_policy: str | None = None
@@ -97,6 +98,8 @@ class RunConfig:
                 raise ValueError('CUTLASS requires optimized FP4 and an offline library')
         elif self.cutlass_library is not None or self.cutlass_small_library is not None:
             raise ValueError('A CUTLASS library requires the cutlass-fused backend')
+        if self.cutlass_direct_pack and (self.linear_backend!='cutlass-fused' or self.share_pack):
+            raise ValueError('Direct scale packing requires CUTLASS without shared gate/up packing')
         if self.kernel_variant not in ('optimized','legacy'):
             raise ValueError('Invalid kernel variant')
         if self.precision != 'fp4' and self.attention_backend != 'bf16':
@@ -104,7 +107,7 @@ class RunConfig:
         if not isinstance(self.ffn, LinearSpec) or not isinstance(self.projection, LinearSpec):
             raise ValueError('Expected independent LinearSpec objects')
         if not isinstance(self.attention,RepairPolicy):raise ValueError('Expected RepairPolicy')
-        if any(type(getattr(self,key)) is not bool for key in ('fuse_ffn','share_pack','strict_tuning')):
+        if any(type(getattr(self,key)) is not bool for key in ('fuse_ffn','share_pack','strict_tuning','cutlass_direct_pack')):
             raise ValueError('Execution switches must be boolean')
 
     def to_dict(self):

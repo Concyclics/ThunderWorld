@@ -18,7 +18,11 @@ def select_shared_device(minimum_mib=12 * 1024):
     requested = os.environ.get('CUDA_VISIBLE_DEVICES')
     if requested is not None and requested not in ('0', '3'):
         raise ValueError('Shared calibration requires physical GPU0 or GPU3')
-    device = int(requested) if requested else max((0, 3), key=lambda i: available[i])
+    eligible=[i for i in (0,3) if i in available]
+    if not eligible:raise RuntimeError('No eligible GPU0/GPU3 found')
+    if requested is not None and int(requested) not in eligible:
+        raise RuntimeError(f'Requested GPU{requested} is not present')
+    device = int(requested) if requested else max(eligible, key=lambda i: available[i])
     if available[device] < minimum_mib:
         raise RuntimeError(f'PAUSED: GPU{device} has {available[device]} MiB free; requires {minimum_mib}')
     os.environ['CUDA_VISIBLE_DEVICES'] = str(device)

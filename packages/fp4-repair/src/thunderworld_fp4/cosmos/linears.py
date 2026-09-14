@@ -128,6 +128,7 @@ class RepairLinear(torch.nn.Module):
             small=getattr(config,'cutlass_small_library',None)
             if small:libraries.append(small)
             variants=[CutlassFused(op,m,library) for library in libraries]
+            for wrapped in variants:wrapped.direct_scale_pack=getattr(config,'cutlass_direct_pack',False)
             scales=next(iter(self.ops.values())).w0_scales if self.ops else variants[0].w0_scales
             for wrapped in variants:wrapped.w0_scales=scales
             # Topology proposes the default; only exclusive --tune measures choices.
@@ -139,16 +140,27 @@ class RepairLinear(torch.nn.Module):
 
     def _compute(self, x, factor=None, packed=None):
         op=self.bound;m,k=x.shape
+        direct=getattr(op,'direct_scale_pack',False)
         sparse=self.asset.get('selector')=='residual_sensitivity' and 0<op.na<k//128
         if sparse:
             if packed is not None:raise ValueError('Residual sensitivity requires compatible shared selectors')
             from .._sparse_pack import pack_sparse
             base,res=self.asset.get('activation_scale',(1.,1.))
-            packed=pack_sparse(x,op.d,self.sensitivity,op.am,op.na,base=base,res=res,
-                               factor=factor if bool(self.asset.get('identity_prescale',False)) else None)
+            if direct:
+                from ..cutlass.packing import pack_input
+                packed=pack_input(x,op,sensitivity=self.sensitivity,base=base,res=res,
+                    factor=factor if bool(self.asset.get('identity_prescale',False)) else None)
+            else:
+                packed=pack_sparse(x,op.d,self.sensitivity,op.am,op.na,base=base,res=res,
+                                   factor=factor if bool(self.asset.get('identity_prescale',False)) else None)
         elif 0<op.na<k//128:
             select_tiles[(triton.cdiv(m,128),)](x,op.d,op.am,m,k,
                 triton.next_power_of_2(k//128),op.na,num_warps=4)
+        if direct and packed is None:
+            from ..cutlass.packing import pack_input
+            base,res=self.asset.get('activation_scale',(1.,1.))
+            # The calibrated native branch recomputes its factor even if provided.
+            packed=pack_input(x,op,base=base,res=res,factor=factor if (base,res)==(1.,1.) else None)
         if packed is not None:y=op.run_packed(x,packed)
         elif self.asset.get('activation_scale',(1.,1.))!=(1.,1.):
             from .._calibrated import pack
@@ -174,6 +186,7 @@ class RepairLinear(torch.nn.Module):
                 # candidates are admitted only after bitwise output verification.
                 variants=self.bound.tuning_variants
                 tune_spec['artifact']=[v.artifact for v in variants]
+                tune_spec['direct_scale_pack']=self.bound.direct_scale_pack
                 tune_key=c.table.key('cutlass-linear',[len(flat),self.out_features,self.in_features],tune_spec)
                 launches=[dict(tile=[128,v.tile_n,128],schedule='cooperative_sparse_v1') for v in variants]
                 def apply(v):

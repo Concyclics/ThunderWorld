@@ -1,0 +1,158 @@
+{
+  "complete": true,
+  "upstream": "23bd2a9",
+  "gpu": "RTX 5090",
+  "operator_cases": 96,
+  "bitwise_operator_cases": 96,
+  "summary": [
+    {
+      "panel": "i2v_b125",
+      "tile_n": 128,
+      "cases": 16,
+      "native_min": 0.9629500301960379,
+      "native_max": 1.6240384403937058,
+      "direct_min": 0.9857893356679411,
+      "direct_max": 1.076182316907008,
+      "direct_median": 1.0288578316598993,
+      "faster": 13,
+      "above_1_03": 8
+    },
+    {
+      "panel": "i2v_b125",
+      "tile_n": 64,
+      "cases": 16,
+      "native_min": 1.0186681888931457,
+      "native_max": 1.438246554213167,
+      "direct_min": 0.9494230636125878,
+      "direct_max": 1.10307764219332,
+      "direct_median": 1.0154311379559169,
+      "faster": 12,
+      "above_1_03": 6
+    },
+    {
+      "panel": "i2v_b150",
+      "tile_n": 128,
+      "cases": 16,
+      "native_min": 0.8687488299198194,
+      "native_max": 1.5930032973536454,
+      "direct_min": 0.9892200410068034,
+      "direct_max": 1.0836983496233705,
+      "direct_median": 1.0274881212510993,
+      "faster": 15,
+      "above_1_03": 7
+    },
+    {
+      "panel": "i2v_b150",
+      "tile_n": 64,
+      "cases": 16,
+      "native_min": 0.7479881362131349,
+      "native_max": 1.3326935537416844,
+      "direct_min": 0.982353008726408,
+      "direct_max": 1.164658777616764,
+      "direct_median": 1.0208787085292177,
+      "faster": 15,
+      "above_1_03": 5
+    },
+    {
+      "panel": "policy_b125",
+      "tile_n": 128,
+      "cases": 16,
+      "native_min": 1.000886573397788,
+      "native_max": 1.8766815533429446,
+      "direct_min": 0.9909476227479159,
+      "direct_max": 1.08482065215255,
+      "direct_median": 1.0357779590069143,
+      "faster": 15,
+      "above_1_03": 9
+    },
+    {
+      "panel": "policy_b125",
+      "tile_n": 64,
+      "cases": 16,
+      "native_min": 0.9730662507788576,
+      "native_max": 2.496485389318321,
+      "direct_min": 0.9779138793491079,
+      "direct_max": 1.1425741961522697,
+      "direct_median": 1.056093136035456,
+      "faster": 14,
+      "above_1_03": 10
+    }
+  ],
+  "trajectory": [
+    {
+      "panel": "i2v_b125",
+      "seed": 7103,
+      "steps": 35,
+      "bitwise": true,
+      "mma_ratio": 1.2499959947747215,
+      "removed_scale_read_bytes": 2288025600,
+      "removed_launches": 11760,
+      "weight_bytes": 973334736,
+      "sha256": {
+        "video": "41c127a3875db6bc871fdb7dcb400ee594a7675ebe709c654285f2d2c5ba66e5"
+      },
+      "scope": "Development trajectory equality, not final quality or E2E performance"
+    },
+    {
+      "panel": "i2v_b125",
+      "seed": 7104,
+      "steps": 35,
+      "bitwise": true,
+      "mma_ratio": 1.2499959947747215,
+      "removed_scale_read_bytes": 2288025600,
+      "removed_launches": 11760,
+      "weight_bytes": 973334736,
+      "sha256": {
+        "video": "ab51b18ac2c7e70bb568396598bc02ea544f003f0a235a2614ddefbda5d43858"
+      },
+      "scope": "Development trajectory equality, not final quality or E2E performance"
+    },
+    {
+      "panel": "i2v_b150",
+      "seed": 7103,
+      "steps": 35,
+      "bitwise": true,
+      "mma_ratio": 1.4999970731046042,
+      "removed_scale_read_bytes": 2288025600,
+      "removed_launches": 11760,
+      "weight_bytes": 1077834368,
+      "sha256": {
+        "video": "07915fbf58164b9b7768a5b0087a6015f5a80fb64d705a99162f64738d1bef37"
+      },
+      "scope": "Development trajectory equality, not final quality or E2E performance"
+    },
+    {
+      "panel": "i2v_b150",
+      "seed": 7104,
+      "steps": 35,
+      "bitwise": true,
+      "mma_ratio": 1.4999970731046042,
+      "removed_scale_read_bytes": 2288025600,
+      "removed_launches": 11760,
+      "weight_bytes": 1077834368,
+      "sha256": {
+        "video": "08c2230aea6fbbddc8b89f53935000a1fa153bdd6103453efaf1569c08b22e8c"
+      },
+      "scope": "Development trajectory equality, not final quality or E2E performance"
+    }
+  ],
+  "scope": "Layer-0 four-phase diagnostic panels; no multiplication into E2E speedups",
+  "sources": {
+    "runs5090/cutlass_followup_20260914/batched_i2v_b125_n128.json": "996a2ae3de40004727a7c68f1981e59b827febfc2f5548fc52d01c1b2665a84f",
+    "runs5090/cutlass_followup_20260914/batched_i2v_b125_n64.json": "bd5f0da9c4dbc72d7788a7eab087870630ca938218830baa37553a07d425e27b",
+    "runs5090/cutlass_followup_20260914/batched_i2v_b150_n128.json": "c8dbf7c3f6b595d587eb349af81cdc589f1a288cfeb78b8e5d4c5b4c068d5084",
+    "runs5090/cutlass_followup_20260914/batched_i2v_b150_n64.json": "9cdb57e363977275e96aa0c96650da029386812186face4bdd01bff309b5136b",
+    "runs5090/cutlass_followup_20260914/batched_policy_b125_n128.json": "595b82ddd7c662f8d2d3fb2bdf3066ee60e1dcae5db7362f13820adc9acba68e",
+    "runs5090/cutlass_followup_20260914/batched_policy_b125_n64.json": "d669b33d880959e1152e94f5cb8e8387114ebe64ef412cbf41f977aa90965f00",
+    "runs5090/cutlass_followup_20260914/direct_i2v_b125_n128.json": "5a17e51990e42813f820cf2eb37a97bb0acf66228fe889432bfb771555eaf087",
+    "runs5090/cutlass_followup_20260914/direct_i2v_b125_n64.json": "48ce523714cd7ab8dad47beeb986990a5c8ef79a2d0dbf71a062cdab76ec0060",
+    "runs5090/cutlass_followup_20260914/direct_i2v_b150_n128.json": "ea5a91f62989a4821fe7c7c59add87b9165df1a44b0d1b5a4c0f9c58c795c90d",
+    "runs5090/cutlass_followup_20260914/direct_i2v_b150_n64.json": "564b459e0c103f51237486220c2ab0d6cba605f7715b62d8a3071b3bf698c90f",
+    "runs5090/cutlass_followup_20260914/direct_policy_b125_n128.json": "c54c2c4a83e68c5f62a7e20ed1f86c4f236e34c66d38eee76d080dc62403b42d",
+    "runs5090/cutlass_followup_20260914/direct_policy_b125_n64.json": "1ee7fad147d028b2d96bbf021dc29419ac220b878e7188bb968b4e8d5ecd6051",
+    "runs5090/cutlass_followup_20260914/trajectory_i2v_b125_original/result.json": "a8a7e8bf3e667b5ee0533f09bd7d3336bcdd9e862289f92d1626cd4c09e581ba",
+    "runs5090/cutlass_followup_20260914/trajectory_i2v_b125_direct/result.json": "885a833237fdc7f6c238fd462934d37c8a3e173ae927a9b154b2a4a882470440",
+    "runs5090/cutlass_followup_20260914/trajectory_i2v_b150_original/result.json": "da819cbe7afad2630d570d8bc5413b64b8ee91c69dd59fef894423fb24a073cb",
+    "runs5090/cutlass_followup_20260914/trajectory_i2v_b150_direct/result.json": "a1270497343cf84239a637505bcb372fb46f3d2e56caf211843b9fab90fc51a9"
+  }
+}

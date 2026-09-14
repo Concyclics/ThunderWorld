@@ -1,0 +1,176 @@
+{
+  "complete": true,
+  "upstream_commit": "23bd2a9f91a7b2dd0c75395c474b8fdfff71eb3e",
+  "tests": 208,
+  "direct_tests_n128": 30,
+  "memcheck_errors": 0,
+  "racecheck_errors": 0,
+  "racecheck_warnings": 0,
+  "source_sha256": {
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/packing.py": "ff8bc3a60c61d3d4604e2e7deaf69c5994bcac66426d84491863f0461174839c",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/__init__.py": "095c38bf617115576d3723cfedd70a36a12fdc63bd99792c57eb5ca8a985f88b",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/allocation.py": "6b49160bc275c553b10fca3095287e159304a84a4fc6c0843df6f460af6b87ba",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/assets.py": "031c5cfed4f87b97338c79c63fc15008fc8af3500666de341fc20367c1268017",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/budget.py": "4b78de6b1f7b96dcb046fd4ce45b485b4a5244b9e7f12be248e8ccbc210c9afb",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/calibration.py": "5561458c2e5dd973f7767072ec5b681f4494e2e86e798dc4ce7a8ebe1be5452c",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/cli.py": "8cb988a9539e882c2b94d616b045828afc0900ec86753c64359812aa6acc4d9f",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/cohorts.py": "00c7e7e47f6e141343f88cd60697cfd6dcd4a5f5fb2e0d38e67a0c5209e18e53",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/diagnostics.py": "358941666076b9ff517bf25b7ca6eb7dfd5329a35880e18abd4e7bf095151fdb",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/engine.py": "fe634623b1a09bfe594a4a066ccb4f0b4f11d02a339b481589dd10519d87602b",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/linears.py": "ace51da465a45f485bc7e1ee12fc1b92a60aa4b4666581592289ebc0e86be06f",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/quality.py": "3eaf3cae07ae45f9348669e236c2fd393ba8034556237a29d83bd385bb672cc0",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/resources.py": "0b62f0836070239d390b2d8521052929af486ace0c62c1c103b5c234508a143c",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/runner.py": "bcab7827bd7a89cc28350ec8d2a827059cd55917691d6abb01e96a8625a23bc6",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/scheduler.py": "dcebbdae0d83c24aeb95d3fafa034ff8696b1bdaa3ebe77ea8a6b64164a69033",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/settings.py": "07b8824235b97cbd3b3333f37e13e4056c2dad54498db329add64e7f4333e689",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/trees.py": "1bb368d61ba9147b59e6088cc9af8dc7cf6a87bc19b287cd2c848baf9cc6e6d5",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/tuning.py": "86f32b8cc6f30b33a2476365d72634f3cd72dc652b0b830bc922ca2dbbafb81c",
+    "experiments/cutlass_fused_repair/build.py": "4096c94fb1783ce17f77370c300bb5f41bbb354f785bf5a27a0cf4d9d86568d9",
+    "experiments/cutlass_fused_repair/configure.py": "03e258d1500e899f176fa0c84c6f36501bd5c5adb3ea0375c48773138110e0e2",
+    "experiments/cutlass_fused_repair/download_github.py": "4acc154db293ec7d74bbafce33cbf18345d1782f73787a0ee570f7d270e83e2c",
+    "experiments/cutlass_fused_repair/export_capsule.py": "efdf6ff78e9db882707fb6d031214b7a446f8c4c6e7babe03da5e4a3b7588b0f",
+    "experiments/cutlass_fused_repair/fused.py": "0b859c016b53c4ea776a9599cc81e21c632db11524a237a8ec5dda6c707dbf0e",
+    "experiments/cutlass_fused_repair/make_bundle.py": "5d0a2382c5842515671819ddeeb75a428f5d8f3f7831c5777415b8c2a60baff1",
+    "experiments/cutlass_fused_repair/probe.py": "8452ed626ea7c825429b8e74305adc3989abe32cf54bbdd7d34afb31d0d1abc6",
+    "experiments/cutlass_fused_repair/retest.py": "d6ec0fe22b061ddf4f75bee4aa3d2c9cb7b1986dd5ca9715332348eeb14843ce",
+    "experiments/cutlass_fused_repair/run_tests.py": "b7a35c546743c1a5fd62eb12255840d72884619dd4c05e00d7b179c0c7e4b496",
+    "experiments/cutlass_fused_repair/summarize5090.py": "c3902ca559dc30da847c4cf081cd437a6fa8da7e265856ca04db7c03f9e5958e",
+    "experiments/cutlass_fused_repair/test_direct_pack.py": "9e975eafa9531423d68e17aec86ff624e2596814807a8035fa66dc0471f4f289",
+    "experiments/cutlass_fused_repair/test_fused.py": "6e199343fffcd332c3a8708fa9181302f5163607ef5de5e5abe951cee57fbbb3",
+    "experiments/cutlass_fused_repair/weight_recipe.py": "d3bc05a18df23ccf98f54ba854132e15c916f02f006c6dbedece00746651080c"
+  },
+  "recipes": {
+    "i2v_b125": {
+      "complete": true,
+      "modules": 168,
+      "manifest_sha256": "a808e0565f98ac5ba68923f1a451aa6371cbf65c24efe4c584d2c01f4ca05160",
+      "recipe_sha256": "9eac62e2489d36446550c3f8337cad660f05d03a745b0b9a2b5ecdf32f48fc80"
+    },
+    "i2v_b150": {
+      "complete": true,
+      "modules": 168,
+      "manifest_sha256": "ceb5efe8e526d3a9ae4be3bbadbc55b5cb3939a62c376013c6f02bb87abd98ea",
+      "recipe_sha256": "790f1ff4e35528911a3a1e7c6d213a39d7d647308165ce1227fe6f7d49b65e52"
+    }
+  },
+  "files": {
+    "TABLE.md": {
+      "bytes": 1193,
+      "sha256": "697fdf385c2f1591b8e3a43e01dd7f42035807b6eaefb4c2de494081c720a85d"
+    },
+    "build_n128.json": {
+      "bytes": 4283,
+      "sha256": "ce4c8ea61902902bf7c5151cd1e0ebc1f425f399ec90d4abb46dfa28679c2fcc"
+    },
+    "build_n64.json": {
+      "bytes": 4280,
+      "sha256": "515a9385dfef1fe3c23da9a9e008cff890a25b68445f22cdb83330b178abcd71"
+    },
+    "direct_tests_n128.txt": {
+      "bytes": 99,
+      "sha256": "3e6939e64c00f7fe353c71b128138df9563315edd72e83fcbe5eeffb34135d46"
+    },
+    "memcheck.txt": {
+      "bytes": 161,
+      "sha256": "fa735bb75b50b36f5bfa693194099829b718a4c0727be5cc60f53bb4701ad6c1"
+    },
+    "operators.csv": {
+      "bytes": 15705,
+      "sha256": "ec075657cc2a7a0bbbd532f369f3cb93e206f5561de3d75fe0a6f378559ed6e6"
+    },
+    "racecheck.txt": {
+      "bytes": 210,
+      "sha256": "a07e03a1b3b40f40aecae8b4f448bf26a36875a0751a0c2e88977e0b52a8cfa2"
+    },
+    "records/baseline_i2v125_n128.json": {
+      "bytes": 51820,
+      "sha256": "cec56a4ca91f161a5b6fab77cc0c5bf75687920a2498d492156a634760b71824"
+    },
+    "records/batched_i2v_b125_n128.json": {
+      "bytes": 70179,
+      "sha256": "996a2ae3de40004727a7c68f1981e59b827febfc2f5548fc52d01c1b2665a84f"
+    },
+    "records/batched_i2v_b125_n64.json": {
+      "bytes": 70127,
+      "sha256": "bd5f0da9c4dbc72d7788a7eab087870630ca938218830baa37553a07d425e27b"
+    },
+    "records/batched_i2v_b150_n128.json": {
+      "bytes": 75325,
+      "sha256": "c8dbf7c3f6b595d587eb349af81cdc589f1a288cfeb78b8e5d4c5b4c068d5084"
+    },
+    "records/batched_i2v_b150_n64.json": {
+      "bytes": 75312,
+      "sha256": "9cdb57e363977275e96aa0c96650da029386812186face4bdd01bff309b5136b"
+    },
+    "records/batched_policy_b125_n128.json": {
+      "bytes": 69923,
+      "sha256": "595b82ddd7c662f8d2d3fb2bdf3066ee60e1dcae5db7362f13820adc9acba68e"
+    },
+    "records/batched_policy_b125_n64.json": {
+      "bytes": 69991,
+      "sha256": "d669b33d880959e1152e94f5cb8e8387114ebe64ef412cbf41f977aa90965f00"
+    },
+    "records/direct_i2v_b125_n128.json": {
+      "bytes": 59316,
+      "sha256": "5a17e51990e42813f820cf2eb37a97bb0acf66228fe889432bfb771555eaf087"
+    },
+    "records/direct_i2v_b125_n64.json": {
+      "bytes": 59301,
+      "sha256": "48ce523714cd7ab8dad47beeb986990a5c8ef79a2d0dbf71a062cdab76ec0060"
+    },
+    "records/direct_i2v_b150_n128.json": {
+      "bytes": 64553,
+      "sha256": "ea5a91f62989a4821fe7c7c59add87b9165df1a44b0d1b5a4c0f9c58c795c90d"
+    },
+    "records/direct_i2v_b150_n64.json": {
+      "bytes": 64531,
+      "sha256": "564b459e0c103f51237486220c2ab0d6cba605f7715b62d8a3071b3bf698c90f"
+    },
+    "records/direct_policy_b125_n128.json": {
+      "bytes": 59040,
+      "sha256": "c54c2c4a83e68c5f62a7e20ed1f86c4f236e34c66d38eee76d080dc62403b42d"
+    },
+    "records/direct_policy_b125_n64.json": {
+      "bytes": 59000,
+      "sha256": "1ee7fad147d028b2d96bbf021dc29419ac220b878e7188bb968b4e8d5ecd6051"
+    },
+    "records/trajectory_i2v_b125_direct.json.gz": {
+      "bytes": 554444,
+      "sha256": "12c33e5a96aa42905667e23380d626d8b211b07a831fd7f0db2e0911b25ed2ea"
+    },
+    "records/trajectory_i2v_b125_original.json.gz": {
+      "bytes": 555262,
+      "sha256": "acb92d72088c9286ebafbd295cf903a96d6f94dd8b49fa9c708a823d99888a80"
+    },
+    "records/trajectory_i2v_b150_direct.json.gz": {
+      "bytes": 1092237,
+      "sha256": "dbc2e6b5c16a147a35db69ab8fae7771fa8a9abc2a40fdba705f77e39ba3a45f"
+    },
+    "records/trajectory_i2v_b150_original.json.gz": {
+      "bytes": 1092897,
+      "sha256": "ffbb8b160ed457125c426642550094ac9d1563b54ab7331e016634d5e6696de8"
+    },
+    "summary.csv": {
+      "bytes": 791,
+      "sha256": "87097676bfa33faddc2c519e1b3032bcbfc566e024c4873a7a4a72c13febd244"
+    },
+    "summary.json": {
+      "bytes": 6266,
+      "sha256": "b3fb00b5504044db36247bdb51c34cdbd0e69c04b7ece3799097ca9df3167df3"
+    },
+    "tests.txt": {
+      "bytes": 869,
+      "sha256": "c92caf9d2b2219eba82e0d241dc73244fc520ea00ca267d6ef493edce27c7c52"
+    },
+    "environment_packages.json": {
+      "bytes": 429,
+      "sha256": "7f48098991d2c1ecdced5617e9c6e5f17878a65ff1e015de66cadb9aaa9b5434"
+    }
+  }
+}

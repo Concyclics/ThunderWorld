@@ -17,7 +17,7 @@ class CutlassFused:
         if op.b!=128 or op.bm!=128 or op.split_k!=1:
             raise ValueError('Fused CUTLASS requires M128/K128 and unsplit accumulation')
         if torch.cuda.get_device_capability(op.wc.device)!=(12,0):raise ValueError('SM120 required')
-        self.op=op;self.m=m
+        self.op=op;self.m=m;self.direct_scale_pack=False
         meta=json.loads(Path(library).with_suffix('.build.json').read_text())
         self.tile_n=meta['tile'][1]
         self.artifact={k:meta[k] for k in ('backend','library_sha256','sources','tile')}
@@ -48,10 +48,20 @@ class CutlassFused:
     def run_packed(self,x,packed):
         if x.shape!=(self.m,self.op.k) or x.dtype!=torch.bfloat16 or x.device!=self.op.wc.device:
             raise ValueError('Input must match prepared BF16 shape/device')
+        from .packing import CutlassPacked
+        direct=packed if isinstance(packed,CutlassPacked) else None
+        if direct is not None:packed=direct.native
         self._validate(packed)
         ac,sc,ag,mp=packed;op=self.op
-        alpha=torch.empty((),device=x.device,dtype=torch.float32)
-        scales=swizzle(sc[0],ag,op.wg,alpha)
+        if direct is None:
+            alpha=torch.empty((),device=x.device,dtype=torch.float32)
+            scales=swizzle(sc[0],ag,op.wg,alpha)
+        else:
+            scales,alpha=direct.scales,direct.alpha
+            if scales.shape!=(triton.cdiv(self.m,128)*128,op.k//16) or scales.dtype!=sc.dtype:
+                raise ValueError('Invalid direct CUTLASS scale shape/dtype')
+            if alpha.dtype!=torch.float32 or alpha.numel()!=1 or any(t.device!=x.device or not t.is_contiguous() for t in (scales,alpha)):
+                raise ValueError('Invalid direct CUTLASS scales/alpha device or layout')
         output=torch.empty((self.m,op.n),device=x.device,dtype=torch.bfloat16)
         args=RepairIO(*[t.data_ptr() for t in (ac,sc,op.wc,op.ws,op.wr,op.wrs,op.wi,op.off,op.wloc,op.am)],
             self.m,mp,op.n,op.k,op.na,int(op.hasw),int(op.cross),int(op.shared_bank),int(op.dense_w))

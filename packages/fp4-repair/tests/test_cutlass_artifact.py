@@ -16,6 +16,11 @@ def test_backend_requires_explicit_compatible_library():
     config=replace(baseline,linear_backend='cutlass-fused',cutlass_library='test.so')
     assert config.fingerprint!=baseline.fingerprint
     assert RunConfig.from_dict(config.to_dict())==config
+    direct=replace(config,cutlass_direct_pack=True)
+    assert direct.fingerprint!=config.fingerprint
+    assert RunConfig.from_dict(direct.to_dict())==direct
+    with pytest.raises(ValueError):replace(baseline,cutlass_direct_pack=True)
+    with pytest.raises(ValueError):replace(direct,share_pack=True)
     with pytest.raises(ValueError):replace(config,kernel_variant='legacy')
     with pytest.raises(ValueError):replace(config,precision='fp8',attention_backend='bf16')
 

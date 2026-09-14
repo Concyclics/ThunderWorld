@@ -112,7 +112,7 @@ class JointEngine:
         self.shapes[str(key)]=dict(module=name,m=int(shape[0]),n=n,k=int(shape[1]),
             branch=self.branch,phase=phase(self.step,self.steps),task=self.task,w_blocks=list(op.weight_ids),
             repair=spec.key,actual_a=op.na/(op.k//128),actual_w=op.wi.numel()/(op.n//128*(op.k//128)),
-            backend=self.config.linear_backend,
+            backend=self.config.linear_backend,direct_scale_pack=getattr(op,'direct_scale_pack',False),
             launch=(dict(tile=[128,op.tile_n,128],schedule='TMA cooperative + sparse cp.async')
                     if self.config.linear_backend=='cutlass-fused' else dict(bm=op.bm,stages=op.num_stages)))
 
@@ -261,7 +261,8 @@ class JointEngine:
                         cost['launch']['bn']=native.tile_n
                         cost['repair_block']=[128,128]
                         cost['execution_ctas']=triton.cdiv(m,128)*(n//native.tile_n)
-                        cost['packing']['cutlass_scale_read_bytes']=triton.cdiv(m,16)*16*(k//16)
+                        cost['packing']['cutlass_scale_read_bytes']=0 if native.direct_scale_pack else triton.cdiv(m,16)*16*(k//16)
+                        cost['packing']['cutlass_scale_conversion_launches']=0 if native.direct_scale_pack else 1
                         cost['packing']['cutlass_scale_write_bytes']=triton.cdiv(m,128)*128*(k//16)
                         cost['packing']['cutlass_alpha_write_bytes']=4
                         cost['cutlass_extra_weight_scale_bytes']=n*(k//16)

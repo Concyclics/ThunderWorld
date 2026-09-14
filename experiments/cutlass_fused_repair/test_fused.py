@@ -73,13 +73,14 @@ def test_scale_layout_is_exact():
 
 
 @torch.inference_mode()
-def test_runtime_shared_assets_and_phase_switch():
+@pytest.mark.parametrize('direct',[False,True])
+def test_runtime_shared_assets_and_phase_switch(direct):
     from types import SimpleNamespace
     from thunderworld_fp4.cosmos.linears import RepairLinear
     from thunderworld_fp4.cosmos.settings import RunConfig,LinearSpec
     from thunderworld_fp4.cutlass.artifact import verify_library
     library=os.environ['TW_CUTLASS_LIBRARY']
-    config=RunConfig(linear_backend='cutlass-fused',cutlass_library=library)
+    config=RunConfig(linear_backend='cutlass-fused',cutlass_library=library,cutlass_direct_pack=direct)
     controller=SimpleNamespace(config=config,budget_plan=None)
     torch.manual_seed(1871)
     source=torch.nn.Linear(384,256,bias=False,device='cuda',dtype=torch.bfloat16)
@@ -120,7 +121,8 @@ def test_n64_n128_bitwise():
 
 
 @torch.inference_mode()
-def test_runtime_variant_profile_and_current_input():
+@pytest.mark.parametrize('direct',[False,True])
+def test_runtime_variant_profile_and_current_input(direct):
     other=os.environ.get('TW_CUTLASS_OTHER_LIBRARY')
     if not other:pytest.skip('Both offline tile variants required')
     from types import SimpleNamespace
@@ -128,7 +130,7 @@ def test_runtime_variant_profile_and_current_input():
     from thunderworld_fp4.cosmos.settings import RunConfig,LinearSpec
     from thunderworld_fp4.cosmos.tuning import LaunchTable
     primary=os.environ['TW_CUTLASS_LIBRARY']
-    config=RunConfig(linear_backend='cutlass-fused',cutlass_library=other,cutlass_small_library=primary)
+    config=RunConfig(linear_backend='cutlass-fused',cutlass_library=other,cutlass_small_library=primary,cutlass_direct_pack=direct)
     class Table:
         key=staticmethod(LaunchTable.key)
         bad=False

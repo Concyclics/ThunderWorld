@@ -15,10 +15,14 @@ def main():
     p.add_argument('--assets',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--correctness-only',action='store_true')
+    p.add_argument('--compare-direct-pack',action='store_true',help='Matched original vs fused scale-producer timing and bitwise check')
+    p.add_argument('--graph-batch',type=int,default=1,help='Operators per captured graph; reduces host replay gaps in diagnostic timing')
+    p.add_argument('--timing-rounds',type=int,default=5)
     p.add_argument('--phases',type=int,nargs='+',default=[0],choices=range(4))
     p.add_argument('--resource-mode',choices=['shared-calibration','exclusive'],default='shared-calibration')
     p.add_argument('--device',choices=['0','3'],default='0')
     a=p.parse_args()
+    if a.graph_batch<1 or a.timing_rounds<1:p.error('Positive graph batch and timing rounds required')
     if a.output.exists():raise FileExistsError(a.output)
     from thunderworld_fp4.cosmos.resources import shared_worker,select_shared_device
     with shared_worker():
@@ -48,6 +52,7 @@ def main():
             assets_sha256=hashlib.sha256((a.assets/'manifest.json').read_bytes()).hexdigest(),
             library_sha256=hashlib.sha256(a.library.read_bytes()).hexdigest(),
             torch_version=torch.__version__,gpu=torch.cuda.get_device_name(),device_identity=identity(),rows=[])
+        result['timing_protocol']=dict(graph_batch=a.graph_batch,rounds=a.timing_rounds,replays=max(8,100//a.graph_batch),alternating_order=True)
         def save():a.output.write_text(json.dumps(result,indent=2)+'\n')
         save()
         names=['layers.0.self_attn.add_q_proj','layers.0.self_attn.add_k_proj',
@@ -65,13 +70,19 @@ def main():
                     controller=SimpleNamespace(budget_plan=plan,config=SimpleNamespace(kernel_variant='optimized'))
                     layer=RepairLinear(source,controller,name,spec,asset);layer.prepare_shape(m,spec);native=layer.bound
                     bridge=CutlassBridge(native,m,a.library)
-                    def compute(op):layer.bound=op;return layer._compute(x)
+                    def compute(op,direct=False):
+                        if isinstance(op,CutlassBridge):op.direct_scale_pack=direct
+                        layer.bound=op;return layer._compute(x)
                     captured=[];original=native.run_packed
                     def record(inp,packed):captured.append(packed);return original(inp,packed)
                     native.run_packed=record
                     expected=compute(native)
                     native.run_packed=original;packed=captured[-1]
                     actual=compute(bridge)
+                    direct_equal=None
+                    if a.compare_direct_pack:
+                        direct_equal=torch.equal(actual,compute(bridge,True))
+                        if not direct_equal:raise ValueError(f'Direct scale producer changed output: {name}, phase {ph}')
                     error=float((actual.float()-expected.float()).norm()/expected.float().norm().clamp_min(1e-20))
                     if error>=.002:raise ValueError(f'Bridge numerical mismatch {name}: {error}')
                     nmse=lambda y:float((y.float()-gold).square().sum()/gold.square().sum().clamp_min(1e-20))
@@ -84,29 +95,38 @@ def main():
                         bitwise_equal=torch.equal(actual,expected),native_nmse=nmse(expected),bridge_nmse=nmse(actual),
                         cost=cost,extra_fp32_scratch_bytes=scratch,extra_fp32_traffic_bytes=2*scratch,
                         extra_weight_scale_bytes=bridge.w0_scales.numel(),workspace_bytes=bridge.workspace.numel(),timing_ms={})
+                    if a.compare_direct_pack:
+                        item['direct_pack_bitwise']=direct_equal
+                        item['direct_pack_removed_scale_read_bytes']=packed[1][0].numel()
+                        item['direct_pack_removed_launches']=1
                     if not a.correctness_only:
                         if a.resource_mode=='exclusive':idle_guard()
                         funcs={'native_total':lambda:compute(native),'bridge_total':lambda:compute(bridge),
                                'native_packed':lambda:native.run_packed(x,packed),'bridge_packed':lambda:bridge.run_packed(x,packed)}
+                        if a.compare_direct_pack:funcs['bridge_direct_total']=lambda:compute(bridge,True)
                         graphs={};keepers=[]
                         for key,fn in funcs.items():
                             for _ in range(3):fn()
                             g=torch.cuda.CUDAGraph()
-                            with torch.cuda.graph(g):y=fn()
+                            with torch.cuda.graph(g):
+                                for _ in range(a.graph_batch):y=fn()
                             graphs[key]=g;keepers.append(y)
                         measurements={key:[] for key in funcs}
                         # Fixed alternating order; no launch search or leaderboard update.
-                        for repeat in range(5):
+                        replays=max(8,100//a.graph_batch)
+                        for repeat in range(a.timing_rounds):
                             keys=list(funcs)
                             if repeat%2:keys.reverse()
                             for key in keys:
                                 start=torch.cuda.Event(enable_timing=True);end=torch.cuda.Event(enable_timing=True)
                                 start.record()
-                                for _ in range(100):graphs[key].replay()
+                                for _ in range(replays):graphs[key].replay()
                                 end.record();end.synchronize()
-                                measurements[key].append(start.elapsed_time(end)/100)
+                                measurements[key].append(start.elapsed_time(end)/(replays*a.graph_batch))
                         item['timing_ms']={key:dict(median=statistics.median(v),samples=v) for key,v in measurements.items()}
                         item['diagnostic_native_over_bridge']=item['timing_ms']['native_total']['median']/item['timing_ms']['bridge_total']['median']
+                        if a.compare_direct_pack:
+                            item['direct_pack_speedup']=item['timing_ms']['bridge_total']['median']/item['timing_ms']['bridge_direct_total']['median']
                         if a.resource_mode=='exclusive':idle_guard()
                         del graphs,keepers
                     result['rows'].append(item);save();print(json.dumps(item),flush=True)

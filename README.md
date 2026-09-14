@@ -1,5 +1,8 @@
 # ThunderWorld
 
+**CUTLASS follow-up on RTX 5090 (2026-09-14):** [measured gains, direct scale
+packing, full-trajectory equality and remaining bottlenecks](docs/CUTLASS_5090_FOLLOWUP_20260914.md).
+
 **Start here for another-device research:** [optimization status, measured speedups,
 repair-budget knobs, and runnable handoff](docs/OPTIMIZATION_HANDOFF.md) (2026-09-11).
 Includes versioned Edge/Nano runtime policies and the latest 86-configuration

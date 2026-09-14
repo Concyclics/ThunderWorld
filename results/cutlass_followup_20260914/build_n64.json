@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "backend": "cutlass-fused-sm120",
+  "tile": [
+    128,
+    64,
+    128
+  ],
+  "command": [
+    "/usr/local/cuda/bin/nvcc",
+    "-DTW_TILE_N=64",
+    "-std=c++17",
+    "-O3",
+    "--expt-relaxed-constexpr",
+    "--expt-extended-lambda",
+    "-gencode",
+    "arch=compute_120a,code=sm_120a",
+    "--shared",
+    "-Xcompiler=-fPIC",
+    "-I/home/chenhan/miniconda3/envs/vllm/lib/python3.12/site-packages/flashinfer/data/cutlass/include",
+    "-I/home/chenhan/miniconda3/envs/vllm/lib/python3.12/site-packages/flashinfer/data/cutlass/tools/util/include",
+    "/home/chenhan/ThunderWorldDev/ThunderWorld/packages/fp4-repair/src/thunderworld_fp4/cutlass/fused.cu",
+    "-o",
+    "build/cutlass5090_20260914/repair_n64.so"
+  ],
+  "sources": {
+    "fused.cu": "c407af28603a9d74b2a11b6312deab9710befafd11f5d56fbd1271fba109f5f4",
+    "repair_collective.cuh": "f5d46c8ece28cab6bf3a14dd26493738d963f92dbfaedfd38f54a47f06a74a75"
+  },
+  "library_sha256": "48001d06d4824d6994a7bf54027f12fdc61442d7f5fb8096ae44ed92b2d1c5a4",
+  "nvcc": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_May_27_02:21:03_PDT_2025\nCuda compilation tools, release 12.9, V12.9.86\nBuild cuda_12.9.r12.9/compiler.36037853_0\n",
+  "cutlass_version": "/***************************************************************************************************\n * Copyright (c) 2017 - 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.\n * SPDX-License-Identifier: BSD-3-Clause\n *\n * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions are met:\n *\n * 1. Redistributions of source code must retain the above copyright notice, this\n * list of conditions and the following disclaimer.\n *\n * 2. Redistributions in binary form must reproduce the above copyright notice,\n * this list of conditions and the following disclaimer in the documentation\n * and/or other materials provided with the distribution.\n *\n * 3. Neither the name of the copyright holder nor the names of its\n * contributors may be used to endorse or promote products derived from\n * this software without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\n * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\n * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\n * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\n * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n *\n **************************************************************************************************/\n\n#pragma once\n\n#include <cstdint>\n#include <string>\n\n#define CUTLASS_MAJOR 4\n#define CUTLASS_MINOR 5\n#define CUTLASS_PATCH 0\n\n#ifdef CUTLASS_VERSIONS_GENERATED\n#include \"cutlass/version_extended.h\"\n#else\n#define CUTLASS_BUILD 0\n#define CUTLASS_REVISION \"\"\n#endif\n\n#define CUTLASS_VERSION ((CUTLASS_MAJOR)*100 + (CUTLASS_MINOR)*10 + CUTLASS_PATCH)\n\nnamespace cutlass {\n\n  inline constexpr uint32_t getVersion() {\n    return CUTLASS_VERSION;\n  }\n  inline constexpr uint32_t getVersionMajor() {\n    return CUTLASS_MAJOR;\n  }\n  inline constexpr uint32_t getVersionMinor() {\n    return CUTLASS_MINOR;\n  }\n  inline constexpr uint32_t getVersionPatch() {\n    return CUTLASS_PATCH;\n  }\n  inline constexpr uint32_t getVersionBuild() {\n    return CUTLASS_BUILD + 0;\n  }\n\n  inline std::string getVersionString() {\n    std::string version = \"@CUTLASS_VERSION@\";\n    if (getVersionBuild()) {\n      version += \".\" + std::to_string(getVersionBuild());\n    }\n    return version;\n  }\n  \n  inline std::string getGitRevision() {\n    return \"@CUTLASS_REVISION@\";\n  }\n\n} // namespace cutlass\n"
+}
