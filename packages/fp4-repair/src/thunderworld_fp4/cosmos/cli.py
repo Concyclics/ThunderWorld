@@ -49,6 +49,7 @@ def main():
     p.add_argument('--cutlass-library',type=Path)
     p.add_argument('--cutlass-small-library',type=Path)
     p.add_argument('--cutlass-direct-pack',action=argparse.BooleanOptionalAction,default=None)
+    p.add_argument('--joint-tuning',action=argparse.BooleanOptionalAction,default=None)
     p.add_argument('--debug',choices=['off','timing','trace'])
     p.add_argument('--execution',choices=['graph','eager'])
     p.add_argument('--attention-policy',type=Path,help='Independent RepairPolicy JSON')
@@ -83,6 +84,7 @@ def main():
     if a.cutlass_library is not None:backend_updates['cutlass_library']=str(a.cutlass_library.resolve())
     if a.cutlass_small_library is not None:backend_updates['cutlass_small_library']=str(a.cutlass_small_library.resolve())
     if a.cutlass_direct_pack is not None:backend_updates['cutlass_direct_pack']=a.cutlass_direct_pack
+    if a.joint_tuning is not None:backend_updates['joint_tuning']=a.joint_tuning
     if backend_updates:config=replace(config,**backend_updates)
     for field in ('debug','execution','resource_mode','compute_budget','budget_plan'):
         if getattr(a,field) is not None:config=replace(config,**{field:str(getattr(a,field)) if field=='budget_plan' else getattr(a,field)})
@@ -103,6 +105,7 @@ def main():
     def save():
         (a.output/'result.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
     save()
+    runner=None
     try:
         import torch
         import numpy as np
@@ -117,6 +120,7 @@ def main():
         result['case']=case
         runner=CosmosRunner(a.model,config,tuning=a.tuning,tune=a.tune,assets=a.assets,
                             audio=case is not None and case['task']=='av')
+        if a.tune:runner.table.checkpoint_path=a.output/'tuning.partial.json'
         runner.prepare(a.output/'assets' if a.operation=='prepare' else None)
         if a.operation!='prepare':runner.warmup(case,a.steps,a.audio_output)
         if a.operation=='benchmark':
@@ -138,6 +142,7 @@ def main():
         result['complete']=True;save()
         print(a.output/'result.json',flush=True)
     except Exception as error:
+        if runner is not None and a.tune:runner.table.save(a.output/'tuning.partial.json')
         result['error']=repr(error);save();raise
     finally:
         resources.close()

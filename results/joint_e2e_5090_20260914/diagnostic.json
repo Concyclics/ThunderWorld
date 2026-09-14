@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "config": "bf16",
+      "seed": 7103,
+      "wall_seconds": 2.635333102000004,
+      "transformer_interval_ms": 1796.6624698638916,
+      "stage_interval_ms": {
+        "encode_video": 181.9211883544922,
+        "decode_video": 728.2525634765625
+      },
+      "event_sum_minus_host_wall_ms": 71.50311969494214,
+      "additive_decomposition": false,
+      "bitwise_equal_to_uninstrumented": true
+    },
+    {
+      "config": "cutlass125",
+      "seed": 7103,
+      "wall_seconds": 2.1391919359994063,
+      "transformer_interval_ms": 1234.2192630767822,
+      "stage_interval_ms": {
+        "encode_video": 182.30767822265625,
+        "decode_video": 731.0939331054688
+      },
+      "event_sum_minus_host_wall_ms": 8.428938405500958,
+      "additive_decomposition": false,
+      "bitwise_equal_to_uninstrumented": true
+    },
+    {
+      "config": "joint125",
+      "seed": 7103,
+      "wall_seconds": 2.0698681630001374,
+      "transformer_interval_ms": 1219.2943000793457,
+      "stage_interval_ms": {
+        "encode_video": 175.5397186279297,
+        "decode_video": 722.399169921875
+      },
+      "event_sum_minus_host_wall_ms": 47.36502562901296,
+      "additive_decomposition": false,
+      "bitwise_equal_to_uninstrumented": true
+    },
+    {
+      "config": "cutlass150",
+      "seed": 7103,
+      "wall_seconds": 2.252614958000777,
+      "transformer_interval_ms": 1343.7873859405518,
+      "stage_interval_ms": {
+        "encode_video": 176.86557006835938,
+        "decode_video": 742.979736328125
+      },
+      "event_sum_minus_host_wall_ms": 11.01773433625931,
+      "additive_decomposition": false,
+      "bitwise_equal_to_uninstrumented": true
+    },
+    {
+      "config": "joint150",
+      "seed": 7103,
+      "wall_seconds": 2.238575690000289,
+      "transformer_interval_ms": 1335.9531841278076,
+      "stage_interval_ms": {
+        "encode_video": 181.6224365234375,
+        "decode_video": 735.537353515625
+      },
+      "event_sum_minus_host_wall_ms": 14.53728416658123,
+      "additive_decomposition": false,
+      "bitwise_equal_to_uninstrumented": true
+    }
+  ],
+  "scope": "Separate diagnostic: seed 7103 after a full seed 6099 warm request. CUDA event intervals can include dispatch gaps and need not sum to the host timer; do not infer a CPU residual, additive stage percentages, or pure kernel active time. Not leaderboard timings."
+}

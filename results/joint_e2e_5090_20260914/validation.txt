@@ -1,0 +1,11 @@
+........................................................................ [ 33%]
+........................................................................ [ 66%]
+........................................................................ [ 99%]
+..                                                                       [100%]
+=============================== warnings summary ===============================
+packages/fp4-repair/tests/test_cuda.py:6
+  /home/chenhan/ThunderWorldDev/ThunderWorld/packages/fp4-repair/tests/test_cuda.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.cuda - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark=[pytest.mark.cuda,pytest.mark.skipif(not torch.cuda.is_available(),reason='requires SM120 CUDA')]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+218 passed, 1 warning in 17.22s

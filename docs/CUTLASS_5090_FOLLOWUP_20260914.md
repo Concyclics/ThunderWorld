@@ -2,6 +2,10 @@
 
 **2026-09-14 · upstream `23bd2a9` · local branch `perf/rtx5090-cutlass-followup`**
 
+The subsequent [joint execution and BF16 end-to-end comparison](JOINT_E2E_5090_20260914.md)
+combines these paths with device-specific launch selection. Its full-request
+measurements are separate from the panel and diagnostic results below.
+
 The PRO 6000 implementation runs on this RTX 5090 and still has optimization
 headroom. This follow-up implements **direct CUTLASS scale stores during
 activation quantization**, eliminating the separate scale-permutation kernel.

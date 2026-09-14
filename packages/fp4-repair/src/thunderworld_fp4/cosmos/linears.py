@@ -1,5 +1,6 @@
 """Resident packed weights. All host support preparation is outside inference."""
 import math
+import copy
 import torch
 import triton
 import triton.language as tl
@@ -134,6 +135,26 @@ class RepairLinear(torch.nn.Module):
             # Topology proposes the default; only exclusive --tune measures choices.
             if small and triton.cdiv(m,128)*(n//128)<torch.cuda.get_device_properties(c.device).multi_processor_count:
                 variants.reverse()
+            if getattr(config,'joint_tuning',False):
+                alternate=[]
+                for wrapped in variants:
+                    twin=object.__new__(type(wrapped));twin.__dict__.update(wrapped.__dict__)
+                    twin.direct_scale_pack=not wrapped.direct_scale_pack
+                    alternate.append(twin)
+                variants+=alternate
+                # Native interleaves A1 into the base loop; CUTLASS defers A1.
+                # With A repair enabled that is a different numerical method,
+                # so it cannot enter an execution-only equivalence search.
+                if op.na==0:
+                    for bm,stages in ((128,2),(32,2),(32,3),(64,2),(64,3),(128,3)):
+                        # A frozen plan caps total/base issued MMA, including
+                        # padding. Reducing only base work can increase that
+                        # ratio. Preserve its denominator without dropping repairs.
+                        if plan is not None and triton.cdiv(m,bm)*bm!=triton.cdiv(m,128)*128:
+                            continue
+                        native=copy.copy(op);native.bm=bm;native.num_stages=stages
+                        native.w0_scales=scales
+                        variants.append(native)
             for wrapped in variants:wrapped.tuning_variants=tuple(variants)
             op=variants[0]
         self.ops[key]=op;self.bound=op
@@ -185,14 +206,27 @@ class RepairLinear(torch.nn.Module):
                 # The table binds compiled binaries and the device. N64/N128
                 # candidates are admitted only after bitwise output verification.
                 variants=self.bound.tuning_variants
-                tune_spec['artifact']=[v.artifact for v in variants]
-                tune_spec['direct_scale_pack']=self.bound.direct_scale_pack
+                tune_spec['artifact']=[v.artifact for v in variants if hasattr(v,'artifact')]
+                tune_spec['direct_scale_pack']=getattr(c.config,'cutlass_direct_pack',False)
+                joint=getattr(c.config,'joint_tuning',False)
+                tune_spec['joint_tuning']=joint
                 tune_key=c.table.key('cutlass-linear',[len(flat),self.out_features,self.in_features],tune_spec)
-                launches=[dict(tile=[128,v.tile_n,128],schedule='cooperative_sparse_v1') for v in variants]
+                if joint:
+                    launches=[dict(backend='cutlass-fused',tile=[128,v.tile_n,128],direct_pack=v.direct_scale_pack)
+                        if hasattr(v,'tile_n') else dict(backend='triton',bm=v.bm,stages=v.num_stages)
+                        for v in variants]
+                else:launches=[dict(tile=[128,v.tile_n,128],schedule='cooperative_sparse_v1') for v in variants]
                 def apply(v):
                     if v not in launches:raise ValueError('Unsupported CUTLASS launch profile')
                     self.bound=variants[launches.index(v)]
-                c.table.search(tune_key,launches,apply,lambda:self._compute(flat))
+                if joint:
+                    probes=[]
+                    if c.table.tune and tune_key not in c.table.entries:
+                        changed=flat.mul(.75).add(.125)
+                        rotated=flat.roll(1,0).contiguous()
+                        probes=[lambda:self._compute(changed),lambda:self._compute(rotated)]
+                    c.table.search(tune_key,launches,apply,lambda:self._compute(flat),probes=probes)
+                else:c.table.search(tune_key,launches,apply,lambda:self._compute(flat))
                 apply(c.table.get(tune_key,launches[0]))
                 self.ops[key]=self.bound
             else:

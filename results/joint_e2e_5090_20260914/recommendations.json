@@ -1,0 +1,22 @@
+{
+  "scope": "Edge I2V warm complete requests; one input; 35 steps; five isolated rounds x three seeds",
+  "selection": "Smallest complete-request median within each unchanged repair budget; specific to this request/device",
+  "budgets": {
+    "1.25": {
+      "configuration": "joint125",
+      "config": "configs/joint125.json",
+      "profile": "profiles/joint125.json",
+      "assets": "data_local/cutlass5090_rebuilt_20260914/i2v_b125",
+      "median_seconds": 2.11553051699957,
+      "bf16_speedup": 1.2628592584849854
+    },
+    "1.50": {
+      "configuration": "cutlass150",
+      "config": "configs/cutlass150.json",
+      "profile": "profiles/cutlass150.json",
+      "assets": "data_local/cutlass5090_rebuilt_20260914/i2v_b150",
+      "median_seconds": 2.18577815000026,
+      "bf16_speedup": 1.2222728550928723
+    }
+  }
+}

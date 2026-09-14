@@ -112,9 +112,9 @@ class JointEngine:
         self.shapes[str(key)]=dict(module=name,m=int(shape[0]),n=n,k=int(shape[1]),
             branch=self.branch,phase=phase(self.step,self.steps),task=self.task,w_blocks=list(op.weight_ids),
             repair=spec.key,actual_a=op.na/(op.k//128),actual_w=op.wi.numel()/(op.n//128*(op.k//128)),
-            backend=self.config.linear_backend,direct_scale_pack=getattr(op,'direct_scale_pack',False),
+            backend='cutlass-fused' if hasattr(op,'tile_n') else 'triton',direct_scale_pack=getattr(op,'direct_scale_pack',False),
             launch=(dict(tile=[128,op.tile_n,128],schedule='TMA cooperative + sparse cp.async')
-                    if self.config.linear_backend=='cutlass-fused' else dict(bm=op.bm,stages=op.num_stages)))
+                    if hasattr(op,'tile_n') else dict(bm=op.bm,stages=op.num_stages)))
 
     def _install_attention(self):
         # Copy processor function globals for this instance; never patch the
@@ -257,7 +257,8 @@ class JointEngine:
                     if (m,spec.key) not in op.ops:raise ValueError('Unobserved repair schedule')
                     native=op.ops[m,spec.key]
                     cost=linear_cost(m,n,k,bm=native.bm,a_blocks=native.na,w_blocks=native.weight_ids,cross=spec.cross)
-                    if self.config.linear_backend=='cutlass-fused':
+                    cost['execution_backend']='cutlass-fused' if hasattr(native,'tile_n') else 'triton'
+                    if hasattr(native,'tile_n'):
                         cost['launch']['bn']=native.tile_n
                         cost['repair_block']=[128,128]
                         cost['execution_ctas']=triton.cdiv(m,128)*(n//native.tile_n)

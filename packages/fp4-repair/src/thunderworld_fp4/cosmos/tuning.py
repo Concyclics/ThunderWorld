@@ -14,7 +14,8 @@ import triton.testing
 
 def identity():
     root = Path(__file__).resolve().parents[1]
-    paths = list(root.glob('_*.py')) + list((root/'cutlass').glob('*.py')) + [Path(__file__).with_name('linears.py')]
+    paths = list(root.glob('_*.py')) + list((root/'cutlass').glob('*.py')) + [
+        Path(__file__).with_name(name) for name in ('linears.py','tuning.py','engine.py','settings.py')]
     prop = torch.cuda.get_device_properties(torch.cuda.current_device())
     hardware = subprocess.check_output(['nvidia-smi', '-i', os.environ.get('CUDA_VISIBLE_DEVICES', '0'),
         '--query-gpu=uuid,driver_version,power.limit', '--format=csv,noheader,nounits'], text=True).strip()
@@ -31,6 +32,7 @@ class LaunchTable:
         self.tune = tune
         self.misses = set()
         self.hits = set()
+        self.checkpoint_path = None
         if path:
             data = json.loads(Path(path).read_text())
             if data['identity'] != self.identity: raise ValueError('Tuning device/kernel mismatch')
@@ -47,19 +49,23 @@ class LaunchTable:
         self.misses.add(key)
         return default
 
-    def search(self, key, candidates, apply, fn):
+    def search(self, key, candidates, apply, fn, *, probes=()):
         if key in self.entries or not self.tune: return
         apply(candidates[0])
         reference = fn().clone()
-        accepted = []
+        extra_references=[probe().clone() for probe in probes]
+        accepted = [];rejected=[]
         for launch in candidates:
             try:
                 apply(launch)
                 output = fn()
-                if not torch.equal(reference, output): continue
+                if not torch.equal(reference, output) or any(not torch.equal(gold,probe()) for gold,probe in zip(extra_references,probes)):
+                    rejected.append(dict(launch=launch,reason='not_bitwise_equal'))
+                    continue
                 samples = [triton.testing.do_bench_cudagraph(fn, rep=10) for _ in range(3)]
                 accepted.append(dict(launch=launch, search_ms=statistics.median(samples)))
-            except (triton.OutOfResources, triton.CompilationError):
+            except (triton.OutOfResources, triton.CompilationError) as exc:
+                rejected.append(dict(launch=launch,reason=type(exc).__name__))
                 continue
         if not accepted: raise RuntimeError('No numerically equivalent launch candidate')
         # Fresh interleaved measurement of the selected candidate and anchor.
@@ -74,9 +80,13 @@ class LaunchTable:
                 samples[i].append(triton.testing.do_bench_cudagraph(fn, rep=10))
         index = int(statistics.median(samples[1]) < statistics.median(samples[0])*.97)
         self.entries[key] = dict(launch=choices[index], candidates=accepted,
+                                 rejected=rejected,validation_inputs=1+len(probes),
                                  confirmation_samples_ms=samples, anchor=choices[0])
         self.misses.discard(key)
         apply(choices[index])
+        if self.checkpoint_path is not None and len(self.entries)%10==0:
+            self.save(self.checkpoint_path)
+            print(f'Launch tuning: {len(self.entries)} verified profiles',flush=True)
 
     def save(self, path):
         path = Path(path); path.parent.mkdir(parents=True, exist_ok=True)
