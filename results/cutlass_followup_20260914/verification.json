@@ -40,7 +40,7 @@
     "experiments/cutlass_fused_repair/probe.py": "8452ed626ea7c825429b8e74305adc3989abe32cf54bbdd7d34afb31d0d1abc6",
     "experiments/cutlass_fused_repair/retest.py": "d6ec0fe22b061ddf4f75bee4aa3d2c9cb7b1986dd5ca9715332348eeb14843ce",
     "experiments/cutlass_fused_repair/run_tests.py": "b7a35c546743c1a5fd62eb12255840d72884619dd4c05e00d7b179c0c7e4b496",
-    "experiments/cutlass_fused_repair/summarize5090.py": "c3902ca559dc30da847c4cf081cd437a6fa8da7e265856ca04db7c03f9e5958e",
+    "experiments/cutlass_fused_repair/summarize5090.py": "5d5790b669a9de38dd5297a1948eae7c423314f58602b30168f60ce749e29f3d",
     "experiments/cutlass_fused_repair/test_direct_pack.py": "9e975eafa9531423d68e17aec86ff624e2596814807a8035fa66dc0471f4f289",
     "experiments/cutlass_fused_repair/test_fused.py": "6e199343fffcd332c3a8708fa9181302f5163607ef5de5e5abe951cee57fbbb3",
     "experiments/cutlass_fused_repair/weight_recipe.py": "d3bc05a18df23ccf98f54ba854132e15c916f02f006c6dbedece00746651080c"
@@ -61,8 +61,8 @@
   },
   "files": {
     "TABLE.md": {
-      "bytes": 1193,
-      "sha256": "697fdf385c2f1591b8e3a43e01dd7f42035807b6eaefb4c2de494081c720a85d"
+      "bytes": 1362,
+      "sha256": "e910eef3ed4cb7328b099f00ca0425b3fc9e66a372d6eb3af69f108cc026ac14"
     },
     "build_n128.json": {
       "bytes": 4283,
@@ -76,13 +76,17 @@
       "bytes": 99,
       "sha256": "3e6939e64c00f7fe353c71b128138df9563315edd72e83fcbe5eeffb34135d46"
     },
+    "environment_packages.json": {
+      "bytes": 429,
+      "sha256": "7f48098991d2c1ecdced5617e9c6e5f17878a65ff1e015de66cadb9aaa9b5434"
+    },
     "memcheck.txt": {
       "bytes": 161,
       "sha256": "fa735bb75b50b36f5bfa693194099829b718a4c0727be5cc60f53bb4701ad6c1"
     },
     "operators.csv": {
-      "bytes": 15705,
-      "sha256": "ec075657cc2a7a0bbbd532f369f3cb93e206f5561de3d75fe0a6f378559ed6e6"
+      "bytes": 15608,
+      "sha256": "22f6f3b631ad6764f66517988052cedf6151bfd295a8ef1eedc9f20afdfdccf6"
     },
     "racecheck.txt": {
       "bytes": 210,
@@ -142,23 +146,23 @@
     },
     "records/trajectory_i2v_b125_direct.json.gz": {
       "bytes": 554444,
-      "sha256": "12c33e5a96aa42905667e23380d626d8b211b07a831fd7f0db2e0911b25ed2ea"
+      "sha256": "d50c803047f0ada04c62a58383f7ae4345820f052c2e0a36506e0f95b8ba88d7"
     },
     "records/trajectory_i2v_b125_original.json.gz": {
       "bytes": 555262,
-      "sha256": "acb92d72088c9286ebafbd295cf903a96d6f94dd8b49fa9c708a823d99888a80"
+      "sha256": "4a06e2e3a6b989e0a43a83f8a0b35b8fd1624d7d7821736e2f2b9bb284b9dc55"
     },
     "records/trajectory_i2v_b150_direct.json.gz": {
       "bytes": 1092237,
-      "sha256": "dbc2e6b5c16a147a35db69ab8fae7771fa8a9abc2a40fdba705f77e39ba3a45f"
+      "sha256": "872fb8a341729fe998434e9eeaf458fa443ad21b821753497f49ba3940ef43c9"
     },
     "records/trajectory_i2v_b150_original.json.gz": {
       "bytes": 1092897,
-      "sha256": "ffbb8b160ed457125c426642550094ac9d1563b54ab7331e016634d5e6696de8"
+      "sha256": "00c02ba1ab410b7bfcee87e146ff56c5a5c8d3361789f14fe784b9547aaeb2a3"
     },
     "summary.csv": {
-      "bytes": 791,
-      "sha256": "87097676bfa33faddc2c519e1b3032bcbfc566e024c4873a7a4a72c13febd244"
+      "bytes": 784,
+      "sha256": "c81ca2da6c6d2e4fd9e7582cea5c96160f17c648a4eb5b114cc67246d9ce75ff"
     },
     "summary.json": {
       "bytes": 6266,
@@ -167,10 +171,11 @@
     "tests.txt": {
       "bytes": 869,
       "sha256": "c92caf9d2b2219eba82e0d241dc73244fc520ea00ca267d6ef493edce27c7c52"
-    },
-    "environment_packages.json": {
-      "bytes": 429,
-      "sha256": "7f48098991d2c1ecdced5617e9c6e5f17878a65ff1e015de66cadb9aaa9b5434"
     }
+  },
+  "panel_shape_correction": {
+    "i2v_m": 960,
+    "policy_m": 316,
+    "scope": "Actual capsule tensors/manifest; older M416 label was inaccurate. M416 has independent correctness coverage."
   }
 }

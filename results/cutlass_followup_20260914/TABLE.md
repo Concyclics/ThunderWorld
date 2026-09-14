@@ -1,6 +1,6 @@
 # RTX 5090 CUTLASS follow-up measurements
 
-32 operators per captured graph, 9 alternating rounds. Full operator includes selection, packing, scale layout and GEMM. Ranges span 16 shapes/phases per row, not confidence intervals. Native is the fixed BM128/stages2 Triton baseline, not a new best-of-all-Triton search.
+32 operators per captured graph, 9 alternating rounds. Full operator includes selection, packing, scale layout and GEMM. Ranges span 16 shapes/phases per row, not confidence intervals. Native is the fixed BM128/stages2 Triton baseline, not a new best-of-all-Triton search. Actual release tensors are I2V M960 and Policy M316; the older M416 panel description is inaccurate. M416 is covered by correctness tests, not this policy timing table.
 
 | Panel | CUTLASS N | Native / original CUTLASS | Direct-pack speedup range | Median direct-pack speedup | >1.03× cases |
 |---|---:|---:|---:|---:|---:|

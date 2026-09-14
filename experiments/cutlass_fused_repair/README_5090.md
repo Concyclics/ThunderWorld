@@ -12,7 +12,7 @@ GitHub同步入口：[下载交接包并校验](github_handoff/README.md)。
 - `recipes/i2v_b125`、`recipes/i2v_b150`：全部168个生成投影的离线校准配方。下载原模型后重建W0/W1，不在推理期间量化权重；重建逐字节核对原资产，失败直接停止。
 - `policies/`：冻结的1.25/1.5预算计划，含全部层、四阶段、CFG分支和attention配置。
 - `tools/joint_inference`：同条件推理、质量评估、独占GPU调优工具及输入图片。模型、第三方源码、编译缓存和PRO 6000调优表均不打包。
-- 可选 `cutlass-5090-panels.tar.gz`：真实M960/M416输入的四阶段算子面板。解压得到`panels/`；无需下载模型即可调试算子。面板含校准数据，不是最终质量测试集。
+- 可选 `cutlass-5090-panels.tar.gz`：真实M960/M316输入的四阶段算子面板。2026-09-14接收端核对确认：此前M416描述有误，Policy实际张量和manifest均为M316；M416另有正确性测试。解压得到`panels/`；无需下载模型即可调试算子。面板含校准数据，不是最终质量测试集。
 
 先检查`FILES.json`及外层`archives.json`的SHA256。保存所有新测量，勿覆盖历史结果。
 

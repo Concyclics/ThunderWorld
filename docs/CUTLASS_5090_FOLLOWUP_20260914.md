@@ -25,6 +25,12 @@ CUTLASS tiles. Measurements include current-input selection, packing, scale
 conversion and all GEMM repair. The native comparator is **BM128/stages2**;
 this is not a new search for the fastest possible Triton configuration.
 
+**Actual input shapes:** the release tensors and manifests contain I2V M960 and
+Policy **M316**. The upstream handoff text called the policy panels M416; that
+label does not match the downloaded data. This report uses the measured M316
+inputs. M416 passes separate correctness tests, but has no policy performance
+or action-trajectory claim in this follow-up.
+
 The median direct-pack ratio across the 96 cases is **1.028×**. Individual ratios
 range from **0.949× to 1.165×**. These are shape/phase ranges, not confidence
 intervals or whole-model speedups. The large FFN gains include zero-repair cases;
