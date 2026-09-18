@@ -1,0 +1,1659 @@
+{
+  "schema": 1,
+  "inventory_complete": true,
+  "matrix_status": "preparation_only",
+  "generation_started": false,
+  "source_commit": "5d5a9dbec9c03f9f1351c949f0aa274adda25619",
+  "source_sha256": "093ba4c5160f7ed404409ad7637f3b5a23b9b1c1d5e187defd5100c15fb0ea80",
+  "models": {
+    "edge": {
+      "repo": "nvidia/Cosmos3-Edge",
+      "revision": "a9d944e2c6a1bf9f48b92ad16348e70c5f1836ba",
+      "local_path": "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Edge-a9d944e",
+      "architecture": {
+        "num_hidden_layers": 28,
+        "num_attention_heads": 16,
+        "num_key_value_heads": 8,
+        "hidden_size": 2048,
+        "intermediate_size": 9216,
+        "hidden_act": "relu2",
+        "head_dim": 128
+      },
+      "model_identity": {
+        "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+      },
+      "generation_projection_count": 168,
+      "generation_targets": [
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out"
+      ],
+      "frozen_numeric_assets": true
+    },
+    "nano": {
+      "repo": "nvidia/Cosmos3-Nano",
+      "revision": "411f42a8fdfb8c5b2583cb8786e0938f49796eaa",
+      "local_path": "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Nano-411f42a",
+      "architecture": {
+        "num_hidden_layers": 36,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 4096,
+        "intermediate_size": 12288,
+        "hidden_act": "silu",
+        "head_dim": 128
+      },
+      "model_identity": {
+        "transformer/config.json": "282862cf9c42a257dbd2f00e41b5ef65c3aacfb693ad1f8ab28b05a02e1b9ffe",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "e664881df3452d3aadbc7fd36075871077397dfa21ab8b8818143fab99fb9cb0"
+      },
+      "generation_projection_count": 252,
+      "generation_targets": [
+        "layers.0.mlp_moe_gen.down_proj",
+        "layers.0.mlp_moe_gen.gate_proj",
+        "layers.0.mlp_moe_gen.up_proj",
+        "layers.0.self_attn.add_k_proj",
+        "layers.0.self_attn.add_q_proj",
+        "layers.0.self_attn.add_v_proj",
+        "layers.0.self_attn.to_add_out",
+        "layers.1.mlp_moe_gen.down_proj",
+        "layers.1.mlp_moe_gen.gate_proj",
+        "layers.1.mlp_moe_gen.up_proj",
+        "layers.1.self_attn.add_k_proj",
+        "layers.1.self_attn.add_q_proj",
+        "layers.1.self_attn.add_v_proj",
+        "layers.1.self_attn.to_add_out",
+        "layers.10.mlp_moe_gen.down_proj",
+        "layers.10.mlp_moe_gen.gate_proj",
+        "layers.10.mlp_moe_gen.up_proj",
+        "layers.10.self_attn.add_k_proj",
+        "layers.10.self_attn.add_q_proj",
+        "layers.10.self_attn.add_v_proj",
+        "layers.10.self_attn.to_add_out",
+        "layers.11.mlp_moe_gen.down_proj",
+        "layers.11.mlp_moe_gen.gate_proj",
+        "layers.11.mlp_moe_gen.up_proj",
+        "layers.11.self_attn.add_k_proj",
+        "layers.11.self_attn.add_q_proj",
+        "layers.11.self_attn.add_v_proj",
+        "layers.11.self_attn.to_add_out",
+        "layers.12.mlp_moe_gen.down_proj",
+        "layers.12.mlp_moe_gen.gate_proj",
+        "layers.12.mlp_moe_gen.up_proj",
+        "layers.12.self_attn.add_k_proj",
+        "layers.12.self_attn.add_q_proj",
+        "layers.12.self_attn.add_v_proj",
+        "layers.12.self_attn.to_add_out",
+        "layers.13.mlp_moe_gen.down_proj",
+        "layers.13.mlp_moe_gen.gate_proj",
+        "layers.13.mlp_moe_gen.up_proj",
+        "layers.13.self_attn.add_k_proj",
+        "layers.13.self_attn.add_q_proj",
+        "layers.13.self_attn.add_v_proj",
+        "layers.13.self_attn.to_add_out",
+        "layers.14.mlp_moe_gen.down_proj",
+        "layers.14.mlp_moe_gen.gate_proj",
+        "layers.14.mlp_moe_gen.up_proj",
+        "layers.14.self_attn.add_k_proj",
+        "layers.14.self_attn.add_q_proj",
+        "layers.14.self_attn.add_v_proj",
+        "layers.14.self_attn.to_add_out",
+        "layers.15.mlp_moe_gen.down_proj",
+        "layers.15.mlp_moe_gen.gate_proj",
+        "layers.15.mlp_moe_gen.up_proj",
+        "layers.15.self_attn.add_k_proj",
+        "layers.15.self_attn.add_q_proj",
+        "layers.15.self_attn.add_v_proj",
+        "layers.15.self_attn.to_add_out",
+        "layers.16.mlp_moe_gen.down_proj",
+        "layers.16.mlp_moe_gen.gate_proj",
+        "layers.16.mlp_moe_gen.up_proj",
+        "layers.16.self_attn.add_k_proj",
+        "layers.16.self_attn.add_q_proj",
+        "layers.16.self_attn.add_v_proj",
+        "layers.16.self_attn.to_add_out",
+        "layers.17.mlp_moe_gen.down_proj",
+        "layers.17.mlp_moe_gen.gate_proj",
+        "layers.17.mlp_moe_gen.up_proj",
+        "layers.17.self_attn.add_k_proj",
+        "layers.17.self_attn.add_q_proj",
+        "layers.17.self_attn.add_v_proj",
+        "layers.17.self_attn.to_add_out",
+        "layers.18.mlp_moe_gen.down_proj",
+        "layers.18.mlp_moe_gen.gate_proj",
+        "layers.18.mlp_moe_gen.up_proj",
+        "layers.18.self_attn.add_k_proj",
+        "layers.18.self_attn.add_q_proj",
+        "layers.18.self_attn.add_v_proj",
+        "layers.18.self_attn.to_add_out",
+        "layers.19.mlp_moe_gen.down_proj",
+        "layers.19.mlp_moe_gen.gate_proj",
+        "layers.19.mlp_moe_gen.up_proj",
+        "layers.19.self_attn.add_k_proj",
+        "layers.19.self_attn.add_q_proj",
+        "layers.19.self_attn.add_v_proj",
+        "layers.19.self_attn.to_add_out",
+        "layers.2.mlp_moe_gen.down_proj",
+        "layers.2.mlp_moe_gen.gate_proj",
+        "layers.2.mlp_moe_gen.up_proj",
+        "layers.2.self_attn.add_k_proj",
+        "layers.2.self_attn.add_q_proj",
+        "layers.2.self_attn.add_v_proj",
+        "layers.2.self_attn.to_add_out",
+        "layers.20.mlp_moe_gen.down_proj",
+        "layers.20.mlp_moe_gen.gate_proj",
+        "layers.20.mlp_moe_gen.up_proj",
+        "layers.20.self_attn.add_k_proj",
+        "layers.20.self_attn.add_q_proj",
+        "layers.20.self_attn.add_v_proj",
+        "layers.20.self_attn.to_add_out",
+        "layers.21.mlp_moe_gen.down_proj",
+        "layers.21.mlp_moe_gen.gate_proj",
+        "layers.21.mlp_moe_gen.up_proj",
+        "layers.21.self_attn.add_k_proj",
+        "layers.21.self_attn.add_q_proj",
+        "layers.21.self_attn.add_v_proj",
+        "layers.21.self_attn.to_add_out",
+        "layers.22.mlp_moe_gen.down_proj",
+        "layers.22.mlp_moe_gen.gate_proj",
+        "layers.22.mlp_moe_gen.up_proj",
+        "layers.22.self_attn.add_k_proj",
+        "layers.22.self_attn.add_q_proj",
+        "layers.22.self_attn.add_v_proj",
+        "layers.22.self_attn.to_add_out",
+        "layers.23.mlp_moe_gen.down_proj",
+        "layers.23.mlp_moe_gen.gate_proj",
+        "layers.23.mlp_moe_gen.up_proj",
+        "layers.23.self_attn.add_k_proj",
+        "layers.23.self_attn.add_q_proj",
+        "layers.23.self_attn.add_v_proj",
+        "layers.23.self_attn.to_add_out",
+        "layers.24.mlp_moe_gen.down_proj",
+        "layers.24.mlp_moe_gen.gate_proj",
+        "layers.24.mlp_moe_gen.up_proj",
+        "layers.24.self_attn.add_k_proj",
+        "layers.24.self_attn.add_q_proj",
+        "layers.24.self_attn.add_v_proj",
+        "layers.24.self_attn.to_add_out",
+        "layers.25.mlp_moe_gen.down_proj",
+        "layers.25.mlp_moe_gen.gate_proj",
+        "layers.25.mlp_moe_gen.up_proj",
+        "layers.25.self_attn.add_k_proj",
+        "layers.25.self_attn.add_q_proj",
+        "layers.25.self_attn.add_v_proj",
+        "layers.25.self_attn.to_add_out",
+        "layers.26.mlp_moe_gen.down_proj",
+        "layers.26.mlp_moe_gen.gate_proj",
+        "layers.26.mlp_moe_gen.up_proj",
+        "layers.26.self_attn.add_k_proj",
+        "layers.26.self_attn.add_q_proj",
+        "layers.26.self_attn.add_v_proj",
+        "layers.26.self_attn.to_add_out",
+        "layers.27.mlp_moe_gen.down_proj",
+        "layers.27.mlp_moe_gen.gate_proj",
+        "layers.27.mlp_moe_gen.up_proj",
+        "layers.27.self_attn.add_k_proj",
+        "layers.27.self_attn.add_q_proj",
+        "layers.27.self_attn.add_v_proj",
+        "layers.27.self_attn.to_add_out",
+        "layers.28.mlp_moe_gen.down_proj",
+        "layers.28.mlp_moe_gen.gate_proj",
+        "layers.28.mlp_moe_gen.up_proj",
+        "layers.28.self_attn.add_k_proj",
+        "layers.28.self_attn.add_q_proj",
+        "layers.28.self_attn.add_v_proj",
+        "layers.28.self_attn.to_add_out",
+        "layers.29.mlp_moe_gen.down_proj",
+        "layers.29.mlp_moe_gen.gate_proj",
+        "layers.29.mlp_moe_gen.up_proj",
+        "layers.29.self_attn.add_k_proj",
+        "layers.29.self_attn.add_q_proj",
+        "layers.29.self_attn.add_v_proj",
+        "layers.29.self_attn.to_add_out",
+        "layers.3.mlp_moe_gen.down_proj",
+        "layers.3.mlp_moe_gen.gate_proj",
+        "layers.3.mlp_moe_gen.up_proj",
+        "layers.3.self_attn.add_k_proj",
+        "layers.3.self_attn.add_q_proj",
+        "layers.3.self_attn.add_v_proj",
+        "layers.3.self_attn.to_add_out",
+        "layers.30.mlp_moe_gen.down_proj",
+        "layers.30.mlp_moe_gen.gate_proj",
+        "layers.30.mlp_moe_gen.up_proj",
+        "layers.30.self_attn.add_k_proj",
+        "layers.30.self_attn.add_q_proj",
+        "layers.30.self_attn.add_v_proj",
+        "layers.30.self_attn.to_add_out",
+        "layers.31.mlp_moe_gen.down_proj",
+        "layers.31.mlp_moe_gen.gate_proj",
+        "layers.31.mlp_moe_gen.up_proj",
+        "layers.31.self_attn.add_k_proj",
+        "layers.31.self_attn.add_q_proj",
+        "layers.31.self_attn.add_v_proj",
+        "layers.31.self_attn.to_add_out",
+        "layers.32.mlp_moe_gen.down_proj",
+        "layers.32.mlp_moe_gen.gate_proj",
+        "layers.32.mlp_moe_gen.up_proj",
+        "layers.32.self_attn.add_k_proj",
+        "layers.32.self_attn.add_q_proj",
+        "layers.32.self_attn.add_v_proj",
+        "layers.32.self_attn.to_add_out",
+        "layers.33.mlp_moe_gen.down_proj",
+        "layers.33.mlp_moe_gen.gate_proj",
+        "layers.33.mlp_moe_gen.up_proj",
+        "layers.33.self_attn.add_k_proj",
+        "layers.33.self_attn.add_q_proj",
+        "layers.33.self_attn.add_v_proj",
+        "layers.33.self_attn.to_add_out",
+        "layers.34.mlp_moe_gen.down_proj",
+        "layers.34.mlp_moe_gen.gate_proj",
+        "layers.34.mlp_moe_gen.up_proj",
+        "layers.34.self_attn.add_k_proj",
+        "layers.34.self_attn.add_q_proj",
+        "layers.34.self_attn.add_v_proj",
+        "layers.34.self_attn.to_add_out",
+        "layers.35.mlp_moe_gen.down_proj",
+        "layers.35.mlp_moe_gen.gate_proj",
+        "layers.35.mlp_moe_gen.up_proj",
+        "layers.35.self_attn.add_k_proj",
+        "layers.35.self_attn.add_q_proj",
+        "layers.35.self_attn.add_v_proj",
+        "layers.35.self_attn.to_add_out",
+        "layers.4.mlp_moe_gen.down_proj",
+        "layers.4.mlp_moe_gen.gate_proj",
+        "layers.4.mlp_moe_gen.up_proj",
+        "layers.4.self_attn.add_k_proj",
+        "layers.4.self_attn.add_q_proj",
+        "layers.4.self_attn.add_v_proj",
+        "layers.4.self_attn.to_add_out",
+        "layers.5.mlp_moe_gen.down_proj",
+        "layers.5.mlp_moe_gen.gate_proj",
+        "layers.5.mlp_moe_gen.up_proj",
+        "layers.5.self_attn.add_k_proj",
+        "layers.5.self_attn.add_q_proj",
+        "layers.5.self_attn.add_v_proj",
+        "layers.5.self_attn.to_add_out",
+        "layers.6.mlp_moe_gen.down_proj",
+        "layers.6.mlp_moe_gen.gate_proj",
+        "layers.6.mlp_moe_gen.up_proj",
+        "layers.6.self_attn.add_k_proj",
+        "layers.6.self_attn.add_q_proj",
+        "layers.6.self_attn.add_v_proj",
+        "layers.6.self_attn.to_add_out",
+        "layers.7.mlp_moe_gen.down_proj",
+        "layers.7.mlp_moe_gen.gate_proj",
+        "layers.7.mlp_moe_gen.up_proj",
+        "layers.7.self_attn.add_k_proj",
+        "layers.7.self_attn.add_q_proj",
+        "layers.7.self_attn.add_v_proj",
+        "layers.7.self_attn.to_add_out",
+        "layers.8.mlp_moe_gen.down_proj",
+        "layers.8.mlp_moe_gen.gate_proj",
+        "layers.8.mlp_moe_gen.up_proj",
+        "layers.8.self_attn.add_k_proj",
+        "layers.8.self_attn.add_q_proj",
+        "layers.8.self_attn.add_v_proj",
+        "layers.8.self_attn.to_add_out",
+        "layers.9.mlp_moe_gen.down_proj",
+        "layers.9.mlp_moe_gen.gate_proj",
+        "layers.9.mlp_moe_gen.up_proj",
+        "layers.9.self_attn.add_k_proj",
+        "layers.9.self_attn.add_q_proj",
+        "layers.9.self_attn.add_v_proj",
+        "layers.9.self_attn.to_add_out"
+      ],
+      "frozen_numeric_assets": false
+    }
+  },
+  "methods": {
+    "bf16": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": null,
+            "budget_plan": null,
+            "precision": "bf16",
+            "debug": "off",
+            "execution": "graph",
+            "ffn": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "bf16",
+            "attention": {
+              "default": {
+                "coverage": 0.5,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": false
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "origin_receipt_sha256": "cb900e90cebf885a88a93f90c0e544b98571ec989480e6203d19a8079c93ccda",
+          "origin_configuration_sha256": "cb5e974972461600a52160a601478a81ac78e51b90104117cfe70520525d8fa5"
+        }
+      },
+      "nano": {
+        "status": "current_model_and_execution_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": null,
+      "attention": "bf16",
+      "execution": "graph"
+    },
+    "fp8": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": null,
+            "budget_plan": null,
+            "precision": "fp8",
+            "debug": "off",
+            "execution": "graph",
+            "ffn": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "bf16",
+            "attention": {
+              "default": {
+                "coverage": 0.5,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": false
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "origin_receipt_sha256": "8ca6cbe6a71cd2f0063cf934707d459d776007244bd7f9883b5903af6916fc3f",
+          "origin_configuration_sha256": "289cd7e01114cca6b5e693fada725a069a392bf49f07f7f476e906f23ec62e84"
+        }
+      },
+      "nano": {
+        "status": "current_model_and_execution_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": null,
+      "attention": "bf16",
+      "execution": "graph"
+    },
+    "fp4_base": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": null,
+            "budget_plan": null,
+            "precision": "fp4",
+            "debug": "off",
+            "execution": "graph",
+            "ffn": {
+              "activation": 0.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 0.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "fp4",
+            "attention": {
+              "default": {
+                "coverage": 0.0,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": true
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "origin_receipt_sha256": "a8837404277bbfc1354ae21cf5eea66c62b9e57ac556f4b280f876e28b32f34b",
+          "origin_configuration_sha256": "ba8256205534c9cc257256b222ba8f1ce59bd0efc685a040fb08836fadbefe42"
+        }
+      },
+      "nano": {
+        "status": "current_model_and_execution_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": null,
+      "attention": "fp4",
+      "execution": "graph"
+    },
+    "awq_marlin": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": null,
+            "budget_plan": null,
+            "precision": "bf16",
+            "debug": "off",
+            "execution": "graph",
+            "ffn": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "bf16",
+            "attention": {
+              "default": {
+                "coverage": 0.5,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": false
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "baseline_adapter": {
+            "method": "marlin_awq",
+            "assets": "/home/yufeng/thunderworld/paper_evidence_20260918/awq_native/assets",
+            "assets_sha256": "2caa1185b5729f366da6c6a60c15d71d1efdab907254bc43e8a3d65a6f52024a",
+            "implementation_sha256": "34b9cc77e20319cc68c2975a18a0cd4cbc4b60583cf3f00096510ddcdcb73424"
+          },
+          "scope": "Same frozen AWQ codes/scales, native official Marlin W4A16. Full quality remeasured for changed accumulation.",
+          "performance_eligible": false,
+          "storage_comparison_eligible": true
+        }
+      },
+      "nano": {
+        "status": "model_specific_calibration_and_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": null,
+      "attention": "bf16",
+      "execution": "graph"
+    },
+    "arcquant": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": null,
+            "budget_plan": null,
+            "precision": "bf16",
+            "debug": "off",
+            "execution": "eager",
+            "ffn": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "bf16",
+            "attention": {
+              "default": {
+                "coverage": 0.5,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": false
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "actual_generation_precision": "arcquant",
+          "execution_type": "official_native_cosmos_adapter",
+          "performance_eligible": false,
+          "scope": "Quality comparison with BF16 attention. Dispatch precision is a placeholder; native external FP4 linears replace it.",
+          "limitations": [
+            "ARC fraction fixed at 50%, not upstream model-wide proportion search",
+            "Eager execution; no Graph speed qualification"
+          ]
+        }
+      },
+      "nano": {
+        "status": "model_specific_calibration_and_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": {
+        "method": "arcquant",
+        "fraction": 0.5
+      },
+      "attention": "bf16",
+      "execution": "eager"
+    },
+    "arcquant100": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": null,
+            "budget_plan": null,
+            "precision": "bf16",
+            "debug": "off",
+            "execution": "eager",
+            "ffn": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "bf16",
+            "attention": {
+              "default": {
+                "coverage": 0.5,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": false
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "actual_generation_precision": "ARCQuant-100%",
+          "execution_type": "official_native_cosmos_adapter",
+          "performance_eligible": false,
+          "scope": "All activation residual channels; official native ARC kernels with BF16 attention.",
+          "limitations": [
+            "Eager host-alpha/default-stream API; fixed full-channel policy"
+          ]
+        }
+      },
+      "nano": {
+        "status": "model_specific_calibration_and_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": {
+        "method": "arcquant",
+        "fraction": 1.0
+      },
+      "attention": "bf16",
+      "execution": "eager"
+    },
+    "sharq_perf": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": null,
+            "budget_plan": null,
+            "precision": "bf16",
+            "debug": "off",
+            "execution": "eager",
+            "ffn": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 1.0,
+              "weight": 0.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "bf16",
+            "attention": {
+              "default": {
+                "coverage": 0.5,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": false
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "actual_generation_precision": "SharQ-native-existing-epilogue-fusion",
+          "execution_type": "official_native_cosmos_adapter",
+          "performance_eligible": false,
+          "scope": "Quality comparison with BF16 attention. Dispatch precision is a placeholder; native external FP4 linears replace it.",
+          "limitations": [
+            "Official extra_fusion=True; no Cosmos RMSNorm fusion port; eager/default-stream kernels"
+          ]
+        }
+      },
+      "nano": {
+        "status": "current_model_and_execution_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": {
+        "method": "sharq",
+        "extra_fusion": true
+      },
+      "attention": "bf16",
+      "execution": "eager"
+    },
+    "b1.5_protected_n": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "name": "b1.5_protected_n",
+          "budget": 1.5,
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": 1.5,
+            "budget_plan": "/tmp/fp4-baselines-recipe-20260918/b1.5_protected_n/plan.json",
+            "precision": "fp4",
+            "debug": "off",
+            "execution": "graph",
+            "ffn": {
+              "activation": 0,
+              "weight": 0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 0,
+              "weight": 0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "fp4",
+            "attention": {
+              "default": {
+                "coverage": 0.5,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": false
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "assets": "/tmp/fp4-baselines-restored-20260918/b1.5_protected_n/assets",
+          "assets_sha256": "28008a478f13a7874483f4e39dbe27b725c4a6b8694ec9ba1e33d5aeaea9850a",
+          "plan_sha256": "5cb3785739580680d3ef6e354485107e6996ffc861a61c084de292876090f47b",
+          "cost": {
+            "file_bytes": 834983728,
+            "tensor_bytes": 834322336,
+            "w1_bytes": 36864000,
+            "w1_density": 0.04650297619047619
+          },
+          "bound_ratio": 1.499956866804693,
+          "runtime_options": {
+            "fuse_calibrated": true,
+            "fuse_pointwise": true,
+            "static_rotary": true,
+            "codec_graph": true,
+            "fuse_norm": true
+          }
+        }
+      },
+      "nano": {
+        "status": "model_specific_calibration_and_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": null,
+      "attention": "fp4",
+      "execution": "graph"
+    },
+    "b2_joint": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "name": "b2_joint",
+          "budget": 2.0,
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": 2.0,
+            "budget_plan": "/tmp/fp4-baselines-recipe-20260918/b2_joint/plan.json",
+            "precision": "fp4",
+            "debug": "off",
+            "execution": "graph",
+            "ffn": {
+              "activation": 0,
+              "weight": 0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 0,
+              "weight": 0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "fp4",
+            "attention": {
+              "default": {
+                "coverage": 0.5,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": false
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "assets": "/tmp/fp4-baselines-restored-20260918/b2_joint/assets",
+          "assets_sha256": "6e853447db6e9104c9677f7223e07093cc1bbda5b9aa79ff8666d21437d4e1ae",
+          "plan_sha256": "65703dc2b509d26f19282c59c82bd52d30bbdf6fdf105390065a12e6f6408126",
+          "cost": {
+            "tensor_bytes": 871808672,
+            "w1_bytes": 74317824,
+            "file_bytes": 872380040
+          },
+          "bound_ratio": 2.0,
+          "runtime_options": {
+            "fuse_calibrated": true,
+            "fuse_pointwise": true,
+            "static_rotary": true,
+            "codec_graph": true,
+            "fuse_norm": true
+          }
+        }
+      },
+      "nano": {
+        "status": "model_specific_calibration_and_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": null,
+      "attention": "fp4",
+      "execution": "graph"
+    },
+    "b2.5_ffn_guarded": {
+      "tier": "primary",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "name": "b2.5_ffn_guarded",
+          "budget": 2.5,
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": 2.5,
+            "budget_plan": "/tmp/fp4-baselines-recipe-20260918/b2.5_ffn_guarded/plan.json",
+            "precision": "fp4",
+            "debug": "off",
+            "execution": "graph",
+            "ffn": {
+              "activation": 0,
+              "weight": 0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 0,
+              "weight": 0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "fp4",
+            "attention": {
+              "default": {
+                "coverage": 0.5,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": false
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "assets": "/tmp/fp4-baselines-restored-20260918/b2.5_ffn_guarded/assets",
+          "assets_sha256": "e60bdbe74d6607233f8bbff312698c2dbcae57c260f13be819e3c6d1a35109ae",
+          "plan_sha256": "e58cd534b225361c5fa7bcda24fa8667dd16d8ddebd542dfcc2c5e4814340ea4",
+          "cost": {
+            "tensor_bytes": 1132146848,
+            "w1_bytes": 334430208,
+            "file_bytes": 1132795082
+          },
+          "bound_ratio": 2.5,
+          "runtime_options": {
+            "fuse_calibrated": true,
+            "fuse_pointwise": true,
+            "static_rotary": true,
+            "codec_graph": true,
+            "fuse_norm": true
+          }
+        }
+      },
+      "nano": {
+        "status": "model_specific_calibration_and_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": null,
+      "attention": "fp4",
+      "execution": "graph"
+    },
+    "fp4_three": {
+      "tier": "quality_anchor",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": null,
+            "budget_plan": null,
+            "precision": "fp4",
+            "debug": "off",
+            "execution": "graph",
+            "ffn": {
+              "activation": 1.0,
+              "weight": 1.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 1.0,
+              "weight": 1.0,
+              "cross": false,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "fp4",
+            "attention": {
+              "default": {
+                "coverage": 1.0,
+                "terms": 3,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": true
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "origin_receipt_sha256": "07f4bc9f51c5a7076313dde52fc54b82a72dd7c92bcd5f98a0f40a7f0bffb255",
+          "origin_configuration_sha256": "eaddecba24f8cf8d23553219a66a88d4ca3996cd41287c9b4cd53aa53cb89d37"
+        }
+      },
+      "nano": {
+        "status": "current_model_and_execution_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": null,
+      "attention": "fp4",
+      "execution": "graph"
+    },
+    "fp4_four": {
+      "tier": "quality_anchor",
+      "edge": {
+        "status": "frozen_configuration_available__new_cohort_preflight_pending",
+        "spec": {
+          "config": {
+            "resource_mode": "shared-calibration",
+            "compute_budget": null,
+            "budget_plan": null,
+            "precision": "fp4",
+            "debug": "off",
+            "execution": "graph",
+            "ffn": {
+              "activation": 1.0,
+              "weight": 1.0,
+              "cross": true,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "projection": {
+              "activation": 1.0,
+              "weight": 1.0,
+              "cross": true,
+              "activation_blocks": null,
+              "weight_support": null
+            },
+            "attention_backend": "fp4",
+            "attention": {
+              "default": {
+                "coverage": 1.0,
+                "terms": 4,
+                "head_budgets": [],
+                "head_quotas": null,
+                "pv_head_quotas": null,
+                "pv_terms": null,
+                "block_size": 128,
+                "query_tile": 32,
+                "num_warps": 4,
+                "splits": 2,
+                "lazy_p": true,
+                "fast_p": true,
+                "transpose_v": true,
+                "reload_q": false,
+                "sparse_pack": true
+              },
+              "rules": []
+            },
+            "fuse_ffn": true,
+            "share_pack": false,
+            "kernel_variant": "optimized",
+            "linear_backend": "triton",
+            "cutlass_library": null,
+            "cutlass_small_library": null,
+            "cutlass_direct_pack": false,
+            "joint_tuning": false,
+            "strict_tuning": false,
+            "attention_only_attribution": false,
+            "activation_repair_energy": 1.0,
+            "ffn_policy": null,
+            "ffn_policy_mode": "auto50"
+          },
+          "origin_receipt_sha256": "ebbad2177b650f01bb09dbb5e0752c2672dffb46a3803865d4456312f8949fe9",
+          "origin_configuration_sha256": "75562568a0d037c41cdfd5c80e12c49c6f999f2329d7211c36d80206749bea68"
+        }
+      },
+      "nano": {
+        "status": "current_model_and_execution_qualification_pending",
+        "spec": null,
+        "do_not_reuse_edge_assets": true
+      },
+      "edge_external_adapter": null,
+      "attention": "fp4",
+      "execution": "graph"
+    }
+  },
+  "primary_methods": [
+    "bf16",
+    "fp8",
+    "fp4_base",
+    "awq_marlin",
+    "arcquant",
+    "arcquant100",
+    "sharq_perf",
+    "b1.5_protected_n",
+    "b2_joint",
+    "b2.5_ffn_guarded"
+  ],
+  "quality_anchors": [
+    "fp4_three",
+    "fp4_four"
+  ],
+  "qualified_edge_execution": {
+    "b1.5_protected_n": {
+      "receipt": "/home/yufeng/thunderworld/fp4_next_20260918/quality/b1.5_protected_n_norm/result.json",
+      "sha256": "a5adee22127969b4f196bdaa70a8bef05f9613bf0fee1364ecbaa095f6ba6aa7"
+    },
+    "b2_joint": {
+      "receipt": "/home/yufeng/thunderworld/fp4_next_20260918/quality/b2_joint_norm/result.json",
+      "sha256": "7bd5a2577e8dc1739f7e69d702d310f9d00514a0e70c291d48d0abb56289e045"
+    },
+    "b2.5_ffn_guarded": {
+      "receipt": "/home/yufeng/thunderworld/fp4_next_20260918/quality/b2.5_ffn_guarded_norm/result.json",
+      "sha256": "103b7408e346f5befdb682085e4ea228a74b122e0c543f57f584fd9da3fa8199"
+    }
+  },
+  "sources": {
+    "/home/yufeng/thunderworld/repair_redesign_20260917/cohort.json": "99407c40074c915602ec03175c5a7736ff362008c0d8e3839ca19de1b16e9362",
+    "/home/yufeng/thunderworld/fp4_baseline_sweep_20260918/manifest.json": "0836e9a603dd6cfa9e80b09ecb05d4837cf7301176b76426a3970c92f33a8dbe",
+    "/home/yufeng/thunderworld/fp4_next_20260918/optimized-study/manifest.json": "d11352afb8a5ed346475d25ab4c5b58fafcea5aee9cc85e074081ffd974ebe7d",
+    "/home/yufeng/thunderworld/paper_evidence_20260918/cross/manifest.json": "cb4d4f6ee95538dccf783f72ee2a0e82c9c43575257ab17db809c2a20fb15f1b"
+  },
+  "audit": {
+    "local_npz_files_scanned": 13272,
+    "final_seed_filename_matches": [],
+    "final_images_present_and_hash_matched": true,
+    "disjoint": {
+      "calibration": {
+        "source_ids": 0,
+        "decoded_pixels": 0
+      },
+      "development": {
+        "source_ids": 0,
+        "decoded_pixels": 0
+      },
+      "validation": {
+        "source_ids": 0,
+        "decoded_pixels": 0
+      }
+    },
+    "remote_history_audited": false,
+    "prior_final_state": {
+      "complete": true,
+      "identity": {
+        "validation_decision_sha256": "8df81364332cd5a0f435e21aff1b935fcd9b3955ceb58e93be7fe45be4b112dc",
+        "cohort_sha256": "99407c40074c915602ec03175c5a7736ff362008c0d8e3839ca19de1b16e9362",
+        "source_sha256": "5fd22cc2dc429fd549ee12efe9a727c0980703162ed83e101f4dd9f66c2e8c72",
+        "report_implementation_sha256": "5160a2fe6e0b4e130684f7a38c3b082074888b4cf21d25fe59d22a75f48890c9"
+      },
+      "performance_eligible": false,
+      "skipped": true,
+      "final_consumed": false,
+      "reason": "No representation candidate passed independent validation; stop rather than search on final outputs."
+    }
+  },
+  "quality": {
+    "scope": "I2V, full pre-reserved 72-scene subset; not the complete official datasets or their leaderboard protocol",
+    "scenes_per_dataset": {
+      "rbench": 36,
+      "paibench": 36
+    },
+    "seeds_per_scene": 2,
+    "seeds": [
+      301113,
+      301256
+    ],
+    "categories": {
+      "paibench/av": 5,
+      "paibench/common": 5,
+      "paibench/human": 6,
+      "paibench/industry": 5,
+      "paibench/misc": 5,
+      "paibench/physics": 5,
+      "paibench/robot": 5,
+      "rbench/common_manipulation": 4,
+      "rbench/dual_arm": 4,
+      "rbench/humanoid": 4,
+      "rbench/long-horizon_planning": 4,
+      "rbench/multi-entity_collaboration": 4,
+      "rbench/quad": 4,
+      "rbench/single_arm": 4,
+      "rbench/spatial_relationship": 4,
+      "rbench/visual_reasoning": 4
+    },
+    "task": "i2v",
+    "steps": 35,
+    "cfg": 6,
+    "frames": 61,
+    "height": 192,
+    "width": 320,
+    "ar_precision": "bf16",
+    "ar_prefill": "fresh per request; same caching policy",
+    "debug": "off",
+    "metrics": [
+      "lpips",
+      "ssim",
+      "psnr",
+      "video_relative_l2"
+    ],
+    "fit_on_final": false,
+    "aggregation": "Report each dataset separately; category macro means; average paired seeds inside each scene before category-stratified bootstrap",
+    "confidence": "Paired 95% scene-cluster CI; simultaneous claims require predeclared familywise correction",
+    "guard": "Lower LPIPS, no mean SSIM/L2 regression; PSNR reported, not substituted for a failed guard",
+    "primary_reference": "ARCQuant 100%",
+    "secondary_references": [
+      "AWQ-lite/Marlin",
+      "SharQ",
+      "plain W4A4"
+    ],
+    "fp8_gate": "Separate strict consistency gate; failures remain in the results",
+    "inferential_family_size": 12,
+    "inferential_family": "3 budgets x 2 models x 2 datasets vs ARCQuant100; separate family for FP8 claims",
+    "one_model_one_method_requests": 144,
+    "both_models_primary_requests": 2880,
+    "both_models_including_anchors_requests": 3456
+  },
+  "performance": {
+    "devices": [
+      "RTX PRO 6000",
+      "RTX 5090"
+    ],
+    "separate_device_tables": true,
+    "formal_latency": {
+      "cases": "same 16 development scenes; frozen shapes/categories",
+      "rounds": 5,
+      "seeds_per_scene_per_round": 3,
+      "method_order": "fixed randomized interleaving in each round; independent load and complete warmup",
+      "debug": "off",
+      "idle_required": true,
+      "fully_prepared_required": true,
+      "statistics": [
+        "median",
+        "p90",
+        "videos_per_second",
+        "output_fps"
+      ],
+      "time_scope": "AR prefill + 35 steps + video decode + CPU output; exclude offline preparation and file serialization"
+    },
+    "throughput": {
+      "sizes": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "kind": "independent model replicas, not merged GEMM batch or shared weights",
+      "cases": "one previously fixed RBench and one PAI input",
+      "rounds": 5,
+      "waves": 3,
+      "quality_for_concurrency": false,
+      "baseline_specific_tuning": false,
+      "stop": "resource limit/OOM, or two doublings below 5% gain; do not lower precision or alter input"
+    },
+    "memory": [
+      "cold_load_peak",
+      "resident_weights",
+      "w1_union_and_indices",
+      "scratch",
+      "graph_allocated_peak",
+      "reserved_peak"
+    ],
+    "readiness": "Current diagnostic workers hardcode performance_eligible=false; formal common scheduler and device coverage qualification remain required"
+  },
+  "mechanism_appendix": {
+    "required": [
+      "single_a_act2",
+      "single_w_act2",
+      "joint2_act2"
+    ],
+    "optional": [
+      "joint1.5_act2"
+    ],
+    "shared_attention": "full FP4 ACT2, all base blocks retained; K/V are activations, not model weights",
+    "full_cohort_extra_requests": 864,
+    "not_in_primary_table": [
+      "FourOverSix scale control",
+      "ViDiT-Q inspired schedule",
+      "SageAttention3 operator comparison",
+      "ModelOpt lite-SVDQuant operator reference"
+    ],
+    "note": "Do not present mechanism reproductions or operator-only ports as complete official Cosmos baselines"
+  },
+  "extensions": {
+    "tasks": [
+      "Edge policy",
+      "Nano policy",
+      "Nano AV"
+    ],
+    "status": "separate task-specific cohorts/assets/protocol required",
+    "note": "RBench/PAI I2V inputs do not define an action-success benchmark or paired audio reference"
+  },
+  "launch_gaps": [
+    "Generalize one fresh-output worker to baseline_runtime.make_runner for every method; retain optional prior-hash checks, never require nonexistent final output hashes.",
+    "dataset_infer.py bypasses runtime_options and ARC/SharQ adapters; baseline_sweep.quality admits only ARC100/SharQ. Neither is a complete final-matrix launcher.",
+    "Persist exact qualified Edge assets/plans currently referenced under /tmp, with hash checks and independent immutable output directories.",
+    "Build Nano-specific assets/plans and ARC orders/AWQ calibration; qualify its 36 layers, 32 heads and SwiGLU without reusing Edge quota tables.",
+    "Preflight actual final input shapes and compute caps without reading final quality to change policies; missing support is a failure, not a silent fallback.",
+    "Qualify PRO6000/5090 separately; no comparison of different GPUs or profiling-enabled measurements.",
+    "Archive remote run receipts for final seed/case audit before claiming globally unseen evaluation."
+  ]
+}

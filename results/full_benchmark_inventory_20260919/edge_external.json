@@ -1,0 +1,8 @@
+{
+  "sources": "/home/yufeng/thunderworld/contribution_baselines_20260917/sources.lock.json",
+  "sources_sha256": "6da76d4396597c5f7d02a06121558c827cb893509d93aaadad9e7cb439b92b7d",
+  "arc_build": "/home/yufeng/thunderworld/contribution_arcquant_adapted_20260917",
+  "arc_build_sha256": "62a45b9c8bb013f018cda091eda6b3f462b295559f01225aaa3c8bd9cccedf05",
+  "capture": "/home/yufeng/thunderworld/paper_evidence_20260918/external/arc_capture",
+  "capture_sha256": "311be901b7cfb2e8af7ae9924050d33cd50b2051db5c33ff02bb041e30dc8169"
+}
