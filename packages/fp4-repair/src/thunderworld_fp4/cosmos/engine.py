@@ -275,6 +275,10 @@ class JointEngine:
                     cost['packing']['implementation']='selected_codes' if sparse else 'legacy_full_plane'
                     cost['packing']['residual_write_bytes']=cost['packing']['selected_residual_write_bytes'] if sparse else cost['packing']['residual_allocation_bytes']
                     if sparse:cost['non_mma']['base_reencoded_elements']=cost['non_mma']['selected_residual_elements']
+                    if sparse and op.repair_score=='represented_gain':
+                        cost['non_mma']['selector_residual_encoded_elements']=triton.cdiv(m,16)*16*k
+                        cost['non_mma']['selector_residual_decoded_elements']=triton.cdiv(m,16)*16*k
+                    cost['activation_score']=op.repair_score
                     rows.append({**cost,'name':name,'branch':branch,'phase':ph})
                 for layer in range(len(self.model.layers)):
                     cfg=self.attention_config(layer,start,branch)

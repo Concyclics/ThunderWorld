@@ -1,0 +1,8 @@
+{
+  "archive": "measurements.json.gz",
+  "sha256": "e6175e6459e485261868d19c128a1dd3af4582c857339d53b679748b7d359cd6",
+  "bytes": 2213519,
+  "records": 123,
+  "source_sha256": "e76d46e3985d5b8f9290c303994d42fe23ae395ab7a88a01d0fb8e87953992f0",
+  "raw_results_root": "/home/yufeng/thunderworld/fp4_next_20260918"
+}

@@ -1,0 +1,50 @@
+{
+  "methods": {
+    "bf16": {
+      "rbench__visual_reasoning_0010": {
+        "benchmark": "rbench",
+        "requests": 15,
+        "median_seconds": 1.6738233019132167,
+        "p90_seconds": 1.6780542863998562,
+        "fps": 36.44351224545367,
+        "allocated_peak_gib": 8.22294807434082,
+        "reserved_peak_gib": 8.572265625,
+        "existing_output_hashes_verified": true
+      },
+      "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc": {
+        "benchmark": "paibench",
+        "requests": 15,
+        "median_seconds": 1.6885241359705105,
+        "p90_seconds": 1.6903665088582784,
+        "fps": 36.12622330976579,
+        "allocated_peak_gib": 8.331727504730225,
+        "reserved_peak_gib": 8.841796875,
+        "existing_output_hashes_verified": true
+      }
+    },
+    "fp8": {
+      "rbench__visual_reasoning_0010": {
+        "benchmark": "rbench",
+        "requests": 15,
+        "median_seconds": 1.4707690629875287,
+        "p90_seconds": 1.4737714009592309,
+        "fps": 41.47490012884317,
+        "allocated_peak_gib": 6.914499282836914,
+        "reserved_peak_gib": 7.4609375,
+        "existing_output_hashes_verified": true
+      },
+      "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc": {
+        "benchmark": "paibench",
+        "requests": 15,
+        "median_seconds": 1.4865008930210024,
+        "p90_seconds": 1.4910803095903247,
+        "fps": 41.035965929378115,
+        "allocated_peak_gib": 7.024255275726318,
+        "reserved_peak_gib": 7.638671875,
+        "existing_output_hashes_verified": true
+      }
+    }
+  },
+  "performance_eligible": false,
+  "scope": "Unchanged baseline implementations. Five randomized independent-load rounds, run after the FP4 sweep; cross-method ratios are diagnostic, not jointly interleaved estimates."
+}

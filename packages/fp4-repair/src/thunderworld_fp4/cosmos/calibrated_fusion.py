@@ -62,7 +62,8 @@ def install(model):
                 packed=pack_input(x,op,sensitivity=_down.sensitivity if sparse else None,base=base,res=res,factor=factor,energy=_down.repair_energy)
             elif sparse:
                 from .._sparse_pack import pack_sparse
-                packed=pack_sparse(x,op.d,_down.sensitivity,op.am,op.na,base=base,res=res,factor=factor,energy=_down.repair_energy)
+                packed=pack_sparse(x,op.d,_down.sensitivity,op.am,op.na,base=base,res=res,factor=factor,
+                                   energy=_down.repair_energy,score=_down.repair_score)
             else:packed=pack_native(x,op,factor,base,res)
             y=op.run_packed(x,packed)
             return y if _down.bias is None else y+_down.bias

@@ -1,0 +1,244 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "method": "b1.5_protected_n",
+      "case": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "benchmark": "paibench",
+      "measurements": {
+        "frozen": {
+          "median_seconds": 1.788155444082804,
+          "p90_seconds": 1.797907671984285,
+          "fps": 34.11336536868507,
+          "allocated_peak_gib": 6.537393093109131,
+          "reserved_peak_gib": 7.16015625
+        },
+        "norm": {
+          "median_seconds": 1.5895730989286676,
+          "p90_seconds": 1.6003080079797656,
+          "fps": 38.375083247893706,
+          "allocated_peak_gib": 6.034364223480225,
+          "reserved_peak_gib": 7.49609375
+        }
+      },
+      "speedup": 1.1249280988008517,
+      "round_speedup_mean": 1.125101771958385,
+      "round_bootstrap_ci95": [
+        1.119958773278584,
+        1.1305398713060388
+      ],
+      "paired_round_speedups": [
+        1.116387980384417,
+        1.1257502327220372,
+        1.124177630336196,
+        1.124879692517632,
+        1.1343133238316434
+      ]
+    },
+    {
+      "method": "b1.5_protected_n",
+      "case": "rbench__visual_reasoning_0010",
+      "benchmark": "rbench",
+      "measurements": {
+        "frozen": {
+          "median_seconds": 1.7508837929926813,
+          "p90_seconds": 1.7563810875639319,
+          "fps": 34.83954802947621,
+          "allocated_peak_gib": 6.4275970458984375,
+          "reserved_peak_gib": 6.962890625
+        },
+        "norm": {
+          "median_seconds": 1.552514075068757,
+          "p90_seconds": 1.5558719481807202,
+          "fps": 39.29110916260032,
+          "allocated_peak_gib": 5.927513122558594,
+          "reserved_peak_gib": 7.296875
+        }
+      },
+      "speedup": 1.127773217073822,
+      "round_speedup_mean": 1.1271381306249892,
+      "round_bootstrap_ci95": [
+        1.1249244787109203,
+        1.129139508157909
+      ],
+      "paired_round_speedups": [
+        1.1231980203505603,
+        1.1275141662514598,
+        1.1261454732542007,
+        1.130359537133309,
+        1.1284734561354175
+      ]
+    },
+    {
+      "method": "b2_joint",
+      "case": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "benchmark": "paibench",
+      "measurements": {
+        "frozen": {
+          "median_seconds": 1.9405955519760028,
+          "p90_seconds": 1.94576555241365,
+          "fps": 31.433649292809633,
+          "allocated_peak_gib": 6.576232433319092,
+          "reserved_peak_gib": 7.16015625
+        },
+        "norm": {
+          "median_seconds": 1.7274364449549466,
+          "p90_seconds": 1.7296397375874222,
+          "fps": 35.31244242192131,
+          "allocated_peak_gib": 6.067653179168701,
+          "reserved_peak_gib": 7.474609375
+        }
+      },
+      "speedup": 1.1233962080883477,
+      "round_speedup_mean": 1.124889428424384,
+      "round_bootstrap_ci95": [
+        1.1234765597590717,
+        1.1258846518095456
+      ],
+      "paired_round_speedups": [
+        1.1222769470274998,
+        1.1259534043525619,
+        1.1258982129610435,
+        1.124598553360297,
+        1.1257200244205172
+      ]
+    },
+    {
+      "method": "b2_joint",
+      "case": "rbench__visual_reasoning_0010",
+      "benchmark": "rbench",
+      "measurements": {
+        "frozen": {
+          "median_seconds": 1.9020262310514227,
+          "p90_seconds": 1.9083718043984845,
+          "fps": 32.07106137872755,
+          "allocated_peak_gib": 6.4664764404296875,
+          "reserved_peak_gib": 6.966796875
+        },
+        "norm": {
+          "median_seconds": 1.6775615490041673,
+          "p90_seconds": 1.6805147961946205,
+          "fps": 36.36230219762176,
+          "allocated_peak_gib": 5.960842132568359,
+          "reserved_peak_gib": 7.2734375
+        }
+      },
+      "speedup": 1.1338041410048423,
+      "round_speedup_mean": 1.1351748635806735,
+      "round_bootstrap_ci95": [
+        1.1339179353906315,
+        1.1366433679628354
+      ],
+      "paired_round_speedups": [
+        1.1349649337348953,
+        1.133072762898796,
+        1.1377623241147954,
+        1.1346678426330066,
+        1.1354064545218752
+      ]
+    },
+    {
+      "method": "b2.5_ffn_guarded",
+      "case": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "benchmark": "paibench",
+      "measurements": {
+        "frozen": {
+          "median_seconds": 2.165023757959716,
+          "p90_seconds": 2.174528795410879,
+          "fps": 28.17521044548972,
+          "allocated_peak_gib": 6.816244602203369,
+          "reserved_peak_gib": 7.328125
+        },
+        "norm": {
+          "median_seconds": 1.9517968388972804,
+          "p90_seconds": 1.953769413055852,
+          "fps": 31.25325278960057,
+          "allocated_peak_gib": 6.3212151527404785,
+          "reserved_peak_gib": 7.623046875
+        }
+      },
+      "speedup": 1.1092464721804263,
+      "round_speedup_mean": 1.1124808151249028,
+      "round_bootstrap_ci95": [
+        1.1099935706897366,
+        1.1149700867656518
+      ],
+      "paired_round_speedups": [
+        1.1113227477884566,
+        1.116698557583894,
+        1.1134320132881208,
+        1.1128844174434456,
+        1.1080663395205974
+      ]
+    },
+    {
+      "method": "b2.5_ffn_guarded",
+      "case": "rbench__visual_reasoning_0010",
+      "benchmark": "rbench",
+      "measurements": {
+        "frozen": {
+          "median_seconds": 2.1272065700031817,
+          "p90_seconds": 2.131273254635744,
+          "fps": 28.67610548979677,
+          "allocated_peak_gib": 6.706488609313965,
+          "reserved_peak_gib": 7.1328125
+        },
+        "norm": {
+          "median_seconds": 1.9054029550170526,
+          "p90_seconds": 1.9078282073605806,
+          "fps": 32.01422556807889,
+          "allocated_peak_gib": 6.214404106140137,
+          "reserved_peak_gib": 7.423828125
+        }
+      },
+      "speedup": 1.1164077206882175,
+      "round_speedup_mean": 1.1162436401396454,
+      "round_bootstrap_ci95": [
+        1.1145479649479295,
+        1.1179393153313613
+      ],
+      "paired_round_speedups": [
+        1.1183770868658365,
+        1.1145082416563306,
+        1.115771001729586,
+        1.1185857005977735,
+        1.1139761698487003
+      ]
+    }
+  ],
+  "records": {
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_frozen_r0/result.json": "a9511c936b8a6cc1bd89fc4007b2b71f9074c321e1663b23805e7631f03126ab",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_frozen_r1/result.json": "76793a8ff4230a08a4ba5385855fdbe61da9d6447f9330bb9e6ebf581bc330d0",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_frozen_r2/result.json": "63b41e8326a16e0fe30e082d48ca2622e5b2114b1f7f3b0db706ac84cd8c0f0c",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_frozen_r3/result.json": "a97bce9e63599b67261487bfb1ca7e53a76c2e8f99f11f3e1304d12ce093c0a3",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_frozen_r4/result.json": "c61f244986b0d907e0d46a3ef250406339df117792d75767ac36b727b6239b4f",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_norm_r0/result.json": "f60ef5fb498b0769daac5be3426b4db9c9a799f3e9bda2bff1799b2d2b2aa99a",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_norm_r1/result.json": "ea05321b79abd8f17ec969c38c1af5244dc44587d49daf58b5fbd3e0bf8d34dd",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_norm_r2/result.json": "56b3487e3846ced60a7dbea3abc684cb66abcc5f9b169497e35516138a04d7c4",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_norm_r3/result.json": "9abe32821946131b18136bdd30b69874d5737107e73b76d4fb9e6b9690fc75e1",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b1.5_protected_n_norm_r4/result.json": "a2c77aaa75189e50afd6d7cd6903461208bcf0fb9059b79b8a259d158698551f",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_frozen_r0/result.json": "57c1279b635997d9a15ace994d1a5956dea7185d859f8fed16b5375b420c61f8",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_frozen_r1/result.json": "d5f6fdc37b8bcd139d7e1015ef2996d375de476097cf29444b887aa81679c39c",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_frozen_r2/result.json": "22c698b0c6167533e3ec962bd5a6b27f34cbab1c8eb51dadd381a80048404fac",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_frozen_r3/result.json": "d3712d4998d2fe82d8c5f4c51d51ad91d289959cda822da53ea0e690a73b6b93",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_frozen_r4/result.json": "36d23eb7cd075a573d146969ff67ce81fa9c1e43c7acd6d2abe7bcf5c1cdc0a5",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_norm_r0/result.json": "bdab11521d0f97e53cafb754d391e93a3832e7a3f676f02fe2cc52c123920bb8",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_norm_r1/result.json": "7f9b1aa8880f6d281020c212e67570ac787b89e4e4226aad5e34eb777bf86813",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_norm_r2/result.json": "2ed77976d544d88eef761fb61b710ce8aaeb1249cd5a88f5a70f00dc5e781ebe",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_norm_r3/result.json": "d5cf5e9c8feba19c79e0ba7bcbd73fd85b5cb43f9c7a49e0b3e8f708dbfd194c",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2_joint_norm_r4/result.json": "10cc934c9537dd46ec2f2b5a496677c6810af9daff3c81f9fbf9a896b73231ae",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_frozen_r0/result.json": "df6c032d9342cf9d5afaff2ec91d74ddfd3e65a1111046d361cdba0d91b68303",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_frozen_r1/result.json": "bfc3ae8250e08718b61a4234e681be931fa134b5c00d4d4cb677e338ddebe305",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_frozen_r2/result.json": "9f65a0ae8fa497ced96ad4fc76e597a865a458256f804fddde5f0910359c6e9f",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_frozen_r3/result.json": "8f1c1fe58b7243c33b445df8af039b89a51d5cd39b3d8f3805040248ba0a5347",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_frozen_r4/result.json": "979fa205cab6f3dd28022bd50cbe71be573d848147ca79a7e9c4a0b9be2c91ea",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_norm_r0/result.json": "d7b606199ad2bcb43e133eb375ab6a77813d7e0514b448f64562c1817dd39d3d",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_norm_r1/result.json": "25ffef45cd7e53798d17152ebbd13ad1ef5d9dd002f3266a20ca1427182d484d",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_norm_r2/result.json": "acddd627a79aed60e463c698044aa9d9599a91876bd344cdc109c39875c434aa",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_norm_r3/result.json": "c6e5721ca84cc154471c4dab6ee8c873a8112861ca3607af789e4f8a4b03739e",
+    "/home/yufeng/thunderworld/fp4_next_20260918/benchmark/b2.5_ffn_guarded_norm_r4/result.json": "c1e1c7ffb3badad8229830fc43b86e078886a51f363d1b88390ec237d78d93c5"
+  },
+  "protocol_sha256": "697683e659bc9e90efc257b66a7dac2c2aedbde814a1073c5cb174c02961eb4b",
+  "performance_eligible": false,
+  "scope": "Idle GPU, fixed implementation, five independently loaded randomized rounds x three seeds x two fixed inputs. No tuning-table qualification, no formal speed ranking or hardware ceiling."
+}

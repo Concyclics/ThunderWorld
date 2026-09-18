@@ -4,6 +4,8 @@
 
 本交付分支以 `perf/rtx5090-cutlass-followup` 的 `71b1871` 为基础，承接已有推理框架；没有覆盖较早的 main。历史实测见 [FPS 与质量](../../results/fp4_baseline_sweep_20260918/FPS_QUALITY.md)、[完整结果及置信区间](../../results/fp4_baseline_sweep_20260918/REPORT.md)。
 
+进一步优化保留原资产和修复策略，通过独立 manifest 开启经过输出一致性验证的融合与 Graph 配置。见 [优化运行说明](OPTIMIZATION.md) 和 [PRO 6000 复测报告](../../results/fp4_runtime_next_20260918/REPORT.md)；实验性新选择器未通过质量门槛，默认选择器不变。
+
 | CLI 方法名 | 修复预算 | 生成投影实现 | attention | 执行 |
 |---|---:|---|---|---|
 | `b1.5_protected_n` | 1.5× | 原生 Triton FP4，冻结离线 W0/W1 | FP4，独立 QK/PV 与 per-head 配额 | Graph |

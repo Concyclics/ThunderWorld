@@ -45,8 +45,18 @@ def make_runner(manifest, name):
     cfg = RunConfig.from_dict(spec['config'])
     if cfg.debug != 'off' or cfg.resource_mode != 'shared-calibration':
         raise ValueError('Frozen debug-off diagnostic configuration required')
+    # New experiments can freeze exact execution options without changing the
+    # historical presets or their numerical policies. External adapters retain
+    # their original runner unless separately qualified.
+    options = dict(spec.get('runtime_options', {}))
+    allowed = {'fuse_calibrated', 'fuse_pointwise', 'static_rotary', 'codec_graph',
+               'fuse_norm', 'qkv_streams'}
+    if set(options) - allowed or any(type(v) is not bool for v in options.values()):
+        raise ValueError('Unsupported frozen runtime options')
+    if options and (name in manifest.get('adapters', {}) or spec.get('baseline_adapter')):
+        raise ValueError('External baseline execution changes need separate qualification')
     runner = CosmosRunner(manifest['model'], cfg, assets=spec.get('assets'),
-                          ar_cache=True, first_frame=True).prepare()
+                          ar_cache=True, first_frame=True, **options).prepare()
     adapter = None
     external = manifest.get('adapters', {}).get(name)
     if external and external['method'] == 'arcquant':

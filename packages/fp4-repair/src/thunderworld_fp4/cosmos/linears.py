@@ -58,6 +58,7 @@ class RepairLinear(torch.nn.Module):
         self.in_features, self.out_features = source.in_features, source.out_features
         self.controller, self.name, self.default = controller, name, spec
         self.repair_energy=getattr(getattr(controller,'config',None),'activation_repair_energy',1.)
+        self.repair_score=getattr(getattr(controller,'config',None),'activation_score','residual_energy')
         n, k = self.out_features, self.in_features
         if n%128 or k%128: raise ValueError(f'Unsupported FP4 projection {name}: {n}x{k}')
         if asset is None:
@@ -103,6 +104,8 @@ class RepairLinear(torch.nn.Module):
         scores=a['score'].flatten();na,nw=spec.counts(n,k)
         if self.repair_energy!=1 and 0<na<k//128 and a.get('selector')!='residual_sensitivity':
             raise ValueError('Adaptive A repair requires an offline residual-sensitivity asset')
+        if self.repair_score!='residual_energy' and 0<na<k//128 and a.get('selector')!='residual_sensitivity':
+            raise ValueError('Represented-gain selection requires an offline residual-sensitivity asset')
         selected=torch.zeros_like(scores,dtype=torch.bool)
         ids=torch.argsort(scores,descending=True,stable=True)[:nw] if spec.weight_support is None else torch.tensor(spec.weight_support,dtype=torch.long)
         mandatory=set(a.get('mandatory_w_blocks',()))
@@ -190,7 +193,8 @@ class RepairLinear(torch.nn.Module):
                     factor=factor if bool(self.asset.get('identity_prescale',False)) else None,energy=self.repair_energy)
             else:
                 packed=pack_sparse(x,op.d,self.sensitivity,op.am,op.na,base=base,res=res,
-                                   factor=factor if bool(self.asset.get('identity_prescale',False)) else None,energy=self.repair_energy)
+                                   factor=factor if bool(self.asset.get('identity_prescale',False)) else None,
+                                   energy=self.repair_energy,score=self.repair_score)
         elif 0<op.na<k//128:
             select_tiles[(triton.cdiv(m,128),)](x,op.d,op.am,m,k,
                 triton.next_power_of_2(k//128),op.na,num_warps=4)
@@ -218,6 +222,7 @@ class RepairLinear(torch.nn.Module):
             self.prepare_shape(len(flat),spec)
             tune_spec=dict(repair=spec.key,activation_scale=self.asset.get('activation_scale',(1.,1.)),
                 activation_repair_energy=self.repair_energy,
+                activation_score=self.repair_score,
                 identity_prescale=bool((self.asset['prescale']==1).all()),
                 kernel_variant=getattr(getattr(c,'config',None),'kernel_variant','optimized'))
             if getattr(getattr(c,'config',None),'linear_backend','triton')=='cutlass-fused':

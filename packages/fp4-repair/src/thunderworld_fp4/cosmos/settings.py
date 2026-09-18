@@ -74,11 +74,18 @@ class RunConfig:
     # Experimental: partial residual-sensitivity A quotas become upper bounds.
     # Empty/full A quotas and W/attention supports retain their fixed semantics.
     activation_repair_energy: float = 1.
+    # Experimental current-input selector. The default preserves frozen masks.
+    activation_score: str = 'residual_energy'
     # A separate frozen FFN policy uses task|branch|phase|layer.part keys.
     ffn_policy: str | None = None
     ffn_policy_mode: str = "auto50"
 
     def __post_init__(self):
+        if self.activation_score not in ('residual_energy', 'represented_gain'):
+            raise ValueError('Unknown activation repair score')
+        if self.activation_score != 'residual_energy' and (self.precision != 'fp4' or
+                self.linear_backend != 'triton' or self.share_pack):
+            raise ValueError('Represented-gain selection requires unshared native FP4 packing')
         if isinstance(self.activation_repair_energy,bool) or not math.isfinite(self.activation_repair_energy) or not 0 < self.activation_repair_energy <= 1:
             raise ValueError('Activation repair energy must be finite and in (0,1]')
         if self.activation_repair_energy != 1 and (self.precision!='fp4' or self.share_pack):
