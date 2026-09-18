@@ -1,0 +1,71 @@
+"""Frozen, existing execution paths for the matched FP4 baseline supplement.
+
+No baseline kernels or launch parameters are tuned here. ARC and SharQ retain
+their official default-stream kernels and eager execution. SharQ's performance
+variant enables its existing epilogue flag; no Cosmos RMSNorm port is implied.
+"""
+import json
+from pathlib import Path
+
+from baselines import sha
+
+
+def verify(manifest, name):
+    spec = manifest['methods'][name]
+    if spec.get('assets') and sha(Path(spec['assets'])/'manifest.json') != spec['assets_sha256']:
+        raise ValueError('Changed offline repair assets')
+    if spec['config'].get('budget_plan') and sha(spec['config']['budget_plan']) != spec['plan_sha256']:
+        raise ValueError('Changed repair plan')
+    ext = manifest['external']
+    for path, digest in ((Path(ext['sources']), ext['sources_sha256']),
+                         (Path(ext['arc_build'])/'build.json', ext['arc_build_sha256']),
+                         (Path(ext['capture'])/'manifest.json', ext['capture_sha256'])):
+        if sha(path) != digest:
+            raise ValueError('Changed official baseline input: '+str(path))
+    adapter = spec.get('baseline_adapter')
+    if adapter:
+        if adapter['method'] != 'marlin_awq':
+            raise ValueError('Only the native packed AWQ path is admitted')
+        if (sha(Path(adapter['assets'])/'manifest.json') != adapter['assets_sha256'] or
+            sha(Path(__file__).with_name('awq_marlin.py')) != adapter['implementation_sha256']):
+            raise ValueError('Changed native AWQ input')
+
+
+def make_runner(manifest, name):
+    from thunderworld_fp4.cosmos import CosmosRunner, RunConfig
+    verify(manifest, name)
+    spec = manifest['methods'][name]
+    cfg = RunConfig.from_dict(spec['config'])
+    if cfg.debug != 'off' or cfg.resource_mode != 'shared-calibration':
+        raise ValueError('Frozen debug-off diagnostic configuration required')
+    runner = CosmosRunner(manifest['model'], cfg, assets=spec.get('assets'),
+                          ar_cache=True, first_frame=True).prepare()
+    adapter = None
+    external = manifest.get('adapters', {}).get(name)
+    if external and external['method'] == 'arcquant':
+        from external import install_arc
+        ext = manifest['external']
+        if cfg.execution != 'eager':
+            raise ValueError('Official ARC host-alpha path requires eager')
+        adapter = install_arc(runner, ext['arc_build'], ext['capture'], external['fraction'])
+    elif external and external['method'] == 'sharq':
+        from external import install_sharq
+        lock = json.loads(Path(manifest['external']['sources']).read_text())
+        entry = lock['sources']['sharq']
+        adapter = install_sharq(runner, entry['path'], entry['commit'])
+        enabled = external['extra_fusion']
+        for layer in runner.engine.linears.values():
+            layer.official.extra_fusion = enabled
+        adapter.update(extra_fusion=enabled, cosmos_rmsnorm_fusion=False,
+            scope='Official native sparse/residual kernels; existing epilogue fusion flag only. '
+                  'Cosmos RMSNorm is outside the wrapper; no baseline-specific fusion port.')
+    elif spec.get('baseline_adapter'):
+        from awq_marlin import install
+        adapter = install(runner, spec['baseline_adapter']['assets'])
+    return runner, adapter
+
+
+def default_stream_only(manifest, name):
+    # Pinned upstream launches omit a stream or call CUTLASS run() with the
+    # default stream. Do not silently move these kernels to a Torch side stream.
+    return manifest.get('adapters', {}).get(name, {}).get('method') in ('arcquant', 'sharq')

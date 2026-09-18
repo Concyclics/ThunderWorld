@@ -44,6 +44,7 @@ def main():
     p.add_argument('--tune',action='store_true')
     p.add_argument('--resource-mode',choices=['exclusive','shared-calibration'])
     p.add_argument('--compute-budget',type=float)
+    p.add_argument('--activation-repair-energy',type=float,help='Experimental current-residual energy target in (0,1]; caps partial A repair, default 1 retains fixed quotas')
     p.add_argument('--budget-plan',type=Path)
     p.add_argument('--linear-backend',choices=['triton','cutlass-fused'])
     p.add_argument('--cutlass-library',type=Path)
@@ -56,6 +57,8 @@ def main():
     p.add_argument('--static-rotary',action=argparse.BooleanOptionalAction,default=False,help='Refresh rotary tables once per I2V request and CFG branch')
     p.add_argument('--ar-cache',action=argparse.BooleanOptionalAction,default=False,
                    help='Request-local AR prefill for static-text I2V; includes prefill in request timing')
+    p.add_argument('--qkv-streams',action=argparse.BooleanOptionalAction,default=False,
+                   help='Experimental fork/join QKV projection streams; requires AR cache and fresh Graph preparation')
     p.add_argument('--codec-graph',action=argparse.BooleanOptionalAction,default=False,
                    help='Experimental resident VAE CUDA Graphs; warm every request shape first')
     p.add_argument('--fuse-norm',action=argparse.BooleanOptionalAction,default=False,
@@ -96,7 +99,7 @@ def main():
     if a.cutlass_direct_pack is not None:backend_updates['cutlass_direct_pack']=a.cutlass_direct_pack
     if a.joint_tuning is not None:backend_updates['joint_tuning']=a.joint_tuning
     if backend_updates:config=replace(config,**backend_updates)
-    for field in ('debug','execution','resource_mode','compute_budget','budget_plan'):
+    for field in ('debug','execution','resource_mode','compute_budget','budget_plan','activation_repair_energy'):
         if getattr(a,field) is not None:config=replace(config,**{field:str(getattr(a,field)) if field=='budget_plan' else getattr(a,field)})
     if config.resource_mode=='shared-calibration':
         if a.operation=='benchmark' or a.tune:p.error('Shared calibration prohibits benchmark and tuning')
@@ -129,7 +132,7 @@ def main():
             result['image_sha256']=hashlib.sha256(image.read_bytes()).hexdigest()
         result['case']=case
         runner=CosmosRunner(a.model,config,tuning=a.tuning,tune=a.tune,assets=a.assets,
-                            audio=case is not None and case['task']=='av',codec_graph=a.codec_graph,fuse_norm=a.fuse_norm,ar_cache=a.ar_cache,first_frame=a.first_frame,fuse_pointwise=a.fuse_pointwise,static_rotary=a.static_rotary,fuse_calibrated=a.fuse_calibrated)
+                            audio=case is not None and case['task']=='av',codec_graph=a.codec_graph,fuse_norm=a.fuse_norm,ar_cache=a.ar_cache,first_frame=a.first_frame,fuse_pointwise=a.fuse_pointwise,static_rotary=a.static_rotary,fuse_calibrated=a.fuse_calibrated,qkv_streams=a.qkv_streams)
         if a.tune:runner.table.checkpoint_path=a.output/'tuning.partial.json'
         runner.prepare(a.output/'assets' if a.operation=='prepare' else None)
         if a.operation!='prepare':runner.warmup(case,a.steps,a.audio_output)

@@ -1,5 +1,9 @@
 # ThunderWorld
 
+**Frozen Edge FP4 + baseline handoff (2026-09-18):** [1.5× / 2× / 2.5× repair,
+ARCQuant 50%/100%, SharQ, exact-byte offline recipes and PRO 6000 / 5090 retest commands](tools/fp4_handoff/README.md).
+Includes a small GitHub Release data package; download the original model from Hugging Face.
+
 **CUTLASS follow-up on RTX 5090 (2026-09-14):** [measured gains, direct scale
 packing, full-trajectory equality and remaining bottlenecks](docs/CUTLASS_5090_FOLLOWUP_20260914.md).
 

@@ -32,13 +32,21 @@ def base_summary(X,D,F,SENS,C,S,E,M:tl.constexpr,K:tl.constexpr,MP:tl.constexpr,
 
 
 @triton.jit
-def choose(E,MASK,M:tl.constexpr,K:tl.constexpr,BT:tl.constexpr,NA:tl.constexpr):
+def choose(E,MASK,M:tl.constexpr,K:tl.constexpr,BT:tl.constexpr,NA:tl.constexpr,ENERGY:tl.constexpr=1.):
     mb=tl.program_id(0);kt=tl.arange(0,BT)
     rows=mb*8+tl.arange(0,8)
     scores=tl.load(E+rows[:,None]*(K//128)+kt[None,:],(rows[:,None]<tl.cdiv(M,16))&(kt[None,:]<K//128),0.)
     energy=tl.where(kt<K//128,tl.sum(scores,0),-float('inf'))
     rank=tl.sum(((energy[None,:]>energy[:,None])|((energy[None,:]==energy[:,None])&(kt[None,:]<kt[:,None]))).to(tl.int32),1)
-    tl.store(MASK+mb*(K//128)+kt,rank<NA,kt<K//128)
+    active=rank<NA
+    if ENERGY < 1.:
+        # Stop at the smallest stable prefix explaining ENERGY of the current
+        # residual sensitivity proxy, subject to the existing per-tile cap.
+        # Zero residual needs no repair. No host decision or additional GEMM.
+        values=tl.where(kt<K//128,energy,0.)
+        before=tl.sum(tl.where(rank[None,:]<rank[:,None],values[None,:],0.),1)
+        active=active & (before < ENERGY*tl.sum(values,0))
+    tl.store(MASK+mb*(K//128)+kt,active,kt<K//128)
 
 
 @triton.jit
@@ -54,7 +62,7 @@ def residual_only(X,D,F,MASK,C,S,M:tl.constexpr,K:tl.constexpr,MP:tl.constexpr,B
         tl.store(S+MP*(K//16)+mi[:,None]*(K//16)+kb*8+tl.arange(0,8)[None,:],rs,mi[:,None]<MP)
 
 
-def pack_sparse(x,d,sensitivity,mask,count,*,base=1.,res=1.,factor=None):
+def pack_sparse(x,d,sensitivity,mask,count,*,base=1.,res=1.,factor=None,energy=1.):
     m,k=x.shape;mp=triton.cdiv(m,16)*16
     if not 0<count<k//128:raise ValueError('Sparse packing requires a partial integer quota')
     if factor is None:
@@ -66,6 +74,6 @@ def pack_sparse(x,d,sensitivity,mask,count,*,base=1.,res=1.,factor=None):
     s=torch.empty((2,mp,k//16),device=x.device,dtype=torch.float8_e4m3fn)
     summary=torch.empty((triton.cdiv(m,16),k//128),device=x.device,dtype=torch.float32)
     base_summary[(triton.cdiv(m,16),k//128)](x,d,factor,sensitivity,c,s,summary,m,k,mp,base,num_warps=4,enable_fp_fusion=False)
-    choose[(triton.cdiv(m,128),)](summary,mask,m,k,triton.next_power_of_2(k//128),count,num_warps=4)
+    choose[(triton.cdiv(m,128),)](summary,mask,m,k,triton.next_power_of_2(k//128),count,energy,num_warps=4)
     residual_only[(triton.cdiv(m,16),k//128)](x,d,factor,mask,c,s,m,k,mp,base,res,num_warps=4)
     return c,s,factor,mp

@@ -58,10 +58,13 @@ def write_candidate(folder,search,allocation,source):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('search',type=Path);p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--budgets',type=float,nargs='+',default=[1.,1.125,1.25,1.5])
     a=p.parse_args();search=json.loads(a.search.read_text())
+    from thunderworld_fp4.cosmos.budget import BUDGETS
+    if len(set(a.budgets))!=len(a.budgets) or any(b not in BUDGETS for b in a.budgets):raise ValueError('Invalid budgets')
     if not search['complete']:raise ValueError('Complete all-layer search required')
     a.output.mkdir(parents=True,exist_ok=False);candidates=[]
-    for budget in (1.,1.125,1.25,1.5):
+    for budget in a.budgets:
         unique=set()
         for direction,preference in (('grow',None),('prune',None),('grow','a'),('grow','w')):
             allocation=allocate(search['groups'],budget,direction=direction,preference=preference)

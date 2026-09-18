@@ -37,7 +37,7 @@ def _forward(q, k, v, config, repair_mask=None, counts_tensor=None, return_mask=
     nt = triton.cdiv(n, 128)
     counts = config.head_counts(h, n)
     pv_counts = config.pv_counts(h,n)
-    separate = config.pv_head_quotas is not None or config.pv_terms is not None
+    separate = config.pv_head_quotas is not None or config.pv_terms is not None or config.pv_coverage is not None or bool(config.pv_head_budgets)
     pv_terms = config.pv_terms or config.terms
     mask_shape = (h, triton.cdiv(m, 128), nt)
     if repair_mask is not None:
@@ -174,7 +174,7 @@ class FP4Attention:
                     buffers = tuple(t.contiguous().clone() for t in (q, k, v))
                     mask_buffer = repair_mask.clone() if repair_mask is not None else None
                     quotas = torch.tensor(config.head_counts(q.shape[2], k.shape[1]), device=q.device, dtype=torch.int32)
-                    if config.pv_head_quotas is not None or config.pv_terms is not None:
+                    if config.pv_head_quotas is not None or config.pv_terms is not None or config.pv_coverage is not None or config.pv_head_budgets:
                         quotas=(quotas,torch.tensor(config.pv_counts(q.shape[2],k.shape[1]),device=q.device,dtype=torch.int32))
                     for _ in range(3):
                         _forward(*buffers, config, mask_buffer, quotas, return_mask)

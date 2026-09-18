@@ -55,9 +55,11 @@ def prefill(model, kwargs, *, validate=True):
 
 
 class ARCache:
-    def __init__(self, engine):
+    def __init__(self, engine, *, qkv_streams=False):
         self.rope = lambda x,c,s: x*c+rotate(x)*s
         self.engine = engine
+        from .projection_streams import ProjectionStreams
+        self.projection_streams = ProjectionStreams() if qkv_streams else None
         self.model = engine.model
         if type(self.model).__name__ != 'Cosmos3OmniTransformer':
             raise ValueError('Unsupported AR-cache model')
@@ -70,10 +72,21 @@ class ARCache:
             def forward(und_seq, gen_seq, rotary_emb, _layer=layer, _i=i):
                 if self.active is None: raise RuntimeError('AR prefix was not prepared')
                 cached = self.active[_i]; attn = _layer.self_attn
-                norm = _layer.input_layernorm_moe_gen(gen_seq)
-                q = attn.add_q_proj(norm).view(-1, attn.num_attention_heads, attn.head_dim)
-                k = attn.add_k_proj(norm).view(-1, attn.num_key_value_heads, attn.head_dim)
-                v = attn.add_v_proj(norm).view(-1, attn.num_key_value_heads, attn.head_dim)
+                projections = (attn.add_q_proj, attn.add_k_proj, attn.add_v_proj)
+                # Discovery/JIT/tuning stay serial; prepared graph capture and
+                # eager inference execute the same independent projections.
+                norm_and_project = getattr(self.projection_streams, 'norm_and_project', None)
+                if norm_and_project is not None:
+                    q, k, v = norm_and_project(gen_seq, _layer.input_layernorm_moe_gen, projections)
+                else:
+                    norm = _layer.input_layernorm_moe_gen(gen_seq)
+                    if self.projection_streams is not None and (not self.engine.warming or getattr(self.projection_streams,'prepare_when_warming',False)):
+                        q, k, v = self.projection_streams(norm, projections)
+                    else:
+                        q, k, v = (projection(norm) for projection in projections)
+                q = q.view(-1, attn.num_attention_heads, attn.head_dim)
+                k = k.view(-1, attn.num_key_value_heads, attn.head_dim)
+                v = v.view(-1, attn.num_key_value_heads, attn.head_dim)
                 q = attn.norm_added_q(q); k = attn.norm_added_k(k)
                 cos, sin = rotary_emb[2].unsqueeze(1), rotary_emb[3].unsqueeze(1)
                 q = self.rope(q, cos, sin)
@@ -85,7 +98,12 @@ class ARCache:
                     enable_gqa=True, backend=attn.processor._attention_backend,
                     parallel_config=attn.processor._parallel_config)
                 residual = gen_seq + attn.to_add_out(out.squeeze(0).flatten(-2, -1))
-                gen_out = residual + _layer.mlp_moe_gen(_layer.post_attention_layernorm_moe_gen(residual))
+                ffn_norm = getattr(self, 'ffn_norm', None)
+                if ffn_norm is not None:
+                    ffn_out = ffn_norm(residual, _layer.post_attention_layernorm_moe_gen, _layer.mlp_moe_gen)
+                else:
+                    ffn_out = _layer.mlp_moe_gen(_layer.post_attention_layernorm_moe_gen(residual))
+                gen_out = residual + ffn_out
                 return cached['out'], gen_out
             layer.forward = forward
 
@@ -127,7 +145,8 @@ class ARCache:
         self.active = self.slots[key]; self.calls += 1
 
     def receipt(self):
-        return dict(enabled=True, slots=len(self.slots), total_prefills=self.prefills,
+        return dict(enabled=True, qkv_streams=self.projection_streams is not None,
+            slots=len(self.slots), total_prefills=self.prefills,
             last_request_prefills=self.request_prefills, calls=self.calls,
             prefill_graphs=len(self.graphs), capture_seconds=self.capture_seconds,
             buffer_bytes=sum(t.numel()*t.element_size() for rows in self.slots.values() for row in rows for t in row.values()),

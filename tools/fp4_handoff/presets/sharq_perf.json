@@ -1,0 +1,65 @@
+{
+  "config": {
+    "resource_mode": "shared-calibration",
+    "compute_budget": null,
+    "budget_plan": null,
+    "precision": "bf16",
+    "debug": "off",
+    "execution": "eager",
+    "ffn": {
+      "activation": 1.0,
+      "weight": 0.0,
+      "cross": false,
+      "activation_blocks": null,
+      "weight_support": null
+    },
+    "projection": {
+      "activation": 1.0,
+      "weight": 0.0,
+      "cross": false,
+      "activation_blocks": null,
+      "weight_support": null
+    },
+    "attention_backend": "bf16",
+    "attention": {
+      "default": {
+        "coverage": 0.5,
+        "terms": 3,
+        "head_budgets": [],
+        "head_quotas": null,
+        "pv_head_quotas": null,
+        "pv_terms": null,
+        "block_size": 128,
+        "query_tile": 32,
+        "num_warps": 4,
+        "splits": 2,
+        "lazy_p": true,
+        "fast_p": true,
+        "transpose_v": true,
+        "reload_q": false,
+        "sparse_pack": false
+      },
+      "rules": []
+    },
+    "fuse_ffn": true,
+    "share_pack": false,
+    "kernel_variant": "optimized",
+    "linear_backend": "triton",
+    "cutlass_library": null,
+    "cutlass_small_library": null,
+    "cutlass_direct_pack": false,
+    "joint_tuning": false,
+    "strict_tuning": false,
+    "attention_only_attribution": false,
+    "activation_repair_energy": 1.0,
+    "ffn_policy": null,
+    "ffn_policy_mode": "auto50"
+  },
+  "actual_generation_precision": "SharQ-native-existing-epilogue-fusion",
+  "execution_type": "official_native_cosmos_adapter",
+  "performance_eligible": false,
+  "scope": "Quality comparison with BF16 attention. Dispatch precision is a placeholder; native external FP4 linears replace it.",
+  "limitations": [
+    "Official extra_fusion=True; no Cosmos RMSNorm fusion port; eager/default-stream kernels"
+  ]
+}

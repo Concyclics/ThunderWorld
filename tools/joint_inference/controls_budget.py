@@ -14,7 +14,10 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ('capture','assets','output'):p.add_argument('--'+name,type=Path,required=True)
     p.add_argument('--joint-attention',action='store_true',help='Additional uniform joint controls; W-only keeps attention base because the runtime has no W-only attention repair')
+    p.add_argument('--budgets',type=float,nargs='+',default=[1.,1.125,1.25,1.5])
     a=p.parse_args();a.output.mkdir(parents=True,exist_ok=False)
+    from thunderworld_fp4.cosmos.budget import BUDGETS
+    if len(set(a.budgets))!=len(a.budgets) or any(b not in BUDGETS for b in a.budgets):raise ValueError('Invalid budgets')
     import torch
     capture=json.loads((a.capture/'manifest.json').read_text());manifest=json.loads((a.assets/'manifest.json').read_text())
     search=dict(task=capture['case']['task'],branches=1 if capture['case']['task']=='policy' else 2,model_identity=capture['model_identity'],cohort_sha256=capture['cohort_sha256'],modules={},attention={})
@@ -56,7 +59,7 @@ def main():
         return dict(assignments=groups,budget=budget,base_mma=base,total_mma=total,ratio=total/base,
                     strategy=strategy,uniform_fraction=fraction,scope='Uncalibrated uniform joint attention/projection allocation' if a.joint_attention else 'Uncalibrated fixed allocation, ordinary FP4 attention')
     candidates=[]
-    for budget in (1.,1.125,1.25,1.5):
+    for budget in a.budgets:
         for strategy in (('a','balanced') if a.joint_attention else ('a','w','balanced')):
             if a.joint_attention and budget==1.:continue  # Identical empty-repair control already exists.
             lo,hi=0.,1.

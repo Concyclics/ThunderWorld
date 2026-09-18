@@ -1,0 +1,14 @@
+{
+  "repository": "Concyclics/ThunderWorld",
+  "tag": "fp4-repair-baselines-20260918",
+  "source_branch": "feat/fp4-repair-baselines-20260918",
+  "asset": "fp4-edge-baselines-20260918.tar.gz",
+  "bytes": 29817162,
+  "sha256": "423542338774058f2299de66fef60479439af2a9b7515cf7d3b67e08d81f1ee3",
+  "package_sha256": "32e501564278df9455a882218bf6417629453ae09e7f8f131af4fa1e706652cd",
+  "model": {
+    "repo": "nvidia/Cosmos3-Edge",
+    "revision": "a9d944e2c6a1bf9f48b92ad16348e70c5f1836ba"
+  },
+  "scope": "Frozen Edge 1.5x/2x/2.5x, ARCQuant 50/100, SharQ existing fusion; exact-byte CPU recipes, no base model or teacher panels."
+}

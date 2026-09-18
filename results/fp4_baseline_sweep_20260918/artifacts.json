@@ -1,0 +1,136 @@
+{
+  "complete": true,
+  "files": {
+    "PROGRESS.md": {
+      "bytes": 2402,
+      "sha256": "0287ce2c993a47b29d9b4e9eb7aae1db8049004a3e14807234593045830c3215"
+    },
+    "QUALITY.md": {
+      "bytes": 2610,
+      "sha256": "298ebd46ace6b38f642bcbc143ab4c8a10d49d87253a00f28253629b9543c36d"
+    },
+    "REPORT.md": {
+      "bytes": 11961,
+      "sha256": "2f03ee918584fda87d879c0c8cda2d7227f6fbc3eed78d90d3279d938d52d19d"
+    },
+    "fresh_1p5_receipts.json.gz": {
+      "bytes": 13551,
+      "sha256": "c1fdd91b0df97148dd1c486ffb8f5706e9177c07f05901ca2b05f51e5183af60"
+    },
+    "fresh_1p5_verification.json.gz": {
+      "bytes": 3396,
+      "sha256": "d89c0b470522139fc256f94fa673694fd865e4973ccc517d91088bd88e450670"
+    },
+    "generation_receipts.json.gz": {
+      "bytes": 311034,
+      "sha256": "86b89cd1e7064eecf7be5b52ca4154e2b63d757947d0de1b31128c5dd58b6233"
+    },
+    "manifest.json.gz": {
+      "bytes": 9387,
+      "sha256": "6a113b37691474fa5d6f92c77a579c9f9d9c8fe03d79a0dbf313ec8871565d7a"
+    },
+    "quality.csv": {
+      "bytes": 1983,
+      "sha256": "55abd57ca964b4a8f1b4562a1260f1f3a7e0c082e3aaaf3afb6131329f8e1df1"
+    },
+    "quality.pdf": {
+      "bytes": 22702,
+      "sha256": "a9cc637added943f80705b8875006087ababa9913dc9985b17346c20ba9a2dd4"
+    },
+    "quality.png": {
+      "bytes": 108476,
+      "sha256": "33753398bcd70a2de705b22e257575484c67d2d989236a2dcc4b508030dbf804"
+    },
+    "quality_manifest.json.gz": {
+      "bytes": 9382,
+      "sha256": "b5aa945979aae7dd452ff5193ce0f395f37da1ceff1df8fa89d728f732a1b051"
+    },
+    "quality_quality.json.gz": {
+      "bytes": 37355,
+      "sha256": "699e67f7806ea591ea81caa7ba5333a03a68da10d7118af7142f36123a4a408d"
+    },
+    "quality_raw.json.gz": {
+      "bytes": 37355,
+      "sha256": "699e67f7806ea591ea81caa7ba5333a03a68da10d7118af7142f36123a4a408d"
+    },
+    "summary.json": {
+      "bytes": 133824,
+      "sha256": "8b407da5db74adbbaf81c67f0521857a4e8f3f1756c36be86b4b2fcfbaa2c658"
+    },
+    "throughput.csv": {
+      "bytes": 12942,
+      "sha256": "4746f783b0b1e33532e828ff2b5d601250f4103dac971cc297f9306710ed9114"
+    },
+    "throughput.pdf": {
+      "bytes": 29746,
+      "sha256": "94fa0d9490fdbb11c6ea5407d6d15f2ddef01a4375dcb6db1285cb38b91cef9a"
+    },
+    "throughput.png": {
+      "bytes": 217902,
+      "sha256": "1dc018606eeb8763bcf9642763d99372765f72fab2685a61027a6fa3ddb1116e"
+    },
+    "throughput_raw.json.gz": {
+      "bytes": 554606,
+      "sha256": "ac9ff0ec810edc1fe79fc832d88c02038fbf2b9c930ff3323a08b8de1b9b5861"
+    },
+    "throughput_suite.json.gz": {
+      "bytes": 2423,
+      "sha256": "19f684c12516085ec8b412512944f7cf61b1dea136d16de6922850832d2475eb"
+    },
+    "verification.json": {
+      "bytes": 469,
+      "sha256": "87bf376e801cbd4b1a3500164519517a7eaffa24d1e2e997baa0650074c5c6d8"
+    },
+    "FPS_QUALITY.md": {
+      "bytes": 3346,
+      "sha256": "de308facbfe0b362c3c241ef4699543da976b35bf838b90f6d391e600441ca42"
+    },
+    "fps_quality.json": {
+      "bytes": 11083,
+      "sha256": "dc56df031709b6cb2940ec2b687c938450d1ed512de3f30f81832909beb9c2f1"
+    },
+    "fps_quality.csv": {
+      "bytes": 4893,
+      "sha256": "a5e05ad81a9617ffd6303b348ddedba963fd89ac08b16ba558abe9d42356b28f"
+    },
+    "throughput_fps.png": {
+      "bytes": 215196,
+      "sha256": "0c8f25828dfc0dbfaf6e423f7e25264ad969ed76b56fc27478a12a9a8610d0b4"
+    },
+    "throughput_fps.pdf": {
+      "bytes": 29518,
+      "sha256": "2b89cb390ac92eb1a3c9518510a5bbc6dac03648cff9defec17d1337a7a8fc37"
+    },
+    "measured_sources/baseline_throughput_suite.py": {
+      "bytes": 4510,
+      "sha256": "023d29e710f21da3bc443dcf141cf5976a37693677e92b2259aa7a8676f4ca45"
+    },
+    "measured_sources/external.py": {
+      "bytes": 9375,
+      "sha256": "afee8b18970e358c5d9af0ee87ef90389f6411c60714878fbcf393dc00768614"
+    },
+    "measured_sources/baseline_runtime.py": {
+      "bytes": 3651,
+      "sha256": "9cc51210be55d03494e502ee425069b3e3a1d4457ad308cd415d4a57c44e801c"
+    },
+    "measured_sources/baseline_batch.py": {
+      "bytes": 17459,
+      "sha256": "1e69d678221452186d562f937255f7ade54ee9522139f95497b41122cd84bb5a"
+    }
+  },
+  "source_sha256": {
+    "tools/contribution_study/baseline_runtime.py": "9cc51210be55d03494e502ee425069b3e3a1d4457ad308cd415d4a57c44e801c",
+    "tools/contribution_study/baseline_sweep.py": "cf39ebeebf8f46bc085654be603ba88aaefffce97e7ae4d51cb8121ad803f310",
+    "tools/contribution_study/baseline_batch.py": "1e69d678221452186d562f937255f7ade54ee9522139f95497b41122cd84bb5a",
+    "tools/contribution_study/baseline_throughput_suite.py": "023d29e710f21da3bc443dcf141cf5976a37693677e92b2259aa7a8676f4ca45",
+    "tools/contribution_study/baseline_sweep_report.py": "75ce7fa07e4d08bec714311b97e77df7b42362d6e5549a157b76651916e16a38",
+    "tools/contribution_study/baseline_sweep_plot.py": "cede57101a8c43c4beb6a8bcecb85ce4f98fc783b613454978c0f0b6b39dc241",
+    "tools/contribution_study/baseline_fresh_verify.py": "5a44613411d2dbcd80e3a40af4f88fce0da7ef7b824264f400fc22497da27e93",
+    "tools/contribution_study/requirements-baseline-plots.txt": "3f53e91360957187bd694b04018509feced47b26a005140c16775974a34a623d",
+    "docs/FP4_BASELINE_SWEEP_20260918.md": "34c7f83ab31f021a596a7ea31635eb12d03d8289a1808f1538ac0354c083d2e2",
+    "tools/contribution_study/baseline_fps_quality.py": "cf48073185e7f7393834525eebf6761060e8b2c1d507a19350acd6ed11d38ba1"
+  },
+  "performance_eligible": false,
+  "scope": "Completed matched development quality and speed-only request concurrency diagnostics",
+  "portable_handoff_note": "Measured worker sources retained in measured_sources/. Portable adapters and memory admission changes are validated separately under tools/fp4_handoff/."
+}

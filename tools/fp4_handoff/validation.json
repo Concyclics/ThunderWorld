@@ -1,0 +1,94 @@
+{
+  "complete": true,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "gpu_index": 0,
+  "performance_retest": false,
+  "rtx5090_retested": false,
+  "source_base_commit": "71b18718b15787a8ed280c7d4ae0e20c7654fe3e",
+  "cpu_tests": {
+    "passed": 70,
+    "skipped_cuda_tests": 33
+  },
+  "offline_restore": {
+    "methods": 3,
+    "modules_each": 168,
+    "all_tensor_hashes_match": true
+  },
+  "full_requests": {
+    "methods": 7,
+    "cases": 2,
+    "seeds_each": 2,
+    "count": 28,
+    "steps": 35,
+    "all_source_output_hashes_match": true
+  },
+  "files": {
+    "validation/cpu-tests.txt": {
+      "bytes": 191,
+      "sha256": "5ca769581a71180b71691bd08eee78a8ba4e344e07ee3cab53a707b5bb7e0022"
+    },
+    "validation/requests.json.gz": {
+      "bytes": 12848,
+      "sha256": "fe8f1cfe1280a30979351788ceb63569de005108989bb1fd2cf4307a420512e7"
+    },
+    "validation/restored.json": {
+      "bytes": 547,
+      "sha256": "7a9104fdcffd71f56a14c3930feea0bef2338b2cc215909578fc82b24c1cd2cf"
+    }
+  },
+  "source_sha256": {
+    "tools/fp4_handoff/bundle.py": "eec8c60e67c981a4879b6124c05a8155bb28026cf9719d971241b11522f4488e",
+    "tools/fp4_handoff/infer.py": "98f884461a7e7b6c8da7345bda71b36aaf371129d971bdddca6d03a8433a92d0",
+    "tools/fp4_handoff/smoke.py": "cf4ad4158618f6df8674c78fdfa4fff10803fa55feb118dc2296bcb866dcbaa1",
+    "tools/fp4_handoff/download.py": "89b56a6619b7659b5146a594bd5017060ce772e415857f3f96eae23b9b29417a",
+    "tools/contribution_study/external.py": "74d50f0228c492848911dcb7264b61e34d6bc4d29f13c04b3fe0cca742b376eb",
+    "tools/contribution_study/arc_orders.py": "cda35727a95b797e5fb69ed0e754491fa55fe47ce4b1df5dfab1224f4fab8e61",
+    "tools/contribution_study/baseline_runtime.py": "d69ada96c28309b438d8d7af245e0e4393d74a93c1c839fc0cddeeeec37820ae",
+    "tools/contribution_study/baseline_batch.py": "5b97d794e16acb2e8e1ee8a4ea38440d0de4601516f48cfd830fc7172c6d38fa",
+    "tools/contribution_study/baseline_throughput_suite.py": "7c11ddc735dddbbf977a956098bf33e7138ddbb2b5476ba02d47c7f182ab9306",
+    "packages/fp4-repair/src/thunderworld_fp4/_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+    "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+    "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+    "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+    "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "c36fbba09caa2cc3953054ce92aca31b679c3c2c52f1eeedc8db7fdb5b2df709",
+    "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+    "packages/fp4-repair/src/thunderworld_fp4/_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+    "packages/fp4-repair/src/thunderworld_fp4/_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+    "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+    "packages/fp4-repair/src/thunderworld_fp4/_sparse_pack.py": "5070b6e18805b06e6f676dd5346718b9fc769dbae3c37ac96293e639e12f73ed",
+    "packages/fp4-repair/src/thunderworld_fp4/_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+    "packages/fp4-repair/src/thunderworld_fp4/config.py": "22d564621fb67f3cb0f19c00f846daee54b372b31670dd495a913d772c4cc399",
+    "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+    "packages/fp4-repair/src/thunderworld_fp4/_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/cohorts.py": "00c7e7e47f6e141343f88cd60697cfd6dcd4a5f5fb2e0d38e67a0c5209e18e53",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/tuning.py": "14ad2ccf8938ef032fae6797fd8d9edf924d7265aa04744076242c21772b5340",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/codec_graph.py": "43e5926a9e4797ecf1071b7f168bc5468e0ded56c2fea6c0b7450d30b640944e",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/calibrated_fusion.py": "12bd92ee1edb8f213bb0e74de727403f597459ca47e14a45d938978775e20549",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/assets.py": "031c5cfed4f87b97338c79c63fc15008fc8af3500666de341fc20367c1268017",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/linears.py": "96dcf1996bd74a25ecdde4a3863e015c889ce71375a54621724718559547ae64",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/projection_streams.py": "f2ee5d0e0cf3f6fcbcc7a4fe4f0ffc9aad848262337d99dd362afae78bb4f3ca",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/ar_cache.py": "edef4d746fb4b41e1a7a7f0d07d941c5665d13e9bf29b9afbe69d00a9b646031",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/resources.py": "0b62f0836070239d390b2d8521052929af486ace0c62c1c103b5c234508a143c",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/norm_fusion.py": "b54c38a2ee5087df68a3eaf76f54667f2baf188ec3604b9c4d9e4c283315d265",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/cli.py": "b00bf40d2e1edf17feb523ae743ef604b53da3fc35d1604f0581464a78cdbd28",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/scheduler.py": "dcebbdae0d83c24aeb95d3fafa034ff8696b1bdaa3ebe77ea8a6b64164a69033",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/pipeline_tuning.py": "4519e1a291799f05f8197397e5a2f46dc19a8cd56ffeb41a9972b9738b0567e3",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/trees.py": "1bb368d61ba9147b59e6088cc9af8dc7cf6a87bc19b287cd2c848baf9cc6e6d5",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/engine.py": "f8c4896cd09f26b73b6590ad7470055e08f34f3ee9abc30e69177409b772d066",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/settings.py": "8c0fd16b84ae20bbefa963dee89e0f5530f39db2e4863925174bad7109dab973",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/quality.py": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/runner.py": "ddae863437abcc0f547bc1d9ee1903e80b7d7b81ec3685b71ba3cb339808d93a",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/diagnostics.py": "358941666076b9ff517bf25b7ca6eb7dfd5329a35880e18abd4e7bf095151fdb",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/calibration.py": "5561458c2e5dd973f7767072ec5b681f4494e2e86e798dc4ce7a8ebe1be5452c",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/budget.py": "f0deab8c5c2f70277857e9b9359a11420a89ca7386b92f439c2697c16290b88e",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/__init__.py": "095c38bf617115576d3723cfedd70a36a12fdc63bd99792c57eb5ca8a985f88b",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/allocation.py": "6b49160bc275c553b10fca3095287e159304a84a4fc6c0843df6f460af6b87ba",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/packing.py": "e59663644e232bc7b2f5a7900833c0c4589490d947a5f2079d117e472252e3b5",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14"
+  }
+}

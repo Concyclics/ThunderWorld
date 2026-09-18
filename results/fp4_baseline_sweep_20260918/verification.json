@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "throughput_workers": 20,
+  "batch_levels": 74,
+  "timed_groups": 1110,
+  "complete_timed_videos": 3780,
+  "quality_scene_method_pairs": 160,
+  "quality_csv_rows": 20,
+  "consistent_worker_and_runtime": true,
+  "checked_medians_rates_counts_csv": true,
+  "b1_quality_checked": true,
+  "concurrency_quality_checked": false,
+  "performance_eligible": false,
+  "summary_sha256": "8b407da5db74adbbaf81c67f0521857a4e8f3f1756c36be86b4b2fcfbaa2c658"
+}

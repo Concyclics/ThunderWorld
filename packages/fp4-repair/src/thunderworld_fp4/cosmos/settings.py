@@ -70,11 +70,19 @@ class RunConfig:
     cutlass_direct_pack: bool = False
     joint_tuning: bool = False
     strict_tuning: bool = False
+    attention_only_attribution: bool = False
+    # Experimental: partial residual-sensitivity A quotas become upper bounds.
+    # Empty/full A quotas and W/attention supports retain their fixed semantics.
+    activation_repair_energy: float = 1.
     # A separate frozen FFN policy uses task|branch|phase|layer.part keys.
     ffn_policy: str | None = None
     ffn_policy_mode: str = "auto50"
 
     def __post_init__(self):
+        if isinstance(self.activation_repair_energy,bool) or not math.isfinite(self.activation_repair_energy) or not 0 < self.activation_repair_energy <= 1:
+            raise ValueError('Activation repair energy must be finite and in (0,1]')
+        if self.activation_repair_energy != 1 and (self.precision!='fp4' or self.share_pack):
+            raise ValueError('Adaptive activation repair requires FP4 without shared packing')
         if self.budget_plan and self.compute_budget is None:
             raise ValueError('A budget plan requires an explicit compute budget')
         if self.budget_plan and self.ffn_policy:
@@ -82,8 +90,9 @@ class RunConfig:
         if self.resource_mode not in ('exclusive', 'shared-calibration'):
             raise ValueError('Invalid resource mode')
         if self.compute_budget is not None:
-            if self.compute_budget not in (1., 1.125, 1.25, 1.5) or isinstance(self.compute_budget, bool):
-                raise ValueError('Compute budget must be 1, 1.125, 1.25 or 1.5')
+            from .budget import BUDGETS
+            if self.compute_budget not in BUDGETS or isinstance(self.compute_budget, bool):
+                raise ValueError(f'Compute budget must be one of {BUDGETS}')
             if self.precision != 'fp4' or self.attention_backend != 'fp4':
                 raise ValueError('Compute budgets require joint FP4')
         if self.precision not in ('bf16', 'fp8', 'fp4'):
@@ -105,7 +114,11 @@ class RunConfig:
             raise ValueError('Joint tuning requires CUTLASS without shared gate/up packing')
         if self.kernel_variant not in ('optimized','legacy'):
             raise ValueError('Invalid kernel variant')
-        if self.precision != 'fp4' and self.attention_backend != 'bf16':
+        if type(self.attention_only_attribution) is not bool:
+            raise ValueError('attention_only_attribution must be boolean')
+        if self.attention_only_attribution and (self.precision!='bf16' or self.attention_backend!='fp4' or self.resource_mode!='shared-calibration'):
+            raise ValueError('Attention-only attribution requires BF16 projections, FP4 attention and shared calibration')
+        if self.precision != 'fp4' and self.attention_backend != 'bf16' and not self.attention_only_attribution:
             raise ValueError('BF16/FP8 controls must retain BF16 attention')
         if not isinstance(self.ffn, LinearSpec) or not isinstance(self.projection, LinearSpec):
             raise ValueError('Expected independent LinearSpec objects')
