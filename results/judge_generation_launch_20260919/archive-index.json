@@ -1,0 +1,530 @@
+[
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/manifest.json",
+    "archive": "manifest.json.gz",
+    "sha256": "ae5c9986aa401d7d95fb2a4c1dbe33adf7320314b7730ed425558be8fa3612d6",
+    "bytes": 69279
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/launch.json",
+    "archive": "launch.json.gz",
+    "sha256": "398ab1ddd62b307cf673e4937f5f8754738b68fa947545f104f728a6d1a5b241",
+    "bytes": 429
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/edge/final/manifest.json",
+    "archive": "edge/final/manifest.json.gz",
+    "sha256": "42b86cddc1e786c993dac65fea3a1dcbd33f73b9b2d8400551d6272403ae52b1",
+    "bytes": 118237
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/nano/final/manifest.json",
+    "archive": "nano/final/manifest.json.gz",
+    "sha256": "53474cd94f7abb50b6818c7faed8428158ad1d98c656790b32831784699d8ccf",
+    "bytes": 116937
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/edge/qualification/manifest.json",
+    "archive": "edge/qualification/manifest.json.gz",
+    "sha256": "a8f6e42729a82f6608f5f20c7b2904afd478bf01fcd0cc48761c3942ccf16d42",
+    "bytes": 28363
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/nano/qualification/manifest.json",
+    "archive": "nano/qualification/manifest.json.gz",
+    "sha256": "50bfba672109d868a5cca7d38a73961b0dc142375941005261866c9fdab58e49",
+    "bytes": 27063
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/edge/qualification/source_output_hashes.json",
+    "archive": "edge/qualification/source_output_hashes.json.gz",
+    "sha256": "2c169862ac892e227cabde95409c04a70bb1c124b9527a9c328e70cc9f5c1a76",
+    "bytes": 2901
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/nano/qualification/source_output_hashes.json",
+    "archive": "nano/qualification/source_output_hashes.json.gz",
+    "sha256": "904f0f30163bc82539279af915941e231c4629a0a3663efdb4a1d3d6029b6d72",
+    "bytes": 2901
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/arcquant/progress.json",
+    "archive": "gpu0/qualification/edge/arcquant/progress.json.gz",
+    "sha256": "024676a14980b69fcfe7399b6aeea65769c3723fa3d71cc29c05de1306fec897",
+    "bytes": 802
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/arcquant/prepared.json",
+    "archive": "gpu0/qualification/edge/arcquant/prepared.json.gz",
+    "sha256": "46d30ff7a095e29c7c2829e9d95e024362012b2f27692b106b7a1cfaca73d98d",
+    "bytes": 19524
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/arcquant/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/edge/arcquant/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "4b596a67f13966ce5cea94355bcc510792caa666259d02bacfdbdb18e5ead9e8",
+    "bytes": 15145
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/arcquant/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/edge/arcquant/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "7e9a8adeb9af86484ad766db53b6be448d013324740108ffd5480153eb3e1148",
+    "bytes": 17720
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/arcquant100/progress.json",
+    "archive": "gpu0/qualification/edge/arcquant100/progress.json.gz",
+    "sha256": "c3ad0ea057a8e2530818bbafaf21cb26ad25a1b099e25b36f02e6bcc7999c12a",
+    "bytes": 805
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/arcquant100/prepared.json",
+    "archive": "gpu0/qualification/edge/arcquant100/prepared.json.gz",
+    "sha256": "5cd63aebccdc88588181a5f53d357bbb8dddbd74beb1105a34aa377aa17aa476",
+    "bytes": 19528
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/arcquant100/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/edge/arcquant100/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "57ae9760fcd5f4ac4ebdb79bb80c84a44af31d1fdad7062c4fcd528e8d8f0265",
+    "bytes": 15146
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/arcquant100/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/edge/arcquant100/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "f6dfe754b4b7198ae71c8eb7c96f56f4e0364e3a010901368ce439535e5fc703",
+    "bytes": 17723
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/sharq_perf/progress.json",
+    "archive": "gpu0/qualification/edge/sharq_perf/progress.json.gz",
+    "sha256": "ef5bae63b9eec8792bd932b7357dd5e933d0cb3df1a3a6842d3bd30ef4eb9515",
+    "bytes": 804
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/sharq_perf/prepared.json",
+    "archive": "gpu0/qualification/edge/sharq_perf/prepared.json.gz",
+    "sha256": "fffc1dfc27de24e7bd957a40a030b61b6e93a93bbc9ce882007a9177a52fcb9a",
+    "bytes": 18362
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/sharq_perf/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/edge/sharq_perf/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "a65fb99d4b1d6139e6d225017c236bfb8b364f8c7f7e57974cbd48679148d93d",
+    "bytes": 13983
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/sharq_perf/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/edge/sharq_perf/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "340a797186b7560f8023fe5cb81fbe6b050fde83f4df5861d21656b86610f034",
+    "bytes": 16559
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/b1.5_protected_n/progress.json",
+    "archive": "gpu0/qualification/edge/b1.5_protected_n/progress.json.gz",
+    "sha256": "9a803ac95aa7a2bf850ea7f05d64f13c3e38d8d77eba98f03590efc32a90a2b4",
+    "bytes": 810
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/b1.5_protected_n/prepared.json",
+    "archive": "gpu0/qualification/edge/b1.5_protected_n/prepared.json.gz",
+    "sha256": "3e5a9f6c25c8f2024c6f3611ae48650cc47e75e669a2175f4e7f1dd94a425ae6",
+    "bytes": 28886
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/b1.5_protected_n/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/edge/b1.5_protected_n/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "49f5e8518ae04c4e4a97e0bef1a466ef1e91ab6f417562afdc9526d2b354e55c",
+    "bytes": 13392
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/b1.5_protected_n/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/edge/b1.5_protected_n/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "8de983487e5b8226a05b20da2d35af2fae63e3b907a5a2669d56da5ffc3847fd",
+    "bytes": 15969
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/b2_joint/progress.json",
+    "archive": "gpu0/qualification/edge/b2_joint/progress.json.gz",
+    "sha256": "5131be3d16e298da9198af480d88e1a6a63e0e5731e886ee265150191f24b00d",
+    "bytes": 802
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/b2_joint/prepared.json",
+    "archive": "gpu0/qualification/edge/b2_joint/prepared.json.gz",
+    "sha256": "8025e9cf1e7d8469396dc4d42ef3d1a89a26662e7abe9c0174ca1413d0983113",
+    "bytes": 28869
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/b2_joint/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/edge/b2_joint/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "1c3218256fc797abe1e8084e054ae93f7fab93aec17dae908bf3ac94789a28f0",
+    "bytes": 13385
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/edge/b2_joint/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/edge/b2_joint/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "5defd2d5fc0f5fd85d428aac025f5e7a2d567f601c4f394d651deab4dfde5a4e",
+    "bytes": 15963
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/arcquant/progress.json",
+    "archive": "gpu0/qualification/nano/arcquant/progress.json.gz",
+    "sha256": "8dd2f45a3525fa28eb74240165356ebe672b8238b87dd25cfaf01038559548c1",
+    "bytes": 802
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/arcquant/prepared.json",
+    "archive": "gpu0/qualification/nano/arcquant/prepared.json.gz",
+    "sha256": "a38517de6d7c82ea56edea257497f6464cb137d8f99c1ee92662131c9a2a7d03",
+    "bytes": 22994
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/arcquant/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/nano/arcquant/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "3fc6fe0e17652cc4075239bd48691e14879f7daa7adbc8f376bcd6467b11bcb8",
+    "bytes": 18447
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/arcquant/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/nano/arcquant/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "90184dc9bc6cd6bad1f428a9b8ff267a977385bf7ebc71f0da19f34f6e8253c0",
+    "bytes": 21024
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/arcquant100/progress.json",
+    "archive": "gpu0/qualification/nano/arcquant100/progress.json.gz",
+    "sha256": "edd0cf70e386f3b199b9a3d5615c7ce5ea4ee6a31fc0c86a9f7b3cd5567fb47e",
+    "bytes": 805
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/arcquant100/prepared.json",
+    "archive": "gpu0/qualification/nano/arcquant100/prepared.json.gz",
+    "sha256": "84ba5047f1afbacd6c0bfa69a34e249dbeaff60def3a1dd813741b0138e2dc65",
+    "bytes": 22999
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/arcquant100/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/nano/arcquant100/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "532cd7d26a8329a9ab564a407a0d101e295877f2fe5a59711d33b67a13b9476b",
+    "bytes": 18450
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/arcquant100/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/nano/arcquant100/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "902594cc11f356cc5287a25543a155362a3f4f3c846589eec7cb2d8b89b1e4c2",
+    "bytes": 21026
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/sharq_perf/progress.json",
+    "archive": "gpu0/qualification/nano/sharq_perf/progress.json.gz",
+    "sha256": "bac2dd7181696f0bebcbea2ca10b6fc26f1de1450b3c95e4c7ffee5afc7a79af",
+    "bytes": 804
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/sharq_perf/prepared.json",
+    "archive": "gpu0/qualification/nano/sharq_perf/prepared.json.gz",
+    "sha256": "6b9f3767b4577a5a4199ba127e0faf7948483a22ba9e7dea392bb0de667ee8a1",
+    "bytes": 21752
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/sharq_perf/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/nano/sharq_perf/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "726a0d587f9ae4ed5cffb7a65686ed45175b8d8bc4d412b3ce582607c78937be",
+    "bytes": 17201
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/sharq_perf/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/nano/sharq_perf/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "f0e6cdae29d4f035dbacaf45edf9b95e3d53e73d3fc10af0aeec83ee4db38448",
+    "bytes": 19781
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/b1.5_protected_n/progress.json",
+    "archive": "gpu0/qualification/nano/b1.5_protected_n/progress.json.gz",
+    "sha256": "91679b689b6a9e9824493b8bd47a51fda4ee024a8aaa0a0c2a76fa82815259f3",
+    "bytes": 810
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/b1.5_protected_n/prepared.json",
+    "archive": "gpu0/qualification/nano/b1.5_protected_n/prepared.json.gz",
+    "sha256": "29fe1ff3b04f72f7a2912d867f80d839ffbd923623c536e323e0fdb7086c2465",
+    "bytes": 21144
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/b1.5_protected_n/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/nano/b1.5_protected_n/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "2cef78e6691e2bbbc6b21d8c2ac7869a7954b693d30998db5d0c667826a0ae41",
+    "bytes": 16615
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/b1.5_protected_n/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/nano/b1.5_protected_n/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "3b584310af39e45e3e191bb57f8fc3869cfd93ac568e51d457581215aeb7842e",
+    "bytes": 19189
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/b2_joint/progress.json",
+    "archive": "gpu0/qualification/nano/b2_joint/progress.json.gz",
+    "sha256": "f31ce9407b87ded1fa6cad39f6b9be9dfe24e24c185f62200ffcec4df5101e50",
+    "bytes": 802
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/b2_joint/prepared.json",
+    "archive": "gpu0/qualification/nano/b2_joint/prepared.json.gz",
+    "sha256": "7266c2f219622af4448a219c1ea5721d833e3f384c504ea4db2f050ae0d53175",
+    "bytes": 21128
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/b2_joint/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu0/qualification/nano/b2_joint/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "faae69ef8632338491cade6e5d419ee7501ce7ff5f0135b85a0b4334010dd3d7",
+    "bytes": 16604
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu0/qualification/nano/b2_joint/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu0/qualification/nano/b2_joint/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "c62d3ccbe5104dbfbac29fcc9ec5752dfc27aa252c1139c954a2327bbb57b764",
+    "bytes": 19180
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/arcquant/progress.json",
+    "archive": "gpu1/qualification/edge/arcquant/progress.json.gz",
+    "sha256": "024676a14980b69fcfe7399b6aeea65769c3723fa3d71cc29c05de1306fec897",
+    "bytes": 802
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/arcquant/prepared.json",
+    "archive": "gpu1/qualification/edge/arcquant/prepared.json.gz",
+    "sha256": "9aa2ecd5bfa998d4a32f681b66b4f3b9f4c319b51675f3964fbd9615185135d5",
+    "bytes": 19525
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/arcquant/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/edge/arcquant/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "f768e425420399e7fe050886ee9312a4bcf823c0523163d27594c9230a76932e",
+    "bytes": 15144
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/arcquant/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/edge/arcquant/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "e153d35924d8b608a5d7bc177e939fd74af44a13bf9a9b4bacf108b401099a0d",
+    "bytes": 17722
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/arcquant100/progress.json",
+    "archive": "gpu1/qualification/edge/arcquant100/progress.json.gz",
+    "sha256": "c3ad0ea057a8e2530818bbafaf21cb26ad25a1b099e25b36f02e6bcc7999c12a",
+    "bytes": 805
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/arcquant100/prepared.json",
+    "archive": "gpu1/qualification/edge/arcquant100/prepared.json.gz",
+    "sha256": "5de30b1d718bfb4e30a9ac83b928c78269e30839f65f56949a3ad48ded4df462",
+    "bytes": 19529
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/arcquant100/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/edge/arcquant100/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "b457ec960704062cb59468090fc1d98b7634a2e435c3f57f7f0cc3938a37e954",
+    "bytes": 15147
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/arcquant100/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/edge/arcquant100/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "40d4f5c97001ed51a542077247d1945da9ec80e825861f31250834f85b0c1f98",
+    "bytes": 17724
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/sharq_perf/progress.json",
+    "archive": "gpu1/qualification/edge/sharq_perf/progress.json.gz",
+    "sha256": "ef5bae63b9eec8792bd932b7357dd5e933d0cb3df1a3a6842d3bd30ef4eb9515",
+    "bytes": 804
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/sharq_perf/prepared.json",
+    "archive": "gpu1/qualification/edge/sharq_perf/prepared.json.gz",
+    "sha256": "6587a4be5d42ad7ddba506151132374ceb0a7e944aabad279a93535e4bf476df",
+    "bytes": 18363
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/sharq_perf/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/edge/sharq_perf/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "00784ea96176326ffd9a9c2576eb440a8565ec5cb1fb26eb984e8a3a3ec5740e",
+    "bytes": 13983
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/sharq_perf/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/edge/sharq_perf/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "1a1939ed9acafa9cd5898c13955a671aff7650d6a6d27055c4e70a431be7eac2",
+    "bytes": 16558
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/b1.5_protected_n/progress.json",
+    "archive": "gpu1/qualification/edge/b1.5_protected_n/progress.json.gz",
+    "sha256": "9a803ac95aa7a2bf850ea7f05d64f13c3e38d8d77eba98f03590efc32a90a2b4",
+    "bytes": 810
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/b1.5_protected_n/prepared.json",
+    "archive": "gpu1/qualification/edge/b1.5_protected_n/prepared.json.gz",
+    "sha256": "d9c3f51e87099b5293bf5ab4e111a3dbab08b76aadfe2dad2629b3823bebb653",
+    "bytes": 28886
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/b1.5_protected_n/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/edge/b1.5_protected_n/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "eae3e4027f99d632b80cbe7fb0b4d9211379966d92230c3204c039d2fbb77483",
+    "bytes": 13392
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/b1.5_protected_n/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/edge/b1.5_protected_n/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "7f6f9ed39f799048ff47b377f0579931e50031bcd063e16877579fef06e639f3",
+    "bytes": 15971
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/b2_joint/progress.json",
+    "archive": "gpu1/qualification/edge/b2_joint/progress.json.gz",
+    "sha256": "5131be3d16e298da9198af480d88e1a6a63e0e5731e886ee265150191f24b00d",
+    "bytes": 802
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/b2_joint/prepared.json",
+    "archive": "gpu1/qualification/edge/b2_joint/prepared.json.gz",
+    "sha256": "cadf890095f6ac65bdc48b34924d85d599396830534d3d58060497ae4aa1a59d",
+    "bytes": 28869
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/b2_joint/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/edge/b2_joint/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "b6111b410abf72337d71176e11e7e886981bace7db7593f16dd88275226aa2c5",
+    "bytes": 13384
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/edge/b2_joint/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/edge/b2_joint/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "1baadf50abe3a3ff86ebc1c7bc04fbfc70742c02de8570dc7b4a28e406233490",
+    "bytes": 15963
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/arcquant/progress.json",
+    "archive": "gpu1/qualification/nano/arcquant/progress.json.gz",
+    "sha256": "8dd2f45a3525fa28eb74240165356ebe672b8238b87dd25cfaf01038559548c1",
+    "bytes": 802
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/arcquant/prepared.json",
+    "archive": "gpu1/qualification/nano/arcquant/prepared.json.gz",
+    "sha256": "20e2e68516a8e32b51b5480a1ee3811c45e1195b3be82481cd9c4e31ff7a65ac",
+    "bytes": 22996
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/arcquant/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/nano/arcquant/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "4efce4d97240e02e612533a2c2b7c70925ffa990886be58c0e8507352c24658b",
+    "bytes": 18445
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/arcquant/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/nano/arcquant/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "b009f082127bd66c2f927086e75151c737f1a2fdcea9f2bb045a6e9253e70431",
+    "bytes": 21021
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/arcquant100/progress.json",
+    "archive": "gpu1/qualification/nano/arcquant100/progress.json.gz",
+    "sha256": "edd0cf70e386f3b199b9a3d5615c7ce5ea4ee6a31fc0c86a9f7b3cd5567fb47e",
+    "bytes": 805
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/arcquant100/prepared.json",
+    "archive": "gpu1/qualification/nano/arcquant100/prepared.json.gz",
+    "sha256": "c4eff7994d2866082f2e964944d738c55c0fa3d34b340f1216e57ae4e10e2861",
+    "bytes": 22999
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/arcquant100/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/nano/arcquant100/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "dbec83b0c46c18eda00838af433882525ad093fdbebda19b06cb95ca2a03c863",
+    "bytes": 18450
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/arcquant100/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/nano/arcquant100/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "1084cb342634d5bbe4ed43958ec3670b5badcf47eefdd2378a188e65fa83d791",
+    "bytes": 21026
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/sharq_perf/progress.json",
+    "archive": "gpu1/qualification/nano/sharq_perf/progress.json.gz",
+    "sha256": "bac2dd7181696f0bebcbea2ca10b6fc26f1de1450b3c95e4c7ffee5afc7a79af",
+    "bytes": 804
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/sharq_perf/prepared.json",
+    "archive": "gpu1/qualification/nano/sharq_perf/prepared.json.gz",
+    "sha256": "ae10b5c228aefa070819e58e5a8518b18233122ae61c5988b65bfc6e7c891dc1",
+    "bytes": 21751
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/sharq_perf/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/nano/sharq_perf/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "f387610f4a1204d0fe1f92177ec5e27a4168284bb24e690d56035a93e1b470c7",
+    "bytes": 17203
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/sharq_perf/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/nano/sharq_perf/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "e779ae0351cc460d47a333fb055f48cfec950e90830e9edc112d1ff795b8aec0",
+    "bytes": 19777
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/b1.5_protected_n/progress.json",
+    "archive": "gpu1/qualification/nano/b1.5_protected_n/progress.json.gz",
+    "sha256": "91679b689b6a9e9824493b8bd47a51fda4ee024a8aaa0a0c2a76fa82815259f3",
+    "bytes": 810
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/b1.5_protected_n/prepared.json",
+    "archive": "gpu1/qualification/nano/b1.5_protected_n/prepared.json.gz",
+    "sha256": "adfa2d9214ef081c84a660ab96e0e8925e387b2ebcc789ae4a8dd3d74b9dfc02",
+    "bytes": 21145
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/b1.5_protected_n/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/nano/b1.5_protected_n/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "60315ec71226842ced5226414fa2c3877f9dddc3059783670f0382e0f9877747",
+    "bytes": 16614
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/b1.5_protected_n/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/nano/b1.5_protected_n/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "9780aef5e506102f3609767b689fa975759f264d3a7ea96c17ccd8e03c0a5068",
+    "bytes": 19187
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/b2_joint/progress.json",
+    "archive": "gpu1/qualification/nano/b2_joint/progress.json.gz",
+    "sha256": "f31ce9407b87ded1fa6cad39f6b9be9dfe24e24c185f62200ffcec4df5101e50",
+    "bytes": 802
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/b2_joint/prepared.json",
+    "archive": "gpu1/qualification/nano/b2_joint/prepared.json.gz",
+    "sha256": "f3eef3a544022aac58d28484c2ad8eb18a837cc9f2a62e8090a46a9486b24dea",
+    "bytes": 21127
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/b2_joint/rbench__common_manipulation_0041/result.json",
+    "archive": "gpu1/qualification/nano/b2_joint/rbench__common_manipulation_0041/result.json.gz",
+    "sha256": "5df845b366175a458544da600da751d2095a8e3b474312b832e4d1b9ea549700",
+    "bytes": 16606
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_generation_20260919/gpu1/qualification/nano/b2_joint/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json",
+    "archive": "gpu1/qualification/nano/b2_joint/paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc/result.json.gz",
+    "sha256": "6f863bc6b48d1f6ca590de77f135f7d13ed688bf3dd0cabe02f94eb985ab4908",
+    "bytes": 19180
+  }
+]

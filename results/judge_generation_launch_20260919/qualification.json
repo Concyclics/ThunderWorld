@@ -1,0 +1,409 @@
+{
+  "complete": true,
+  "verified_utc": "2026-09-18T20:03:36.357997+00:00",
+  "outputs": 80,
+  "roundtrips": 20,
+  "configurations": [
+    {
+      "gpu": 0,
+      "model": "edge",
+      "method": "arcquant",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 0,
+      "model": "edge",
+      "method": "arcquant100",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 0,
+      "model": "edge",
+      "method": "sharq_perf",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 0,
+      "model": "edge",
+      "method": "b1.5_protected_n",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 0,
+      "model": "edge",
+      "method": "b2_joint",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 0,
+      "model": "nano",
+      "method": "arcquant",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 0,
+      "model": "nano",
+      "method": "arcquant100",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 0,
+      "model": "nano",
+      "method": "sharq_perf",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 0,
+      "model": "nano",
+      "method": "b1.5_protected_n",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 0,
+      "model": "nano",
+      "method": "b2_joint",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 0,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "edge",
+      "method": "arcquant",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "edge",
+      "method": "arcquant100",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "edge",
+      "method": "sharq_perf",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "edge",
+      "method": "b1.5_protected_n",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "edge",
+      "method": "b2_joint",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "nano",
+      "method": "arcquant",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "nano",
+      "method": "arcquant100",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "nano",
+      "method": "sharq_perf",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "nano",
+      "method": "b1.5_protected_n",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    },
+    {
+      "gpu": 1,
+      "model": "nano",
+      "method": "b2_joint",
+      "outputs": 4,
+      "source_hashes_match": true,
+      "roundtrip_bitwise_equal": true,
+      "resource": {
+        "device": 1,
+        "free_mib": 97291,
+        "minimum_mib": 12288,
+        "resource_mode": "shared-calibration",
+        "performance_eligible": false,
+        "allowed_devices": [
+          0,
+          1
+        ],
+        "lock_scope": "device"
+      }
+    }
+  ],
+  "final_generation_complete": false
+}

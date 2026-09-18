@@ -1,0 +1,817 @@
+{
+  "captured_utc": "2026-09-18T20:04:25.399672+00:00",
+  "kind": "launch_verification_not_final_results",
+  "pool": {
+    "complete": false,
+    "models": {
+      "edge": {
+        "generation_complete": false,
+        "generated": 0,
+        "expected": 720,
+        "exported": 0,
+        "complete": false,
+        "performance_eligible": false
+      },
+      "nano": {
+        "generation_complete": false,
+        "generated": 21,
+        "expected": 720,
+        "exported": 20,
+        "complete": false,
+        "performance_eligible": false
+      }
+    },
+    "workers": {
+      "0": {
+        "complete": false,
+        "pid": 977490,
+        "gpu": 0,
+        "phase": "generation",
+        "qualified": {
+          "edge/arcquant": "024676a14980b69fcfe7399b6aeea65769c3723fa3d71cc29c05de1306fec897",
+          "edge/arcquant100": "c3ad0ea057a8e2530818bbafaf21cb26ad25a1b099e25b36f02e6bcc7999c12a",
+          "edge/sharq_perf": "ef5bae63b9eec8792bd932b7357dd5e933d0cb3df1a3a6842d3bd30ef4eb9515",
+          "edge/b1.5_protected_n": "9a803ac95aa7a2bf850ea7f05d64f13c3e38d8d77eba98f03590efc32a90a2b4",
+          "edge/b2_joint": "5131be3d16e298da9198af480d88e1a6a63e0e5731e886ee265150191f24b00d",
+          "nano/arcquant": "8dd2f45a3525fa28eb74240165356ebe672b8238b87dd25cfaf01038559548c1",
+          "nano/arcquant100": "edd0cf70e386f3b199b9a3d5615c7ce5ea4ee6a31fc0c86a9f7b3cd5567fb47e",
+          "nano/sharq_perf": "bac2dd7181696f0bebcbea2ca10b6fc26f1de1450b3c95e4c7ffee5afc7a79af",
+          "nano/b1.5_protected_n": "91679b689b6a9e9824493b8bd47a51fda4ee024a8aaa0a0c2a76fa82815259f3",
+          "nano/b2_joint": "f31ce9407b87ded1fa6cad39f6b9be9dfe24e24c185f62200ffcec4df5101e50"
+        },
+        "completed_tasks": [],
+        "started_utc": "2026-09-18T19:54:40.727481+00:00"
+      },
+      "1": {
+        "complete": false,
+        "pid": 977491,
+        "gpu": 1,
+        "phase": "generation",
+        "qualified": {
+          "edge/arcquant": "024676a14980b69fcfe7399b6aeea65769c3723fa3d71cc29c05de1306fec897",
+          "edge/arcquant100": "c3ad0ea057a8e2530818bbafaf21cb26ad25a1b099e25b36f02e6bcc7999c12a",
+          "edge/sharq_perf": "ef5bae63b9eec8792bd932b7357dd5e933d0cb3df1a3a6842d3bd30ef4eb9515",
+          "edge/b1.5_protected_n": "9a803ac95aa7a2bf850ea7f05d64f13c3e38d8d77eba98f03590efc32a90a2b4",
+          "edge/b2_joint": "5131be3d16e298da9198af480d88e1a6a63e0e5731e886ee265150191f24b00d",
+          "nano/arcquant": "8dd2f45a3525fa28eb74240165356ebe672b8238b87dd25cfaf01038559548c1",
+          "nano/arcquant100": "edd0cf70e386f3b199b9a3d5615c7ce5ea4ee6a31fc0c86a9f7b3cd5567fb47e",
+          "nano/sharq_perf": "bac2dd7181696f0bebcbea2ca10b6fc26f1de1450b3c95e4c7ffee5afc7a79af",
+          "nano/b1.5_protected_n": "91679b689b6a9e9824493b8bd47a51fda4ee024a8aaa0a0c2a76fa82815259f3",
+          "nano/b2_joint": "f31ce9407b87ded1fa6cad39f6b9be9dfe24e24c185f62200ffcec4df5101e50"
+        },
+        "completed_tasks": [],
+        "started_utc": "2026-09-18T19:54:40.728435+00:00"
+      }
+    },
+    "updated_utc": "2026-09-18T20:04:22.501868+00:00",
+    "performance_eligible": false
+  },
+  "queue": {
+    "job_sha256": "ae5c9986aa401d7d95fb2a4c1dbe33adf7320314b7730ed425558be8fa3612d6",
+    "tasks": {
+      "nano__sharq_perf__rbench__000": {
+        "status": "running",
+        "attempts": [
+          {
+            "gpu": 1,
+            "pid": 977491,
+            "started_utc": "2026-09-18T20:02:42.117596+00:00"
+          }
+        ],
+        "gpu": 1,
+        "pid": 977491,
+        "started_utc": "2026-09-18T20:02:42.117596+00:00"
+      },
+      "nano__sharq_perf__rbench__006": {
+        "status": "running",
+        "attempts": [
+          {
+            "gpu": 0,
+            "pid": 977490,
+            "started_utc": "2026-09-18T20:02:43.139431+00:00"
+          }
+        ],
+        "gpu": 0,
+        "pid": 977490,
+        "started_utc": "2026-09-18T20:02:43.139431+00:00"
+      },
+      "nano__sharq_perf__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__sharq_perf__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__sharq_perf__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__sharq_perf__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__sharq_perf__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__sharq_perf__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__sharq_perf__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__sharq_perf__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__sharq_perf__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__sharq_perf__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__rbench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__rbench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant100__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__rbench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__rbench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__arcquant__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__rbench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__rbench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b2_joint__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__rbench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__rbench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "nano__b1.5_protected_n__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__rbench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__rbench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant100__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__rbench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__rbench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__sharq_perf__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__rbench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__rbench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__arcquant__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__rbench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__rbench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b2_joint__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__paibench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__paibench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__paibench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__paibench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__paibench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__paibench__030": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__rbench__000": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__rbench__006": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__rbench__012": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__rbench__018": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__rbench__024": {
+        "status": "pending",
+        "attempts": []
+      },
+      "edge__b1.5_protected_n__rbench__030": {
+        "status": "pending",
+        "attempts": []
+      }
+    }
+  },
+  "code_commit": "e782902",
+  "verified_export_index_entries": 22,
+  "representative_sample": {
+    "complete": true,
+    "sample_id": "636bdc30886cc34d3d33e30e",
+    "model": "nano",
+    "model_path": "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Nano-411f42a",
+    "method": "sharq_perf",
+    "benchmark": "rbench",
+    "category": "common_manipulation",
+    "source_id": "common_manipulation_0020",
+    "case_id": "rbench__common_manipulation_0020",
+    "seed": 301185,
+    "prompt": "The humanoid robot pours the nuts from the bag into the plate on the table",
+    "negative_prompt": "distorted objects, flickering, blurry, low quality",
+    "input_image": "/home/yufeng/thunderworld/judge_generation_20260919/inputs/rbench/rbench__common_manipulation_0020.jpg",
+    "input_image_sha256": "3ca631b5f22323d3d9e2aad4a354e0f665c21d3291e649d8cfb4b49986c84af6",
+    "raw_outputs": "/home/yufeng/thunderworld/judge_generation_20260919/nano/final/generation/sharq_perf/rbench__common_manipulation_0020/seed301185.npz",
+    "generation_receipt": "/home/yufeng/thunderworld/judge_generation_20260919/nano/final/generation/sharq_perf/rbench__common_manipulation_0020/result.json",
+    "generation_log": "/home/yufeng/thunderworld/judge_generation_20260919/nano/final/generation/sharq_perf/rbench__common_manipulation_0020/generation.log",
+    "exported_utc": "2026-09-18T20:03:02.873390+00:00",
+    "generated_npz_mtime_ns": 1789761779611069251,
+    "request": {
+      "seed": 301185,
+      "steps": 35,
+      "case": "rbench__common_manipulation_0020",
+      "task": "i2v",
+      "wall_seconds": 5.332589538069442,
+      "audio_output": "waveform",
+      "debug": "off",
+      "execution": "eager",
+      "performance_eligible": false,
+      "resource_mode": "shared-calibration",
+      "timing_scope": "complete_request_v2_including_host_setup",
+      "peak_allocated_bytes": 23094454784,
+      "peak_reserved_bytes": 23481810944,
+      "captures": 2,
+      "calls": 70,
+      "phase_replays": {
+        "(0, 0)": 1,
+        "(1, 0)": 1,
+        "(0, 1)": 1,
+        "(1, 1)": 1,
+        "(0, 2)": 1,
+        "(1, 2)": 1,
+        "(0, 3)": 1,
+        "(1, 3)": 1,
+        "(0, 4)": 1,
+        "(1, 4)": 1,
+        "(0, 5)": 1,
+        "(1, 5)": 1,
+        "(0, 6)": 1,
+        "(1, 6)": 1,
+        "(0, 7)": 1,
+        "(1, 7)": 1,
+        "(0, 8)": 1,
+        "(1, 8)": 1,
+        "(0, 9)": 1,
+        "(1, 9)": 1,
+        "(0, 10)": 1,
+        "(1, 10)": 1,
+        "(0, 11)": 1,
+        "(1, 11)": 1,
+        "(0, 12)": 1,
+        "(1, 12)": 1,
+        "(0, 13)": 1,
+        "(1, 13)": 1,
+        "(0, 14)": 1,
+        "(1, 14)": 1,
+        "(0, 15)": 1,
+        "(1, 15)": 1,
+        "(0, 16)": 1,
+        "(1, 16)": 1,
+        "(0, 17)": 1,
+        "(1, 17)": 1,
+        "(0, 18)": 1,
+        "(1, 18)": 1,
+        "(0, 19)": 1,
+        "(1, 19)": 1,
+        "(0, 20)": 1,
+        "(1, 20)": 1,
+        "(0, 21)": 1,
+        "(1, 21)": 1,
+        "(0, 22)": 1,
+        "(1, 22)": 1,
+        "(0, 23)": 1,
+        "(1, 23)": 1,
+        "(0, 24)": 1,
+        "(1, 24)": 1,
+        "(0, 25)": 1,
+        "(1, 25)": 1,
+        "(0, 26)": 1,
+        "(1, 26)": 1,
+        "(0, 27)": 1,
+        "(1, 27)": 1,
+        "(0, 28)": 1,
+        "(1, 28)": 1,
+        "(0, 29)": 1,
+        "(1, 29)": 1,
+        "(0, 30)": 1,
+        "(1, 30)": 1,
+        "(0, 31)": 1,
+        "(1, 31)": 1,
+        "(0, 32)": 1,
+        "(1, 32)": 1,
+        "(0, 33)": 1,
+        "(1, 33)": 1,
+        "(0, 34)": 1,
+        "(1, 34)": 1
+      },
+      "diagnostics": {
+        "mode": "off"
+      },
+      "sha256": {
+        "video": "69a6fbe52abcee436fd5e6326583f388c96bf486354e1af8e92c06f1ffafea1b"
+      },
+      "outputs": "seed301185.npz",
+      "outputs_sha256": "537daf118e8fbcd593d1084052db8a767b866ea33269f80d278351aa102b0e25",
+      "source_signal_hashes_match": null,
+      "compute_sha256": null,
+      "actual_mma_ratio": null
+    },
+    "method_spec": {
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": null,
+        "budget_plan": null,
+        "precision": "bf16",
+        "debug": "off",
+        "execution": "eager",
+        "ffn": {
+          "activation": 1.0,
+          "weight": 0.0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 1.0,
+          "weight": 0.0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "bf16",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "linear_backend": "triton",
+        "cutlass_library": null,
+        "cutlass_small_library": null,
+        "cutlass_direct_pack": false,
+        "joint_tuning": false,
+        "strict_tuning": false,
+        "attention_only_attribution": false,
+        "activation_repair_energy": 1.0,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      }
+    },
+    "provenance": {
+      "identity": {
+        "manifest_sha256": "53474cd94f7abb50b6818c7faed8428158ad1d98c656790b32831784699d8ccf",
+        "exporter_sha256": "9d8953aa678598ea810ba733e51d4fe28e3894f1342d830098ef2f709c76467a",
+        "video": {
+          "fps": 24,
+          "ffmpeg": "/usr/bin/ffmpeg",
+          "ffprobe": "/usr/bin/ffprobe",
+          "mp4": {
+            "codec": "libx264",
+            "pixel_format": "yuv420p",
+            "crf": 15,
+            "preset": "medium"
+          },
+          "lossless": {
+            "codec": "ffv1",
+            "pixel_format": "bgr0",
+            "level": 3,
+            "verify_rgb_roundtrip": true
+          },
+          "float_to_rgb": "round(clip(video,0,1)*255) to uint8; original float32 NPZ retained"
+        }
+      },
+      "row_sha256": "fd16b288bc12dda50728ac7ee32cb92de678bb1792bbcc44da0852686385951e",
+      "npz_sha256": "537daf118e8fbcd593d1084052db8a767b866ea33269f80d278351aa102b0e25"
+    },
+    "videos": {
+      "judge_mp4": {
+        "file": "/home/yufeng/thunderworld/judge_generation_20260919/nano/videos/rbench/sharq_perf/rbench__common_manipulation_0020/seed301185.mp4",
+        "sha256": "47736b80a280c712cfe4a61bbc1fd292967f8e12ee08524f19be8f106b5c8f95",
+        "stream": {
+          "codec_name": "h264",
+          "width": 320,
+          "height": 192,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "24/1",
+          "nb_read_frames": "61"
+        },
+        "bytes": 155092,
+        "rgb_roundtrip_bitwise_equal": null
+      },
+      "lossless_rgb": {
+        "file": "/home/yufeng/thunderworld/judge_generation_20260919/nano/videos/rbench/sharq_perf/rbench__common_manipulation_0020/seed301185.mkv",
+        "sha256": "e7a8c699f6cafb6de68988f6a1702f91a1ca3e8a14e5b5ee30a174beb5966e2f",
+        "stream": {
+          "codec_name": "ffv1",
+          "width": 320,
+          "height": 192,
+          "pix_fmt": "bgr0",
+          "r_frame_rate": "24/1",
+          "nb_read_frames": "61"
+        },
+        "bytes": 3352896,
+        "rgb_roundtrip_bitwise_equal": true
+      }
+    },
+    "rgb_uint8_sha256": "d09b83243a9ff428db5d9bc928c8b5744e2f387d640fbdbe27d1a8e33d9a5ab7",
+    "frames": 61,
+    "fps": 24,
+    "height": 192,
+    "width": 320,
+    "performance_eligible": false
+  },
+  "source_root": "/home/yufeng/thunderworld/judge_generation_20260919",
+  "performance_eligible": false
+}
