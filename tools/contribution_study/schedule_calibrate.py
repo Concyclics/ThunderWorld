@@ -16,13 +16,51 @@ from dataset_infer import clear_case
 from schedule_common import CONTROLS, FFN_CHOICES, variants, attention_variants, resolve_attention, attention_setting
 
 
+def phase_sample_steps(count):
+    """Fixed first/middle/last coverage; no timestep tensor readback."""
+    from schedule_common import PHASES
+    if count not in (1, 3):
+        raise ValueError('Choose one or three observations per phase')
+    return sorted({step for start, end in zip(PHASES, PHASES[1:])
+                   for step in ([start] if count == 1 else [start, (start+end-1)//2, end-1])})
+
+
+def aggregate_temporal_samples(samples, definitions, count):
+    """Equal-weight local samples, not a full-trajectory or downstream objective."""
+    result = {}
+    for key in definitions:
+        rows = [groups[key] for groups in samples.values() if key in groups]
+        if len(rows) != count:
+            raise ValueError('Incomplete within-phase coverage: '+key)
+        result[key] = dict(losses={label: sum(r['losses'][label] for r in rows)/count for label in rows[0]['losses']},
+            observed_steps=sorted(r['step'] for r in rows), baseline_bitwise_equal=all(r['baseline_bitwise_equal'] for r in rows))
+    return result
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for key in ('study','previous','importance'):p.add_argument('--'+key,type=Path,required=True)
     p.add_argument('--budgets',type=float,nargs='+',default=[1.5,2.,2.5])
     p.add_argument('--max-cases',type=int)
+    p.add_argument('--case-indices',type=int,nargs='+')
+    p.add_argument('--layers',type=int,nargs='+')
+    p.add_argument('--steps-per-phase',type=int,choices=(1,3),default=1)
+    p.add_argument('--project-attention',action='store_true',help='Additional offline BF16 Wo intervention; not a runtime change')
+    p.add_argument('--after-generation',type=Path,help='Wait for a serial generation suite receipt before acquiring the GPU lock')
     a=p.parse_args()
+    if a.after_generation:
+        import time
+        while True:
+            status=json.loads(a.after_generation.read_text()) if a.after_generation.exists() else {}
+            if status.get('paused'):raise RuntimeError('Preceding generation paused: '+status.get('error',''))
+            if status.get('complete'):break
+            time.sleep(5)
     cohort=json.loads((a.previous/'cohort.json').read_text())
+    sampled_steps=phase_sample_steps(a.steps_per_phase)
+    layers=list(range(28)) if a.layers is None else a.layers
+    if not layers or len(set(layers))!=len(layers) or any(l<0 or l>=28 for l in layers):raise ValueError('Invalid layer pilot')
+    if a.case_indices is not None and (a.max_cases or len(set(a.case_indices))!=len(a.case_indices) or any(i<0 or i>=len(cohort['cases']['calibration']) for i in a.case_indices)):
+        raise ValueError('Invalid/disagreeing case selection')
     catalog=json.loads((a.importance/'ffn_guarded/candidates.json').read_text())
     source={c['name']:c for c in catalog['candidates']}
     capture=json.loads((a.importance/'capture/manifest.json').read_text())
@@ -59,6 +97,7 @@ def main():
             if sha(bank/'manifest.json')!=candidate['assets_sha256']:raise ValueError('Changed frozen weights')
             if sha(candidate['config']['budget_plan'])!=candidate['plan_sha256']:raise ValueError('Changed frozen baseline plan')
             assets=json.loads((bank/'manifest.json').read_text())
+            module_names=[name for name in assets['modules'] if int(name.split('.')[1]) in layers]
             plan=json.loads(Path(candidate['config']['budget_plan']).read_text())
             ledger=json.loads((Path(candidate['config']['budget_plan']).parent/'compute.json').read_text())
             shapes={'linears':{},'attention':{}}
@@ -68,6 +107,7 @@ def main():
             identity=dict(cohort_sha256=sha(a.previous/'cohort.json'),control=candidate,source_sha256=sha(__file__),
                           choices_sha256=sha(Path(__file__).with_name('schedule_common.py')),
                           capture_sha256=sha(a.importance/'capture/manifest.json'),max_cases=a.max_cases)
+            identity.update(case_indices=a.case_indices,layers=layers,sampled_steps=sampled_steps,project_attention=a.project_attention)
             identity['head_proposals_sha256']=sha(root/'head_proposals.json')
             state=dict(complete=False,identity=identity,cases={},resource=resource,performance_eligible=False)
             if path.exists():
@@ -80,7 +120,8 @@ def main():
             controller=SimpleNamespace(warming=False,config=config,budget_plan=RepairPlan(plan))
             shadows={};weights={};ranked={};handles=[];definitions={};current={};seen=set();active=[False]
             with torch.inference_mode():
-                for name,entry in assets['modules'].items():
+                for name in module_names:
+                    entry=assets['modules'][name]
                     file=bank/entry['file']
                     if sha(file)!=entry['sha256']:raise ValueError('Changed asset')
                     raw=torch.load(file,map_location='cpu',weights_only=True)
@@ -94,11 +135,11 @@ def main():
                 return variants(plan['linears'][f'{branch}|{ph}|{name}'],shapes['linears'][name][2],ranked[name])
             for branch in range(2):
                 for ph in range(4):
-                    for name in assets['modules']:
+                    for name in module_names:
                         if '.mlp_moe_gen.' in name:continue
                         definitions[f'projection|{branch}|{ph}|{name}']=dict(kind='projection',branch=branch,phase=ph,name=name,
                             shapes={name:shapes['linears'][name]},choices={label:{name:row} for label,row in linear_choices(name,branch,ph).items()})
-                    for layer in range(28):
+                    for layer in layers:
                         name=f'layers.{layer}.mlp_moe_gen';up=name+'.up_proj';down=name+'.down_proj'
                         uc,dc=linear_choices(up,branch,ph),linear_choices(down,branch,ph)
                         definitions[f'ffn|{branch}|{ph}|{name}']=dict(kind='ffn',branch=branch,phase=ph,name=name,
@@ -127,21 +168,26 @@ def main():
             def get_key(kind,name):
                 e=runner.engine;return f'{kind}|{e.branch}|{phase(e.step,e.steps)}|{name}'
 
-            def eligible(key):return active[0] and not runner.engine.warming and key not in seen
+            def eligible(key):return active[0] and not runner.engine.warming and runner.engine.step in sampled_steps and (key,runner.engine.step) not in seen
+
+            def observation(key):
+                if a.steps_per_phase==1:return current['groups'][key]
+                return current['samples'][str(runner.engine.step)][key]
 
             def observe(key,x,gold,predictions,actual):
                 if not torch.equal(predictions['base'],actual):raise ValueError('Local baseline differs from deployed arithmetic: '+key)
                 gold=gold.float();denom=gold.square().sum().clamp_min(1e-20)
                 losses={label:float((pred.float()-gold).square().sum()/denom) for label,pred in predictions.items()}
                 rms=x.detach().float().reshape(-1,x.shape[-1]).square().mean(0)
-                current['groups'][key]=dict(losses=losses,step=runner.engine.step,input_amax=float(x.abs().amax()),
+                storage=current['groups'] if a.steps_per_phase==1 else current['samples'].setdefault(str(runner.engine.step),{})
+                storage[key]=dict(losses=losses,step=runner.engine.step,input_amax=float(x.abs().amax()),
                     rms_k128=rms.reshape(-1,128).mean(1).sqrt().cpu().tolist(),baseline_bitwise_equal=True)
 
             def projection_hook(name):
                 def callback(module,args,out):
                     key=get_key('projection',name)
                     if not eligible(key):return
-                    seen.add(key);x=args[0]
+                    seen.add((key,runner.engine.step));x=args[0]
                     gold=torch.nn.functional.linear(x,weights[name],module.bias)
                     values={label:run_linear(name,x,rows[name]) for label,rows in definitions[key]['choices'].items()}
                     observe(key,x,gold,values,out)
@@ -152,7 +198,7 @@ def main():
                     key=get_key('ffn',name)
                     if not eligible(key):return
                     if module.hidden_act!='relu2':raise ValueError('Expected Edge ReLU2')
-                    seen.add(key);x=args[0];up=name+'.up_proj';down=name+'.down_proj'
+                    seen.add((key,runner.engine.step));x=args[0];up=name+'.up_proj';down=name+'.down_proj'
                     gold=torch.nn.functional.linear(torch.relu(torch.nn.functional.linear(x,weights[up],module.up_proj.bias)).square(),weights[down],module.down_proj.bias)
                     hidden={};values={}
                     for label,rows in definitions[key]['choices'].items():
@@ -163,24 +209,43 @@ def main():
                 return callback
 
             def attention_hook(layer,q,k,v,out):
+                if layer not in layers:return
                 key=get_key('attention',str(layer))
                 if not eligible(key):return
-                seen.add(key)
+                seen.add((key,runner.engine.step))
                 gold=torch.nn.functional.scaled_dot_product_attention(q.transpose(1,2),k.transpose(1,2),v.transpose(1,2),enable_gqa=True).transpose(1,2).contiguous()
                 choices=definitions[key]['choices'];values={label:fp4_attention(q,k,v,resolve_attention(rows['attention'])) for label,rows in choices.items()}
                 observe(key,q,gold,values,out)
                 denom=gold.float().square().sum().clamp_min(1e-20)
-                current['groups'][key].update(shape=[q.shape[1],k.shape[1],q.shape[2],k.shape[2]],
+                observation(key).update(shape=[q.shape[1],k.shape[1],q.shape[2],k.shape[2]],
                     head_errors={label:((pred.float()-gold.float()).square().sum((0,1,3))/denom).cpu().tolist() for label,pred in values.items()},
                     q_head_energy=q.float().square().mean((0,1,3)).cpu().tolist())
+                if a.project_attention:
+                    # Same original Wo for both paths isolates attention error;
+                    # this is not a full Transformer/CFG/rollout quality metric.
+                    w=weights[f'layers.{layer}.self_attn.to_add_out']
+                    projected=torch.nn.functional.linear(gold.flatten(2),w)
+                    pd=projected.float().square().sum().clamp_min(1e-20)
+                    projected_losses={label:float((torch.nn.functional.linear(pred.flatten(2),w).float()-projected.float()).square().sum()/pd) for label,pred in values.items()}
+                    # Head-isolated perturbations retain cancellation within a
+                    # head, but deliberately do not claim additive head gains.
+                    head_losses={}
+                    for label in ('base','qk50','pv50'):
+                        diff=values[label].float()-gold.float();items=[]
+                        for h in range(q.shape[2]):
+                            e=torch.nn.functional.linear(diff[:,:,h,:],w[:,h*q.shape[3]:(h+1)*q.shape[3]].float())
+                            items.append(float(e.square().sum()/pd))
+                        head_losses[label]=items
+                    observation(key).update(projected_losses=projected_losses,projected_head_errors=head_losses)
 
             try:
-                for name in assets['modules']:
+                for name in module_names:
                     if '.mlp_moe_gen.' not in name:handles.append(runner.pipe.transformer.get_submodule(name).register_forward_hook(projection_hook(name)))
-                for layer in range(28):
+                for layer in layers:
                     name=f'layers.{layer}.mlp_moe_gen';handles.append(runner.pipe.transformer.get_submodule(name).register_forward_hook(ffn_hook(name)))
                 runner.engine.capture_attention=attention_hook
                 entries=cohort['cases']['calibration'][:a.max_cases] if a.max_cases else cohort['cases']['calibration']
+                if a.case_indices is not None:entries=[cohort['cases']['calibration'][i] for i in a.case_indices]
                 for entry in entries:
                     case=entry['case']['id'];file=folder/(case+'.json')
                     if case in state['cases']:
@@ -188,9 +253,10 @@ def main():
                         continue
                     if sha(entry['case']['image'])!=entry['image_sha256']:raise ValueError('Changed input')
                     clear_case(runner);active[0]=False;runner.warmup(entry['case'],35)
-                    current=dict(complete=False,entry=entry,groups={});seen.clear();active[0]=True
+                    current=dict(complete=False,entry=entry,groups={},samples={});seen.clear();active[0]=True
                     with torch.inference_mode():runner.infer(entry['case'],entry['seeds'][0],35)
                     active[0]=False
+                    if a.steps_per_phase==3:current['groups']=aggregate_temporal_samples(current['samples'],definitions,a.steps_per_phase)
                     if set(current['groups'])!=set(definitions):raise ValueError('Incomplete layer/phase/CFG coverage')
                     current['complete']=True;write(file,current);state['cases'][case]=sha(file);write(path,state)
                     print(json.dumps(dict(budget=cap,cases=len(state['cases']),expected=len(entries))),flush=True)

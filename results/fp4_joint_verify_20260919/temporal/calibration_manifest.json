@@ -1,0 +1,123 @@
+{
+  "complete": true,
+  "identity": {
+    "cohort_sha256": "99407c40074c915602ec03175c5a7736ff362008c0d8e3839ca19de1b16e9362",
+    "control": {
+      "name": "b2_joint",
+      "budget": 2.0,
+      "config": {
+        "resource_mode": "shared-calibration",
+        "compute_budget": 2.0,
+        "budget_plan": "/home/yufeng/thunderworld/activation_importance_20260917/candidates/b2_joint/plan.json",
+        "precision": "fp4",
+        "debug": "off",
+        "execution": "graph",
+        "ffn": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "projection": {
+          "activation": 0,
+          "weight": 0,
+          "cross": false,
+          "activation_blocks": null,
+          "weight_support": null
+        },
+        "attention_backend": "fp4",
+        "attention": {
+          "default": {
+            "coverage": 0.5,
+            "terms": 3,
+            "head_budgets": [],
+            "head_quotas": null,
+            "pv_head_quotas": null,
+            "pv_terms": null,
+            "block_size": 128,
+            "query_tile": 32,
+            "num_warps": 4,
+            "splits": 2,
+            "lazy_p": true,
+            "fast_p": true,
+            "transpose_v": true,
+            "reload_q": false,
+            "sparse_pack": false
+          },
+          "rules": []
+        },
+        "fuse_ffn": true,
+        "share_pack": false,
+        "kernel_variant": "optimized",
+        "linear_backend": "triton",
+        "cutlass_library": null,
+        "cutlass_small_library": null,
+        "cutlass_direct_pack": false,
+        "joint_tuning": false,
+        "strict_tuning": false,
+        "attention_only_attribution": false,
+        "activation_repair_energy": 1.0,
+        "ffn_policy": null,
+        "ffn_policy_mode": "auto50"
+      },
+      "assets": "/home/yufeng/thunderworld/activation_importance_20260917/candidates/b2_joint/assets",
+      "assets_sha256": "3fb5c5f7409bc157bc5cbf81042e5f1aac0f7c8262001ac75c6596c8f152c2c1",
+      "plan_sha256": "65703dc2b509d26f19282c59c82bd52d30bbdf6fdf105390065a12e6f6408126",
+      "cost": {
+        "tensor_bytes": 871808672,
+        "w1_bytes": 74317824,
+        "file_bytes": 872380040
+      },
+      "bound_ratio": 2.0
+    },
+    "source_sha256": "0d3b5bad28e1a2e75a7204b7c52f8842878475a43b389397cfbd67c23d6e572e",
+    "choices_sha256": "72a69a00bae429679fcddad763a2d95cce68df8511dda5550f3f4cf4b4974310",
+    "capture_sha256": "1654cef3c620fe08408f91581429469944c121e45b5264e21f9f635814218ed8",
+    "max_cases": null,
+    "case_indices": [
+      0,
+      6,
+      7,
+      15
+    ],
+    "layers": [
+      0,
+      7,
+      14,
+      21,
+      27
+    ],
+    "sampled_steps": [
+      0,
+      3,
+      6,
+      7,
+      12,
+      17,
+      18,
+      22,
+      27,
+      28,
+      31,
+      34
+    ],
+    "project_attention": true,
+    "head_proposals_sha256": "d52500e6aeb25b4bef21c8d8aed70c0dc38d777b48072b5216395768c9fe85a9"
+  },
+  "cases": {
+    "paibench__av_99ed9edb-10f2-40a8-bb51-71c744632b89": "23a5cc1c2fd0415b89ecea96135dbf0543dc1b1afc7171d838211e18157d921e",
+    "paibench__robot_109": "302c5afccf398f5e4f18f037d9a9d8854f38a3ddaf26b7c0072c95538d27a3b9",
+    "rbench__common_manipulation_0027": "70bbd938ade129ca061e6fec547e6f6808f8201c662096c60b3d86517478cb8b",
+    "rbench__visual_reasoning_0017": "a77fa562d1c251e57d4fc20d198728714f10647843e9f76b90c96d5dba4c54bc"
+  },
+  "resource": {
+    "device": 0,
+    "free_mib": 97291,
+    "minimum_mib": 12288,
+    "resource_mode": "shared-calibration",
+    "performance_eligible": false
+  },
+  "performance_eligible": false,
+  "definitions_sha256": "632bc9dbdf85450e77627e37b9150e683b3796476c6bbf8dfa9f2dfc71160f6f"
+}

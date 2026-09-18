@@ -1,0 +1,34 @@
+{
+  "complete": true,
+  "device": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "physical_gpu": 0,
+  "performance_eligible": false,
+  "new_kernels": false,
+  "gpu_preflight": {
+    "command": "env TW_PYTHON=/home/yufeng/thunderworld/.venvs/cosmos3/bin/python CUDA_VISIBLE_DEVICES=0 bash tools/fp4_handoff/python.sh -m pytest -q packages/fp4-repair/tests/test_compute_cuda.py -k \"sparse_activation_codes_current_residual_and_graph or zero_full_attention_and_native_weight_codec\"",
+    "exit_code": 0,
+    "passed": 3,
+    "deselected": 8,
+    "scope": "Existing sparse packing M129/M416 and current-input Graph behavior, independent codec and zero attention"
+  },
+  "cpu": {
+    "command": "env TW_PYTHON=/home/yufeng/thunderworld/.venvs/cosmos3/bin/python bash tools/fp4_handoff/python.sh -m pytest -q tools/contribution_study/test_joint_group_verify.py tools/contribution_study/test_schedule.py",
+    "output": ".........                                                                [100%]\n9 passed in 0.78s\n"
+  },
+  "sources": {
+    "tools/contribution_study/joint_group_verify.py": "73ffc691d04ed6ed120ad4e3770a0e184c301e1240345ac0dd3202c1e27f079e",
+    "tools/contribution_study/joint_group_workflow.py": "0e5c4cb9fa8a6f4b997387b7bd2339d2a1486e380a90c2d6575a76820eb6d468",
+    "tools/contribution_study/joint_group_report.py": "44287090050048d724582aac19295c259359c376a7e88ea16f94518f21b07451",
+    "tools/contribution_study/temporal_verify_report.py": "839bd6d79efaed63fde42a2538cf8350970f3e32ba11dc9f1546249942ab70dd",
+    "tools/contribution_study/schedule_calibrate.py": "0d3b5bad28e1a2e75a7204b7c52f8842878475a43b389397cfbd67c23d6e572e",
+    "tools/contribution_study/test_joint_group_verify.py": "d88a7e841197c960400487ff6c9b7e6eb90bf1d7bf3bca23d5633832b3191aac"
+  },
+  "completed_receipts": {
+    "all_layers/progress.json": "1453f47725194b7be7fa09df0c7dbb3f6959cccaa3f2380d453d1602b4faa780",
+    "development/workflow.json": "93e5c88c39d1b0afda3d2907a4ff8fe6d7dcef4a9f86f1de33bf8e19079fd171",
+    "development/generation/suite.json": "f8c6d7ae03b7aba7d930bef87ac517f666c1c25a1fd23e83d63f65bd76b018d5",
+    "development/metrics/progress.json": "b6cfa91e14cf43a63284cab95eb21a49b01fedee1493260fc7d76b6e06e641de",
+    "temporal/calibration_complete.json": "ba75b51996fb9db0cf59f11b1079e1b86d0fe61e1ca2ae75458d22011eaceb15"
+  },
+  "environment_recovery": "Initial CPU metrics worker lacked LPIPS on its Python path. Restarted using existing pinned /tmp/thunderworld-joint-deps, then successfully resumed workflow; generation outputs and metric definition unchanged."
+}

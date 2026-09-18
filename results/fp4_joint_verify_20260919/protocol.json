@@ -1,0 +1,79 @@
+{
+  "frozen": true,
+  "budget": 2.0,
+  "resource_mode": "shared-calibration",
+  "performance_eligible": false,
+  "weight": {
+    "control": "b2_joint",
+    "variants": [
+      "original",
+      "scale_only",
+      "removal_only",
+      "joint"
+    ],
+    "scope": "Only existing W1-supported N128/K128 blocks; preserve all other bytes, fixed A selector/prescale/support/three-term runtime",
+    "base_scales": [
+      0.75,
+      0.875,
+      1,
+      1.5
+    ],
+    "residual_scales": [
+      0.875,
+      1,
+      1.125
+    ],
+    "removed_positions": "per K16: no removal, maximum magnitude, first/second maximum actual base quantization error",
+    "proposal": "Full within-K16 covariance of current actual A0/Ar with three-term cross omission accounted; ignores cross-group covariance",
+    "native_gate": "16 full-M panels; mean dataset NMSE + 0.25 worst panel; unchanged original and scale-only compete"
+  },
+  "schedule": {
+    "role": "Mechanism pilot only",
+    "cases": [
+      0,
+      6,
+      7,
+      15
+    ],
+    "layers": [
+      0,
+      7,
+      14,
+      21,
+      27
+    ],
+    "steps": [
+      0,
+      3,
+      6,
+      7,
+      12,
+      17,
+      18,
+      22,
+      27,
+      28,
+      31,
+      34
+    ],
+    "cfg_branches": [
+      0,
+      1
+    ],
+    "reference": "BF16 same-input local output; additional common BF16 Wo for attention",
+    "goal": "Compare first-step versus middle/end repair benefits and projected head rankings; no full-rollout claim"
+  },
+  "generation": {
+    "role": "development",
+    "scenes": 16,
+    "seeds_per_scene": 2,
+    "steps": 35,
+    "shape": [
+      61,
+      192,
+      320
+    ],
+    "gate": "Both datasets separately: LPIPS lower, SSIM not lower, relative L2 not higher. Report PSNR and paired descriptive intervals. No held-out/generalization/speed claim",
+    "final_or_validation_consumed": false
+  }
+}

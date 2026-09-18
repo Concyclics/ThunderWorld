@@ -1,0 +1,4753 @@
+{
+  "complete": true,
+  "protocol": {
+    "frozen": true,
+    "budget": 2.0,
+    "resource_mode": "shared-calibration",
+    "performance_eligible": false,
+    "weight": {
+      "control": "b2_joint",
+      "variants": [
+        "original",
+        "scale_only",
+        "removal_only",
+        "joint"
+      ],
+      "scope": "Only existing W1-supported N128/K128 blocks; preserve all other bytes, fixed A selector/prescale/support/three-term runtime",
+      "base_scales": [
+        0.75,
+        0.875,
+        1,
+        1.5
+      ],
+      "residual_scales": [
+        0.875,
+        1,
+        1.125
+      ],
+      "removed_positions": "per K16: no removal, maximum magnitude, first/second maximum actual base quantization error",
+      "proposal": "Full within-K16 covariance of current actual A0/Ar with three-term cross omission accounted; ignores cross-group covariance",
+      "native_gate": "16 full-M panels; mean dataset NMSE + 0.25 worst panel; unchanged original and scale-only compete"
+    },
+    "schedule": {
+      "role": "Mechanism pilot only",
+      "cases": [
+        0,
+        6,
+        7,
+        15
+      ],
+      "layers": [
+        0,
+        7,
+        14,
+        21,
+        27
+      ],
+      "steps": [
+        0,
+        3,
+        6,
+        7,
+        12,
+        17,
+        18,
+        22,
+        27,
+        28,
+        31,
+        34
+      ],
+      "cfg_branches": [
+        0,
+        1
+      ],
+      "reference": "BF16 same-input local output; additional common BF16 Wo for attention",
+      "goal": "Compare first-step versus middle/end repair benefits and projected head rankings; no full-rollout claim"
+    },
+    "generation": {
+      "role": "development",
+      "scenes": 16,
+      "seeds_per_scene": 2,
+      "steps": 35,
+      "shape": [
+        61,
+        192,
+        320
+      ],
+      "gate": "Both datasets separately: LPIPS lower, SSIM not lower, relative L2 not higher. Report PSNR and paired descriptive intervals. No held-out/generalization/speed claim",
+      "final_or_validation_consumed": false
+    }
+  },
+  "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+  "source_sha256": "44287090050048d724582aac19295c259359c376a7e88ea16f94518f21b07451",
+  "local": {
+    "original": {
+      "operators": 63,
+      "mean_objective": 0.0022925126306437733,
+      "mean_four_diagnostic": 0.002238979617768287,
+      "relative_reduction": 0.0
+    },
+    "scale_only": {
+      "operators": 63,
+      "mean_objective": 0.0022614849084061014,
+      "mean_four_diagnostic": 0.0022175306223193433,
+      "relative_reduction": 0.013534373517915532
+    },
+    "removal_only": {
+      "operators": 63,
+      "mean_objective": 0.0022922734578912246,
+      "mean_four_diagnostic": 0.0022387025632786307,
+      "relative_reduction": 0.00010432777963875761
+    },
+    "joint": {
+      "operators": 63,
+      "mean_objective": 0.0022614088766068877,
+      "mean_four_diagnostic": 0.0022174506705846743,
+      "relative_reduction": 0.013567538787409572
+    }
+  },
+  "storage": {
+    "b2_joint": {
+      "tensor_bytes": 871808672,
+      "file_bytes": 872380040,
+      "w1_bytes": 74317824,
+      "w1_blocks": 8064,
+      "mandatory_blocks": 0,
+      "changed_operators": 0
+    },
+    "b2_joint_group_scale_only": {
+      "tensor_bytes": 871808672,
+      "file_bytes": 872453541,
+      "w1_bytes": 74317824,
+      "w1_blocks": 8064,
+      "mandatory_blocks": 0,
+      "changed_operators": 63
+    },
+    "b2_joint_group_removal_only": {
+      "tensor_bytes": 871808672,
+      "file_bytes": 872457286,
+      "w1_bytes": 74317824,
+      "w1_blocks": 8064,
+      "mandatory_blocks": 7325,
+      "changed_operators": 54
+    },
+    "b2_joint_group_joint": {
+      "tensor_bytes": 871808672,
+      "file_bytes": 872466213,
+      "w1_bytes": 74317824,
+      "w1_blocks": 8064,
+      "mandatory_blocks": 6565,
+      "changed_operators": 63
+    }
+  },
+  "costs": {
+    "b2_joint": {
+      "request_bound_range": [
+        1.9275362318840579,
+        1.9466192170818506
+      ],
+      "exact_work_matched": true
+    },
+    "b2_joint_group_scale_only": {
+      "request_bound_range": [
+        1.9275362318840579,
+        1.9466192170818506
+      ],
+      "exact_work_matched": true
+    },
+    "b2_joint_group_removal_only": {
+      "request_bound_range": [
+        1.9275362318840579,
+        1.9466192170818506
+      ],
+      "exact_work_matched": true
+    },
+    "b2_joint_group_joint": {
+      "request_bound_range": [
+        1.9275362318840579,
+        1.9466192170818506
+      ],
+      "exact_work_matched": true
+    }
+  },
+  "summaries": {
+    "rbench": {
+      "fp8": {
+        "lpips": 0.10701522722845398,
+        "ssim_mean": 0.8141081945763694,
+        "relative_l2": 0.181766579689233,
+        "psnr_db": 20.49567055159384
+      },
+      "b2_joint": {
+        "lpips": 0.1490609800973814,
+        "ssim_mean": 0.7566563669178221,
+        "relative_l2": 0.22133854058026484,
+        "psnr_db": 18.67119808010641
+      },
+      "b2_joint_group_scale_only": {
+        "lpips": 0.14917243512975856,
+        "ssim_mean": 0.7463262528181076,
+        "relative_l2": 0.22750008832375387,
+        "psnr_db": 18.448380568165916
+      },
+      "b2_joint_group_removal_only": {
+        "lpips": 0.14857234564382507,
+        "ssim_mean": 0.7545679244730208,
+        "relative_l2": 0.2242768185340284,
+        "psnr_db": 18.63149276335625
+      },
+      "b2_joint_group_joint": {
+        "lpips": 0.1435166860240188,
+        "ssim_mean": 0.7630080895291435,
+        "relative_l2": 0.21529219823678886,
+        "psnr_db": 18.921128062389464
+      }
+    },
+    "paibench": {
+      "fp8": {
+        "lpips": 0.0550553021689144,
+        "ssim_mean": 0.8992795859064374,
+        "relative_l2": 0.0933507674796008,
+        "psnr_db": 28.28676968263572
+      },
+      "b2_joint": {
+        "lpips": 0.09603907325004056,
+        "ssim_mean": 0.8200286371367318,
+        "relative_l2": 0.13431897747341118,
+        "psnr_db": 25.829164494522104
+      },
+      "b2_joint_group_scale_only": {
+        "lpips": 0.10573625137137392,
+        "ssim_mean": 0.8021639670644488,
+        "relative_l2": 0.14508261147974413,
+        "psnr_db": 25.625068190800818
+      },
+      "b2_joint_group_removal_only": {
+        "lpips": 0.10421438536233762,
+        "ssim_mean": 0.8102008870669773,
+        "relative_l2": 0.1470071686361092,
+        "psnr_db": 25.499887354077305
+      },
+      "b2_joint_group_joint": {
+        "lpips": 0.10037541824373344,
+        "ssim_mean": 0.8162327749388558,
+        "relative_l2": 0.14225904489161623,
+        "psnr_db": 25.629369658788132
+      }
+    }
+  },
+  "pairs": {
+    "rbench|b2_joint_group_scale_only|b2_joint": {
+      "lpips": {
+        "mean_delta": 0.00011145503237718146,
+        "descriptive_scene_ci95": [
+          -0.0210724416671733,
+          0.01709868857604816
+        ],
+        "worst_case": "rbench__spatial_relationship_0015",
+        "worst_seed": 301046,
+        "worst_delta": 0.03952005850609208,
+        "degraded_seeds": 11,
+        "videos": 18
+      },
+      "ssim_mean": {
+        "mean_delta": -0.010330114099714491,
+        "descriptive_scene_ci95": [
+          -0.03375735133886337,
+          0.011859170844157494
+        ],
+        "worst_case": "rbench__spatial_relationship_0015",
+        "worst_seed": 301045,
+        "worst_delta": -0.08984899520874023,
+        "degraded_seeds": 11,
+        "videos": 18
+      },
+      "relative_l2": {
+        "mean_delta": 0.006161547743489039,
+        "descriptive_scene_ci95": [
+          -0.011581920037008189,
+          0.025581846795354787
+        ],
+        "worst_case": "rbench__common_manipulation_0041",
+        "worst_seed": 301031,
+        "worst_delta": 0.08287964546787846,
+        "degraded_seeds": 11,
+        "videos": 18
+      },
+      "psnr_db": {
+        "mean_delta": -0.22281751194049124,
+        "descriptive_scene_ci95": [
+          -0.7912552944998885,
+          0.3012109619839905
+        ],
+        "worst_case": "rbench__common_manipulation_0041",
+        "worst_seed": 301031,
+        "worst_delta": -2.0626557504377754,
+        "degraded_seeds": 11,
+        "videos": 18
+      }
+    },
+    "paibench|b2_joint_group_scale_only|b2_joint": {
+      "lpips": {
+        "mean_delta": 0.009697178121333378,
+        "descriptive_scene_ci95": [
+          0.00124350248942854,
+          0.020744094817841237
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.061676216601836864,
+        "degraded_seeds": 10,
+        "videos": 14
+      },
+      "ssim_mean": {
+        "mean_delta": -0.017864670072283064,
+        "descriptive_scene_ci95": [
+          -0.03610678655760629,
+          -0.005099709544863019
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -0.12185162305831909,
+        "degraded_seeds": 10,
+        "videos": 14
+      },
+      "relative_l2": {
+        "mean_delta": 0.010763634006332979,
+        "descriptive_scene_ci95": [
+          -0.0022763466405069342,
+          0.02734365004016241
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.09065136094549642,
+        "degraded_seeds": 7,
+        "videos": 14
+      },
+      "psnr_db": {
+        "mean_delta": -0.20409630372129328,
+        "descriptive_scene_ci95": [
+          -0.795039781871622,
+          0.345909571254913
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -2.5797626290061313,
+        "degraded_seeds": 7,
+        "videos": 14
+      }
+    },
+    "rbench|b2_joint_group_scale_only|fp8": {
+      "lpips": {
+        "mean_delta": 0.04215720790130458,
+        "descriptive_scene_ci95": [
+          0.018209584345930823,
+          0.06506676032934548
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301041,
+        "worst_delta": 0.1323010662387385,
+        "degraded_seeds": 16,
+        "videos": 18
+      },
+      "ssim_mean": {
+        "mean_delta": -0.06778194175826179,
+        "descriptive_scene_ci95": [
+          -0.11241985840929879,
+          -0.023544622792138006
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301041,
+        "worst_delta": -0.19869279861450195,
+        "degraded_seeds": 16,
+        "videos": 18
+      },
+      "relative_l2": {
+        "mean_delta": 0.045733508634520845,
+        "descriptive_scene_ci95": [
+          0.01923000354488111,
+          0.07184735353868697
+        ],
+        "worst_case": "rbench__common_manipulation_0041",
+        "worst_seed": 301031,
+        "worst_delta": 0.149649875779892,
+        "degraded_seeds": 16,
+        "videos": 18
+      },
+      "psnr_db": {
+        "mean_delta": -2.0472899834279192,
+        "descriptive_scene_ci95": [
+          -2.8743146798237955,
+          -1.0955104915334073
+        ],
+        "worst_case": "rbench__spatial_relationship_0015",
+        "worst_seed": 301046,
+        "worst_delta": -5.8902541809354645,
+        "degraded_seeds": 16,
+        "videos": 18
+      }
+    },
+    "paibench|b2_joint_group_scale_only|fp8": {
+      "lpips": {
+        "mean_delta": 0.050680949202459524,
+        "descriptive_scene_ci95": [
+          0.018012127970984376,
+          0.08777041731438265
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.17685126482707555,
+        "degraded_seeds": 14,
+        "videos": 14
+      },
+      "ssim_mean": {
+        "mean_delta": -0.0971156188419887,
+        "descriptive_scene_ci95": [
+          -0.1721204263823373,
+          -0.03878106389726911
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -0.475908100605011,
+        "degraded_seeds": 14,
+        "videos": 14
+      },
+      "relative_l2": {
+        "mean_delta": 0.05173184400014335,
+        "descriptive_scene_ci95": [
+          0.008818643871688788,
+          0.10002154938288851
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.24982710957747226,
+        "degraded_seeds": 13,
+        "videos": 14
+      },
+      "psnr_db": {
+        "mean_delta": -2.661701491834907,
+        "descriptive_scene_ci95": [
+          -4.634662152470846,
+          -0.4421205461689888
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -10.697118539602121,
+        "degraded_seeds": 13,
+        "videos": 14
+      }
+    },
+    "rbench|b2_joint_group_removal_only|b2_joint": {
+      "lpips": {
+        "mean_delta": -0.0004886344535562961,
+        "descriptive_scene_ci95": [
+          -0.015493781247853935,
+          0.012643649321062059
+        ],
+        "worst_case": "rbench__spatial_relationship_0015",
+        "worst_seed": 301045,
+        "worst_delta": 0.04277154010888494,
+        "degraded_seeds": 9,
+        "videos": 18
+      },
+      "ssim_mean": {
+        "mean_delta": -0.0020884424448013306,
+        "descriptive_scene_ci95": [
+          -0.01872636932465765,
+          0.013640858481327631
+        ],
+        "worst_case": "rbench__spatial_relationship_0015",
+        "worst_seed": 301045,
+        "worst_delta": -0.08077037334442139,
+        "degraded_seeds": 9,
+        "videos": 18
+      },
+      "relative_l2": {
+        "mean_delta": 0.002938277953763562,
+        "descriptive_scene_ci95": [
+          -0.00931451042354626,
+          0.015378523766837012
+        ],
+        "worst_case": "rbench__common_manipulation_0041",
+        "worst_seed": 301031,
+        "worst_delta": 0.062348704423369206,
+        "degraded_seeds": 10,
+        "videos": 18
+      },
+      "psnr_db": {
+        "mean_delta": -0.03970531675016146,
+        "descriptive_scene_ci95": [
+          -0.500882485881063,
+          0.4544023986089487
+        ],
+        "worst_case": "rbench__spatial_relationship_0015",
+        "worst_seed": 301045,
+        "worst_delta": -1.7487606292615503,
+        "degraded_seeds": 10,
+        "videos": 18
+      }
+    },
+    "paibench|b2_joint_group_removal_only|b2_joint": {
+      "lpips": {
+        "mean_delta": 0.008175312112297084,
+        "descriptive_scene_ci95": [
+          0.0015548166897299443,
+          0.017395498559306388
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.06174348209236488,
+        "degraded_seeds": 8,
+        "videos": 14
+      },
+      "ssim_mean": {
+        "mean_delta": -0.009827750069754464,
+        "descriptive_scene_ci95": [
+          -0.021291089909417287,
+          -0.000522613525390625
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -0.08918136358261108,
+        "degraded_seeds": 4,
+        "videos": 14
+      },
+      "relative_l2": {
+        "mean_delta": 0.012688191162698023,
+        "descriptive_scene_ci95": [
+          0.00040355991768523824,
+          0.02686876326697164
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.08774515473229372,
+        "degraded_seeds": 7,
+        "videos": 14
+      },
+      "psnr_db": {
+        "mean_delta": -0.32927714044480333,
+        "descriptive_scene_ci95": [
+          -0.8067955684774594,
+          0.1300180443562063
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -2.50791244484563,
+        "degraded_seeds": 7,
+        "videos": 14
+      }
+    },
+    "rbench|b2_joint_group_removal_only|b2_joint_group_scale_only": {
+      "lpips": {
+        "mean_delta": -0.0006000894859334783,
+        "descriptive_scene_ci95": [
+          -0.00974871720715794,
+          0.008358660122396186
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301042,
+        "worst_delta": 0.11646860892899702,
+        "degraded_seeds": 9,
+        "videos": 18
+      },
+      "ssim_mean": {
+        "mean_delta": 0.008241671654913161,
+        "descriptive_scene_ci95": [
+          -0.0034386237048440508,
+          0.02168459300365712
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301042,
+        "worst_delta": -0.06763327121734619,
+        "degraded_seeds": 7,
+        "videos": 18
+      },
+      "relative_l2": {
+        "mean_delta": -0.0032232697897254772,
+        "descriptive_scene_ci95": [
+          -0.014071850841816863,
+          0.006579514570613432
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301042,
+        "worst_delta": 0.06224434119165623,
+        "degraded_seeds": 8,
+        "videos": 18
+      },
+      "psnr_db": {
+        "mean_delta": 0.18311219519032976,
+        "descriptive_scene_ci95": [
+          -0.2432808367888567,
+          0.7167999646710562
+        ],
+        "worst_case": "rbench__single_arm_0097",
+        "worst_seed": 301044,
+        "worst_delta": -2.4194938790819727,
+        "degraded_seeds": 8,
+        "videos": 18
+      }
+    },
+    "paibench|b2_joint_group_removal_only|b2_joint_group_scale_only": {
+      "lpips": {
+        "mean_delta": -0.0015218660090362945,
+        "descriptive_scene_ci95": [
+          -0.00456367398010222,
+          0.0016702236247792023
+        ],
+        "worst_case": "paibench__robot_010",
+        "worst_seed": 301029,
+        "worst_delta": 0.009888092758225608,
+        "degraded_seeds": 8,
+        "videos": 14
+      },
+      "ssim_mean": {
+        "mean_delta": 0.0080369200025286,
+        "descriptive_scene_ci95": [
+          0.0011437577860695975,
+          0.01625922748020717
+        ],
+        "worst_case": "paibench__robot_010",
+        "worst_seed": 301029,
+        "worst_delta": -0.013631880283355713,
+        "degraded_seeds": 4,
+        "videos": 14
+      },
+      "relative_l2": {
+        "mean_delta": 0.0019245571563650458,
+        "descriptive_scene_ci95": [
+          -0.0026128734472971806,
+          0.006304387006226207
+        ],
+        "worst_case": "paibench__robot_010",
+        "worst_seed": 301029,
+        "worst_delta": 0.054645364913632366,
+        "degraded_seeds": 8,
+        "videos": 14
+      },
+      "psnr_db": {
+        "mean_delta": -0.12518083672351007,
+        "descriptive_scene_ci95": [
+          -0.4094995266196812,
+          0.11755218252540141
+        ],
+        "worst_case": "paibench__robot_010",
+        "worst_seed": 301029,
+        "worst_delta": -1.5597948631631464,
+        "degraded_seeds": 8,
+        "videos": 14
+      }
+    },
+    "rbench|b2_joint_group_removal_only|fp8": {
+      "lpips": {
+        "mean_delta": 0.0415571184153711,
+        "descriptive_scene_ci95": [
+          0.015083621102685804,
+          0.06759730195210999
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301042,
+        "worst_delta": 0.14022142185112002,
+        "degraded_seeds": 15,
+        "videos": 18
+      },
+      "ssim_mean": {
+        "mean_delta": -0.05954027010334863,
+        "descriptive_scene_ci95": [
+          -0.10231391448113653,
+          -0.016839757892820603
+        ],
+        "worst_case": "rbench__spatial_relationship_0015",
+        "worst_seed": 301045,
+        "worst_delta": -0.1702425479888916,
+        "degraded_seeds": 16,
+        "videos": 18
+      },
+      "relative_l2": {
+        "mean_delta": 0.04251023884479537,
+        "descriptive_scene_ci95": [
+          0.01654652394637993,
+          0.06646830018463952
+        ],
+        "worst_case": "rbench__common_manipulation_0041",
+        "worst_seed": 301031,
+        "worst_delta": 0.12911893473538275,
+        "degraded_seeds": 15,
+        "videos": 18
+      },
+      "psnr_db": {
+        "mean_delta": -1.8641777882375896,
+        "descriptive_scene_ci95": [
+          -2.7080475446710737,
+          -0.9317400934158384
+        ],
+        "worst_case": "rbench__single_arm_0097",
+        "worst_seed": 301044,
+        "worst_delta": -5.154369577652528,
+        "degraded_seeds": 15,
+        "videos": 18
+      }
+    },
+    "paibench|b2_joint_group_removal_only|fp8": {
+      "lpips": {
+        "mean_delta": 0.04915908319342323,
+        "descriptive_scene_ci95": [
+          0.018847331683319368,
+          0.08334903636171899
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.17691853031760357,
+        "degraded_seeds": 14,
+        "videos": 14
+      },
+      "ssim_mean": {
+        "mean_delta": -0.0890786988394601,
+        "descriptive_scene_ci95": [
+          -0.15711815442357743,
+          -0.03536374654088702
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -0.443237841129303,
+        "degraded_seeds": 14,
+        "videos": 14
+      },
+      "relative_l2": {
+        "mean_delta": 0.05365640115650839,
+        "descriptive_scene_ci95": [
+          0.011035541134435976,
+          0.10143169590430434
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.24692090336426956,
+        "degraded_seeds": 13,
+        "videos": 14
+      },
+      "psnr_db": {
+        "mean_delta": -2.7868823285584168,
+        "descriptive_scene_ci95": [
+          -4.633258159103394,
+          -0.5822811206874056
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -10.62526835544162,
+        "degraded_seeds": 13,
+        "videos": 14
+      }
+    },
+    "rbench|b2_joint_group_joint|b2_joint": {
+      "lpips": {
+        "mean_delta": -0.0055442940733626215,
+        "descriptive_scene_ci95": [
+          -0.00946306250635844,
+          -0.0020100354519985426
+        ],
+        "worst_case": "rbench__humanoid_0049",
+        "worst_seed": 301036,
+        "worst_delta": 0.015122910686692262,
+        "degraded_seeds": 6,
+        "videos": 18
+      },
+      "ssim_mean": {
+        "mean_delta": 0.006351722611321343,
+        "descriptive_scene_ci95": [
+          0.0013169469932715102,
+          0.012547015647093441
+        ],
+        "worst_case": "rbench__humanoid_0049",
+        "worst_seed": 301036,
+        "worst_delta": -0.023072481155395508,
+        "degraded_seeds": 7,
+        "videos": 18
+      },
+      "relative_l2": {
+        "mean_delta": -0.006046342343475975,
+        "descriptive_scene_ci95": [
+          -0.012244377931197384,
+          -0.00024306815180343824
+        ],
+        "worst_case": "rbench__humanoid_0049",
+        "worst_seed": 301036,
+        "worst_delta": 0.02513909804859768,
+        "degraded_seeds": 8,
+        "videos": 18
+      },
+      "psnr_db": {
+        "mean_delta": 0.24992998228305888,
+        "descriptive_scene_ci95": [
+          0.012318390258518342,
+          0.5209037697941962
+        ],
+        "worst_case": "rbench__humanoid_0049",
+        "worst_seed": 301036,
+        "worst_delta": -1.3330198928492862,
+        "degraded_seeds": 8,
+        "videos": 18
+      }
+    },
+    "paibench|b2_joint_group_joint|b2_joint": {
+      "lpips": {
+        "mean_delta": 0.004336344993692892,
+        "descriptive_scene_ci95": [
+          -0.0006326497368846074,
+          0.012694430710372686
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.049095313263232576,
+        "degraded_seeds": 9,
+        "videos": 14
+      },
+      "ssim_mean": {
+        "mean_delta": -0.0037958621978759766,
+        "descriptive_scene_ci95": [
+          -0.01245377744947161,
+          0.004287089620317731
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -0.09241026639938354,
+        "degraded_seeds": 5,
+        "videos": 14
+      },
+      "relative_l2": {
+        "mean_delta": 0.007940067418205065,
+        "descriptive_scene_ci95": [
+          6.828636940060261e-05,
+          0.018949225943128322
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.07764249682549246,
+        "degraded_seeds": 8,
+        "videos": 14
+      },
+      "psnr_db": {
+        "mean_delta": -0.19979483573397377,
+        "descriptive_scene_ci95": [
+          -0.5422969423714382,
+          0.07011220419933487
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -2.253416145530636,
+        "degraded_seeds": 8,
+        "videos": 14
+      }
+    },
+    "rbench|b2_joint_group_joint|b2_joint_group_scale_only": {
+      "lpips": {
+        "mean_delta": -0.005655749105739803,
+        "descriptive_scene_ci95": [
+          -0.02560614256011424,
+          0.017237043995162103
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301042,
+        "worst_delta": 0.11819874196023239,
+        "degraded_seeds": 8,
+        "videos": 18
+      },
+      "ssim_mean": {
+        "mean_delta": 0.016681836711035833,
+        "descriptive_scene_ci95": [
+          -0.010025923947493236,
+          0.04582445489035712
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301042,
+        "worst_delta": -0.07581406831741333,
+        "degraded_seeds": 6,
+        "videos": 18
+      },
+      "relative_l2": {
+        "mean_delta": -0.012207890086965012,
+        "descriptive_scene_ci95": [
+          -0.03632591398016966,
+          0.010012967471865171
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301042,
+        "worst_delta": 0.06912399241668438,
+        "degraded_seeds": 7,
+        "videos": 18
+      },
+      "psnr_db": {
+        "mean_delta": 0.4727474942235501,
+        "descriptive_scene_ci95": [
+          -0.2380314987801088,
+          1.2568300434987045
+        ],
+        "worst_case": "rbench__single_arm_0097",
+        "worst_seed": 301044,
+        "worst_delta": -2.3718720877127453,
+        "degraded_seeds": 7,
+        "videos": 18
+      }
+    },
+    "paibench|b2_joint_group_joint|b2_joint_group_scale_only": {
+      "lpips": {
+        "mean_delta": -0.0053608331276404865,
+        "descriptive_scene_ci95": [
+          -0.01018932277546101,
+          -0.001180356332979905
+        ],
+        "worst_case": "paibench__common_sense_287188dc-ce0c-4ab7-8364-4a2bfb015c1c",
+        "worst_seed": 301020,
+        "worst_delta": 0.009468776341833046,
+        "degraded_seeds": 5,
+        "videos": 14
+      },
+      "ssim_mean": {
+        "mean_delta": 0.014068807874407088,
+        "descriptive_scene_ci95": [
+          0.004348090716770717,
+          0.025679660375629146
+        ],
+        "worst_case": "paibench__common_sense_287188dc-ce0c-4ab7-8364-4a2bfb015c1c",
+        "worst_seed": 301020,
+        "worst_delta": -0.005926668643951416,
+        "degraded_seeds": 3,
+        "videos": 14
+      },
+      "relative_l2": {
+        "mean_delta": -0.002823566588127915,
+        "descriptive_scene_ci95": [
+          -0.008716676531394069,
+          0.0028985889831109513
+        ],
+        "worst_case": "paibench__human_241",
+        "worst_seed": 301022,
+        "worst_delta": 0.01576077123394634,
+        "degraded_seeds": 7,
+        "videos": 14
+      },
+      "psnr_db": {
+        "mean_delta": 0.004301467987319515,
+        "descriptive_scene_ci95": [
+          -0.3521871076757567,
+          0.31272520919330216
+        ],
+        "worst_case": "paibench__human_241",
+        "worst_seed": 301022,
+        "worst_delta": -1.2450337131910807,
+        "degraded_seeds": 7,
+        "videos": 14
+      }
+    },
+    "rbench|b2_joint_group_joint|fp8": {
+      "lpips": {
+        "mean_delta": 0.03650145879556478,
+        "descriptive_scene_ci95": [
+          0.009224149854309317,
+          0.06995414750799384
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301041,
+        "worst_delta": 0.15249339486548646,
+        "degraded_seeds": 15,
+        "videos": 18
+      },
+      "ssim_mean": {
+        "mean_delta": -0.05110010504722595,
+        "descriptive_scene_ci95": [
+          -0.09662502805391947,
+          -0.009730511241488986
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301041,
+        "worst_delta": -0.22736436128616333,
+        "degraded_seeds": 16,
+        "videos": 18
+      },
+      "relative_l2": {
+        "mean_delta": 0.033525618547555834,
+        "descriptive_scene_ci95": [
+          0.008230466354329214,
+          0.06015317260729985
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301041,
+        "worst_delta": 0.13740191509343047,
+        "degraded_seeds": 14,
+        "videos": 18
+      },
+      "psnr_db": {
+        "mean_delta": -1.5745424892043696,
+        "descriptive_scene_ci95": [
+          -2.438832378193582,
+          -0.643991694406016
+        ],
+        "worst_case": "rbench__quad_0047",
+        "worst_seed": 301041,
+        "worst_delta": -5.147753217210406,
+        "degraded_seeds": 14,
+        "videos": 18
+      }
+    },
+    "paibench|b2_joint_group_joint|fp8": {
+      "lpips": {
+        "mean_delta": 0.04532011607481904,
+        "descriptive_scene_ci95": [
+          0.0166360789324338,
+          0.07793763337795354
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.16427036148847127,
+        "degraded_seeds": 13,
+        "videos": 14
+      },
+      "ssim_mean": {
+        "mean_delta": -0.08304681096758161,
+        "descriptive_scene_ci95": [
+          -0.14753282921654837,
+          -0.032130788905280094
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -0.44646674394607544,
+        "degraded_seeds": 14,
+        "videos": 14
+      },
+      "relative_l2": {
+        "mean_delta": 0.04890827741201542,
+        "descriptive_scene_ci95": [
+          0.010715118985439235,
+          0.09169604108105237
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": 0.2368182454574683,
+        "degraded_seeds": 13,
+        "videos": 14
+      },
+      "psnr_db": {
+        "mean_delta": -2.657400023847587,
+        "descriptive_scene_ci95": [
+          -4.371492111082724,
+          -0.7072027321469616
+        ],
+        "worst_case": "paibench__industry_070",
+        "worst_seed": 301024,
+        "worst_delta": -10.370772056126626,
+        "degraded_seeds": 13,
+        "videos": 14
+      }
+    }
+  },
+  "gates": {
+    "b2_joint_group_scale_only": {
+      "rbench": {
+        "mean_guard": false
+      },
+      "paibench": {
+        "mean_guard": false
+      }
+    },
+    "b2_joint_group_removal_only": {
+      "rbench": {
+        "mean_guard": false
+      },
+      "paibench": {
+        "mean_guard": false
+      }
+    },
+    "b2_joint_group_joint": {
+      "rbench": {
+        "mean_guard": true
+      },
+      "paibench": {
+        "mean_guard": false
+      }
+    }
+  },
+  "raw_metrics": [
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "rbench__common_manipulation_0041",
+      "benchmark": "rbench",
+      "category": "common_manipulation",
+      "rows": [
+        {
+          "seed": 301031,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.24243658691243566,
+              "rmse": 0.12170993837427813,
+              "mse": 0.014813309099070578,
+              "psnr_db": 18.29347914946908,
+              "psnr_exact": false,
+              "ssim_mean": 0.7891099452972412,
+              "lpips": 0.1411616796719246
+            }
+          }
+        },
+        {
+          "seed": 301032,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.26962016173055126,
+              "rmse": 0.12917173567431947,
+              "mse": 0.016685337297116257,
+              "psnr_db": 17.776650095788188,
+              "psnr_exact": false,
+              "ssim_mean": 0.7514369487762451,
+              "lpips": 0.1410431538052002
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "fa52de7d9ab08e5bafa3e2de23dc7327c852db1b00be5a465e4510daaf8753b3",
+        "candidate_sha256": "c1d32182becd19729eb52fb81d30887cee1605fa28ef3a2b6585d63ffb51b70a"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "rbench__dual_arm_0078",
+      "benchmark": "rbench",
+      "category": "dual_arm",
+      "rows": [
+        {
+          "seed": 301033,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.05246441045562905,
+              "rmse": 0.035807091209733605,
+              "mse": 0.0012821477809021817,
+              "psnr_db": 28.920619149642572,
+              "psnr_exact": false,
+              "ssim_mean": 0.9555794596672058,
+              "lpips": 0.0169251038421892
+            }
+          }
+        },
+        {
+          "seed": 301034,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.09642561313780473,
+              "rmse": 0.06415124565172717,
+              "mse": 0.004115382318668244,
+              "psnr_db": 23.855898126570068,
+              "psnr_exact": false,
+              "ssim_mean": 0.9189098477363586,
+              "lpips": 0.031138735029418937
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1225cda0e1734895289743c7b7df1fa70a93239a48380a013d23298d5262d94e",
+        "candidate_sha256": "2d25386417adb4704425570aed39e01963bf69808d3c86a97ee1b3e6d3927b38"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "rbench__humanoid_0049",
+      "benchmark": "rbench",
+      "category": "humanoid",
+      "rows": [
+        {
+          "seed": 301035,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1577246818557354,
+              "rmse": 0.0876118268517645,
+              "mse": 0.007675832204303563,
+              "psnr_db": 21.148745276235843,
+              "psnr_exact": false,
+              "ssim_mean": 0.8847234845161438,
+              "lpips": 0.05553389067349375
+            }
+          }
+        },
+        {
+          "seed": 301036,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1230000276284527,
+              "rmse": 0.0689482216140156,
+              "mse": 0.004753857263735409,
+              "psnr_db": 23.229538622592266,
+              "psnr_exact": false,
+              "ssim_mean": 0.9037928581237793,
+              "lpips": 0.05811216950905128
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "013610780c0f976629038e8cf8358fdc34d2f221edbc256b6add573737d8ce08",
+        "candidate_sha256": "bfc92d0cc21fcf55cd85b39db080cfd966f32932c44a33eda7063fb9bfad23df"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "rbench__long-horizon_planning_0009",
+      "benchmark": "rbench",
+      "category": "long-horizon_planning",
+      "rows": [
+        {
+          "seed": 301037,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.35744509126896196,
+              "rmse": 0.1748398061938768,
+              "mse": 0.030568957829912397,
+              "psnr_db": 15.14719367176215,
+              "psnr_exact": false,
+              "ssim_mean": 0.4804478883743286,
+              "lpips": 0.2592763478150133
+            }
+          }
+        },
+        {
+          "seed": 301038,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.36471242058855036,
+              "rmse": 0.17687742141960464,
+              "mse": 0.03128562220804841,
+              "psnr_db": 15.046552033575509,
+              "psnr_exact": false,
+              "ssim_mean": 0.4898163974285126,
+              "lpips": 0.25718760224761533
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "340252fb4dd85e10d39a37b99c123aed1745113f1f82ff06969c641fb5fd488c",
+        "candidate_sha256": "ed669794214a696d03bd4e1800e9ba0b029abae266707569ac8002d834cc6a6c"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "rbench__multi-entity_collaboration_0035",
+      "benchmark": "rbench",
+      "category": "multi-entity_collaboration",
+      "rows": [
+        {
+          "seed": 301039,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.12760063740189065,
+              "rmse": 0.07309523490680246,
+              "mse": 0.005342913366080633,
+              "psnr_db": 22.72221867729533,
+              "psnr_exact": false,
+              "ssim_mean": 0.8945733308792114,
+              "lpips": 0.06849155645267885
+            }
+          }
+        },
+        {
+          "seed": 301040,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.08475206938877021,
+              "rmse": 0.047863398321492,
+              "mse": 0.0022909048988818035,
+              "psnr_db": 26.39992939072547,
+              "psnr_exact": false,
+              "ssim_mean": 0.934096097946167,
+              "lpips": 0.03867646264767305
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "5634eb657a2fe3ffadc1372e6e4f3d50c5b8c1dc6b3396bc60edddc5b8733f83",
+        "candidate_sha256": "0ca89a080975c9c21f98a7ef1250f7a469a59d3f02004e3fd7fd2a680e009b38"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "rbench__quad_0047",
+      "benchmark": "rbench",
+      "category": "quad",
+      "rows": [
+        {
+          "seed": 301041,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1698862003737539,
+              "rmse": 0.09228614168889769,
+              "mse": 0.0085167319478233,
+              "psnr_db": 20.69727021348253,
+              "psnr_exact": false,
+              "ssim_mean": 0.7651928663253784,
+              "lpips": 0.06274384582323618
+            }
+          }
+        },
+        {
+          "seed": 301042,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2904903051101409,
+              "rmse": 0.15976963079856224,
+              "mse": 0.02552633492550889,
+              "psnr_db": 15.930115367778722,
+              "psnr_exact": false,
+              "ssim_mean": 0.6706125140190125,
+              "lpips": 0.27840746229239666
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "2d4cc599d2e1fa1a437c219dc390ad304e2831c94ac2255fa1d3fcfe8fbe755c",
+        "candidate_sha256": "4909d3c034e3c771b3ed8a4b15ad2b56667e87c993579415282142ff9af52277"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "rbench__single_arm_0097",
+      "benchmark": "rbench",
+      "category": "single_arm",
+      "rows": [
+        {
+          "seed": 301043,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.17534750627842818,
+              "rmse": 0.12994073866270198,
+              "mse": 0.016884595564208613,
+              "psnr_db": 17.725093375358878,
+              "psnr_exact": false,
+              "ssim_mean": 0.8865014910697937,
+              "lpips": 0.12097151727858381
+            }
+          }
+        },
+        {
+          "seed": 301044,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1213066419519351,
+              "rmse": 0.08134719421201318,
+              "mse": 0.006617366006166992,
+              "psnr_db": 21.79314843887052,
+              "psnr_exact": false,
+              "ssim_mean": 0.9179520606994629,
+              "lpips": 0.06263196150024163
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "0ee36addc2b00c54e8a88b3ffa4023d72cb30548c9ccca88857202e2991275c7",
+        "candidate_sha256": "e3f60ae82ae8e9aa6f622b3333b282d1f91f646fd04e8ad15cefe72b780a7070"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "rbench__spatial_relationship_0015",
+      "benchmark": "rbench",
+      "category": "spatial_relationship",
+      "rows": [
+        {
+          "seed": 301045,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.17254053468723046,
+              "rmse": 0.1077700596462207,
+              "mse": 0.011614385756149969,
+              "psnr_db": 19.350037535579823,
+              "psnr_exact": false,
+              "ssim_mean": 0.8407878279685974,
+              "lpips": 0.08907396369232018
+            }
+          }
+        },
+        {
+          "seed": 301046,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.14417417568259663,
+              "rmse": 0.08851848744039348,
+              "mse": 0.007835522618735097,
+              "psnr_db": 21.05932031376206,
+              "psnr_exact": false,
+              "ssim_mean": 0.8383829593658447,
+              "lpips": 0.07897511011630785
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "a0dbb7c63440901a4b05eadfa810d3eb6ad0d273cc190ee4cb21bef1c8640c51",
+        "candidate_sha256": "734e76dbc67f8338ef20e4cfab4642afdd87285f82e1615189b8937ec5287a35"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "rbench__visual_reasoning_0010",
+      "benchmark": "rbench",
+      "category": "visual_reasoning",
+      "rows": [
+        {
+          "seed": 301047,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.15150305782652002,
+              "rmse": 0.09636735965959889,
+              "mse": 0.009286668007762488,
+              "psnr_db": 20.321400799148684,
+              "psnr_exact": false,
+              "ssim_mean": 0.8644818067550659,
+              "lpips": 0.07960508386489981
+            }
+          }
+        },
+        {
+          "seed": 301048,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.17036831212680711,
+              "rmse": 0.10586612463066795,
+              "mse": 0.011207636344316119,
+              "psnr_db": 19.504859691051372,
+              "psnr_exact": false,
+              "ssim_mean": 0.8675497174263,
+              "lpips": 0.0863184438499271
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "df2b26afadbfe1abc7119865ff62d7aca1b39eab62e963ff26b55df7370ce1c4",
+        "candidate_sha256": "36162c9cf8b93605b7458fe99021a36f36f6e14bb2e2e56fc25334133ccad6a5"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "benchmark": "paibench",
+      "category": "av",
+      "rows": [
+        {
+          "seed": 301017,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.03956750365804435,
+              "rmse": 0.016989439788119395,
+              "mse": 0.00028864106431413433,
+              "psnr_db": 35.396418827492134,
+              "psnr_exact": false,
+              "ssim_mean": 0.9673227667808533,
+              "lpips": 0.018691891937928855
+            }
+          }
+        },
+        {
+          "seed": 301018,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.05265599687153602,
+              "rmse": 0.022677596360376338,
+              "mse": 0.0005142733766841541,
+              "psnr_db": 32.8880595800137,
+              "psnr_exact": false,
+              "ssim_mean": 0.9556806683540344,
+              "lpips": 0.02893298383054064
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "8dbfbeb275dbb0b92e5d7931528f7ff2738eeec75b471dbf7da7081d3af36a64",
+        "candidate_sha256": "22e785e4f17fee00c44cfab2a853c2c624a03ff36b39c3aa5dcefe9294e17883"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "paibench__common_sense_287188dc-ce0c-4ab7-8364-4a2bfb015c1c",
+      "benchmark": "paibench",
+      "category": "common",
+      "rows": [
+        {
+          "seed": 301019,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.10182501479923106,
+              "rmse": 0.05912002469756165,
+              "mse": 0.0034951773202402995,
+              "psnr_db": 24.565307863708288,
+              "psnr_exact": false,
+              "ssim_mean": 0.8231589794158936,
+              "lpips": 0.08378432155968468
+            }
+          }
+        },
+        {
+          "seed": 301020,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.11825959332071782,
+              "rmse": 0.06368391490390483,
+              "mse": 0.004055641017487792,
+              "psnr_db": 23.919404932762554,
+              "psnr_exact": false,
+              "ssim_mean": 0.866205632686615,
+              "lpips": 0.09516426316294514
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "833ec5786e36605e3bb21b472fde3d37110a64432587354660726c0655d17a52",
+        "candidate_sha256": "9ef067f1e287d75c23b8e8538306fdb745664870fd1f643526fcb12401774193"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "paibench__human_241",
+      "benchmark": "paibench",
+      "category": "human",
+      "rows": [
+        {
+          "seed": 301021,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.06867653875043636,
+              "rmse": 0.034170507453420214,
+              "mse": 0.0011676235796242464,
+              "psnr_db": 29.326971432170023,
+              "psnr_exact": false,
+              "ssim_mean": 0.9220674633979797,
+              "lpips": 0.06743976348614106
+            }
+          }
+        },
+        {
+          "seed": 301022,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.09394464748806142,
+              "rmse": 0.046346491490602056,
+              "mse": 0.0021479972734884485,
+              "psnr_db": 26.679662742339687,
+              "psnr_exact": false,
+              "ssim_mean": 0.9010840058326721,
+              "lpips": 0.05453111948903467
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "660de955b3802154fcf5c04e2865a2b0c336b7e9b905470723e3d96a543bb108",
+        "candidate_sha256": "46c969a0bbf9822c5492273fe3178b36d89dcad2d1e393f4838cfd5800512e70"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "paibench__industry_070",
+      "benchmark": "paibench",
+      "category": "industry",
+      "rows": [
+        {
+          "seed": 301023,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.14257452241875623,
+              "rmse": 0.07114795948441847,
+              "mse": 0.005062032138796452,
+              "psnr_db": 22.95675101837258,
+              "psnr_exact": false,
+              "ssim_mean": 0.7815519571304321,
+              "lpips": 0.07191623490853388
+            }
+          }
+        },
+        {
+          "seed": 301024,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.10295606553686962,
+              "rmse": 0.05260627041670087,
+              "mse": 0.0027674196871550574,
+              "psnr_db": 25.57924973857187,
+              "psnr_exact": false,
+              "ssim_mean": 0.8673020005226135,
+              "lpips": 0.04930089053804757
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "55516e85ca713921d5dec48d55625c1f8bf19bd6dc3cb8cff72e5767cf08eb2e",
+        "candidate_sha256": "d21fe3ffe802a949ffc7831ed30a9d79b71514081b7ffe756c1d36ae20de5771"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "paibench__misc_5629687-hd_1920_1080_25fps",
+      "benchmark": "paibench",
+      "category": "misc",
+      "rows": [
+        {
+          "seed": 301025,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.03356193876926273,
+              "rmse": 0.017406105086049985,
+              "mse": 0.0003029724942666151,
+              "psnr_db": 35.185967976708326,
+              "psnr_exact": false,
+              "ssim_mean": 0.9591529965400696,
+              "lpips": 0.018862677180803703
+            }
+          }
+        },
+        {
+          "seed": 301026,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.04746758865123934,
+              "rmse": 0.025405145981005576,
+              "mse": 0.0006454214423162038,
+              "psnr_db": 31.9015661047702,
+              "psnr_exact": false,
+              "ssim_mean": 0.9486184120178223,
+              "lpips": 0.02786365445306311
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1e9e5abb984e455b5a1c7fa2a3568461f0a37520a167c2ed792a18c5283763a7",
+        "candidate_sha256": "35b54927168d0815c195948fdc3206102f82fa9b6eb5e967eb3fc34906519a85"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "paibench__physics_029",
+      "benchmark": "paibench",
+      "category": "physics",
+      "rows": [
+        {
+          "seed": 301027,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.09202715784240102,
+              "rmse": 0.04026677276179881,
+              "mse": 0.0016214129886503428,
+              "psnr_db": 27.901063523027204,
+              "psnr_exact": false,
+              "ssim_mean": 0.973003625869751,
+              "lpips": 0.020918702095991275
+            }
+          }
+        },
+        {
+          "seed": 301028,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.029841529872669723,
+              "rmse": 0.010627206629608164,
+              "mse": 0.00011293752074838771,
+              "psnr_db": 39.47161750308302,
+              "psnr_exact": false,
+              "ssim_mean": 0.9819163084030151,
+              "lpips": 0.012116404944939202
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "65267f7d8d56becba1e4fd404ac3c24159112478ce46aee6997d02144296bf5c",
+        "candidate_sha256": "1f7675522854010e7d058a64170b96f08b3e87883dd11531a1d9717697c2c7b3"
+      }
+    },
+    {
+      "complete": true,
+      "name": "fp8",
+      "case_id": "paibench__robot_010",
+      "benchmark": "paibench",
+      "category": "robot",
+      "rows": [
+        {
+          "seed": 301029,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.20801040514628247,
+              "rmse": 0.10763018817885561,
+              "mse": 0.011584257407415869,
+              "psnr_db": 19.361318008207643,
+              "psnr_exact": false,
+              "ssim_mean": 0.7932692766189575,
+              "lpips": 0.13029134706746726
+            }
+          }
+        },
+        {
+          "seed": 301030,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1755422415889029,
+              "rmse": 0.09035021382632573,
+              "mse": 0.008163161138462782,
+              "psnr_db": 20.88141630567284,
+              "psnr_exact": false,
+              "ssim_mean": 0.8495801091194153,
+              "lpips": 0.09095997570968065
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "7214393c1d46d180ca23e3c22762e62c7be8b08d86250758979264f7553d4753",
+        "candidate_sha256": "b66728df1b0da4ffba3339b0008a6b9ce938b89da71e4af44e446ed2b8390bb2"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "rbench__common_manipulation_0041",
+      "benchmark": "rbench",
+      "category": "common_manipulation",
+      "rows": [
+        {
+          "seed": 301031,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3092068172244492,
+              "rmse": 0.15523045901849394,
+              "mse": 0.02409649540709233,
+              "psnr_db": 16.180461165968076,
+              "psnr_exact": false,
+              "ssim_mean": 0.7167860269546509,
+              "lpips": 0.20329147296362235
+            }
+          }
+        },
+        {
+          "seed": 301032,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3055831548746999,
+              "rmse": 0.14640116768213715,
+              "mse": 0.021433301898693236,
+              "psnr_db": 16.68910918742598,
+              "psnr_exact": false,
+              "ssim_mean": 0.672450065612793,
+              "lpips": 0.17254874447635452
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "fa52de7d9ab08e5bafa3e2de23dc7327c852db1b00be5a465e4510daaf8753b3",
+        "candidate_sha256": "43a9fb7b46775a0bb6290ed7ae3760876a726061622c04f185310b279bbf8eff"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "rbench__dual_arm_0078",
+      "benchmark": "rbench",
+      "category": "dual_arm",
+      "rows": [
+        {
+          "seed": 301033,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.06737039454154396,
+              "rmse": 0.04598046258853895,
+              "mse": 0.0021142029398560306,
+              "psnr_db": 26.74853327610675,
+              "psnr_exact": false,
+              "ssim_mean": 0.9340922832489014,
+              "lpips": 0.02668598652664633
+            }
+          }
+        },
+        {
+          "seed": 301034,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.0788802987420817,
+              "rmse": 0.052478478041442435,
+              "mse": 0.0027539906575461555,
+              "psnr_db": 25.600375373481707,
+              "psnr_exact": false,
+              "ssim_mean": 0.9313405156135559,
+              "lpips": 0.028329519236261848
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1225cda0e1734895289743c7b7df1fa70a93239a48380a013d23298d5262d94e",
+        "candidate_sha256": "0dec89a15a3a1d370bc848ff203015076211167c66299acc11221c8a98cc2e17"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "rbench__humanoid_0049",
+      "benchmark": "rbench",
+      "category": "humanoid",
+      "rows": [
+        {
+          "seed": 301035,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2507993394804303,
+              "rmse": 0.13931230069111314,
+              "mse": 0.01940791712385112,
+              "psnr_db": 17.12021071008159,
+              "psnr_exact": false,
+              "ssim_mean": 0.8004682660102844,
+              "lpips": 0.10614349543437605
+            }
+          }
+        },
+        {
+          "seed": 301036,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.15155691288400078,
+              "rmse": 0.08495591275985143,
+              "mse": 0.007217507112859485,
+              "psnr_db": 21.416127794494443,
+              "psnr_exact": false,
+              "ssim_mean": 0.869148850440979,
+              "lpips": 0.07247020398862049
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "013610780c0f976629038e8cf8358fdc34d2f221edbc256b6add573737d8ce08",
+        "candidate_sha256": "d853afb1827f689dbfd13d5b58207d754014119b2f522f7edd9496cc717559f0"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "rbench__long-horizon_planning_0009",
+      "benchmark": "rbench",
+      "category": "long-horizon_planning",
+      "rows": [
+        {
+          "seed": 301037,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2563590960818966,
+              "rmse": 0.12539485299930947,
+              "mse": 0.01572386915871843,
+              "psnr_db": 18.034405786832263,
+              "psnr_exact": false,
+              "ssim_mean": 0.6725066304206848,
+              "lpips": 0.1514613150817449
+            }
+          }
+        },
+        {
+          "seed": 301038,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3947329757422257,
+              "rmse": 0.19143672372304207,
+              "mse": 0.036648019189812336,
+              "psnr_db": 14.359494938245447,
+              "psnr_exact": false,
+              "ssim_mean": 0.4393790066242218,
+              "lpips": 0.28943279411521605
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "340252fb4dd85e10d39a37b99c123aed1745113f1f82ff06969c641fb5fd488c",
+        "candidate_sha256": "667007d320f533350c34a2fdcadf4db94a668a960d1b8382409f0f686577abd0"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "rbench__multi-entity_collaboration_0035",
+      "benchmark": "rbench",
+      "category": "multi-entity_collaboration",
+      "rows": [
+        {
+          "seed": 301039,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.11982088057258264,
+              "rmse": 0.06863864938705298,
+              "mse": 0.004711264189678789,
+              "psnr_db": 23.26862541505211,
+              "psnr_exact": false,
+              "ssim_mean": 0.8839708566665649,
+              "lpips": 0.06977576805187054
+            }
+          }
+        },
+        {
+          "seed": 301040,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1459275390676295,
+              "rmse": 0.08241200455448118,
+              "mse": 0.0067917384946878274,
+              "psnr_db": 21.680190442747723,
+              "psnr_exact": false,
+              "ssim_mean": 0.8619291186332703,
+              "lpips": 0.08689593300834055
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "5634eb657a2fe3ffadc1372e6e4f3d50c5b8c1dc6b3396bc60edddc5b8733f83",
+        "candidate_sha256": "5734a088106758911f3fc20c18b2faf3d91e57695505c76d136459d1fa56249f"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "rbench__quad_0047",
+      "benchmark": "rbench",
+      "category": "quad",
+      "rows": [
+        {
+          "seed": 301041,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.30688519523891716,
+              "rmse": 0.1667071872096514,
+              "mse": 0.027791286267353756,
+              "psnr_db": 15.560913522551406,
+              "psnr_exact": false,
+              "ssim_mean": 0.5373826622962952,
+              "lpips": 0.21876305036368918
+            }
+          }
+        },
+        {
+          "seed": 301042,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.37586755223654833,
+              "rmse": 0.20672710583998155,
+              "mse": 0.04273609628897493,
+              "psnr_db": 13.692051508098942,
+              "psnr_exact": false,
+              "ssim_mean": 0.5106162428855896,
+              "lpips": 0.42115464928697366
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "2d4cc599d2e1fa1a437c219dc390ad304e2831c94ac2255fa1d3fcfe8fbe755c",
+        "candidate_sha256": "9c8fe2d32ddf43a784a87ea96f1ee5fbf26b1c49271f746d0288951e1e84531b"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "rbench__single_arm_0097",
+      "benchmark": "rbench",
+      "category": "single_arm",
+      "rows": [
+        {
+          "seed": 301043,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.18304109714694886,
+              "rmse": 0.13564205088345743,
+              "mse": 0.018398765967870455,
+              "psnr_db": 17.352113047794237,
+              "psnr_exact": false,
+              "ssim_mean": 0.8775554895401001,
+              "lpips": 0.1353964676133922
+            }
+          }
+        },
+        {
+          "seed": 301044,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.19880806714368854,
+              "rmse": 0.1333189855775626,
+              "mse": 0.01777395191543035,
+              "psnr_db": 17.502159990800653,
+              "psnr_exact": false,
+              "ssim_mean": 0.8160872459411621,
+              "lpips": 0.15638701379543446
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "0ee36addc2b00c54e8a88b3ffa4023d72cb30548c9ccca88857202e2991275c7",
+        "candidate_sha256": "bc9275044c6bcb4a96fcaa7c1c49c36d6a53392df78ecb3e81bb56392846f6f8"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "rbench__spatial_relationship_0015",
+      "benchmark": "rbench",
+      "category": "spatial_relationship",
+      "rows": [
+        {
+          "seed": 301045,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.17762272290655184,
+              "rmse": 0.11094443098175895,
+              "mse": 0.012308666765866276,
+              "psnr_db": 19.097889858651737,
+              "psnr_exact": false,
+              "ssim_mean": 0.7513156533241272,
+              "lpips": 0.11967022755168012
+            }
+          }
+        },
+        {
+          "seed": 301046,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.24635950653020536,
+              "rmse": 0.15125712202874,
+              "mse": 0.022878716964417144,
+              "psnr_db": 16.40568334376291,
+              "psnr_exact": false,
+              "ssim_mean": 0.7122423648834229,
+              "lpips": 0.16775656399912522
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "a0dbb7c63440901a4b05eadfa810d3eb6ad0d273cc190ee4cb21bef1c8640c51",
+        "candidate_sha256": "da2a5b5d4bcce146650b83724a09a7906859592ed29167fc2263e876493da2e5"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "rbench__visual_reasoning_0010",
+      "benchmark": "rbench",
+      "category": "visual_reasoning",
+      "rows": [
+        {
+          "seed": 301047,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.20386282957117208,
+              "rmse": 0.12967211949612373,
+              "mse": 0.016814858574616995,
+              "psnr_db": 17.743067810714233,
+              "psnr_exact": false,
+              "ssim_mean": 0.8125709295272827,
+              "lpips": 0.12637217776452908
+            }
+          }
+        },
+        {
+          "seed": 301048,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2114093504591944,
+              "rmse": 0.13136884649736466,
+              "mse": 0.017257773830048156,
+              "psnr_db": 17.63015226910515,
+              "psnr_exact": false,
+              "ssim_mean": 0.8199723958969116,
+              "lpips": 0.13056225849498734
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "df2b26afadbfe1abc7119865ff62d7aca1b39eab62e963ff26b55df7370ce1c4",
+        "candidate_sha256": "62b67ac285aa4006adebb4224e181b9e62558643c2b96a09c5446a515778581d"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "benchmark": "paibench",
+      "category": "av",
+      "rows": [
+        {
+          "seed": 301017,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.04963771464864714,
+              "rmse": 0.021313373002534372,
+              "mse": 0.0004542598687451611,
+              "psnr_db": 33.426956289180886,
+              "psnr_exact": false,
+              "ssim_mean": 0.949833333492279,
+              "lpips": 0.029776328350188303
+            }
+          }
+        },
+        {
+          "seed": 301018,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.060323061901634105,
+              "rmse": 0.02597960593861128,
+              "mse": 0.0006749399247255265,
+              "psnr_db": 31.707348812746016,
+              "psnr_exact": false,
+              "ssim_mean": 0.9416376948356628,
+              "lpips": 0.03825215587667266
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "8dbfbeb275dbb0b92e5d7931528f7ff2738eeec75b471dbf7da7081d3af36a64",
+        "candidate_sha256": "712cac9075a96935892b154d02b0f8331a7b0084e519e50a7f63dc7622716a15"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "paibench__common_sense_287188dc-ce0c-4ab7-8364-4a2bfb015c1c",
+      "benchmark": "paibench",
+      "category": "common",
+      "rows": [
+        {
+          "seed": 301019,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1435608392465453,
+              "rmse": 0.0833520169733629,
+              "mse": 0.006947558733527778,
+              "psnr_db": 21.58167773080393,
+              "psnr_exact": false,
+              "ssim_mean": 0.7564722895622253,
+              "lpips": 0.1360707703183909
+            }
+          }
+        },
+        {
+          "seed": 301020,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1865881894433239,
+              "rmse": 0.10047951328867454,
+              "mse": 0.010096132590728921,
+              "psnr_db": 19.958449545496432,
+              "psnr_exact": false,
+              "ssim_mean": 0.7605786919593811,
+              "lpips": 0.1554886852620078
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "833ec5786e36605e3bb21b472fde3d37110a64432587354660726c0655d17a52",
+        "candidate_sha256": "89170eb91ee5a99d92bccdcf0b1b66b849d968561f9cb1dfe56e497242a368b8"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "paibench__human_241",
+      "benchmark": "paibench",
+      "category": "human",
+      "rows": [
+        {
+          "seed": 301021,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.08759302959619177,
+              "rmse": 0.04358254398290144,
+              "mse": 0.0018994381400215387,
+              "psnr_db": 27.213748457706256,
+              "psnr_exact": false,
+              "ssim_mean": 0.8901677131652832,
+              "lpips": 0.06915771680288628
+            }
+          }
+        },
+        {
+          "seed": 301022,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.11169668239641399,
+              "rmse": 0.05510424998797028,
+              "mse": 0.003036478366736723,
+              "psnr_db": 25.1762980864329,
+              "psnr_exact": false,
+              "ssim_mean": 0.8174051642417908,
+              "lpips": 0.08480166572100314
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "660de955b3802154fcf5c04e2865a2b0c336b7e9b905470723e3d96a543bb108",
+        "candidate_sha256": "58bbb0269f209a9ee2c8de09d3fd34227bc53d2a8f96aee907971cf95cb9931b"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "paibench__industry_070",
+      "benchmark": "paibench",
+      "category": "industry",
+      "rows": [
+        {
+          "seed": 301023,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.19528318882946422,
+              "rmse": 0.09745079395053932,
+              "mse": 0.00949665724159047,
+              "psnr_db": 20.224292365009596,
+              "psnr_exact": false,
+              "ssim_mean": 0.6699156761169434,
+              "lpips": 0.1116066720397746
+            }
+          }
+        },
+        {
+          "seed": 301024,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.26213181416884546,
+              "rmse": 0.13393846228562808,
+              "mse": 0.017939511679438618,
+              "psnr_db": 17.46189382797588,
+              "psnr_exact": false,
+              "ssim_mean": 0.5132455229759216,
+              "lpips": 0.16447593876328626
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "55516e85ca713921d5dec48d55625c1f8bf19bd6dc3cb8cff72e5767cf08eb2e",
+        "candidate_sha256": "083eeeacbc7cc5651ec0f158819a72de9ed42a8d2163b826a8fb3dcecb1ce751"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "paibench__misc_5629687-hd_1920_1080_25fps",
+      "benchmark": "paibench",
+      "category": "misc",
+      "rows": [
+        {
+          "seed": 301025,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.057180904136851084,
+              "rmse": 0.029655522380992783,
+              "mse": 0.0008794500076895638,
+              "psnr_db": 30.55788842962222,
+              "psnr_exact": false,
+              "ssim_mean": 0.912930428981781,
+              "lpips": 0.04343130134168218
+            }
+          }
+        },
+        {
+          "seed": 301026,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.0618664406066657,
+              "rmse": 0.03311156095342368,
+              "mse": 0.0010963754687722915,
+              "psnr_db": 29.60040690294173,
+              "psnr_exact": false,
+              "ssim_mean": 0.9127281904220581,
+              "lpips": 0.044499681415188994
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1e9e5abb984e455b5a1c7fa2a3568461f0a37520a167c2ed792a18c5283763a7",
+        "candidate_sha256": "c43a77e5e3b9818312d9ca5661f37286d146520cdf9166b932508232fee1e554"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "paibench__physics_029",
+      "benchmark": "paibench",
+      "category": "physics",
+      "rows": [
+        {
+          "seed": 301027,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.04419001647000875,
+              "rmse": 0.019335480886905593,
+              "mse": 0.00037386082112789154,
+              "psnr_db": 34.27290044499399,
+              "psnr_exact": false,
+              "ssim_mean": 0.9661344885826111,
+              "lpips": 0.023030497408548338
+            }
+          }
+        },
+        {
+          "seed": 301028,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.038111498385030015,
+              "rmse": 0.013572319181686025,
+              "mse": 0.0001842078479695624,
+              "psnr_db": 37.346918711138166,
+              "psnr_exact": false,
+              "ssim_mean": 0.9755238890647888,
+              "lpips": 0.017756525900398123
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "65267f7d8d56becba1e4fd404ac3c24159112478ce46aee6997d02144296bf5c",
+        "candidate_sha256": "15eadd11a2b0b9ad5503bd72ad4b6fa1fbbd2f4fb1a2d376b662a66029ab2b42"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint",
+      "case_id": "paibench__robot_010",
+      "benchmark": "paibench",
+      "category": "robot",
+      "rows": [
+        {
+          "seed": 301029,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2527793085222076,
+              "rmse": 0.1307948250224945,
+              "mse": 0.017107286252664954,
+              "psnr_db": 17.668188775989645,
+              "psnr_exact": false,
+              "ssim_mean": 0.7375275492668152,
+              "lpips": 0.18590107067014838
+            }
+          }
+        },
+        {
+          "seed": 301030,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.32952299627592707,
+              "rmse": 0.16960289959122665,
+              "mse": 0.028765143549751713,
+              "psnr_db": 15.411334543271838,
+              "psnr_exact": false,
+              "ssim_mean": 0.6763002872467041,
+              "lpips": 0.24029801563039177
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "7214393c1d46d180ca23e3c22762e62c7be8b08d86250758979264f7553d4753",
+        "candidate_sha256": "951f4a9f6735b6bf34a7c310a35dfa4f73ba9f8d06b2984cc6a5d7bb016cb856"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "rbench__common_manipulation_0041",
+      "benchmark": "rbench",
+      "category": "common_manipulation",
+      "rows": [
+        {
+          "seed": 301031,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.39208646269232766,
+              "rmse": 0.19683835603950292,
+              "mse": 0.038745338408334114,
+              "psnr_db": 14.1178054155303,
+              "psnr_exact": false,
+              "ssim_mean": 0.6763359308242798,
+              "lpips": 0.22303689991841552
+            }
+          }
+        },
+        {
+          "seed": 301032,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.34961811444230945,
+              "rmse": 0.16749778049175726,
+              "mse": 0.028055506469664895,
+              "psnr_db": 15.519818868252424,
+              "psnr_exact": false,
+              "ssim_mean": 0.5832484364509583,
+              "lpips": 0.20642344745211913
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "fa52de7d9ab08e5bafa3e2de23dc7327c852db1b00be5a465e4510daaf8753b3",
+        "candidate_sha256": "eb4afc865b2743d55c9e7332bbb2c3add0bc42646ad6fff3463fdd13965a7b02"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "rbench__dual_arm_0078",
+      "benchmark": "rbench",
+      "category": "dual_arm",
+      "rows": [
+        {
+          "seed": 301033,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.06866450820994204,
+              "rmse": 0.04686369840035243,
+              "mse": 0.0021962062277591943,
+              "psnr_db": 26.583268812653834,
+              "psnr_exact": false,
+              "ssim_mean": 0.9342337250709534,
+              "lpips": 0.02561904259453543
+            }
+          }
+        },
+        {
+          "seed": 301034,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.07575489460854411,
+              "rmse": 0.050399169838911684,
+              "mse": 0.0025400763204514653,
+              "psnr_db": 25.9515323414661,
+              "psnr_exact": false,
+              "ssim_mean": 0.9298774003982544,
+              "lpips": 0.02847450249065019
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1225cda0e1734895289743c7b7df1fa70a93239a48380a013d23298d5262d94e",
+        "candidate_sha256": "ca07acd1f1313590ab5c704430fa8120ca0c7f6264e12cece467bd3485698200"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "rbench__humanoid_0049",
+      "benchmark": "rbench",
+      "category": "humanoid",
+      "rows": [
+        {
+          "seed": 301035,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2056717376326772,
+              "rmse": 0.1142451292579381,
+              "mse": 0.013051949559162983,
+              "psnr_db": 18.8432461326445,
+              "psnr_exact": false,
+              "ssim_mean": 0.8193198442459106,
+              "lpips": 0.09731292834535973
+            }
+          }
+        },
+        {
+          "seed": 301036,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1649581163937342,
+              "rmse": 0.09246801797884151,
+              "mse": 0.008550334348935356,
+              "psnr_db": 20.680169024579584,
+              "psnr_exact": false,
+              "ssim_mean": 0.8593435287475586,
+              "lpips": 0.08035158625513804
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "013610780c0f976629038e8cf8358fdc34d2f221edbc256b6add573737d8ce08",
+        "candidate_sha256": "98b0e4d4c0c9c9991f2fda5b61e613830381dc001ed579fabe2c23d5e05e472f"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "rbench__long-horizon_planning_0009",
+      "benchmark": "rbench",
+      "category": "long-horizon_planning",
+      "rows": [
+        {
+          "seed": 301037,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.29173807501339133,
+              "rmse": 0.14270003908470277,
+              "mse": 0.020363301154775696,
+              "psnr_db": 16.911518158692566,
+              "psnr_exact": false,
+              "ssim_mean": 0.6342011094093323,
+              "lpips": 0.18659386454058474
+            }
+          }
+        },
+        {
+          "seed": 301038,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3776507599915607,
+              "rmse": 0.18315222858784724,
+              "mse": 0.033544738836695044,
+              "psnr_db": 14.743755849842287,
+              "psnr_exact": false,
+              "ssim_mean": 0.44852975010871887,
+              "lpips": 0.2731054387375957
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "340252fb4dd85e10d39a37b99c123aed1745113f1f82ff06969c641fb5fd488c",
+        "candidate_sha256": "d72fd4bb568b64453e1e68bb6556a29a6cb3a4ec0347909e1d75de7b33de8214"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "rbench__multi-entity_collaboration_0035",
+      "benchmark": "rbench",
+      "category": "multi-entity_collaboration",
+      "rows": [
+        {
+          "seed": 301039,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1300738316799467,
+              "rmse": 0.0745119889325311,
+              "mse": 0.005552036494681636,
+              "psnr_db": 22.555476878365653,
+              "psnr_exact": false,
+              "ssim_mean": 0.8711296319961548,
+              "lpips": 0.07869962364679477
+            }
+          }
+        },
+        {
+          "seed": 301040,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.15508339357729292,
+              "rmse": 0.0875827374289721,
+              "mse": 0.00767073589555227,
+              "psnr_db": 21.151629698128374,
+              "psnr_exact": false,
+              "ssim_mean": 0.8503668308258057,
+              "lpips": 0.10122038089654974
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "5634eb657a2fe3ffadc1372e6e4f3d50c5b8c1dc6b3396bc60edddc5b8733f83",
+        "candidate_sha256": "8e1c17da13fffaac0e8384d6cd935d14059a38da1cadca4450762e142e79c4b0"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "rbench__quad_0047",
+      "benchmark": "rbench",
+      "category": "quad",
+      "rows": [
+        {
+          "seed": 301041,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2869603851843418,
+              "rmse": 0.15588356622233432,
+              "mse": 0.024299686218192885,
+              "psnr_db": 16.143993344093914,
+              "psnr_exact": false,
+              "ssim_mean": 0.5665000677108765,
+              "lpips": 0.19504491206197466
+            }
+          }
+        },
+        {
+          "seed": 301042,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3152940297162976,
+              "rmse": 0.17341167617165076,
+              "mse": 0.03007160943266147,
+              "psnr_db": 15.218433278349943,
+              "psnr_exact": false,
+              "ssim_mean": 0.5813843607902527,
+              "lpips": 0.30216027521451966
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "2d4cc599d2e1fa1a437c219dc390ad304e2831c94ac2255fa1d3fcfe8fbe755c",
+        "candidate_sha256": "304e00aef54b755b939d7a7527c97710caf9eb18ab471b69ab6cccf592c19533"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "rbench__single_arm_0097",
+      "benchmark": "rbench",
+      "category": "single_arm",
+      "rows": [
+        {
+          "seed": 301043,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.19939093841019076,
+              "rmse": 0.1477580512524056,
+              "mse": 0.021832441709908522,
+              "psnr_db": 16.608976906839228,
+              "psnr_exact": false,
+              "ssim_mean": 0.8688217401504517,
+              "lpips": 0.13885002884800074
+            }
+          }
+        },
+        {
+          "seed": 301044,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.16619898438326722,
+              "rmse": 0.11145161421434693,
+              "mse": 0.012421462310983618,
+              "psnr_db": 19.058272740299966,
+              "psnr_exact": false,
+              "ssim_mean": 0.8466984629631042,
+              "lpips": 0.13495712731888548
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "0ee36addc2b00c54e8a88b3ffa4023d72cb30548c9ccca88857202e2991275c7",
+        "candidate_sha256": "2e81a27640b3da866ce1d3869d3337022f06784daeaddc5429a5ea903e513a15"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "rbench__spatial_relationship_0015",
+      "benchmark": "rbench",
+      "category": "spatial_relationship",
+      "rows": [
+        {
+          "seed": 301045,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.21577860313400163,
+              "rmse": 0.13477686835898384,
+              "mse": 0.018164804244654862,
+              "psnr_db": 17.407692780062916,
+              "psnr_exact": false,
+              "ssim_mean": 0.661466658115387,
+              "lpips": 0.15723009080794015
+            }
+          }
+        },
+        {
+          "seed": 301046,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2840535269435771,
+              "rmse": 0.17440008543908495,
+              "mse": 0.030415389801160125,
+              "psnr_db": 15.169066132826597,
+              "psnr_exact": false,
+              "ssim_mean": 0.6650685667991638,
+              "lpips": 0.2072766225052173
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "a0dbb7c63440901a4b05eadfa810d3eb6ad0d273cc190ee4cb21bef1c8640c51",
+        "candidate_sha256": "1a4ef4ade7a283fac3edb995fa0f2d3f2ea6c8eaf4379f18af54c2bec9c9f014"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "rbench__visual_reasoning_0010",
+      "benchmark": "rbench",
+      "category": "visual_reasoning",
+      "rows": [
+        {
+          "seed": 301047,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.18973580917843824,
+              "rmse": 0.12068627013680631,
+              "mse": 0.014565175799534187,
+              "psnr_db": 18.36684269134024,
+              "psnr_exact": false,
+              "ssim_mean": 0.8274391293525696,
+              "lpips": 0.11089683111879181
+            }
+          }
+        },
+        {
+          "seed": 301048,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.22628941863572888,
+              "rmse": 0.14061525583501966,
+              "mse": 0.019772650173548033,
+              "psnr_db": 17.03935117301809,
+              "psnr_exact": false,
+              "ssim_mean": 0.8099073767662048,
+              "lpips": 0.13785022958258136
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "df2b26afadbfe1abc7119865ff62d7aca1b39eab62e963ff26b55df7370ce1c4",
+        "candidate_sha256": "fd3ff4719ed9c10274184df296eb18a95a169ef0c86d2e391cc5e6c26a6eee5e"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "benchmark": "paibench",
+      "category": "av",
+      "rows": [
+        {
+          "seed": 301017,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.04960752662048806,
+              "rmse": 0.02130041090891424,
+              "mse": 0.00045370750488859276,
+              "psnr_db": 33.432240369016135,
+              "psnr_exact": false,
+              "ssim_mean": 0.950368344783783,
+              "lpips": 0.029013872986323522
+            }
+          }
+        },
+        {
+          "seed": 301018,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.059801035899812637,
+              "rmse": 0.02575478263903896,
+              "mse": 0.0006633088287841427,
+              "psnr_db": 31.782842221095574,
+              "psnr_exact": false,
+              "ssim_mean": 0.942483127117157,
+              "lpips": 0.03842615132357498
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "8dbfbeb275dbb0b92e5d7931528f7ff2738eeec75b471dbf7da7081d3af36a64",
+        "candidate_sha256": "54f7336f865eadad7e90c11acad2633e3a0f971aa51168802c4ba9ecbe47c5fd"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "paibench__common_sense_287188dc-ce0c-4ab7-8364-4a2bfb015c1c",
+      "benchmark": "paibench",
+      "category": "common",
+      "rows": [
+        {
+          "seed": 301019,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.14161583017279267,
+              "rmse": 0.0822227366614085,
+              "mse": 0.00676057842409133,
+              "psnr_db": 21.700161449393768,
+              "psnr_exact": false,
+              "ssim_mean": 0.7545726299285889,
+              "lpips": 0.14082588182121028
+            }
+          }
+        },
+        {
+          "seed": 301020,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1969676436296637,
+              "rmse": 0.10606894801097408,
+              "mse": 0.011250621732154723,
+              "psnr_db": 19.488234768963434,
+              "psnr_exact": false,
+              "ssim_mean": 0.7257222533226013,
+              "lpips": 0.172522457896686
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "833ec5786e36605e3bb21b472fde3d37110a64432587354660726c0655d17a52",
+        "candidate_sha256": "f71c2affef8022fb01eeb9ec6bbac38baf3654af1d296021df61617f93364004"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "paibench__human_241",
+      "benchmark": "paibench",
+      "category": "human",
+      "rows": [
+        {
+          "seed": 301021,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.0774458550185523,
+              "rmse": 0.03853374404561308,
+              "mse": 0.0014848494301728213,
+              "psnr_db": 28.283175833571818,
+              "psnr_exact": false,
+              "ssim_mean": 0.8881947994232178,
+              "lpips": 0.06965608644436617
+            }
+          }
+        },
+        {
+          "seed": 301022,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.10226171784499406,
+              "rmse": 0.05044962073565354,
+              "mse": 0.002545164232371283,
+              "psnr_db": 25.942841886076387,
+              "psnr_exact": false,
+              "ssim_mean": 0.7919090390205383,
+              "lpips": 0.08196915776209264
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "660de955b3802154fcf5c04e2865a2b0c336b7e9b905470723e3d96a543bb108",
+        "candidate_sha256": "a7ec9169d0e235d840b473ef705afe25b5ac465639cf17f8a61f8c18ae8e8b7d"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "paibench__industry_070",
+      "benchmark": "paibench",
+      "category": "industry",
+      "rows": [
+        {
+          "seed": 301023,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.21326639592859403,
+              "rmse": 0.10642482709743536,
+              "mse": 0.011326243822719012,
+              "psnr_db": 19.459140934492343,
+              "psnr_exact": false,
+              "ssim_mean": 0.6533735394477844,
+              "lpips": 0.1284023464703169
+            }
+          }
+        },
+        {
+          "seed": 301024,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3527831751143419,
+              "rmse": 0.18025754006578057,
+              "mse": 0.03249278075056649,
+              "psnr_db": 14.88213119896975,
+              "psnr_exact": false,
+              "ssim_mean": 0.39139389991760254,
+              "lpips": 0.22615215536512312
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "55516e85ca713921d5dec48d55625c1f8bf19bd6dc3cb8cff72e5767cf08eb2e",
+        "candidate_sha256": "119e6c3ce7ddb3b52cdb1863314d68c67e7de0bc1f9ffd5b73fe27d94fd38491"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "paibench__misc_5629687-hd_1920_1080_25fps",
+      "benchmark": "paibench",
+      "category": "misc",
+      "rows": [
+        {
+          "seed": 301025,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.055036307839066656,
+              "rmse": 0.028543278276651082,
+              "mse": 0.0008147187347783417,
+              "psnr_db": 30.889922968017878,
+              "psnr_exact": false,
+              "ssim_mean": 0.9175058007240295,
+              "lpips": 0.04020276088572917
+            }
+          }
+        },
+        {
+          "seed": 301026,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.06922101170387411,
+              "rmse": 0.03704780371740882,
+              "mse": 0.0013725397602836508,
+              "psnr_db": 28.6247506587847,
+              "psnr_exact": false,
+              "ssim_mean": 0.8880041837692261,
+              "lpips": 0.050624696797401204
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1e9e5abb984e455b5a1c7fa2a3568461f0a37520a167c2ed792a18c5283763a7",
+        "candidate_sha256": "e9f1e68100b806f17e1f1f89776591c3eda5dc0718edecdd971b8e283d488c25"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "paibench__physics_029",
+      "benchmark": "paibench",
+      "category": "physics",
+      "rows": [
+        {
+          "seed": 301027,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.036841852140232396,
+              "rmse": 0.016120268440703852,
+              "mse": 0.0002598630546003526,
+              "psnr_db": 35.85255460875044,
+              "psnr_exact": false,
+              "ssim_mean": 0.9689965844154358,
+              "lpips": 0.021511511587095064
+            }
+          }
+        },
+        {
+          "seed": 301028,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.040215096153778,
+              "rmse": 0.014321455310076737,
+              "mse": 0.00020510408219852517,
+              "psnr_db": 36.880256957571795,
+              "psnr_exact": false,
+              "ssim_mean": 0.9748409390449524,
+              "lpips": 0.019590062379348475
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "65267f7d8d56becba1e4fd404ac3c24159112478ce46aee6997d02144296bf5c",
+        "candidate_sha256": "9f388138790343c193b6b63a677b7a85c7c3ff6538eedb8cddab5fcd8cd8186b"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_scale_only",
+      "case_id": "paibench__robot_010",
+      "benchmark": "paibench",
+      "category": "robot",
+      "rows": [
+        {
+          "seed": 301029,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.277793375530808,
+              "rmse": 0.14373777726260403,
+              "mse": 0.02066054861239397,
+              "psnr_db": 16.848581505718652,
+              "psnr_exact": false,
+              "ssim_mean": 0.7151164412498474,
+              "lpips": 0.2143216618016118
+            }
+          }
+        },
+        {
+          "seed": 301030,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.35829973711941926,
+              "rmse": 0.18441406222023707,
+              "mse": 0.03400854634456947,
+              "psnr_db": 14.684119310788708,
+              "psnr_exact": false,
+              "ssim_mean": 0.6678139567375183,
+              "lpips": 0.24708871567835572
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "7214393c1d46d180ca23e3c22762e62c7be8b08d86250758979264f7553d4753",
+        "candidate_sha256": "87e52411d34d3cbe6af75232181dffecfc571250957c6991a34e6d97c18878a1"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "rbench__common_manipulation_0041",
+      "benchmark": "rbench",
+      "category": "common_manipulation",
+      "rows": [
+        {
+          "seed": 301031,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3715555216478184,
+              "rmse": 0.1865312501644491,
+              "mse": 0.03479390728791229,
+              "psnr_db": 14.584967980907006,
+              "psnr_exact": false,
+              "ssim_mean": 0.6861211657524109,
+              "lpips": 0.22100814480762013
+            }
+          }
+        },
+        {
+          "seed": 301032,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.31446040138407305,
+              "rmse": 0.1506541483652749,
+              "mse": 0.022696672419666268,
+              "psnr_db": 16.440378104592664,
+              "psnr_exact": false,
+              "ssim_mean": 0.6696036458015442,
+              "lpips": 0.17525438506339416
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "fa52de7d9ab08e5bafa3e2de23dc7327c852db1b00be5a465e4510daaf8753b3",
+        "candidate_sha256": "843648edeb568cd20f8d2bf89226ca5e40379a8f4569cf5cac44301b39cc15b7"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "rbench__dual_arm_0078",
+      "benchmark": "rbench",
+      "category": "dual_arm",
+      "rows": [
+        {
+          "seed": 301033,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.06860474011025629,
+              "rmse": 0.04682290652299606,
+              "mse": 0.002192384575261227,
+              "psnr_db": 26.590832621109207,
+              "psnr_exact": false,
+              "ssim_mean": 0.9335321187973022,
+              "lpips": 0.025759340378410014
+            }
+          }
+        },
+        {
+          "seed": 301034,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.07778290703414331,
+              "rmse": 0.051748391472726356,
+              "mse": 0.002677896020014538,
+              "psnr_db": 25.722062902107243,
+              "psnr_exact": false,
+              "ssim_mean": 0.9303672909736633,
+              "lpips": 0.02944921617793133
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1225cda0e1734895289743c7b7df1fa70a93239a48380a013d23298d5262d94e",
+        "candidate_sha256": "73971753d33ad21f019cc144bae8d1210526e7f5c72401a8dbeac3d1d3e5eed2"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "rbench__humanoid_0049",
+      "benchmark": "rbench",
+      "category": "humanoid",
+      "rows": [
+        {
+          "seed": 301035,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.22958131728201697,
+              "rmse": 0.12752625893079692,
+              "mse": 0.016262946716884663,
+              "psnr_db": 17.88800760898401,
+              "psnr_exact": false,
+              "ssim_mean": 0.8076984286308289,
+              "lpips": 0.09845050118985724
+            }
+          }
+        },
+        {
+          "seed": 301036,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1539636988191559,
+              "rmse": 0.08630504749773814,
+              "mse": 0.007448561223586835,
+              "psnr_db": 21.2792760819155,
+              "psnr_exact": false,
+              "ssim_mean": 0.8708153963088989,
+              "lpips": 0.07664958179974166
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "013610780c0f976629038e8cf8358fdc34d2f221edbc256b6add573737d8ce08",
+        "candidate_sha256": "e10566f4106792c3c91407affcd8567fce57617fbd4f58d7af2182a2b0f40d47"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "rbench__long-horizon_planning_0009",
+      "benchmark": "rbench",
+      "category": "long-horizon_planning",
+      "rows": [
+        {
+          "seed": 301037,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2770720039925323,
+              "rmse": 0.13552631344810376,
+              "mse": 0.018367381636833668,
+              "psnr_db": 17.359527501570923,
+              "psnr_exact": false,
+              "ssim_mean": 0.6603584289550781,
+              "lpips": 0.171943087680418
+            }
+          }
+        },
+        {
+          "seed": 301038,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3842989457945543,
+              "rmse": 0.18637645100411238,
+              "mse": 0.034736181488888296,
+              "psnr_db": 14.592179247908296,
+              "psnr_exact": false,
+              "ssim_mean": 0.441567063331604,
+              "lpips": 0.28062133718526266
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "340252fb4dd85e10d39a37b99c123aed1745113f1f82ff06969c641fb5fd488c",
+        "candidate_sha256": "2dd2ef8bc284daf958e5f2733ea523ac2833eb00a408c5ea46b68700ec2ae55d"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "rbench__multi-entity_collaboration_0035",
+      "benchmark": "rbench",
+      "category": "multi-entity_collaboration",
+      "rows": [
+        {
+          "seed": 301039,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.11759696707996559,
+              "rmse": 0.06736469431547086,
+              "mse": 0.004538002040216832,
+              "psnr_db": 23.431353131988324,
+              "psnr_exact": false,
+              "ssim_mean": 0.8886809945106506,
+              "lpips": 0.06673728033411698
+            }
+          }
+        },
+        {
+          "seed": 301040,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.10913247968133331,
+              "rmse": 0.061632139279562,
+              "mse": 0.0037985205921753293,
+              "psnr_db": 24.20385514897744,
+              "psnr_exact": false,
+              "ssim_mean": 0.8937539458274841,
+              "lpips": 0.06191512811012932
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "5634eb657a2fe3ffadc1372e6e4f3d50c5b8c1dc6b3396bc60edddc5b8733f83",
+        "candidate_sha256": "930cb4ebb7afe020777778588552addf477590544e7828bec0a7816327259fbe"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "rbench__quad_0047",
+      "benchmark": "rbench",
+      "category": "quad",
+      "rows": [
+        {
+          "seed": 301041,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2508898221645031,
+              "rmse": 0.1362891960950157,
+              "mse": 0.018574744972225637,
+              "psnr_db": 17.310771403084622,
+              "psnr_exact": false,
+              "ssim_mean": 0.6220753788948059,
+              "lpips": 0.12187736847850143
+            }
+          }
+        },
+        {
+          "seed": 301042,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.37753837090795384,
+              "rmse": 0.20764605589637183,
+              "mse": 0.04311688452931918,
+              "psnr_db": 13.653526272416943,
+              "psnr_exact": false,
+              "ssim_mean": 0.5137510895729065,
+              "lpips": 0.4186288841435167
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "2d4cc599d2e1fa1a437c219dc390ad304e2831c94ac2255fa1d3fcfe8fbe755c",
+        "candidate_sha256": "be145efbd0e9577555d15836599e20db10e8e04e80b9f897b125d4aca1d865d6"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "rbench__single_arm_0097",
+      "benchmark": "rbench",
+      "category": "single_arm",
+      "rows": [
+        {
+          "seed": 301043,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.17907888838629735,
+              "rmse": 0.1327058680769716,
+              "mse": 0.017610847422062592,
+              "psnr_db": 17.5421974557328,
+              "psnr_exact": false,
+              "ssim_mean": 0.8805126547813416,
+              "lpips": 0.1282824645444873
+            }
+          }
+        },
+        {
+          "seed": 301044,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2195851970180634,
+              "rmse": 0.14725195076283812,
+              "mse": 0.021683137003461302,
+              "psnr_db": 16.638778861217993,
+              "psnr_exact": false,
+              "ssim_mean": 0.8018845915794373,
+              "lpips": 0.17645470767480428
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "0ee36addc2b00c54e8a88b3ffa4023d72cb30548c9ccca88857202e2991275c7",
+        "candidate_sha256": "fa655175b11271ffd1b8364964657fb533735fdc281921d68f190c7ade9b3387"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "rbench__spatial_relationship_0015",
+      "benchmark": "rbench",
+      "category": "spatial_relationship",
+      "rows": [
+        {
+          "seed": 301045,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.21723837967990708,
+              "rmse": 0.13568865529477586,
+              "mse": 0.018411411175704502,
+              "psnr_db": 17.349129229390186,
+              "psnr_exact": false,
+              "ssim_mean": 0.6705452799797058,
+              "lpips": 0.16244176766056506
+            }
+          }
+        },
+        {
+          "seed": 301046,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.25716482470890834,
+              "rmse": 0.15789125339770768,
+              "mse": 0.024929647899499138,
+              "psnr_db": 16.032838553263296,
+              "psnr_exact": false,
+              "ssim_mean": 0.6881668567657471,
+              "lpips": 0.19499633149778256
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "a0dbb7c63440901a4b05eadfa810d3eb6ad0d273cc190ee4cb21bef1c8640c51",
+        "candidate_sha256": "53ca1b8a6edfab263fa5bc1517e9333798ca5c4c105c0cea3f22d413f14cd408"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "rbench__visual_reasoning_0010",
+      "benchmark": "rbench",
+      "category": "visual_reasoning",
+      "rows": [
+        {
+          "seed": 301047,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.20104790907877468,
+              "rmse": 0.12788161797492903,
+              "mse": 0.016353708215885693,
+              "psnr_db": 17.863837552301906,
+              "psnr_exact": false,
+              "ssim_mean": 0.813880980014801,
+              "lpips": 0.12160665294552436
+            }
+          }
+        },
+        {
+          "seed": 301048,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.23039035884225378,
+              "rmse": 0.1431635621578747,
+              "mse": 0.020495805529731653,
+              "psnr_db": 16.883350082944084,
+              "psnr_exact": false,
+              "ssim_mean": 0.8089073300361633,
+              "lpips": 0.14222604191678836
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "df2b26afadbfe1abc7119865ff62d7aca1b39eab62e963ff26b55df7370ce1c4",
+        "candidate_sha256": "4324b89c71e6cf65c190d49d23896b26f80cf8dd816ac2af463641c0e047ff3d"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "benchmark": "paibench",
+      "category": "av",
+      "rows": [
+        {
+          "seed": 301017,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.04930229146463416,
+              "rmse": 0.02116934946145942,
+              "mse": 0.00044814135662139224,
+              "psnr_db": 33.4858497547175,
+              "psnr_exact": false,
+              "ssim_mean": 0.9504255652427673,
+              "lpips": 0.029039932407255543
+            }
+          }
+        },
+        {
+          "seed": 301018,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.060625738554670426,
+              "rmse": 0.026109961061922555,
+              "mse": 0.0006817300666551121,
+              "psnr_db": 31.663875516895978,
+              "psnr_exact": false,
+              "ssim_mean": 0.942550778388977,
+              "lpips": 0.03751089284959875
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "8dbfbeb275dbb0b92e5d7931528f7ff2738eeec75b471dbf7da7081d3af36a64",
+        "candidate_sha256": "7896a61fac80e79eab439ea4267e14e1c0212cd3d42c19f44bd25641df4c1d79"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "paibench__common_sense_287188dc-ce0c-4ab7-8364-4a2bfb015c1c",
+      "benchmark": "paibench",
+      "category": "common",
+      "rows": [
+        {
+          "seed": 301019,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.141806632862734,
+              "rmse": 0.08233351749226754,
+              "mse": 0.006778808102649526,
+              "psnr_db": 21.688466601073742,
+              "psnr_exact": false,
+              "ssim_mean": 0.7586121559143066,
+              "lpips": 0.13107560370422777
+            }
+          }
+        },
+        {
+          "seed": 301020,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.20341681346169788,
+              "rmse": 0.10954188725633628,
+              "mse": 0.011999425063679887,
+              "psnr_db": 19.20839562090125,
+              "psnr_exact": false,
+              "ssim_mean": 0.7161697745323181,
+              "lpips": 0.17818068511417653
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "833ec5786e36605e3bb21b472fde3d37110a64432587354660726c0655d17a52",
+        "candidate_sha256": "1e2ea2b63fcdc3070bcf8eb79a2d5478133ad722ec1d8ca5ee20219fd80c2169"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "paibench__human_241",
+      "benchmark": "paibench",
+      "category": "human",
+      "rows": [
+        {
+          "seed": 301021,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.08598989982949895,
+              "rmse": 0.042784895198639906,
+              "mse": 0.0018305472571585998,
+              "psnr_db": 27.374190549505506,
+              "psnr_exact": false,
+              "ssim_mean": 0.8907368779182434,
+              "lpips": 0.07357565738016465
+            }
+          }
+        },
+        {
+          "seed": 301022,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.11197192717603759,
+              "rmse": 0.05524003877613173,
+              "mse": 0.003051461883988537,
+              "psnr_db": 25.15492050474498,
+              "psnr_exact": false,
+              "ssim_mean": 0.8225957751274109,
+              "lpips": 0.09140584962900544
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "660de955b3802154fcf5c04e2865a2b0c336b7e9b905470723e3d96a543bb108",
+        "candidate_sha256": "4a8506d4ce80b07e038f6c9a4caa69613b8140a3cdd001222bc48dbb64796f50"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "paibench__industry_070",
+      "benchmark": "paibench",
+      "category": "industry",
+      "rows": [
+        {
+          "seed": 301023,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.19815025900244204,
+              "rmse": 0.09888152778043693,
+              "mse": 0.00977755653619332,
+              "psnr_db": 20.097696641729886,
+              "psnr_exact": false,
+              "ssim_mean": 0.6785906553268433,
+              "lpips": 0.11798337917225282
+            }
+          }
+        },
+        {
+          "seed": 301024,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3498769689011392,
+              "rmse": 0.17877258947893354,
+              "mse": 0.0319596387490033,
+              "psnr_db": 14.953981383130252,
+              "psnr_exact": false,
+              "ssim_mean": 0.42406415939331055,
+              "lpips": 0.22621942085565114
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "55516e85ca713921d5dec48d55625c1f8bf19bd6dc3cb8cff72e5767cf08eb2e",
+        "candidate_sha256": "ab87ddd2d519d66c8deba728e8b1c6aeeec5a53113a2e03687dd641d9e815898"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "paibench__misc_5629687-hd_1920_1080_25fps",
+      "benchmark": "paibench",
+      "category": "misc",
+      "rows": [
+        {
+          "seed": 301025,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.055374448795486725,
+              "rmse": 0.028718647079443115,
+              "mse": 0.0008247606900736066,
+              "psnr_db": 30.83672046670899,
+              "psnr_exact": false,
+              "ssim_mean": 0.9168387055397034,
+              "lpips": 0.042108113762968385
+            }
+          }
+        },
+        {
+          "seed": 301026,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.06874960711828736,
+              "rmse": 0.03679550309179795,
+              "mse": 0.0013539090477785126,
+              "psnr_db": 28.68410509487386,
+              "psnr_exact": false,
+              "ssim_mean": 0.8955225348472595,
+              "lpips": 0.04717141107396513
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1e9e5abb984e455b5a1c7fa2a3568461f0a37520a167c2ed792a18c5283763a7",
+        "candidate_sha256": "c616c95e9158f13941527374daf9d68088cefaf277c5bd3ddfd7dcc171ea7478"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "paibench__physics_029",
+      "benchmark": "paibench",
+      "category": "physics",
+      "rows": [
+        {
+          "seed": 301027,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.03895665267726641,
+              "rmse": 0.017045606076438635,
+              "mse": 0.00029055268651312165,
+              "psnr_db": 35.36775104625723,
+              "psnr_exact": false,
+              "ssim_mean": 0.9685558080673218,
+              "lpips": 0.021529320261028946
+            }
+          }
+        },
+        {
+          "seed": 301028,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.03679234589361843,
+              "rmse": 0.01310254078352714,
+              "mse": 0.000171676574983992,
+              "psnr_db": 37.65288959639485,
+              "psnr_exact": false,
+              "ssim_mean": 0.976082444190979,
+              "lpips": 0.018219547804261816
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "65267f7d8d56becba1e4fd404ac3c24159112478ce46aee6997d02144296bf5c",
+        "candidate_sha256": "630968f7afd64928f77666ee24229add4effb7ec6ea1f1d1ba2c988dd222bc79"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_removal_only",
+      "case_id": "paibench__robot_010",
+      "benchmark": "paibench",
+      "category": "robot",
+      "rows": [
+        {
+          "seed": 301029,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3324387404444404,
+              "rmse": 0.17201276141361488,
+              "mse": 0.029588390089137197,
+              "psnr_db": 15.288786642555506,
+              "psnr_exact": false,
+              "ssim_mean": 0.7014845609664917,
+              "lpips": 0.2242097545598374
+            }
+          }
+        },
+        {
+          "seed": 301030,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3246480347235749,
+              "rmse": 0.16709379514625997,
+              "mse": 0.027920336376380292,
+              "psnr_db": 15.540793537592707,
+              "psnr_exact": false,
+              "ssim_mean": 0.7005826234817505,
+              "lpips": 0.22077182649833257
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "7214393c1d46d180ca23e3c22762e62c7be8b08d86250758979264f7553d4753",
+        "candidate_sha256": "bbe4926c90a20df23133684080b5bbb7a2e4a0bb1737a97a251efaced7dc4be3"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "rbench__common_manipulation_0041",
+      "benchmark": "rbench",
+      "category": "common_manipulation",
+      "rows": [
+        {
+          "seed": 301031,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2875989213761625,
+              "rmse": 0.14438269175041787,
+              "mse": 0.02084636167709619,
+              "psnr_db": 16.80969731646603,
+              "psnr_exact": false,
+              "ssim_mean": 0.7359350919723511,
+              "lpips": 0.177098277528755
+            }
+          }
+        },
+        {
+          "seed": 301032,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2968511525345823,
+              "rmse": 0.14221777171150335,
+              "mse": 0.020225894590585283,
+              "psnr_db": 16.940922604616674,
+              "psnr_exact": false,
+              "ssim_mean": 0.6882750988006592,
+              "lpips": 0.1674632411144796
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "fa52de7d9ab08e5bafa3e2de23dc7327c852db1b00be5a465e4510daaf8753b3",
+        "candidate_sha256": "5a82eb0fd9688950ed9cba157207cfa44b61e168aadcbbd58309004b9ce174b3"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "rbench__dual_arm_0078",
+      "benchmark": "rbench",
+      "category": "dual_arm",
+      "rows": [
+        {
+          "seed": 301033,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.06920314029280025,
+              "rmse": 0.047231316142587514,
+              "mse": 0.002230797224561048,
+              "psnr_db": 26.515399045061766,
+              "psnr_exact": false,
+              "ssim_mean": 0.9325937032699585,
+              "lpips": 0.0276329551831071
+            }
+          }
+        },
+        {
+          "seed": 301034,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.07551184115819573,
+              "rmse": 0.050237468180063895,
+              "mse": 0.0025238032091429324,
+              "psnr_db": 25.979445117556587,
+              "psnr_exact": false,
+              "ssim_mean": 0.9317278265953064,
+              "lpips": 0.027887916032102753
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1225cda0e1734895289743c7b7df1fa70a93239a48380a013d23298d5262d94e",
+        "candidate_sha256": "1c4797e58d82824210ecd3b0260baf634f0f9b6a2d2975a9dd5a079caebd2f74"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "rbench__humanoid_0049",
+      "benchmark": "rbench",
+      "category": "humanoid",
+      "rows": [
+        {
+          "seed": 301035,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.20164414012101722,
+              "rmse": 0.11200790695595934,
+              "mse": 0.012545771220654846,
+              "psnr_db": 19.01502636335835,
+              "psnr_exact": false,
+              "ssim_mean": 0.8341619372367859,
+              "lpips": 0.07604967375270656
+            }
+          }
+        },
+        {
+          "seed": 301036,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.17669601093259846,
+              "rmse": 0.09904774783379923,
+              "mse": 0.00981045635094788,
+              "psnr_db": 20.083107901645157,
+              "psnr_exact": false,
+              "ssim_mean": 0.8460763692855835,
+              "lpips": 0.08759311467531275
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "013610780c0f976629038e8cf8358fdc34d2f221edbc256b6add573737d8ce08",
+        "candidate_sha256": "4e2e23611f7ca58084b62c5614035cb1bb55b306b76214eefebe3a6b879876ec"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "rbench__long-horizon_planning_0009",
+      "benchmark": "rbench",
+      "category": "long-horizon_planning",
+      "rows": [
+        {
+          "seed": 301037,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2647908520730234,
+              "rmse": 0.12951914123090638,
+              "mse": 0.01677520794519147,
+              "psnr_db": 17.753320876186155,
+              "psnr_exact": false,
+              "ssim_mean": 0.6546537280082703,
+              "lpips": 0.16472740312580203
+            }
+          }
+        },
+        {
+          "seed": 301038,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3801559861250906,
+              "rmse": 0.18436720760571748,
+              "mse": 0.033991267240329734,
+              "psnr_db": 14.686326440305525,
+              "psnr_exact": false,
+              "ssim_mean": 0.4578333795070648,
+              "lpips": 0.2800082217474453
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "340252fb4dd85e10d39a37b99c123aed1745113f1f82ff06969c641fb5fd488c",
+        "candidate_sha256": "dd31944226cd2b479b9db52d8d61366b302f88285c18c4cf8067baa8114cb44b"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "rbench__multi-entity_collaboration_0035",
+      "benchmark": "rbench",
+      "category": "multi-entity_collaboration",
+      "rows": [
+        {
+          "seed": 301039,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.12569938465460276,
+              "rmse": 0.07200611404494889,
+              "mse": 0.005184880459854186,
+              "psnr_db": 22.852612520471986,
+              "psnr_exact": false,
+              "ssim_mean": 0.8732483386993408,
+              "lpips": 0.07466763696159984
+            }
+          }
+        },
+        {
+          "seed": 301040,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.11287448737884954,
+              "rmse": 0.06374542342990795,
+              "mse": 0.004063479008258258,
+              "psnr_db": 23.91101979450255,
+              "psnr_exact": false,
+              "ssim_mean": 0.8889399170875549,
+              "lpips": 0.068282797230316
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "5634eb657a2fe3ffadc1372e6e4f3d50c5b8c1dc6b3396bc60edddc5b8733f83",
+        "candidate_sha256": "36da649fd52df93993e6ac669f425c173b780e8caec84023f92fddb7bb1f6a11"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "rbench__quad_0047",
+      "benchmark": "rbench",
+      "category": "quad",
+      "rows": [
+        {
+          "seed": 301041,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3072881154671844,
+              "rmse": 0.1669260628640211,
+              "mse": 0.027864310463283123,
+              "psnr_db": 15.549516996272123,
+              "psnr_exact": false,
+              "ssim_mean": 0.5378285050392151,
+              "lpips": 0.21523724068872263
+            }
+          }
+        },
+        {
+          "seed": 301042,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.384418022132982,
+              "rmse": 0.2114298631935857,
+              "mse": 0.04470258705005837,
+              "psnr_db": 13.496673424373464,
+              "psnr_exact": false,
+              "ssim_mean": 0.5055702924728394,
+              "lpips": 0.42035901717475205
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "2d4cc599d2e1fa1a437c219dc390ad304e2831c94ac2255fa1d3fcfe8fbe755c",
+        "candidate_sha256": "fd14ff056d3fc99108e6aa57e215ec9e7e9e53e7c9021f8b7dd2d7d90fd9b69a"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "rbench__single_arm_0097",
+      "benchmark": "rbench",
+      "category": "single_arm",
+      "rows": [
+        {
+          "seed": 301043,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1754725097075708,
+              "rmse": 0.13003337207541998,
+              "mse": 0.016908677853304615,
+              "psnr_db": 17.718903500286835,
+              "psnr_exact": false,
+              "ssim_mean": 0.8846591711044312,
+              "lpips": 0.1174644653868602
+            }
+          }
+        },
+        {
+          "seed": 301044,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.21838458004198966,
+              "rmse": 0.14644682731077183,
+              "mse": 0.021446673229391023,
+              "psnr_db": 16.68640065258722,
+              "psnr_exact": false,
+              "ssim_mean": 0.8121888637542725,
+              "lpips": 0.16714853715517972
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "0ee36addc2b00c54e8a88b3ffa4023d72cb30548c9ccca88857202e2991275c7",
+        "candidate_sha256": "5706049e21c0996a34624538d3451bfae97af3d07e334889c6b584dcccc71ec4"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "rbench__spatial_relationship_0015",
+      "benchmark": "rbench",
+      "category": "spatial_relationship",
+      "rows": [
+        {
+          "seed": 301045,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.17062017215113232,
+              "rmse": 0.10657058738636697,
+              "mse": 0.01135729009587528,
+              "psnr_db": 19.447252810196535,
+              "psnr_exact": false,
+              "ssim_mean": 0.7861135601997375,
+              "lpips": 0.10150475091621523
+            }
+          }
+        },
+        {
+          "seed": 301046,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.21016868866443145,
+              "rmse": 0.12903707851857774,
+              "mse": 0.016650567632609595,
+              "psnr_db": 17.785709564214443,
+              "psnr_exact": false,
+              "ssim_mean": 0.7272884249687195,
+              "lpips": 0.15812149378242063
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "a0dbb7c63440901a4b05eadfa810d3eb6ad0d273cc190ee4cb21bef1c8640c51",
+        "candidate_sha256": "89f8560c958f4a3782c9c6e4e4a90389bf7802ef2e370989fafe3ae9d6551454"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "rbench__visual_reasoning_0010",
+      "benchmark": "rbench",
+      "category": "visual_reasoning",
+      "rows": [
+        {
+          "seed": 301047,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.18803029920670136,
+              "rmse": 0.11960143729443821,
+              "mse": 0.014304503802895437,
+              "psnr_db": 18.44527202479619,
+              "psnr_exact": false,
+              "ssim_mean": 0.8284765481948853,
+              "lpips": 0.11173147936046246
+            }
+          }
+        },
+        {
+          "seed": 301048,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.22985126424328467,
+              "rmse": 0.14282857112996744,
+              "mse": 0.02040000073102817,
+              "psnr_db": 16.90369817011283,
+              "psnr_exact": false,
+              "ssim_mean": 0.8085748553276062,
+              "lpips": 0.14032212661609786
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "df2b26afadbfe1abc7119865ff62d7aca1b39eab62e963ff26b55df7370ce1c4",
+        "candidate_sha256": "150a768fe6e40dc9fa4c79a9cd443b752f3343e01c2fc9c6c5e1a48f5007c030"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "benchmark": "paibench",
+      "category": "av",
+      "rows": [
+        {
+          "seed": 301017,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.04833708418486324,
+              "rmse": 0.020754910099693193,
+              "mse": 0.00043076629324634655,
+              "psnr_db": 33.65758286873186,
+              "psnr_exact": false,
+              "ssim_mean": 0.9526311159133911,
+              "lpips": 0.028719391116536545
+            }
+          }
+        },
+        {
+          "seed": 301018,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.06033208646287156,
+              "rmse": 0.025983492587221723,
+              "mse": 0.0006751418870302063,
+              "psnr_db": 31.706049467560184,
+              "psnr_exact": false,
+              "ssim_mean": 0.942939817905426,
+              "lpips": 0.03860616634340316
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "8dbfbeb275dbb0b92e5d7931528f7ff2738eeec75b471dbf7da7081d3af36a64",
+        "candidate_sha256": "8468798ef8424f5662e8cbf4d7792e254e9d99130283553a690b88a3d0af1872"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "paibench__common_sense_287188dc-ce0c-4ab7-8364-4a2bfb015c1c",
+      "benchmark": "paibench",
+      "category": "common",
+      "rows": [
+        {
+          "seed": 301019,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.12649987813428443,
+              "rmse": 0.0734463523946761,
+              "mse": 0.005394366680082945,
+              "psnr_db": 22.680595358727196,
+              "psnr_exact": false,
+              "ssim_mean": 0.7782934308052063,
+              "lpips": 0.1058982954528488
+            }
+          }
+        },
+        {
+          "seed": 301020,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.20505670238864288,
+              "rmse": 0.11042498302846698,
+              "mse": 0.012193676876837221,
+              "psnr_db": 19.138653176350665,
+              "psnr_exact": false,
+              "ssim_mean": 0.7197955846786499,
+              "lpips": 0.18199123423851904
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "833ec5786e36605e3bb21b472fde3d37110a64432587354660726c0655d17a52",
+        "candidate_sha256": "c04f5f78193ddb85b1b646aa3d906dafbaba9fbcc779edd3c361ac321ea9362a"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "paibench__human_241",
+      "benchmark": "paibench",
+      "category": "human",
+      "rows": [
+        {
+          "seed": 301021,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.0823708304390911,
+              "rmse": 0.04098420110674974,
+              "mse": 0.0016797047403585065,
+              "psnr_db": 27.747670521446818,
+              "psnr_exact": false,
+              "ssim_mean": 0.8934733271598816,
+              "lpips": 0.0657956331327069
+            }
+          }
+        },
+        {
+          "seed": 301022,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.1180224890789404,
+              "rmse": 0.058225012622373284,
+              "mse": 0.0033901520948755284,
+              "psnr_db": 24.697808172885306,
+              "psnr_exact": false,
+              "ssim_mean": 0.8425732851028442,
+              "lpips": 0.08608920563806276
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "660de955b3802154fcf5c04e2865a2b0c336b7e9b905470723e3d96a543bb108",
+        "candidate_sha256": "f2579c7359e6001efb0f3a0356e6c197701a5008216e74b96df7e7275906a7e4"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "paibench__industry_070",
+      "benchmark": "paibench",
+      "category": "industry",
+      "rows": [
+        {
+          "seed": 301023,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.19476277464369043,
+              "rmse": 0.09719109532573313,
+              "mse": 0.009446109010615744,
+              "psnr_db": 20.247470468563215,
+              "psnr_exact": false,
+              "ssim_mean": 0.7095183730125427,
+              "lpips": 0.11990480570763838
+            }
+          }
+        },
+        {
+          "seed": 301024,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3397743109943379,
+              "rmse": 0.1736105511764667,
+              "mse": 0.030140623479796562,
+              "psnr_db": 15.208477682445245,
+              "psnr_exact": false,
+              "ssim_mean": 0.4208352565765381,
+              "lpips": 0.21357125202651883
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "55516e85ca713921d5dec48d55625c1f8bf19bd6dc3cb8cff72e5767cf08eb2e",
+        "candidate_sha256": "ae19ae5b6c97b25594a687874ee63566c37d3ca5726169601eb4c7128df189df"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "paibench__misc_5629687-hd_1920_1080_25fps",
+      "benchmark": "paibench",
+      "category": "misc",
+      "rows": [
+        {
+          "seed": 301025,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.05515432775691212,
+              "rmse": 0.028604486513350045,
+              "mse": 0.0008182166486924246,
+              "psnr_db": 30.87131687925289,
+              "psnr_exact": false,
+              "ssim_mean": 0.9181726574897766,
+              "lpips": 0.039804750496185703
+            }
+          }
+        },
+        {
+          "seed": 301026,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.06714049150469563,
+              "rmse": 0.035934287718841655,
+              "mse": 0.0012912730338604942,
+              "psnr_db": 28.889819184138233,
+              "psnr_exact": false,
+              "ssim_mean": 0.8978980779647827,
+              "lpips": 0.048198234992193396
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "1e9e5abb984e455b5a1c7fa2a3568461f0a37520a167c2ed792a18c5283763a7",
+        "candidate_sha256": "0d800ea0678058a5ef3998bdcd4f989b3f5e8a03052dd7841f94b4e5f8f9df70"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "paibench__physics_029",
+      "benchmark": "paibench",
+      "category": "physics",
+      "rows": [
+        {
+          "seed": 301027,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.041228800458156536,
+              "rmse": 0.018039791494302026,
+              "mse": 0.0003254340771578917,
+              "psnr_db": 34.875369727674645,
+              "psnr_exact": false,
+              "ssim_mean": 0.9677417278289795,
+              "lpips": 0.023496950426917584
+            }
+          }
+        },
+        {
+          "seed": 301028,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.03968536257547582,
+              "rmse": 0.014132805860156448,
+              "mse": 0.00019973620148087243,
+              "psnr_db": 36.99543213654557,
+              "psnr_exact": false,
+              "ssim_mean": 0.9747263789176941,
+              "lpips": 0.019890869708090533
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "65267f7d8d56becba1e4fd404ac3c24159112478ce46aee6997d02144296bf5c",
+        "candidate_sha256": "d7921c7143d62e9670d33ad80896ba0ed59a4d824b7b8f4a660f17ce137b37cb"
+      }
+    },
+    {
+      "complete": true,
+      "name": "b2_joint_group_joint",
+      "case_id": "paibench__robot_010",
+      "benchmark": "paibench",
+      "category": "robot",
+      "rows": [
+        {
+          "seed": 301029,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.2796544314813387,
+              "rmse": 0.1447007377550185,
+              "mse": 0.020938303506846636,
+              "psnr_db": 16.79058509259966,
+              "psnr_exact": false,
+              "ssim_mean": 0.7199477553367615,
+              "lpips": 0.2071716334044811
+            }
+          }
+        },
+        {
+          "seed": 301030,
+          "metrics": {
+            "video": {
+              "relative_l2": 0.3336070583793262,
+              "rmse": 0.17170493429798542,
+              "mse": 0.029482584462275488,
+              "psnr_db": 15.304344486112369,
+              "psnr_exact": false,
+              "ssim_mean": 0.6887120604515076,
+              "lpips": 0.22611743272816548
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "identity": {
+          "manifest_sha256": "d6c26cf0dc7299f7ec64a8082efb8ca7903c6edbfcee0f1af9a8f1e203f126f8",
+          "source_sha256": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+          "quality_sha256": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84"
+        },
+        "reference_sha256": "7214393c1d46d180ca23e3c22762e62c7be8b08d86250758979264f7553d4753",
+        "candidate_sha256": "96fb975b6e79a8ceb1645b13f9cccfb63d4f66c63f59e26cb9f37bd4b002b9d6"
+      }
+    }
+  ],
+  "performance_eligible": false,
+  "statistical_quality_qualified": false,
+  "scope": "Exploratory development verification only. Operator means include 63 W1-supported modules, not a model quality metric. Paired CIs resample scenes with two seeds averaged; only 9 RBench and 7 PAI scenes. No held-out/final or speed claim."
+}
