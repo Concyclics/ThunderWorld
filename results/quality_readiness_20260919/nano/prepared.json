@@ -1,0 +1,23 @@
+{
+  "complete": true,
+  "model": "nano",
+  "methods": [
+    "bf16",
+    "fp8",
+    "fp4_base",
+    "awq_reference",
+    "arcquant",
+    "arcquant100",
+    "sharq_perf",
+    "b1.5_protected_n",
+    "b2_joint",
+    "b2.5_ffn_guarded",
+    "fp4_three",
+    "fp4_four"
+  ],
+  "final_manifest_sha256": "6e0d04e3920ce8bc429c1e7da5a8e216b06368f1c10575ded488514aab0f2d83",
+  "smoke_manifest_sha256": "0e89f7196c3410d1257f08e0662e721f4262072e8a3c637446247ea7ff7ae836",
+  "quality_qualified": false,
+  "performance_eligible": false,
+  "final_started": false
+}

@@ -16,9 +16,12 @@ def main():
     try:
         for name in study['methods']:
             folder=a.output/name;receipt=folder/'progress.json'
-            if receipt.exists() and json.loads(receipt.read_text()).get('complete'):
+            imported = receipt.exists() and json.loads(receipt.read_text()).get('imported_from')
+            if imported and json.loads(receipt.read_text()).get('complete'):
                 if json.loads(receipt.read_text())['identity']['manifest_sha256']!=state['manifest_sha256']:raise ValueError('Changed completed run')
             else:
+                # The common worker verifies complete output hashes on resume
+                # and returns without loading a model when no work remains.
                 command=[sys.executable,str(Path(__file__).with_name('dataset_infer.py')),str(a.manifest),'--method',name,'--output',str(folder)]
                 with (a.output/(name+'.log')).open('a') as log:subprocess.run(command,stdout=log,stderr=subprocess.STDOUT,check=True)
             state['methods'][name]=sha(receipt);write(path,state)

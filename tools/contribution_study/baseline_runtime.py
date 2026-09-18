@@ -31,11 +31,15 @@ def verify(manifest, name):
             raise ValueError('Changed official baseline input: '+str(path))
     adapter = spec.get('baseline_adapter')
     if adapter:
-        if adapter['method'] != 'marlin_awq':
-            raise ValueError('Only the native packed AWQ path is admitted')
+        implementations = {'marlin_awq': 'awq_marlin.py', 'awq': 'external.py'}
+        if adapter['method'] not in implementations:
+            raise ValueError('Unknown AWQ adapter')
         if (sha(Path(adapter['assets'])/'manifest.json') != adapter['assets_sha256'] or
-            sha(Path(__file__).with_name('awq_marlin.py')) != adapter['implementation_sha256']):
-            raise ValueError('Changed native AWQ input')
+            sha(Path(__file__).with_name(implementations[adapter['method']])) != adapter['implementation_sha256']):
+            raise ValueError('Changed AWQ input')
+        if (spec.get('assets') or spec['config']['precision'] != 'bf16' or
+                spec['config']['attention_backend'] != 'bf16'):
+            raise ValueError('AWQ adapter requires BF16 dispatch and attention')
 
 
 def make_runner(manifest, name):
@@ -81,7 +85,10 @@ def make_runner(manifest, name):
             scope='Official native sparse/residual kernels; existing epilogue fusion flag only. '
                   'Cosmos RMSNorm is outside the wrapper; no baseline-specific fusion port.')
     elif spec.get('baseline_adapter'):
-        from awq_marlin import install
+        if spec['baseline_adapter']['method'] == 'marlin_awq':
+            from awq_marlin import install
+        else:
+            from external import install_awq as install
         adapter = install(runner, spec['baseline_adapter']['assets'])
     return runner, adapter
 

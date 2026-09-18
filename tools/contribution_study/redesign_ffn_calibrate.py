@@ -48,14 +48,22 @@ def main():
             def callback(module,args,out):
                 e=runner.engine;key=(name,phase(e.step,e.steps),e.branch)
                 if not active[0] or e.warming or key in seen:return
-                if module.hidden_act!='relu2':raise ValueError('This intervention is qualified for Edge ReLU2 FFN only')
+                if module.hidden_act not in ('relu2','silu'):raise ValueError('Unsupported FFN activation')
                 seen.add(key);x=args[0];gold=out.float();denominator=gold.square().sum().clamp_min(1e-20)
-                values={};ups={}
+                values={};ups={};gates={}
                 for terms in (2,3):
-                    c.current=LinearSpec(1,int(terms==3));ups[terms]=torch.relu(native[name+'.up_proj'](x)).square()
+                    c.current=LinearSpec(1,int(terms==3));ups[terms]=native[name+'.up_proj'](x)
+                    if module.hidden_act=='silu':gates[terms]=module.act_fn(native[name+'.gate_proj'](x))
+                    else:ups[terms]=torch.relu(ups[terms]).square()
                 for label,up,down in (('three',3,3),('without_up_w',2,3),('without_down_w',3,2),('act2',2,2)):
-                    c.current=LinearSpec(1,int(down==3));pred=native[name+'.down_proj'](ups[up]).float()
+                    gate=2 if label=='act2' else 3
+                    hidden=ups[up]*gates[gate] if gates else ups[up]
+                    c.current=LinearSpec(1,int(down==3));pred=native[name+'.down_proj'](hidden).float()
                     values[label]=float((pred-gold).square().sum()/denominator)
+                if gates:
+                    c.current=LinearSpec(1,1)
+                    pred=native[name+'.down_proj'](ups[3]*gates[2]).float()
+                    values['without_gate_w']=float((pred-gold).square().sum()/denominator)
                 current['modules'].setdefault(name,[]).append(dict(phase=key[1],branch=key[2],errors=values,shape=list(x.shape)))
             return callback
         try:
@@ -70,7 +78,7 @@ def main():
                 with torch.inference_mode():
                     for seed in entry['seeds']:
                         seen.clear();active[0]=True;runner.infer(entry['case'],seed,35);active[0]=False
-                if len(current['modules'])!=28 or any(len(r)!=8*len(entry['seeds']) for r in current['modules'].values()):raise ValueError('Incomplete FFN coverage')
+                if len(current['modules'])!=len(runner.pipe.transformer.layers) or any(len(r)!=8*len(entry['seeds']) for r in current['modules'].values()):raise ValueError('Incomplete FFN coverage')
                 current['complete']=True;write(target,current);state['cases'][case_id]=sha(target);write(path,state)
                 print(json.dumps(dict(complete_cases=len(state['cases']),total=len(cohort['cases']['calibration']))),flush=True)
             state['complete']=True;write(path,state)

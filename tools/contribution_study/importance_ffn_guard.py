@@ -1,6 +1,7 @@
 """One bounded followup: keep attention projection assets, select whole-FFN improvements."""
 import argparse
 import copy
+import itertools
 import json
 from pathlib import Path
 import shutil
@@ -29,6 +30,11 @@ def main():
     controls = {1.5: 'b1.5_protected_n', 2.: 'b2_protected_n', 2.5: 'b2.5_ffn_aware'}
     capture = json.loads((a.study / 'capture/manifest.json').read_text())
     cohort = json.loads((a.previous / 'cohort.json').read_text())
+    model_config = json.loads((Path(cohort['model'])/'transformer/config.json').read_text())
+    hidden_act = model_config['hidden_act']
+    if hidden_act not in ('relu2', 'silu'):
+        raise ValueError('Unsupported FFN nonlinearity')
+    sides = ('up', 'down', 'gate') if hidden_act == 'silu' else ('up', 'down')
     benchmarks = [entry['benchmark'] for entry in cohort['cases']['calibration']]
     root = a.study / 'ffn_guarded'
     root.mkdir(exist_ok=True)
@@ -76,12 +82,12 @@ def main():
                     bank0, bank1 = Path(original['assets']), Path(joint['assets'])
                     asset0, asset1 = (json.loads((b / 'manifest.json').read_text()) for b in (bank0, bank1))
                     plan0, plan1 = (json.loads(Path(c['config']['budget_plan']).read_text()) for c in (original, joint))
-                    for layer in range(28):
+                    for layer in range(model_config['num_hidden_layers']):
                         key = f'{cap:g}|{layer}'
                         if key in state['modules']:
                             continue
                         name = f'layers.{layer}.mlp_moe_gen'
-                        entries = {side: sorted([r for r in capture['rows'] if r['name'] == name + '.' + side + '_proj'], key=lambda r: r['scene_index']) for side in ('up', 'down')}
+                        entries = {side: sorted([r for r in capture['rows'] if r['name'] == name + '.' + side + '_proj'], key=lambda r: r['scene_index']) for side in sides}
                         if any(len(v) != 16 for v in entries.values()):
                             raise ValueError('Incomplete paired FFN inputs')
                         data = []
@@ -98,21 +104,26 @@ def main():
                         m = len(data[0][0])
                         ups = [make(name + '.up_proj', manifest, bank, plan, m) for manifest, bank, plan in ((asset0, bank0, plan0), (asset1, bank1, plan1))]
                         downs = [make(name + '.down_proj', manifest, bank, plan, m) for manifest, bank, plan in ((asset0, bank0, plan0), (asset1, bank1, plan1))]
-                        errors = {(u, d): [] for u in (0, 1) for d in (0, 1)}
+                        gates = [make(name + '.gate_proj', manifest, bank, plan, m) for manifest, bank, plan in ((asset0, bank0, plan0), (asset1, bank1, plan1))] if hidden_act == 'silu' else []
+                        errors = {combo: [] for combo in itertools.product((0, 1), repeat=len(sides))}
                         for x, gold in data:
                             denom = gold.square().sum().clamp_min(1e-20)
-                            hidden = [torch.relu(up(x)).square() for up in ups]
-                            for (u, d), values in errors.items():
-                                pred = downs[d](hidden[u]).float()
+                            hidden = [up(x) for up in ups]
+                            activated = [torch.nn.functional.silu(gate(x)) for gate in gates]
+                            for combo, values in errors.items():
+                                u, d = combo[:2]
+                                z = activated[combo[2]]*hidden[u] if gates else torch.relu(hidden[u]).square()
+                                pred = downs[d](z).float()
                                 values.append(float((pred - gold).square().sum() / denom))
                         losses = {k: objective(v, benchmarks) for k, v in errors.items()}
                         best = min(losses, key=lambda k: (losses[k], sum(k), k))
+                        control = (0,)*len(sides)
                         state['modules'][key] = dict(name=name, selected=list(best),
-                            control_loss=losses[0, 0], selected_loss=losses[best],
-                            candidates={f'{u}{d}': dict(loss=losses[u, d], panel_nmse=values) for (u, d), values in errors.items()})
+                            sides=list(sides), control_loss=losses[control], selected_loss=losses[best],
+                            candidates={''.join(map(str, combo)): dict(loss=losses[combo], panel_nmse=values) for combo, values in errors.items()})
                         write(path, state)
-                        print(json.dumps(dict(budget=cap, layer=layer, selected=best, improvement=1-losses[best]/losses[0, 0])), flush=True)
-                        del data, ups, downs, hidden
+                        print(json.dumps(dict(budget=cap, layer=layer, selected=best, improvement=1-losses[best]/losses[control])), flush=True)
+                        del data, ups, downs, gates, hidden, activated
             write(root / 'decisions.json', dict(complete=True, provenance=state['provenance'], modules=state['modules'],
                   scope='Single calibration-only full-FFN coordinate choice among original/new up/down assets; attention projection assets frozen. No whole-trajectory guarantee.'))
             candidates = copy.deepcopy(catalog['candidates'])
@@ -133,7 +144,7 @@ def main():
                     selected = 0
                     if '.mlp_moe_gen.' in name:
                         layer = int(name.split('.')[1])
-                        side = 0 if name.endswith('up_proj') else 1
+                        side = sides.index(name.rsplit('.',1)[-1].removesuffix('_proj'))
                         selected = state['modules'][f'{cap:g}|{layer}']['selected'][side]
                     source = banks[selected] / manifests[selected]['modules'][name]['file']
                     target = bank / f'{index:03d}.pt'

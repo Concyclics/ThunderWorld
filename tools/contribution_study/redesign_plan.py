@@ -38,6 +38,8 @@ def main():
     p.add_argument('--ffn-calibration',type=Path)
     p.add_argument('--weight-axis',choices=('n','k'),default='n')
     p.add_argument('--profile',choices=('protected','balanced'),default='protected')
+    p.add_argument('--budgets',nargs='+',type=float)
+    p.add_argument('--skip-legacy-control',action='store_true',help='New model without the old Edge-only candidate')
     a=p.parse_args();cohort=json.loads(a.cohort.read_text());cm=json.loads((a.calibration/'manifest.json').read_text());old=json.loads(a.previous.read_text())
     if not cm['complete'] or cm['identity']['cohort_sha256']!=sha(a.cohort):raise ValueError('Complete matching calibration required')
     if a.output.exists():raise FileExistsError('Plans are immutable')
@@ -78,7 +80,8 @@ def main():
             for name,rows in data['modules'].items():
                 for row in rows:
                     calls=PHASES[row['phase']+1]-PHASES[row['phase']];e=row['errors']
-                    for side in ('up','down'):ffn_gain[name+'.'+side+'_proj']+=(e['without_'+side+'_w']-e['three'])*calls/70*weight
+                    for side in ('up','down','gate'):
+                        if 'without_'+side+'_w' in e:ffn_gain[name+'.'+side+'_proj']+=(e['without_'+side+'_w']-e['three'])*calls/70*weight
         for name,total in ffn_gain.items():
             local=np.maximum(gains[name],0.)
             gains[name]=(local/local.sum() if local.sum()>0 else np.ones_like(local)/len(local))*max(0,total)
@@ -99,6 +102,9 @@ def main():
     if a.profile=='balanced':
         if not a.ffn_calibration:raise ValueError('Balanced followup requires full FFN calibration')
         profiles=[(2.5,.875,.625,.75)]
+    if a.budgets:
+        profiles=[row for row in profiles if row[0] in a.budgets]
+        if {row[0] for row in profiles}!=set(a.budgets):raise ValueError('Unsupported profile budgets')
     import torch
     from thunderworld_fp4.cosmos.assets import expand,compact
     from thunderworld_fp4.cosmos.settings import RunConfig,LinearSpec
@@ -190,7 +196,7 @@ def main():
                 if ledger(other)['total_mma']!=ledger(plan)['total_mma']:raise ValueError('Position control must be compute matched')
                 other['design']['position_control']=variant;export('b2.5_'+variant,other)
     # Exact old quotas with RTN bytes isolate representation from allocation.
-    if not a.ffn_calibration:
+    if not a.ffn_calibration and not a.skip_legacy_control:
         old_name='b2.5_marginal';prior=old['methods'][old_name];plan=json.loads(Path(prior['config']['budget_plan']).read_text())
         export('b2.5_old_quota_rtn',plan)
     write(a.output/'candidates.json',dict(complete=True,candidates=candidates,cohort_sha256=sha(a.cohort),

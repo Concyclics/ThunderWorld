@@ -7,6 +7,8 @@ from baselines import write,sha
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--build',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--model',choices=('edge','nano'),default='edge')
+    p.add_argument('--shape',nargs=3,type=int,action='append',metavar=('M','N','K'))
     a=p.parse_args()
     from thunderworld_fp4.cosmos.resources import shared_worker,select_shared_device
     with shared_worker():
@@ -26,7 +28,8 @@ def main():
             return decode(codes,out.view(torch.float8_e4m3fn),1.)
         result=dict(complete=False,performance_eligible=False,resource=resource,build_sha256=sha(a.build/'build.json'),rows=[])
         with torch.inference_mode():
-            for m,n,k in ((129,128,2048),(416,1024,2048),(960,2048,9216)):
+            shapes=a.shape or (((129,1024,4096),(416,12288,4096),(960,4096,12288),(1024,4096,4096)) if a.model=='nano' else ((129,128,2048),(416,1024,2048),(960,2048,9216)))
+            for m,n,k in shapes:
                 for fraction in (0.,.5,1.):
                     torch.manual_seed(917)
                     source=torch.nn.Linear(k,n,bias=False,device='cuda',dtype=torch.bfloat16)

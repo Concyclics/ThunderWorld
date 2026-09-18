@@ -1,0 +1,13 @@
+{
+  "identity": {
+    "manifest_sha256": "0e89f7196c3410d1257f08e0662e721f4262072e8a3c637446247ea7ff7ae836",
+    "method": "b2_joint",
+    "source_sha256": "0f64695d65d329065be42655202b0e890c6844425ebe853056005a015f988789"
+  },
+  "complete": true,
+  "removed_case": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+  "removed_seed": 301018,
+  "regenerated_signals_bitwise_equal": true,
+  "completed_outputs_untouched": true,
+  "performance_eligible": false
+}

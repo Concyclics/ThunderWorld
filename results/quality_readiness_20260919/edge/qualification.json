@@ -1,0 +1,120 @@
+{
+  "complete": true,
+  "model": "edge",
+  "manifest_sha256": "97597320361fe09b855f01f38e53acc12b269e58adcb6269ecfa38bcea75a34d",
+  "methods": {
+    "bf16": {
+      "progress_sha256": "8965fdd58cef7eea204d5a594dde6dbe698dd0b7b2f46d400b3a36b8d95b585f",
+      "completed_resume": true
+    },
+    "fp8": {
+      "progress_sha256": "ada82b13abae4a5ee71551527d09de90d0e4a61109401bb0727b7a51ee093c89",
+      "completed_resume": true
+    },
+    "fp4_base": {
+      "progress_sha256": "e0e075095a3057aa347318d449878c49675a541c68738e3bc499fe0ef78377c8",
+      "completed_resume": true
+    },
+    "awq_reference": {
+      "progress_sha256": "631e12b4f40df152f180cbdc4a13553aa93bf7d12fa06619b5e2a65c6aecbecc",
+      "completed_resume": true
+    },
+    "arcquant": {
+      "progress_sha256": "227bd98e0d1ee5f2da743e6362c125a312ed95716225e5e0115675850a7a2745",
+      "completed_resume": true
+    },
+    "arcquant100": {
+      "progress_sha256": "8d9acbc417380ac684a7dbad5c1c7847bdeb3db2fdb9038eb2920cbaed1ffcbc",
+      "completed_resume": true
+    },
+    "sharq_perf": {
+      "progress_sha256": "74f9c8e40c4653be82d9c31cc02144e48ffcf139c3ba8550823ddcf92b0c639e",
+      "completed_resume": true
+    },
+    "b1.5_protected_n": {
+      "progress_sha256": "e799f5182d5b86d42c191c0f0b1f75566e5ee2e78efa747a38c00bcab04333e1",
+      "completed_resume": true
+    },
+    "b2_joint": {
+      "progress_sha256": "ce0b5e11690691fae1016c2f8773aa153e8f6628c0f1c921068ddac22266b295",
+      "completed_resume": true
+    },
+    "b2.5_ffn_guarded": {
+      "progress_sha256": "02435d6a16bd5170c801290b13fbad28f6dac97d555b6076153da3bfb76a9700",
+      "completed_resume": true
+    },
+    "fp4_three": {
+      "progress_sha256": "0418f7c3dcea32d9634f224716b78af6aa667d2f7a8d336e29e30d3b2619d022",
+      "completed_resume": true
+    },
+    "fp4_four": {
+      "progress_sha256": "1f52d09b43df9f57938a0390674a1f35d1bdf48e8175c26afa2ed4c437e61ede",
+      "completed_resume": true
+    }
+  },
+  "performance_eligible": false,
+  "scope": "Two development scenes, two seeds, scene roundtrip; not a final quality claim",
+  "metrics_sha256": "c69c450ca40674e5929220fff0151bf306a022c4b21adad7918577d42b3310f0",
+  "final_manifest_sha256": "ce89e6ce2f85df0e58ede9c9834c05a8d53e797945e1dd02d04309ef5a625e9e",
+  "quality_sources": {
+    "packages/fp4-repair/src/thunderworld_fp4/__init__.py": "f57e71f7c9157dfc7f9c36cd8e7acbc8d29286d5399e12e56f35fb4fad7df972",
+    "packages/fp4-repair/src/thunderworld_fp4/_attention_sparse_pack.py": "ea08b6af3e30069dac13f6faac6cc0ef3f54995a5e32b3bdefeadd36ed452d82",
+    "packages/fp4-repair/src/thunderworld_fp4/_calibrated.py": "62fa29ec951f22015e701210aa59c9cf16e035835c0348f46d1d66ffdb71d209",
+    "packages/fp4-repair/src/thunderworld_fp4/_fusion.py": "1874ef2944f82a33e35b9200d2755127446208d459c909e4855e19dbfb886311",
+    "packages/fp4-repair/src/thunderworld_fp4/_kernels.py": "7fe0baa9d298333ad3ad49cc4e0ad9229280a73fbf9522474eb746d6706e8508",
+    "packages/fp4-repair/src/thunderworld_fp4/_linear_kernels.py": "4df2815f4ea46e912a9c8e4a3e4ce36f18aee0af6fc7b0a242ca7c77361c17a6",
+    "packages/fp4-repair/src/thunderworld_fp4/_native.py": "a5fdf45ffce65462162621889b4c0029cc1596b433e10d6c12084c54f6ffc846",
+    "packages/fp4-repair/src/thunderworld_fp4/_native_legacy.py": "0164ca2f8d22771ff8c476c3d3a02e4d363f4967d304299e6fb4b9c0294be05f",
+    "packages/fp4-repair/src/thunderworld_fp4/_quantize.py": "dbceea1849f1ead32c9f7153c02ec373be855aadb2482f0549f5c9896bfaf22a",
+    "packages/fp4-repair/src/thunderworld_fp4/_sparse_pack.py": "70661f85ed9b077500d2678d41511d77ea60473b2297dbe762690a8f805b9138",
+    "packages/fp4-repair/src/thunderworld_fp4/config.py": "22d564621fb67f3cb0f19c00f846daee54b372b31670dd495a913d772c4cc399",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/__init__.py": "095c38bf617115576d3723cfedd70a36a12fdc63bd99792c57eb5ca8a985f88b",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/allocation.py": "6b49160bc275c553b10fca3095287e159304a84a4fc6c0843df6f460af6b87ba",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/ar_cache.py": "edef4d746fb4b41e1a7a7f0d07d941c5665d13e9bf29b9afbe69d00a9b646031",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/assets.py": "031c5cfed4f87b97338c79c63fc15008fc8af3500666de341fc20367c1268017",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/budget.py": "f0deab8c5c2f70277857e9b9359a11420a89ca7386b92f439c2697c16290b88e",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/calibrated_fusion.py": "7c96c9717b989033a3fea4af855998a51ef38ca9e1b846441ba3f9891dfc11cf",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/calibration.py": "5561458c2e5dd973f7767072ec5b681f4494e2e86e798dc4ce7a8ebe1be5452c",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/cli.py": "b00bf40d2e1edf17feb523ae743ef604b53da3fc35d1604f0581464a78cdbd28",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/codec_graph.py": "43e5926a9e4797ecf1071b7f168bc5468e0ded56c2fea6c0b7450d30b640944e",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/cohorts.py": "00c7e7e47f6e141343f88cd60697cfd6dcd4a5f5fb2e0d38e67a0c5209e18e53",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/diagnostics.py": "358941666076b9ff517bf25b7ca6eb7dfd5329a35880e18abd4e7bf095151fdb",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/engine.py": "0b0f060406ed35a9ca7a9a86ab394ef14c7affd9465a69e96eb2259ada201ce5",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/linears.py": "d3fced1db31f230ec1323e630658c562ce2a948c13a4a7445727a42b839bbc9c",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/norm_fusion.py": "b54c38a2ee5087df68a3eaf76f54667f2baf188ec3604b9c4d9e4c283315d265",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/pipeline_tuning.py": "4519e1a291799f05f8197397e5a2f46dc19a8cd56ffeb41a9972b9738b0567e3",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/projection_streams.py": "f2ee5d0e0cf3f6fcbcc7a4fe4f0ffc9aad848262337d99dd362afae78bb4f3ca",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/quality.py": "ed896662215f25ac94cccd6f550053166ecc7a7a2fc2ffaa406c2e290ba11f84",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/resources.py": "0b62f0836070239d390b2d8521052929af486ace0c62c1c103b5c234508a143c",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/runner.py": "ddae863437abcc0f547bc1d9ee1903e80b7d7b81ec3685b71ba3cb339808d93a",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/scheduler.py": "dcebbdae0d83c24aeb95d3fafa034ff8696b1bdaa3ebe77ea8a6b64164a69033",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/settings.py": "296447c3d90cae9e111a4b0d6509b982b6ad05e8d340dd4a6cc3841e517750d1",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/trees.py": "1bb368d61ba9147b59e6088cc9af8dc7cf6a87bc19b287cd2c848baf9cc6e6d5",
+    "packages/fp4-repair/src/thunderworld_fp4/cosmos/tuning.py": "14ad2ccf8938ef032fae6797fd8d9edf924d7265aa04744076242c21772b5340",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/__init__.py": "ec991602a0cd9ee5b7536291a63b5423a2d60e80684f387d387583050db92521",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/artifact.py": "b9713427f4162b61a1bc770b1d2428e02dac6c6d6dce0962f451509e3377805d",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/backend.py": "c4eb4583483630a57206cf5c2d19cb2537104bbf71aa61bd8c07ee1a30a4477c",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/build.py": "f88d3a4676ec6964c4ad0b3c4fe7f46c95bd6f0fd1a3478659dd81c6bc1b0e96",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/layout.py": "fbbc1b6ad87734e8b2d9893fdb69c112e6fea8a0bde54e3756c607d9a4ce0f14",
+    "packages/fp4-repair/src/thunderworld_fp4/cutlass/packing.py": "e59663644e232bc7b2f5a7900833c0c4589490d947a5f2079d117e472252e3b5",
+    "packages/fp4-repair/src/thunderworld_fp4/head_finding.py": "40f54c7cf3abd032a2ad841b4250af7f2edaa39c55e7b44aa03013fafeb7937b",
+    "packages/fp4-repair/src/thunderworld_fp4/linear.py": "68da9162a79f8cb8b19494355721a5259e2b39e8ff49c04325c18dd726786919",
+    "packages/fp4-repair/src/thunderworld_fp4/runtime.py": "c36fbba09caa2cc3953054ce92aca31b679c3c2c52f1eeedc8db7fdb5b2df709",
+    "tools/contribution_study/arc_orders.py": "cda35727a95b797e5fb69ed0e754491fa55fe47ce4b1df5dfab1224f4fab8e61",
+    "tools/contribution_study/awq_marlin.py": "34b9cc77e20319cc68c2975a18a0cd4cbc4b60583cf3f00096510ddcdcb73424",
+    "tools/contribution_study/awq_multiscene_report.py": "7edfc6186a0dd01d1372c1873740f53c81bc801012023bf60a8177de875a20c7",
+    "tools/contribution_study/baseline_runtime.py": "d89bfd2b9c64941d1b79213bdbf39637c6872cb173cc680be91dc504ff6c2d79",
+    "tools/contribution_study/dataset_infer.py": "295ea248dfc11ffd558b4a2b4155fc5848219e0b67289c33fa0bdbd7b97eac92",
+    "tools/contribution_study/dataset_metrics.py": "33a5df8cc39f30e9705e5756e4a39cb9c8a54d122cb0dbe1818621d7f8cb7556",
+    "tools/contribution_study/dataset_report.py": "a7ef2e948538784a47eb79cabaafa8842f5a6c99178676a5d4814d217d603459",
+    "tools/contribution_study/dataset_suite.py": "94e1dc1e8824d6f9c8ef97d4940d596c11b88f435625435ca853f6854bb8d520",
+    "tools/contribution_study/external.py": "74d50f0228c492848911dcb7264b61e34d6bc4d29f13c04b3fe0cca742b376eb",
+    "tools/contribution_study/importance_workflow.py": "624fb4ae34f9263031fa446a16d06f17e2518f161a686b3e1e47837428852d71",
+    "tools/contribution_study/portable.py": "f338cc9f7cdf132f8a53cce43498bcd2600dc75f4a4b8a4cb1e35be41d7880e0",
+    "tools/contribution_study/quality_benchmark.py": "d48feee47554469b9c7e1f60eb953dc734bea4b22fa73f2c673cbc960bd90373",
+    "tools/contribution_study/quality_benchmark_report.py": "71745f3c063d093cccf3ef7b634819a27b2a45581e399cbf2a26e13b17936ae1",
+    "tools/contribution_study/quality_shape_preflight.py": "d85210fa5d6b0635f3315c202d6053f92ab191b50b244b0d78f1672fccccd9f7"
+  },
+  "shape_preflight_sha256": "37602a36398380aba9c903d26496ccf50a408ad06808adf2c3669e4785510bf1"
+}

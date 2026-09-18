@@ -1,4 +1,4 @@
-"""Build an isolated ARCQuant adaptation adding Cosmos K9216 instantiations."""
+"""Build an isolated ARCQuant adaptation with explicit Cosmos K instantiations."""
 import argparse,difflib,json,os,shutil,subprocess,sys
 from pathlib import Path
 from baselines import git,sha,write
@@ -7,6 +7,7 @@ from baselines import git,sha,write
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for key in ('sources','output','pybind11'):p.add_argument('--'+key,type=Path,required=True)
+    p.add_argument('--widths',nargs='+',type=int,default=[9216])
     a=p.parse_args();entry=json.loads(a.sources.read_text())['sources']['arcquant']
     source=Path(entry['path'])
     if git(source,'rev-parse','HEAD')!=entry['commit']:raise ValueError('Upstream changed')
@@ -14,6 +15,8 @@ def main():
     shutil.copytree(source/'kernels',a.output/'kernels',ignore=shutil.ignore_patterns('build*'))
     (a.output/'third-party').mkdir()
     (a.output/'third-party/cutlass').symlink_to(source/'third-party/cutlass',target_is_directory=True)
+    widths=sorted(set(a.widths))
+    if any(k<=0 or k%128 for k in widths):raise ValueError('Expected positive K128 widths')
     patches=[]
     for filename in ('bindings.cpp','reorder.cu'):
         path=a.output/'kernels/src'/filename;before=path.read_text();after=before
@@ -21,10 +24,13 @@ def main():
             for side in ('X','W'):
                 needle=f'        CASE_REORDER_{side}_16(2048)'
                 if after.count(needle)!=1:raise ValueError('Unexpected upstream dispatch')
-                after=after.replace(needle,f'        CASE_REORDER_{side}_16(9216)\n'+needle)
+                missing=[k for k in widths if f'CASE_REORDER_{side}_16({k})' not in after]
+                after=after.replace(needle,''.join(f'        CASE_REORDER_{side}_16({k})\n' for k in missing)+needle)
         else:
             for side in ('x','w'):
-                after+=f'\ntemplate void run_reorder_{side}_bf16_nvfp4<16, 9216>(bf16_t*, int, int16_t*, uint8_t*, sf_t*, int, int);\n'
+                for k in widths:
+                    if f'run_reorder_{side}_bf16_nvfp4<16, {k}>' not in after:
+                        after+=f'\ntemplate void run_reorder_{side}_bf16_nvfp4<16, {k}>(bf16_t*, int, int16_t*, uint8_t*, sf_t*, int, int);\n'
         path.write_text(after)
         patches.extend(difflib.unified_diff(before.splitlines(True),after.splitlines(True),
             fromfile='a/kernels/src/'+filename,tofile='b/kernels/src/'+filename))
@@ -36,7 +42,7 @@ def main():
         ['cmake','--build',str(a.output/'kernels/build'),'--target','agemm','-j','4']]
     manifest=dict(complete=False,source_commit=entry['commit'],cutlass_commit=git(source/'third-party/cutlass','rev-parse','HEAD'),
         patches={'cosmos.patch':sha(a.output/'cosmos.patch')},commands=commands,architecture='sm_120a',
-        performance_eligible=False,scope='Only K9216 dispatch and template instantiation; upstream quantization unchanged.')
+        performance_eligible=False,requested_widths=widths,scope='Only explicit K dispatch and template instantiation; upstream quantization unchanged.')
     write(a.output/'build.json',manifest)
     for i,cmd in enumerate(commands):
         with (a.output/f'build_{i}.log').open('w') as stream:

@@ -7,6 +7,7 @@ from baselines import sha,write
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for key in ('sources','capture','output'):p.add_argument('--'+key,type=Path,required=True)
+    p.add_argument('--all-shapes',action='store_true')
     a=p.parse_args();lock=json.loads(a.sources.read_text())['sources']['sharq']
     capture=json.loads((a.capture/'manifest.json').read_text())
     if not capture['complete']:raise ValueError('Incomplete capture')
@@ -21,7 +22,14 @@ def main():
             native_simulation_bitwise_equivalence_required=False,
             scope='Official native and official simulation are measured separately; numerical disagreement is reported, not hidden.')
         write(a.output,result)
-        for name in list(capture['weights'])[:6]:
+        names=list(capture['weights'])[:6]
+        if a.all_shapes:
+            seen=set();names=[]
+            for row in capture['rows']:
+                if row['kind']!='linear':continue
+                shape=tuple(row['shape'][1:])
+                if shape not in seen:seen.add(shape);names.append(row['name'])
+        for name in names:
             weight=torch.load(a.capture/capture['weights'][name],weights_only=True).cuda()
             source=torch.nn.Linear(weight.shape[1],weight.shape[0],bias=False,device='meta',dtype=weight.dtype)
             source.weight=torch.nn.Parameter(weight,requires_grad=False)

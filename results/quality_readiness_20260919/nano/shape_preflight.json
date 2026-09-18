@@ -1,0 +1,3496 @@
+{
+  "complete": true,
+  "manifest_sha256": "6e0d04e3920ce8bc429c1e7da5a8e216b06368f1c10575ded488514aab0f2d83",
+  "source_sha256": "d85210fa5d6b0635f3315c202d6053f92ab191b50b244b0d78f1672fccccd9f7",
+  "tokenizer_model": "/home/yufeng/thunderworld/ThunderWorld/artifacts/huggingface/models/Cosmos3-Nano-411f42a/text_tokenizer",
+  "pipeline_source_sha256": "11b98eff235f954ec8531ed0b32143222d81fe595c012e1a34c22f62ed72dbd0",
+  "default_use_system_prompt": true,
+  "checks": {
+    "b1.5_protected_n": {
+      "cases": [
+        {
+          "case": "paibench__av_ec2fb4fa-3530-4a6a-b431-f06779a0537a",
+          "m": 960,
+          "n_by_cfg": [
+            1218,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_7ffad222-afe2-4032-8341-9dec6181bb55",
+          "m": 960,
+          "n_by_cfg": [
+            1244,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_debris_1_0",
+          "m": 960,
+          "n_by_cfg": [
+            1150,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_00d8e9d4-d669-42d9-8aa9-16a09a47b531",
+          "m": 960,
+          "n_by_cfg": [
+            1187,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_b9a09222-114b-4bde-aa34-ca0828f3bd16",
+          "m": 960,
+          "n_by_cfg": [
+            1196,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_cce9482d-88fc-4edd-9a92-061f6b568291",
+          "m": 960,
+          "n_by_cfg": [
+            1177,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_4730f45b-1833-4f29-ac60-86fae649985c",
+          "m": 960,
+          "n_by_cfg": [
+            1156,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_d242674d-9bf2-4cdf-aaf2-0ab976b4fa93",
+          "m": 960,
+          "n_by_cfg": [
+            1204,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_996b00f7-8b77-4f6b-a47f-8c37ef2094ae",
+          "m": 960,
+          "n_by_cfg": [
+            1207,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_3fbbd161-bcf8-499d-a1d9-357673a1a861",
+          "m": 960,
+          "n_by_cfg": [
+            1354,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            11,
+            8
+          ],
+          "ratio": 1.4639109383156037,
+          "base_mma": 1043942804029440,
+          "total_mma": 1528239289794560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_209",
+          "m": 960,
+          "n_by_cfg": [
+            1169,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_132",
+          "m": 960,
+          "n_by_cfg": [
+            1237,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_100",
+          "m": 960,
+          "n_by_cfg": [
+            1213,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_279",
+          "m": 960,
+          "n_by_cfg": [
+            1257,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_152",
+          "m": 960,
+          "n_by_cfg": [
+            1160,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_086",
+          "m": 960,
+          "n_by_cfg": [
+            1183,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_058",
+          "m": 960,
+          "n_by_cfg": [
+            1229,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_034",
+          "m": 960,
+          "n_by_cfg": [
+            1141,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_052",
+          "m": 960,
+          "n_by_cfg": [
+            1246,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_031",
+          "m": 960,
+          "n_by_cfg": [
+            1251,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_057",
+          "m": 960,
+          "n_by_cfg": [
+            1144,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_3173312-uhd_3840_2160_30fps",
+          "m": 960,
+          "n_by_cfg": [
+            1109,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_854100-hd_1920_1080_25fps",
+          "m": 960,
+          "n_by_cfg": [
+            1193,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_1777892-hd_1280_720_25fps",
+          "m": 960,
+          "n_by_cfg": [
+            1168,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_854179-hd_1920_1080_25fps",
+          "m": 960,
+          "n_by_cfg": [
+            1181,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_4483542-uhd_2562_1440_30fps",
+          "m": 960,
+          "n_by_cfg": [
+            1179,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_061",
+          "m": 960,
+          "n_by_cfg": [
+            1117,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_057",
+          "m": 960,
+          "n_by_cfg": [
+            1118,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_009",
+          "m": 960,
+          "n_by_cfg": [
+            1140,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_162",
+          "m": 960,
+          "n_by_cfg": [
+            1193,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_096",
+          "m": 960,
+          "n_by_cfg": [
+            1153,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_136",
+          "m": 960,
+          "n_by_cfg": [
+            1242,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_046",
+          "m": 960,
+          "n_by_cfg": [
+            1174,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_041",
+          "m": 960,
+          "n_by_cfg": [
+            1149,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_119",
+          "m": 960,
+          "n_by_cfg": [
+            1177,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_057",
+          "m": 960,
+          "n_by_cfg": [
+            1237,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.4650409584641477,
+          "base_mma": 1041406088970240,
+          "total_mma": 1525702574735360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0020",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0029",
+          "m": 960,
+          "n_by_cfg": [
+            1002,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0042",
+          "m": 960,
+          "n_by_cfg": [
+            1003,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0011",
+          "m": 960,
+          "n_by_cfg": [
+            1015,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0021",
+          "m": 960,
+          "n_by_cfg": [
+            1011,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0044",
+          "m": 960,
+          "n_by_cfg": [
+            1002,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0033",
+          "m": 960,
+          "n_by_cfg": [
+            1003,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0083",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0062",
+          "m": 960,
+          "n_by_cfg": [
+            1001,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0013",
+          "m": 960,
+          "n_by_cfg": [
+            1010,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0087",
+          "m": 960,
+          "n_by_cfg": [
+            999,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0053",
+          "m": 960,
+          "n_by_cfg": [
+            1002,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0023",
+          "m": 960,
+          "n_by_cfg": [
+            1005,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0037",
+          "m": 960,
+          "n_by_cfg": [
+            1025,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0025",
+          "m": 960,
+          "n_by_cfg": [
+            1025,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0043",
+          "m": 960,
+          "n_by_cfg": [
+            1010,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0039",
+          "m": 960,
+          "n_by_cfg": [
+            1001,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0013",
+          "m": 960,
+          "n_by_cfg": [
+            1019,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0042",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0038",
+          "m": 960,
+          "n_by_cfg": [
+            1016,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0019",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0065",
+          "m": 960,
+          "n_by_cfg": [
+            1003,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0079",
+          "m": 960,
+          "n_by_cfg": [
+            1000,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0072",
+          "m": 960,
+          "n_by_cfg": [
+            999,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0017",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0027",
+          "m": 960,
+          "n_by_cfg": [
+            998,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0048",
+          "m": 960,
+          "n_by_cfg": [
+            1007,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0025",
+          "m": 960,
+          "n_by_cfg": [
+            1005,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0019",
+          "m": 960,
+          "n_by_cfg": [
+            1010,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0025",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0044",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0016",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0032",
+          "m": 960,
+          "n_by_cfg": [
+            1025,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.4661764971874038,
+          "base_mma": 1038869373911040,
+          "total_mma": 1523165859676160,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0040",
+          "m": 960,
+          "n_by_cfg": [
+            1005,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0048",
+          "m": 960,
+          "n_by_cfg": [
+            1008,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0008",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.4672360023208588,
+          "base_mma": 1036332658851840,
+          "total_mma": 1520544587448320,
+          "feasible": true
+        }
+      ],
+      "measured_ledger_sha256": "0084e364faaedf45dd5ead9d00dcb3c49c79aad6e49710ddf9b33b43ca347d97",
+      "distinct_tile_shapes": 4,
+      "ratio_min": 1.4639109383156037,
+      "ratio_max": 1.4672360023208588,
+      "budget": 1.5
+    },
+    "b2_joint": {
+      "cases": [
+        {
+          "case": "paibench__av_ec2fb4fa-3530-4a6a-b431-f06779a0537a",
+          "m": 960,
+          "n_by_cfg": [
+            1218,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_7ffad222-afe2-4032-8341-9dec6181bb55",
+          "m": 960,
+          "n_by_cfg": [
+            1244,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_debris_1_0",
+          "m": 960,
+          "n_by_cfg": [
+            1150,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_00d8e9d4-d669-42d9-8aa9-16a09a47b531",
+          "m": 960,
+          "n_by_cfg": [
+            1187,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_b9a09222-114b-4bde-aa34-ca0828f3bd16",
+          "m": 960,
+          "n_by_cfg": [
+            1196,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_cce9482d-88fc-4edd-9a92-061f6b568291",
+          "m": 960,
+          "n_by_cfg": [
+            1177,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_4730f45b-1833-4f29-ac60-86fae649985c",
+          "m": 960,
+          "n_by_cfg": [
+            1156,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_d242674d-9bf2-4cdf-aaf2-0ab976b4fa93",
+          "m": 960,
+          "n_by_cfg": [
+            1204,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_996b00f7-8b77-4f6b-a47f-8c37ef2094ae",
+          "m": 960,
+          "n_by_cfg": [
+            1207,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_3fbbd161-bcf8-499d-a1d9-357673a1a861",
+          "m": 960,
+          "n_by_cfg": [
+            1354,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            11,
+            8
+          ],
+          "ratio": 1.9507712799467214,
+          "base_mma": 1043942804029440,
+          "total_mma": 2036493640007680,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_209",
+          "m": 960,
+          "n_by_cfg": [
+            1169,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_132",
+          "m": 960,
+          "n_by_cfg": [
+            1237,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_100",
+          "m": 960,
+          "n_by_cfg": [
+            1213,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_279",
+          "m": 960,
+          "n_by_cfg": [
+            1257,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_152",
+          "m": 960,
+          "n_by_cfg": [
+            1160,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_086",
+          "m": 960,
+          "n_by_cfg": [
+            1183,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_058",
+          "m": 960,
+          "n_by_cfg": [
+            1229,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_034",
+          "m": 960,
+          "n_by_cfg": [
+            1141,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_052",
+          "m": 960,
+          "n_by_cfg": [
+            1246,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_031",
+          "m": 960,
+          "n_by_cfg": [
+            1251,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_057",
+          "m": 960,
+          "n_by_cfg": [
+            1144,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_3173312-uhd_3840_2160_30fps",
+          "m": 960,
+          "n_by_cfg": [
+            1109,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_854100-hd_1920_1080_25fps",
+          "m": 960,
+          "n_by_cfg": [
+            1193,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_1777892-hd_1280_720_25fps",
+          "m": 960,
+          "n_by_cfg": [
+            1168,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_854179-hd_1920_1080_25fps",
+          "m": 960,
+          "n_by_cfg": [
+            1181,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_4483542-uhd_2562_1440_30fps",
+          "m": 960,
+          "n_by_cfg": [
+            1179,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_061",
+          "m": 960,
+          "n_by_cfg": [
+            1117,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_057",
+          "m": 960,
+          "n_by_cfg": [
+            1118,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_009",
+          "m": 960,
+          "n_by_cfg": [
+            1140,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_162",
+          "m": 960,
+          "n_by_cfg": [
+            1193,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_096",
+          "m": 960,
+          "n_by_cfg": [
+            1153,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_136",
+          "m": 960,
+          "n_by_cfg": [
+            1242,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_046",
+          "m": 960,
+          "n_by_cfg": [
+            1174,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_041",
+          "m": 960,
+          "n_by_cfg": [
+            1149,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_119",
+          "m": 960,
+          "n_by_cfg": [
+            1177,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_057",
+          "m": 960,
+          "n_by_cfg": [
+            1237,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 1.9482155100862473,
+          "base_mma": 1041406088970240,
+          "total_mma": 2028883494830080,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0020",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0029",
+          "m": 960,
+          "n_by_cfg": [
+            1002,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0042",
+          "m": 960,
+          "n_by_cfg": [
+            1003,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0011",
+          "m": 960,
+          "n_by_cfg": [
+            1015,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0021",
+          "m": 960,
+          "n_by_cfg": [
+            1011,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0044",
+          "m": 960,
+          "n_by_cfg": [
+            1002,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0033",
+          "m": 960,
+          "n_by_cfg": [
+            1003,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0083",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0062",
+          "m": 960,
+          "n_by_cfg": [
+            1001,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0013",
+          "m": 960,
+          "n_by_cfg": [
+            1010,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0087",
+          "m": 960,
+          "n_by_cfg": [
+            999,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0053",
+          "m": 960,
+          "n_by_cfg": [
+            1002,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0023",
+          "m": 960,
+          "n_by_cfg": [
+            1005,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0037",
+          "m": 960,
+          "n_by_cfg": [
+            1025,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0025",
+          "m": 960,
+          "n_by_cfg": [
+            1025,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0043",
+          "m": 960,
+          "n_by_cfg": [
+            1010,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0039",
+          "m": 960,
+          "n_by_cfg": [
+            1001,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0013",
+          "m": 960,
+          "n_by_cfg": [
+            1019,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0042",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0038",
+          "m": 960,
+          "n_by_cfg": [
+            1016,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0019",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0065",
+          "m": 960,
+          "n_by_cfg": [
+            1003,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0079",
+          "m": 960,
+          "n_by_cfg": [
+            1000,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0072",
+          "m": 960,
+          "n_by_cfg": [
+            999,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0017",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0027",
+          "m": 960,
+          "n_by_cfg": [
+            998,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0048",
+          "m": 960,
+          "n_by_cfg": [
+            1007,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0025",
+          "m": 960,
+          "n_by_cfg": [
+            1005,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0019",
+          "m": 960,
+          "n_by_cfg": [
+            1010,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0025",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0044",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0016",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0032",
+          "m": 960,
+          "n_by_cfg": [
+            1025,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 1.9456472588492775,
+          "base_mma": 1038869373911040,
+          "total_mma": 2021273349652480,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0040",
+          "m": 960,
+          "n_by_cfg": [
+            1005,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0048",
+          "m": 960,
+          "n_by_cfg": [
+            1008,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0008",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 1.9430664345807949,
+          "base_mma": 1036332658851840,
+          "total_mma": 2013663204474880,
+          "feasible": true
+        }
+      ],
+      "measured_ledger_sha256": "85b2f60f3c6c00ceaaafd8b3ea013b4a8ebde692a84a831706685098db63ba89",
+      "distinct_tile_shapes": 4,
+      "ratio_min": 1.9430664345807949,
+      "ratio_max": 1.9507712799467214,
+      "budget": 2.0
+    },
+    "b2.5_ffn_guarded": {
+      "cases": [
+        {
+          "case": "paibench__av_ec2fb4fa-3530-4a6a-b431-f06779a0537a",
+          "m": 960,
+          "n_by_cfg": [
+            1218,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_7ffad222-afe2-4032-8341-9dec6181bb55",
+          "m": 960,
+          "n_by_cfg": [
+            1244,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_debris_1_0",
+          "m": 960,
+          "n_by_cfg": [
+            1150,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_00d8e9d4-d669-42d9-8aa9-16a09a47b531",
+          "m": 960,
+          "n_by_cfg": [
+            1187,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__av_b9a09222-114b-4bde-aa34-ca0828f3bd16",
+          "m": 960,
+          "n_by_cfg": [
+            1196,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_cce9482d-88fc-4edd-9a92-061f6b568291",
+          "m": 960,
+          "n_by_cfg": [
+            1177,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_4730f45b-1833-4f29-ac60-86fae649985c",
+          "m": 960,
+          "n_by_cfg": [
+            1156,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_d242674d-9bf2-4cdf-aaf2-0ab976b4fa93",
+          "m": 960,
+          "n_by_cfg": [
+            1204,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_996b00f7-8b77-4f6b-a47f-8c37ef2094ae",
+          "m": 960,
+          "n_by_cfg": [
+            1207,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__common_sense_3fbbd161-bcf8-499d-a1d9-357673a1a861",
+          "m": 960,
+          "n_by_cfg": [
+            1354,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            11,
+            8
+          ],
+          "ratio": 2.4753496409093363,
+          "base_mma": 1043942804029440,
+          "total_mma": 2584123445084160,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_209",
+          "m": 960,
+          "n_by_cfg": [
+            1169,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_132",
+          "m": 960,
+          "n_by_cfg": [
+            1237,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_100",
+          "m": 960,
+          "n_by_cfg": [
+            1213,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_279",
+          "m": 960,
+          "n_by_cfg": [
+            1257,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_152",
+          "m": 960,
+          "n_by_cfg": [
+            1160,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__human_086",
+          "m": 960,
+          "n_by_cfg": [
+            1183,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_058",
+          "m": 960,
+          "n_by_cfg": [
+            1229,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_034",
+          "m": 960,
+          "n_by_cfg": [
+            1141,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_052",
+          "m": 960,
+          "n_by_cfg": [
+            1246,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_031",
+          "m": 960,
+          "n_by_cfg": [
+            1251,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__industry_057",
+          "m": 960,
+          "n_by_cfg": [
+            1144,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_3173312-uhd_3840_2160_30fps",
+          "m": 960,
+          "n_by_cfg": [
+            1109,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_854100-hd_1920_1080_25fps",
+          "m": 960,
+          "n_by_cfg": [
+            1193,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_1777892-hd_1280_720_25fps",
+          "m": 960,
+          "n_by_cfg": [
+            1168,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_854179-hd_1920_1080_25fps",
+          "m": 960,
+          "n_by_cfg": [
+            1181,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__misc_4483542-uhd_2562_1440_30fps",
+          "m": 960,
+          "n_by_cfg": [
+            1179,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_061",
+          "m": 960,
+          "n_by_cfg": [
+            1117,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_057",
+          "m": 960,
+          "n_by_cfg": [
+            1118,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_009",
+          "m": 960,
+          "n_by_cfg": [
+            1140,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_162",
+          "m": 960,
+          "n_by_cfg": [
+            1193,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__physics_096",
+          "m": 960,
+          "n_by_cfg": [
+            1153,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_136",
+          "m": 960,
+          "n_by_cfg": [
+            1242,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_046",
+          "m": 960,
+          "n_by_cfg": [
+            1174,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_041",
+          "m": 960,
+          "n_by_cfg": [
+            1149,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_119",
+          "m": 960,
+          "n_by_cfg": [
+            1177,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "paibench__robot_057",
+          "m": 960,
+          "n_by_cfg": [
+            1237,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            10,
+            8
+          ],
+          "ratio": 2.4740716682905703,
+          "base_mma": 1041406088970240,
+          "total_mma": 2576513299906560,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0020",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0029",
+          "m": 960,
+          "n_by_cfg": [
+            1002,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0042",
+          "m": 960,
+          "n_by_cfg": [
+            1003,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__common_manipulation_0011",
+          "m": 960,
+          "n_by_cfg": [
+            1015,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0021",
+          "m": 960,
+          "n_by_cfg": [
+            1011,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0044",
+          "m": 960,
+          "n_by_cfg": [
+            1002,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0033",
+          "m": 960,
+          "n_by_cfg": [
+            1003,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__dual_arm_0083",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0062",
+          "m": 960,
+          "n_by_cfg": [
+            1001,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0013",
+          "m": 960,
+          "n_by_cfg": [
+            1010,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0087",
+          "m": 960,
+          "n_by_cfg": [
+            999,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__humanoid_0053",
+          "m": 960,
+          "n_by_cfg": [
+            1002,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0023",
+          "m": 960,
+          "n_by_cfg": [
+            1005,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0037",
+          "m": 960,
+          "n_by_cfg": [
+            1025,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0025",
+          "m": 960,
+          "n_by_cfg": [
+            1025,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "rbench__long-horizon_planning_0043",
+          "m": 960,
+          "n_by_cfg": [
+            1010,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0039",
+          "m": 960,
+          "n_by_cfg": [
+            1001,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0013",
+          "m": 960,
+          "n_by_cfg": [
+            1019,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0042",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__multi-entity_collaboration_0038",
+          "m": 960,
+          "n_by_cfg": [
+            1016,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0019",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0065",
+          "m": 960,
+          "n_by_cfg": [
+            1003,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0079",
+          "m": 960,
+          "n_by_cfg": [
+            1000,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__quad_0072",
+          "m": 960,
+          "n_by_cfg": [
+            999,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0017",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0027",
+          "m": 960,
+          "n_by_cfg": [
+            998,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0048",
+          "m": 960,
+          "n_by_cfg": [
+            1007,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__single_arm_0025",
+          "m": 960,
+          "n_by_cfg": [
+            1005,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0019",
+          "m": 960,
+          "n_by_cfg": [
+            1010,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0025",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0044",
+          "m": 960,
+          "n_by_cfg": [
+            1006,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__spatial_relationship_0016",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0032",
+          "m": 960,
+          "n_by_cfg": [
+            1025,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            9,
+            8
+          ],
+          "ratio": 2.4727874545553203,
+          "base_mma": 1038869373911040,
+          "total_mma": 2568903154728960,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0040",
+          "m": 960,
+          "n_by_cfg": [
+            1005,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0048",
+          "m": 960,
+          "n_by_cfg": [
+            1008,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        },
+        {
+          "case": "rbench__visual_reasoning_0008",
+          "m": 960,
+          "n_by_cfg": [
+            1004,
+            1000
+          ],
+          "key_tiles_by_cfg": [
+            8,
+            8
+          ],
+          "ratio": 2.471496953872933,
+          "base_mma": 1036332658851840,
+          "total_mma": 2561293009551360,
+          "feasible": true
+        }
+      ],
+      "measured_ledger_sha256": "8c4d32b5ae75de17b28edf2ddba52b112574e9c03b751cfee3e8e364da521d50",
+      "distinct_tile_shapes": 4,
+      "ratio_min": 2.471496953872933,
+      "ratio_max": 2.4753496409093363,
+      "budget": 2.5
+    }
+  },
+  "final_outputs_generated": false,
+  "performance_eligible": false,
+  "scope": "Exact pipeline tokenization and VAE/patch dimensions, validated against actual smoke ledgers; issued-tile budgets. Actual request warmup still recompiles before Graph capture."
+}

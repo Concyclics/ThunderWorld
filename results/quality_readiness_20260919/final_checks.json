@@ -1,0 +1,31 @@
+{
+  "complete": true,
+  "stages": {
+    "edge_partial_resume": {
+      "log": "/home/yufeng/thunderworld/full_quality_matrix_20260919/edge/resume_probe.log",
+      "sha256": "4ae04082202899f396f028c9476442c0d08832f2d8932be1e8eebb74a1fb0857",
+      "complete": true
+    },
+    "nano_partial_resume": {
+      "log": "/home/yufeng/thunderworld/full_quality_matrix_20260919/nano/resume_probe.log",
+      "sha256": "f9dc642f50ef380b1e3a33628dc6093530e2bb1ff55a1362f8fb57ba4bc39c43",
+      "complete": true
+    },
+    "arc_memcheck": {
+      "log": "/home/yufeng/thunderworld/full_quality_ready_20260919/nano/arc_memcheck.log",
+      "sha256": "a9d061cee538182f762e132abeea7bac7bddb844338f25751bbbb043f242c425",
+      "complete": true
+    },
+    "arc_racecheck": {
+      "log": "/home/yufeng/thunderworld/full_quality_ready_20260919/nano/arc_racecheck.log",
+      "sha256": "91dbb142f8feb8786cd6fde6ac035e816b67db14e4b7b400a01386ec106b75c4",
+      "complete": true
+    },
+    "awq_scale_probe": {
+      "log": "/home/yufeng/thunderworld/full_quality_ready_20260919/nano/awq_scale_probe.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete": true
+    }
+  },
+  "performance_eligible": false
+}

@@ -1,0 +1,23 @@
+{
+  "complete": true,
+  "model": "edge",
+  "methods": [
+    "bf16",
+    "fp8",
+    "fp4_base",
+    "awq_reference",
+    "arcquant",
+    "arcquant100",
+    "sharq_perf",
+    "b1.5_protected_n",
+    "b2_joint",
+    "b2.5_ffn_guarded",
+    "fp4_three",
+    "fp4_four"
+  ],
+  "final_manifest_sha256": "ce89e6ce2f85df0e58ede9c9834c05a8d53e797945e1dd02d04309ef5a625e9e",
+  "smoke_manifest_sha256": "97597320361fe09b855f01f38e53acc12b269e58adcb6269ecfa38bcea75a34d",
+  "quality_qualified": false,
+  "performance_eligible": false,
+  "final_started": false
+}

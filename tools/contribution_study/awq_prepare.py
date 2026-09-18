@@ -15,7 +15,7 @@ def main():
     a=p.parse_args();capture=json.loads((a.capture/'manifest.json').read_text())
     sources=json.loads(a.sources.read_text())
     names=a.modules or list(capture['weights'])
-    if not capture['complete'] or capture['split']!='development':raise ValueError('Complete development capture required')
+    if not capture['complete'] or capture['split'] not in ('development','calibration'):raise ValueError('Complete non-test calibration capture required')
     identity=dict(capture_sha256=sha(a.capture/'manifest.json'),sources_sha256=sha(a.sources),modules=names,source_sha256=sha(__file__))
     a.output.mkdir(parents=True,exist_ok=a.resume)
     path=a.output/'manifest.json'

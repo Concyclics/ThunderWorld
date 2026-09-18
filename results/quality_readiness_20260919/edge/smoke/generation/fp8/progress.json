@@ -1,0 +1,22 @@
+{
+  "identity": {
+    "manifest_sha256": "97597320361fe09b855f01f38e53acc12b269e58adcb6269ecfa38bcea75a34d",
+    "method": "fp8",
+    "source_sha256": "295ea248dfc11ffd558b4a2b4155fc5848219e0b67289c33fa0bdbd7b97eac92",
+    "runtime_sha256": "d89bfd2b9c64941d1b79213bdbf39637c6872cb173cc680be91dc504ff6c2d79",
+    "smoke": true,
+    "cases": [
+      "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "rbench__common_manipulation_0041"
+    ],
+    "require_source_hash": false,
+    "source_output_hashes_sha256": "f68365070b3cc460cf0d435820b25024207f2191b6817f3ff16bc0962885baf0"
+  },
+  "complete": true,
+  "completed": [
+    "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+    "rbench__common_manipulation_0041"
+  ],
+  "performance_eligible": false,
+  "roundtrip_bitwise_equal": true
+}
