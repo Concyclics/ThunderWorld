@@ -63,6 +63,9 @@ class JointEngine:
         self.discovering=False;self.budget_ledger=None;self.attention_shapes={}
         self.targets=generation_targets(transformer);self.linears={};self.shapes={}
         self.cache={};self.pool=torch.cuda.graph_pool_handle();self.replays=Counter()
+        # Experimental within-request CFG overlap supplies distinct pools and
+        # capture streams. Default requests retain the original serial pool.
+        self.branch_capture_resources={}
         self.attention_prepared={};self.trace_masks={};self.mask_history=[]
         self.explicit_masks={}
         self.pair_masks={}
@@ -147,7 +150,7 @@ class JointEngine:
         explicit=self.explicit_masks.get((layer,self.branch))
         if self.warming and key not in self.attention_prepared:
             quotas=torch.tensor(cfg.head_counts(q.shape[2],k.shape[1]),device=q.device,dtype=torch.int32)
-            if cfg.pv_head_quotas is not None or cfg.pv_terms is not None:
+            if cfg.pv_head_quotas is not None or cfg.pv_terms is not None or cfg.pv_coverage is not None or cfg.pv_head_budgets:
                 quotas=(quotas,torch.tensor(cfg.pv_counts(q.shape[2],k.shape[1]),device=q.device,dtype=torch.int32))
             tune_key=self.table.key('attention',[list(q.shape),list(k.shape)],attention_tuning_spec(cfg,explicit))
             current=[cfg]
@@ -299,6 +302,10 @@ class JointEngine:
 
     def clear(self):
         torch.cuda.synchronize();self.cache.clear();self.pool=torch.cuda.graph_pool_handle()
+        # Re-preparation must preserve branch isolation for an installed
+        # concurrent dispatcher, including after explicit-mask changes.
+        self.branch_capture_resources={b:(torch.cuda.graph_pool_handle(),stream)
+                                       for b,(_,stream) in self.branch_capture_resources.items()}
 
     def __call__(self,*args,**kwargs):
         if args:raise ValueError('Cosmos Transformer expects keyword arguments')
@@ -323,7 +330,9 @@ class JointEngine:
                     capture_start=time.perf_counter()
                     self.warming=False
                     try:
-                        with torch.cuda.graph(graph,pool=self.pool):output=self.forward(**static)
+                        resources=self.branch_capture_resources.get(self.branch)
+                        options=dict(pool=self.pool) if resources is None else dict(pool=resources[0],stream=resources[1])
+                        with torch.cuda.graph(graph,**options):output=self.forward(**static)
                     finally:self.warming=True
                     torch.cuda.synchronize()
                     self.graph_capture_seconds+=time.perf_counter()-capture_start

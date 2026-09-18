@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 PHASES = (0, 7, 18, 28, 35)
-BUDGETS = (1., 1.125, 1.25, 1.5)
+BUDGETS = (1., 1.125, 1.25, 1.5, 2., 2.5)
 
 
 def ceildiv(a, b):
@@ -52,20 +52,26 @@ def linear_cost(m, n, k, *, bm=128, a_blocks=0, w_blocks=(), cross=False, a_supp
             raise ValueError('A support must cover every M128 block')
         for ids in a_support:
             support(ids, kb)
-            if len(ids) != a_blocks:
+            if len(ids) > a_blocks:
                 raise ValueError('A support violates quota')
+            if a_blocks == kb and len(ids) != kb:
+                raise ValueError('Full A quota executes unconditional full repair')
     ctas = ceildiv(m, bm)
     cross_tiles = 0
+    a_tiles = 0
     for row in range(ctas):
+        a_tiles += len(a_support[row * bm // 128]) if a_support is not None else a_blocks
         cross_tiles += (sum(counts[i] for i in a_support[row * bm // 128]) if cross else 0) if a_support is not None else cross_per_m
     tile = 2 * bm * 128 * 128
-    terms = dict(base=ctas * nb * kb * tile, a=ctas * nb * a_blocks * tile,
+    terms = dict(base=ctas * nb * kb * tile, a=a_tiles * nb * tile,
                  w=ctas * len(w_blocks) * tile, cross=cross_tiles * tile)
     mp = ceildiv(m, 16) * 16
     packed_base = mp * k * 9 // 16  # E2M1 codes + E4M3 scales
     # Sparse pack implementation writes residuals only for selected 128x128 A tiles.
     residual_rows = sum(min(128, mp - i * 128) for i in range(mt))
-    selected_bytes = residual_rows * a_blocks * 128 * 9 // 16
+    selected_rows = (sum(min(128,mp-i*128)*len(ids) for i,ids in enumerate(a_support))
+                     if a_support is not None else residual_rows*a_blocks)
+    selected_bytes = selected_rows * 128 * 9 // 16
     return dict(kind='linear', shape=[m, n, k], launch=dict(bm=bm, bn=128, bk=128),
                 mma_by_dtype={'fp4': terms, 'bf16': {}}, base_mma=terms['base'],
                 total_mma=sum(terms.values()), a_blocks=a_blocks, w_blocks=list(w_blocks),
@@ -74,7 +80,7 @@ def linear_cost(m, n, k, *, bm=128, a_blocks=0, w_blocks=(), cross=False, a_supp
                              residual_allocation_bytes=packed_base if a_blocks else 0,
                              input_read_bytes_minimum=2*m*k),
                 non_mma=dict(amax_elements=m*k, quantized_base_elements=mp*k,
-                             selected_residual_elements=residual_rows*a_blocks*128,
+                             selected_residual_elements=selected_rows*128,
                              selector_rank_pairs=mt*(1<<(kb-1).bit_length())**2 if 0<a_blocks<kb else 0),
                 w1_union_bytes=len(w_blocks)*(128*128*9//16),
                 cost_scope='issued MMA including tail padding; packing model must match recorded implementation')
@@ -171,8 +177,23 @@ class RepairPlan:
         from dataclasses import replace
         if task!=self.value['task']:raise ValueError('Budget task mismatch')
         row=self.attention[f'{branch}|{phase}|{layer}']
+        if 'qk_fractions' in row or 'pv_fractions' in row:
+            if set(row) & {'qk_counts','pv_counts','full_attention'}:
+                raise ValueError('Fractional and fixed/full attention quotas cannot be mixed')
+            qk, pv = row['qk_fractions'], row['pv_fractions']
+            if not qk or len(qk)!=len(pv):raise ValueError('Both head fraction lists are required')
+            return replace(default,coverage=0.,head_budgets=tuple(enumerate(qk)),
+                pv_coverage=0.,pv_head_budgets=tuple(enumerate(pv)),head_quotas=None,pv_head_quotas=None,
+                sparse_pack=True,terms=row.get('qk_terms',3),pv_terms=row.get('pv_terms',3))
+        # Full repair must include the current prompt's tail tile as well. The
+        # ordinary warmup ledger checks its actual shape before Graph capture.
+        if row.get('full_attention',False):
+            if row.get('qk_counts') or row.get('pv_counts'):
+                raise ValueError('Full attention cannot also specify fixed quotas')
+            return replace(default,coverage=1.,head_budgets=(),sparse_pack=True,
+                head_quotas=None,pv_head_quotas=None,pv_coverage=None,pv_head_budgets=(),terms=row.get('qk_terms',3),pv_terms=row.get('pv_terms',3))
         return replace(default,coverage=0.,head_budgets=(),sparse_pack=True,head_quotas=tuple(row['qk_counts']),
-                       pv_head_quotas=tuple(row['pv_counts']),terms=row.get('qk_terms',3),
+                       pv_head_quotas=tuple(row['pv_counts']),pv_coverage=None,pv_head_budgets=(),terms=row.get('qk_terms',3),
                        pv_terms=row.get('pv_terms',3))
 
 

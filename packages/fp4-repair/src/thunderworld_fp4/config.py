@@ -34,6 +34,8 @@ class RepairConfig:
     head_budgets: tuple[tuple[int, float], ...] = ()
     head_quotas: tuple[int, ...] | None = None
     pv_head_quotas: tuple[int, ...] | None = None
+    pv_coverage: float | None = None
+    pv_head_budgets: tuple[tuple[int, float], ...] = ()
     pv_terms: int | None = None
     block_size: int = 128
     query_tile: int | None = None
@@ -47,6 +49,8 @@ class RepairConfig:
 
     def __post_init__(self):
         _fraction(self.coverage, "coverage")
+        if self.pv_coverage is not None:
+            _fraction(self.pv_coverage, 'pv_coverage')
         for name, allowed in (("terms", (2, 3, 4)), ("block_size", (128,)),
                               ("num_warps", (4, 8)), ("splits", (1, 2, 4, 8))):
             value = getattr(self, name)
@@ -79,6 +83,18 @@ class RepairConfig:
                 raise ValueError(f"duplicate head budget: {head}")
             seen.add(head)
         object.__setattr__(self, "head_budgets", tuple(sorted(budgets)))
+        pv_budgets = tuple(tuple(pair) for pair in self.pv_head_budgets)
+        seen = set()
+        for pair in pv_budgets:
+            if len(pair) != 2:
+                raise ValueError('pv_head_budgets entries must be (head, coverage)')
+            head, fraction = pair
+            _integer(head, 'PV head')
+            _fraction(fraction, 'PV head coverage')
+            if head in seen:
+                raise ValueError('Duplicate PV head budget')
+            seen.add(head)
+        object.__setattr__(self, 'pv_head_budgets', tuple(sorted(pv_budgets)))
 
     def head_counts(self, query_heads: int, key_tokens: int) -> tuple[int, ...]:
         _integer(query_heads, "query_heads", 1)
@@ -96,7 +112,15 @@ class RepairConfig:
         return tuple(counts)
 
     def pv_counts(self, query_heads, key_tokens):
-        if self.pv_head_quotas is None:return self.head_counts(query_heads,key_tokens)
+        if self.pv_head_quotas is None:
+            counts = list(self.head_counts(query_heads,key_tokens))
+            tiles = math.ceil(key_tokens / 128)
+            if self.pv_coverage is not None:
+                counts = [math.ceil(tiles*self.pv_coverage)]*query_heads
+            for head, fraction in self.pv_head_budgets:
+                if head >= query_heads:raise ValueError('PV head exceeds query head count')
+                counts[head] = math.ceil(tiles*fraction)
+            return tuple(counts)
         if len(self.pv_head_quotas)!=query_heads or any(c>math.ceil(key_tokens/128) for c in self.pv_head_quotas):
             raise ValueError('PV quota exceeds shape')
         return self.pv_head_quotas

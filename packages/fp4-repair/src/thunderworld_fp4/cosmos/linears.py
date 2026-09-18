@@ -57,6 +57,7 @@ class RepairLinear(torch.nn.Module):
         super().__init__()
         self.in_features, self.out_features = source.in_features, source.out_features
         self.controller, self.name, self.default = controller, name, spec
+        self.repair_energy=getattr(getattr(controller,'config',None),'activation_repair_energy',1.)
         n, k = self.out_features, self.in_features
         if n%128 or k%128: raise ValueError(f'Unsupported FP4 projection {name}: {n}x{k}')
         if asset is None:
@@ -69,12 +70,26 @@ class RepairLinear(torch.nn.Module):
                 score=score.cpu(),bias=None if source.bias is None else source.bias.detach().cpu())
             if getattr(controller,'budget_plan',None) is not None:
                 asset.update(selector='residual_sensitivity',activation_sensitivity=w.float().square().sum(0).cpu())
-        self.asset=asset  # CPU preparation data; never transferred during replay.
+        # Budgeted instances retain only the offline W1 support union on CPU.
+        # A dense staging tensor may exist during preparation, never during replay.
+        plan=getattr(controller,'budget_plan',None)
+        self.weight_union=None
+        if plan is not None:
+            from .assets import compact
+            self.weight_union=sorted(set(i for key,row in plan.linears.items()
+                if key.split('|',2)[-1]==name for i in row['w_blocks']))
+            self.asset=compact(asset,self.weight_union)
+        else:
+            self.asset=asset
         self.register_buffer('bias',None if asset['bias'] is None else asset['bias'].cuda())
         self.register_buffer('sensitivity',asset.get('activation_sensitivity',torch.ones(k)).cuda())
         self.ops={};self.bound=None;self.weight_bank=None
 
-    def export(self): return self.asset
+    def export(self):
+        if self.weight_union is not None:
+            from .assets import expand
+            return expand(self.asset,self.weight_union)
+        return self.asset
 
     def prepare_shape(self, m, spec):
         key=(m,spec.key)
@@ -82,10 +97,12 @@ class RepairLinear(torch.nn.Module):
             self.bound=self.ops[key]
             return
         n,k=self.out_features,self.in_features;mb=triton.cdiv(m,128)
-        a=self.asset
+        a=self.export()
         c,s,g,d=(a[x].cuda() for x in ('codes','scales','factor','prescale'))
         am=torch.ones((mb,k),device='cuda',dtype=torch.bool)
         scores=a['score'].flatten();na,nw=spec.counts(n,k)
+        if self.repair_energy!=1 and 0<na<k//128 and a.get('selector')!='residual_sensitivity':
+            raise ValueError('Adaptive A repair requires an offline residual-sensitivity asset')
         selected=torch.zeros_like(scores,dtype=torch.bool)
         ids=torch.argsort(scores,descending=True,stable=True)[:nw] if spec.weight_support is None else torch.tensor(spec.weight_support,dtype=torch.long)
         mandatory=set(a.get('mandatory_w_blocks',()))
@@ -170,10 +187,10 @@ class RepairLinear(torch.nn.Module):
             if direct:
                 from ..cutlass.packing import pack_input
                 packed=pack_input(x,op,sensitivity=self.sensitivity,base=base,res=res,
-                    factor=factor if bool(self.asset.get('identity_prescale',False)) else None)
+                    factor=factor if bool(self.asset.get('identity_prescale',False)) else None,energy=self.repair_energy)
             else:
                 packed=pack_sparse(x,op.d,self.sensitivity,op.am,op.na,base=base,res=res,
-                                   factor=factor if bool(self.asset.get('identity_prescale',False)) else None)
+                                   factor=factor if bool(self.asset.get('identity_prescale',False)) else None,energy=self.repair_energy)
         elif 0<op.na<k//128:
             select_tiles[(triton.cdiv(m,128),)](x,op.d,op.am,m,k,
                 triton.next_power_of_2(k//128),op.na,num_warps=4)
@@ -200,6 +217,7 @@ class RepairLinear(torch.nn.Module):
         if c.warming:
             self.prepare_shape(len(flat),spec)
             tune_spec=dict(repair=spec.key,activation_scale=self.asset.get('activation_scale',(1.,1.)),
+                activation_repair_energy=self.repair_energy,
                 identity_prescale=bool((self.asset['prescale']==1).all()),
                 kernel_variant=getattr(getattr(c,'config',None),'kernel_variant','optimized'))
             if getattr(getattr(c,'config',None),'linear_backend','triton')=='cutlass-fused':

@@ -82,7 +82,7 @@ def pack_kernel(X, D, F, WG, MASK, SENS, C, S, CS, ALPHA, E,
         tl.store(ALPHA, f * tl.load(WG))
 
 
-def pack_input(x, op, *, sensitivity=None, base=1., res=1., factor=None):
+def pack_input(x, op, *, sensitivity=None, base=1., res=1., factor=None,energy=1.):
     """Mirror the native/calibrated/sparse producer without changing its factor."""
     m, k = x.shape; mp = triton.cdiv(m, 16) * 16
     sparse = sensitivity is not None and 0 < op.na < k // 128
@@ -103,7 +103,7 @@ def pack_input(x, op, *, sensitivity=None, base=1., res=1., factor=None):
         op.na > 0, op.na == k // 128, sparse, (base, res) != (1., 1.), base, res,
         num_warps=4, enable_fp_fusion=not sparse)
     if sparse:
-        choose[(triton.cdiv(m, 128),)](summary, op.am, m, k, triton.next_power_of_2(k // 128), op.na, num_warps=4)
+        choose[(triton.cdiv(m, 128),)](summary, op.am, m, k, triton.next_power_of_2(k // 128), op.na, energy, num_warps=4)
         residual_only[(triton.cdiv(m, 16), k // 128)](
             x, op.d, factor, op.am, codes, scales, m, k, mp, base, res, num_warps=4)
     return CutlassPacked((codes, scales, factor, mp), cutlass_scales, alpha)

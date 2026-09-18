@@ -7,9 +7,10 @@ import statistics
 from types import SimpleNamespace
 
 
-def main():
+def main(artifact_verifier=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--library',type=Path,required=True)
+    p.add_argument('--reference-library',type=Path,help='Optional same-tile compiler/artifact A/B; requires bitwise equality')
     p.add_argument('--capture',type=Path,required=True)
     p.add_argument('--config',type=Path,required=True)
     p.add_argument('--assets',type=Path,required=True)
@@ -53,6 +54,13 @@ def main():
             library_sha256=hashlib.sha256(a.library.read_bytes()).hexdigest(),
             torch_version=torch.__version__,gpu=torch.cuda.get_device_name(),device_identity=identity(),rows=[])
         result['timing_protocol']=dict(graph_batch=a.graph_batch,rounds=a.timing_rounds,replays=max(8,100//a.graph_batch),alternating_order=True)
+        if a.reference_library:
+            from thunderworld_fp4.cutlass.artifact import verify_library
+            if artifact_verifier is not None:verify_library=artifact_verifier
+            reference_meta=verify_library(a.reference_library)
+            if reference_meta['tile']!=verify_library(a.library)['tile']:
+                raise ValueError('Compiler A/B requires matching tiles')
+            result['reference_artifact']=reference_meta
         def save():a.output.write_text(json.dumps(result,indent=2)+'\n')
         save()
         names=['layers.0.self_attn.add_q_proj','layers.0.self_attn.add_k_proj',
@@ -70,6 +78,7 @@ def main():
                     controller=SimpleNamespace(budget_plan=plan,config=SimpleNamespace(kernel_variant='optimized'))
                     layer=RepairLinear(source,controller,name,spec,asset);layer.prepare_shape(m,spec);native=layer.bound
                     bridge=CutlassBridge(native,m,a.library)
+                    reference_bridge=CutlassBridge(native,m,a.reference_library) if a.reference_library else None
                     def compute(op,direct=False):
                         if isinstance(op,CutlassBridge):op.direct_scale_pack=direct
                         layer.bound=op;return layer._compute(x)
@@ -79,10 +88,16 @@ def main():
                     expected=compute(native)
                     native.run_packed=original;packed=captured[-1]
                     actual=compute(bridge)
+                    reference_equal=None
+                    if reference_bridge is not None:
+                        reference_equal=torch.equal(actual,compute(reference_bridge))
+                        if not reference_equal:raise ValueError(f'Compiled artifact changed output: {name}, phase {ph}')
                     direct_equal=None
                     if a.compare_direct_pack:
                         direct_equal=torch.equal(actual,compute(bridge,True))
                         if not direct_equal:raise ValueError(f'Direct scale producer changed output: {name}, phase {ph}')
+                        if reference_bridge is not None and not torch.equal(actual,compute(reference_bridge,True)):
+                            raise ValueError(f'Reference direct producer changed output: {name}, phase {ph}')
                     error=float((actual.float()-expected.float()).norm()/expected.float().norm().clamp_min(1e-20))
                     if error>=.002:raise ValueError(f'Bridge numerical mismatch {name}: {error}')
                     nmse=lambda y:float((y.float()-gold).square().sum()/gold.square().sum().clamp_min(1e-20))
@@ -99,11 +114,16 @@ def main():
                         item['direct_pack_bitwise']=direct_equal
                         item['direct_pack_removed_scale_read_bytes']=packed[1][0].numel()
                         item['direct_pack_removed_launches']=1
+                    if reference_bridge is not None:item['reference_library_bitwise']=reference_equal
                     if not a.correctness_only:
                         if a.resource_mode=='exclusive':idle_guard()
                         funcs={'native_total':lambda:compute(native),'bridge_total':lambda:compute(bridge),
                                'native_packed':lambda:native.run_packed(x,packed),'bridge_packed':lambda:bridge.run_packed(x,packed)}
                         if a.compare_direct_pack:funcs['bridge_direct_total']=lambda:compute(bridge,True)
+                        if reference_bridge is not None:
+                            funcs['reference_total']=lambda:compute(reference_bridge)
+                            funcs['reference_packed']=lambda:reference_bridge.run_packed(x,packed)
+                            if a.compare_direct_pack:funcs['reference_direct_total']=lambda:compute(reference_bridge,True)
                         graphs={};keepers=[]
                         for key,fn in funcs.items():
                             for _ in range(3):fn()
@@ -130,7 +150,7 @@ def main():
                         if a.resource_mode=='exclusive':idle_guard()
                         del graphs,keepers
                     result['rows'].append(item);save();print(json.dumps(item),flush=True)
-                    del layer,native,bridge,packed,expected,actual,x,gold,panel
+                    del layer,native,bridge,reference_bridge,packed,expected,actual,x,gold,panel
                 result['complete']=True;save()
         except Exception as error:
             result['error']=repr(error);save();raise

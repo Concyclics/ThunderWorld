@@ -59,10 +59,10 @@ def install(model):
                 select_tiles[(triton.cdiv(m,128),)](x,op.d,op.am,m,k,triton.next_power_of_2(k//128),op.na,num_warps=4)
             if getattr(op,'direct_scale_pack',False):
                 from ..cutlass.packing import pack_input
-                packed=pack_input(x,op,sensitivity=_down.sensitivity if sparse else None,base=base,res=res,factor=factor)
+                packed=pack_input(x,op,sensitivity=_down.sensitivity if sparse else None,base=base,res=res,factor=factor,energy=_down.repair_energy)
             elif sparse:
                 from .._sparse_pack import pack_sparse
-                packed=pack_sparse(x,op.d,_down.sensitivity,op.am,op.na,base=base,res=res,factor=factor)
+                packed=pack_sparse(x,op.d,_down.sensitivity,op.am,op.na,base=base,res=res,factor=factor,energy=_down.repair_energy)
             else:packed=pack_native(x,op,factor,base,res)
             y=op.run_packed(x,packed)
             return y if _down.bias is None else y+_down.bias

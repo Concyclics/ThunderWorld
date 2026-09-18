@@ -1,0 +1,17 @@
+# Install torch/torchvision from the CUDA 13.0 wheel index first (README).
+torch==2.11.0
+torchvision==0.26.0
+triton==3.6.0
+diffusers @ git+https://github.com/huggingface/diffusers.git@77c13f8a49c457f10a89862bb129bdc930b88929
+huggingface-hub @ git+https://github.com/huggingface/huggingface_hub.git@f0a5c6d08298760b2a030c4c5df608369632b7e1
+transformers==5.14.0
+accelerate==1.14.0
+safetensors==0.8.0
+numpy==2.3.5
+Pillow==12.3.0
+sentencepiece==0.2.2
+protobuf==7.35.1
+av==18.1.0
+einops==0.8.2
+pybind11==3.1.0
+pytest==9.1.1

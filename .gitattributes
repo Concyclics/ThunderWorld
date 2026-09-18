@@ -1,0 +1,4 @@
+# Frozen evidence keeps its original bytes and SHA256, including CSV CRLF.
+results/fp4_baseline_sweep_20260918/** -text whitespace=-blank-at-eof,cr-at-eol
+# Preserve upstream context lines in the reproducible source patch.
+tools/fp4_handoff/patches/*.patch -text -whitespace

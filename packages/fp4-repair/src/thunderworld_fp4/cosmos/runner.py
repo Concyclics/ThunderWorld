@@ -20,13 +20,15 @@ def model_identity(path):
 
 
 class CosmosRunner:
-    def __init__(self,model,config,*,tuning=None,tune=False,assets=None,audio=False,codec_graph=False,fuse_norm=False,ar_cache=False,first_frame=False,fuse_pointwise=False,static_rotary=False,fuse_calibrated=False):
+    def __init__(self,model,config,*,tuning=None,tune=False,assets=None,audio=False,codec_graph=False,fuse_norm=False,ar_cache=False,first_frame=False,fuse_pointwise=False,static_rotary=False,fuse_calibrated=False,qkv_streams=False):
         if config.resource_mode == 'shared-calibration' and tune:
             raise ValueError('Shared calibration prohibits timing-based tuning')
         self.path=Path(model);self.config=config;self.audio=audio
         self.codec_graph_enabled=codec_graph;self.codec_graphs=None
         self.fuse_norm=fuse_norm;self.fused_norm_modules=[]
         self.ar_cache_enabled=ar_cache;self.ar_cache=None
+        if qkv_streams and not ar_cache:raise ValueError('QKV streams require the AR-cached I2V path')
+        self.qkv_streams=qkv_streams
         self.first_frame_enabled=first_frame;self.first_frame=None
         self.fuse_pointwise=fuse_pointwise;self.pointwise_modules=[]
         self.fuse_calibrated=fuse_calibrated;self.calibrated_modules=[]
@@ -92,7 +94,7 @@ class CosmosRunner:
         self.engine=JointEngine(self.pipe.transformer,self.config,self.table,assets)
         if self.ar_cache_enabled:
             from .ar_cache import ARCache
-            self.ar_cache=ARCache(self.engine)
+            self.ar_cache=ARCache(self.engine,qkv_streams=self.qkv_streams)
         if self.fuse_pointwise:
             from .pipeline_tuning import fused_rope, install_relu2
             self.ar_cache.rope=fused_rope

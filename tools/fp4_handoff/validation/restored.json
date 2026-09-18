@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "package_sha256": "32e501564278df9455a882218bf6417629453ae09e7f8f131af4fa1e706652cd",
+  "model_identity": {
+    "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+    "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+  },
+  "modules_per_method": {
+    "b1.5_protected_n": 168,
+    "b2_joint": 168,
+    "b2.5_ffn_guarded": 168
+  },
+  "all_tensor_hashes_match": true,
+  "performance_eligible": false
+}

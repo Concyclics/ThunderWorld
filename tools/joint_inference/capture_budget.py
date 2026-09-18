@@ -20,6 +20,8 @@ def main():
     p.add_argument('--student-config',type=Path)
     p.add_argument('--student-assets',type=Path)
     p.add_argument('--reference-capture',type=Path)
+    p.add_argument('--ar-cache',action='store_true',help='Use the same fresh per-request AR cache as the contribution generation suite')
+    p.add_argument('--first-frame',action='store_true')
     p.add_argument('--resume', action='store_true')
     a = p.parse_args()
     if a.student_config and not a.reference_capture:p.error('Student capture requires original BF16 weights')
@@ -42,17 +44,19 @@ def main():
         from dataclasses import replace
         config=RunConfig(precision='bf16',attention_backend='bf16',execution='eager',resource_mode='shared-calibration')
         if a.student_config:config=replace(RunConfig.from_dict(json.loads(a.student_config.read_text())),execution='eager',debug='trace',resource_mode='shared-calibration')
-        runner=CosmosRunner(a.model,config,assets=a.student_assets,audio=case['task']=='av').prepare()
+        runner=CosmosRunner(a.model,config,assets=a.student_assets,audio=case['task']=='av',ar_cache=a.ar_cache,first_frame=a.first_frame).prepare()
         teacher=json.loads((a.reference_capture/'manifest.json').read_text()) if a.reference_capture else None
         if teacher and teacher['model_identity']!=runner.identity:raise ValueError('Student/teacher model mismatch')
         if teacher and teacher.get('calibration_round',0)>=1:raise ValueError('Only one student recalibration round is allowed')
         manifest = dict(complete=False, split='development', cohort=cohort.value,
                         cohort_sha256=cohort.fingerprint, trajectory='student' if teacher else 'teacher', calibration_round=1 if teacher else 0, role=role, config=config.to_dict(), case=case, model_identity=runner.identity,
                         resource=resource, performance_eligible=False, weights={}, rows=[],
+                        pipeline=dict(ar_cache=a.ar_cache,first_frame=a.first_frame),
                         completed_seeds=[], scope='All generation layers, full M, four phases, all actual CFG branches')
         if a.resume and manifest_path.exists():
             manifest = json.loads(manifest_path.read_text())
             if (manifest['cohort_sha256'] != cohort.fingerprint or manifest['case'] != case
+                    or manifest.get('pipeline',dict(ar_cache=False,first_frame=False))!=dict(ar_cache=a.ar_cache,first_frame=a.first_frame)
                     or manifest['model_identity'] != runner.identity or RunConfig.from_dict(manifest.get('config',config.to_dict()))!=config):
                 raise ValueError('Resume provenance mismatch')
             for row in manifest['rows']:

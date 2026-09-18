@@ -55,12 +55,25 @@ def signal_metrics(x,reference):
                 rmse=float(np.sqrt(np.mean((a-b)**2))))
 
 
+
+def video_psnr(x,reference):
+    """Clip-global RGB MSE at fixed data_range=1. Exact equality is JSON null (+inf)."""
+    a,b=np.asarray(x,dtype=np.float64),np.asarray(reference,dtype=np.float64)
+    if a.shape!=b.shape or not a.size or not np.isfinite(a).all() or not np.isfinite(b).all():
+        raise ValueError('Invalid video pair')
+    if a.min()<0 or b.min()<0 or a.max()>1 or b.max()>1:
+        raise ValueError('PSNR expects video pixels in [0,1]; no per-video normalization')
+    mse=float(np.mean(np.square(a-b)))
+    return dict(mse=mse,psnr_db=float(-10*np.log10(mse)) if mse else None,psnr_exact=mse==0)
+
+
 def compare(signals,reference,lpips_model):
     import torch
     from skimage.metrics import structural_similarity
     if set(signals)!=set(reference):raise ValueError('Output modalities differ from BF16')
     result={k:signal_metrics(v,reference[k]) for k,v in signals.items()}
     a,b=signals['video'],reference['video']
+    result['video'].update(video_psnr(a,b))
     result['video']['ssim_mean']=float(np.mean([structural_similarity(x,y,data_range=1.,channel_axis=-1) for x,y in zip(a,b)]))
     distances=[]
     device=next(lpips_model.parameters()).device
