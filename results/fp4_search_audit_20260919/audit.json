@@ -1,0 +1,171 @@
+{
+  "complete": true,
+  "source_sha256": "a182634e9b5954d34f9e5783a1fc3186cb8253c5216eb96340bf7e79d2a4874d",
+  "performance_eligible": false,
+  "new_generation": false,
+  "frozen_manifest_sha256": "0836e9a603dd6cfa9e80b09ecb05d4837cf7301176b76426a3970c92f33a8dbe",
+  "outlier": {
+    "2": {
+      "progress_sha256": "662d1f954aa61934b46e8bb5bf2aeba990730cb1cc726b084a65798e2635a248",
+      "operators": 168,
+      "operators_with_w1": 63,
+      "stored_w1_blocks": 8064,
+      "variants": {
+        "rtn": {
+          "operators_with_removed_elements": 0,
+          "removed_elements": 0,
+          "mandatory_blocks": 0,
+          "mean_operator_objective": 0.0043174182214530095,
+          "relative_mean_objective_reduction_vs_rtn": 0.0
+        },
+        "four_six": {
+          "operators_with_removed_elements": 0,
+          "removed_elements": 0,
+          "mandatory_blocks": 0,
+          "mean_operator_objective": 0.0037985057637190222,
+          "relative_mean_objective_reduction_vs_rtn": 0.12019045436820097
+        },
+        "magnitude": {
+          "operators_with_removed_elements": 63,
+          "removed_elements": 10848,
+          "mandatory_blocks": 63,
+          "mean_operator_objective": 0.004327467960548572,
+          "relative_mean_objective_reduction_vs_rtn": -0.0023277196185502724
+        },
+        "quant_error": {
+          "operators_with_removed_elements": 63,
+          "removed_elements": 10848,
+          "mandatory_blocks": 63,
+          "mean_operator_objective": 0.004320299382142437,
+          "relative_mean_objective_reduction_vs_rtn": -0.0006673341663105958
+        },
+        "output_joint": {
+          "operators_with_removed_elements": 5,
+          "removed_elements": 478,
+          "mandatory_blocks": 5,
+          "mean_operator_objective": 0.004317410147808734,
+          "relative_mean_objective_reduction_vs_rtn": 1.8700167233598464e-06
+        }
+      },
+      "original_scale_metadata": {
+        "(1.0, 1.0)": 168
+      },
+      "rtn_changed_vs_frozen": []
+    },
+    "2.5": {
+      "progress_sha256": "085fec9ba8ec1c19472ac031e9e0cc42b90d6deb3c677cf87dcdc25ae5c6d9ab",
+      "operators": 168,
+      "operators_with_w1": 129,
+      "stored_w1_blocks": 36288,
+      "variants": {
+        "rtn": {
+          "operators_with_removed_elements": 0,
+          "removed_elements": 0,
+          "mandatory_blocks": 0,
+          "mean_operator_objective": 0.0012921988053004117,
+          "relative_mean_objective_reduction_vs_rtn": 0.0
+        },
+        "four_six": {
+          "operators_with_removed_elements": 0,
+          "removed_elements": 0,
+          "mandatory_blocks": 0,
+          "mean_operator_objective": 0.0011004876680110888,
+          "relative_mean_objective_reduction_vs_rtn": 0.1483604043765957
+        },
+        "magnitude": {
+          "operators_with_removed_elements": 129,
+          "removed_elements": 15264,
+          "mandatory_blocks": 129,
+          "mean_operator_objective": 0.0012983002756680425,
+          "relative_mean_objective_reduction_vs_rtn": -0.004721773725995915
+        },
+        "quant_error": {
+          "operators_with_removed_elements": 129,
+          "removed_elements": 15977,
+          "mandatory_blocks": 129,
+          "mean_operator_objective": 0.0012943015996966223,
+          "relative_mean_objective_reduction_vs_rtn": -0.00162729944307749
+        },
+        "output_joint": {
+          "operators_with_removed_elements": 13,
+          "removed_elements": 1692,
+          "mandatory_blocks": 13,
+          "mean_operator_objective": 0.0012921877973340625,
+          "relative_mean_objective_reduction_vs_rtn": 8.518786973055192e-06
+        }
+      },
+      "original_scale_metadata": {
+        "(1.0, 1.0)": 167,
+        "(1.0, 0.875)": 1
+      },
+      "rtn_changed_vs_frozen": [
+        {
+          "module": "layers.20.mlp_moe_gen.down_proj",
+          "changed_tensors": [
+            "codes_residual",
+            "scales_residual"
+          ],
+          "original_scale": [
+            1.0,
+            0.875
+          ],
+          "rtn_scale": [
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    }
+  },
+  "schedule": {
+    "1.5": {
+      "manifest_sha256": "248b182f9c78f766fc1b1560572fdfb7b5cdefa5fafcfb0518c969f0f72f606c",
+      "cases": 16,
+      "groups_per_case": [
+        1344
+      ],
+      "observation_steps": {
+        "0": 5376,
+        "7": 5376,
+        "18": 5376,
+        "28": 5376
+      }
+    },
+    "2": {
+      "manifest_sha256": "84a2e9721b17ea5db5ffe60fc5e21726825e0e635baf3438440900b9c98c44b4",
+      "cases": 16,
+      "groups_per_case": [
+        1344
+      ],
+      "observation_steps": {
+        "0": 5376,
+        "7": 5376,
+        "18": 5376,
+        "28": 5376
+      }
+    },
+    "2.5": {
+      "manifest_sha256": "ada91f47d2157596cd18ad1d20c6d175da0d64dea8ea3cb42c834c8e03ba493a",
+      "cases": 16,
+      "groups_per_case": [
+        1344
+      ],
+      "observation_steps": {
+        "0": 5376,
+        "7": 5376,
+        "18": 5376,
+        "28": 5376
+      }
+    }
+  },
+  "scope": "Search-space and asset-identity audit. Local objectives have module-specific denominators; their means describe this search, not final quality or attainable improvement.",
+  "nonmaximum_removal_check": {
+    "groups": 2048,
+    "group_size": 16,
+    "seed": 20260919,
+    "scale_multiplier": 1.0,
+    "scales_bitwise_unchanged": true,
+    "retained_decoded_elements_bitwise_unchanged": true,
+    "scope": "Actual E4M3/E2M1 encoder, BF16 inputs, fixed outer factor. Removing a nonmaximum does not improve other base codes while the group amax scale rule remains unchanged. This does not characterize subsequent residual errors or generated video quality."
+  }
+}
