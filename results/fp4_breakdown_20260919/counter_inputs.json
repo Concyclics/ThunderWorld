@@ -1,0 +1,72 @@
+{
+  "complete": true,
+  "method": "b2_joint",
+  "rows": [
+    {
+      "module": "layers.0.self_attn.add_q_proj",
+      "m": 960,
+      "n": 2048,
+      "k": 2048,
+      "bm": 128,
+      "stages": 2,
+      "a_blocks": 12,
+      "w_blocks": 0,
+      "input_sha256": "9ae416c1d9ad231ce448e813d696535a97f2d197d7d6478f9b8d0eefefc18841",
+      "weight_sha256": "614e1dcde4948d40bb384136c35aa3f031662820b1f05b19876752d79fa8c854",
+      "asset_sha256": "0d8e4e334caa94b1213a6f23544d595e55285b85dabb477a4902f4c98a4aeb76",
+      "repeated_output_bitwise": true
+    },
+    {
+      "module": "layers.0.self_attn.add_k_proj",
+      "m": 960,
+      "n": 1024,
+      "k": 2048,
+      "bm": 128,
+      "stages": 2,
+      "a_blocks": 12,
+      "w_blocks": 16,
+      "input_sha256": "381ebc34f8fa9b75396a0fa72b2f3ea00904d160ccec39099dba2eb7be7ca9ee",
+      "weight_sha256": "a2b20a05478259c1ba56440a9d7ba334d810edcc8ed6e32f94c4ed16051397cf",
+      "asset_sha256": "0f4ee78492de3b8791de9f497522347b5727c9965e715f9d7e0c233d779a0c11",
+      "repeated_output_bitwise": true
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.up_proj",
+      "m": 960,
+      "n": 9216,
+      "k": 2048,
+      "bm": 128,
+      "stages": 2,
+      "a_blocks": 12,
+      "w_blocks": 0,
+      "input_sha256": "3493f66076de7cc9bc8a8457ed1bd5170f4374d9c9a7759ce019bb2fe1972226",
+      "weight_sha256": "76fcc973334e29046fbbb36adc93e118123c562760d1f40f9da203025478e269",
+      "asset_sha256": "c8ab5a3f2a778ed82af990cf7f67fbefd954c4fdea66c9f5b7523f6b4b0ffbc3",
+      "repeated_output_bitwise": true
+    },
+    {
+      "module": "layers.0.mlp_moe_gen.down_proj",
+      "m": 960,
+      "n": 2048,
+      "k": 9216,
+      "bm": 128,
+      "stages": 2,
+      "a_blocks": 54,
+      "w_blocks": 0,
+      "input_sha256": "0984a41c8c1eab2881e21fe446ded13521197f79a7418c3f164bfe2430d21d7d",
+      "weight_sha256": "be1aa30062c3806dc7a893018c03b038d5ad4d8f8bf90316d7347beecde564f4",
+      "asset_sha256": "8ac80ba40c262e758bd00854ab27735b88de46a3f836ec730e5af289a8e861d1",
+      "repeated_output_bitwise": true
+    }
+  ],
+  "source_sha256": "8263c05bacde024ad34bbb294e456786dd11e2cf7c873ba428bbeb7914234b5a",
+  "performance_eligible": false,
+  "scope": "Layer 0, phase 0, CFG branch 0, real full-M BF16 teacher inputs. Same frozen native FP4 repair GEMM and launch; representative counters, not full-request saturation or speed.",
+  "resource": {
+    "device": 0,
+    "free_mib": 97291,
+    "minimum_mib": 12288,
+    "resource_mode": "shared-calibration",
+    "performance_eligible": false
+  }
+}

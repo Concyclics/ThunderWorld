@@ -1,0 +1,20 @@
+# Run from the repository root after restoring the frozen study and teacher panels.
+# Representative kernel counters only, not request timing. Do not run alongside
+# another experiment on the same GPU. No global clock, cache or permission changes.
+export CUDA_VISIBLE_DEVICES=0
+export TW_PYTHON=/home/yufeng/thunderworld/.venvs/cosmos3/bin/python
+/usr/local/cuda/bin/ncu \
+  --target-processes all --clock-control none --cache-control none \
+  --replay-mode kernel --nvtx --nvtx-include steady/ \
+  --kernel-name 'regex:^gemm$' \
+  --metrics gpu__time_duration.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,dram__throughput.avg.pct_of_peak_sustained_elapsed,sm__throughput.avg.pct_of_peak_sustained_elapsed,launch__registers_per_thread,l1tex__t_sectors_pipe_lsu_mem_local_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_local_op_st.sum \
+  --export /home/yufeng/thunderworld/fp4_breakdown_20260918/representative_gemm \
+  --log-file /home/yufeng/thunderworld/fp4_breakdown_20260918/counters.log \
+  bash tools/fp4_handoff/python.sh tools/fp4_handoff/breakdown_counter_probe.py \
+  --study /home/yufeng/thunderworld/fp4_breakdown_20260918/study \
+  --capture /home/yufeng/thunderworld/compute_quality_edge_v1/capture \
+  --output /home/yufeng/thunderworld/fp4_breakdown_20260918/counter_inputs.json
+
+/usr/local/cuda/bin/ncu \
+  --import /home/yufeng/thunderworld/fp4_breakdown_20260918/representative_gemm.ncu-rep \
+  --page raw --csv > /home/yufeng/thunderworld/fp4_breakdown_20260918/counters.csv

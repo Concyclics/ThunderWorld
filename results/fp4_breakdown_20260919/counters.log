@@ -1,0 +1,9 @@
+==WARNING== Note: Running with uncontrolled GPU caches. Profiling results may be inconsistent.
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 778886 (/usr/bin/python3.12)
+==PROF== Profiling "gemm": 0%....50%....100% - 8 passes
+==PROF== Profiling "gemm": 0%....50%....100% - 8 passes
+==PROF== Profiling "gemm": 0%....50%....100% - 8 passes
+==PROF== Profiling "gemm": 0%....50%....100% - 8 passes
+==PROF== Disconnected from process 778886
+==PROF== Report: /home/yufeng/thunderworld/fp4_breakdown_20260918/representative_gemm.ncu-rep

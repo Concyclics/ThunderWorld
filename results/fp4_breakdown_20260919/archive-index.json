@@ -1,0 +1,60 @@
+{
+  "schema": "fp4-breakdown-archive-v1",
+  "performance_eligible": false,
+  "raw_root": "/home/yufeng/thunderworld/fp4_breakdown_20260918",
+  "files": {
+    "PAPER_STORY.md": {
+      "sha256": "a9598f51cfcb56c97ce65046b6524b817c3ea0170fef504831e195f1595fd414",
+      "bytes": 9263
+    },
+    "REPORT.md": {
+      "sha256": "8661446e048c1e69e8e1a3a9e287a1c03e6abe764b8cfdcd29a7be1b17163221",
+      "bytes": 12638
+    },
+    "analysis.json.gz": {
+      "sha256": "c70a4c48c487cad29ff0bdd3716e8af997ab206f4764b65784bef54eced37504",
+      "bytes": 137077
+    },
+    "counter-command.txt": {
+      "sha256": "22e7eca6d1f1ec182946218cfeb0842dbdf5b4ce6f9beae76b641540bebd557d",
+      "bytes": 1562
+    },
+    "counter_inputs.json": {
+      "sha256": "8932bca41e26b90974f4ef00f318d68b14370f6c27fb31de4cd33e8203c2a15f",
+      "bytes": 2537
+    },
+    "counters.csv": {
+      "sha256": "c2e90cae47891b8eded1389c0b603e94984fc9aa7ec736ea842769cd3aebde0c",
+      "bytes": 21861
+    },
+    "counters.log": {
+      "sha256": "e963cdb25e7715b4d9de33851c9e6b541f674c037d52392e0ba9f4be15890c3f",
+      "bytes": 636
+    },
+    "kernel_work.png": {
+      "sha256": "7735aeee5f6a2b702ecfc61de14968bbc06b7d857ed9a240bc188ef6c4d95698",
+      "bytes": 107889
+    },
+    "kernel_work.svg": {
+      "sha256": "17b8d211927682cd8241294c5c54ce3572c755d9dfaf327b392e087c236a873f",
+      "bytes": 71673
+    },
+    "measurements.json.gz": {
+      "sha256": "d92cb733e7890df33bd643a6cd9c2a5f6f96b359049c3c01785c24efc28204f0",
+      "bytes": 114515
+    },
+    "quality_evidence.json.gz": {
+      "sha256": "6e488c55f3a7f3aba5d8b7e9050c48fb648855c5e617f07a6abb34e942157feb",
+      "bytes": 249245
+    },
+    "representative_gemm.ncu-rep": {
+      "sha256": "5a2824afd738353c16be29796ba84e68d51e2bd875b841d53f985456cae577be",
+      "bytes": 504453
+    }
+  },
+  "tools": {
+    "tools/fp4_handoff/baseline_breakdown.py": "914c7162f552e75525c26123fb2f102802ffa16e8352d7f82e9a08c322b89d88",
+    "tools/fp4_handoff/breakdown_counter_probe.py": "8263c05bacde024ad34bbb294e456786dd11e2cf7c873ba428bbeb7914234b5a",
+    "tools/fp4_handoff/analyze_breakdown.py": "14fedb052a0bbc898e8a396ed782a6ed9170d31edb15b0ad3a33e3a9e2a8d729"
+  }
+}
