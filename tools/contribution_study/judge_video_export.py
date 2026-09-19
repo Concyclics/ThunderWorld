@@ -1,5 +1,6 @@
 """CPU export of immutable generation outputs to judge videos and sample indices."""
 import argparse
+import copy
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -66,6 +67,7 @@ def export_available(root, verified):
     (root/'judge_blind').mkdir(parents=True,exist_ok=True)
     manifest=root/'final/manifest.json';study=json.loads(manifest.read_text())
     identity=dict(manifest_sha256=sha(manifest),exporter_sha256=sha(__file__),video=study['video_export'])
+    reuse=study.get('reuse',{});reused_ids=set(reuse.get('case_ids',[]))
     rows=[]
     for method,spec in study['methods'].items():
         for entry in study['cases']:
@@ -73,7 +75,12 @@ def export_available(root, verified):
             receipt=folder/'result.json'
             if not receipt.exists():continue
             result=json.loads(receipt.read_text())
-            if (result['identity']['manifest_sha256']!=identity['manifest_sha256'] or
+            reused=cid in reused_ids
+            expected_manifest=reuse['manifest_sha256'] if reused else identity['manifest_sha256']
+            if reused and sha(receipt)!=reuse['receipt_sha256'][method+'/'+cid]:
+                raise ValueError('Changed original reusable receipt')
+            if (result['identity']['manifest_sha256']!=expected_manifest or
+                result['identity'].get('method',method)!=method or
                 result['identity']['case']!=entry['case'] or result['identity']['seeds']!=entry['seeds']):
                 raise ValueError('Changed generated input or configuration')
             for row in result['rows']:
@@ -84,6 +91,10 @@ def export_available(root, verified):
                 metadata=dest/f'seed{seed}.json'
                 source=folder/row['outputs']
                 provenance=dict(identity=identity,row_sha256=fingerprint(row),npz_sha256=row['outputs_sha256'])
+                origin=None
+                if reused:
+                    origin=Path(reuse['root'])/'videos'/entry['benchmark']/method/cid/f'seed{seed}.json'
+                    provenance['reused_metadata']=dict(file=str(origin),sha256=reuse['metadata_sha256'][f'{method}/{cid}/{seed}'])
                 if metadata.exists():
                     sample=json.loads(metadata.read_text())
                     if sample['provenance']!=provenance:raise ValueError('Changed exported request')
@@ -93,13 +104,31 @@ def export_available(root, verified):
                             if sha(asset['file'])!=asset['sha256']:raise ValueError('Changed exported video')
                 else:
                     if sha(source)!=row['outputs_sha256']:raise ValueError('Corrupt raw generation')
-                    with np.load(source) as data:video=data['video']
-                    if hashlib.sha256(video.tobytes()).hexdigest()!=row['sha256']['video']:
-                        raise ValueError('Raw video signal hash mismatch')
-                    frames=frames_uint8(video,entry['case'])
-                    videos={kind:encode(frames,dest/f'seed{seed}{suffix}',lossless=lossless,
-                        ffmpeg=study['video_export']['ffmpeg'],ffprobe=study['video_export']['ffprobe'])
-                        for kind,suffix,lossless in [('judge_mp4','.mp4',False),('lossless_rgb','.mkv',True)]}
+                    if reused:
+                        if sha(origin)!=provenance['reused_metadata']['sha256']:raise ValueError('Changed reusable video metadata')
+                        old=json.loads(origin.read_text())
+                        if (old['method_spec']!=spec or old['provenance']['row_sha256']!=fingerprint(row) or
+                            old['provenance']['identity']['manifest_sha256']!=expected_manifest or
+                            not old['videos']['lossless_rgb']['rgb_roundtrip_bitwise_equal'] or
+                            (old['frames'],old['height'],old['width'],old['fps'])!=(entry['case']['frames'],entry['case']['height'],entry['case']['width'],24)):
+                            raise ValueError('Changed reusable video configuration')
+                        dest.mkdir(parents=True,exist_ok=True);videos=copy.deepcopy(old['videos'])
+                        for kind,asset in videos.items():
+                            src=Path(asset['file']);link=dest/src.name
+                            if sha(src)!=asset['sha256']:raise ValueError('Changed reusable video bytes')
+                            if not link.exists():link.symlink_to(src)
+                            if link.resolve()!=src.resolve():raise ValueError('Changed reusable video link')
+                            asset['file']=str(link)
+                        rgb_sha=old['rgb_uint8_sha256'];frame_count=old['frames'];height=old['height'];width=old['width']
+                    else:
+                        with np.load(source) as data:video=data['video']
+                        if hashlib.sha256(video.tobytes()).hexdigest()!=row['sha256']['video']:
+                            raise ValueError('Raw video signal hash mismatch')
+                        frames=frames_uint8(video,entry['case'])
+                        videos={kind:encode(frames,dest/f'seed{seed}{suffix}',lossless=lossless,
+                            ffmpeg=study['video_export']['ffmpeg'],ffprobe=study['video_export']['ffprobe'])
+                            for kind,suffix,lossless in [('judge_mp4','.mp4',False),('lossless_rgb','.mkv',True)]}
+                        rgb_sha=hashlib.sha256(frames.tobytes()).hexdigest();frame_count=len(frames);height=frames.shape[1];width=frames.shape[2]
                     sample=dict(complete=True,sample_id=key,model=study['model_name'],model_path=study['model'],
                         method=method,benchmark=entry['benchmark'],category=entry['category'],source_id=entry['source_id'],
                         case_id=cid,seed=seed,prompt=entry['case']['prompt'],negative_prompt=entry['case'].get('negative_prompt'),
@@ -107,8 +136,8 @@ def export_available(root, verified):
                         raw_outputs=str(source),generation_receipt=str(receipt),generation_log=str(folder/'generation.log'),
                         exported_utc=datetime.now(timezone.utc).isoformat(),generated_npz_mtime_ns=source.stat().st_mtime_ns,
                         request=row,method_spec=spec,provenance=provenance,videos=videos,
-                        rgb_uint8_sha256=hashlib.sha256(frames.tobytes()).hexdigest(),frames=len(frames),fps=24,
-                        height=frames.shape[1],width=frames.shape[2],performance_eligible=False)
+                        rgb_uint8_sha256=rgb_sha,frames=frame_count,fps=24,
+                        height=height,width=width,performance_eligible=False)
                     write(metadata,sample)
                     print(json.dumps(dict(exported=key,model=study['model_name'],method=method,case=cid,seed=seed)),flush=True)
                 alias=root.parent/'judge_blind/videos'/f'{key}.mp4';alias.parent.mkdir(parents=True,exist_ok=True)

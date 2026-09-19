@@ -1,0 +1,68 @@
+[
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/manifest.json",
+    "archive": "manifest.json.gz",
+    "sha256": "c4b6c81bba00fde3634c982b25a1d0c65327e7f662925812a4d880340d7d22b8",
+    "bytes": 982443
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/launch.json",
+    "archive": "launch.json.gz",
+    "sha256": "69290ef1d55de4702aad980c6d5d18cc29bc8b5c6dc255a37dde98d673e3070c",
+    "bytes": 426
+  },
+  {
+    "source": "/home/yufeng/thunderworld/full_i2v_data_20260919/cohort.json",
+    "archive": "cohort.json.gz",
+    "sha256": "234faf7207ae8fc0bc7e0f895ee7b415a46d10838c9a3eaed598bb0e42cde331",
+    "bytes": 2554098
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/edge/final/manifest.json",
+    "archive": "edge/final/manifest.json.gz",
+    "sha256": "c0d6fbf38e4df46b703592665304cdb5e0bd41c714ee5bd65bc541dff849b015",
+    "bytes": 2932083
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/edge/qualification/manifest.json",
+    "archive": "edge/qualification/manifest.json.gz",
+    "sha256": "72137279a3bd2bb537c11e6949af3065f858882eb9fd17ee56242a96ed2fbca1",
+    "bytes": 252333
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/edge/qualification/source_output_hashes.json",
+    "archive": "edge/qualification/source_output_hashes.json.gz",
+    "sha256": "2c169862ac892e227cabde95409c04a70bb1c124b9527a9c328e70cc9f5c1a76",
+    "bytes": 2901
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/edge/shape_preflight.json",
+    "archive": "edge/shape_preflight.json.gz",
+    "sha256": "94a44dddf9773090e6594f1af304c80bad3fbac5395c033b71a3a21dbacb44d2",
+    "bytes": 1293061
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/nano/final/manifest.json",
+    "archive": "nano/final/manifest.json.gz",
+    "sha256": "e6e8f5ca495938328ce9d07e2389c8fd0773c9a06ba6f23c6214ed9498a8e567",
+    "bytes": 2930783
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/nano/qualification/manifest.json",
+    "archive": "nano/qualification/manifest.json.gz",
+    "sha256": "b02e26d197fed94bb413a8692d55c19d3c4cdbea2c48513f12b4e3627bd82aa7",
+    "bytes": 251033
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/nano/qualification/source_output_hashes.json",
+    "archive": "nano/qualification/source_output_hashes.json.gz",
+    "sha256": "904f0f30163bc82539279af915941e231c4629a0a3663efdb4a1d3d6029b6d72",
+    "bytes": 2901
+  },
+  {
+    "source": "/home/yufeng/thunderworld/judge_full_i2v_20260919/nano/shape_preflight.json",
+    "archive": "nano/shape_preflight.json.gz",
+    "sha256": "dc200ec2864cc9e9b2bfb8c35e016f1a76461bdbda063956d381de4b7dfbba00",
+    "bytes": 1304811
+  }
+]

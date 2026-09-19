@@ -62,3 +62,43 @@ bash tools/fp4_handoff/python.sh tools/contribution_study/judge_generation.py st
 NPZ、视频、日志都在本机研究目录，GitHub 只同步代码、冻结清单和小型运行记录。
 资源不足/OOM、数值不一致、预算超限或视频损坏会暂停并保留进度；不自动降精度、缩图、
 换种子或跳过失败样本。新的 source/配置需建立新的研究目录，不能覆盖旧证据。
+
+## 完整 I2V 数据集，沿用低分辨率生成规格
+
+用户后续明确扩展到 **RBench 全部 650 个场景、PAI-Bench 全部 1,044 个 I2V 场景**，
+同时选择保持 320×192、61 帧、35 步、24 FPS、CFG6、UniPC flow shift 3、原始正提示词和
+相同负提示词。仍是 Edge/Nano × 五种方法 × 每场景两种子，共 **33,880 个视频**。
+这是全量 I2V 场景覆盖；生成规格仍低于 Cosmos 仓库 720p/50 步的 reproduction recipe。
+
+`full_i2v_dataset.py` 从固定的本地 Cosmos 提示词清单与固定 HF 数据版本建立完整 cohort。
+原来 72 个场景的请求参数和种子逐项核验并保留；新场景使用经本地历史输出/两模型 cohort
+审计的种子。本次新种子为 `401001–404244`。不按图像重复或历史用途删除任何 benchmark 条目；
+重复图像组和校准/开发/验证场景重叠显式写入清单。
+
+```bash
+export TW_PYTHON=/home/yufeng/thunderworld/.venvs/cosmos3/bin/python
+export PYTHONPATH=/tmp/thunderworld-joint-deps
+# 条件图位于 full_i2v_data_20260919/data/{rbench,paibench}；cohort 只冻结一次。
+bash tools/fp4_handoff/python.sh tools/contribution_study/full_i2v_dataset.py \
+  --root /home/yufeng/thunderworld/full_i2v_data_20260919
+bash tools/fp4_handoff/python.sh tools/contribution_study/judge_generation.py prepare \
+  --root /home/yufeng/thunderworld/judge_full_i2v_20260919 \
+  --cohort /home/yufeng/thunderworld/full_i2v_data_20260919/cohort.json \
+  --source /home/yufeng/thunderworld/full_quality_matrix_20260919 --gpus 0 1 --chunk-scenes 12
+bash tools/fp4_handoff/python.sh tools/contribution_study/quality_shape_preflight.py \
+  /home/yufeng/thunderworld/judge_full_i2v_20260919/edge
+bash tools/fp4_handoff/python.sh tools/contribution_study/quality_shape_preflight.py \
+  /home/yufeng/thunderworld/judge_full_i2v_20260919/nano
+bash tools/fp4_handoff/python.sh tools/contribution_study/judge_generation.py launch \
+  --root /home/yufeng/thunderworld/judge_full_i2v_20260919
+```
+
+复用 **1,440** 个完整历史视频，新增 **32,440** 个，共 **1,360** 个新增任务块。
+复用要求相同数值代码、模型/方法配置、输入、种子、原始 receipt 和视频/NPZ SHA；
+保留原始生成身份，通过链接复用视频字节，新增 metadata 记录出处，不伪造新生成记录。
+`pool_status.json` 中 `generated` 包含已复用样本，`reused` 单独列出；新增数为两者之差。
+原有研究目录不修改，新增结果全部写入 `judge_full_i2v_20260919`。
+
+全量任务在启动前必须通过所有场景的形状/预算检查，实际请求仍在 Graph capture 前重编译预算。
+续跑只调用 `launch`，不要重新冻结 cohort。历史目录若使用旧版调度器，应切回其记录的代码提交；
+代码指纹不一致时禁止继续往同一目录混写。

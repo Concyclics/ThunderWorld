@@ -1,0 +1,69 @@
+{
+  "captured_utc": "2026-09-19T05:53:41.996734+00:00",
+  "kind": "launch_not_completion",
+  "pool": {
+    "complete": false,
+    "models": {
+      "edge": {
+        "generation_complete": false,
+        "generated": 720,
+        "expected": 16940,
+        "reused": 720,
+        "exported": 720,
+        "complete": false,
+        "performance_eligible": false
+      },
+      "nano": {
+        "generation_complete": false,
+        "generated": 720,
+        "expected": 16940,
+        "reused": 720,
+        "exported": 720,
+        "complete": false,
+        "performance_eligible": false
+      }
+    },
+    "workers": {
+      "0": {
+        "complete": false,
+        "pid": 1721636,
+        "gpu": 0,
+        "phase": "qualification",
+        "qualified": {
+          "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+          "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+          "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+          "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+          "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+          "nano/arcquant": "ad1257e71db866800bc0a97abfe90a5eb75e30a401ee90623acc3250b3b3142e"
+        },
+        "completed_tasks": [],
+        "started_utc": "2026-09-19T05:48:51.539975+00:00"
+      },
+      "1": {
+        "complete": false,
+        "pid": 1721637,
+        "gpu": 1,
+        "phase": "qualification",
+        "qualified": {
+          "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+          "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+          "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+          "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+          "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+          "nano/arcquant": "ad1257e71db866800bc0a97abfe90a5eb75e30a401ee90623acc3250b3b3142e"
+        },
+        "completed_tasks": [],
+        "started_utc": "2026-09-19T05:48:51.541092+00:00"
+      }
+    },
+    "updated_utc": "2026-09-19T05:53:41.394794+00:00",
+    "performance_eligible": false
+  },
+  "expected_videos": 33880,
+  "reused_videos": 1440,
+  "new_videos": 32440,
+  "new_task_blocks": 1360,
+  "source_root": "/home/yufeng/thunderworld/judge_full_i2v_20260919",
+  "performance_eligible": false
+}
