@@ -1,0 +1,166 @@
+{
+  "requested_utc": "2026-09-20T13:51:52.608892+00:00",
+  "requested_gpus": [
+    0,
+    1
+  ],
+  "reason": "User requested GPU0+GPU1 continuation",
+  "phase": "complete",
+  "workers": [
+    {
+      "name": "gpu1",
+      "pid": 1103569,
+      "children": [
+        "1327270"
+      ]
+    }
+  ],
+  "previous_launch": {
+    "pid": 1103565,
+    "started_utc": "2026-09-20T11:32:19.051403+00:00",
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "/home/yufeng/thunderworld/ThunderWorld-fp4-next-20260918/tools/contribution_study/judge_device_control.py",
+      "supervise",
+      "--root",
+      "/home/yufeng/thunderworld/judge_full_i2v_20260919"
+    ],
+    "active_gpus": [
+      1
+    ],
+    "log": "/home/yufeng/thunderworld/judge_full_i2v_20260919/supervisor.log",
+    "device_policy_sha256": "b4fb5189a08928905bd3237d819b73f92bbeb221758af364887d067853682aa4"
+  },
+  "processes": [
+    {
+      "name": "exporter_edge",
+      "pid": 1103567
+    },
+    {
+      "name": "exporter_nano",
+      "pid": 1103568
+    },
+    {
+      "name": "gpu1",
+      "pid": 1103569
+    }
+  ],
+  "archive": "/home/yufeng/thunderworld/judge_full_i2v_20260919/device_switch_dual_20260920",
+  "running_at_request": {
+    "nano__b1.5_protected_n__rbench__120": {
+      "status": "running",
+      "attempts": [
+        {
+          "gpu": 1,
+          "pid": 1103569,
+          "started_utc": "2026-09-20T13:51:38.722030+00:00"
+        }
+      ],
+      "gpu": 1,
+      "pid": 1103569,
+      "started_utc": "2026-09-20T13:51:38.722030+00:00"
+    }
+  },
+  "old_workers_stopped_utc": "2026-09-20T13:53:07.541218+00:00",
+  "switch_mode": "Resume saved per-seed outputs from the interrupted current block",
+  "verified_tasks": [
+    {
+      "task": "nano__b1.5_protected_n__rbench__120",
+      "saved_videos": 7,
+      "expected_videos": 24,
+      "all_complete": false,
+      "receipts": [
+        {
+          "case": "rbench__dual_arm_0078",
+          "seed": 403257,
+          "outputs_sha256": "13800cc3c82fdda8b0dd7fae097ec29440ed4c360f7c72c645b759c8bcf79737"
+        },
+        {
+          "case": "rbench__dual_arm_0078",
+          "seed": 403258,
+          "outputs_sha256": "9cae0958a1dc797fa53c119071adc9fa7cab6b4a56b381083868cd785976bbf1"
+        },
+        {
+          "case": "rbench__dual_arm_0079",
+          "seed": 403259,
+          "outputs_sha256": "2a44874392a4177995ead67747ce0fd3751df967c129379afb38d6e0894551c5"
+        },
+        {
+          "case": "rbench__dual_arm_0079",
+          "seed": 403260,
+          "outputs_sha256": "fb9dfa535c91052ae3d9d5948b75c9a3d5e2f6f548a2e44f987fe7353eae7c2a"
+        },
+        {
+          "case": "rbench__dual_arm_0080",
+          "seed": 403261,
+          "outputs_sha256": "b87d6aa2bbfc4638b79a09b2535188d0822e66049193cdc777edb97448941d62"
+        },
+        {
+          "case": "rbench__dual_arm_0080",
+          "seed": 403262,
+          "outputs_sha256": "e194a9368ffeb51d6c8084b1d67a240541d2ccc73c9615a72bc4c016590deb2c"
+        },
+        {
+          "case": "rbench__dual_arm_0081",
+          "seed": 403263,
+          "outputs_sha256": "95f6d7fd84de2567044fecac3f19040aa0c1273af3d3bfe39b4a1a9bdcb6ce7e"
+        }
+      ]
+    }
+  ],
+  "preserved_generated_at_switch": 16663,
+  "expected_videos": 33880,
+  "completed_utc": "2026-09-20T13:55:49.668777+00:00",
+  "new_launch": {
+    "pid": 1332139,
+    "started_utc": "2026-09-20T13:54:05.904644+00:00",
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "/home/yufeng/thunderworld/ThunderWorld-fp4-next-20260918/tools/contribution_study/judge_device_control.py",
+      "supervise",
+      "--root",
+      "/home/yufeng/thunderworld/judge_full_i2v_20260919"
+    ],
+    "active_gpus": [
+      0,
+      1
+    ],
+    "log": "/home/yufeng/thunderworld/judge_full_i2v_20260919/supervisor.log",
+    "device_policy_sha256": "11b56a916f5928aafe894b68153cf0dcf21e719a661a0c620d0206b064123750"
+  },
+  "new_children": {
+    "processes": [
+      {
+        "name": "exporter_edge",
+        "pid": 1332140
+      },
+      {
+        "name": "exporter_nano",
+        "pid": 1332141
+      },
+      {
+        "name": "gpu0",
+        "pid": 1332142
+      },
+      {
+        "name": "gpu1",
+        "pid": 1332143
+      }
+    ]
+  },
+  "verified_device_environment": {
+    "gpu0": {
+      "CUDA_VISIBLE_DEVICES": "0",
+      "TW_SHARED_CALIBRATION_GPUS": "0,1"
+    },
+    "gpu1": {
+      "CUDA_VISIBLE_DEVICES": "1",
+      "TW_SHARED_CALIBRATION_GPUS": "0,1"
+    }
+  },
+  "cuda_verification": {
+    "gpu0_generation_pid": 1332331,
+    "gpu1_generation_pid": 1332330
+  },
+  "saved_videos_reverified_after_resume": 7
+}

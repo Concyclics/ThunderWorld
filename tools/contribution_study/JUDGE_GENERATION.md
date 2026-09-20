@@ -103,7 +103,7 @@ bash tools/fp4_handoff/python.sh tools/contribution_study/judge_generation.py la
 续跑只调用 `launch`，不要重新冻结 cohort。历史目录若使用旧版调度器，应切回其记录的代码提交；
 代码指纹不一致时禁止继续往同一目录混写。
 
-## 按保存的单卡策略续跑
+## 按保存的设备策略续跑
 
 2026-09-20 的全量任务已按用户要求切换为仅 GPU0。切换时让两卡正在执行的任务块完成，
 核验这 48 份输出及计算账本的 SHA 后再停止原调度器；已生成的 **16,008 / 33,880** 份输出
@@ -111,7 +111,10 @@ bash tools/fp4_handoff/python.sh tools/contribution_study/judge_generation.py la
 
 同日 11:32 UTC，用户再次选择仅 GPU1：GPU0 当前任务块的 24 份输出完成并通过 SHA 核验后，
 队列在 GPU1 恢复。此次切换保留 **16,128 / 33,880** 份输出，612 个任务块完成，748 个待续跑。
-当前设备策略为 `[1]`，后续不带 `--gpus` 的恢复命令会沿用 GPU1。
+
+同日 13:54 UTC，用户恢复 GPU0+GPU1 共用队列。此次保留 **16,663 / 33,880** 份输出；
+当前任务块中已保存的 7 个视频通过身份及 SHA 核验后按种子断点接续，未完成部分重新入队。
+当前设备策略为 `[0,1]`，后续不带 `--gpus` 的恢复命令会沿用双卡。
 
 该目录后续恢复和查看状态使用以下入口，**不要再使用上面的双卡 `judge_generation.py launch`**：
 
@@ -126,13 +129,14 @@ bash tools/fp4_handoff/python.sh tools/contribution_study/judge_device_control.p
 
 `judge_device_control.py` 复用冻结的 worker、队列和 exporter，仅选择原已资格验证 GPU 的子集。
 原 manifest 中 `[0,1]` 保留为历史资格范围；当前设备以 `device_policy.json.active_gpus`
-和 `pool_status.json.active_gpus` 为准，当前均为 `[1]`。GPU worker 的
-`CUDA_VISIBLE_DEVICES` 与 `TW_SHARED_CALIBRATION_GPUS` 均为 `1`。
+和 `pool_status.json.active_gpus` 为准，当前均为 `[0,1]`。两个 GPU worker 的
+`CUDA_VISIBLE_DEVICES` 分别为 `0`、`1`，`TW_SHARED_CALIBRATION_GPUS` 均为 `0,1`。
 不传 `--gpus` 的后续恢复沿用保存的设备策略；重复启动检查 supervisor/worker 的 PID 与文件锁。
 启动命令需要在能看到宿主机任务进程的环境执行，避免隔离的 PID 视图误判进程已退出。
 
 设备策略单独绑定原 job SHA 和控制器 SHA，冻结的推理代码、模型清单、种子和结果身份不变。
 运行期间不得修改控制器。切换记录位于 `device_switch.json`，原调度器和 worker 状态备份位于
-`device_switch_20260920/` 与 `device_switch_gpu1_20260920/`。
-更改设备子集前仍需完成当前任务块并停止原调度器、worker 和 exporter；
+`device_switch_20260920/`、`device_switch_gpu1_20260920/` 与 `device_switch_dual_20260920/`。
+更改设备子集前需停止原调度器、worker 和 exporter。可等待当前块完成，也可在块中途切换：
+核验已写入 receipt 的输出及计算账本 SHA 后保留断点，重新入队未完成任务；尚未保存的种子重新执行。
 `launch` 不会中途抢占其他活跃 worker。
