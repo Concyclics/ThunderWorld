@@ -1,0 +1,21 @@
+{
+  "job_sha256": "c4b6c81bba00fde3634c982b25a1d0c65327e7f662925812a4d880340d7d22b8",
+  "source_sha256": "67f02e928b8c368afe0f87ded8c7cb1c22c5a19a140c6b35643f50efd837922c",
+  "methods": [
+    "arcquant100",
+    "b1.5_protected_n",
+    "b2_joint",
+    "arcquant",
+    "sharq_perf"
+  ],
+  "gpu": 1,
+  "widths": [
+    1,
+    2,
+    1
+  ],
+  "jobs_per_stage": 2,
+  "started_utc": "2026-09-20T19:33:17.575263+00:00",
+  "performance_eligible": false,
+  "scope": "Operational short-block throughput including load, warmup, four saved videos, A-B-A check and serialization per child. Shared load; not a latency leaderboard."
+}

@@ -1,0 +1,87 @@
+{
+  "captured_utc": "2026-09-20T20:08:44.268499+00:00",
+  "frames_per_video": 61,
+  "unit": "Completed generation NPZ referenced by a saved result receipt; each counted once. Completion timestamp is atomic NPZ file mtime. Qualification outputs excluded.",
+  "method": "Edge ARCQuant 100%, unchanged frozen 320x192 / 61 frames / 35 steps configuration",
+  "first_final_task_by_slot": {
+    "gpu0.slot0": "2026-09-20T19:53:08.666366+00:00",
+    "gpu0.slot1": "2026-09-20T20:03:22.545697+00:00",
+    "gpu0.slot2": "2026-09-20T20:03:28.921184+00:00",
+    "gpu0.slot3": "2026-09-20T20:03:12.279325+00:00",
+    "gpu1.slot0": "2026-09-20T19:53:08.747349+00:00",
+    "gpu1.slot1": "2026-09-20T20:00:26.163110+00:00",
+    "gpu1.slot2": "2026-09-20T20:00:32.629261+00:00",
+    "gpu1.slot3": "2026-09-20T20:00:40.313288+00:00"
+  },
+  "windows": {
+    "before": {
+      "start_utc": "2026-09-20T19:00:00+00:00",
+      "end_utc": "2026-09-20T19:30:00+00:00",
+      "duration_seconds": 1800.0,
+      "slots_per_gpu": 1,
+      "videos": 254,
+      "videos_per_hour": 508.0,
+      "generated_fps": 8.607777777777779,
+      "by_gpu": {
+        "0": {
+          "videos": 84,
+          "videos_per_hour": 168.0
+        },
+        "1": {
+          "videos": 170,
+          "videos_per_hour": 340.0
+        }
+      },
+      "methods": {
+        "arcquant100": 254
+      },
+      "models": {
+        "edge": 254
+      }
+    },
+    "after": {
+      "start_utc": "2026-09-20T20:03:28.921184+00:00",
+      "end_utc": "2026-09-20T20:08:28.921184+00:00",
+      "duration_seconds": 300.0,
+      "slots_per_gpu": 4,
+      "videos": 92,
+      "videos_per_hour": 1104.0,
+      "generated_fps": 18.706666666666667,
+      "by_gpu": {
+        "0": {
+          "videos": 34,
+          "videos_per_hour": 408.0
+        },
+        "1": {
+          "videos": 58,
+          "videos_per_hour": 696.0
+        }
+      },
+      "methods": {
+        "arcquant100": 92
+      },
+      "models": {
+        "edge": 92
+      }
+    }
+  },
+  "observed_throughput_ratio": 2.173228346456693,
+  "qualification_combinations": 30,
+  "qualification_reference_videos": 120,
+  "queue_counts": {
+    "complete": 789,
+    "running": 8,
+    "pending": 563
+  },
+  "job_sha256": "c4b6c81bba00fde3634c982b25a1d0c65327e7f662925812a4d880340d7d22b8",
+  "parallel_policy_sha256": "4856222da462ab19fb5af870c87b6e3ba2009c5ba431a180ee9b79fc3500f16b",
+  "performance_eligible": false,
+  "causal_speedup_established": false,
+  "limitations": [
+    "Shared GPU load can vary between windows.",
+    "The after window is the first five minutes after all eight slots entered final generation; it includes first-task loading and later chunk transitions.",
+    "Only Edge ARCQuant 100% appears in these windows. This is not a measurement of every method.",
+    "These counts measure saved generation outputs, not judge scoring or video playback FPS.",
+    "Exporters run separately; export completion is reported in pool_status_observed.json."
+  ]
+}

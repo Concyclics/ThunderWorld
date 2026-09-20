@@ -1,0 +1,28 @@
+{
+  "gpus": [
+    0,
+    1
+  ],
+  "slots_per_gpu": 4,
+  "secondary_methods": [
+    "arcquant",
+    "arcquant100",
+    "sharq_perf",
+    "b1.5_protected_n",
+    "b2_joint"
+  ],
+  "admission": "requested",
+  "numerical_qualification_required": true,
+  "secondary_models": [
+    "edge"
+  ],
+  "job_sha256": "c4b6c81bba00fde3634c982b25a1d0c65327e7f662925812a4d880340d7d22b8",
+  "source_sha256": "ee8d9aa7c2584dfda39430786edf605d28cf8dd6cd65267e3b02a20976de2ab8",
+  "runtime_sha256": "67f02e928b8c368afe0f87ded8c7cb1c22c5a19a140c6b35643f50efd837922c",
+  "probe_report": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/progress.json",
+  "probe_report_sha256": "35451792c4d03132e3f77a462b409f6d461e5a8fc418f91517270d4927fa4c97",
+  "probe_manifest": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/manifest.json",
+  "probe_manifest_sha256": "a3407399f85996415f7938121c7cd83c312c36fd67982fdde0dae54af2f51589",
+  "requested_utc": "2026-09-20T19:53:07.384586+00:00",
+  "performance_eligible": false
+}

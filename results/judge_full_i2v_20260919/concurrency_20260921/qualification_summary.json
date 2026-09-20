@@ -1,0 +1,212 @@
+[
+  {
+    "path": "parallel_workers/gpu0.slot1/qualification/edge/arcquant/progress.json",
+    "progress_sha256": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot1/qualification/edge/arcquant100/progress.json",
+    "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot1/qualification/edge/b1.5_protected_n/progress.json",
+    "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot1/qualification/edge/b2_joint/progress.json",
+    "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot1/qualification/edge/sharq_perf/progress.json",
+    "progress_sha256": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot2/qualification/edge/arcquant/progress.json",
+    "progress_sha256": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot2/qualification/edge/arcquant100/progress.json",
+    "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot2/qualification/edge/b1.5_protected_n/progress.json",
+    "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot2/qualification/edge/b2_joint/progress.json",
+    "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot2/qualification/edge/sharq_perf/progress.json",
+    "progress_sha256": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot3/qualification/edge/arcquant/progress.json",
+    "progress_sha256": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot3/qualification/edge/arcquant100/progress.json",
+    "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot3/qualification/edge/b1.5_protected_n/progress.json",
+    "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot3/qualification/edge/b2_joint/progress.json",
+    "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu0.slot3/qualification/edge/sharq_perf/progress.json",
+    "progress_sha256": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot1/qualification/edge/arcquant/progress.json",
+    "progress_sha256": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot1/qualification/edge/arcquant100/progress.json",
+    "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot1/qualification/edge/b1.5_protected_n/progress.json",
+    "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot1/qualification/edge/b2_joint/progress.json",
+    "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot1/qualification/edge/sharq_perf/progress.json",
+    "progress_sha256": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot2/qualification/edge/arcquant/progress.json",
+    "progress_sha256": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot2/qualification/edge/arcquant100/progress.json",
+    "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot2/qualification/edge/b1.5_protected_n/progress.json",
+    "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot2/qualification/edge/b2_joint/progress.json",
+    "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot2/qualification/edge/sharq_perf/progress.json",
+    "progress_sha256": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot3/qualification/edge/arcquant/progress.json",
+    "progress_sha256": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot3/qualification/edge/arcquant100/progress.json",
+    "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot3/qualification/edge/b1.5_protected_n/progress.json",
+    "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot3/qualification/edge/b2_joint/progress.json",
+    "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  },
+  {
+    "path": "parallel_workers/gpu1.slot3/qualification/edge/sharq_perf/progress.json",
+    "progress_sha256": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+    "reference_videos": 4,
+    "source_hashes_match": true,
+    "roundtrip_bitwise_equal": true
+  }
+]

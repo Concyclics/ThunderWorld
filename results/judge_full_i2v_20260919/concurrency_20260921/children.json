@@ -1,0 +1,44 @@
+{
+  "processes": [
+    {
+      "name": "exporter_edge",
+      "pid": 2475476
+    },
+    {
+      "name": "exporter_nano",
+      "pid": 2475477
+    },
+    {
+      "name": "gpu0.slot0",
+      "pid": 2475478
+    },
+    {
+      "name": "gpu0.slot1",
+      "pid": 2475479
+    },
+    {
+      "name": "gpu0.slot2",
+      "pid": 2475480
+    },
+    {
+      "name": "gpu0.slot3",
+      "pid": 2475481
+    },
+    {
+      "name": "gpu1.slot0",
+      "pid": 2475482
+    },
+    {
+      "name": "gpu1.slot1",
+      "pid": 2475483
+    },
+    {
+      "name": "gpu1.slot2",
+      "pid": 2475484
+    },
+    {
+      "name": "gpu1.slot3",
+      "pid": 2475485
+    }
+  ]
+}

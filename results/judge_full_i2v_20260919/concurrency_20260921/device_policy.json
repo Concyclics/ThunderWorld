@@ -1,0 +1,15 @@
+{
+  "active_gpus": [
+    0,
+    1
+  ],
+  "qualified_gpus": [
+    0,
+    1
+  ],
+  "job_sha256": "c4b6c81bba00fde3634c982b25a1d0c65327e7f662925812a4d880340d7d22b8",
+  "controller_sha256": "ee8d9aa7c2584dfda39430786edf605d28cf8dd6cd65267e3b02a20976de2ab8",
+  "parallel_policy_sha256": "4856222da462ab19fb5af870c87b6e3ba2009c5ba431a180ee9b79fc3500f16b",
+  "requested_utc": "2026-09-20T19:53:07.385349+00:00",
+  "reason": "User-authorized bounded independent-process concurrency"
+}

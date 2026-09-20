@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-20T19:53:07.498302+00:00",
+  "free_mib": {
+    "0": 81412,
+    "1": 95515,
+    "2": 2293,
+    "3": 1989
+  },
+  "required_mib_per_gpu": 77824,
+  "primary_reservation_mib": 28672,
+  "secondary_edge_reservation_mib": 12288,
+  "reserve_mib": 12288,
+  "performance_eligible": false
+}

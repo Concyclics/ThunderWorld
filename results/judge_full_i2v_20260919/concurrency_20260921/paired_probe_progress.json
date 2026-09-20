@@ -1,0 +1,332 @@
+{
+  "complete": false,
+  "methods": {
+    "arcquant100": {
+      "stages": [
+        {
+          "stage": 0,
+          "width": 1,
+          "seconds": 134.47283814987168,
+          "videos": 8,
+          "videos_per_hour": 214.1696449352994,
+          "outputs": [
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/arcquant100/stage0_w1/block0",
+              "videos": 4,
+              "request_seconds": [
+                6.833888274850324,
+                6.8478006441146135,
+                6.9003177809063345,
+                6.89917674404569
+              ],
+              "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0"
+            },
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/arcquant100/stage0_w1/block1",
+              "videos": 4,
+              "request_seconds": [
+                6.858860062900931,
+                6.873229261022061,
+                6.921261267969385,
+                6.907299088081345
+              ],
+              "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0"
+            }
+          ],
+          "performance_eligible": false
+        },
+        {
+          "stage": 1,
+          "width": 2,
+          "seconds": 92.05201673787087,
+          "videos": 8,
+          "videos_per_hour": 312.8665837057263,
+          "outputs": [
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/arcquant100/stage1_w2/block0",
+              "videos": 4,
+              "request_seconds": [
+                10.81897752196528,
+                10.390985558973625,
+                10.996674771886319,
+                10.052648833021522
+              ],
+              "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0"
+            },
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/arcquant100/stage1_w2/block1",
+              "videos": 4,
+              "request_seconds": [
+                10.360807958059013,
+                12.546196189010516,
+                10.565995513927191,
+                10.623124671867117
+              ],
+              "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0"
+            }
+          ],
+          "performance_eligible": false
+        },
+        {
+          "stage": 2,
+          "width": 1,
+          "seconds": 132.07542375987396,
+          "videos": 8,
+          "videos_per_hour": 218.05722200340026,
+          "outputs": [
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/arcquant100/stage2_w1/block0",
+              "videos": 4,
+              "request_seconds": [
+                6.880288121057674,
+                7.126759249018505,
+                8.451645878143609,
+                9.836218923097476
+              ],
+              "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0"
+            },
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/arcquant100/stage2_w1/block1",
+              "videos": 4,
+              "request_seconds": [
+                6.426757443929091,
+                2.498568781884387,
+                6.863162677036598,
+                9.105071978177875
+              ],
+              "progress_sha256": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0"
+            }
+          ],
+          "performance_eligible": false
+        }
+      ],
+      "complete": true,
+      "serial_videos_per_hour": 216.11343346934984,
+      "concurrent_videos_per_hour": 312.8665837057263,
+      "ratio_to_fastest_serial": 1.4347912021957598,
+      "candidate_for_live_pilot": true,
+      "all_source_hashes_match": true
+    },
+    "b1.5_protected_n": {
+      "stages": [
+        {
+          "stage": 0,
+          "width": 1,
+          "seconds": 112.46608201088384,
+          "videos": 8,
+          "videos_per_hour": 256.07720554551634,
+          "outputs": [
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b1.5_protected_n/stage0_w1/block0",
+              "videos": 4,
+              "request_seconds": [
+                2.4428191501647234,
+                2.062553510069847,
+                2.366855153813958,
+                3.102647368097678
+              ],
+              "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69"
+            },
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b1.5_protected_n/stage0_w1/block1",
+              "videos": 4,
+              "request_seconds": [
+                2.283321866998449,
+                2.9230063748545945,
+                2.113008693093434,
+                2.138944036094472
+              ],
+              "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69"
+            }
+          ],
+          "performance_eligible": false
+        },
+        {
+          "stage": 1,
+          "width": 2,
+          "seconds": 66.0401869979687,
+          "videos": 8,
+          "videos_per_hour": 436.0980988876643,
+          "outputs": [
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b1.5_protected_n/stage1_w2/block0",
+              "videos": 4,
+              "request_seconds": [
+                3.3203785030636936,
+                2.0361920860596,
+                3.749251795001328,
+                3.475974095053971
+              ],
+              "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69"
+            },
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b1.5_protected_n/stage1_w2/block1",
+              "videos": 4,
+              "request_seconds": [
+                2.479194349143654,
+                2.045279691927135,
+                3.4478749700356275,
+                3.6865469431504607
+              ],
+              "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69"
+            }
+          ],
+          "performance_eligible": false
+        },
+        {
+          "stage": 2,
+          "width": 1,
+          "seconds": 111.25303945504129,
+          "videos": 8,
+          "videos_per_hour": 258.8693319398112,
+          "outputs": [
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b1.5_protected_n/stage2_w1/block0",
+              "videos": 4,
+              "request_seconds": [
+                2.465083693154156,
+                2.0429460729938,
+                3.5128196871373802,
+                2.3872600600589067
+              ],
+              "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69"
+            },
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b1.5_protected_n/stage2_w1/block1",
+              "videos": 4,
+              "request_seconds": [
+                2.250621911138296,
+                2.9358804740477353,
+                2.1168277401011437,
+                2.1215577819384634
+              ],
+              "progress_sha256": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69"
+            }
+          ],
+          "performance_eligible": false
+        }
+      ],
+      "complete": true,
+      "serial_videos_per_hour": 257.4732687426638,
+      "concurrent_videos_per_hour": 436.0980988876643,
+      "ratio_to_fastest_serial": 1.6846263542297855,
+      "candidate_for_live_pilot": true,
+      "all_source_hashes_match": true
+    },
+    "b2_joint": {
+      "stages": [
+        {
+          "stage": 0,
+          "width": 1,
+          "seconds": 96.04827070096508,
+          "videos": 8,
+          "videos_per_hour": 299.84922986969116,
+          "outputs": [
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b2_joint/stage0_w1/block0",
+              "videos": 4,
+              "request_seconds": [
+                2.760782573837787,
+                2.783898390829563,
+                2.3100019299890846,
+                2.278829338029027
+              ],
+              "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+            },
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b2_joint/stage0_w1/block1",
+              "videos": 4,
+              "request_seconds": [
+                2.5769802511204034,
+                2.475390087813139,
+                2.3139403290115297,
+                2.4705767570994794
+              ],
+              "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+            }
+          ],
+          "performance_eligible": false
+        },
+        {
+          "stage": 1,
+          "width": 2,
+          "seconds": 55.42833270621486,
+          "videos": 8,
+          "videos_per_hour": 519.5898666598504,
+          "outputs": [
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b2_joint/stage1_w2/block1",
+              "videos": 4,
+              "request_seconds": [
+                3.6001020518597215,
+                2.997862473828718,
+                3.7054860489442945,
+                3.4885084349662066
+              ],
+              "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+            },
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b2_joint/stage1_w2/block0",
+              "videos": 4,
+              "request_seconds": [
+                2.923589666141197,
+                2.710655851988122,
+                3.2004098859615624,
+                3.686460340861231
+              ],
+              "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+            }
+          ],
+          "performance_eligible": false
+        },
+        {
+          "stage": 2,
+          "width": 1,
+          "seconds": 94.03852496109903,
+          "videos": 8,
+          "videos_per_hour": 306.2574621615313,
+          "outputs": [
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b2_joint/stage2_w1/block0",
+              "videos": 4,
+              "request_seconds": [
+                2.475080987904221,
+                4.105698322877288,
+                2.5131706851534545,
+                2.9916326401289552
+              ],
+              "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+            },
+            {
+              "folder": "/home/yufeng/thunderworld/judge_concurrency_probe_20260921/b2_joint/stage2_w1/block1",
+              "videos": 4,
+              "request_seconds": [
+                2.651059393072501,
+                2.603159788995981,
+                2.379555427003652,
+                2.721185088157654
+              ],
+              "progress_sha256": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+            }
+          ],
+          "performance_eligible": false
+        }
+      ],
+      "complete": true,
+      "serial_videos_per_hour": 303.0533460156112,
+      "concurrent_videos_per_hour": 519.5898666598504,
+      "ratio_to_fastest_serial": 1.6965786335217519,
+      "candidate_for_live_pilot": true,
+      "all_source_hashes_match": true
+    },
+    "arcquant": {
+      "stages": [],
+      "complete": false
+    }
+  },
+  "source_sha256": "67f02e928b8c368afe0f87ded8c7cb1c22c5a19a140c6b35643f50efd837922c",
+  "performance_eligible": false,
+  "paused": true,
+  "error": "KeyboardInterrupt()",
+  "stopped_utc": "2026-09-20T19:50:18.756381+00:00"
+}

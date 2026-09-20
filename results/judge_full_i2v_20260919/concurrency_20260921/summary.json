@@ -1,0 +1,48 @@
+{
+  "captured_utc": "2026-09-20T20:08:44.268499+00:00",
+  "requested_gpus": [
+    0,
+    1
+  ],
+  "requested_slots_per_gpu": 4,
+  "paired_probe_interrupted_by_user_steering": true,
+  "completed_two_process_comparisons": {
+    "arcquant100": {
+      "complete": true,
+      "serial_videos_per_hour": 216.11343346934984,
+      "concurrent_videos_per_hour": 312.8665837057263,
+      "ratio_to_fastest_serial": 1.4347912021957598,
+      "candidate_for_live_pilot": true,
+      "all_source_hashes_match": true,
+      "fastest_serial_videos_per_hour": 218.05722200340026
+    },
+    "b1.5_protected_n": {
+      "complete": true,
+      "serial_videos_per_hour": 257.4732687426638,
+      "concurrent_videos_per_hour": 436.0980988876643,
+      "ratio_to_fastest_serial": 1.6846263542297855,
+      "candidate_for_live_pilot": true,
+      "all_source_hashes_match": true,
+      "fastest_serial_videos_per_hour": 258.8693319398112
+    },
+    "b2_joint": {
+      "complete": true,
+      "serial_videos_per_hour": 303.0533460156112,
+      "concurrent_videos_per_hour": 519.5898666598504,
+      "ratio_to_fastest_serial": 1.6965786335217519,
+      "candidate_for_live_pilot": true,
+      "all_source_hashes_match": true,
+      "fastest_serial_videos_per_hour": 306.2574621615313
+    }
+  },
+  "four_process_throughput_qualified": false,
+  "performance_eligible": false,
+  "validation": "7 CPU tests passed; six additional slots passed all five Edge source-output hashes (120 reference videos) and 30 A-B-A checks before final generation.",
+  "all_eight_slots_in_generation": true,
+  "all_secondary_qualifications_passed": true,
+  "qualification_reference_videos": 120,
+  "four_process_throughput_observed": true,
+  "controlled_four_process_comparison_complete": false,
+  "observed_videos_per_hour": 1104.0,
+  "observation": "queue_speed_observation.json"
+}

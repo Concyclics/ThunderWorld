@@ -1,0 +1,201 @@
+{
+  "complete": false,
+  "models": {
+    "edge": {
+      "generation_complete": false,
+      "generated": 3559,
+      "expected": 16940,
+      "reused": 720,
+      "exported": 3557,
+      "complete": false,
+      "performance_eligible": false
+    },
+    "nano": {
+      "generation_complete": false,
+      "generated": 16920,
+      "expected": 16940,
+      "reused": 720,
+      "exported": 16920,
+      "complete": false,
+      "performance_eligible": false
+    }
+  },
+  "workers": {
+    "0": {
+      "gpu": 0,
+      "phase": "generation",
+      "complete": false,
+      "slots": {
+        "0": {
+          "complete": false,
+          "pid": 2475478,
+          "gpu": 0,
+          "slot": 0,
+          "phase": "generation",
+          "qualified": {
+            "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+            "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+            "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+            "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+            "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+            "nano/arcquant": "ad1257e71db866800bc0a97abfe90a5eb75e30a401ee90623acc3250b3b3142e",
+            "nano/arcquant100": "36e161fb427fa052083af07b5fb283f86512a855215acea5d563e0562d8f7861",
+            "nano/sharq_perf": "b20ceea94ae2fda101727a7efadef1f8e2f50c8616d6fda8285a96b060add346",
+            "nano/b1.5_protected_n": "8cb45b1cf6aaf595a315c227346f3fb0f2d6b4647073461436e330c4a9e3a767",
+            "nano/b2_joint": "3c4c5adb6acc82866c0063adae21244ad704488726273d43ce7754b670018e64"
+          },
+          "completed_tasks": [
+            "edge__arcquant100__rbench__324"
+          ],
+          "started_utc": "2026-09-20T19:53:07.561720+00:00"
+        },
+        "1": {
+          "complete": false,
+          "pid": 2475479,
+          "gpu": 0,
+          "slot": 1,
+          "phase": "generation",
+          "qualified": {
+            "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+            "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+            "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+            "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+            "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+          },
+          "completed_tasks": [],
+          "started_utc": "2026-09-20T19:53:07.563654+00:00"
+        },
+        "2": {
+          "complete": false,
+          "pid": 2475480,
+          "gpu": 0,
+          "slot": 2,
+          "phase": "generation",
+          "qualified": {
+            "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+            "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+            "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+            "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+            "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+          },
+          "completed_tasks": [],
+          "started_utc": "2026-09-20T19:53:07.562367+00:00"
+        },
+        "3": {
+          "complete": false,
+          "pid": 2475481,
+          "gpu": 0,
+          "slot": 3,
+          "phase": "generation",
+          "qualified": {
+            "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+            "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+            "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+            "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+            "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+          },
+          "completed_tasks": [],
+          "started_utc": "2026-09-20T19:53:07.565541+00:00"
+        }
+      },
+      "pid": 2475478
+    },
+    "1": {
+      "gpu": 1,
+      "phase": "generation",
+      "complete": false,
+      "slots": {
+        "0": {
+          "complete": false,
+          "pid": 2475482,
+          "gpu": 1,
+          "slot": 0,
+          "phase": "generation",
+          "qualified": {
+            "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+            "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+            "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+            "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+            "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da",
+            "nano/arcquant": "ad1257e71db866800bc0a97abfe90a5eb75e30a401ee90623acc3250b3b3142e",
+            "nano/arcquant100": "36e161fb427fa052083af07b5fb283f86512a855215acea5d563e0562d8f7861",
+            "nano/sharq_perf": "b20ceea94ae2fda101727a7efadef1f8e2f50c8616d6fda8285a96b060add346",
+            "nano/b1.5_protected_n": "8cb45b1cf6aaf595a315c227346f3fb0f2d6b4647073461436e330c4a9e3a767",
+            "nano/b2_joint": "3c4c5adb6acc82866c0063adae21244ad704488726273d43ce7754b670018e64"
+          },
+          "completed_tasks": [
+            "edge__arcquant100__rbench__336"
+          ],
+          "started_utc": "2026-09-20T19:53:07.565169+00:00"
+        },
+        "1": {
+          "complete": false,
+          "pid": 2475483,
+          "gpu": 1,
+          "slot": 1,
+          "phase": "generation",
+          "qualified": {
+            "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+            "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+            "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+            "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+            "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+          },
+          "completed_tasks": [
+            "edge__arcquant100__rbench__360"
+          ],
+          "started_utc": "2026-09-20T19:53:07.567259+00:00"
+        },
+        "2": {
+          "complete": false,
+          "pid": 2475484,
+          "gpu": 1,
+          "slot": 2,
+          "phase": "generation",
+          "qualified": {
+            "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+            "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+            "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+            "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+            "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+          },
+          "completed_tasks": [],
+          "started_utc": "2026-09-20T19:53:07.566792+00:00"
+        },
+        "3": {
+          "complete": false,
+          "pid": 2475485,
+          "gpu": 1,
+          "slot": 3,
+          "phase": "generation",
+          "qualified": {
+            "edge/arcquant": "c799f7aa518e879dc3bc8b96a5425cb8d7f8c11645a596c2b13530e39c5d9762",
+            "edge/arcquant100": "3f21cf68343182b823e332f218f8689ef0cd3e31969ac24e44b526b30bccd2b0",
+            "edge/sharq_perf": "86a6592236eff1b5c2dda1daca92971150575f1e841850d2e9d0301d1afa5d23",
+            "edge/b1.5_protected_n": "0b01b9ae3cd7a76712af367f5f5588fae0206901ee9686cb4d37d6c6f1827b69",
+            "edge/b2_joint": "6f19fec80844b60139938ad40eb3da0054d39e310584e69a777b682af03167da"
+          },
+          "completed_tasks": [],
+          "started_utc": "2026-09-20T19:53:07.567174+00:00"
+        }
+      },
+      "pid": 2475482
+    }
+  },
+  "updated_utc": "2026-09-20T20:08:40.211960+00:00",
+  "performance_eligible": false,
+  "active_gpus": [
+    0,
+    1
+  ],
+  "slots_per_gpu": 4,
+  "secondary_methods": [
+    "arcquant",
+    "arcquant100",
+    "sharq_perf",
+    "b1.5_protected_n",
+    "b2_joint"
+  ],
+  "scheduler": "independent_process_pool",
+  "parallel_policy_sha256": "4856222da462ab19fb5af870c87b6e3ba2009c5ba431a180ee9b79fc3500f16b"
+}

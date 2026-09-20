@@ -103,7 +103,14 @@ bash tools/fp4_handoff/python.sh tools/contribution_study/judge_generation.py la
 续跑只调用 `launch`，不要重新冻结 cohort。历史目录若使用旧版调度器，应切回其记录的代码提交；
 代码指纹不一致时禁止继续往同一目录混写。
 
-## 按保存的设备策略续跑
+## 当前续跑入口：每卡四进程
+
+2026-09-21 用户要求 GPU0、GPU1 每卡四个独立进程，队列已迁移到
+[`judge_parallel_queue.py`](judge_parallel_queue.py)。后续恢复和查看状态使用
+[`JUDGE_CONCURRENCY.md`](JUDGE_CONCURRENCY.md) 的命令；下方单进程设备控制说明作为历史记录保留。
+不要在当前目录使用旧 `judge_generation.py` 或 `judge_device_control.py` 启动另一套调度器。
+
+## 历史单进程设备切换
 
 2026-09-20 的全量任务已按用户要求切换为仅 GPU0。切换时让两卡正在执行的任务块完成，
 核验这 48 份输出及计算账本的 SHA 后再停止原调度器；已生成的 **16,008 / 33,880** 份输出
@@ -114,9 +121,9 @@ bash tools/fp4_handoff/python.sh tools/contribution_study/judge_generation.py la
 
 同日 13:54 UTC，用户恢复 GPU0+GPU1 共用队列。此次保留 **16,663 / 33,880** 份输出；
 当前任务块中已保存的 7 个视频通过身份及 SHA 核验后按种子断点接续，未完成部分重新入队。
-当前设备策略为 `[0,1]`，后续不带 `--gpus` 的恢复命令会沿用双卡。
+当时设备策略为 `[0,1]`，单进程控制器不带 `--gpus` 的恢复命令沿用双卡。
 
-该目录后续恢复和查看状态使用以下入口，**不要再使用上面的双卡 `judge_generation.py launch`**：
+以下是历史单进程恢复命令，当前八路池请使用上方的新入口：
 
 ```bash
 export TW_PYTHON=/home/yufeng/thunderworld/.venvs/cosmos3/bin/python
