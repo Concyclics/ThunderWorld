@@ -1,0 +1,16 @@
+{
+  "processes": [
+    {
+      "name": "exporter_edge",
+      "pid": 1103567
+    },
+    {
+      "name": "exporter_nano",
+      "pid": 1103568
+    },
+    {
+      "name": "gpu1",
+      "pid": 1103569
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "pid": 1103565,
+  "started_utc": "2026-09-20T11:32:19.051403+00:00",
+  "command": [
+    "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+    "/home/yufeng/thunderworld/ThunderWorld-fp4-next-20260918/tools/contribution_study/judge_device_control.py",
+    "supervise",
+    "--root",
+    "/home/yufeng/thunderworld/judge_full_i2v_20260919"
+  ],
+  "active_gpus": [
+    1
+  ],
+  "log": "/home/yufeng/thunderworld/judge_full_i2v_20260919/supervisor.log",
+  "device_policy_sha256": "b4fb5189a08928905bd3237d819b73f92bbeb221758af364887d067853682aa4"
+}
