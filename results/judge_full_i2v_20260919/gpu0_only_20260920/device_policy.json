@@ -1,0 +1,13 @@
+{
+  "active_gpus": [
+    0
+  ],
+  "qualified_gpus": [
+    0,
+    1
+  ],
+  "job_sha256": "c4b6c81bba00fde3634c982b25a1d0c65327e7f662925812a4d880340d7d22b8",
+  "controller_sha256": "0dfe95b2d18defeacbfa202ca35c6dcb19f171a52e626c5e645626ee951ca8cc",
+  "requested_utc": "2026-09-20T11:01:03.977636+00:00",
+  "reason": "User-selected device subset; inference configuration unchanged"
+}

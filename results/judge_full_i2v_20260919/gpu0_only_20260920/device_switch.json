@@ -1,0 +1,151 @@
+{
+  "requested_utc": "2026-09-20T10:53:01.747074+00:00",
+  "requested_gpus": [
+    0
+  ],
+  "reason": "User requested GPU0-only continuation",
+  "phase": "complete",
+  "workers": [
+    {
+      "name": "gpu0",
+      "pid": 1721636,
+      "children": [
+        "1049102"
+      ]
+    },
+    {
+      "name": "gpu1",
+      "pid": 1721637,
+      "children": [
+        "1052262"
+      ]
+    }
+  ],
+  "previous_launch": {
+    "pid": 1721633,
+    "started_utc": "2026-09-19T05:48:51.424651+00:00",
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "/home/yufeng/thunderworld/ThunderWorld-fp4-next-20260918/tools/contribution_study/judge_generation.py",
+      "supervise",
+      "--root",
+      "/home/yufeng/thunderworld/judge_full_i2v_20260919"
+    ],
+    "log": "/home/yufeng/thunderworld/judge_full_i2v_20260919/supervisor.log"
+  },
+  "processes": [
+    {
+      "name": "exporter_edge",
+      "pid": 1721634
+    },
+    {
+      "name": "exporter_nano",
+      "pid": 1721635
+    },
+    {
+      "name": "gpu0",
+      "pid": 1721636
+    },
+    {
+      "name": "gpu1",
+      "pid": 1721637
+    }
+  ],
+  "running_at_request": {
+    "nano__b1.5_protected_n__paibench__780": {
+      "status": "running",
+      "attempts": [
+        {
+          "gpu": 0,
+          "pid": 1721636,
+          "started_utc": "2026-09-20T10:50:53.663556+00:00"
+        }
+      ],
+      "gpu": 0,
+      "pid": 1721636,
+      "started_utc": "2026-09-20T10:50:53.663556+00:00"
+    },
+    "nano__b1.5_protected_n__paibench__792": {
+      "status": "running",
+      "attempts": [
+        {
+          "gpu": 1,
+          "pid": 1721637,
+          "started_utc": "2026-09-20T10:52:42.309255+00:00"
+        }
+      ],
+      "gpu": 1,
+      "pid": 1721637,
+      "started_utc": "2026-09-20T10:52:42.309255+00:00"
+    }
+  },
+  "old_workers_stopped_utc": "2026-09-20T10:59:50.815479+00:00",
+  "stopped_process_states": {
+    "1721634": null,
+    "1721635": null,
+    "1721636": null,
+    "1721637": null
+  },
+  "verified_tasks": [
+    {
+      "task": "nano__b1.5_protected_n__paibench__780",
+      "gpu": 0,
+      "videos": 24,
+      "progress_sha256": "2c66e94847cf5115138aff0a768c071c04bbc7431a3c7e62cd218c3b1deea080",
+      "completed_utc": "2026-09-20T10:56:54.455467+00:00"
+    },
+    {
+      "task": "nano__b1.5_protected_n__paibench__792",
+      "gpu": 1,
+      "videos": 24,
+      "progress_sha256": "22e7b1ece71238662b61fb632849d5b8da774f3e33df983b954042ad70f77261",
+      "completed_utc": "2026-09-20T10:58:48.919272+00:00"
+    }
+  ],
+  "drained_utc": "2026-09-20T11:00:38.079812+00:00",
+  "completed_utc": "2026-09-20T11:02:31.222487+00:00",
+  "new_launch": {
+    "pid": 1063423,
+    "started_utc": "2026-09-20T11:01:03.979420+00:00",
+    "command": [
+      "/home/yufeng/thunderworld/.venvs/cosmos3/bin/python",
+      "/home/yufeng/thunderworld/ThunderWorld-fp4-next-20260918/tools/contribution_study/judge_device_control.py",
+      "supervise",
+      "--root",
+      "/home/yufeng/thunderworld/judge_full_i2v_20260919"
+    ],
+    "active_gpus": [
+      0
+    ],
+    "log": "/home/yufeng/thunderworld/judge_full_i2v_20260919/supervisor.log",
+    "device_policy_sha256": "79ffd5f5733fce43f130ee361ad8e8323e5d59fffb567cd6962c5b4a1f2ebd02"
+  },
+  "new_children": {
+    "processes": [
+      {
+        "name": "exporter_edge",
+        "pid": 1063425
+      },
+      {
+        "name": "exporter_nano",
+        "pid": 1063426
+      },
+      {
+        "name": "gpu0",
+        "pid": 1063427
+      }
+    ]
+  },
+  "verified_device_environment": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "TW_SHARED_CALIBRATION_GPUS": "0",
+    "TW_SHARED_CALIBRATION_LOCK_SCOPE": "device"
+  },
+  "cuda_verification": {
+    "generation_pid": 1063628,
+    "physical_gpu": 0,
+    "old_gpu1_generation_process_exited": true
+  },
+  "preserved_generated_at_switch": 16008,
+  "expected_videos": 33880
+}
