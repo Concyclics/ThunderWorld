@@ -1,12 +1,13 @@
 <div align="center">
 
-# ThunderWorld
+# ⚡ ThunderWorld
 ### Efficient World Model Generation with Selective FP4 Refinement via Native GEMMs
 
-[Paper / Preprint](https://www.preprints.org/manuscript/202610.0689) · [Model collection](https://huggingface.co/collections/Concyclics/thunderworld-cosmos3-fp4) · [Benchmark outputs](https://huggingface.co/datasets/Concyclics/thunderworld-benchmark)
+[📄 Paper / Preprint](https://www.preprints.org/manuscript/202610.0689) · [🤗 Model collection](https://huggingface.co/collections/Concyclics/thunderworld-cosmos3-fp4) · [🎬 Benchmark outputs](https://huggingface.co/datasets/Concyclics/thunderworld-benchmark) · [📚 Documentation](docs/INSTALL.md)
 
-[![Code license: Apache 2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE)
-[![Models on Hugging Face](https://img.shields.io/badge/🤗-models-yellow)](https://huggingface.co/collections/Concyclics/thunderworld-cosmos3-fp4)
+[![Code license: Apache 2.0](https://img.shields.io/badge/Code-Apache_2.0-2563EB?style=flat-square)](LICENSE)
+[![Models on Hugging Face](https://img.shields.io/badge/Hugging_Face-Models-FFD21E?style=flat-square&logo=huggingface&logoColor=FFD21E)](https://huggingface.co/collections/Concyclics/thunderworld-cosmos3-fp4)
+[![Benchmark dataset on Hugging Face](https://img.shields.io/badge/Hugging_Face-Dataset-FFD21E?style=flat-square&logo=huggingface&logoColor=FFD21E)](https://huggingface.co/datasets/Concyclics/thunderworld-benchmark)
 
 </div>
 
@@ -29,9 +30,9 @@ The released 1.5× and 2× settings cap **issued FP4 matrix work relative to bas
 
 | Model | 1.5× packed assets | 2× packed assets | Loading |
 |---|---:|---:|---|
-| [Cosmos3-Edge-ThunderWorldFP4](https://huggingface.co/Concyclics/Cosmos3-Edge-ThunderWorldFP4) | 0.778 GiB | 0.812 GiB | One SM120 GPU, sufficient VRAM |
-| [Cosmos3-Nano-ThunderWorldFP4](https://huggingface.co/Concyclics/Cosmos3-Nano-ThunderWorldFP4) | 3.833 GiB | 4.197 GiB | One SM120 GPU, sufficient VRAM |
-| [Cosmos3-Super-ThunderWorldFP4](https://huggingface.co/Concyclics/Cosmos3-Super-ThunderWorldFP4) | 17.203 GiB | 18.838 GiB | Two SM120 GPUs; qualified on 2 × 96 GB PRO 6000 |
+| [🤗 Cosmos3-Edge-ThunderWorldFP4](https://huggingface.co/Concyclics/Cosmos3-Edge-ThunderWorldFP4) | 0.778 GiB | 0.812 GiB | One SM120 GPU, sufficient VRAM |
+| [🤗 Cosmos3-Nano-ThunderWorldFP4](https://huggingface.co/Concyclics/Cosmos3-Nano-ThunderWorldFP4) | 3.833 GiB | 4.197 GiB | One SM120 GPU, sufficient VRAM |
+| [🤗 Cosmos3-Super-ThunderWorldFP4](https://huggingface.co/Concyclics/Cosmos3-Super-ThunderWorldFP4) | 17.203 GiB | 18.838 GiB | Two SM120 GPUs; qualified on 2 × 96 GB PRO 6000 |
 
 These are **custom generation-branch weight packages**, not standalone `from_pretrained()` checkpoints. The pinned NVIDIA base is also required for unchanged AR, vision, VAE and other components; preparation loads base weights before replacing generation projections. The sizes above are **not total deployment size or peak VRAM**. RTX 5090 supports the kernel architecture, but model fit must be checked separately. [Release identities and hardware details →](docs/INFERENCE.md)
 
@@ -57,7 +58,7 @@ The launcher downloads **pinned revisions**, verifies assets, and invokes the re
 
 Outputs: `video.mp4`, original float `outputs.npz`, and `result.json` with configuration, output hashes and provenance. Defaults are **320 × 192, 61 stored frames, 35 denoising steps, CFG 6, 24 fps**, Graph execution and `--debug off`. Frozen plans reject incompatible generation shapes. Use `--profile 1.5x` for the smaller repair budget; Super uses `CUDA_VISIBLE_DEVICES=0,1 --model super` with two sufficiently large GPUs.
 
-[Installation](docs/INSTALL.md) · [Inference and debug modes](docs/INFERENCE.md) · [Calibration / quantization](docs/CALIBRATION.md) · [Baseline reproduction](docs/BASELINES.md) · [Benchmark workflow](docs/REPRODUCE.md)
+[🛠️ Installation](docs/INSTALL.md) · [🚀 Inference and debug modes](docs/INFERENCE.md) · [🎯 Calibration / quantization](docs/CALIBRATION.md) · [⚖️ Baseline reproduction](docs/BASELINES.md) · [📊 Benchmark workflow](docs/REPRODUCE.md)
 
 ## How it works
 
