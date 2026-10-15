@@ -1,0 +1,17 @@
+ThunderWorld
+Copyright 2026 ThunderWorld contributors
+
+Project code is licensed under the Apache License, Version 2.0.
+
+Paper Figures 1, 4 and 6 in docs/assets are unmodified author-manuscript
+artwork for "ThunderWorld: Efficient World Model Generation with Selective
+FP4 Refinement via Native GEMMs", Han Chen et al., Preprints.org (2026),
+https://doi.org/10.20944/preprints202610.0689.v1.
+These figures are licensed separately under Creative Commons Attribution 4.0
+International: https://creativecommons.org/licenses/by/4.0/.
+See docs/assets/provenance.json for file identities.
+
+NVIDIA Cosmos model weights, including the derived quantized model assets
+distributed separately on Hugging Face, retain OpenMDW-1.1 terms and notices.
+Dataset licenses and third-party code licenses are not replaced by this license.
+See THIRD_PARTY_NOTICES.md for dependencies and upstream sources.

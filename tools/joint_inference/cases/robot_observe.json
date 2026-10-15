@@ -1,0 +1,7 @@
+{
+  "id": "robot_observe",
+  "task": "i2v",
+  "prompt": "A stationary camera observes a robot arm moving smoothly toward an object on the table. The lighting and background remain unchanged.",
+  "split": "development",
+  "image": "../../../data_local/e2e_inputs/robot_153.jpg"
+}

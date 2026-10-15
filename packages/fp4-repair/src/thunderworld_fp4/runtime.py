@@ -36,6 +36,9 @@ def _forward(q, k, v, config, repair_mask=None, counts_tensor=None, return_mask=
     m, n, h, hk = q.shape[1], k.shape[1], q.shape[2], k.shape[2]
     nt = triton.cdiv(n, 128)
     counts = config.head_counts(h, n)
+    pv_counts = config.pv_counts(h,n)
+    separate = config.pv_head_quotas is not None or config.pv_terms is not None or config.pv_coverage is not None or bool(config.pv_head_budgets)
+    pv_terms = config.pv_terms or config.terms
     mask_shape = (h, triton.cdiv(m, 128), nt)
     if repair_mask is not None:
         if (repair_mask.shape != mask_shape or repair_mask.dtype != torch.bool
@@ -48,16 +51,25 @@ def _forward(q, k, v, config, repair_mask=None, counts_tensor=None, return_mask=
         repair, full = any(counts), all(c == nt for c in counts)
         selection = repair and not full
         flags = torch.empty(mask_shape, device=q.device, dtype=torch.int32) if selection else q
+    pv_repair,pv_full = any(pv_counts),all(c==nt for c in pv_counts)
+    if separate and repair_mask is not None:
+        pv_flags=torch.where(repair_mask,pv_terms,1).to(torch.int32)
+        pv_repair,pv_full=True,False
+    elif separate:
+        selection = (repair and not full) or (pv_repair and not pv_full)
+        flags = torch.empty(mask_shape,device=q.device,dtype=torch.int32) if selection else q
+        pv_flags = torch.empty(mask_shape,device=q.device,dtype=torch.int32) if selection else q
+    else:pv_flags=flags
     bm = config.query_tile or (16 if m <= 128 else 32)
     splits = min(config.splits, nt)
     # Ceil-chunk splitting can create empty trailing chunks; do not launch them.
     chunk = math.ceil(nt / splits)
     splits = math.ceil(nt / chunk)
-    packed_result = pack_inputs(q, k, v, repair, selection, config.terms)
+    packed_result = pack_inputs(q, k, v, repair or (separate and pv_repair), selection, max(config.terms,pv_terms) if separate else config.terms, config.transpose_v, config.sparse_pack)
     packed, mp, np = packed_result[:3]
     keepalive = [packed_result]
     if selection:
-        uniform = len(set(counts)) == 1
+        uniform = len(set(counts)) == 1 and not separate
         if uniform:
             fn, quota = select_tiles, counts[0]
         else:
@@ -65,17 +77,24 @@ def _forward(q, k, v, config, repair_mask=None, counts_tensor=None, return_mask=
                 if torch.cuda.is_current_stream_capturing():
                     raise RuntimeError("nonuniform head budgets in outer capture require FP4Attention or an explicit repair_mask")
                 counts_tensor = torch.tensor(counts, device=q.device, dtype=torch.int32)
-            fn, quota = select_tiles_head, counts_tensor
+                if separate:counts_tensor=(counts_tensor,torch.tensor(pv_counts,device=q.device,dtype=torch.int32))
+            fn, quota = select_tiles_head, counts_tensor[0] if separate else counts_tensor
             keepalive.append(counts_tensor)
         fn[(h, triton.cdiv(m, 128))](q, k, packed_result[3], flags, m, n, h, hk,
             q.stride(1), q.stride(2), k.stride(1), k.stride(2), quota, config.terms,
-            triton.next_power_of_2(nt), num_warps=4)
+            triton.next_power_of_2(nt), **(dict(PVFLAGS=pv_flags,PVCOUNTS=counts_tensor[1],SEPARATE=True,PVTERMS=pv_terms) if separate else {}),num_warps=4)
+    if config.sparse_pack and (repair or pv_repair):
+        from ._attention_sparse_pack import pack_selected
+        unions=pack_selected(q,k,v,packed,mp,np,flags,pv_flags,qrepair=repair,qfull=full,
+             prepair=pv_repair if separate else repair,pfull=pv_full if separate else full,
+             qterms=config.terms,pterms=pv_terms,transpose=config.transpose_v)
+        keepalive.append(unions)
     out = torch.empty(tuple(q.shape), device=q.device, dtype=q.dtype)
     parts = out if splits == 1 else torch.empty((splits, h, m, 128), device=q.device, dtype=torch.float32)
     stats = out if splits == 1 else torch.empty((splits, h, m, 2), device=q.device, dtype=torch.float32)
     streaming_attention[(triton.cdiv(m, bm), h, splits)](*packed, flags, parts, stats,
         m, n, h, hk, mp, np, bm, 128, repair, full, config.terms, splits,
-        config.lazy_p, config.fast_p, num_warps=config.num_warps, num_stages=1)
+        config.lazy_p, config.fast_p, config.transpose_v, config.reload_q or config.sparse_pack, PVFLAGS=pv_flags,SEPARATE=separate,PV_REPAIR=pv_repair,PV_FULL=pv_full,PV_TERMS=pv_terms,num_warps=config.num_warps, num_stages=1)
     if splits > 1:
         combine[(triton.cdiv(m, 4), h)](parts, stats, out, m, h, splits,
             triton.next_power_of_2(splits), num_warps=4, enable_fp_fusion=False)
@@ -83,6 +102,9 @@ def _forward(q, k, v, config, repair_mask=None, counts_tensor=None, return_mask=
     if return_mask:
         selected = (flags > 1) if selection or repair_mask is not None else torch.full(
             mask_shape, full, device=q.device, dtype=torch.bool)
+    if return_mask and separate:
+        pv_selected=(pv_flags>1) if selection or repair_mask is not None else torch.full(mask_shape,pv_full,device=q.device,dtype=torch.bool)
+        selected=torch.stack((selected,pv_selected))
     return out, selected, keepalive
 
 
@@ -152,6 +174,8 @@ class FP4Attention:
                     buffers = tuple(t.contiguous().clone() for t in (q, k, v))
                     mask_buffer = repair_mask.clone() if repair_mask is not None else None
                     quotas = torch.tensor(config.head_counts(q.shape[2], k.shape[1]), device=q.device, dtype=torch.int32)
+                    if config.pv_head_quotas is not None or config.pv_terms is not None or config.pv_coverage is not None or config.pv_head_budgets:
+                        quotas=(quotas,torch.tensor(config.pv_counts(q.shape[2],k.shape[1]),device=q.device,dtype=torch.int32))
                     for _ in range(3):
                         _forward(*buffers, config, mask_buffer, quotas, return_mask)
                     graph = torch.cuda.CUDAGraph()

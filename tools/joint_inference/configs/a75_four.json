@@ -1,0 +1,26 @@
+{
+  "debug": "off",
+  "execution": "graph",
+  "strict_tuning": false,
+  "precision": "fp4",
+  "ffn": {
+    "activation": 0.75,
+    "weight": 1,
+    "cross": true
+  },
+  "projection": {
+    "activation": 0.75,
+    "weight": 1,
+    "cross": true
+  },
+  "attention_backend": "fp4",
+  "attention": {
+    "default": {
+      "coverage": 1,
+      "terms": 4,
+      "query_tile": 32,
+      "splits": 2,
+      "transpose_v": true
+    }
+  }
+}

@@ -39,7 +39,9 @@ def decoded_inputs(q,k,v,repair):
         outputs.append(deq)
     return outputs
 
-def reference(q,k,v,flags,repair,terms=3,splits=2,bn=128):
+def reference(q,k,v,flags,repair,terms=3,splits=2,bn=128,pvflags=None,pvterms=None):
+    if pvflags is None:pvflags=flags
+    if pvterms is None:pvterms=terms
     m,n,h,hk=q.shape[1],k.shape[1],q.shape[2],k.shape[2]
     nt=math.ceil(n/128);np=nt*128;outputs=[]
     splits=min(splits,math.ceil(n/bn));chunk=math.ceil(math.ceil(n/bn)/splits)
@@ -64,11 +66,12 @@ def reference(q,k,v,flags,repair,terms=3,splits=2,bn=128):
                 score[:,torch.arange(start*bn,(start+1)*bn,device=q.device)>=n]=-float('inf')
                 nm=torch.maximum(mx,score.amax(-1));alpha=(mx-nm).exp();p=(score-nm[:,None]).exp()
                 den=den*alpha+p.sum(-1);p0,p1=quant_ref(p)
+                selected=pvflags.reshape(h,math.ceil(m/128),nt)[head,torch.arange(m,device=q.device)//128,start*bn//128]>1
                 tile=p0@vb[sl]
                 if repair:
                     extra=p1@vb[sl]
-                    if terms>=3:extra=extra+p0@vr[sl]
-                    if terms==4:extra=extra+p1@vr[sl]
+                    if pvterms>=3:extra=extra+p0@vr[sl]
+                    if pvterms==4:extra=extra+p1@vr[sl]
                     tile=tile+extra*selected[:,None]
                 acc=acc*alpha[:,None]+tile;mx=nm
             parts.append((acc,mx,den))

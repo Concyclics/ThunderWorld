@@ -25,20 +25,32 @@ class RepairConfig:
     terms=2: A0B0 + A1B0; terms=3: also A0B1; terms=4: also A1B1.
     head_budgets overrides coverage for named query heads; unspecified heads
     use coverage. Terms apply to both QK and PV. Blocks remain 128x128 tokens.
+    transpose_v changes only the online packed-V byte/scale storage order;
+    quantization groups, factors, values and repair selection remain identical.
     """
 
     coverage: float = 0.5
     terms: int = 3
     head_budgets: tuple[tuple[int, float], ...] = ()
+    head_quotas: tuple[int, ...] | None = None
+    pv_head_quotas: tuple[int, ...] | None = None
+    pv_coverage: float | None = None
+    pv_head_budgets: tuple[tuple[int, float], ...] = ()
+    pv_terms: int | None = None
     block_size: int = 128
     query_tile: int | None = None
     num_warps: int = 4
     splits: int = 2
     lazy_p: bool = True
     fast_p: bool = True
+    transpose_v: bool = False
+    reload_q: bool = False
+    sparse_pack: bool = False
 
     def __post_init__(self):
         _fraction(self.coverage, "coverage")
+        if self.pv_coverage is not None:
+            _fraction(self.pv_coverage, 'pv_coverage')
         for name, allowed in (("terms", (2, 3, 4)), ("block_size", (128,)),
                               ("num_warps", (4, 8)), ("splits", (1, 2, 4, 8))):
             value = getattr(self, name)
@@ -48,8 +60,17 @@ class RepairConfig:
             type(self.query_tile) is not int or self.query_tile not in (16, 32, 64)
         ):
             raise ValueError("query_tile must be None, 16, 32, or 64; BM128 failed validation")
-        if type(self.lazy_p) is not bool or type(self.fast_p) is not bool:
-            raise ValueError("lazy_p and fast_p must be booleans")
+        if any(type(x) is not bool for x in (self.lazy_p,self.fast_p,self.transpose_v,self.reload_q,self.sparse_pack)):
+            raise ValueError("lazy_p, fast_p, transpose_v and reload_q must be booleans")
+        for field_name in ('head_quotas','pv_head_quotas'):
+            values=getattr(self,field_name)
+            if values is not None:
+                values=tuple(values)
+                if not values:raise ValueError('Head quotas cannot be empty')
+                for value in values:_integer(value,'head quota')
+                object.__setattr__(self,field_name,values)
+        if self.pv_terms is not None and (type(self.pv_terms) is not int or self.pv_terms not in (2,3,4)):
+            raise ValueError('PV terms must be 2/3/4')
         budgets = tuple(tuple(pair) for pair in self.head_budgets)
         seen = set()
         for pair in budgets:
@@ -62,11 +83,27 @@ class RepairConfig:
                 raise ValueError(f"duplicate head budget: {head}")
             seen.add(head)
         object.__setattr__(self, "head_budgets", tuple(sorted(budgets)))
+        pv_budgets = tuple(tuple(pair) for pair in self.pv_head_budgets)
+        seen = set()
+        for pair in pv_budgets:
+            if len(pair) != 2:
+                raise ValueError('pv_head_budgets entries must be (head, coverage)')
+            head, fraction = pair
+            _integer(head, 'PV head')
+            _fraction(fraction, 'PV head coverage')
+            if head in seen:
+                raise ValueError('Duplicate PV head budget')
+            seen.add(head)
+        object.__setattr__(self, 'pv_head_budgets', tuple(sorted(pv_budgets)))
 
     def head_counts(self, query_heads: int, key_tokens: int) -> tuple[int, ...]:
         _integer(query_heads, "query_heads", 1)
         _integer(key_tokens, "key_tokens", 1)
         tiles = math.ceil(key_tokens / self.block_size)
+        if self.head_quotas is not None:
+            if len(self.head_quotas)!=query_heads or any(c>tiles for c in self.head_quotas):
+                raise ValueError('Head quota exceeds shape')
+            return self.head_quotas
         counts = [math.ceil(tiles * self.coverage)] * query_heads
         for head, fraction in self.head_budgets:
             if head >= query_heads:
@@ -74,12 +111,26 @@ class RepairConfig:
             counts[head] = math.ceil(tiles * fraction)
         return tuple(counts)
 
+    def pv_counts(self, query_heads, key_tokens):
+        if self.pv_head_quotas is None:
+            counts = list(self.head_counts(query_heads,key_tokens))
+            tiles = math.ceil(key_tokens / 128)
+            if self.pv_coverage is not None:
+                counts = [math.ceil(tiles*self.pv_coverage)]*query_heads
+            for head, fraction in self.pv_head_budgets:
+                if head >= query_heads:raise ValueError('PV head exceeds query head count')
+                counts[head] = math.ceil(tiles*fraction)
+            return tuple(counts)
+        if len(self.pv_head_quotas)!=query_heads or any(c>math.ceil(key_tokens/128) for c in self.pv_head_quotas):
+            raise ValueError('PV quota exceeds shape')
+        return self.pv_head_quotas
+
     def cost(self, query_heads: int, key_tokens: int) -> dict:
         """Padded-tile product count; excludes all packing/selection/softmax costs."""
         counts = self.head_counts(query_heads, key_tokens)
         fraction = sum(counts) / (query_heads * math.ceil(key_tokens / self.block_size))
         return {"selected_tile_fraction": fraction,
-                "matrix_product_multiplier": 1 + (self.terms - 1) * fraction,
+                "matrix_product_multiplier": 1 + ((self.terms - 1) * sum(counts) + ((self.pv_terms or self.terms) - 1) * sum(self.pv_counts(query_heads,key_tokens))) / (2 * query_heads * math.ceil(key_tokens / self.block_size)),
                 "scope": "equal-cost padded tiles; external repair_mask replaces these quotas"}
 
     def to_dict(self) -> dict:

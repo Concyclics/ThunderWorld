@@ -1,0 +1,6 @@
+{
+  "id": "policy_table",
+  "task": "policy",
+  "prompt": "Pick up the object and place it next to the other objects.",
+  "image": "../../../data_local/finding_inputs/robot_table.png"
+}

@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "arcquant": {
+      "url": "https://github.com/actypedef/ARCQuant.git",
+      "commit": "dbf841e123204ee0584006541dea3b4a539b2e1c",
+      "purpose": "activation residual channels",
+      "source_type": "official",
+      "adaptation_status": "not_qualified",
+      "license_files": {},
+      "redistribution_review": "required",
+      "dependency_files": {
+        ".gitmodules": "e617943e2fdb103dee095dfe901ef5831d0fd476b1abee2cf8ced6278671a5bb",
+        "kernels/CMakeLists.txt": "191ebabf585d8c2d221e405a08f56366b2f162b2d7ff548912a25574486583ab",
+        "requirements.txt": "57c38bd367db3786fc88ff47e690e81b05e4e109e2a20dc22de45503d4608950"
+      },
+      "performance_eligible": false
+    },
+    "sharq": {
+      "url": "https://github.com/actypedef/SharQ.git",
+      "commit": "3cc584fe48e32e59c8b4e37323470dcdd606bb11",
+      "purpose": "sparse activation plus dense residual",
+      "source_type": "official",
+      "adaptation_status": "not_qualified",
+      "license_files": {},
+      "redistribution_review": "required",
+      "dependency_files": {
+        ".gitmodules": "cc7fa857c0ce3965705b3d81ab04d7627daa6f361928a488cb980c96ac7e1698",
+        "kernels/CMakeLists.txt": "80188309334cd7d2d6a678202914b628e514027c947b24412cdac4c512546d92",
+        "requirements.txt": "a0e2fcf97ef35ba52529795e8b2cd53b2569cfaad7d5e9e8987e20ba2c624596"
+      },
+      "performance_eligible": false
+    },
+    "fouroversix": {
+      "url": "https://github.com/mit-han-lab/fouroversix.git",
+      "commit": "dadfad6901d473a734fe71e0b082e70ee993e23a",
+      "purpose": "adaptive FP4 block scaling",
+      "source_type": "official",
+      "adaptation_status": "not_qualified",
+      "license_files": {
+        "LICENSE.md": "dd150705c552a68272688425c8d8058986ebd81c8eecea1e74531c4e12f0dd92"
+      },
+      "redistribution_review": "preserve upstream license",
+      "dependency_files": {
+        ".gitmodules": "abd66f29afb919a05fe01d249e59031e2f51c4aeea071cbc5f435c824ed76d19",
+        "pyproject.toml": "e5630f676ac3c508c3f82cedab0cc57f16754fd0dcc768a5c47ec31df961b998"
+      },
+      "performance_eligible": false
+    },
+    "viditq": {
+      "url": "https://github.com/thu-nics/ViDiT-Q.git",
+      "commit": "43657d11b32192ec0f50f0dac8d3a16c3d841196",
+      "purpose": "layer and timestep sensitivity",
+      "source_type": "official",
+      "adaptation_status": "not_qualified",
+      "license_files": {
+        "eval/image/evaluation/metrics/PickScore/LICENSE": "26f64c803b07dfcea82ea31790b87fcf5bfc764d63513cfec6af817b62d6bebc",
+        "eval/image/evaluation/metrics/align_sd/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "eval/video/Vbench/vbench/third_party/RAFT/LICENSE": "399af7e243d625e8dea2b3f81fec676ea19bacf7d9ce8cfd4ce15530d8a66173",
+        "eval/video/Vbench/vbench/third_party/amt/LICENSE": "5230fe1253ad281313dc26275637dc24e7455c5fd2a6113382fcf8fe007bf1ff",
+        "eval/video/metrics/RAFT/LICENSE": "399af7e243d625e8dea2b3f81fec676ea19bacf7d9ce8cfd4ce15530d8a66173",
+        "examples/opensora1.2/Open-Sora/LICENSE": "dcb5bc36e96d096a66a5319b724118c993ac0e6489e0adcd1fc382ffcbb5dd3f"
+      },
+      "redistribution_review": "preserve upstream license",
+      "dependency_files": {
+        "eval/image/evaluation/metrics/PickScore/requirements.txt": "bb1cffff30ff31d01b055c9ce370137b622fdfe556a0b21046b6bb9c795d6a86",
+        "eval/image/evaluation/metrics/align_sd/requirements.txt": "e663d20480919b7bdf1e3250f0c2ce9b2995c0ed62e6b1f90ab22aebbb966713",
+        "eval/image/requirements.txt": "7dc200b47724cf3f755acad9cc640f0c6d0bc647bd58d59c0e97c5e22d3fdc4e",
+        "eval/video/requirements.txt": "6a0ea3e5de66caed1fadf76a1ca1b3323a9223b2654c67b10e6baae26bbdc278",
+        "examples/opensora1.2/Open-Sora/gradio/requirements.txt": "1814cdb2f725a05988eb8cf764837aef9be5a64ea05a962af5db9b5ad3763421",
+        "examples/opensora1.2/Open-Sora/pyproject.toml": "ab9dd8902682560d7ecf3bcf02fec70133efa29cbd5e826ffaeba53679e2f111",
+        "examples/opensora1.2/Open-Sora/requirements/requirements.txt": "fd3bdc29f992e11bba30ffddbac4c8ace1c10cff4ca77542645f1e05559d82c7",
+        "examples/opensora1.2/Open-Sora/tools/caption/camera_motion/requirements.txt": "fe9ecaf4df4100ca6aa52fa81b3dc9788e2b703fc11a1fd10c91b5ae751452e7"
+      },
+      "performance_eligible": false
+    },
+    "sageattention": {
+      "url": "https://github.com/thu-ml/SageAttention.git",
+      "commit": "d1a57a546c3d395b1ffcbeecc66d81db76f3b4b5",
+      "purpose": "native FP4 attention",
+      "source_type": "official",
+      "adaptation_status": "not_qualified",
+      "license_files": {
+        "LICENSE": "178f46f58127373d449565589a32c2b5b60c082934618c17b7ce6890c61ef394"
+      },
+      "redistribution_review": "preserve upstream license",
+      "dependency_files": {
+        "pyproject.toml": "676956f48414bc31c4c2ad83b1a38d18041c69facac20aee23199c925abfa7d3"
+      },
+      "performance_eligible": false
+    },
+    "nunchaku": {
+      "url": "https://github.com/nunchux-ai/nunchaku.git",
+      "commit": "302e0e97024ebd68688fe890e5df83731edf7b54",
+      "purpose": "SVDQuant low-rank compensation",
+      "source_type": "official",
+      "adaptation_status": "not_qualified",
+      "license_files": {},
+      "redistribution_review": "required",
+      "dependency_files": {
+        ".gitmodules": "073e91d7816f69b4695653a287a634923769b29144bb0276629a42df29a54263",
+        "pyproject.toml": "81018200bd8169c3f6aafacc4556616f50e1dd9043cf2880e2a8cfdc7b17c2e2"
+      },
+      "performance_eligible": false
+    },
+    "modelopt": {
+      "url": "https://github.com/NVIDIA/Model-Optimizer.git",
+      "commit": "c118d359c1312be3f88883a87e59b8daf6f8d357",
+      "purpose": "NVFP4-AWQ W4A16",
+      "source_type": "official",
+      "adaptation_status": "not_qualified",
+      "license_files": {
+        "LICENSE": "13e7110c994831aea976d298a5191a86c1831229cfa1979ea96e56c831527cf0",
+        "LICENSE_HEADER": "28d94457f193070913a9286c2e071f68ed184157c9f0a6f7d17813fed6f51ce9"
+      },
+      "redistribution_review": "preserve upstream license",
+      "dependency_files": {
+        ".gitmodules": "430e685f2ad9f22036eb4ff68f23ad0fafe2348a7a13b63bbc6d0d4701f42bdb",
+        "examples/cnn_qat/requirements.txt": "b9c259a1a96e056f411984f84ee084eb3a1963f26e48fdf4c1b0e1f88469c545",
+        "examples/diffusers/distillation/requirements.txt": "f2fcfdff6f0fac0f752263f2e312d467c8d81d5ff5e119a40a70e574512dab3a",
+        "examples/diffusers/fastgen/requirements.txt": "9fad90352e38d2360b3bf8f5c08560c727d871d66a3fa9446a69bc11a46eb25f",
+        "examples/diffusers/requirements.txt": "1e0b62c305bf6a9eefe41c39b16c64f9b3beffdfdeea7278f1f84188ca544b32",
+        "examples/gpt-oss/requirements.txt": "ed6f408d154762f03155f2f541eb989285c4ad8e471904f95f295a16ba44671d",
+        "examples/hf_ptq/requirements.txt": "c0d37015abd924e4dd7a2c90f789ac6aee75f41af6f126174e32740804771cb9",
+        "examples/llm_distill/requirements.txt": "f95cd5629c09273ead5545180e25d78bcef88b26f1096ca169efb37680bf72b0",
+        "examples/llm_eval/requirements.txt": "fad1651aac532d332142a3dc48864ee89fca600f2aadb5e000bcd4ab1997b337",
+        "examples/llm_qat/notebooks/requirements.txt": "32f2f9f0dad42fea31dfab3b3bf35e049d3ecaef9d7d9e110addf317f3eb6d88",
+        "examples/llm_qat/requirements.txt": "5762670b72216c7ca2143a69115e7ea4b6a13fa05a5260e7e57fac457faa13e7",
+        "examples/llm_sparsity/weight_sparsity/requirements.txt": "de8e3b99f0cc42b713d1e9cee82a9a5a389cea35d29c19ec3cd2190644de5094",
+        "examples/onnx_ptq/custom_op_plugin/plugin/CMakeLists.txt": "f9f82bc17f3f0670e5a0b3fbe7236aa62d82af3a9420a205eba9db01ed6d8502",
+        "examples/onnx_ptq/requirements.txt": "40059d7c8b9bd4b16b161946a0f1de58b1fb08e12a96a53db67756f84bf73bb8",
+        "examples/puzzletron/requirements.txt": "be38f514df51111030fd213d5ad762caf375803e9c3e8da4469949cb4dec621b",
+        "examples/specdec_bench/requirements.txt": "b99ff2ba7c59ca06ac2888ae67fd957c844671a43d9bf043e2f8b31b4ed93f14",
+        "examples/speculative_decoding/requirements.txt": "b5c3579fc15d2ff4d4afbbb569c78e96a45a5b8790d9f1898ba5c8180904db6d",
+        "examples/torch_onnx/requirements.txt": "9803c58e26d18e007a1f1f280b802a42f615079f44ff5d75212cc5d4312ed2ea",
+        "examples/torch_trt/requirements.txt": "93f36013e56fc3296b8e707da06fcc18ab67bb3f2f3f0437e7b83f3b2252508f",
+        "examples/windows/accuracy_benchmark/fvd_metrics/requirements.txt": "1f2209c0564950fb47913b3027f157e222b0570c004b60f51a8b5ecda3db1bc0",
+        "examples/windows/accuracy_benchmark/kl_divergence_metrics/requirements.txt": "3de01f2bcefc054b4c10831718ce97e729be8617caef3f817e45585d06f41cb6",
+        "examples/windows/accuracy_benchmark/perplexity_metrics/requirements.txt": "f0c9e63af9a375719ae4fb56b846b699daa160146150ea64cab1190aeff129bd",
+        "examples/windows/accuracy_benchmark/requirements.txt": "135379a41ff93ed0cf01baa8c18d02561ffc20d52d2d16a2b2463407749a090a",
+        "examples/windows/diffusers/qad_example/requirements.txt": "4521a60066d1b56e3bc0b9f41426cc6abff768f6ba0733a27912c75b4b5ec736",
+        "examples/windows/onnx_ptq/genai_llm/requirements.txt": "4e0b0f60b48bccc9f093a5b94ecc18957b20ba0ffdba9290b23eef6292306760",
+        "examples/windows/onnx_ptq/sam2/requirements.txt": "9396c1a32abdf3b2e8d4705d357c32674918a75003a979a7766c3e7a1c4c7d10",
+        "examples/windows/onnx_ptq/whisper/requirements.txt": "279a6f40cd626d4fa0b4eae6278ce215bbe4a4a832ffa623e53fc9c1b74529a5",
+        "experimental/dms/pyproject.toml": "6b2d8c5ab1000ada6045e64d633125181179d4537db65ded8f8d9cac5260d34f",
+        "pyproject.toml": "3adb65ea77dfad161ec2d13272316149c99c91a0a7b0499a325054518c93df23",
+        "tools/launcher/pyproject.toml": "19cd2811fe4a2738a4f91e7976aa97d1e17278c4f97898925e05015050b91143",
+        "tools/mcp/pyproject.toml": "9838eac25c50b95331bb72c5422960b8a34f1e20bf6c610587b066713b6813ff"
+      },
+      "performance_eligible": false
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "schema": "section54-thor-fp4-retest-requirements-v1",
+  "status": "handoff_spec_not_executable_runner_manifest",
+  "audit_date": "2026-09-23",
+  "scope": "FP4-only runtime comparison; no generation quality or baseline tuning",
+  "host": "chenhan@thor",
+  "remote_root": "/home/chenhan/thunderworld",
+  "remote_checkout": "/home/chenhan/thunderworld/src/ThunderWorld",
+  "variant": "/home/chenhan/thunderworld/variants/cutlass-mainloop-v6",
+  "variant_receipt_sha256": "319232a793a0955a3afcd5eb669b50a249686d052489c4ebf241c7e11a08bd5f",
+  "models": {
+    "edge": {
+      "revision": "a9d944e2c6a1bf9f48b92ad16348e70c5f1836ba",
+      "generation_projections": 168,
+      "study_sha256": "f8cb7dc7341bec515844dbe43644cf8a693f8a3c3e0a3883bca609d8cadb1bac"
+    },
+    "nano": {
+      "revision": "411f42a8fdfb8c5b2583cb8786e0938f49796eaa",
+      "generation_projections": 252,
+      "study_sha256": "a1686593a92f3de1d842b0b1d552826d4942a806d5d78eebed1062f595fb38cd"
+    }
+  },
+  "methods": [
+    {
+      "cli_name": "fp4",
+      "method_id": "fp4_base",
+      "attention_backend": "fp4",
+      "execution": "graph",
+      "uses_v6_variant": true
+    },
+    {
+      "cli_name": "awq_marlin",
+      "method_id": "awq_marlin",
+      "attention_backend": "bf16",
+      "execution": "graph",
+      "uses_v6_variant": false
+    },
+    {
+      "cli_name": "arcquant50",
+      "method_id": "arcquant",
+      "attention_backend": "bf16",
+      "execution": "eager",
+      "uses_v6_variant": false
+    },
+    {
+      "cli_name": "arcquant100",
+      "method_id": "arcquant100",
+      "attention_backend": "bf16",
+      "execution": "eager",
+      "uses_v6_variant": false
+    },
+    {
+      "cli_name": "sharq",
+      "method_id": "sharq_perf",
+      "attention_backend": "bf16",
+      "execution": "eager",
+      "uses_v6_variant": false
+    },
+    {
+      "cli_name": "repair15",
+      "method_id": "b1.5_protected_n",
+      "attention_backend": "fp4",
+      "execution": "graph",
+      "uses_v6_variant": true
+    },
+    {
+      "cli_name": "repair20",
+      "method_id": "b2_joint",
+      "attention_backend": "fp4",
+      "execution": "graph",
+      "uses_v6_variant": true
+    }
+  ],
+  "excluded_speed_methods": [
+    "bf16",
+    "fp8",
+    "fp4_bf16_attention"
+  ],
+  "generation": {
+    "width": 320,
+    "height": 192,
+    "frames": 61,
+    "new_frames": 60,
+    "steps": 35,
+    "cfg": 6,
+    "flow_shift": 3,
+    "playback_fps": 24
+  },
+  "cases": [
+    {
+      "case_index": 0,
+      "scene_id": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+      "image_sha256": "a7c1d54b6146e00e2905599327af3f861a27bee409157c28a381a4cb3e114a79"
+    },
+    {
+      "case_index": 1,
+      "scene_id": "rbench__common_manipulation_0041",
+      "image_sha256": "9145f8c54b0289b31aada8a6072e3f58cdfe41e5c06d60dc10f145d91501383f"
+    }
+  ],
+  "timing": {
+    "rounds": 5,
+    "seeds_per_case": [
+      301017,
+      301018,
+      301031
+    ],
+    "method_order_rng_seed": 230923,
+    "batch": 1,
+    "concurrency": 1,
+    "debug": "off",
+    "requests_per_model_method": 30,
+    "total_requests": 420,
+    "independent_loads": 70,
+    "frames_per_second_formula": "(frames - 1) / wall_seconds",
+    "aggregate_fps_formula": "60 / median(wall_seconds)",
+    "includes": [
+      "host_input_preparation",
+      "fresh_AR_prefill",
+      "35_diffusion_steps",
+      "decode",
+      "CPU_output_conversion"
+    ],
+    "excludes": [
+      "load",
+      "offline_preparation",
+      "warmup",
+      "capture",
+      "output_hash",
+      "file_serialization"
+    ],
+    "runtime_options": "Preserve frozen per-model/per-method settings and report differences",
+    "clock_policy": "Existing MAXN/DVFS, record environment; no privileged modifications"
+  },
+  "profiles": {
+    "model": "edge",
+    "cli_methods": [
+      "arcquant50",
+      "arcquant100",
+      "sharq",
+      "repair15",
+      "repair20"
+    ],
+    "cases": [
+      0,
+      1
+    ],
+    "seed": 301017,
+    "requests": 10,
+    "run_after_timing": true,
+    "groups": [
+      "preparation_selection",
+      "projection_ffn",
+      "attention",
+      "combine",
+      "other"
+    ]
+  },
+  "missing_assets": [
+    {
+      "source": "/home/yufeng/thunderworld/full_quality_ready_20260919/nano/arc_orders",
+      "destination": "/home/chenhan/thunderworld/data/nano/arc_orders",
+      "manifest_sha256": "8a1897912bb56027c620ee1d352258e0251eb289a5a223cf6864b8afcd8ce029",
+      "model_identity": {
+        "transformer/config.json": "282862cf9c42a257dbd2f00e41b5ef65c3aacfb693ad1f8ab28b05a02e1b9ffe",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "e664881df3452d3aadbc7fd36075871077397dfa21ab8b8818143fab99fb9cb0"
+      },
+      "bytes": 10714348,
+      "data_files_hash_verified": 1,
+      "hash_verification_date": "2026-09-23",
+      "transfer_executed": false
+    },
+    {
+      "source": "/home/yufeng/thunderworld/full_quality_ready_20260919/nano/awq_native",
+      "destination": "/home/chenhan/thunderworld/assets/nano/awq_marlin",
+      "manifest_sha256": "8306a287a834f478110d1894891be2b6861b683a5dee7f57575f7cce034daf19",
+      "model_identity": {
+        "transformer/config.json": "282862cf9c42a257dbd2f00e41b5ef65c3aacfb693ad1f8ab28b05a02e1b9ffe",
+        "transformer/diffusion_pytorch_model.safetensors.index.json": "e664881df3452d3aadbc7fd36075871077397dfa21ab8b8818143fab99fb9cb0"
+      },
+      "bytes": 3910489226,
+      "data_files_hash_verified": 252,
+      "hash_verification_date": "2026-09-23",
+      "transfer_executed": false
+    }
+  ],
+  "baseline_commits": {
+    "arcquant": "dbf841e123204ee0584006541dea3b4a539b2e1c",
+    "sharq": "3cc584fe48e32e59c8b4e37323470dcdd606bb11"
+  },
+  "inspected_local_and_remote_script_sha256": {
+    "standard_comparison.py": "bcffe6675f9e26063d2ea7df3b86e7e3b1639d67c57527b2b25be7d54e1ac330",
+    "tune_speed.py": "dc88be5c2c6a3b7d8d244f8b7a7891756c6f876cc64daabfb4e3f866f7fca40d",
+    "baseline_adapter.py": "16b14ce51653e635f68a631ae491c3921144d8cd9550a8e7cf1cfe42f855499a",
+    "compare_speed.py": "d1a0096f082e4923a524c03be4388e4b696ff61d78fb76f0b1436dc8cfb377a4"
+  },
+  "implementation_required": [
+    "Register external methods in standard_comparison and tune_speed; install adapters before warmup/capture",
+    "Freeze model-specific external method specs and asset paths; avoid Edge hardcoding",
+    "Validate execution/precision via actual adapter receipt; support frozen eager baselines",
+    "Qualify actual Nano shapes and only extend missing native dispatch; retain pinned quantizers",
+    "Correct 61/T FPS to new-frame FPS; remove BF16/FP8 speed ratios",
+    "Add filtered multi-case profiling CLI and unique method/case output directories"
+  ],
+  "measurements_started": false,
+  "quality_evaluation": false,
+  "source_data_modified": false
+}

@@ -1,0 +1,69 @@
+{
+  "name": "b2.5_ffn_guarded",
+  "budget": 2.5,
+  "config": {
+    "resource_mode": "shared-calibration",
+    "compute_budget": 2.5,
+    "budget_plan": "b2.5_ffn_guarded/plan.json",
+    "precision": "fp4",
+    "debug": "off",
+    "execution": "graph",
+    "ffn": {
+      "activation": 0,
+      "weight": 0,
+      "cross": false,
+      "activation_blocks": null,
+      "weight_support": null
+    },
+    "projection": {
+      "activation": 0,
+      "weight": 0,
+      "cross": false,
+      "activation_blocks": null,
+      "weight_support": null
+    },
+    "attention_backend": "fp4",
+    "attention": {
+      "default": {
+        "coverage": 0.5,
+        "terms": 3,
+        "head_budgets": [],
+        "head_quotas": null,
+        "pv_head_quotas": null,
+        "pv_terms": null,
+        "block_size": 128,
+        "query_tile": 32,
+        "num_warps": 4,
+        "splits": 2,
+        "lazy_p": true,
+        "fast_p": true,
+        "transpose_v": true,
+        "reload_q": false,
+        "sparse_pack": false
+      },
+      "rules": []
+    },
+    "fuse_ffn": true,
+    "share_pack": false,
+    "kernel_variant": "optimized",
+    "linear_backend": "triton",
+    "cutlass_library": null,
+    "cutlass_small_library": null,
+    "cutlass_direct_pack": false,
+    "joint_tuning": false,
+    "strict_tuning": false,
+    "attention_only_attribution": false,
+    "activation_repair_energy": 1.0,
+    "ffn_policy": null,
+    "ffn_policy_mode": "auto50"
+  },
+  "assets": "b2.5_ffn_guarded/assets",
+  "assets_sha256": "fa8f07ffbf56ff7aee33a9c9a140cf27f6d34a3e678350ad87907abcd330b881",
+  "plan_sha256": "e58cd534b225361c5fa7bcda24fa8667dd16d8ddebd542dfcc2c5e4814340ea4",
+  "cost": {
+    "tensor_bytes": 1132146848,
+    "w1_bytes": 334430208,
+    "file_bytes": 1132795082
+  },
+  "bound_ratio": 2.5
+}

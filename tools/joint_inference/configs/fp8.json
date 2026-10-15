@@ -1,0 +1,7 @@
+{
+  "debug": "off",
+  "execution": "graph",
+  "strict_tuning": false,
+  "precision": "fp8",
+  "attention_backend": "bf16"
+}

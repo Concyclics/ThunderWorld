@@ -1,0 +1,5 @@
+{
+  "robot_table": ["bf16", "fp8", "base", "four", "four_legacy", "ffn_only"],
+  "policy_table": ["bf16", "fp8", "base", "four_dual_attention", "four_dual_attention_legacy", "ffn_only"],
+  "av_pottery": ["bf16", "fp8", "base", "four", "four_legacy", "ffn_only"]
+}

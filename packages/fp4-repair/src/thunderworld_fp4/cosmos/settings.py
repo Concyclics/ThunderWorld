@@ -1,0 +1,157 @@
+"""Immutable execution settings; independent projection and attention budgets."""
+from dataclasses import asdict, dataclass, field
+import hashlib
+import json
+import math
+from ..config import RepairConfig, RepairPolicy, RepairRule
+
+
+@dataclass(frozen=True)
+class LinearSpec:
+    activation: float = 1.
+    weight: float = 0.
+    cross: bool = False
+    activation_blocks: int | None = None
+    weight_support: tuple[int, ...] | None = None
+
+    def __post_init__(self):
+        for x in (self.activation, self.weight):
+            if isinstance(x, bool) or not math.isfinite(x) or not 0 <= x <= 1:
+                raise ValueError("Repair fractions must be finite and in [0,1]")
+        if self.activation_blocks is not None and (type(self.activation_blocks) is not int or self.activation_blocks < 0):
+            raise ValueError('A quota must be a nonnegative integer')
+        if self.weight_support is not None:
+            ids=tuple(self.weight_support)
+            if len(set(ids))!=len(ids) or any(type(i) is not int or i<0 for i in ids):
+                raise ValueError('W support must contain unique nonnegative integers')
+            object.__setattr__(self,'weight_support',ids)
+        has_a = self.activation if self.activation_blocks is None else self.activation_blocks
+        has_w = self.weight if self.weight_support is None else bool(self.weight_support)
+        if type(self.cross) is not bool or self.cross and not (has_a and has_w):
+            raise ValueError("Cross repair requires both residuals")
+
+    def counts(self, n, k):
+        a=math.ceil(self.activation*(k//128)) if self.activation_blocks is None else self.activation_blocks
+        w=math.ceil(self.weight*(n//128)*(k//128)) if self.weight_support is None else len(self.weight_support)
+        if a>k//128 or (self.weight_support and max(self.weight_support)>=n//128*(k//128)):
+            raise ValueError('Repair quota/support exceeds shape')
+        return a,w
+
+    @property
+    def key(self):
+        return json.dumps({k:v for k,v in asdict(self).items() if v is not None}, sort_keys=True, separators=(',', ':'))
+
+
+TIERS = {"base": LinearSpec(0, 0), "a50": LinearSpec(.5, 0),
+         "a75": LinearSpec(.75, 0), "act2": LinearSpec(),
+         "wgt2": LinearSpec(0, 1), "a50w": LinearSpec(.5, 1),
+         "dual": LinearSpec(1, 1), "four": LinearSpec(1, 1, True)}
+
+
+@dataclass(frozen=True)
+class RunConfig:
+    resource_mode: str = "exclusive"
+    compute_budget: float | None = None
+    budget_plan: str | None = None
+    precision: str = "fp4"
+    debug: str = "off"
+    execution: str = "graph"
+    ffn: LinearSpec = field(default_factory=LinearSpec)
+    projection: LinearSpec = field(default_factory=LinearSpec)
+    attention_backend: str = "fp4"
+    attention: RepairPolicy = field(default_factory=lambda: RepairPolicy(
+        RepairConfig(coverage=.5, terms=3, query_tile=32, transpose_v=True)))
+    fuse_ffn: bool = True
+    share_pack: bool = False
+    kernel_variant: str = 'optimized'
+    linear_backend: str = 'triton'
+    cutlass_library: str | None = None
+    cutlass_small_library: str | None = None
+    cutlass_direct_pack: bool = False
+    joint_tuning: bool = False
+    strict_tuning: bool = False
+    attention_only_attribution: bool = False
+    # Experimental: partial residual-sensitivity A quotas become upper bounds.
+    # Empty/full A quotas and W/attention supports retain their fixed semantics.
+    activation_repair_energy: float = 1.
+    # Experimental current-input selector. The default preserves frozen masks.
+    activation_score: str = 'residual_energy'
+    # A separate frozen FFN policy uses task|branch|phase|layer.part keys.
+    ffn_policy: str | None = None
+    ffn_policy_mode: str = "auto50"
+
+    def __post_init__(self):
+        if self.activation_score not in ('residual_energy', 'represented_gain'):
+            raise ValueError('Unknown activation repair score')
+        if self.activation_score != 'residual_energy' and (self.precision != 'fp4' or
+                self.linear_backend != 'triton' or self.share_pack):
+            raise ValueError('Represented-gain selection requires unshared native FP4 packing')
+        if isinstance(self.activation_repair_energy,bool) or not math.isfinite(self.activation_repair_energy) or not 0 < self.activation_repair_energy <= 1:
+            raise ValueError('Activation repair energy must be finite and in (0,1]')
+        if self.activation_repair_energy != 1 and (self.precision!='fp4' or self.share_pack):
+            raise ValueError('Adaptive activation repair requires FP4 without shared packing')
+        if self.budget_plan and self.compute_budget is None:
+            raise ValueError('A budget plan requires an explicit compute budget')
+        if self.budget_plan and self.ffn_policy:
+            raise ValueError('Choose a unified budget plan or a legacy FFN policy')
+        if self.resource_mode not in ('exclusive', 'shared-calibration'):
+            raise ValueError('Invalid resource mode')
+        if self.compute_budget is not None:
+            from .budget import BUDGETS
+            if self.compute_budget not in BUDGETS or isinstance(self.compute_budget, bool):
+                raise ValueError(f'Compute budget must be one of {BUDGETS}')
+            if self.precision != 'fp4' or self.attention_backend != 'fp4':
+                raise ValueError('Compute budgets require joint FP4')
+        if self.precision not in ('bf16', 'fp8', 'fp4'):
+            raise ValueError('precision must be bf16/fp8/fp4')
+        if self.debug not in ('off', 'timing', 'trace') or self.execution not in ('graph', 'eager'):
+            raise ValueError('Invalid debug/execution mode')
+        if self.attention_backend not in ('bf16', 'fp4'):
+            raise ValueError('Invalid attention backend')
+        if self.linear_backend not in ('triton','cutlass-fused'):
+            raise ValueError('Invalid linear backend')
+        if self.linear_backend=='cutlass-fused':
+            if self.precision!='fp4' or self.kernel_variant!='optimized' or not self.cutlass_library:
+                raise ValueError('CUTLASS requires optimized FP4 and an offline library')
+        elif self.cutlass_library is not None or self.cutlass_small_library is not None:
+            raise ValueError('A CUTLASS library requires the cutlass-fused backend')
+        if self.cutlass_direct_pack and (self.linear_backend!='cutlass-fused' or self.share_pack):
+            raise ValueError('Direct scale packing requires CUTLASS without shared gate/up packing')
+        if self.joint_tuning and (self.linear_backend!='cutlass-fused' or self.share_pack):
+            raise ValueError('Joint tuning requires CUTLASS without shared gate/up packing')
+        if self.kernel_variant not in ('optimized','legacy'):
+            raise ValueError('Invalid kernel variant')
+        if type(self.attention_only_attribution) is not bool:
+            raise ValueError('attention_only_attribution must be boolean')
+        if self.attention_only_attribution and (self.precision!='bf16' or self.attention_backend!='fp4' or self.resource_mode!='shared-calibration'):
+            raise ValueError('Attention-only attribution requires BF16 projections, FP4 attention and shared calibration')
+        if self.precision != 'fp4' and self.attention_backend != 'bf16' and not self.attention_only_attribution:
+            raise ValueError('BF16/FP8 controls must retain BF16 attention')
+        if not isinstance(self.ffn, LinearSpec) or not isinstance(self.projection, LinearSpec):
+            raise ValueError('Expected independent LinearSpec objects')
+        if not isinstance(self.attention,RepairPolicy):raise ValueError('Expected RepairPolicy')
+        if any(type(getattr(self,key)) is not bool for key in ('fuse_ffn','share_pack','strict_tuning','cutlass_direct_pack','joint_tuning')):
+            raise ValueError('Execution switches must be boolean')
+
+    def to_dict(self):
+        return asdict(self)
+
+    @property
+    def fingerprint(self):
+        return hashlib.sha256(json.dumps(self.to_dict(), sort_keys=True).encode()).hexdigest()
+
+    @classmethod
+    def from_dict(cls, value):
+        value = dict(value)
+        for key in ('ffn', 'projection'):
+            if key in value: value[key] = LinearSpec(**value[key])
+        if 'attention' in value:
+            p = dict(value['attention'])
+            value['attention'] = RepairPolicy(
+                RepairConfig.from_dict(p.get('default', {})),
+                tuple(RepairRule(**{**r, 'config': RepairConfig.from_dict(r['config'])}) for r in p.get('rules', [])))
+        return cls(**value)
+
+
+def phase(step, steps):
+    return min(3, sum(step >= math.ceil(steps*b) for b in (.2, .5, .8)))

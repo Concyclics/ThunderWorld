@@ -1,0 +1,62 @@
+{
+  "scope": "One N64 Q-projection kernel; shared diagnostic, uncontrolled clocks/caches",
+  "shape": [
+    960,
+    2048,
+    2048
+  ],
+  "metrics": {
+    "gpu__time_duration.sum": {
+      "value": "26.752000",
+      "unit": "us"
+    },
+    "launch__registers_per_thread": {
+      "value": "168",
+      "unit": "register/thread"
+    },
+    "launch__registers_per_thread_allocated": {
+      "value": "168.000000",
+      "unit": "register/thread"
+    },
+    "launch__shared_mem_per_block": {
+      "value": "82.944000",
+      "unit": "Kbyte/block"
+    },
+    "launch__shared_mem_per_block_allocated": {
+      "value": "82.944000",
+      "unit": "Kbyte/block"
+    },
+    "launch__shared_mem_per_block_driver": {
+      "value": "1.024000",
+      "unit": "Kbyte/block"
+    },
+    "launch__shared_mem_per_block_dynamic": {
+      "value": "81.920000",
+      "unit": "Kbyte/block"
+    },
+    "launch__shared_mem_per_block_static": {
+      "value": "0",
+      "unit": "byte/block"
+    },
+    "launch__waves_per_multiprocessor": {
+      "value": "1.36",
+      "unit": ""
+    },
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active": {
+      "value": "38.440881",
+      "unit": "%"
+    },
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": {
+      "value": "20.500162",
+      "unit": "%"
+    },
+    "sm__warps_active.avg.pct_of_peak_sustained_active": {
+      "value": "20.640211",
+      "unit": "%"
+    },
+    "smsp__warps_eligible.avg.per_cycle_active": {
+      "value": "0.244044",
+      "unit": "warp"
+    }
+  }
+}

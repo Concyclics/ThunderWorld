@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "name": "edge-i2v-contributions-v1",
+  "model": "edge",
+  "task": "i2v",
+  "development_case": "robot_observe",
+  "steps": 35,
+  "phases": [0, 7, 18, 28, 35],
+  "budgets": [1.25, 1.5, 2.0, 2.5],
+  "seeds": {
+    "calibration": [7101, 7102],
+    "trajectory": [7103, 7104],
+    "validation": [171001, 171002, 171003, 171004, 171005, 171006, 171007, 171008],
+    "final": [181001, 181002, 181003, 181004, 181005, 181006, 181007, 181008, 181009, 181010, 181011, 181012, 181013, 181014, 181015, 181016]
+  },
+  "selection": {"max_candidates_per_budget": 4, "max_coordinate_rounds": 3, "max_validation_candidates": 3, "max_student_recalibration_rounds": 1},
+  "seed_status": "reserved-not-audited-not-frozen",
+  "scope": "Mechanism pre-experiments on previously used scenes; no cross-scene generalization claim"
+}

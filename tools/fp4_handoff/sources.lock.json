@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "arcquant": {
+      "url": "https://github.com/actypedef/ARCQuant.git",
+      "commit": "dbf841e123204ee0584006541dea3b4a539b2e1c",
+      "purpose": "activation residual channels",
+      "source_type": "official",
+      "adaptation_status": "not_qualified",
+      "license_files": {},
+      "redistribution_review": "required",
+      "dependency_files": {
+        ".gitmodules": "e617943e2fdb103dee095dfe901ef5831d0fd476b1abee2cf8ced6278671a5bb",
+        "kernels/CMakeLists.txt": "191ebabf585d8c2d221e405a08f56366b2f162b2d7ff548912a25574486583ab",
+        "requirements.txt": "57c38bd367db3786fc88ff47e690e81b05e4e109e2a20dc22de45503d4608950"
+      },
+      "submodules": [
+        "-ec8daf642d69fc31352ac6fa6e14a0de9019604b third-party/cutlass",
+        "-ff41a8fa22196420d0cee6045ca892d2b50313dd third-party/flashinfer"
+      ],
+      "performance_eligible": false,
+      "patches": []
+    },
+    "sharq": {
+      "url": "https://github.com/actypedef/SharQ.git",
+      "commit": "3cc584fe48e32e59c8b4e37323470dcdd606bb11",
+      "purpose": "sparse activation plus dense residual",
+      "source_type": "official",
+      "adaptation_status": "not_qualified",
+      "license_files": {},
+      "redistribution_review": "required",
+      "dependency_files": {
+        ".gitmodules": "cc7fa857c0ce3965705b3d81ab04d7627daa6f361928a488cb980c96ac7e1698",
+        "kernels/CMakeLists.txt": "80188309334cd7d2d6a678202914b628e514027c947b24412cdac4c512546d92",
+        "requirements.txt": "a0e2fcf97ef35ba52529795e8b2cd53b2569cfaad7d5e9e8987e20ba2c624596"
+      },
+      "submodules": [
+        "-baea077e425056e2d1d22d2bf5ed928908878790 third-party/cutlass"
+      ],
+      "performance_eligible": false,
+      "patches": []
+    }
+  }
+}

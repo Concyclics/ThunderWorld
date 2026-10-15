@@ -1,0 +1,7 @@
+{
+  "id": "policy_observe",
+  "task": "policy",
+  "prompt": "Move the robot gripper toward the object on the table.",
+  "split": "development",
+  "image": "../../../data_local/e2e_inputs/robot_153.jpg"
+}

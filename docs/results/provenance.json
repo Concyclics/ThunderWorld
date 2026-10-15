@@ -1,0 +1,12 @@
+{
+  "source": "Completed three-model comparison, 2026-10-11",
+  "files_sha256": {
+    "docs/results/judge_paired_original_intervals.csv": "beb5df2d000247334689946243e0144a8f98cbaf46c3029e30fd80542e2562c2",
+    "docs/results/judge_summary.csv": "0110ea92b2f6b507d7fb4298ffe95eefd3c579eb5f1eb975b6804b3120c3832a",
+    "docs/results/pai_answer_bias.csv": "d20c37cf7cb67f32e34f97698c7b0d069a03f7b4d5e15128dec5fb3c6d5cac54",
+    "docs/results/pixel_paired_bootstrap.csv": "396baa6d38e7e216969f3e3dfcd109c506fa48910931ab7ce9f30c3d03038139",
+    "docs/results/pixel_summary.csv": "05447cc8e4f098fb6250aa17706fb84156b2991194333cf803e484dd412af8b3"
+  },
+  "aggregation": "category_macro; original scene_micro values also retained",
+  "performance_eligible": false
+}

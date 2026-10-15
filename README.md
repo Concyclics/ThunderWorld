@@ -1,115 +1,126 @@
+<div align="center">
+
 # ThunderWorld
+### Efficient World Model Generation with Selective FP4 Refinement via Native GEMMs
 
-ThunderWorld studies sparse attention for mixed autoregressive–diffusion (AR–DM)
-world models, using Cosmos3-Nano as the current reference architecture.
+[Paper / Preprint](https://www.preprints.org/manuscript/202610.0689) · [Model collection](https://huggingface.co/collections/Concyclics/thunderworld-cosmos3-fp4) · [Benchmark outputs](https://huggingface.co/datasets/Concyclics/thunderworld-benchmark)
 
-> **Working thesis:** world-model sparsity is relation-local, while approximation
-> error is trajectory-global.
+[![Code license: Apache 2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE)
+[![Models on Hugging Face](https://img.shields.io/badge/🤗-models-yellow)](https://huggingface.co/collections/Concyclics/thunderworld-cosmos3-fp4)
 
-This repository is an audited evidence snapshot as of **2026-08-29**. It records
-what the experiments currently support, what failed, which speed numbers are
-measured kernel results versus estimates, and what must still be validated before
-making a publication-scale acceleration claim.
+</div>
 
-## Current bottom line
+**ThunderWorld is a training-free FP4 inference framework for Cosmos3 world models.** It repairs weight and activation quantization error with additional native FP4 matrix products, then allocates correction tiles under a request-wide compute budget. All base attention blocks remain present.
 
-| Operating point | Evidence | Joint-QK reduction | 16K attention speedup | Quality screen | Status |
-| --- | --- | ---: | ---: | ---: | --- |
-| q12, 50% GQA groups sparse | 1 T2V prompt × 3 seeds × 20 steps | 36.68% | 1.21× measured | min SSIM 0.923; min PSNR 25.30 dB | current 0.90 development point |
-| q12, 75% GQA groups sparse | 1 T2V prompt × 2 seeds × 20 steps | 55.02% | 1.41× measured | min SSIM 0.856; min PSNR 21.29 dB | provisional 0.80 aggressive point |
-| all-head sparse | 1 T2V prompt × 1 seed × 20 steps | 73.36% kernel case | 1.93× measured | best comparable SSIM 0.770 | quality failure |
+![Paper Figure 1: generated examples and the quality–latency trade-off](docs/assets/figure1-demo.png)
+*Figure 1 from the [preprint](https://www.preprints.org/manuscript/202610.0689), using the original author artwork. The timing panel is a scoped experiment; see [results and measurement conventions](docs/RESULTS.md).*
 
-The 1.21×/1.41×/1.93× numbers are **H200 attention microbenchmarks**, not
-complete Cosmos3 generation speedups. With the explicit Amdahl assumptions used
-in the analysis—Generator share 0.9 and attention share 0.387—the corresponding
-end-to-end estimates are approximately 1.065×, 1.112×, and 1.202×.
+## What is released
 
-The all-sparse kernel is therefore useful as an execution bucket for selected
-`layer × stage × relation` cells. Current evidence does **not** support making
-every layer, head, and diffusion step sparse.
+- **Frozen Edge, Nano and Super models:** packed generation weights, compact W1 supports, 1.5× / 2× plans, runtime, checksums and calibration provenance.
+- **Inference:** native FP4 linear and streaming attention kernels, current-input activation repair, joint CUDA Graph execution, independent FFN/projection/attention policies, and optional timing/trace modes.
+- **Calibration and quantization:** full-M teacher capture, measured repair-benefit allocation, channel compensation, representation/support search and request budget verification. No training or gradients.
+- **Reproducible comparisons:** native FP8/W4A4, ARCQuant 50%/100%, SharQ, ModelOpt NVFP4-AWQ W4A16 quality reference, higher-order and mechanism studies, paired LPIPS/SSIM/PSNR, and judge tools.
+- **Evidence:** complete three-model × two-benchmark summary tables, release validation receipts and original paper figures. Historical experiments remain available separately.
 
-![ThunderWorld finding evidence overview](figures/finding-evidence-overview.png)
+The released 1.5× and 2× settings cap **issued FP4 matrix work relative to base W4A4**, including padding. They are not 1.5×/2× speedups, bit widths, or additional denoising rounds. The research code also supports 1.25× and 2.5× searches; these are not separate pretrained releases.
 
-## Retained publication contributions
+## Models
 
-1. **Relation/head/modality characterization.** Directed modality relations are
-   4.09–13.53× asymmetric; 37.7% of Generator head-relation units are
-   specialists, 45.7% hybrid, and only 16.6% mixers; action/audio self-relations
-   are high-information dense anchors.
-2. **Interaction-aware trajectory compiler.** Head-wise measurements are
-   compiled into executable GQA buckets. A joint-projected error Gram, complete
-   diffusion rollout, and uncertainty bound replace local-error or hand-written
-   layer heuristics.
-3. **Joint-softmax sparse runtime.** Dense anchors, local/semantic block lists,
-   directed relation skips, and cross-step reuse share one online-softmax state,
-   so DM←DM and DM←AR preserve their original joint normalization.
+| Model | 1.5× packed assets | 2× packed assets | Loading |
+|---|---:|---:|---|
+| [Cosmos3-Edge-ThunderWorldFP4](https://huggingface.co/Concyclics/Cosmos3-Edge-ThunderWorldFP4) | 0.778 GiB | 0.812 GiB | One SM120 GPU, sufficient VRAM |
+| [Cosmos3-Nano-ThunderWorldFP4](https://huggingface.co/Concyclics/Cosmos3-Nano-ThunderWorldFP4) | 3.833 GiB | 4.197 GiB | One SM120 GPU, sufficient VRAM |
+| [Cosmos3-Super-ThunderWorldFP4](https://huggingface.co/Concyclics/Cosmos3-Super-ThunderWorldFP4) | 17.203 GiB | 18.838 GiB | Two SM120 GPUs; qualified on 2 × 96 GB PRO 6000 |
 
-## Important negative results
+These are **custom generation-branch weight packages**, not standalone `from_pretrained()` checkpoints. The pinned NVIDIA base is also required for unchanged AR, vision, VAE and other components; preparation loads base weights before replacing generation projections. The sizes above are **not total deployment size or peak VRAM**. RTX 5090 supports the kernel architecture, but model fit must be checked separately. [Release identities and hardware details →](docs/INFERENCE.md)
 
-- Shallow DM←AR hot blocks do not predict deep DM←DM hot blocks after position
-  control: residual correlation is -0.065. The two branches must select blocks
-  independently.
-- Naive K-only semantic reorder does not close the oracle gap and is not a
-  default runtime path.
-- Hand-written depth relocation fails an equal-QK 20-step screen: SSIM falls
-  from 0.906 to 0.861 even though its lookup-table speed estimate improves.
-- Reusing prior-step attention outputs reaches only about 0.77–0.80 paired
-  SSIM. Reuse descriptors/block lists, but recompute QK/softmax/PV.
-- An apparent all-head SSIM 0.827 result used only four diffusion steps and is
-  excluded from the comparable 20-step frontier.
+## Quick start
 
-## Repository map
-
-- [`docs/EXPERIMENTAL_FINDINGS.md`](docs/EXPERIMENTAL_FINDINGS.md) — complete
-  evidence narrative, definitions, and claim boundaries.
-- [`docs/METHOD_AND_IMPLEMENTATION.md`](docs/METHOD_AND_IMPLEMENTATION.md) —
-  retained algorithm/runtime design and engineering decisions.
-- [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) — source inventory,
-  regeneration commands, and validation rules.
-- [`reports/thunderworld-current-evidence.html`](reports/thunderworld-current-evidence.html)
-  — self-contained technical report.
-- [`data/evidence_snapshot.json`](data/evidence_snapshot.json) — machine-readable
-  reviewed metrics.
-- [`data/finding_ledger.csv`](data/finding_ledger.csv) — frozen
-  finding→implementation→contribution decisions.
-- [`data/source_manifest.json`](data/source_manifest.json) — SHA-256 provenance
-  for every private-workspace aggregate used to build this snapshot.
-
-## Reproduce the public snapshot
-
-The validation step has no third-party Python dependency:
+Linux, Python 3.12 and NVIDIA SM120 hardware are the qualified path. Use a fresh environment; the exact tested dependencies are in [requirements-runtime.txt](requirements-runtime.txt).
 
 ```bash
-python3 scripts/validate_evidence.py \
-  --data-dir data \
-  --output data/validation_report.json
+git clone https://github.com/Concyclics/ThunderWorld.git
+cd ThunderWorld
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu130
+python -m pip install -r requirements-runtime.txt
+python -m pip install -e '.[hub]'
+
+tw-infer --doctor --check-gpu
+CUDA_VISIBLE_DEVICES=0 tw-infer   --model edge --profile 2x   --image /path/to/first-frame.png   --prompt "The robot carefully picks up the object and places it in the tray."   --seed 12345 --output outputs/edge-demo
 ```
 
-To rebuild the snapshot from the private experiment workspace:
+The launcher downloads **pinned revisions**, verifies assets, and invokes the released runtime. Access to the NVIDIA base model must be available through your Hugging Face account. To reuse a local base, pass `--base-model /path/to/Cosmos3-Edge`. The output directory must be new.
 
-```bash
-python3 scripts/build_evidence_snapshot.py \
-  --source-root /path/to/WorldModel \
-  --output-dir data
+Outputs: `video.mp4`, original float `outputs.npz`, and `result.json` with configuration, output hashes and provenance. Defaults are **320 × 192, 61 stored frames, 35 denoising steps, CFG 6, 24 fps**, Graph execution and `--debug off`. Frozen plans reject incompatible generation shapes. Use `--profile 1.5x` for the smaller repair budget; Super uses `CUDA_VISIBLE_DEVICES=0,1 --model super` with two sufficiently large GPUs.
 
-python3 scripts/validate_evidence.py \
-  --data-dir data \
-  --output data/validation_report.json
+[Installation](docs/INSTALL.md) · [Inference and debug modes](docs/INFERENCE.md) · [Calibration / quantization](docs/CALIBRATION.md) · [Baseline reproduction](docs/BASELINES.md) · [Benchmark workflow](docs/REPRODUCE.md)
+
+## How it works
+
+For a projection, the base and residual representations form
+
+```text
+A Wᵀ ≈ A0 W0ᵀ + A1 W0ᵀ + A0 W1ᵀ [+ A1 W1ᵀ]
+         base      A repair    W repair    optional cross term
 ```
 
-The public bundle intentionally excludes model weights, datasets, generated
-videos, raw attention traces, and multi-gigabyte Parquet files. Their reviewed
-aggregate identities and hashes remain in `data/source_manifest.json`.
+W0 and selected W1 tiles are prepared offline. A0 and selected A1 tiles always come from the current input. Calibration chooses weight representations, weight supports and repair quotas; the online selector applies those quotas to current residuals. QK corrections occur before softmax, and PV is repaired independently. Selected work executes dense FP4 tiles with shared FP32 accumulation.
 
-## Confidence
+![Paper Figure 4: offline planning and online FP4 refinement](docs/assets/figure4-architecture.png)
 
-**Share with caveats.** The calculations and experiment-family comparability
-pass the included audit, but the latest quality frontier is still dominated by
-one T2V prompt. Final VBench, control adherence, AV synchronization, action
-error, trajectory error, and task success remain open.
+The published 2× model uses joint representation/support calibration. The published 1.5× model retains identity-prescale RTN weights with calibrated allocation. **Neither released profile enables outlier splitting or the second-order cross term.** Outlier and higher-order experiments are research ablations, not hidden parts of the released models. [Method and implementation map →](docs/ARCHITECTURE.md)
 
-## Configurable FP4 repair runtime
+## Selected quality results
 
-The [standalone FP4 package](packages/fp4-repair/README.md) provides independent FFN, attention core, and projection repair settings, per-head block budgets/masks, a head-atlas adapter, and native SM120 Tensor Core kernels. See [validation and current performance limits](packages/fp4-repair/VALIDATION.md) before use; the new portable FFN has operator validation but no full-model quality claim.
+LPIPS ↓ to **same-input, same-seed BF16 generations**, averaged first over seeds and scenes within each category, then equally over categories. Full RBench: **650 scenes**; PAI-Bench-G: **1,044 scenes**; **two seeds per scene**. These corpora include earlier calibration/development scenes, so this is full-corpus consistency, not held-out scene generalization. Super extends the Edge/Nano experiments in the preprint.
 
-The [FFN block-repair study](docs/FFN_BLOCK_REPAIR_20260907.md) adds K128/K256 activation-channel repair and an offline sparse weight-residual bank, with equal-budget comparisons, full local FFN replay, and native fused kernels. These experimental candidates leave production defaults unchanged.
+| Model / benchmark | W4A4 | ARCQuant 100% | SharQ | TW 1.5× | TW 2× | AWQ W4A16† | FP8 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Edge / RBench | 0.3001 | 0.1776 | 0.1918 | 0.1928 | **0.1717** | 0.1768 | 0.1188 |
+| Edge / PAI-Bench-G | 0.2824 | 0.1670 | 0.1812 | 0.1834 | **0.1567** | 0.1749 | 0.0990 |
+| Nano / RBench | 0.3584 | 0.1250 | 0.1301 | 0.1381 | **0.1181** | 0.1201 | 0.0931 |
+| Nano / PAI-Bench-G | 0.3979 | 0.1322 | 0.1346 | 0.1519 | **0.1219** | 0.1214 | 0.0960 |
+| Super / RBench | 0.1620 | 0.0959 | 0.1036 | 0.1046 | **0.0884** | 0.0956 | 0.0748 |
+| Super / PAI-Bench-G | 0.1956 | 0.1119 | 0.1172 | 0.1257 | **0.1055** | 0.1137 | 0.0885 |
+
+Bold identifies the best mean among the listed **native FP4** methods; it is not a blanket statistical claim. † AWQ is the decoded ModelOpt NVFP4 W4A16 quality reference. ARCQuant/SharQ/AWQ retain BF16 attention; ThunderWorld uses FP4 attention. The released low-budget profiles **do not outperform FP8 on these pixel-consistency metrics**. [All PSNR, SSIM, LPIPS, relative-L2, paired intervals and judge results →](docs/RESULTS.md)
+
+## Performance evidence
+
+![Paper Figure 6: end-to-end throughput on the measured devices](docs/assets/figure6-throughput.png)
+
+The paper reports **1.17–1.88× throughput versus ARCQuant (2.0)** across its measured RTX PRO 6000 / Jetson AGX Thor cases. This is scoped to the paper's device, execution and sample protocol; it is not a new measurement of this checkout or a universal advantage over BF16/FP8. The figure uses **60 generated frames per request**; the saved 61-frame clip includes the conditioning frame. [Protocols, limitations and device-specific reproduction →](docs/PERFORMANCE.md)
+
+## Repository guide
+
+| Path | Contents |
+|---|---|
+| `packages/fp4-repair/src/thunderworld_fp4/` | Installable FP4 kernels, Cosmos runtime, budget compiler, asset loading and Hub launcher |
+| `tools/public/` | Portable dataset, calibration, baseline and quality orchestration |
+| `tools/contribution_study/` | Mechanism, outlier, allocation, baseline, full-benchmark and judge research code |
+| `tools/joint_inference/` | Advanced calibration, kernel tuning and end-to-end diagnostics |
+| `experiments/cutlass_fused_repair/` | Optional CUTLASS implementations and qualification tools |
+| `tools/fp4_handoff/`, `tools/thor_handoff/` | Device qualification / handoff utilities; read their documented scope |
+| `configs/public/` | Calibration identities and pinned baseline sources |
+| `docs/results/` | Published measurement summaries and release verification receipts |
+| `data/`, `figures/`, `docs/archive/` | Earlier evidence snapshot; not silently replaced by the new release |
+
+Start with `tools/public/`; older research drivers can contain historical workstation paths and are not the portable quick start. No checkpoints, full datasets, generated videos or credentials are stored in Git.
+
+## Citation and licenses
+
+```bibtex
+@article{chen2026thunderworld,
+  title={ThunderWorld: Efficient World Model Generation with Selective FP4 Refinement via Native GEMMs},
+  author={Chen, Han and Chen, Xi and Xu, Borui and Pang, Zixi and Pei, Wenqi and Yu, Feng and He, Bingsheng and Wu, Ming and Zeng, Jason and Heinrich, Michael and Yan, Jiahao},
+  journal={Preprints.org},
+  year={2026},
+  doi={10.20944/preprints202610.0689.v1}
+}
+```
+
+Code: **[Apache-2.0](LICENSE)**. Paper figures: **CC BY 4.0**. Model weights: **OpenMDW-1.1**. Dataset and third-party terms remain separate; see [NOTICE](NOTICE) and [third-party notices](THIRD_PARTY_NOTICES.md). Contributions are welcome through [issues and pull requests](CONTRIBUTING.md).

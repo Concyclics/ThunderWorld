@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "status": "CPU and packaging validation; GPU semantics inherited from pinned released runtime",
+  "isolated_editable_install": true,
+  "package": "thunderworld-fp4 0.3.0",
+  "qualified_environment_tests": {
+    "passed": 102,
+    "skipped": 140,
+    "scope": "public CLI, kernel package CPU tests, dataset/importance/baseline/Super/judge protocol tests; CUDA disabled"
+  },
+  "release_loader": {
+    "model": "edge",
+    "profile": "2x",
+    "all_weight_hashes_checked": true,
+    "modules": 168,
+    "weight_file_bytes": 872380040
+  },
+  "data_reconstruction": {
+    "calibration": 16,
+    "development": 16,
+    "validation": 32,
+    "final": 72,
+    "all_case_records_equal_to_original": true
+  },
+  "source_files_sha256": {
+    "pyproject.toml": "6c35eff66909abb829e582a5ce715d943678a9f7c313f88cb3eea66bbc34c4c1",
+    "packages/fp4-repair/src/thunderworld_fp4/hub.py": "9417038b76f5b078481c4750fbd0cb234f1b9142f706348cbd748e0021cdc04b",
+    "tools/public/data.py": "774a0cdebe39e016522f884394525c76001802032e8d277165ee7fd791a75095",
+    "tools/public/run.py": "e9851d7d50c6d12a2c4d7640b4930cbbf150464d4b620749796dfadf5a13d0ad",
+    "tools/public/worker.py": "667fea3d140f04d53fdf35a26fbb3ad8d7d56e8c4d9617ed9778b853a97441ee"
+  },
+  "performance_eligible": false,
+  "notes": [
+    "No new GPU performance measurements: all devices were under shared load.",
+    "Six historical full-request release-loader checks are preserved separately in the model validation files.",
+    "Full calibration and full benchmarks are not rerun as part of repository packaging."
+  ]
+}

@@ -1,0 +1,28 @@
+--- a/kernels/src/bindings.cpp
++++ b/kernels/src/bindings.cpp
+@@ -140,6 +140,7 @@
+ 
+     switch (KQ) {
+         
++        CASE_REORDER_X_16(9216)
+         CASE_REORDER_X_16(2048) // llama 3.2-1B
+         CASE_REORDER_X_16(3072) // llama 3.2-3B
+         CASE_REORDER_X_16(4096)
+@@ -187,6 +188,7 @@
+     auto ptr_SFW  = reinterpret_cast<cutlass::float_ue4m3_t *>(SFW.data_ptr<uint8_t>());
+ 
+     switch (KQ) {
++        CASE_REORDER_W_16(9216)
+         CASE_REORDER_W_16(2048) // llama 3.2-1B
+         CASE_REORDER_W_16(3072) // llama 3.2-3B
+         CASE_REORDER_W_16(4096)
+--- a/kernels/src/reorder.cu
++++ b/kernels/src/reorder.cu
+@@ -841,3 +841,7 @@
+   bf16_t*, int, int16_t*, uint8_t*,
+   sf_t*, int, int
+ );
++
++template void run_reorder_x_bf16_nvfp4<16, 9216>(bf16_t*, int, int16_t*, uint8_t*, sf_t*, int, int);
++
++template void run_reorder_w_bf16_nvfp4<16, 9216>(bf16_t*, int, int16_t*, uint8_t*, sf_t*, int, int);

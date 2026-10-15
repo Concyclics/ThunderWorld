@@ -1,0 +1,1935 @@
+{
+  "schema_version": 1,
+  "model": "super",
+  "source_cohort_sha256": "bd45da5df22ee3a9550f70961733c8f762f1995d7d2b12884f1cf3a9f760796b",
+  "datasets": {
+    "rbench": {
+      "repo_id": "DAGroup-PKU/RBench",
+      "revision": "6bdccf349ff5a8f68302428351e94f34ecd62450"
+    },
+    "paibench": {
+      "repo_id": "shi-labs/physical-ai-bench-generation",
+      "revision": "c36b7beb69bd7c4adcedc1431407fce98f9dfe44"
+    }
+  },
+  "counts": {
+    "calibration": 16,
+    "development": 16,
+    "validation": 32,
+    "final": 72
+  },
+  "splits": {
+    "calibration": [
+      {
+        "benchmark": "paibench",
+        "category": "av",
+        "source_id": "av_99ed9edb-10f2-40a8-bb51-71c744632b89",
+        "case_id": "paibench__av_99ed9edb-10f2-40a8-bb51-71c744632b89",
+        "task": "i2v",
+        "seeds": [
+          301001
+        ],
+        "image_sha256": "1aa09df4dc563b10c5e6298e7f696bfa8b51e77e656a0a72a380c54ebc5c4c2f",
+        "pixel_sha256": "ccfbec27b217a18b0fdcb9e6fe2ce69e5a692b78a29b8d552e7ed77341e51263",
+        "prompt_sha256": "4da8d54cc1573fc1a88ec931d3ed7ff1f7832edc9d8429994e7339bfda6d1d49"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "common",
+        "source_id": "common_sense_3bc5310a-d23a-4212-81e7-a548fd3f826d",
+        "case_id": "paibench__common_sense_3bc5310a-d23a-4212-81e7-a548fd3f826d",
+        "task": "i2v",
+        "seeds": [
+          301002
+        ],
+        "image_sha256": "334750f52b5f30b9ee15c28d997bba890e08e57c39d3bed282eda4405a5d89c3",
+        "pixel_sha256": "74303ee564e182612851b4dc38868f9008138d784b36ca57785c92f224ef2286",
+        "prompt_sha256": "d2a10be6c7fc938f58643619760b985bbc94b42aa335c17a64963a30f086b621"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_030",
+        "case_id": "paibench__human_030",
+        "task": "i2v",
+        "seeds": [
+          301003
+        ],
+        "image_sha256": "b8d215f481b64071047b0cfca7aaeef18ec5b1ee1a0b471904058c21b0abf393",
+        "pixel_sha256": "1cecc11b5be49632ff3fe7e3e01bb0641edf140a1d110684e6cb7102f4f5a36a",
+        "prompt_sha256": "30862d49b61b2bb0a210eedd8919a79db4e0a5e2d51ed6380bddb31dd40cfce0"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "industry",
+        "source_id": "industry_102",
+        "case_id": "paibench__industry_102",
+        "task": "i2v",
+        "seeds": [
+          301004
+        ],
+        "image_sha256": "a3affd2b651ebb9f9daad4756abf7ec58348cbd5c49f60840f1f7e51b5eddaf8",
+        "pixel_sha256": "c4dbb81c8bc729e81ecf84c696c74874be82df98c018b4fa29ff7c7d3e109af0",
+        "prompt_sha256": "a2e861ae4828ce03948f8fda9f6fdc0e3bfd5b634a81110dda8ee7c5a9a94b45"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "misc",
+        "source_id": "misc_18820560-uhd_3840_2160_25fps",
+        "case_id": "paibench__misc_18820560-uhd_3840_2160_25fps",
+        "task": "i2v",
+        "seeds": [
+          301005
+        ],
+        "image_sha256": "1e858b7c6dd4a1905a8d87c51d290540963e1a696a4bfd25ec3c0051b35028a7",
+        "pixel_sha256": "3a7100ca909ee12db6aab5ce158e2d2e24570f916e10d22187be6f3d836ddde7",
+        "prompt_sha256": "fd11236bc1a6d8566a3e80fb5fe2e8256052dd336358f42fc214aeffc249ab98"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "physics",
+        "source_id": "physics_035",
+        "case_id": "paibench__physics_035",
+        "task": "i2v",
+        "seeds": [
+          301006
+        ],
+        "image_sha256": "c42e5166ac5aea63e6ea28b07e82a10f5a90476fc5d83fc934ccf3dc1d5b7024",
+        "pixel_sha256": "c49780f8fbf59237984b3d8157c844242b66564b927d9ba821e7d922b4036f7a",
+        "prompt_sha256": "9bc5edb23504628ca820e3722f17f2325fd97020e20de4c05c79ce389b570471"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "robot",
+        "source_id": "robot_109",
+        "case_id": "paibench__robot_109",
+        "task": "i2v",
+        "seeds": [
+          301007
+        ],
+        "image_sha256": "f3d58a3b9204bd3f3551d89c093551a6df854a9a52a083df7678096310adb1f3",
+        "pixel_sha256": "1df13bb5cf409dd25bf0a7c7625b0e445aa42ff8c419ea05f8960e8b0c2ce2a0",
+        "prompt_sha256": "df9caeac685f43e388310263e28d817146d023d48247ddecec3040618d8e6b4d"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "common_manipulation",
+        "source_id": "common_manipulation_0027",
+        "case_id": "rbench__common_manipulation_0027",
+        "task": "i2v",
+        "seeds": [
+          301008
+        ],
+        "image_sha256": "002f0fb3b6179fab084ee90a5f3d5950184d968ff20659060f4554e2988d0312",
+        "pixel_sha256": "313551c4a0577101d1256a78d8aa8d506ef35635466db2a3573bdfc3da6067c2",
+        "prompt_sha256": "e77af56b43815182eed2d7bb8447b4c47a99d4a265e74ce06c31e33097944c4a"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "dual_arm",
+        "source_id": "dual_arm_0077",
+        "case_id": "rbench__dual_arm_0077",
+        "task": "i2v",
+        "seeds": [
+          301009
+        ],
+        "image_sha256": "87fbcabcf497fb8bc8638dbd926f9a35016b56f3445dea04dd7528b9b13d1e18",
+        "pixel_sha256": "be57695ffc0f808629ee8e458753bee767377327b7efc9ab6f94829ca456d5d3",
+        "prompt_sha256": "5344b878e8e84a93f89979d939dab6bf43d706c46dbda107c85b172e7dc5dc54"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "humanoid",
+        "source_id": "humanoid_0060",
+        "case_id": "rbench__humanoid_0060",
+        "task": "i2v",
+        "seeds": [
+          301010
+        ],
+        "image_sha256": "ad0462f158b81288cfa591ed70e8fba6c148553cc6128a0effbe7fd82e7b98df",
+        "pixel_sha256": "d5a548d4a1da58090bc1ec762805794e5deccc2c459657df513e5eaa068cf251",
+        "prompt_sha256": "9ea87cd095a7dd5177ef267f863e812b4789437042804396cd2fd82a9d77f55a"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "long-horizon_planning",
+        "source_id": "long-horizon_planning_0046",
+        "case_id": "rbench__long-horizon_planning_0046",
+        "task": "i2v",
+        "seeds": [
+          301011
+        ],
+        "image_sha256": "717ebfa0563561937fede6dda107fbeaac633bce2efee86a65e294130af5f3da",
+        "pixel_sha256": "6939f6dfe98fd3e0f60dc66144cdd8dbbcaba6e5019ce0b97fac471d752ef576",
+        "prompt_sha256": "a3d8026e719163b011695006f861bf7af1e897615bae6cd0291e05cb17ab345c"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "multi-entity_collaboration",
+        "source_id": "multi-entity_collaboration_0009",
+        "case_id": "rbench__multi-entity_collaboration_0009",
+        "task": "i2v",
+        "seeds": [
+          301012
+        ],
+        "image_sha256": "be85565a2951d7dc1aa995b2b17cb4b5c118126b7a46c2667793c393d54e52a2",
+        "pixel_sha256": "724b537d2126e44318f9cd62796bee5fe064435ee5492fde420d5ab9cc63daec",
+        "prompt_sha256": "86eb4f414ffce28211833da0f1be1b24a0685f14840b659d9f80074d70046068"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "quad",
+        "source_id": "quad_0026",
+        "case_id": "rbench__quad_0026",
+        "task": "i2v",
+        "seeds": [
+          301013
+        ],
+        "image_sha256": "aa45141cfcd439612d331158ee50b2c42b4735de071a22318b82add4199f38ce",
+        "pixel_sha256": "6b1bda2e557bae9542a6eceb4118fd8bfcc055d906c92cba3aca0ae1568090a4",
+        "prompt_sha256": "284108e9c75c683583f2d709969d9e9e852170203559c1cbff247e5e656ed18c"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "single_arm",
+        "source_id": "single_arm_0001",
+        "case_id": "rbench__single_arm_0001",
+        "task": "i2v",
+        "seeds": [
+          301014
+        ],
+        "image_sha256": "a599c0bf96ffce7181088cbb051d86daa588c3bc1b3820474fd8f90b9bf3d146",
+        "pixel_sha256": "e7c6b2b81bf59cce8f9e5e900f1060fcda899bded0039236b4a8ecfc7a852ac8",
+        "prompt_sha256": "5ead0237cecba3202100c91204a4169dc3a67642ab3ab4e9e0d0d903db5077d8"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "spatial_relationship",
+        "source_id": "spatial_relationship_0028",
+        "case_id": "rbench__spatial_relationship_0028",
+        "task": "i2v",
+        "seeds": [
+          301015
+        ],
+        "image_sha256": "8286e7307e7b07809a41988814c79a8b268c7ba99e5819d2d2155c6d04fedf7f",
+        "pixel_sha256": "42073db4a595e97384aaf2d3a051e4803689607f83f51b4a975eda07a1c33931",
+        "prompt_sha256": "0721c8de940e8d1d1ee677389ddb3095479764ca2e6f1b4ffdb3bacd834b0f97"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "visual_reasoning",
+        "source_id": "visual_reasoning_0017",
+        "case_id": "rbench__visual_reasoning_0017",
+        "task": "i2v",
+        "seeds": [
+          301016
+        ],
+        "image_sha256": "e322e85efdef713223615d8b2a62e6cc10f2d8955056dc2fb5425061b981eed6",
+        "pixel_sha256": "bdb72c0c664d723c9e2d3beb8ca62f424a67b622f4e594df6fdf71c3f6a54282",
+        "prompt_sha256": "c821b62a4528c53ef961cc936e46a2d92fbfd5292de4f717ae8cf8a71d837568"
+      }
+    ],
+    "development": [
+      {
+        "benchmark": "paibench",
+        "category": "av",
+        "source_id": "av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+        "case_id": "paibench__av_660aa819-4a75-45d0-b79a-e6c2f2c321dc",
+        "task": "i2v",
+        "seeds": [
+          301017,
+          301018
+        ],
+        "image_sha256": "a7c1d54b6146e00e2905599327af3f861a27bee409157c28a381a4cb3e114a79",
+        "pixel_sha256": "22a70d3babd82c06441b9275b126761e92b5323afac0bfbfbf631c44a05af4d3",
+        "prompt_sha256": "1cd267d869cf92429fff8dc1be29c0107ccefdc2af1eb832f0fb7352e4336da0"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "common",
+        "source_id": "common_sense_287188dc-ce0c-4ab7-8364-4a2bfb015c1c",
+        "case_id": "paibench__common_sense_287188dc-ce0c-4ab7-8364-4a2bfb015c1c",
+        "task": "i2v",
+        "seeds": [
+          301019,
+          301020
+        ],
+        "image_sha256": "40a3699e60dcd93521d4e2de4f617f14d4ffaf837f47454ba93c7be0eaad2abd",
+        "pixel_sha256": "41c4946a94b1dc5c6356a822cf59dc1ac3c544913cfcdafb4c93d657ee21a577",
+        "prompt_sha256": "465bf963a39e8ed66d4fc85a5e520d2db0c2c8b92e66600d9baf38b7322321d2"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_241",
+        "case_id": "paibench__human_241",
+        "task": "i2v",
+        "seeds": [
+          301021,
+          301022
+        ],
+        "image_sha256": "622cf805fc20d193c3945dfd203e0fac110007d9e8ca5407e0a3e1ba350b94d7",
+        "pixel_sha256": "e65b2e9dd607710a6e8e08e7199979b5f00e0757170f5e572c3fa33f1cb74d35",
+        "prompt_sha256": "7ab1c97e6bdf5c799275b9ccf24db44f56ce650df0890746f004002e081f32d0"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "industry",
+        "source_id": "industry_070",
+        "case_id": "paibench__industry_070",
+        "task": "i2v",
+        "seeds": [
+          301023,
+          301024
+        ],
+        "image_sha256": "3cdda6466e4bc066ecb32aaf64e8b84e1aab0edf7db828868ae603dc97ce31e7",
+        "pixel_sha256": "7deb7bf5034930bac9059c64e583dd4de9d4907d066baf9c0e0fb8c53f6e5101",
+        "prompt_sha256": "34358e3b258b112390276958894aa9c3288972fa7761c4471982c119dc52f26a"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "misc",
+        "source_id": "misc_5629687-hd_1920_1080_25fps",
+        "case_id": "paibench__misc_5629687-hd_1920_1080_25fps",
+        "task": "i2v",
+        "seeds": [
+          301025,
+          301026
+        ],
+        "image_sha256": "5d149d1f8a150696f9bab1d6148106c042535ed2013122d1d07c6501abcb82ec",
+        "pixel_sha256": "1c3ae48960246d08914152d14f21fffe7918ee9a248235abde9276794af8e025",
+        "prompt_sha256": "3fcb98f414ecc1a41a418cbf757a43a6f910a0af433def747595af1415840eaf"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "physics",
+        "source_id": "physics_029",
+        "case_id": "paibench__physics_029",
+        "task": "i2v",
+        "seeds": [
+          301027,
+          301028
+        ],
+        "image_sha256": "cd7c3887b314a5ea2434b58d9780a0e9ad15f054d44e4cfa3bcf1abceae3633c",
+        "pixel_sha256": "a78b0b215bcc525b9ca6e206a4cd3b41d3cfd9f415554def1e0ddb96235df732",
+        "prompt_sha256": "f4da3cfac3b3a01646876da77f1841fe471355d0de4648e28e4304d070f218cb"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "robot",
+        "source_id": "robot_010",
+        "case_id": "paibench__robot_010",
+        "task": "i2v",
+        "seeds": [
+          301029,
+          301030
+        ],
+        "image_sha256": "131d74abbd46dfef4529398cf0629d28d9fe25d5043d5c635469e8a08377bcaa",
+        "pixel_sha256": "dc6dc0565abc54774e84e71b89dfb7b98cfee6581fef2857c6ee170b97a84073",
+        "prompt_sha256": "bd31218d76fff5cbcb69dde14f9ba7965aa5f93db68ea17d09e1f207825a7c32"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "common_manipulation",
+        "source_id": "common_manipulation_0041",
+        "case_id": "rbench__common_manipulation_0041",
+        "task": "i2v",
+        "seeds": [
+          301031,
+          301032
+        ],
+        "image_sha256": "9145f8c54b0289b31aada8a6072e3f58cdfe41e5c06d60dc10f145d91501383f",
+        "pixel_sha256": "9d9808802c2bd3a7ac4245a1cce1aff0a1b8388fdeda83c5d9ee77e3d6ca06ac",
+        "prompt_sha256": "a8285d4360070ef91f1ebbafd956234239bc31cfcffb0839c3b8a5d7ae89dab3"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "dual_arm",
+        "source_id": "dual_arm_0078",
+        "case_id": "rbench__dual_arm_0078",
+        "task": "i2v",
+        "seeds": [
+          301033,
+          301034
+        ],
+        "image_sha256": "5792a534f20534861fef992fbb9ccb4a0ce55cd952e72e70e567bb9e007d4236",
+        "pixel_sha256": "72ccfe59ba0bd9d5de7a399fad2f094ee3cd06333240d496da823b76a3b4e3bf",
+        "prompt_sha256": "23b5c3b8e8b2470782784677cf244a172c340c70ed6c05b36450128c11085b34"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "humanoid",
+        "source_id": "humanoid_0049",
+        "case_id": "rbench__humanoid_0049",
+        "task": "i2v",
+        "seeds": [
+          301035,
+          301036
+        ],
+        "image_sha256": "6dbd811a66651e1d992e7eeaa6389ce6adfc2bf676c545f0574785594dc868bb",
+        "pixel_sha256": "a40bd2c561c49f24a3e4fcb354f99fa3ac70c793f1f88bc8f2219616d4f2dd7d",
+        "prompt_sha256": "56fe062b301013709ca0a3c4800979a346b597d8ccbe91e424db8ac8410c14ef"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "long-horizon_planning",
+        "source_id": "long-horizon_planning_0009",
+        "case_id": "rbench__long-horizon_planning_0009",
+        "task": "i2v",
+        "seeds": [
+          301037,
+          301038
+        ],
+        "image_sha256": "6e748a395b484dd81eb4c6f42eb92e3e9d68bc26167a69c4cb1f2fbc62c76ca5",
+        "pixel_sha256": "e656af962c37065b5e7064a6673eb7ba9af262eeca274df188272c7f8aff668a",
+        "prompt_sha256": "7b02ba0b8334b784f72c7a03930703e2e8677c01bd31773c58f055a3bf7e57bc"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "multi-entity_collaboration",
+        "source_id": "multi-entity_collaboration_0035",
+        "case_id": "rbench__multi-entity_collaboration_0035",
+        "task": "i2v",
+        "seeds": [
+          301039,
+          301040
+        ],
+        "image_sha256": "6819812e61f871c4219041996b55e2388a0c4435732c11214a2a26e7e880a10a",
+        "pixel_sha256": "30d643ed7e0fb89c22cd076aea60521ba566bc7e03ea0fd00888826bad26727b",
+        "prompt_sha256": "504a45dd09623a508cc4ac281fdc38dd70ba0c9085cb3aa8071a797e0b2a7718"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "quad",
+        "source_id": "quad_0047",
+        "case_id": "rbench__quad_0047",
+        "task": "i2v",
+        "seeds": [
+          301041,
+          301042
+        ],
+        "image_sha256": "6b6da2b0eb5b62892e5f08d8de3046a9669eb9cf013478b2ebf526d7c5a1ab8b",
+        "pixel_sha256": "44ecf9e27d530c75255637c5dcd5c9774cf146964edba97fc29d1f5a1c251126",
+        "prompt_sha256": "518d526677f9bdbe3aaddaa93aedd393124d4fab257f89f2096d5d804f592572"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "single_arm",
+        "source_id": "single_arm_0097",
+        "case_id": "rbench__single_arm_0097",
+        "task": "i2v",
+        "seeds": [
+          301043,
+          301044
+        ],
+        "image_sha256": "d367c8ea956d78b2a79ce0436806cab968c6be054ff465e1b54c07556b607267",
+        "pixel_sha256": "ad9bad5857b9ba5db0b3d50c095b53d75dc2fcd75fc7b61de3ea66ad3d1b0ebf",
+        "prompt_sha256": "56a10a640a5ac0c8b2c1a8340dcee28f9705bcfc9304801f6a7613c77f383ff5"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "spatial_relationship",
+        "source_id": "spatial_relationship_0015",
+        "case_id": "rbench__spatial_relationship_0015",
+        "task": "i2v",
+        "seeds": [
+          301045,
+          301046
+        ],
+        "image_sha256": "589de85d378fe5f85eda80aa72223a116a4dab4a2461cc29b666831d6e267518",
+        "pixel_sha256": "3ec5472d4e0d0363c4219e042e024f1281d721e0f37c26eda1a37086dc7ecb4f",
+        "prompt_sha256": "f555194cdcbf529669420ca35b7739dfff8b55cad2d3db088c047fb2dd66ef48"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "visual_reasoning",
+        "source_id": "visual_reasoning_0010",
+        "case_id": "rbench__visual_reasoning_0010",
+        "task": "i2v",
+        "seeds": [
+          301047,
+          301048
+        ],
+        "image_sha256": "e7538bff7fb77e0654d544b923074396817e431ffe2c3edd8e8094f03e93e590",
+        "pixel_sha256": "fbaf97b47da7b528dcd23057014154b469381cd47e53f2b9eaf5ea0974a82813",
+        "prompt_sha256": "27452270497237d86526b79e5df1fd160e2ab480f809aac2336f3795a880eb08"
+      }
+    ],
+    "validation": [
+      {
+        "benchmark": "paibench",
+        "category": "av",
+        "source_id": "av_bridge_tunnel_1_1",
+        "case_id": "paibench__av_bridge_tunnel_1_1",
+        "task": "i2v",
+        "seeds": [
+          301049,
+          301050
+        ],
+        "image_sha256": "7898f6aa02a9670be2780b4dfcee3d73cafad2dcdc88086526ec04e130d3aae6",
+        "pixel_sha256": "6e357313ed84f8131b722af2274dda3c2d554fade4da6519f0fab18dfd147f72",
+        "prompt_sha256": "0bf7420a6e939286b3ff2984ca2078119b045e0f42e586d3fbb923f45e892024"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "av",
+        "source_id": "av_7aa30d83-4049-432f-a69d-6fc5a1387640",
+        "case_id": "paibench__av_7aa30d83-4049-432f-a69d-6fc5a1387640",
+        "task": "i2v",
+        "seeds": [
+          301051,
+          301052
+        ],
+        "image_sha256": "cce3ec3794f8ebca79f066c1eab751d0c58f470b6d31790c1ebbbf20392acde6",
+        "pixel_sha256": "cb1034a3b20878c3404f2f212adc172f5e001787b8c8b142dec1f5fa0c0cdf4b",
+        "prompt_sha256": "ebbf89b51f9fab860913b33e19382eee06069bb2ded3cc7eee59a8d6113e9ae5"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "common",
+        "source_id": "common_sense_320f7d89-ae0b-4ecb-bd7b-dccfb4d11cb2",
+        "case_id": "paibench__common_sense_320f7d89-ae0b-4ecb-bd7b-dccfb4d11cb2",
+        "task": "i2v",
+        "seeds": [
+          301053,
+          301054
+        ],
+        "image_sha256": "285f7e8134123fdc6429113c48e7da6284a24f824496ddf5a8939695f525a674",
+        "pixel_sha256": "e2a67c91de1f8d206a1cc2ccdb98841cd33db801f688d66b06c13a6b2bac248e",
+        "prompt_sha256": "3dc4b5eca80b61f384cd7cc636d3e9af447626fbcd009bc8b778a1dc1c461ab2"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "common",
+        "source_id": "common_sense_d0f4593b-05cb-4395-8196-9ec87245a3cb",
+        "case_id": "paibench__common_sense_d0f4593b-05cb-4395-8196-9ec87245a3cb",
+        "task": "i2v",
+        "seeds": [
+          301055,
+          301056
+        ],
+        "image_sha256": "60013dc906c72d3b441313a7be4bff30015b3c6be2656a4ba42dd75bf56c8dd1",
+        "pixel_sha256": "e4543d849a97babf0881d729a128ffae45ebf770d3ceee039744177222a1a0bb",
+        "prompt_sha256": "aa0076699c215e04b743a5be0a6a9f70210b8c49455b21c7d40ff31faae51280"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_150",
+        "case_id": "paibench__human_150",
+        "task": "i2v",
+        "seeds": [
+          301057,
+          301058
+        ],
+        "image_sha256": "5e5fe9a0521f28f97a9da0ee95c8adfed2031159cf1ddc47cef3f7496a9c79dd",
+        "pixel_sha256": "c87110fb315055190135cb11c249d5bf0d7ca2c5b70517d1ed90ec820bf72fba",
+        "prompt_sha256": "49ab6dce5c911b35f8e5687060d29c99d7b7b29cf57524dd59e1493ec36195be"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_179",
+        "case_id": "paibench__human_179",
+        "task": "i2v",
+        "seeds": [
+          301059,
+          301060
+        ],
+        "image_sha256": "90e27d5c5888fa60f09a770352459d6b15ebf781a1e7995007c10ee2c04c9a1f",
+        "pixel_sha256": "c0d95ec8e546e3fc178250576e97e3eccc7fb20fee2a200764848a992ffd864e",
+        "prompt_sha256": "3d81c5e4ac808d7efe45eaae473b1e9612eb59d26ed6e921f215f6c3f1f09a05"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "industry",
+        "source_id": "industry_006",
+        "case_id": "paibench__industry_006",
+        "task": "i2v",
+        "seeds": [
+          301061,
+          301062
+        ],
+        "image_sha256": "7ba0ead484d3cafb88548f5e771e49714e069f1d6a146f237248b945318eca51",
+        "pixel_sha256": "bbedddf4ffb78664a0989099f1097b83f2a20f67444f110113bf6de4789fd20b",
+        "prompt_sha256": "d3afbebfead335c523a7ed975d6b1dfdaa7b94e361cb8f9abd136edf698f55ba"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "industry",
+        "source_id": "industry_087",
+        "case_id": "paibench__industry_087",
+        "task": "i2v",
+        "seeds": [
+          301063,
+          301064
+        ],
+        "image_sha256": "1d28bc62b192ee02f200528320e4d41f9b315377c21c53c950515d01f382d08a",
+        "pixel_sha256": "a5306f65772606817d888787aa3a8ff61e86e2f716c91ddcc47e16f54e3239f4",
+        "prompt_sha256": "723c46f072023bba108b363d60bcaa72114de9c0db9e03fdfa37f62049f05b28"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "misc",
+        "source_id": "misc_12861854_3840_2160_25fps",
+        "case_id": "paibench__misc_12861854_3840_2160_25fps",
+        "task": "i2v",
+        "seeds": [
+          301065,
+          301066
+        ],
+        "image_sha256": "f16df2545c3f5bb28f75bf20993c7fbde4b72069f81a184f3f58ee0a20642bf9",
+        "pixel_sha256": "618d4628c40862df04148f8f7cb4877c803bc70ba897cfa663c6bed8f677ffb5",
+        "prompt_sha256": "d47f57dc7ff3e9bc5b2d31e38245e1a50b046df9b0e7b006de560f9874e6ebbc"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "misc",
+        "source_id": "misc_13019576_3840_2160_25fps",
+        "case_id": "paibench__misc_13019576_3840_2160_25fps",
+        "task": "i2v",
+        "seeds": [
+          301067,
+          301068
+        ],
+        "image_sha256": "97b756065f8e6e7bff76f917c4e3d59ac980135821f1c86e409a2903c5f3eb7d",
+        "pixel_sha256": "4e42b1d6ac0d90b88dcf327ea30a1597048a933ed7b52c4ea213cdd09bee8e40",
+        "prompt_sha256": "b6c886117d0165540525602ed673fb5b4b1876e46e815630a1dd93d6e857a2e3"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "physics",
+        "source_id": "physics_050",
+        "case_id": "paibench__physics_050",
+        "task": "i2v",
+        "seeds": [
+          301069,
+          301070
+        ],
+        "image_sha256": "e2bc73f14cb347ea1975625f107c522ec4c07e5f6cb4ee542f436aba7f8b3cae",
+        "pixel_sha256": "8c10c82b6c6aeee0d52c51cfaf3c109f357d519e9539bb22b1a7ef199ce69cbe",
+        "prompt_sha256": "22c7e6035fed62795a0276110d6413e5df1116cd4465e8d60ea29d175716f1f0"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "physics",
+        "source_id": "physics_040",
+        "case_id": "paibench__physics_040",
+        "task": "i2v",
+        "seeds": [
+          301071,
+          301072
+        ],
+        "image_sha256": "8352c63cbb8d8d15fd777b3952d87261a598f374bb1f078b5975afd855547b36",
+        "pixel_sha256": "521288bf7fdaa5800895a0677e5ea8426e12cedf9d013212b75771b3b9596d49",
+        "prompt_sha256": "cbc0c2a898e796d9fbe4b17952fa22889e046c76e83a68888376754f5b7b2c07"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "robot",
+        "source_id": "robot_038",
+        "case_id": "paibench__robot_038",
+        "task": "i2v",
+        "seeds": [
+          301073,
+          301074
+        ],
+        "image_sha256": "e647cae98a5f650d3c30ea5e0a4661c7b4a8d4a486c0f16152944b1a06ae2e0e",
+        "pixel_sha256": "70ddf4fb99682e7b991e717da55188bf9b0396861a778cea82ef78db27664a0d",
+        "prompt_sha256": "145ceecceb0b20bbd9074582e65702284e73e651a7d2eed69e5cdfb8b645e3e2"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "robot",
+        "source_id": "robot_067",
+        "case_id": "paibench__robot_067",
+        "task": "i2v",
+        "seeds": [
+          301075,
+          301076
+        ],
+        "image_sha256": "df6c4d4514698989b85ca2d1a0fc1a5d32f1a8e7f3e9fbd25f6f73f596efefda",
+        "pixel_sha256": "3b21b144cca389321ab334fe08bd78ea7ed82c642109b6f372d58ec9ca5ad314",
+        "prompt_sha256": "ab0b43cf44c9132d3647b9fad791e8053e64fc0b0d077dd4244d5663c6118ce3"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "common_manipulation",
+        "source_id": "common_manipulation_0050",
+        "case_id": "rbench__common_manipulation_0050",
+        "task": "i2v",
+        "seeds": [
+          301077,
+          301078
+        ],
+        "image_sha256": "34cb4d85a9ecd8fc73bc90c6d8f39b193a35fec7d33748d69db58e931576af59",
+        "pixel_sha256": "fe8afad65bd5cb6337ae57317dff3c7d77e10969dacba8a3dda7f42f30715de6",
+        "prompt_sha256": "281897457f344c15f92830ebff94f2146bfd7a4a27341e1960bee6bb72adc232"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "common_manipulation",
+        "source_id": "common_manipulation_0037",
+        "case_id": "rbench__common_manipulation_0037",
+        "task": "i2v",
+        "seeds": [
+          301079,
+          301080
+        ],
+        "image_sha256": "3a157df29202a9ced97420a3386b7a9d0755228d341019088088d4eaa92f9eb0",
+        "pixel_sha256": "7e8b2f46219e3a1745e56854be5b26ed9bd2a72ca7de0c013b4a5f231bd93136",
+        "prompt_sha256": "8749dcdf511e33669d40c027f2156525c3797e5f48b1b04861b076c47f41a91d"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "dual_arm",
+        "source_id": "dual_arm_0040",
+        "case_id": "rbench__dual_arm_0040",
+        "task": "i2v",
+        "seeds": [
+          301081,
+          301082
+        ],
+        "image_sha256": "8811dabbe248d0160b50d9415c10558011a3074422b0bb5ed8e98371548673b6",
+        "pixel_sha256": "f6b1109a3c3f60d78c24591d6ebd50b93facaeb5a3b8031e53a65c0a401a6f12",
+        "prompt_sha256": "efaa3a258fbbce71e4a8871c19fca55df5616463d5490368a34d077cc07c6651"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "dual_arm",
+        "source_id": "dual_arm_0004",
+        "case_id": "rbench__dual_arm_0004",
+        "task": "i2v",
+        "seeds": [
+          301083,
+          301084
+        ],
+        "image_sha256": "7e69291a82f71a99a70dd857b092ddaf0a4200d8bcc76ca1207d4edb4979811b",
+        "pixel_sha256": "9bf1fe06291e71ef960998a878aed2c4b2a3542d5d7aadba24648f1fdb493d32",
+        "prompt_sha256": "06f700a1cbd7b91c3cf9723dc7279e9486e6198fab5c898f3da29c4dddb523cd"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "humanoid",
+        "source_id": "humanoid_0015",
+        "case_id": "rbench__humanoid_0015",
+        "task": "i2v",
+        "seeds": [
+          301085,
+          301086
+        ],
+        "image_sha256": "8093c05f1f9ef9ee77434a6f4d6db1fd9fb36009d084e7e3384af4a30279d5d3",
+        "pixel_sha256": "47784d69ec57a65145269dc01fb93d28c451ed122b1ded0149850a332d5e5ceb",
+        "prompt_sha256": "ef97467e2b5fc6c9e9f7fe3ce2f477e67c8493fb79bf225c0d361d42b6b71050"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "humanoid",
+        "source_id": "humanoid_0064",
+        "case_id": "rbench__humanoid_0064",
+        "task": "i2v",
+        "seeds": [
+          301087,
+          301088
+        ],
+        "image_sha256": "3be7c5aa6832cbdb0ea54d5fd9be6e4f8434d3408159235e62498673069bea1f",
+        "pixel_sha256": "a403f21c9e07779347733d4c452a74f9c006eef71787e788b843e23d6c126514",
+        "prompt_sha256": "fe2be2da1827db0a2941ae54c1e396f8a06601e31a40ce5ffb7029c1ea8ba289"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "long-horizon_planning",
+        "source_id": "long-horizon_planning_0002",
+        "case_id": "rbench__long-horizon_planning_0002",
+        "task": "i2v",
+        "seeds": [
+          301089,
+          301090
+        ],
+        "image_sha256": "0840e51c53b22c60a4d2a07b7da3d0818f38577d325d13823ff6e15f39db3d71",
+        "pixel_sha256": "3fc8db996213c38ecb2482909376e2fd7ff0896dfc9ce4ccfd102c57c134e026",
+        "prompt_sha256": "661f363e20bcc947b6eff7f33dcd776cfae4ecc6d6b9ec8ac7fd8c33b19ed482"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "long-horizon_planning",
+        "source_id": "long-horizon_planning_0008",
+        "case_id": "rbench__long-horizon_planning_0008",
+        "task": "i2v",
+        "seeds": [
+          301091,
+          301092
+        ],
+        "image_sha256": "be8cb766c3e46c418f30778df82354fd2435cbd7139208c431cfac42e47d5ad5",
+        "pixel_sha256": "40fde7d03725adc4300bc4c32f858c3b26272c85a735bdcd948e9f8feedbff1c",
+        "prompt_sha256": "31dd7727a96053223f68e006d0a9feb172a2fbfeb21b66f56c2b85c2cb7643c5"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "multi-entity_collaboration",
+        "source_id": "multi-entity_collaboration_0016",
+        "case_id": "rbench__multi-entity_collaboration_0016",
+        "task": "i2v",
+        "seeds": [
+          301093,
+          301094
+        ],
+        "image_sha256": "4260371c6ee1a1933d57d53ded13bc4e1e44be45d5927fc50244ebb4d435cf3e",
+        "pixel_sha256": "d28fd564494fe62631fb8204e9d2a1a0a5f2072ef533d3da2e0da2fe3b339a58",
+        "prompt_sha256": "dcb280ef95d444e4daca87c0cdfc38089f68fbcec6292b746ad4e37c92111c17"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "multi-entity_collaboration",
+        "source_id": "multi-entity_collaboration_0012",
+        "case_id": "rbench__multi-entity_collaboration_0012",
+        "task": "i2v",
+        "seeds": [
+          301095,
+          301096
+        ],
+        "image_sha256": "107d5ed433dd03ea70b131bae8c50d4fa7d3df053e3b0e77a540a47a91e9fbc9",
+        "pixel_sha256": "dc33f3484f940caf5bfdf7fd375b7614e1ac9e617a2622d71df5fbff77ae5d42",
+        "prompt_sha256": "d3cfad70c3c917eb1a115f76ab3ca889686999c5bd7528f901a630a4f382dcb3"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "quad",
+        "source_id": "quad_0082",
+        "case_id": "rbench__quad_0082",
+        "task": "i2v",
+        "seeds": [
+          301097,
+          301098
+        ],
+        "image_sha256": "53c02df959e1b729131b12ece6fb160d468fd877732534db04040618072bade7",
+        "pixel_sha256": "3fe29abc2f7f5f073436f15fce07869cf5b357555f6f2c8a6e88ce790121f8f7",
+        "prompt_sha256": "eeb81bf50025793605ba1ffab2972ed829cbd2af582384f3bcd0921f32354697"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "quad",
+        "source_id": "quad_0061",
+        "case_id": "rbench__quad_0061",
+        "task": "i2v",
+        "seeds": [
+          301099,
+          301100
+        ],
+        "image_sha256": "e1031696d6446831223bd195dbc5225d3453e9d50ee99af58497eb199a2b3bb7",
+        "pixel_sha256": "bb339d15dd5dde87d9de3f0e4b253538c739fb420ba54613354dc8d5756382be",
+        "prompt_sha256": "db651ac008a4873ec137a261bcbbe0b0552c8e9e4f17d050d7314ff5412efa77"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "single_arm",
+        "source_id": "single_arm_0082",
+        "case_id": "rbench__single_arm_0082",
+        "task": "i2v",
+        "seeds": [
+          301101,
+          301102
+        ],
+        "image_sha256": "38a82b7d5d8ff392c8e186286651bb882df244a563e65e11a8eee8d597d49495",
+        "pixel_sha256": "9fd168c6c2e16dd005225ba449363fc6a4456b975a3abb5134a5a06371d59247",
+        "prompt_sha256": "046a34a4213b2331784b2ce9d93db64092046ad6a0263d3040799e1b0bb22180"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "single_arm",
+        "source_id": "single_arm_0005",
+        "case_id": "rbench__single_arm_0005",
+        "task": "i2v",
+        "seeds": [
+          301103,
+          301104
+        ],
+        "image_sha256": "56c59107893d17c208781fce6ed09ba09c3ad44e138d83837a9c68a0d7ab8b24",
+        "pixel_sha256": "83b36c43aba5d33606251cd004f8eff4b74fb0f191d2d86244d47d7bfd5e1698",
+        "prompt_sha256": "b67fc5a9279956b10e77aa9c838b013d8b32f801c60b8a56e6f82355affe5e24"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "spatial_relationship",
+        "source_id": "spatial_relationship_0045",
+        "case_id": "rbench__spatial_relationship_0045",
+        "task": "i2v",
+        "seeds": [
+          301105,
+          301106
+        ],
+        "image_sha256": "21ec397b2621ba9db1c47427b2f85f69f4cb6ecc2e67bf0fa49e0bf0b8c3e27a",
+        "pixel_sha256": "45524885e6f8db8017255dcf2757cea4e025615f761759d4ee18e5e048df798a",
+        "prompt_sha256": "b3eb9f145666892006a5cd5db648511beb1193dd6cede709507d39e9042550da"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "spatial_relationship",
+        "source_id": "spatial_relationship_0043",
+        "case_id": "rbench__spatial_relationship_0043",
+        "task": "i2v",
+        "seeds": [
+          301107,
+          301108
+        ],
+        "image_sha256": "3ce5f0ab6f7f54c339069a250b5a17870c8e791d5c3a0dc7ab08d645df6a0596",
+        "pixel_sha256": "f0b2fbe3b720fb7f4b78a50ad774fcd20f596beb0fa2a853b87d4699b7053dc4",
+        "prompt_sha256": "4bb0ea8166691c27005c9fa621bdf0d67c9a166cc75772c15cd4b3d81b06b4da"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "visual_reasoning",
+        "source_id": "visual_reasoning_0007",
+        "case_id": "rbench__visual_reasoning_0007",
+        "task": "i2v",
+        "seeds": [
+          301109,
+          301110
+        ],
+        "image_sha256": "6619d520d86529e00149241cc8ddf643362389d25f1673add943cb113b8f9b03",
+        "pixel_sha256": "da0b79bfde914164a7ff1d2a78d1516d5244375e1d2b0c4906edfb8f6a872bcc",
+        "prompt_sha256": "d64bce6246a3516c90a5c5de751cf19b5d2069df75cfc88c2903613be2b25be3"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "visual_reasoning",
+        "source_id": "visual_reasoning_0006",
+        "case_id": "rbench__visual_reasoning_0006",
+        "task": "i2v",
+        "seeds": [
+          301111,
+          301112
+        ],
+        "image_sha256": "5e05ce690292a58fec3269851a83d27235f672ff253752c5afdec8f112efc073",
+        "pixel_sha256": "2f0c4d502e4726708b3811a6b3439b039f0a29669fc7fdd3256a4fe3282f5869",
+        "prompt_sha256": "6f7cee554bbf66bf9f8f82449a91d67dd4737fa1fb902e6e330e26d20e7efb40"
+      }
+    ],
+    "final": [
+      {
+        "benchmark": "paibench",
+        "category": "av",
+        "source_id": "av_ec2fb4fa-3530-4a6a-b431-f06779a0537a",
+        "case_id": "paibench__av_ec2fb4fa-3530-4a6a-b431-f06779a0537a",
+        "task": "i2v",
+        "seeds": [
+          301113,
+          301114
+        ],
+        "image_sha256": "c8e3e77a72d9c9db7edcfe518e8acfde96176e7e02a45f52da31612e3c651287",
+        "pixel_sha256": "60db4a20f66e4a2f834d776a0f523000e0cf2047295b0e576262506afd08b5cb",
+        "prompt_sha256": "10a9a3dfcde8f8f7aeabd357b5b8988940008750f5b508c56c3cff2fc76916be"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "av",
+        "source_id": "av_7ffad222-afe2-4032-8341-9dec6181bb55",
+        "case_id": "paibench__av_7ffad222-afe2-4032-8341-9dec6181bb55",
+        "task": "i2v",
+        "seeds": [
+          301115,
+          301116
+        ],
+        "image_sha256": "8cc646dc9953719147b910bfb417811fc9e75604e224d2ecd8f63beb1f64445f",
+        "pixel_sha256": "ba48ab7a7c69b1ff78ab857b16850bd87ed9b1d99a89785192f24999aca01bf0",
+        "prompt_sha256": "ccb2711087af65beb6e8b6459068827381af17de061c352b257f9f76ca3abd56"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "av",
+        "source_id": "av_debris_1_0",
+        "case_id": "paibench__av_debris_1_0",
+        "task": "i2v",
+        "seeds": [
+          301117,
+          301118
+        ],
+        "image_sha256": "97cce4b3db3258562b3b04c28a87f34e5a267070b941cd3202408873a84e375d",
+        "pixel_sha256": "4cc1cd734d9a8eb29418154566bd324adab996578e0eb32b4e8b50e721b59ed1",
+        "prompt_sha256": "739759272341f4e28d607b7318b9d07a47ff1fe7382599b55afb32c1f927c458"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "av",
+        "source_id": "av_00d8e9d4-d669-42d9-8aa9-16a09a47b531",
+        "case_id": "paibench__av_00d8e9d4-d669-42d9-8aa9-16a09a47b531",
+        "task": "i2v",
+        "seeds": [
+          301119,
+          301120
+        ],
+        "image_sha256": "551686867bbc6d5550513f9c755fe0be56473a42230ce7b24216072945add75f",
+        "pixel_sha256": "0f54abd8ed7563d2fc785bfb2d382cc7745a085acfc7c8bd06c4084b24d1aba8",
+        "prompt_sha256": "430b4819affa39d00e7a58d263756f36ad02ffe64c45397fd783b38903e3753a"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "av",
+        "source_id": "av_b9a09222-114b-4bde-aa34-ca0828f3bd16",
+        "case_id": "paibench__av_b9a09222-114b-4bde-aa34-ca0828f3bd16",
+        "task": "i2v",
+        "seeds": [
+          301121,
+          301122
+        ],
+        "image_sha256": "bf21b7c567d39f9b8a44c0652432b30075e399c5cec780860ccc4b7418b53b2a",
+        "pixel_sha256": "0be9db295ac67134fc9c6fdcd7832b4029c2354b0ae8a61f0679a69c80aa2ef9",
+        "prompt_sha256": "6bbd7bd65a8f990e849647999c6a4892e7f13356f31223c2bb9725ed47fd1304"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "common",
+        "source_id": "common_sense_cce9482d-88fc-4edd-9a92-061f6b568291",
+        "case_id": "paibench__common_sense_cce9482d-88fc-4edd-9a92-061f6b568291",
+        "task": "i2v",
+        "seeds": [
+          301123,
+          301124
+        ],
+        "image_sha256": "a21177a4995475d826284ee7e363c4510249173d620557f9ccf933b33a73255d",
+        "pixel_sha256": "9db7169b9fb11867c8ced26613f1d77f5664d24eaaecf7bce0be833be939acce",
+        "prompt_sha256": "1470c0634067be3bd30288b99c7cb78951ebb84eab33beb14d7328a7f733498f"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "common",
+        "source_id": "common_sense_4730f45b-1833-4f29-ac60-86fae649985c",
+        "case_id": "paibench__common_sense_4730f45b-1833-4f29-ac60-86fae649985c",
+        "task": "i2v",
+        "seeds": [
+          301125,
+          301126
+        ],
+        "image_sha256": "7e07f322aed9cbb07f7b12122ecb892b7f2258bb0185d0c0418938daf247b927",
+        "pixel_sha256": "d14079fa4c990408eb60151f255a8cb5a376e5fa1c43c44c2eeb14df17707bf5",
+        "prompt_sha256": "d0cb5bff2048856b4cf8b0f61289f3c6171a17646f6bcf365669bb0f466ba7b5"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "common",
+        "source_id": "common_sense_d242674d-9bf2-4cdf-aaf2-0ab976b4fa93",
+        "case_id": "paibench__common_sense_d242674d-9bf2-4cdf-aaf2-0ab976b4fa93",
+        "task": "i2v",
+        "seeds": [
+          301127,
+          301128
+        ],
+        "image_sha256": "a58a286b3b529e7fde9c2525d1ce16cc62e42bd5c3dc0b86d90b38e2919ff5d2",
+        "pixel_sha256": "0a089865f99e62071a63867fab934b06bbeeca991fa803ecf7676e2166d8f84a",
+        "prompt_sha256": "40e5f33071c5248a9fd84025d5acaec3904729d2dc561d1b043394abe25fa6e6"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "common",
+        "source_id": "common_sense_996b00f7-8b77-4f6b-a47f-8c37ef2094ae",
+        "case_id": "paibench__common_sense_996b00f7-8b77-4f6b-a47f-8c37ef2094ae",
+        "task": "i2v",
+        "seeds": [
+          301129,
+          301130
+        ],
+        "image_sha256": "77e82e6e644811827caa89a0ede6b20a6cce471dc4c2ac30e9561425c92802c7",
+        "pixel_sha256": "97c0d1bf2a9d6ccd5706a6a14d9e45fe48cc3c3a5a33ccb74a00414e61f3139c",
+        "prompt_sha256": "0fb8a6be583c7edb48057e2706395c07e717d4d6232503bed6b22cdb0d4b7905"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "common",
+        "source_id": "common_sense_3fbbd161-bcf8-499d-a1d9-357673a1a861",
+        "case_id": "paibench__common_sense_3fbbd161-bcf8-499d-a1d9-357673a1a861",
+        "task": "i2v",
+        "seeds": [
+          301131,
+          301132
+        ],
+        "image_sha256": "973c9d88ad40d1d021268b6eee4b7ecd042539dbe7bdba204028400a25676ab2",
+        "pixel_sha256": "9a16a938d1f9c5fc3123b528252fce9c553e6fe44e38d1b8c582aa791a339bba",
+        "prompt_sha256": "e56250b6681619333a1d62fc45c663580fddb4083c4856e4aaca64e615ec0b2b"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_209",
+        "case_id": "paibench__human_209",
+        "task": "i2v",
+        "seeds": [
+          301133,
+          301134
+        ],
+        "image_sha256": "43a6ae59d7d3ba80c7e2bb0abbd85eaeceaab14458d10e7426db5db77de9a000",
+        "pixel_sha256": "0e9bd2fbb21fe1e3d2d6e1c6b9113cb0fb03fa06a09e569d93f3e937f5b3ae2c",
+        "prompt_sha256": "f68a02b53daa400bea0131e92d471ce573512f53bdd606bfece1394181e156e8"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_132",
+        "case_id": "paibench__human_132",
+        "task": "i2v",
+        "seeds": [
+          301135,
+          301136
+        ],
+        "image_sha256": "2e6d4af3845d54743cbb6259ce09f310266a7e51f147ca28d640bdd9af0bc796",
+        "pixel_sha256": "442866a0a78b25aa646a092a27d11acf1c3a573824b66eb8555c15c7026aa69d",
+        "prompt_sha256": "0f83c15f9b6350d4ff0a1f2d0ebeff654efe69c99dd51979fbd21ef97a1d72b4"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_100",
+        "case_id": "paibench__human_100",
+        "task": "i2v",
+        "seeds": [
+          301137,
+          301138
+        ],
+        "image_sha256": "f1c894d81982ad7bd42a65f4b7c90342fa1092041d0f158b8465f604c4c4deae",
+        "pixel_sha256": "c136dbe75db5b8d7ca4462b5ec144f5a76e9da1af73c211d03f788cc6fd4f396",
+        "prompt_sha256": "a4e8e8136b0834da7d3c826b0a7822036f057390b0623633bf1f667847dff5b2"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_279",
+        "case_id": "paibench__human_279",
+        "task": "i2v",
+        "seeds": [
+          301139,
+          301140
+        ],
+        "image_sha256": "2c0e5388695b5aa33fd7fa2c4b6abaea05acdffd79fc22a34f6665720f32813b",
+        "pixel_sha256": "cb05bf1f385db28de654b4b1d622d92fbc08029838fb1fa75dcd011062a10300",
+        "prompt_sha256": "c6fef2fcf25b8055fff4ed002d2cb43122da7dcd4145e387f12b6e11bde024f4"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_152",
+        "case_id": "paibench__human_152",
+        "task": "i2v",
+        "seeds": [
+          301141,
+          301142
+        ],
+        "image_sha256": "aa10ce3e8962d18407a16b8da6962e294c3211528a848c0889569cecab3a7770",
+        "pixel_sha256": "ef4e9ac5a18810cd5a207f94b1aa281833cd94e57c6e848c0b5ed095b065f430",
+        "prompt_sha256": "717d421155a0427f7372644ac45439e54df68774ce0ec5bd855435c673eb2456"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "human",
+        "source_id": "human_086",
+        "case_id": "paibench__human_086",
+        "task": "i2v",
+        "seeds": [
+          301143,
+          301144
+        ],
+        "image_sha256": "a931da2ab2447ed586ea4eed9d1fe83a33187827c64d9e568b89c92f554885b1",
+        "pixel_sha256": "dc6de8417175464ca457a82b4fb6d3c8f389a4f8d385513e76ec3e232ad47cf6",
+        "prompt_sha256": "f6778ba5ad49874f09b7ba2f4afcec482b38dd6bf84d0c3f5b5b1a0bed380473"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "industry",
+        "source_id": "industry_058",
+        "case_id": "paibench__industry_058",
+        "task": "i2v",
+        "seeds": [
+          301145,
+          301146
+        ],
+        "image_sha256": "da7eb63af5b1af3bbc1dde9cc2dedba899fd46d9c1f6c4dbd7aea06aa2273449",
+        "pixel_sha256": "3f63cd9ec7a4e721e0bde5e6354d4708c33d06eae04878d3f4369285dc27293e",
+        "prompt_sha256": "4eeb629a5b9c6afda2618c2d65ae136444a248e419d1aab81895991d5116b47d"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "industry",
+        "source_id": "industry_034",
+        "case_id": "paibench__industry_034",
+        "task": "i2v",
+        "seeds": [
+          301147,
+          301148
+        ],
+        "image_sha256": "b7f0637a2b8af06184de3101c500cd79d95caab64106155c1ef8e9ab6889dd45",
+        "pixel_sha256": "71fb50e537636bce7c9a3785ed394f9d1e8624ac7aed79db34af8724c66fe76b",
+        "prompt_sha256": "88094caf1b83ab1afae391c0526a6c82e369f49e1ce4545ac436c1294d5ff995"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "industry",
+        "source_id": "industry_052",
+        "case_id": "paibench__industry_052",
+        "task": "i2v",
+        "seeds": [
+          301149,
+          301150
+        ],
+        "image_sha256": "864defa604c25a2fab7daa1fb8ebb516fcdcb06b15b3cd4418d7cc66ffcc2f8d",
+        "pixel_sha256": "aa95d7cc99befbb5f3dcd910a88a3874bc9fcc5d122dad03ede5673340c1ff48",
+        "prompt_sha256": "04814772b9a4c5520c6137f5c99e6307d9a1c69520714ab9fb12850a2c33b436"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "industry",
+        "source_id": "industry_031",
+        "case_id": "paibench__industry_031",
+        "task": "i2v",
+        "seeds": [
+          301151,
+          301152
+        ],
+        "image_sha256": "126458c5e1858baed53332711d6908a8da8b9a16154d31866d511cd27821553d",
+        "pixel_sha256": "e41c81a23c3003400f8df3a56729d4da3c377e2151e12a1cc08b06c66ea535e3",
+        "prompt_sha256": "915ed4419fa73cebf23a7a533a37349cabb9fe1e6db4b217f45ff46ee325b74a"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "industry",
+        "source_id": "industry_057",
+        "case_id": "paibench__industry_057",
+        "task": "i2v",
+        "seeds": [
+          301153,
+          301154
+        ],
+        "image_sha256": "67a7c71d0ad55a92595d0c2b38a011535ce57620fc24bc548bfc576bcdf73605",
+        "pixel_sha256": "df945a2b3454eeb0d06feb707fbc3e841bea71dfc76ef13c92835582f0a7327f",
+        "prompt_sha256": "16eef8a61df0424899fd78859fa127f1fd470b2cce5f177739df44ac76a68f84"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "misc",
+        "source_id": "misc_3173312-uhd_3840_2160_30fps",
+        "case_id": "paibench__misc_3173312-uhd_3840_2160_30fps",
+        "task": "i2v",
+        "seeds": [
+          301155,
+          301156
+        ],
+        "image_sha256": "731b49c310881091ab735eb7f81bf36c40c2d17e16bff59fb950340c6af7a6f1",
+        "pixel_sha256": "4826bcd954770be03d346e4e7605a0b1941e37f49d11050b56aaec74e81d7838",
+        "prompt_sha256": "3e3bd895248ccd6fc88ee923c85a0f0cc969e0039a22f13ebb4cf11615ba1f2e"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "misc",
+        "source_id": "misc_854100-hd_1920_1080_25fps",
+        "case_id": "paibench__misc_854100-hd_1920_1080_25fps",
+        "task": "i2v",
+        "seeds": [
+          301157,
+          301158
+        ],
+        "image_sha256": "6de5b7dc8d87eb79bfe9baacfff7c216e088c62b1e9c676e38ffabe0d65f9d8d",
+        "pixel_sha256": "3643deb2e8e1500e91d3a59d741197a28c068c58cac1a0ae538b3e776dc04845",
+        "prompt_sha256": "c9a46c9627cd330cbe296b4e458ce0fa7ae355389ada2d1bc60c4df676dc4e1e"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "misc",
+        "source_id": "misc_1777892-hd_1280_720_25fps",
+        "case_id": "paibench__misc_1777892-hd_1280_720_25fps",
+        "task": "i2v",
+        "seeds": [
+          301159,
+          301160
+        ],
+        "image_sha256": "1e6394509162d80a999d0fd96c77603566c262acc6bbbf63ce5fd0a3f2975e9f",
+        "pixel_sha256": "a73fa48f5ff33adddf940c9fae293c17ae660f7b4cbfcdd36da24cb929e46b7c",
+        "prompt_sha256": "0d3863659b78b85858093000c5fd1a53ad7507d5df80d17933653edf1110418e"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "misc",
+        "source_id": "misc_854179-hd_1920_1080_25fps",
+        "case_id": "paibench__misc_854179-hd_1920_1080_25fps",
+        "task": "i2v",
+        "seeds": [
+          301161,
+          301162
+        ],
+        "image_sha256": "9ae366631f57b06cc2cf3de9c8202f266ecf90c06bb798108bec6a2be42a426c",
+        "pixel_sha256": "d0cd9a5e3d06197630283caf61429ff7bb3e6cfe2dcfd8f8f201601318ae8a62",
+        "prompt_sha256": "b12cd02b1b85b704affd50f506f817ba90f0ab2c8719bb81af1d51e9a12829f7"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "misc",
+        "source_id": "misc_4483542-uhd_2562_1440_30fps",
+        "case_id": "paibench__misc_4483542-uhd_2562_1440_30fps",
+        "task": "i2v",
+        "seeds": [
+          301163,
+          301164
+        ],
+        "image_sha256": "04ffe879b80b225dacce9cf1c0c082141f1e818b28c59b20f6c24c22f06b1379",
+        "pixel_sha256": "e70f9aa1c1e214c2170394755295e9b1ec9be46b3f40759c5472ef770d6d82c1",
+        "prompt_sha256": "af73f8e26beee5b9bd53cbd02d4b5d82613f21ec7ac936dba33eb8d59d9f8e44"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "physics",
+        "source_id": "physics_061",
+        "case_id": "paibench__physics_061",
+        "task": "i2v",
+        "seeds": [
+          301165,
+          301166
+        ],
+        "image_sha256": "1ab4abb5196d13fa68382e8ee0165e1e3aa5b3b4beec5e859ecc1f3c0033adab",
+        "pixel_sha256": "913d569ecf9f364346499f513043bf2a777a12a2edaffbce31051906ef85dfb2",
+        "prompt_sha256": "40fb8d390f5e618973573cd179bbb89e0cfb136dbc4bb3a2cb79fa842339722c"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "physics",
+        "source_id": "physics_057",
+        "case_id": "paibench__physics_057",
+        "task": "i2v",
+        "seeds": [
+          301167,
+          301168
+        ],
+        "image_sha256": "55a2214c980afe6a95920a911c31d4141c9bc5fbd5dce66439c06920734d7f37",
+        "pixel_sha256": "20a998a0d95ede9b9b3f3446940e274559da19e9c36cb9be98ec250206156c0b",
+        "prompt_sha256": "b7f47b8afd2d301bbfc37c3b975e8a1b8a3f1353e5477c4a56192fda06914d31"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "physics",
+        "source_id": "physics_009",
+        "case_id": "paibench__physics_009",
+        "task": "i2v",
+        "seeds": [
+          301169,
+          301170
+        ],
+        "image_sha256": "012e327a86508ef45b48d931905e822d254c3f5241b29a279acd5d798f8a529e",
+        "pixel_sha256": "c49a53cc2e9855cf425533e035573e816297032ef746cad917e4c07e2314632e",
+        "prompt_sha256": "f4e9eae5460ff8a0a8a6c32ae3b59ed0ffc5e535a18eaeea4377583b17f3bb43"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "physics",
+        "source_id": "physics_162",
+        "case_id": "paibench__physics_162",
+        "task": "i2v",
+        "seeds": [
+          301171,
+          301172
+        ],
+        "image_sha256": "cf3b5d13bd1417a3661f6621f1a10e0957d96deae74752087c1ecca217596088",
+        "pixel_sha256": "0ce4a0b7381b388bb7c01e0750a314a14d98527597fff31fbe2f0003febdb6ad",
+        "prompt_sha256": "4a61c6c9414d8c198250fac72131a7c9b6aca1bbd0e7ebc5b28e9a360eae2a6b"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "physics",
+        "source_id": "physics_096",
+        "case_id": "paibench__physics_096",
+        "task": "i2v",
+        "seeds": [
+          301173,
+          301174
+        ],
+        "image_sha256": "f1e1e7047e5152c8fb9a23226a1b37e4693ec663d884a4739ef057eef109ed64",
+        "pixel_sha256": "a05593642ebe684f589c0c3d75314730788db67dc9bd366835fe35aa6d52b351",
+        "prompt_sha256": "02cba89b1950364d04cab49fcb6b2e83f224d3eb641752399c5da1325762caa0"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "robot",
+        "source_id": "robot_136",
+        "case_id": "paibench__robot_136",
+        "task": "i2v",
+        "seeds": [
+          301175,
+          301176
+        ],
+        "image_sha256": "e0e93698c941bbcecafa2bcdc265bb9bca5999a70756a3fe7aa6bb38e0da1181",
+        "pixel_sha256": "ce129bd5e3f7e9f3eaad60e42fecea4e7faff06fcbcd668be501551376da15b7",
+        "prompt_sha256": "12f478d550dd0dd89b9a9660310a8ae00518d3269be624e5f4a9d8ac73f12635"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "robot",
+        "source_id": "robot_046",
+        "case_id": "paibench__robot_046",
+        "task": "i2v",
+        "seeds": [
+          301177,
+          301178
+        ],
+        "image_sha256": "7a385af4ef6ef0b8ab51265d00173e05ccf41c4d4626309757ab185697f846ad",
+        "pixel_sha256": "95b163e589f2f0692abf58ab6e2099f77d39aa67b1fffed3794a6f6d6f8dcb47",
+        "prompt_sha256": "bb97c86c4f43439a5ccddec2fbc7445c1dd1308991f347c67a20a19e0dbe4e6b"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "robot",
+        "source_id": "robot_041",
+        "case_id": "paibench__robot_041",
+        "task": "i2v",
+        "seeds": [
+          301179,
+          301180
+        ],
+        "image_sha256": "ff16514dd749750de54697dfc64595c7350d37b1fc4d75e81c8726e934d2e4dd",
+        "pixel_sha256": "c37e3416d27e7109e718210706a0d2577a15fc9faf548c811617ff3754de64e6",
+        "prompt_sha256": "11a8f89a8b85508d2a5a5d1b5e9f4f087460e862e1832c3ea7d92a3c62997851"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "robot",
+        "source_id": "robot_119",
+        "case_id": "paibench__robot_119",
+        "task": "i2v",
+        "seeds": [
+          301181,
+          301182
+        ],
+        "image_sha256": "0d24a8b0eca7e47bdf71b898716d12d9825ccb1dd7f478565d3c017d48f3e2f2",
+        "pixel_sha256": "609e8295917342ecf9d4bd539376b77ada7c400e1b297a5db8961c11eed43a4c",
+        "prompt_sha256": "e8c7a001015929dc65d8dabd01471927f8f4bd0a0b65ded1ebceefec02aa5b42"
+      },
+      {
+        "benchmark": "paibench",
+        "category": "robot",
+        "source_id": "robot_057",
+        "case_id": "paibench__robot_057",
+        "task": "i2v",
+        "seeds": [
+          301183,
+          301184
+        ],
+        "image_sha256": "d701916b011eb3e3d998461c3d33669d4d167085f13f3a3da26f5e7861fdb166",
+        "pixel_sha256": "d44b2378f6ad1bc0a94ed7f47a90ebaa2608fef06130cb0292d246b00f6233fc",
+        "prompt_sha256": "ce19c1079d2bdfef9515e22fc6bd112688486fb66751c62c4f454488c59d7176"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "common_manipulation",
+        "source_id": "common_manipulation_0020",
+        "case_id": "rbench__common_manipulation_0020",
+        "task": "i2v",
+        "seeds": [
+          301185,
+          301186
+        ],
+        "image_sha256": "3ca631b5f22323d3d9e2aad4a354e0f665c21d3291e649d8cfb4b49986c84af6",
+        "pixel_sha256": "08564fd804563744b013d3613124905d8b84327245fd36ad7f1e3ba1ec97bf85",
+        "prompt_sha256": "e877bc3ec7e9315c6969ade3273eafc798550efdf2352bfa8675b194e444f694"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "common_manipulation",
+        "source_id": "common_manipulation_0029",
+        "case_id": "rbench__common_manipulation_0029",
+        "task": "i2v",
+        "seeds": [
+          301187,
+          301188
+        ],
+        "image_sha256": "372d8a68c817405cfa87c50bf10d8dcd360f7831e4dbbc0b0708b294c9db5217",
+        "pixel_sha256": "314390fc5edf68191db1140ddfc79887a8fdb740ec4bd43d74eba0075119cfd0",
+        "prompt_sha256": "4ce5ca595d76235eb50f1dd64f3e1b1761ec87007558f01f0f86c28aae7351a6"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "common_manipulation",
+        "source_id": "common_manipulation_0042",
+        "case_id": "rbench__common_manipulation_0042",
+        "task": "i2v",
+        "seeds": [
+          301189,
+          301190
+        ],
+        "image_sha256": "0ae783cac60e471e17608b5ad89e458154ff464ed0b63bd3e24a54184d690b83",
+        "pixel_sha256": "cb7de1a1e33f83930ea86a5f1652e505aad5d34c22a621cd39a66b9e34247b25",
+        "prompt_sha256": "665f4b2c41c3f9c30a491bc16e18385ef3e51ad823cc10f5f81079583cfefc0c"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "common_manipulation",
+        "source_id": "common_manipulation_0011",
+        "case_id": "rbench__common_manipulation_0011",
+        "task": "i2v",
+        "seeds": [
+          301191,
+          301192
+        ],
+        "image_sha256": "e8df0cc40e91097bda07e797fd713d63d9ad13ad8dc029a940d0c3ef754051bf",
+        "pixel_sha256": "58bba25cea226562904ca22fd2ff074cb71e78d15da13c46557ef87c4458eb57",
+        "prompt_sha256": "2a5fdcf76330319c5f2c8d28a16baace6418d10ac29637c3c4b802a39eb141a0"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "dual_arm",
+        "source_id": "dual_arm_0021",
+        "case_id": "rbench__dual_arm_0021",
+        "task": "i2v",
+        "seeds": [
+          301193,
+          301194
+        ],
+        "image_sha256": "4f860c5514371e5b9f8b361919cd8847478a6d8b1e60a031917789fea8f2c974",
+        "pixel_sha256": "1ae8f9b406602c669762287e5ded3cdd23ab376c8929762c74267b352273d2de",
+        "prompt_sha256": "c219b2e9c8241de1b8c98503b6ac6d5653b843b67d7b9cde6ea7629e1e30cda3"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "dual_arm",
+        "source_id": "dual_arm_0044",
+        "case_id": "rbench__dual_arm_0044",
+        "task": "i2v",
+        "seeds": [
+          301195,
+          301196
+        ],
+        "image_sha256": "902be20c1995d91eb5c6755bc80d8a947af137dc9b7b21c9201f29adce9d0d14",
+        "pixel_sha256": "d2d58b38d3d3030bc14605bc4a84c743cb1246805f44b310abe5295ee5879164",
+        "prompt_sha256": "936a1be3b594c7a810e3859a1e94a8e4b521ebbe5cfe341b392dcf3a0f9093fa"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "dual_arm",
+        "source_id": "dual_arm_0033",
+        "case_id": "rbench__dual_arm_0033",
+        "task": "i2v",
+        "seeds": [
+          301197,
+          301198
+        ],
+        "image_sha256": "75cb601260401c77511b0484ccae6b3bee1960c2ab70884f92678b3ec295934c",
+        "pixel_sha256": "0ea8b745624362356131096461b222668b0d166ce900e1bb97f33cec4fcefc5d",
+        "prompt_sha256": "a481c7ead90fd85489c3feaafad95d293d9fd64ac31f296003dae841016a1dbf"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "dual_arm",
+        "source_id": "dual_arm_0083",
+        "case_id": "rbench__dual_arm_0083",
+        "task": "i2v",
+        "seeds": [
+          301199,
+          301200
+        ],
+        "image_sha256": "b5791dd2f7d8ef8dfd7cbc9bec21db2c8db2deb17cfdc748c712d1617d81705b",
+        "pixel_sha256": "0617959814b1afa6b342d6836e6ffd0cb0348d535921a0384c48f906871609c7",
+        "prompt_sha256": "47a847b69aab29992b4cc589324206c2c5992e256ee02dcd96a8075bb8806130"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "humanoid",
+        "source_id": "humanoid_0062",
+        "case_id": "rbench__humanoid_0062",
+        "task": "i2v",
+        "seeds": [
+          301201,
+          301202
+        ],
+        "image_sha256": "24d8b63cd1867ef763136ae075591849983c3f7aa1ad24b09f138f98871e4a9f",
+        "pixel_sha256": "ef926acd82dd91feac4d0bd370dbcf875f01c3e4c39141d4668928f42c51460d",
+        "prompt_sha256": "d6c017b6cad34bc6db554f5813dd18d748b640e8a9aeb90ad900f4de006a22bc"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "humanoid",
+        "source_id": "humanoid_0013",
+        "case_id": "rbench__humanoid_0013",
+        "task": "i2v",
+        "seeds": [
+          301203,
+          301204
+        ],
+        "image_sha256": "d66c24d944285e1013c2eec11cc098a0469dc930a023a2b495269d4347679a30",
+        "pixel_sha256": "a27fc20e6ba7b5742da8a7f02e60dd360e44db70724bcb5aa05eb8ada8a44e1d",
+        "prompt_sha256": "491b281aa0fad35a5b746bf9bc9d6b4f89911dae385d55caed935dc27bccdbf4"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "humanoid",
+        "source_id": "humanoid_0087",
+        "case_id": "rbench__humanoid_0087",
+        "task": "i2v",
+        "seeds": [
+          301205,
+          301206
+        ],
+        "image_sha256": "2c4807d3035ebe289441b93615111e54424e7fc4ebf7bd886374089d12c7641e",
+        "pixel_sha256": "c543a764839aa894bf330e7079b424ba0edd1ee7ad83f11416a9916139241c92",
+        "prompt_sha256": "fb43268acb08aee4ce0fa49d25d5634e051956a1e5c80a0ae6bd45a82ebae606"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "humanoid",
+        "source_id": "humanoid_0053",
+        "case_id": "rbench__humanoid_0053",
+        "task": "i2v",
+        "seeds": [
+          301207,
+          301208
+        ],
+        "image_sha256": "86682a3e3e430ac3e00e86841f0d30565464783758773e7b24010be423fca555",
+        "pixel_sha256": "0553a1012a519bac683a6170ba98ccdd259726ee0f37a7941546dcd80fe320d9",
+        "prompt_sha256": "39de55d59e6c81b7049b8cae96b78a903a9ff25d1e8353a617cb6c3da178d23a"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "long-horizon_planning",
+        "source_id": "long-horizon_planning_0023",
+        "case_id": "rbench__long-horizon_planning_0023",
+        "task": "i2v",
+        "seeds": [
+          301209,
+          301210
+        ],
+        "image_sha256": "a055afabe71246694f829616991951c188f6ddf80634ab10751e3171f7823c40",
+        "pixel_sha256": "b6cb80841f3787152150269e18523197bcdc857c2c020aa094f669e9f064b0a9",
+        "prompt_sha256": "1346fa69b5a5f8d351e1d7e3f7bc52f2cdc7e0e2abeb4ee95d3d6e9f5c493338"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "long-horizon_planning",
+        "source_id": "long-horizon_planning_0037",
+        "case_id": "rbench__long-horizon_planning_0037",
+        "task": "i2v",
+        "seeds": [
+          301211,
+          301212
+        ],
+        "image_sha256": "7bb638b3d4ba69b25d10241722be782d5ae11c7357ba29be0c1f3a52e432909d",
+        "pixel_sha256": "3ec398944cc8e85c057f6c7028fecb012785090c228ea7d58505b57662d53e51",
+        "prompt_sha256": "082ccd1a17b4828df9f6436c98f65dcfb447b1d2959b4951202abf9808633e65"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "long-horizon_planning",
+        "source_id": "long-horizon_planning_0025",
+        "case_id": "rbench__long-horizon_planning_0025",
+        "task": "i2v",
+        "seeds": [
+          301213,
+          301214
+        ],
+        "image_sha256": "949bac83db08fa434eb1701d8bbbb06c8aca171523cc3518433b74692d44f089",
+        "pixel_sha256": "0dc6b34297443d5e730036a6d8966c0f0ad019aa9ad6ef8e7fb2a32bc556768b",
+        "prompt_sha256": "a786fa7256bdc0676f09854f3ee89cf4df8ad5eb7543469c3d5f41768e40d091"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "long-horizon_planning",
+        "source_id": "long-horizon_planning_0043",
+        "case_id": "rbench__long-horizon_planning_0043",
+        "task": "i2v",
+        "seeds": [
+          301215,
+          301216
+        ],
+        "image_sha256": "33ec84529a137353d8326b52c4d2a136a7c0dee777c630bd6826301863c8c081",
+        "pixel_sha256": "da861f59f590e5f86a48c81fb503e3faddbebd53772947e8f3bd58327c94937f",
+        "prompt_sha256": "14725cf03a0da381e9127a348e0800dcec7df795bf0955dbdae3f71b0f73dda5"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "multi-entity_collaboration",
+        "source_id": "multi-entity_collaboration_0039",
+        "case_id": "rbench__multi-entity_collaboration_0039",
+        "task": "i2v",
+        "seeds": [
+          301217,
+          301218
+        ],
+        "image_sha256": "80a26804d344c015ae1eb3f8e0aa959a3b9327498195d5df9632d8a92cec35e5",
+        "pixel_sha256": "01c98005cfe9d989e5a0b003da8437aabd9521853b2f785a267ea720bbddba58",
+        "prompt_sha256": "ab38e3d9824c4633f36ff48ad826647c77b0542c4965cbeb611b3f862963a23c"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "multi-entity_collaboration",
+        "source_id": "multi-entity_collaboration_0013",
+        "case_id": "rbench__multi-entity_collaboration_0013",
+        "task": "i2v",
+        "seeds": [
+          301219,
+          301220
+        ],
+        "image_sha256": "28a8fd85cdfabc7120e8a451aa60a984f3ab68b753871ec84a7656bf98aa2677",
+        "pixel_sha256": "246f36a81b87fe7d32659e794bcca2d278030d775ed9977414cf92a5178d2da3",
+        "prompt_sha256": "eed14ebf2952e945dd2777faf5c984b7bf5576c42bc2f4aca7062db027ba8760"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "multi-entity_collaboration",
+        "source_id": "multi-entity_collaboration_0042",
+        "case_id": "rbench__multi-entity_collaboration_0042",
+        "task": "i2v",
+        "seeds": [
+          301221,
+          301222
+        ],
+        "image_sha256": "77f19361195daac491a11886c2dc0c40152a3cc01caefbdd30c8d8afe64740db",
+        "pixel_sha256": "76efc58eef0c9a9c2adfead2d23e328efd771f1fd1f373353d8aa2073102e709",
+        "prompt_sha256": "67a1c9bf3656edd265cae0d34fcbe9750a056cafe0a94da5b0b86a19433462a7"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "multi-entity_collaboration",
+        "source_id": "multi-entity_collaboration_0038",
+        "case_id": "rbench__multi-entity_collaboration_0038",
+        "task": "i2v",
+        "seeds": [
+          301223,
+          301224
+        ],
+        "image_sha256": "6855d88a85c236f75d854f83a8ec618511d709de53cdb947876ec5adc2fe1812",
+        "pixel_sha256": "a7be99e7a91042873b4b5ff128099cbe172babd0b241f45fdbc34fe782979df3",
+        "prompt_sha256": "14a9695b3775fe515641c368fece490790e49b0df1bdece366933340998f44d3"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "quad",
+        "source_id": "quad_0019",
+        "case_id": "rbench__quad_0019",
+        "task": "i2v",
+        "seeds": [
+          301225,
+          301226
+        ],
+        "image_sha256": "02607c1618d1620c058483fd3ba975085326fe8d9a5e11cf03ccd1e9f539e617",
+        "pixel_sha256": "33bc9b63d044677460b2872bfba60b3d0158d8dc01fd895150aab4cf3e3a89fb",
+        "prompt_sha256": "1ac7531511a0232491c12bdc297447354731ae2ee2f57ca89546d611e2a0008a"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "quad",
+        "source_id": "quad_0065",
+        "case_id": "rbench__quad_0065",
+        "task": "i2v",
+        "seeds": [
+          301227,
+          301228
+        ],
+        "image_sha256": "5123c0fc6f2e3bbd72173799197999f3291820605d0e8b7d933de4b63b6b4948",
+        "pixel_sha256": "65951a57d70e91a541851ed2f507b78693b60b5f0d5aacb0c6a49c3bed5bb10f",
+        "prompt_sha256": "517ff746ddc7cab899bb23a2a5109f37a5c287ab2222d2167c77af53ee18168a"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "quad",
+        "source_id": "quad_0079",
+        "case_id": "rbench__quad_0079",
+        "task": "i2v",
+        "seeds": [
+          301229,
+          301230
+        ],
+        "image_sha256": "b1d63b91725c34c7aae96ccd7ecee5fe19a3798faf316c432a57df6942ec001f",
+        "pixel_sha256": "168916f61f70118aab3dbd44ba94e61c144022b7cffe85fb960dcbb640b94c20",
+        "prompt_sha256": "981da64f315147790bb64a5fcf88f1eee1fa25b4eb98ffb4b89e166a1009321a"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "quad",
+        "source_id": "quad_0072",
+        "case_id": "rbench__quad_0072",
+        "task": "i2v",
+        "seeds": [
+          301231,
+          301232
+        ],
+        "image_sha256": "739ee9dae1aa9796217c8d1bd735ed759c7f6a0df0954979c64a927388de85fd",
+        "pixel_sha256": "5aafad300b76b41307ef1e834541c2303687956a1ddde7bee0475304148d3adf",
+        "prompt_sha256": "e3382cc2544e288596ee55d66ea00d09cf0c1e19e857220ecb2da30ab8b4195e"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "single_arm",
+        "source_id": "single_arm_0017",
+        "case_id": "rbench__single_arm_0017",
+        "task": "i2v",
+        "seeds": [
+          301233,
+          301234
+        ],
+        "image_sha256": "4ea191428f3de81c9af96dee1794072b92e969c626732d2adfb0b7ca9e65097d",
+        "pixel_sha256": "b8406af4bc721c30ff67fd3fda07f9576190b789c687a4e3333909a72bb90c6a",
+        "prompt_sha256": "79b6b18b84b49c8a85f4723c3c2c3f754607ac403a1eb51d8cdc167708f2e34a"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "single_arm",
+        "source_id": "single_arm_0027",
+        "case_id": "rbench__single_arm_0027",
+        "task": "i2v",
+        "seeds": [
+          301235,
+          301236
+        ],
+        "image_sha256": "0ec66a97b97bf30d37778b5e25e6edd66e6df4f108cc6b7c6b7c07d9a966b014",
+        "pixel_sha256": "ca267af7a055fd630ccf67514413c1cd009c11868e30bda26f87a1e773284e16",
+        "prompt_sha256": "1a32913d9c4fa74ba728c6635c617ab13f03dcca8da3c0604ec9ad344fba58bf"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "single_arm",
+        "source_id": "single_arm_0048",
+        "case_id": "rbench__single_arm_0048",
+        "task": "i2v",
+        "seeds": [
+          301237,
+          301238
+        ],
+        "image_sha256": "2530c326fcc8bb30213b182550e24a40d63f096f5457a2d931bd856e9f2e706e",
+        "pixel_sha256": "55e6775f1bc4d712d5607dca23aae94280891a11b3b1bd8fd3aa9810b935e977",
+        "prompt_sha256": "e21329030e95ab8b95bfbcc222a968c54218fd1348a1e4506f0c8235bd7f4de3"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "single_arm",
+        "source_id": "single_arm_0025",
+        "case_id": "rbench__single_arm_0025",
+        "task": "i2v",
+        "seeds": [
+          301239,
+          301240
+        ],
+        "image_sha256": "167fce4273660c84c122460f53aa8198b027063121ca0c983746a3d2708bb98a",
+        "pixel_sha256": "756424080b837e567b50367112af0d8909950c1a5446f4dad0db67ebd3d13ebb",
+        "prompt_sha256": "d7a661d31e98b59d6c5d5edec3a6d9e562c59bd932c009b22a0b49d4bffcde37"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "spatial_relationship",
+        "source_id": "spatial_relationship_0019",
+        "case_id": "rbench__spatial_relationship_0019",
+        "task": "i2v",
+        "seeds": [
+          301241,
+          301242
+        ],
+        "image_sha256": "11d9e2393f635607452801d4aac231f76660f55fb124ec68dd7f76341fa8e408",
+        "pixel_sha256": "1bb4dea678cf3007d07cf779abb702f2a26f65b184e6de998160ac394ded6022",
+        "prompt_sha256": "2bf361229790435c796a54e9c9cd2ea7c1226904033be58f51b4a0bfdfc33891"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "spatial_relationship",
+        "source_id": "spatial_relationship_0025",
+        "case_id": "rbench__spatial_relationship_0025",
+        "task": "i2v",
+        "seeds": [
+          301243,
+          301244
+        ],
+        "image_sha256": "d5681a077113d014ba0abb712c60d806925a1b4183623b271a38df9e68352de6",
+        "pixel_sha256": "31cd417991f251387ce4cb9c667853b6a8038fd3d2a1bada4765d133a921609c",
+        "prompt_sha256": "a249988922a7bdeb9bbdb8778a3a2d396717300ce50ce9aed2b6b25196704ab5"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "spatial_relationship",
+        "source_id": "spatial_relationship_0044",
+        "case_id": "rbench__spatial_relationship_0044",
+        "task": "i2v",
+        "seeds": [
+          301245,
+          301246
+        ],
+        "image_sha256": "eac2cf02382ae9b4b29b8d964d9599628e878779557e4a445b2a3480b69610a6",
+        "pixel_sha256": "c732be36885cf0e7039b5ab6bbb9c2f956d1d1ce796bf3f21391efc38d3805b1",
+        "prompt_sha256": "7e8b6460074c45031b37d2e56527200acf5b91ef8805ea9f6b83427182bd5bb8"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "spatial_relationship",
+        "source_id": "spatial_relationship_0016",
+        "case_id": "rbench__spatial_relationship_0016",
+        "task": "i2v",
+        "seeds": [
+          301247,
+          301248
+        ],
+        "image_sha256": "559a3e1b0c12a48ee0003b334b85123c4b8f61a362c38a68f61afe0099d155a5",
+        "pixel_sha256": "4e612f4a66465bebe53babcce3f4ba56bd6df473646de9550234c08ff2f661d3",
+        "prompt_sha256": "5736357127149c8ad20d3aafff0beccb56dc65c786884f4f284482d002e87b30"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "visual_reasoning",
+        "source_id": "visual_reasoning_0032",
+        "case_id": "rbench__visual_reasoning_0032",
+        "task": "i2v",
+        "seeds": [
+          301249,
+          301250
+        ],
+        "image_sha256": "aabf4f581d67f9c390432b7e11c292a8b1e0ea6e206f8d5215b9d0d5912aa638",
+        "pixel_sha256": "4409508e095d3e4420cf1b895732a590391afdd376cec3d1b54008181b093cc9",
+        "prompt_sha256": "6afade382557e60ae0bb130c7ec59286520c13e08471323395ce5a1f90b08dad"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "visual_reasoning",
+        "source_id": "visual_reasoning_0040",
+        "case_id": "rbench__visual_reasoning_0040",
+        "task": "i2v",
+        "seeds": [
+          301251,
+          301252
+        ],
+        "image_sha256": "1de0d5f6020dd4167bdfd4b47270f42b58c562fc8c2f5b9285a27c01ea930f19",
+        "pixel_sha256": "78269ef40e0352d594e66a358cf518e29023c66dea58f8d80af57d7b31339e8e",
+        "prompt_sha256": "fc169121b92e2f31c0f12cd9efd72954da6372f1ddd0ee06fcc6b1392fa3bf52"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "visual_reasoning",
+        "source_id": "visual_reasoning_0048",
+        "case_id": "rbench__visual_reasoning_0048",
+        "task": "i2v",
+        "seeds": [
+          301253,
+          301254
+        ],
+        "image_sha256": "ec064529e8e39746121dfaa09ba1b6a03c88405b95a14a810fd704994c3a2c3b",
+        "pixel_sha256": "c9921042b840a95667f25498923f5b529b3a6181146ea8fa6ef62b1cffbf39c0",
+        "prompt_sha256": "96a668a07f559be94706369940734f122b20d4375d19aa80948981953ae4f386"
+      },
+      {
+        "benchmark": "rbench",
+        "category": "visual_reasoning",
+        "source_id": "visual_reasoning_0008",
+        "case_id": "rbench__visual_reasoning_0008",
+        "task": "i2v",
+        "seeds": [
+          301255,
+          301256
+        ],
+        "image_sha256": "5863f45fd16511c7d268f9062596c45edec20d6c8e71d4dac034a52b3d4db707",
+        "pixel_sha256": "f2c1249628fe6b729ad21b1fb607ba8bbe7ff71282f9af44b21190ce8ad50095",
+        "prompt_sha256": "b00135f49d20f0be9b9a2d9c91da78e5ca81bd6e4dc1835d3e69d43bcd48f923"
+      }
+    ]
+  },
+  "procedure": {
+    "training": false,
+    "gradients": false,
+    "reference": "same-input BF16 operator outputs from current full-M activations",
+    "steps": 35,
+    "phases": [
+      0,
+      7,
+      18,
+      28,
+      35
+    ],
+    "cfg_branches": 2,
+    "base_identity": "model-specific; no cross-model asset reuse"
+  },
+  "full_corpus_caveat": "Later full-corpus evaluation includes previous calibration/development/validation scenes."
+}

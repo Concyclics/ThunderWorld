@@ -1,0 +1,85 @@
+{
+  "complete": true,
+  "all_profiles_cpu_checks": [
+    "frozen per-module SHA256",
+    "weights_only tensor schema",
+    "exact cross-phase/CFG W1 support union",
+    "no hidden complete W1 plane",
+    "portable plan and model identity"
+  ],
+  "default_profile_generation_check": {
+    "complete": true,
+    "model": "edge",
+    "profile": "2x",
+    "case_id": "rbench__common_manipulation_0001",
+    "seed": 403017,
+    "comparisons": {
+      "video": {
+        "bitwise_equal": true,
+        "shape": [
+          61,
+          192,
+          320,
+          3
+        ],
+        "dtype": "float32",
+        "candidate_sha256": "03a6b0bbd7613307f4a65c7411fd4195dda791c4584d13b6140db36c4a6daacc",
+        "reference_sha256": "03a6b0bbd7613307f4a65c7411fd4195dda791c4584d13b6140db36c4a6daacc",
+        "reference_kind": "historical_original_float32_array_sha256; local_npz_was_cleaned"
+      }
+    },
+    "performance_eligible": false,
+    "scope": "Full 35-step I2V through distributed release loader versus frozen historical original float32 output"
+  },
+  "scope": "One full request tests the release loader; full-corpus quality is the previously completed frozen evaluation.",
+  "generation_checks": {
+    "2x": {
+      "complete": true,
+      "model": "edge",
+      "profile": "2x",
+      "case_id": "rbench__common_manipulation_0001",
+      "seed": 403017,
+      "comparisons": {
+        "video": {
+          "bitwise_equal": true,
+          "shape": [
+            61,
+            192,
+            320,
+            3
+          ],
+          "dtype": "float32",
+          "candidate_sha256": "03a6b0bbd7613307f4a65c7411fd4195dda791c4584d13b6140db36c4a6daacc",
+          "reference_sha256": "03a6b0bbd7613307f4a65c7411fd4195dda791c4584d13b6140db36c4a6daacc",
+          "reference_kind": "historical_original_float32_array_sha256; local_npz_was_cleaned"
+        }
+      },
+      "performance_eligible": false,
+      "scope": "Full 35-step I2V through distributed release loader versus frozen historical original float32 output"
+    },
+    "1.5x": {
+      "complete": true,
+      "model": "edge",
+      "profile": "1.5x",
+      "case_id": "rbench__common_manipulation_0001",
+      "seed": 403017,
+      "comparisons": {
+        "video": {
+          "bitwise_equal": true,
+          "shape": [
+            61,
+            192,
+            320,
+            3
+          ],
+          "dtype": "float32",
+          "candidate_sha256": "ec8ff17d40f97ed9ef216b376080bc7097538ed5b98900d70fc33d3b094d809f",
+          "reference_sha256": "ec8ff17d40f97ed9ef216b376080bc7097538ed5b98900d70fc33d3b094d809f",
+          "reference_kind": "historical_original_float32_array_sha256; local_npz_was_cleaned"
+        }
+      },
+      "performance_eligible": false,
+      "scope": "Full 35-step I2V through distributed release loader versus frozen historical original float32 output"
+    }
+  }
+}

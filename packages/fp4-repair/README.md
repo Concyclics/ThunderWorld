@@ -1,3 +1,5 @@
+> Install from the [repository root](../../README.md) for the public v0.3.0 release and pinned model launcher. The following kernel/API notes preserve the earlier development context.
+
 # ThunderWorld FP4 repair
 
 独立可安装的 SM120 推理组件：权重离线 W4，激活在线量化；FFN、attention core、attention projection 分开控制修复。所有 attention 边保留 dense FP4 基础计算，仅给选中的 block 增加残差乘积。无需训练。
@@ -8,7 +10,7 @@ pip install './packages/fp4-repair[cuda]'
 pytest packages/fp4-repair/tests -q
 ```
 
-开发验证环境：PyTorch 2.11.0+cu130、Triton 3.6.0、RTX PRO 6000 Blackwell (SM120)。其他架构主动报错，不静默切换成 BF16。配置模块不依赖 torch；运行内核需 CUDA extra。此包尚未接入整个 Cosmos pipeline 的默认推理入口，调用者需在对应 FFN/attention processor 使用下述接口。
+开发验证环境：PyTorch 2.11.0+cu130、Triton 3.6.0、RTX PRO 6000 Blackwell (SM120)。其他架构主动报错，不静默切换成 BF16。配置模块不依赖 torch；运行内核需 CUDA extra。0.2.0 新增可安装的 `tw-cosmos` 完整请求入口，联合 FFN/投影/attention Graph，默认关闭探针；使用说明和复测命令见 [联合推理文档](../../tools/joint_inference/README.md)。以下底层接口保持兼容。
 
 ## 三个独立配置
 
@@ -127,3 +129,19 @@ y = attention(q, k, v, step=step_index)
 - 有效输入须有限且幅度在 BF16/FP32 数值范围内。构造线性层时避免 `.to(dtype=...)` 转换 packed buffers 的 FP8 scale 类型，只移动设备。
 
 验证命令与结果见 [VALIDATION.md](VALIDATION.md)。
+
+### Experimental CUTLASS repair fusion (SM120)
+
+`tw-cosmos` accepts `--linear-backend cutlass-fused --cutlass-library PATH.so` and
+an optional `--cutlass-small-library N64.so`. Build N128/N64 binaries offline with
+`python -m thunderworld_fp4.cutlass.build --tile-n 128 --output PATH.so` (or64).
+The backend fuses dense FP4 and selected A/W repair into the same FP32 accumulator
+and writes BF16 once. It retains the existing FP4 attention implementation.
+Device-bound exclusive tuning compares only bitwise-equivalent tile candidates;
+shared calibration never tunes or contributes formal latency results.
+
+This backend changes accumulation order relative to Triton and remains
+experimental: complete development outputs show small quality changes, and the
+FP8 quality target has not passed. See the
+[CUTLASS report and 5090 handoff](../../experiments/cutlass_fused_repair/README.md)
+for source builds, verified offline weight reconstruction, measurements and limits.

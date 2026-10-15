@@ -27,7 +27,7 @@ def pack_qk(X, CODES, SCALES, FACTORS, M: tl.constexpr, H: tl.constexpr,
 
 @triton.jit
 def pack_v(X, CODES, SCALES, FACTORS, ENERGY, N:tl.constexpr,H:tl.constexpr,
-           SX:tl.constexpr,SH:tl.constexpr,NT:tl.constexpr,REPAIR:tl.constexpr,NEED_ENERGY:tl.constexpr):
+           SX:tl.constexpr,SH:tl.constexpr,NT:tl.constexpr,REPAIR:tl.constexpr,NEED_ENERGY:tl.constexpr,TRANSPOSE:tl.constexpr=False):
     di=tl.program_id(0)*16+tl.arange(0,16)
     nt=tl.program_id(1);h=tl.program_id(2)
     ni=nt*128+tl.arange(0,128)
@@ -37,6 +37,9 @@ def pack_v(X, CODES, SCALES, FACTORS, ENERGY, N:tl.constexpr,H:tl.constexpr,
     row=(h*NT+nt)*128+di
     idx=row[:,None]*64+tl.arange(0,64)[None,:]
     si=row[:,None]*8+tl.arange(0,8)[None,:]
+    if TRANSPOSE:
+        idx=(h*NT+nt)*128*64+tl.arange(0,64)[None,:]*128+di[:,None]
+        si=(h*NT+nt)*128*8+tl.arange(0,8)[None,:]*128+di[:,None]
     tl.store(CODES+idx,p);tl.store(SCALES+si,s)
     if REPAIR:
         tl.store(CODES+H*NT*128*64+idx,rp)
@@ -48,14 +51,14 @@ def pack_v(X, CODES, SCALES, FACTORS, ENERGY, N:tl.constexpr,H:tl.constexpr,
 def streaming_attention(QC,QS,QF,KC,KS,KF,VC,VS,VF,FLAGS,O,STATS,
                      M:tl.constexpr,N:tl.constexpr,HQ:tl.constexpr,HK:tl.constexpr,
                      MP:tl.constexpr,NP:tl.constexpr,
-                     BM:tl.constexpr,BN:tl.constexpr,REPAIR:tl.constexpr,FULL:tl.constexpr,TERMS:tl.constexpr,SPLITS:tl.constexpr,LAZY_P:tl.constexpr,FAST_P:tl.constexpr=False):
+                     BM:tl.constexpr,BN:tl.constexpr,REPAIR:tl.constexpr,FULL:tl.constexpr,TERMS:tl.constexpr,SPLITS:tl.constexpr,LAZY_P:tl.constexpr,FAST_P:tl.constexpr=False,TRANSPOSE_V:tl.constexpr=False,RELOAD_Q:tl.constexpr=False,PVFLAGS=None,SEPARATE:tl.constexpr=False,PV_REPAIR:tl.constexpr=False,PV_FULL:tl.constexpr=False,PV_TERMS:tl.constexpr=3):
     mi=tl.program_id(0)*BM+tl.arange(0,BM);h=tl.program_id(1);kh=h//(HQ//HK)
     dd=tl.arange(0,128);dk=tl.arange(0,64);ds=tl.arange(0,8)
     qi=(h*MP+mi[:,None])*64+dk[None,:]
     qsi=(h*MP+mi[:,None])*8+ds[None,:]
     q0=tl.load(QC+qi,mi[:,None]<MP,0);qs=tl.load(QS+qsi,mi[:,None]<MP,0.0)
     qf=tl.load(QF+h*MP+mi,mi<MP,0)
-    if REPAIR:
+    if REPAIR and not RELOAD_Q:
         q1=tl.load(QC+HQ*MP*64+qi,mi[:,None]<MP,0)
         qr=tl.load(QS+HQ*MP*8+qsi,mi[:,None]<MP,0.0)
     acc=tl.full((BM,128),0,tl.float32)
@@ -71,6 +74,9 @@ def streaming_attention(QC,QS,QF,KC,KS,KF,VC,VS,VF,FLAGS,O,STATS,
             if FULL:selected=True
             else:selected=tl.load(FLAGS+(h*tl.cdiv(M,128)+tl.program_id(0)*BM//128)*tl.cdiv(N,128)+start*BN//128)>1
             if selected:
+                if RELOAD_Q:
+                    q1=tl.load(QC+HQ*MP*64+qi,mi[:,None]<MP,0)
+                    qr=tl.load(QS+HQ*MP*8+qsi,mi[:,None]<MP,0.0)
                 score=tl.dot_scaled(q1,qr,'e2m1',k0.T,ks,'e2m1',score)
                 if TERMS>=3:
                     k1=tl.load(KC+HK*NP*64+ki);kr=tl.load(KS+HK*NP*8+ksi)
@@ -80,25 +86,34 @@ def streaming_attention(QC,QS,QF,KC,KS,KF,VC,VS,VF,FLAGS,O,STATS,
         score=tl.where(ni[None,:]<N,score,-float('inf'))
         nm=tl.maximum(mx,tl.max(score,1));alpha=tl.exp(mx-nm)
         p=tl.exp(score-nm[:,None]);denom=denom*alpha+tl.sum(p,1)
-        if REPAIR and LAZY_P and not FULL:
-            if selected:
+        if SEPARATE:
+            if PV_FULL:pv_selected=True
+            elif PV_REPAIR:pv_selected=tl.load(PVFLAGS+(h*tl.cdiv(M,128)+tl.program_id(0)*BM//128)*tl.cdiv(N,128)+start*BN//128)>1
+            else:pv_selected=False
+        elif REPAIR:pv_selected=selected
+        else:pv_selected=False
+        if (PV_REPAIR if SEPARATE else REPAIR) and LAZY_P and not (PV_FULL if SEPARATE else FULL):
+            if pv_selected:
                 p0,ps,p1,pr,pf=quantize_p(p,BM,BN,True,FAST_P)
             else:
                 p0,ps,p1,pr,pf=quantize_p(p,BM,BN,False,FAST_P)
         else:
-            p0,ps,p1,pr,pf=quantize_p(p,BM,BN,REPAIR,FAST_P)
+            p0,ps,p1,pr,pf=quantize_p(p,BM,BN,PV_REPAIR if SEPARATE else REPAIR,FAST_P)
         vi=((kh*tl.cdiv(N,128)+start*BN//128)*128+dd[:,None])*64+(start*BN%128)//2+tl.arange(0,BN//2)[None,:]
         vsi=((kh*tl.cdiv(N,128)+start*BN//128)*128+dd[:,None])*8+(start*BN%128)//16+tl.arange(0,BN//16)[None,:]
+        if TRANSPOSE_V:
+            vi=(kh*tl.cdiv(N,128)+start*BN//128)*128*64+((start*BN%128)//2+tl.arange(0,BN//2)[None,:])*128+dd[:,None]
+            vsi=(kh*tl.cdiv(N,128)+start*BN//128)*128*8+((start*BN%128)//16+tl.arange(0,BN//16)[None,:])*128+dd[:,None]
         v0=tl.load(VC+vi);vs=tl.load(VS+vsi)
         vf=tl.load(VF+(kh*tl.cdiv(N,128)+start*BN//128)*128+dd)
         tile=tl.dot_scaled(p0,ps,'e2m1',v0.T,vs,'e2m1')
-        if REPAIR:
-            if selected:
+        if PV_REPAIR if SEPARATE else REPAIR:
+            if pv_selected:
                 tile=tl.dot_scaled(p1,pr,'e2m1',v0.T,vs,'e2m1',tile)
-                if TERMS>=3:
+                if (PV_TERMS if SEPARATE else TERMS)>=3:
                     v1=tl.load(VC+HK*NP*64+vi);vr=tl.load(VS+HK*NP*8+vsi)
                     tile=tl.dot_scaled(p0,ps,'e2m1',v1.T,vr,'e2m1',tile)
-                    if TERMS==4:tile=tl.dot_scaled(p1,pr,'e2m1',v1.T,vr,'e2m1',tile)
+                    if (PV_TERMS if SEPARATE else TERMS)==4:tile=tl.dot_scaled(p1,pr,'e2m1',v1.T,vr,'e2m1',tile)
         acc=acc*alpha[:,None]+tile*pf[:,None]*vf[None,:];mx=nm
     if SPLITS==1:
         tl.store(O+(mi[:,None]*HQ+h)*128+dd[None,:],acc/denom[:,None],mi[:,None]<M)
@@ -131,7 +146,7 @@ def combine(PARTS,STATS,OUT,M:tl.constexpr,H:tl.constexpr,SPLITS:tl.constexpr,BS
     tl.store(OUT+(r[:,None]*H+h)*128+di[None,:],accum/total[:,None],r[:,None]<M)
 
 
-def pack_inputs(q,k,v,repair=True,need_energy=False,terms=3):
+def pack_inputs(q,k,v,repair=True,need_energy=False,terms=3,transpose_v=False,defer_residual=False):
     import torch
     m,n,h,hk=q.shape[1],k.shape[1],q.shape[2],k.shape[2]
     mp=triton.cdiv(m,16)*16;np=triton.cdiv(n,128)*128;planes=2 if repair else 1
@@ -143,9 +158,9 @@ def pack_inputs(q,k,v,repair=True,need_energy=False,terms=3):
         scales=torch.empty((planes,hh*padded,8),device=q.device,dtype=torch.float8_e4m3fn)
         factors=torch.empty((hh*padded,),device=q.device,dtype=torch.float32)
         if kind=='v':
-            pack_v[(8,np//128,hh)](x,codes,scales,factors,energy,nn,hh,x.stride(1),x.stride(2),np//128,local_repair,need_energy,num_warps=4)
+            pack_v[(8,np//128,hh)](x,codes,scales,factors,energy,nn,hh,x.stride(1),x.stride(2),np//128,local_repair and not defer_residual,need_energy,transpose_v,num_warps=4)
         else:
-            pack_qk[(triton.cdiv(padded,16),hh)](x,codes,scales,factors,nn,hh,x.stride(1),x.stride(2),padded,local_repair,num_warps=4)
+            pack_qk[(triton.cdiv(padded,16),hh)](x,codes,scales,factors,nn,hh,x.stride(1),x.stride(2),padded,local_repair and not defer_residual,num_warps=4)
         outputs.extend([codes,scales,factors])
     return (outputs,mp,np,energy) if need_energy else (outputs,mp,np)
 
@@ -176,7 +191,7 @@ def select_tiles(Q,K,ENERGY,FLAGS,M:tl.constexpr,N:tl.constexpr,HQ:tl.constexpr,
 @triton.jit
 def select_tiles_head(Q,K,ENERGY,FLAGS,M:tl.constexpr,N:tl.constexpr,HQ:tl.constexpr,HK:tl.constexpr,
                  Q_S:tl.constexpr,Q_H:tl.constexpr,K_S:tl.constexpr,K_H:tl.constexpr,
-                 COUNTS,TERMS:tl.constexpr,BT:tl.constexpr):
+                 COUNTS,TERMS:tl.constexpr,BT:tl.constexpr,PVFLAGS=None,PVCOUNTS=None,SEPARATE:tl.constexpr=False,PVTERMS:tl.constexpr=3):
     h=tl.program_id(0);mt=tl.program_id(1);kh=h//(HQ//HK)
     COUNT=tl.load(COUNTS+h)
     # Sixteen MMA rows duplicate the eight fixed query samples.
@@ -195,3 +210,6 @@ def select_tiles_head(Q,K,ENERGY,FLAGS,M:tl.constexpr,N:tl.constexpr,HQ:tl.const
     # Rank the small number of key tiles; deterministic lower-index tie break.
     rank=tl.sum(((score[None,:]>score[:,None])|((score[None,:]==score[:,None])&(ti[None,:]<ti[:,None]))).to(tl.int32),1)
     tl.store(FLAGS+(h*tl.cdiv(M,128)+mt)*nt+ti,tl.where(rank<COUNT,TERMS,1),ti<nt)
+    if SEPARATE:
+        pv_count=tl.load(PVCOUNTS+h)
+        tl.store(PVFLAGS+(h*tl.cdiv(M,128)+mt)*nt+ti,tl.where(rank<pv_count,PVTERMS,1),ti<nt)

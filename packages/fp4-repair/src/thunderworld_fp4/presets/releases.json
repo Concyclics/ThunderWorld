@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "collection": "https://huggingface.co/collections/Concyclics/thunderworld-cosmos3-fp4",
+  "paper": "https://www.preprints.org/manuscript/202610.0689",
+  "models": {
+    "edge": {
+      "complete": true,
+      "public": true,
+      "repo_id": "Concyclics/Cosmos3-Edge-ThunderWorldFP4",
+      "url": "https://huggingface.co/Concyclics/Cosmos3-Edge-ThunderWorldFP4",
+      "revision": "25b48e8671186dd42255d32a03db647a0619597c",
+      "files_verified": 407,
+      "bytes": 1709497678,
+      "profiles": [
+        "2x",
+        "1.5x"
+      ],
+      "generation_bitwise_checks": {
+        "2x": true,
+        "1.5x": true
+      },
+      "base_required": {
+        "repo_id": "nvidia/Cosmos3-Edge",
+        "revision": "a9d944e2c6a1bf9f48b92ad16348e70c5f1836ba",
+        "identity": {
+          "transformer/config.json": "8c3c0945e7e66b2f59cbac80aace9db04edb4230fa0931bf64d4c12f51cbc81f",
+          "transformer/diffusion_pytorch_model.safetensors.index.json": "13a947ce2f9e546fe5aee7e2303aa3e6f1bbf08ff7a44a61d959ee094d01f2dc"
+        }
+      },
+      "paper": "https://www.preprints.org/manuscript/202610.0689"
+    },
+    "nano": {
+      "complete": true,
+      "public": true,
+      "repo_id": "Concyclics/Cosmos3-Nano-ThunderWorldFP4",
+      "url": "https://huggingface.co/Concyclics/Cosmos3-Nano-ThunderWorldFP4",
+      "revision": "4ba1469c314b679d455798abd0d1c63e476e5c22",
+      "files_verified": 575,
+      "bytes": 8632319790,
+      "profiles": [
+        "2x",
+        "1.5x"
+      ],
+      "generation_bitwise_checks": {
+        "2x": true,
+        "1.5x": true
+      },
+      "base_required": {
+        "repo_id": "nvidia/Cosmos3-Nano",
+        "revision": "411f42a8fdfb8c5b2583cb8786e0938f49796eaa",
+        "identity": {
+          "transformer/config.json": "282862cf9c42a257dbd2f00e41b5ef65c3aacfb693ad1f8ab28b05a02e1b9ffe",
+          "transformer/diffusion_pytorch_model.safetensors.index.json": "e664881df3452d3aadbc7fd36075871077397dfa21ab8b8818143fab99fb9cb0"
+        }
+      },
+      "paper": "https://www.preprints.org/manuscript/202610.0689"
+    },
+    "super": {
+      "complete": true,
+      "public": true,
+      "repo_id": "Concyclics/Cosmos3-Super-ThunderWorldFP4",
+      "url": "https://huggingface.co/Concyclics/Cosmos3-Super-ThunderWorldFP4",
+      "revision": "495c35e6007585e782a029790aade157a050e216",
+      "files_verified": 967,
+      "bytes": 38742313412,
+      "profiles": [
+        "2x",
+        "1.5x"
+      ],
+      "generation_bitwise_checks": {
+        "2x": true,
+        "1.5x": true
+      },
+      "base_required": {
+        "repo_id": "nvidia/Cosmos3-Super",
+        "revision": "f543c56225b2e04d0ad141e29655be3a45d9c455",
+        "identity": {
+          "transformer/config.json": "7d4ade2f8cc05e8b2b505a0ed6260e8a0fb1027c5ee49bc9f0c854e895af682b",
+          "transformer/diffusion_pytorch_model.safetensors.index.json": "dc0e23cc88dd61e88c8a4a078939da43ccd2bd9f4b5f4f29e79b12dfff99fb1e"
+        }
+      },
+      "paper": "https://www.preprints.org/manuscript/202610.0689"
+    }
+  }
+}

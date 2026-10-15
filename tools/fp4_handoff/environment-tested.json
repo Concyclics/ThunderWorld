@@ -1,0 +1,18 @@
+{
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition (SM120)",
+  "torch": "2.11.0+cu130",
+  "triton": "3.6.0",
+  "vllm": "0.25.1",
+  "diffusers_commit": "77c13f8a49c457f10a89862bb129bdc930b88929",
+  "transformers": "5.14.0",
+  "accelerate": "1.14.0",
+  "safetensors": "0.8.0",
+  "numpy": "2.3.5",
+  "Pillow": "12.3.0",
+  "av": "18.1.0",
+  "protobuf": "7.35.1",
+  "pytest": "9.1.1",
+  "lpips": "0.1.4",
+  "scipy": "1.18.1",
+  "scikit-image": "0.26.0"
+}

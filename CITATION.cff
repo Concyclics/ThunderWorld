@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use ThunderWorld, please cite the preprint."
+title: "ThunderWorld: Efficient World Model Generation with Selective FP4 Refinement via Native GEMMs"
+type: software
+version: 0.3.0
+date-released: 2026-10-15
+license: Apache-2.0
+url: "https://github.com/Concyclics/ThunderWorld"
+authors:
+  - {family-names: Chen, given-names: Han}
+  - {family-names: Chen, given-names: Xi}
+  - {family-names: Xu, given-names: Borui}
+  - {family-names: Pang, given-names: Zixi}
+  - {family-names: Pei, given-names: Wenqi}
+  - {family-names: Yu, given-names: Feng}
+  - {family-names: He, given-names: Bingsheng}
+  - {family-names: Wu, given-names: Ming}
+  - {family-names: Zeng, given-names: Jason}
+  - {family-names: Heinrich, given-names: Michael}
+  - {family-names: Yan, given-names: Jiahao}
+preferred-citation:
+  type: article
+  title: "ThunderWorld: Efficient World Model Generation with Selective FP4 Refinement via Native GEMMs"
+  authors:
+    - {family-names: Chen, given-names: Han}
+    - {family-names: Chen, given-names: Xi}
+    - {family-names: Xu, given-names: Borui}
+    - {family-names: Pang, given-names: Zixi}
+    - {family-names: Pei, given-names: Wenqi}
+    - {family-names: Yu, given-names: Feng}
+    - {family-names: He, given-names: Bingsheng}
+    - {family-names: Wu, given-names: Ming}
+    - {family-names: Zeng, given-names: Jason}
+    - {family-names: Heinrich, given-names: Michael}
+    - {family-names: Yan, given-names: Jiahao}
+  year: 2026
+  doi: 10.20944/preprints202610.0689.v1
+  journal: Preprints.org
+  url: "https://www.preprints.org/manuscript/202610.0689"

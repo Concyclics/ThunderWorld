@@ -6,3 +6,15 @@ __pycache__/
 dist/
 build/
 *.log
+work/
+outputs/
+checkpoints/
+third_party/
+.env
+.env.*
+*.egg-info/
+*.so
+*.pt
+*.safetensors
+*.npz
+*.mp4

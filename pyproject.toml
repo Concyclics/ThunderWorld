@@ -1,8 +1,41 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "thunderworld-evidence"
-version = "0.1.0"
-description = "Audited evidence snapshot for ThunderWorld sparse attention research"
+name = "thunderworld-fp4"
+version = "0.3.0"
+description = "Selective native FP4 refinement for Cosmos3 world-model generation"
+readme = "README.md"
 requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+
+[project.optional-dependencies]
+hub = ["huggingface-hub>=1.0"]
+cuda = ["torch>=2.11,<2.12", "triton>=3.6,<3.7; platform_system == 'Linux'"]
+cosmos = ["diffusers>=0.41.0.dev0", "transformers>=5", "accelerate", "safetensors", "numpy", "pillow", "sentencepiece", "protobuf", "av", "imageio", "imageio-ffmpeg"]
+evaluation = ["lpips", "scikit-image", "scipy"]
+test = ["pytest>=8"]
+
+[project.scripts]
+tw-infer = "thunderworld_fp4.hub:main"
+tw-cosmos = "thunderworld_fp4.cosmos.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Concyclics/ThunderWorld"
+Paper = "https://www.preprints.org/manuscript/202610.0689"
+Models = "https://huggingface.co/collections/Concyclics/thunderworld-cosmos3-fp4"
+
+[tool.setuptools.packages.find]
+where = ["packages/fp4-repair/src"]
+
+[tool.setuptools.package-data]
+thunderworld_fp4 = ["presets/*.json", "cutlass/*.cu", "cutlass/*.cuh"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/public", "packages/fp4-repair/tests"]
+markers = ["cuda: requires an explicitly selected SM120 GPU"]
 
 [tool.ruff]
 line-length = 100

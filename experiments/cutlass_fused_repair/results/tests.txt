@@ -1,0 +1,11 @@
+{'device': 0, 'free_mib': 97291, 'minimum_mib': 12288, 'resource_mode': 'shared-calibration', 'performance_eligible': False}
+........................................................................ [ 41%]
+........................................................................ [ 83%]
+.............................                                            [100%]
+=============================== warnings summary ===============================
+../../../../tmp/thunderworld-joint-runtime/packages/fp4-repair/tests/test_cuda.py:6
+  /tmp/thunderworld-joint-runtime/packages/fp4-repair/tests/test_cuda.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.cuda - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark=[pytest.mark.cuda,pytest.mark.skipif(not torch.cuda.is_available(),reason='requires SM120 CUDA')]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+173 passed, 1 warning in 6.35s

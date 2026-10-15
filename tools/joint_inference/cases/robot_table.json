@@ -1,0 +1,6 @@
+{
+  "id": "robot_table",
+  "task": "i2v",
+  "prompt": "The robot arm picks up a small object from the table and places it beside the other objects. A stationary camera records the movement.",
+  "image": "../../../data_local/finding_inputs/robot_table.png"
+}

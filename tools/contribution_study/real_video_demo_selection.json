@@ -1,0 +1,109 @@
+{
+  "frozen": true,
+  "salt": "nested-fp4-real-video-ten-demo-v1",
+  "selection": "Lowest SHA256(salt/file_name) within each fixed 200-video source block, before any generation or scoring",
+  "cases": [
+    {
+      "category": "robotics",
+      "file_name": "task_0054.mp4",
+      "video": "videos/task_0054.mp4",
+      "blur": "blur/task_0054.mp4",
+      "canny": "canny/task_0054.mp4",
+      "depth": "depth_vids/task_0054.mp4",
+      "sam2": "sam2_vids/task_0054.mp4",
+      "caption_text": "The video showcases robotic arms in action within a kitchen environment. The scene unfolds over a wooden countertop with a mosaic tile backsplash. Two robotic arms flank the sink; each equipped with a gripping tool. The left arm holds a blue lid; while the right arm maneuvers a glass pitcher. The pitcher is placed under a faucet; indicating a task related to filling or rinsing. On the counter; there is a red container with a pump; likely a soap dispenser; and a yellow sponge near the faucet. The robotic arms move with precision; with the left arm keeping the lid steady as the right arm adjusts the pitcher. The camera remains fixed; capturing the interaction between the robotic arms and the sink objects. The lighting is soft; accentuating the glass surfaces and the colorful tiles in the background. The video serves as a demonstration of robotic precision and automation in a home setting; highlighting the potential for robots to assist with daily tasks like cleaning or preparing items in a kitchen."
+    },
+    {
+      "category": "robotics",
+      "file_name": "task_0194.mp4",
+      "video": "videos/task_0194.mp4",
+      "blur": "blur/task_0194.mp4",
+      "canny": "canny/task_0194.mp4",
+      "depth": "depth_vids/task_0194.mp4",
+      "sam2": "sam2_vids/task_0194.mp4",
+      "caption_text": "The video showcases robotic arms in action within a tech lab; featuring a polished; white floor and a red mat with a dolphin design. On the mat; there's a black bowl filled with a granular substance; possibly sugar; and a silver electric mixer beside it. A small glass jar; likely a measuring cup; is also visible. Two robotic arms flank the mat; each with a claw-like gripper. These arms are silver; crafted for precise handling."
+    },
+    {
+      "category": "robotics",
+      "file_name": "task_0133.mp4",
+      "video": "videos/task_0133.mp4",
+      "blur": "blur/task_0133.mp4",
+      "canny": "canny/task_0133.mp4",
+      "depth": "depth_vids/task_0133.mp4",
+      "sam2": "sam2_vids/task_0133.mp4",
+      "caption_text": "The video showcases robotic arms managing glass jars in a dimly lit workshop with a wooden table surface. Initially; a robotic arm with a sleek silver and blue design grips a glass jar with a metal lid. The jar is lifted from a wooden crate containing several similar jars arranged neatly. The gripper holds the jar securely by its neck. Another robotic arm is visible on the right; ready to assist. The camera remains static; focusing on the interaction between the robotic arms and the jars."
+    },
+    {
+      "category": "robotics",
+      "file_name": "task_0062.mp4",
+      "video": "videos/task_0062.mp4",
+      "blur": "blur/task_0062.mp4",
+      "canny": "canny/task_0062.mp4",
+      "depth": "depth_vids/task_0062.mp4",
+      "sam2": "sam2_vids/task_0062.mp4",
+      "caption_text": "The video showcases a robotic system interacting with packaged food items in a dimly lit storage area. The scene features a box on a wooden table; filled with food packages in vibrant green and blue packaging. The robotic arms; with sleek silver grippers; move with precision to handle the items."
+    },
+    {
+      "category": "driving",
+      "file_name": "task_0259.mp4",
+      "video": "videos/task_0259.mp4",
+      "blur": "blur/task_0259.mp4",
+      "canny": "canny/task_0259.mp4",
+      "depth": "depth_vids/task_0259.mp4",
+      "sam2": "sam2_vids/task_0259.mp4",
+      "caption_text": "The video shows a street scene from a moving vehicle; likely a car; navigating through a narrow urban street lined with trees and buildings. The camera is fixed; offering a steady view of the road ahead. The street is lively; with several parked cars on both sides; including a blue car and a silver car; as well as a yellow vehicle moving ahead of the camera. Pedestrians are visible on the sidewalks; some walking in pairs; while others linger near the buildings. The buildings are multi-story; with some featuring murals on their walls; enhancing the urban vibe. The street is lined with trees; their branches arching over the road; forming a canopy. Overhead; numerous power lines crisscross the street; adding to the urban feel. The lighting suggests it is midday; with a bright glow illuminating the scene. Traffic signs are visible; including a speed limit sign; indicating the regulated nature of the street. The video captures the essence of a typical day in a bustling city neighborhood; with the constant movement of vehicles and people creating a dynamic and vibrant environment."
+    },
+    {
+      "category": "driving",
+      "file_name": "task_0309.mp4",
+      "video": "videos/task_0309.mp4",
+      "blur": "blur/task_0309.mp4",
+      "canny": "canny/task_0309.mp4",
+      "depth": "depth_vids/task_0309.mp4",
+      "sam2": "sam2_vids/task_0309.mp4",
+      "caption_text": "A scenic drive unfolds along a winding mountain road; showcasing a picturesque landscape. The video captures a motorcyclist riding smoothly along the road; which curves gently through a mountainous terrain. The road is bordered by rocky cliffs on one side and a variety of trees on the other; including tall pines and dense foliage; creating a lush; green environment. The sky is clear with a bright blue hue; adding a vibrant backdrop to the scene. The camera follows the motorcyclist from behind; maintaining a steady; forward-facing view that tracks the rider's movement along the road. The motorcyclist is wearing a red helmet and a matching jacket; providing a vivid contrast against the natural surroundings. The road is well-paved and slightly elevated; winding through the landscape with gentle inclines and declines. The surrounding mountains are rugged and rocky; with peaks visible in the distance; enhancing the sense of adventure and exploration. Throughout the video; the camera remains fixed; providing a continuous; uninterrupted view of the journey. The absence of other vehicles on the road emphasizes the solitude and tranquility of the ride; allowing the viewer to fully immerse in the serene and captivating scenery."
+    },
+    {
+      "category": "driving",
+      "file_name": "task_0357.mp4",
+      "video": "videos/task_0357.mp4",
+      "blur": "blur/task_0357.mp4",
+      "canny": "canny/task_0357.mp4",
+      "depth": "depth_vids/task_0357.mp4",
+      "sam2": "sam2_vids/task_0357.mp4",
+      "caption_text": "A nighttime urban scene unfolds at a busy intersection; characterized by a vibrant city atmosphere. The video captures a wide view of the intersection; with multiple lanes of traffic moving in various directions. The street is illuminated by vintage-style street lamps; casting a warm glow over the area. The traffic lights are prominently displayed; showing red signals; indicating that vehicles are either stopping or preparing to stop. Cars of various makes and models; predominantly in shades of white; black; and silver; are seen moving through the intersection; some turning while others proceed straight. The vehicles maintain a steady pace; reflecting typical city traffic flow."
+    },
+    {
+      "category": "egocentric",
+      "file_name": "task_0403.mp4",
+      "video": "videos/task_0403.mp4",
+      "blur": "blur/task_0403.mp4",
+      "canny": "canny/task_0403.mp4",
+      "depth": "depth_vids/task_0403.mp4",
+      "sam2": "sam2_vids/task_0403.mp4",
+      "caption_text": "The video is set in a workshop environment; featuring two individuals engaged in different activities. The workshop is well-equipped; with various tools and equipment visible throughout the space. On the left side; a man in a plaid shirt and overalls is actively working on a project. He is standing on a wooden mat; handling a bicycle wheel placed on a workbench. His actions suggest he is either repairing or assembling the wheel; as he uses tools and occasionally examines the wheel closely. The man is focused and methodical in his movements; indicating a level of expertise in his task."
+    },
+    {
+      "category": "egocentric",
+      "file_name": "task_0549.mp4",
+      "video": "videos/task_0549.mp4",
+      "blur": "blur/task_0549.mp4",
+      "canny": "canny/task_0549.mp4",
+      "depth": "depth_vids/task_0549.mp4",
+      "sam2": "sam2_vids/task_0549.mp4",
+      "caption_text": "A bouldering gym scene unfolds; showcasing a climber engaging with a vibrant indoor climbing wall. The wall is covered with an array of colorful holds in various shapes and sizes; including spherical; triangular; and irregular forms; painted in pastel hues like pink; teal; mint; orange; and lavender. The climbing wall is set at an angle; creating a challenging overhang for the climber. The gym environment is spacious; with high ceilings and soft ambient lighting; and the floor is padded with thick gray mats for safety."
+    },
+    {
+      "category": "egocentric",
+      "file_name": "task_0512.mp4",
+      "video": "videos/task_0512.mp4",
+      "blur": "blur/task_0512.mp4",
+      "canny": "canny/task_0512.mp4",
+      "depth": "depth_vids/task_0512.mp4",
+      "sam2": "sam2_vids/task_0512.mp4",
+      "caption_text": "A bouldering gym scene unfolds with a focus on a climber attempting a challenging route on an indoor climbing wall. The wall is steeply overhung; covered with a variety of pastel-colored holds in different shapes and sizes; including large volumes and small crimps. The climber; dressed in a black outfit; begins at the bottom of the wall; crouched down and preparing to start the climb. As the video progresses; the climber moves upwards; using a combination of strength and technique to navigate the holds. The climber's movements are deliberate and calculated; showcasing a mix of dynamic and static climbing techniques. The background features a high ceiling with visible wooden beams and soft ambient lighting; creating a warm atmosphere. Black curtains are draped to the right; possibly sectioning off different areas of the gym. Another person is visible in the background; sitting on the floor; possibly resting or observing the climber. The camera remains static throughout; providing a clear and uninterrupted view of the climbing action. The climber's progress is steady; with moments of pause to assess the next move; demonstrating focus and determination. The video captures the essence of indoor climbing; highlighting the physical and mental challenges involved in the sport."
+    }
+  ],
+  "source_repo": "shi-labs/physical-ai-bench-conditional-generation",
+  "source_revision": "3357122d526dfdb7beaa97ccea138694c0cff9b7"
+}

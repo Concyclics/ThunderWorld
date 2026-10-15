@@ -1,0 +1,6 @@
+{
+  "id": "av_waterfall",
+  "task": "av",
+  "prompt": "A waterfall flows over rocks in a forest, with synchronized rushing water and splashing sounds. The camera remains steady.",
+  "split": "development"
+}

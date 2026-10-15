@@ -1,0 +1,198 @@
+{
+  "scope": "Two development seeds only; not a FP8 quality gate or latency Pareto claim",
+  "seeds": [
+    7103,
+    7104
+  ],
+  "quality": {
+    "cutlass_b125": {
+      "relative_l2": 0.2963776178757387,
+      "rmse": 0.15977676217744863,
+      "ssim_mean": 0.6473500430583954,
+      "lpips": 0.18946450157854403
+    },
+    "cutlass_b150": {
+      "relative_l2": 0.2739151806712016,
+      "rmse": 0.14764373758462207,
+      "ssim_mean": 0.715905100107193,
+      "lpips": 0.16731323758292882
+    },
+    "fp8": {
+      "relative_l2": 0.23181265498186837,
+      "rmse": 0.12455691203710345,
+      "ssim_mean": 0.8149261474609375,
+      "lpips": 0.12062637402187483
+    },
+    "triton_b125": {
+      "relative_l2": 0.29461394125289075,
+      "rmse": 0.15891957243410718,
+      "ssim_mean": 0.6554388701915741,
+      "lpips": 0.18465854294720244
+    },
+    "triton_b150": {
+      "relative_l2": 0.2664580225217522,
+      "rmse": 0.14358872207008394,
+      "ssim_mean": 0.7139523923397064,
+      "lpips": 0.16595298879337117
+    }
+  },
+  "operators": {
+    "n128_i2v_b125": {
+      "rows": 16,
+      "ratio_range": [
+        0.960664864192135,
+        1.69970054475781
+      ],
+      "complete": true,
+      "performance_eligible": false
+    },
+    "n128_i2v_b150": {
+      "rows": 16,
+      "ratio_range": [
+        0.9027086305175204,
+        1.698238624585127
+      ],
+      "complete": true,
+      "performance_eligible": false
+    },
+    "n64_i2v_b125": {
+      "rows": 16,
+      "ratio_range": [
+        1.0520418712450033,
+        1.3340335754044566
+      ],
+      "complete": true,
+      "performance_eligible": false
+    },
+    "n64_policy_b125": {
+      "rows": 16,
+      "ratio_range": [
+        1.0782734793153805,
+        2.3896433916244306
+      ],
+      "complete": true,
+      "performance_eligible": false
+    }
+  },
+  "full_requests": {
+    "125": {
+      "complete": true,
+      "rows": [
+        {
+          "seed": 7103,
+          "bitwise_with_n128": true,
+          "ratio": 1.2499959947747215,
+          "feasible": true,
+          "wall_seconds": 2.165042786975391,
+          "performance_eligible": false
+        },
+        {
+          "seed": 7104,
+          "bitwise_with_n128": true,
+          "ratio": 1.2499959947747215,
+          "feasible": true,
+          "wall_seconds": 2.1367142678936943,
+          "performance_eligible": false
+        }
+      ],
+      "prepared_weight_bytes": 973334736,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5357096448,
+          "reserved_bytes": 8197767168
+        },
+        "after_warmup": {
+          "allocated_bytes": 6418720256,
+          "reserved_bytes": 7436500992,
+          "peak_allocated_bytes": 7041693184,
+          "peak_reserved_bytes": 9124708352
+        }
+      },
+      "output_shapes": [
+        [
+          128,
+          64,
+          128
+        ],
+        [
+          128,
+          64,
+          128
+        ],
+        [
+          128,
+          64,
+          128
+        ],
+        [
+          128,
+          64,
+          128
+        ]
+      ],
+      "receipt_sha256": "91b0e87dc1bb0bcc5b488f186cb28fa785de73f9fc7451272e1dc1ad8f1bebb0"
+    },
+    "150": {
+      "complete": true,
+      "rows": [
+        {
+          "seed": 7103,
+          "bitwise_with_n128": true,
+          "ratio": 1.4999970731046042,
+          "feasible": true,
+          "wall_seconds": 2.3189225990790874,
+          "performance_eligible": false
+        },
+        {
+          "seed": 7104,
+          "bitwise_with_n128": true,
+          "ratio": 1.4999970731046042,
+          "feasible": true,
+          "wall_seconds": 2.2893313789973035,
+          "performance_eligible": false
+        }
+      ],
+      "prepared_weight_bytes": 1077834368,
+      "memory": {
+        "after_prepare": {
+          "allocated_bytes": 5357096448,
+          "reserved_bytes": 8197767168
+        },
+        "after_warmup": {
+          "allocated_bytes": 6534371328,
+          "reserved_bytes": 7528775680,
+          "peak_allocated_bytes": 7151097856,
+          "peak_reserved_bytes": 9143582720
+        }
+      },
+      "output_shapes": [
+        [
+          128,
+          64,
+          128
+        ],
+        [
+          128,
+          64,
+          128
+        ],
+        [
+          128,
+          64,
+          128
+        ],
+        [
+          128,
+          64,
+          128
+        ]
+      ],
+      "receipt_sha256": "84ffe905e12238a6744f1adf794a0f44301ef808961fb4faccc9e735ac06e5e7"
+    }
+  },
+  "tests": {
+    "passed": 173,
+    "memcheck_errors": 0,
+    "racecheck_errors": 0
+  }
+}

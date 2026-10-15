@@ -1,0 +1,29 @@
+[
+  {
+    "file": "figure1-demo.png",
+    "figure": 1,
+    "sha256": "5a2d94df3be97ef2156c1b5a79314893cef9d12fc269352f9160928cac3976b1",
+    "source": "Author manuscript figure artwork: results_preview_20260922/results_preview.png",
+    "paper": "https://www.preprints.org/manuscript/202610.0689",
+    "license": "CC-BY-4.0",
+    "modified": false
+  },
+  {
+    "file": "figure4-architecture.png",
+    "figure": 4,
+    "sha256": "5c4273d565778ed7b9bd7e481faa491c1f9a6b7651e9d9b8ac67c738f2112e21",
+    "source": "Author manuscript figure artwork: method_overview_20260922/method_overview.png",
+    "paper": "https://www.preprints.org/manuscript/202610.0689",
+    "license": "CC-BY-4.0",
+    "modified": false
+  },
+  {
+    "file": "figure6-throughput.png",
+    "figure": 6,
+    "sha256": "8f6586cb4340b018a4330d1d80f487c7a2098c92651ce7c09fbc6309f1c9945c",
+    "source": "Author manuscript figure artwork: runtime_fps_20260924/request_fps.png",
+    "paper": "https://www.preprints.org/manuscript/202610.0689",
+    "license": "CC-BY-4.0",
+    "modified": false
+  }
+]
